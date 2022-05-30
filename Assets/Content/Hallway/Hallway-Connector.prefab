@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2424807430162175449}
+  - component: {fileID: 1835963907996916371}
   m_Layer: 0
   m_Name: Hallway-Connector
   m_TagString: Untagged
@@ -32,6 +33,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1835963907996916371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2175959993548932280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a9c8348928343a8bc54fdc3420bcb02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabName: connector
+  joins:
+  - name: hallway-join-1
+    position: {fileID: 5267378356867377061}
+  - name: hallway-join-2
+    position: {fileID: 6099691604869806548}
 --- !u!1001 &6112136808673592414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -121,9 +140,21 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1263681662382845119, guid: c2fc0c40f2c5848349777c6b6a523c05, type: 3}
+--- !u!4 &5267378356867377061 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -7076332873120390149, guid: c2fc0c40f2c5848349777c6b6a523c05,
+    type: 3}
+  m_PrefabInstance: {fileID: 6112136808673592414}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6005573700674986933 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c2fc0c40f2c5848349777c6b6a523c05,
+    type: 3}
+  m_PrefabInstance: {fileID: 6112136808673592414}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6099691604869806548 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -9190482099912163958, guid: c2fc0c40f2c5848349777c6b6a523c05,
     type: 3}
   m_PrefabInstance: {fileID: 6112136808673592414}
   m_PrefabAsset: {fileID: 0}

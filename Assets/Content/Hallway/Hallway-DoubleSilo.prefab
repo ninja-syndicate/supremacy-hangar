@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6387240603356791370}
+  - component: {fileID: 2033514671677978826}
   m_Layer: 0
   m_Name: Hallway-DoubleSilo
   m_TagString: Untagged
@@ -32,6 +33,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2033514671677978826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2150796274959637628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a9c8348928343a8bc54fdc3420bcb02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joins:
+  - name: connector-join-1
+    prefab: {fileID: 1835963907996916371, guid: bd6bede1b22c84322b7c26f35b80b908,
+      type: 3}
+    position: {fileID: 6511146801606716362}
+    remoteName: hallway-join-2
+  - name: connector-join-2
+    prefab: {fileID: 1835963907996916371, guid: bd6bede1b22c84322b7c26f35b80b908,
+      type: 3}
+    position: {fileID: 2964124560071571424}
+    remoteName: hallway-join-1
 --- !u!1001 &7139686852902486254
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -106,6 +130,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e496c08ac775b40bcb2e8b381ed9fe1f, type: 3}
+--- !u!4 &2964124560071571424 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5348003427401348878, guid: e496c08ac775b40bcb2e8b381ed9fe1f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7139686852902486254}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5429354143221192665 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2904174760289703735, guid: e496c08ac775b40bcb2e8b381ed9fe1f,
@@ -126,6 +156,12 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4505935484202703681, guid: e496c08ac775b40bcb2e8b381ed9fe1f, type: 3}
+--- !u!4 &6511146801606716362 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -5095402029481202908, guid: e496c08ac775b40bcb2e8b381ed9fe1f,
+    type: 3}
+  m_PrefabInstance: {fileID: 7139686852902486254}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7250788940645066501 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e496c08ac775b40bcb2e8b381ed9fe1f,
