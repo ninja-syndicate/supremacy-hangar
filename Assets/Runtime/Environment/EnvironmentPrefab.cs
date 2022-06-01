@@ -9,16 +9,26 @@ namespace SupremacyHangar.Runtime.Environment
     {
         [SerializeField] private string prefabName;
         
-        [SerializeField] private List<Joiner> joins;
+        [SerializeField] private List<Joiner> joins = new();
 
         private readonly Dictionary<string, Transform> joinsByName = new Dictionary<string, Transform>();
 
+        public IReadOnlyDictionary<string, Transform> Joins;
+
+        public string connectedTo;
+
         public void Awake()
+        {
+            initialize();
+        }
+
+        public void initialize()
         {
             foreach (var join in joins)
             {
                 joinsByName[join.name] = join.position;
             }
+            Joins = new Dictionary<string, Transform>(joinsByName);
         }
 
         [Serializable]
@@ -35,9 +45,9 @@ namespace SupremacyHangar.Runtime.Environment
                 return;
             }
             var delta = otherHalf.position - connection.position;
+
             transform.position += delta;
-            
         }
-        
+
     }
 }

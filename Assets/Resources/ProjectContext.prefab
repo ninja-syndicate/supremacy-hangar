@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3997116689896100181}
   - component: {fileID: 7844517864398522888}
   - component: {fileID: 9048089558331618125}
+  - component: {fileID: 8652518148379509699}
   m_Layer: 0
   m_Name: ProjectContext
   m_TagString: Untagged
@@ -47,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scriptableObjectInstallers: []
   _monoInstallers:
+  - {fileID: 8652518148379509699}
   - {fileID: 9048089558331618125}
   _installerPrefabs: []
   _parentNewObjectsUnderContext: 1
@@ -77,11 +79,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parts:
   - referenceName: Hallway-Connector
-    reference: {fileID: 2175959993548932280, guid: bd6bede1b22c84322b7c26f35b80b908,
+    reference: {fileID: 1835963907996916371, guid: bd6bede1b22c84322b7c26f35b80b908,
       type: 3}
-  - referenceName: Hallway-Silo
-    reference: {fileID: 2150796274959637628, guid: 9320372745f3f45e4971cba976134fb7,
+  - referenceName: Hallway-DoubleSilo
+    reference: {fileID: 2033514671677978826, guid: 9320372745f3f45e4971cba976134fb7,
       type: 3}
-  - referenceName: Hallway-JoinRoom
-    reference: {fileID: 29434816920426713, guid: ee287b69aeb80451e8893e36609a5b6f,
+  - referenceName: Hallway-SmallStraightJoin
+    reference: {fileID: -8743494159400794120, guid: ee287b69aeb80451e8893e36609a5b6f,
       type: 3}
+  - referenceName: Hallway - Silo_Right
+    reference: {fileID: 6324144898081148458, guid: 9a955d9e8bbecf4449c699e011487558,
+      type: 3}
+  - referenceName: Hallway - Silo_Left
+    reference: {fileID: 6771770578741418503, guid: 6c3809ce056848149ba60e4a313aa781,
+      type: 3}
+  loadedObjects: []
+  objectsToUnload: []
+  newlyLoadedObjects: []
+--- !u!114 &8652518148379509699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201026633296727714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3594f04514c86a4486e1dac8b6ae7bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

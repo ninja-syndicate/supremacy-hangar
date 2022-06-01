@@ -17,10 +17,13 @@ namespace SupremacyHangar.Runtime.Environment
         public EnvironmentPrefab Reference => reference;
 
         private Dictionary<string, List<EnvironmentPart>> joins = new();
+        public IReadOnlyDictionary<string, List<EnvironmentPart>> MyJoins;
 
         public void AddJoin(string connectorName, EnvironmentPart[] destinations)
         {
             joins[connectorName] = new List<EnvironmentPart>(destinations);
+
+            MyJoins = new Dictionary<string, List<EnvironmentPart>>(joins);
         }
     }
 }

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2424807430162175449}
   - component: {fileID: 1835963907996916371}
+  - component: {fileID: -2688548455563843632}
   m_Layer: 0
   m_Name: Hallway-Connector
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6005573700674986933}
+  - {fileID: 6113536971019346299}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -45,116 +46,181 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9c8348928343a8bc54fdc3420bcb02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabName: connector
+  prefabName: Hallway-Connector
   joins:
-  - name: hallway-join-1
-    position: {fileID: 5267378356867377061}
-  - name: hallway-join-2
-    position: {fileID: 6099691604869806548}
---- !u!1001 &6112136808673592414
+  - name: ConnectionPoint_HallwayConnector_01
+    position: {fileID: 7643843178622741940}
+  - name: ConnectionPoint_HallwayConnector_02
+    position: {fileID: 1831540969451434398}
+  connectedTo: 
+--- !u!114 &-2688548455563843632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2175959993548932280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c80beb9e63908c842bd67f991935f4a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &6006988292366403216
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 2424807430162175449}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: c2fc0c40f2c5848349777c6b6a523c05,
+    - target: {fileID: -8679921383154817045, guid: 2f9382f7508af9647bcdfe2ca9eac064,
         type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c2fc0c40f2c5848349777c6b6a523c05,
+    - target: {fileID: -8679921383154817045, guid: 2f9382f7508af9647bcdfe2ca9eac064,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c2fc0c40f2c5848349777c6b6a523c05,
+    - target: {fileID: -8679921383154817045, guid: 2f9382f7508af9647bcdfe2ca9eac064,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c2fc0c40f2c5848349777c6b6a523c05,
+    - target: {fileID: -8679921383154817045, guid: 2f9382f7508af9647bcdfe2ca9eac064,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c2fc0c40f2c5848349777c6b6a523c05,
+    - target: {fileID: -8679921383154817045, guid: 2f9382f7508af9647bcdfe2ca9eac064,
         type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c2fc0c40f2c5848349777c6b6a523c05,
+    - target: {fileID: -8679921383154817045, guid: 2f9382f7508af9647bcdfe2ca9eac064,
         type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c2fc0c40f2c5848349777c6b6a523c05,
+    - target: {fileID: -8679921383154817045, guid: 2f9382f7508af9647bcdfe2ca9eac064,
         type: 3}
       propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c2fc0c40f2c5848349777c6b6a523c05,
+    - target: {fileID: -8679921383154817045, guid: 2f9382f7508af9647bcdfe2ca9eac064,
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c2fc0c40f2c5848349777c6b6a523c05,
+    - target: {fileID: -8679921383154817045, guid: 2f9382f7508af9647bcdfe2ca9eac064,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c2fc0c40f2c5848349777c6b6a523c05,
+    - target: {fileID: -8679921383154817045, guid: 2f9382f7508af9647bcdfe2ca9eac064,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c2fc0c40f2c5848349777c6b6a523c05,
+    - target: {fileID: -8679921383154817045, guid: 2f9382f7508af9647bcdfe2ca9eac064,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: c2fc0c40f2c5848349777c6b6a523c05,
+    - target: {fileID: 919132149155446097, guid: 2f9382f7508af9647bcdfe2ca9eac064,
         type: 3}
       propertyPath: m_Name
-      value: Hangar_Silo_Hallway_Connector_Greybox
+      value: Hangar_Hallway_Connector_Greybox_v2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c2fc0c40f2c5848349777c6b6a523c05, type: 3}
---- !u!1 &2568634175410136956 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: 2f9382f7508af9647bcdfe2ca9eac064, type: 3}
+--- !u!1 &117246848248600432 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 8608405455819744034, guid: c2fc0c40f2c5848349777c6b6a523c05,
+  m_CorrespondingSourceObject: {fileID: -3243269693694651936, guid: 2f9382f7508af9647bcdfe2ca9eac064,
     type: 3}
-  m_PrefabInstance: {fileID: 6112136808673592414}
+  m_PrefabInstance: {fileID: 6006988292366403216}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &8216184243031757551
-MeshCollider:
+--- !u!65 &417834440377862024
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2568634175410136956}
+  m_GameObject: {fileID: 117246848248600432}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -1263681662382845119, guid: c2fc0c40f2c5848349777c6b6a523c05, type: 3}
---- !u!4 &5267378356867377061 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -7076332873120390149, guid: c2fc0c40f2c5848349777c6b6a523c05,
-    type: 3}
-  m_PrefabInstance: {fileID: 6112136808673592414}
+  serializedVersion: 2
+  m_Size: {x: 1.1249104, y: 3.5300083, z: 3.943699}
+  m_Center: {x: 0.28034687, y: 1.2650042, z: 0.015433073}
+--- !u!114 &5065545422582821971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &6005573700674986933 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c2fc0c40f2c5848349777c6b6a523c05,
+  m_GameObject: {fileID: 117246848248600432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4a9e5621e9d5024f871d0b686e2b798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myConnectors: {fileID: 1835963907996916371}
+  environmentPrefabIndex: 0
+  myEnvironmentConnector: ConnectionPoint_HallwayConnector_02
+  to_Connect_to: ConnectionPoint_HallwayConnector_01
+  otherCollider: {fileID: 443929912161151435}
+--- !u!1 &1500008186842477031 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5155501691361195895, guid: 2f9382f7508af9647bcdfe2ca9eac064,
     type: 3}
-  m_PrefabInstance: {fileID: 6112136808673592414}
+  m_PrefabInstance: {fileID: 6006988292366403216}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &6099691604869806548 stripped
+--- !u!65 &443929912161151435
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500008186842477031}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2406712, y: 3.5508947, z: 3.943699}
+  m_Center: {x: -0.32363033, y: 1.2754474, z: 0.015433073}
+--- !u!114 &2193748051335723608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500008186842477031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4a9e5621e9d5024f871d0b686e2b798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myConnectors: {fileID: 1835963907996916371}
+  environmentPrefabIndex: 0
+  myEnvironmentConnector: ConnectionPoint_HallwayConnector_01
+  to_Connect_to: ConnectionPoint_HallwayConnector_02
+  otherCollider: {fileID: 417834440377862024}
+--- !u!4 &1831540969451434398 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -9190482099912163958, guid: c2fc0c40f2c5848349777c6b6a523c05,
+  m_CorrespondingSourceObject: {fileID: 5348003427401348878, guid: 2f9382f7508af9647bcdfe2ca9eac064,
     type: 3}
-  m_PrefabInstance: {fileID: 6112136808673592414}
+  m_PrefabInstance: {fileID: 6006988292366403216}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6113536971019346299 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2f9382f7508af9647bcdfe2ca9eac064,
+    type: 3}
+  m_PrefabInstance: {fileID: 6006988292366403216}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7643843178622741940 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -5095402029481202908, guid: 2f9382f7508af9647bcdfe2ca9eac064,
+    type: 3}
+  m_PrefabInstance: {fileID: 6006988292366403216}
   m_PrefabAsset: {fileID: 0}
