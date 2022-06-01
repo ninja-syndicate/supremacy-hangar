@@ -73,10 +73,14 @@ namespace SupremacyHangar.Runtime.Environment
             //Store current environment
             //Inject to environment spawners
             var hallLeft = _container.InstantiatePrefab(hallDoorway.Reference);
-            hallLeft.GetComponent<EnvironmentPrefab>().connectedTo = "Hallway-DoubleSilo(Clone)";
+            var hallLeftEnvironmentPrefab = hallLeft.GetComponent<EnvironmentPrefab>();
+            hallLeftEnvironmentPrefab.connectedTo = "Hallway-DoubleSilo(Clone)";
+            hallLeftEnvironmentPrefab.JoinTo("ConnectionPoint_HallwayConnector_01", g.Joins["ConnectionPoint_HallwayConnector_01"]);
 
             var hallRight = _container.InstantiatePrefab(hallDoorway.Reference);
-            hallRight.GetComponent<EnvironmentPrefab>().connectedTo = "Hallway-DoubleSilo(Clone)";
+            var hallRightEnvironmentPrefab = hallRight.GetComponent<EnvironmentPrefab>();
+            hallRightEnvironmentPrefab.connectedTo = "Hallway-DoubleSilo(Clone)";
+            hallRightEnvironmentPrefab.JoinTo("ConnectionPoint_HallwayConnector_02", g.Joins["ConnectionPoint_HallwayConnector_02"]);
 
             loadedObjects.Add(hallRight);
             loadedObjects.Add(hallLeft);
@@ -87,13 +91,12 @@ namespace SupremacyHangar.Runtime.Environment
             //container.InjectGameObject(hallRight);
             //var hall = Instantiate(hallDoorway.Reference);
 
-            hallRight.GetComponent<EnvironmentPrefab>().JoinTo("ConnectionPoint_HallwayConnector_02", g.Joins["ConnectionPoint_HallwayConnector_02"]);
 
             //hall.JoinTo("ConnectionPoint_HallwayConnector_02", g.Joins["ConnectionPoint_HallwayConnector_02"]);
             //container.InjectGameObject(hall.gameObject);
         }
-
-        public void spawnPart(string myEnvironmentConnector, int environmentPrefabIndex, string to_Connect_to, EnvironmentPrefab myConnectors, Collider otherCollider)
+        private bool firstLoad = true;
+        public void spawnPart(string myEnvironmentConnector, int environmentPrefabIndex, string to_Connect_to, EnvironmentPrefab myConnectors, Collider otherCollider, Animator[] doorAnimators)
         {
             interactedDoor = myConnectors;
 
@@ -104,16 +107,19 @@ namespace SupremacyHangar.Runtime.Environment
 
             }
 
+            _container.Bind<Animator[]>().FromInstance(doorAnimators);
+            _container.Bind<Collider>().FromInstance(otherCollider);
+
             //Next Main Room spawn
             var roomPart = currentEnvironment.currentPart.MyJoins[myEnvironmentConnector][environmentPrefabIndex].MyJoins[myEnvironmentConnector][nextRoomIndex(myConnectors)];
             currentEnvironment nextRoom = new()
             {
                 currentPart = roomPart,
-                currentGameObejct = Instantiate(roomPart.Reference).gameObject,
+                currentGameObejct = _container.InstantiatePrefab(roomPart.Reference).gameObject,
             };
 
             var nextRoomEnvironmentPrefabRef = nextRoom.currentGameObejct.GetComponent<EnvironmentPrefab>();
-            
+
             loadedObjects.Add(nextRoom.currentGameObejct);
             //Reposition new room
             nextRoomEnvironmentPrefabRef.JoinTo(myEnvironmentConnector, myConnectors.Joins[myEnvironmentConnector]);
@@ -121,7 +127,7 @@ namespace SupremacyHangar.Runtime.Environment
             var connectorDoor = _container.InstantiatePrefab(currentEnvironment.currentPart.MyJoins[myEnvironmentConnector][environmentPrefabIndex].Reference);
             loadedObjects.Add(connectorDoor.gameObject);
 
-            _container.InjectGameObject(nextRoom.currentGameObejct);
+            //_container.InjectGameObject(nextRoom.currentGameObejct);
 
             //Reposition door & set connection point
             connectorDoor.GetComponent<EnvironmentPrefab>().JoinTo(myEnvironmentConnector, nextRoomEnvironmentPrefabRef.Joins[to_Connect_to]);
@@ -133,6 +139,14 @@ namespace SupremacyHangar.Runtime.Environment
             //Save for unload on going back to current room
             newlyLoadedObjects.Add(connectorDoor);
             newlyLoadedObjects.Add(nextRoom.currentGameObejct);
+
+            if(firstLoad)
+                _container.InjectGameObject(currentEnvironment.currentGameObejct);
+            
+            _container.Unbind<Collider>();
+            _container.Unbind<Animator[]>();
+
+            firstLoad = false;
         }
         private int nextRoomIndex(EnvironmentPrefab myConnectors)
         {
@@ -173,7 +187,7 @@ namespace SupremacyHangar.Runtime.Environment
         public void setCurrentEnvironment(GameObject gameObject)
         {
             if (gameObject.name == "Hallway-SmallStraightJoin(Clone)" && gameObject.transform.position != Vector3.zero)
-                _repositionSignalHandler.repositionObject();
+                _repositionSignalHandler.repositionObject(gameObject.transform.position);
 
             if (currentEnvironment.currentGameObejct != gameObject)
             {

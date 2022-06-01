@@ -11,10 +11,18 @@ namespace SupremacyHangar.Runtime
         private SignalBus _bus;
         private bool _subscribed;
         
+        [SerializeField]
+        private CharacterController _characterController;
+
         [Inject]
         public void Initialize(SignalBus bus)
         {
             _bus = bus;
+            SubscribeToSignal();
+        }
+
+        private void SubscribeToSignal()
+        {
             _bus.Subscribe<RepositionObjectSignal>(MoveToZero);
             _subscribed = true;
         }
@@ -22,20 +30,30 @@ namespace SupremacyHangar.Runtime
         public void OnEnable()
         {
             if (_bus == null || _subscribed) return;
-            _bus.Subscribe<RepositionObjectSignal>(MoveToZero);
-            _subscribed = true;
+            SubscribeToSignal();
         }
 
         public void OnDisable()
         {
+            if (!_subscribed) return; 
             _bus.Unsubscribe<RepositionObjectSignal>(MoveToZero);
             _subscribed = false;
         }
 
-        public void MoveToZero()
+        //trying to access destroyed object???? (not destroyed)
+        public void MoveToZero(RepositionObjectSignal signal)
         {
+            ToggleCharacterController();
             Debug.Log($"{name} got move", this);
-            transform.position = Vector3.zero;
+            transform.position -= signal.Position;
+
+            ToggleCharacterController();
+        }
+
+        private void ToggleCharacterController()
+        {
+            if (_characterController)
+                _characterController.enabled = !_characterController.enabled;
         }
     }
 }

@@ -5,16 +5,10 @@ using Zenject;
 
 namespace SupremacyHangar.Runtime
 {
-    public struct SaveRelativePositionSignal
+    public struct RepositionObjectSignal
     {
         public Vector3 Position;
     }
-
-    public struct RepositionObjectSignal
-    {}
-
-    public struct UpdatePositionSignal
-    {}
 
     public class RepositionSignalHandler
     {
@@ -22,24 +16,12 @@ namespace SupremacyHangar.Runtime
 
         public RepositionSignalHandler(SignalBus signalBus)
         {
-            Debug.Log("init");
             _signalBus = signalBus;
         }
 
-        public void saveRelativePosition()
+        public void repositionObject(Vector3 pos)
         {
-            _signalBus.Fire(new SaveRelativePositionSignal() { Position = Vector3.zero });
-        }
-
-        public void repositionObject()
-        {
-            _signalBus.Fire<RepositionObjectSignal>();
-        }
-
-        public void updatePosition()
-        {
-
-            _signalBus.Fire<UpdatePositionSignal>();
+            _signalBus.Fire(new RepositionObjectSignal() { Position = pos});
         }
     }
 
@@ -50,9 +32,7 @@ namespace SupremacyHangar.Runtime
             Debug.Log("My bindings are installed");
             SignalBusInstaller.Install(Container);
             Container.Bind<RepositionSignalHandler>().AsSingle().NonLazy();
-            Container.DeclareSignal<SaveRelativePositionSignal>().OptionalSubscriber();
             Container.DeclareSignal<RepositionObjectSignal>();
-            Container.DeclareSignal<UpdatePositionSignal>();
         }
     }
 }

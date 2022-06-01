@@ -14,16 +14,14 @@ namespace SupremacyHangar
 
         public Collider previousDoor;
 
-        [SerializeField]
-        private Animator myDoor;
+        public Animator[] myDoor;
 
         [Inject]
-        public void Construct(EnvironmentManager environmentManager, Collider prevDoor = null)
+        public void Construct(EnvironmentManager environmentManager, Animator[] animators, Collider prevDoor = null)
         {
             EnvironmentManager = environmentManager;
-            //objectsToUnload = unloadObjects;
+            myDoor = animators;
             previousDoor = prevDoor;
-            //Debug.Log(objectsToUnload.Count);
         }
 
         // Start is called before the first frame update
@@ -36,8 +34,16 @@ namespace SupremacyHangar
         {
             Debug.Log("Room Trigger");
             //Close door
+            foreach (Animator anim in myDoor)
+                anim.SetBool("isOpen", false);
 
+            StartCoroutine(unloadAssets());            
+        }
 
+        private IEnumerator unloadAssets()
+        {
+            yield return new WaitForSeconds(myDoor[0].GetCurrentAnimatorStateInfo(0).normalizedTime);
+            
             //set this room as current
             EnvironmentManager.setCurrentEnvironment(gameObject);
 

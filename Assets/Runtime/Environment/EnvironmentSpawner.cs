@@ -25,6 +25,10 @@ namespace SupremacyHangar
         [SerializeField]
         private Collider otherCollider;
 
+        [SerializeField]
+        private Animator[] DoorAnims;
+
+
         [Inject]
         public void Construct(EnvironmentManager environmentManager)
         {
@@ -33,7 +37,10 @@ namespace SupremacyHangar
 
         private void OnTriggerEnter(Collider other)
         {
-            EnvironmentManager.spawnPart(myEnvironmentConnector, environmentPrefabIndex, to_Connect_to, myConnectors, otherCollider);
+            EnvironmentManager.spawnPart(myEnvironmentConnector, environmentPrefabIndex, to_Connect_to, myConnectors, otherCollider, DoorAnims);
+
+            foreach (Animator anim in DoorAnims)
+                anim.SetBool("isOpen", true);
 
             otherCollider.enabled = false;
             EnvironmentManager.currentEnvironment.currentGameObejct.GetComponent<RoomHandler>().previousDoor = GetComponent<Collider>();
