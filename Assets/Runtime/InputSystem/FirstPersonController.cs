@@ -4,7 +4,7 @@ using System;
 using UnityEngine.InputSystem;
 #endif
 
-namespace StarterAssets
+namespace SupremacyHangar
 {
 	[RequireComponent(typeof(CharacterController))]
 #if ENABLE_INPUT_SYSTEM
@@ -79,7 +79,7 @@ namespace StarterAssets
 		private Vector2 move;
 
 		private Vector2 look;
-		
+
 		[Header("Movement Settings")]
 		public bool analogMovement;
 

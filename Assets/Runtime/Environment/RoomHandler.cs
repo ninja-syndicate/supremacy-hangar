@@ -45,7 +45,7 @@ namespace SupremacyHangar
         {
             while (!myDoor[0].GetCurrentAnimatorClipInfo(0)[0].clip.name.Contains("Default") &&
                 !myDoor[0].GetCurrentAnimatorClipInfo(0)[0].clip.name.Contains("Default"))
-                yield return null;// new WaitForSeconds(myDoor[0].GetCurrentAnimatorStateInfo(0).normalizedTime);
+                yield return null;
             
             //set this room as current
             EnvironmentManager.setCurrentEnvironment(gameObject);

@@ -268,8 +268,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1455531868569450424}
-  m_LocalRotation: {x: 0.27961442, y: -0, z: -0, w: 0.9601124}
-  m_LocalPosition: {x: 0, y: 0, z: 2.1756}
+  m_LocalRotation: {x: 0.27961114, y: 0, z: 0, w: 0.9601134}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -278,12 +278,13 @@ RectTransform:
   - {fileID: 6838578661741888170}
   - {fileID: 5782700581175902381}
   - {fileID: 4848254618562880896}
-  m_Father: {fileID: 6387240603356791370}
-  m_RootOrder: 1
+  - {fileID: 2929923337825214695}
+  m_Father: {fileID: 1746090069446551780}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 32.474, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -4.959, y: 1.3561}
+  m_AnchoredPosition: {x: 50, y: 50}
   m_SizeDelta: {x: 0.9552, y: 0.9153}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7936986858815440756
@@ -382,9 +383,93 @@ Transform:
   - {fileID: 2616479275619004929}
   - {fileID: 232045636048684503}
   - {fileID: 7634134666644191068}
+  - {fileID: 129619298571191645}
   m_Father: {fileID: 6387240603356791370}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2061902075139569773
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 896598984417407140}
+  - component: {fileID: 810842670747534758}
+  - component: {fileID: 8962178593567118285}
+  - component: {fileID: 5916775535431724488}
+  m_Layer: 5
+  m_Name: Silo_1_Info
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &896598984417407140
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061902075139569773}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -2.198}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1854428881730318045}
+  m_Father: {fileID: 6387240603356791370}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -4.959, y: 1.355}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &810842670747534758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061902075139569773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25df99a152887474286d722df81b5a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  labelText: {fileID: 4592121025565001974}
+  spawner: {fileID: 8962178593567118285}
+--- !u!114 &8962178593567118285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061902075139569773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 635b27c1e5c26c74b836536519f30664, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  siloAsset: {fileID: 12822200296412448, guid: 9a955d9e8bbecf4449c699e011487558, type: 3}
+  myEnvironmentConnector: ConnectionPoint_Silo_01
+  siloDoorTrigger: {fileID: 4861171405328393359}
+  siloWindowAnim: {fileID: 0}
+--- !u!65 &5916775535431724488
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2061902075139569773}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4, y: 2.504079, z: 1.148261}
+  m_Center: {x: 0, y: -0.1797489, z: 0.60878867}
 --- !u!1 &2150796274959637628
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,8 +503,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1265212774890769662}
-  - {fileID: 933972246835126929}
-  - {fileID: 1854428881730318045}
+  - {fileID: 1746090069446551780}
+  - {fileID: 896598984417407140}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -446,6 +531,7 @@ MonoBehaviour:
   - name: ConnectionPoint_Silo_02
     position: {fileID: 3541950691217371676}
   connectedTo: 
+  ColliderList: []
 --- !u!65 &2226270308865397330
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -890,6 +976,51 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Mech:'
+--- !u!1 &3523020856815600127
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 129619298571191645}
+  - component: {fileID: 4155507219352679490}
+  m_Layer: 0
+  m_Name: DoorClose
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &129619298571191645
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3523020856815600127}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -16.9, y: 5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1265212774890769662}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4155507219352679490
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3523020856815600127}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3947607852496437927
 GameObject:
   m_ObjectHideFlags: 0
@@ -1160,7 +1291,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4451469130258241079}
   m_LocalRotation: {x: 0, y: 0.9601134, z: -0.27961114, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -2.198}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1169,12 +1300,13 @@ RectTransform:
   - {fileID: 3353030127121757184}
   - {fileID: 234650552849341669}
   - {fileID: 7568401414755299573}
-  m_Father: {fileID: 6387240603356791370}
-  m_RootOrder: 2
+  - {fileID: 7530431960817698481}
+  m_Father: {fileID: 896598984417407140}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 32.474, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -4.959, y: 1.355}
+  m_AnchoredPosition: {x: 50.000027, y: 50}
   m_SizeDelta: {x: 0.9552, y: 0.9153}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &3410152530540312859
@@ -1337,6 +1469,86 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4505935484202703681, guid: 79e8e2d3e5527ee4eb9f45a5883495b1, type: 3}
+--- !u!1 &4492408976923508582
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7530431960817698481}
+  - component: {fileID: 1341883948177293165}
+  - component: {fileID: 4592121025565001974}
+  m_Layer: 5
+  m_Name: InteractionLabel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &7530431960817698481
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4492408976923508582}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.0073400172, y: 0.007340017, z: 0.007340017}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1854428881730318045}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -0.3842, y: -0.34199995}
+  m_SizeDelta: {x: 24.4906, y: 29.0847}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1341883948177293165
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4492408976923508582}
+  m_CullTransparentMesh: 1
+--- !u!114 &4592121025565001974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4492408976923508582}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: E
 --- !u!1 &4786594808471594597
 GameObject:
   m_ObjectHideFlags: 0
@@ -1648,6 +1860,89 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: CherryBlossom
+--- !u!1 &5196435074066300949
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1746090069446551780}
+  - component: {fileID: 5539433708269105824}
+  - component: {fileID: 3707960456775732632}
+  - component: {fileID: 62340275779691916}
+  m_Layer: 5
+  m_Name: Silo_2_Info
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1746090069446551780
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5196435074066300949}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2.1756}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 933972246835126929}
+  m_Father: {fileID: 6387240603356791370}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -4.959, y: 1.3561001}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5539433708269105824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5196435074066300949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25df99a152887474286d722df81b5a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  labelText: {fileID: 2304188416327348712}
+  spawner: {fileID: 3707960456775732632}
+--- !u!114 &3707960456775732632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5196435074066300949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 635b27c1e5c26c74b836536519f30664, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  siloAsset: {fileID: 49628530332411176, guid: 6c3809ce056848149ba60e4a313aa781, type: 3}
+  myEnvironmentConnector: ConnectionPoint_Silo_02
+  siloDoorTrigger: {fileID: 3230706503980203563}
+  siloWindowAnim: {fileID: 0}
+--- !u!65 &62340275779691916
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5196435074066300949}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4, y: 2.3996456, z: 1.1199836}
+  m_Center: {x: 0, y: -0.20998275, z: -0.6141276}
 --- !u!1 &5231556420875031400
 GameObject:
   m_ObjectHideFlags: 0
@@ -1966,7 +2261,6 @@ GameObject:
   - component: {fileID: 1464957307079722551}
   - component: {fileID: 1179312000571687650}
   - component: {fileID: 1845727034408616911}
-  - component: {fileID: 1184835797234436191}
   m_Layer: 5
   m_Name: Button (Legacy)
   m_TagString: Untagged
@@ -2077,7 +2371,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1184835797234436191}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SupremacyHangar.siloSpawner, Assembly-CSharp
         m_MethodName: spawnSilo
         m_Mode: 1
@@ -2089,22 +2383,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &1184835797234436191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7373740303842766001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 635b27c1e5c26c74b836536519f30664, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  siloAsset: {fileID: 12822200296412448, guid: 9a955d9e8bbecf4449c699e011487558, type: 3}
-  myEnvironmentConnector: ConnectionPoint_Silo_01
-  siloDoorTrigger: {fileID: 4861171405328393359}
-  siloWindowAnim: {fileID: 0}
 --- !u!1 &7496944165435794806
 GameObject:
   m_ObjectHideFlags: 0
@@ -2774,6 +3052,86 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &8615763207570927904
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2929923337825214695}
+  - component: {fileID: 7487634476006963726}
+  - component: {fileID: 2304188416327348712}
+  m_Layer: 5
+  m_Name: InteractionLabel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2929923337825214695
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8615763207570927904}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.007340017, y: 0.007340017, z: 0.007340017}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 933972246835126929}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -0.3832, y: -0.342}
+  m_SizeDelta: {x: 24.7841, y: 29.0847}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &7487634476006963726
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8615763207570927904}
+  m_CullTransparentMesh: 1
+--- !u!114 &2304188416327348712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8615763207570927904}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: E
 --- !u!1 &9174100758405154695
 GameObject:
   m_ObjectHideFlags: 0
@@ -2785,8 +3143,7 @@ GameObject:
   - component: {fileID: 4848254618562880896}
   - component: {fileID: 620985744144059413}
   - component: {fileID: 193187295062858082}
-  - component: {fileID: 4055818747207513041}
-  - component: {fileID: 6949645482594961741}
+  - component: {fileID: 9201290548606710373}
   m_Layer: 5
   m_Name: Button (Legacy)
   m_TagString: Untagged
@@ -2853,7 +3210,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4055818747207513041
+--- !u!114 &9201290548606710373
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2897,7 +3254,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6949645482594961741}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SupremacyHangar.siloSpawner, Assembly-CSharp
         m_MethodName: spawnSilo
         m_Mode: 1
@@ -2909,19 +3266,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &6949645482594961741
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9174100758405154695}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 635b27c1e5c26c74b836536519f30664, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  siloAsset: {fileID: 49628530332411176, guid: 6c3809ce056848149ba60e4a313aa781, type: 3}
-  myEnvironmentConnector: ConnectionPoint_Silo_02
-  siloDoorTrigger: {fileID: 3230706503980203563}
-  siloWindowAnim: {fileID: 0}

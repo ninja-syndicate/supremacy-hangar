@@ -17,6 +17,8 @@ namespace SupremacyHangar.Runtime.Environment
 
         public string connectedTo;
 
+        public List<Collider> ColliderList  = new();
+
         public void Awake()
         {
             initialize();

@@ -79,6 +79,9 @@ namespace SupremacyHangar.Runtime.Environment
             hallLeftEnvironmentPrefab.connectedTo = "Hallway-DoubleSilo(Clone)";
             hallLeftEnvironmentPrefab.JoinTo("ConnectionPoint_HallwayConnector_01", g.Joins["ConnectionPoint_HallwayConnector_01"]);
 
+            //Disable door colliders
+            disableDoor(hallLeftEnvironmentPrefab);
+
             var hallRight = _container.InstantiatePrefab(hallDoorway.Reference);
             var hallRightEnvironmentPrefab = hallRight.GetComponent<EnvironmentPrefab>();
             hallRightEnvironmentPrefab.connectedTo = "Hallway-DoubleSilo(Clone)";
@@ -97,6 +100,13 @@ namespace SupremacyHangar.Runtime.Environment
             //hall.JoinTo("ConnectionPoint_HallwayConnector_02", g.Joins["ConnectionPoint_HallwayConnector_02"]);
             //container.InjectGameObject(hall.gameObject);
         }
+
+        private void disableDoor(EnvironmentPrefab door)
+        {
+            foreach(Collider c in door.ColliderList)
+                c.enabled = false;
+        }
+
         public void spawnPart(string myEnvironmentConnector, int environmentPrefabIndex, string to_Connect_to, EnvironmentPrefab myConnectors, Collider otherCollider, Animator[] doorAnimators)
         {
             interactedDoor = myConnectors;

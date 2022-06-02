@@ -40,7 +40,6 @@ namespace SupremacyHangar.Runtime
             _subscribed = false;
         }
 
-        //trying to access destroyed object???? (not destroyed)
         public void MoveToZero(RepositionObjectSignal signal)
         {
             ToggleCharacterController();

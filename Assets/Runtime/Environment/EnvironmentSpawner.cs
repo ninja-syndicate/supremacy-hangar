@@ -1,10 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using SupremacyHangar.Runtime.Environment;
 using Zenject;
 
-namespace SupremacyHangar
+namespace SupremacyHangar.Runtime.Environment
 {
     public class EnvironmentSpawner : MonoBehaviour
     {
@@ -25,9 +25,19 @@ namespace SupremacyHangar
         [SerializeField]
         private Collider otherCollider;
 
+        //ToDo make single (like silo doors)
         [SerializeField]
         private Animator[] DoorAnims;
 
+        private void Awake()
+        {
+            //Doors share the same environmentPrefab
+            if (myConnectors.ColliderList.Count == 0)
+            {
+                myConnectors.ColliderList.Add(otherCollider);
+                myConnectors.ColliderList.Add(GetComponent<Collider>());
+            }
+        }
 
         [Inject]
         public void Construct(EnvironmentManager environmentManager)
@@ -37,21 +47,20 @@ namespace SupremacyHangar
 
         private void OnTriggerEnter(Collider other)
         {
+            
             spawnSection();
 
             foreach (Animator anim in DoorAnims)
                 anim.SetBool("isOpen", true);
 
             otherCollider.enabled = false;
-            EnvironmentManager.currentEnvironment.currentGameObejct.GetComponent<RoomHandler>().previousDoor = GetComponent<Collider>();
-            GetComponent<Collider>().enabled = false;
+            EnvironmentManager.currentEnvironment.currentGameObejct.GetComponent<RoomHandler>().previousDoor = myConnectors.ColliderList[1];
+            myConnectors.ColliderList[1].enabled = false;
         }
 
         public void spawnSection()
         {
             EnvironmentManager.spawnPart(myEnvironmentConnector, environmentPrefabIndex, to_Connect_to, myConnectors, otherCollider, DoorAnims);
         }
-
-
     }
 }
