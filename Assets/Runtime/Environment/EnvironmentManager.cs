@@ -26,6 +26,8 @@ namespace SupremacyHangar.Runtime.Environment
 
         private EnvironmentPrefab interactedDoor = null;
 
+        private siloSpawner _currentSilo;
+
         public override void InstallBindings()
         {
             Container.Bind<EnvironmentManager>().FromInstance(this);
@@ -95,7 +97,6 @@ namespace SupremacyHangar.Runtime.Environment
             //hall.JoinTo("ConnectionPoint_HallwayConnector_02", g.Joins["ConnectionPoint_HallwayConnector_02"]);
             //container.InjectGameObject(hall.gameObject);
         }
-        private bool firstLoad = true;
         public void spawnPart(string myEnvironmentConnector, int environmentPrefabIndex, string to_Connect_to, EnvironmentPrefab myConnectors, Collider otherCollider, Animator[] doorAnimators)
         {
             interactedDoor = myConnectors;
@@ -111,7 +112,7 @@ namespace SupremacyHangar.Runtime.Environment
             _container.Bind<Collider>().FromInstance(otherCollider);
 
             //Next Main Room spawn
-            var roomPart = currentEnvironment.currentPart.MyJoins[myEnvironmentConnector][environmentPrefabIndex].MyJoins[myEnvironmentConnector][nextRoomIndex(myConnectors)];
+            var roomPart = currentEnvironment.currentPart.MyJoins[myEnvironmentConnector][environmentPrefabIndex].MyJoins[myEnvironmentConnector][NextRoomIndex(myConnectors)];
             currentEnvironment nextRoom = new()
             {
                 currentPart = roomPart,
@@ -123,11 +124,9 @@ namespace SupremacyHangar.Runtime.Environment
             loadedObjects.Add(nextRoom.currentGameObejct);
             //Reposition new room
             nextRoomEnvironmentPrefabRef.JoinTo(myEnvironmentConnector, myConnectors.Joins[myEnvironmentConnector]);
-            
+
             var connectorDoor = _container.InstantiatePrefab(currentEnvironment.currentPart.MyJoins[myEnvironmentConnector][environmentPrefabIndex].Reference);
             loadedObjects.Add(connectorDoor.gameObject);
-
-            //_container.InjectGameObject(nextRoom.currentGameObejct);
 
             //Reposition door & set connection point
             connectorDoor.GetComponent<EnvironmentPrefab>().JoinTo(myEnvironmentConnector, nextRoomEnvironmentPrefabRef.Joins[to_Connect_to]);
@@ -136,19 +135,34 @@ namespace SupremacyHangar.Runtime.Environment
             //update what current doors connected to
             interactedDoor.connectedTo = nextRoom.currentGameObejct.name;
 
-            //Save for unload on going back to current room
+            //Save for unload on going back to current room (MAY NEED TO MOVE BACK UP)
             newlyLoadedObjects.Add(connectorDoor);
             newlyLoadedObjects.Add(nextRoom.currentGameObejct);
 
-            if(firstLoad)
-                _container.InjectGameObject(currentEnvironment.currentGameObejct);
-            
+            //Injects animations for closing into active room
+            _container.InjectGameObject(currentEnvironment.currentGameObejct);
+
+            //Clean up reused binds
             _container.Unbind<Collider>();
             _container.Unbind<Animator[]>();
-
-            firstLoad = false;
         }
-        private int nextRoomIndex(EnvironmentPrefab myConnectors)
+
+        public void spawnSilo(string myEnvironmentConnector, int environmentPrefabIndex, siloSpawner currentSilo)
+        {
+            _currentSilo = currentSilo;
+
+            var nextRoomEnvironmentPrefabRef = currentEnvironment.currentGameObejct.GetComponent<EnvironmentPrefab>();
+
+            var silo = _container.InstantiatePrefab(currentEnvironment.currentPart.MyJoins[myEnvironmentConnector][environmentPrefabIndex].Reference);
+            loadedObjects.Add(silo.gameObject);
+            newlyLoadedObjects.Add(silo.gameObject);
+
+            //Reposition door & set connection point
+            silo.GetComponent<EnvironmentPrefab>().JoinTo(myEnvironmentConnector, nextRoomEnvironmentPrefabRef.Joins[myEnvironmentConnector]);
+            silo.GetComponent<EnvironmentPrefab>().connectedTo = myEnvironmentConnector;
+        }
+
+        private int NextRoomIndex(EnvironmentPrefab myConnectors)
         {
             if (myConnectors.connectedTo == "Hallway-DoubleSilo(Clone)")
                 return 1;
@@ -158,6 +172,9 @@ namespace SupremacyHangar.Runtime.Environment
 
         public void unloadAssets()
         {
+            if (_currentSilo)
+                _currentSilo.SiloSpawned = false;
+
             if (roomChanged == true)
             {
                 foreach (var obj in objectsToUnload)

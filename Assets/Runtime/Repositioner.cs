@@ -23,13 +23,13 @@ namespace SupremacyHangar.Runtime
 
         private void SubscribeToSignal()
         {
+            if (_bus == null || _subscribed) return;
             _bus.Subscribe<RepositionObjectSignal>(MoveToZero);
             _subscribed = true;
         }
 
         public void OnEnable()
         {
-            if (_bus == null || _subscribed) return;
             SubscribeToSignal();
         }
 

@@ -37,7 +37,7 @@ namespace SupremacyHangar
 
         private void OnTriggerEnter(Collider other)
         {
-            EnvironmentManager.spawnPart(myEnvironmentConnector, environmentPrefabIndex, to_Connect_to, myConnectors, otherCollider, DoorAnims);
+            spawnSection();
 
             foreach (Animator anim in DoorAnims)
                 anim.SetBool("isOpen", true);
@@ -46,5 +46,12 @@ namespace SupremacyHangar
             EnvironmentManager.currentEnvironment.currentGameObejct.GetComponent<RoomHandler>().previousDoor = GetComponent<Collider>();
             GetComponent<Collider>().enabled = false;
         }
+
+        public void spawnSection()
+        {
+            EnvironmentManager.spawnPart(myEnvironmentConnector, environmentPrefabIndex, to_Connect_to, myConnectors, otherCollider, DoorAnims);
+        }
+
+
     }
 }

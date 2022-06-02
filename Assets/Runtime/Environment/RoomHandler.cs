@@ -37,12 +37,15 @@ namespace SupremacyHangar
             foreach (Animator anim in myDoor)
                 anim.SetBool("isOpen", false);
 
-            StartCoroutine(unloadAssets());            
+            if(myDoor.Length > 0)
+                StartCoroutine(unloadAssets());            
         }
 
         private IEnumerator unloadAssets()
         {
-            yield return new WaitForSeconds(myDoor[0].GetCurrentAnimatorStateInfo(0).normalizedTime);
+            while (!myDoor[0].GetCurrentAnimatorClipInfo(0)[0].clip.name.Contains("Default") &&
+                !myDoor[0].GetCurrentAnimatorClipInfo(0)[0].clip.name.Contains("Default"))
+                yield return null;// new WaitForSeconds(myDoor[0].GetCurrentAnimatorStateInfo(0).normalizedTime);
             
             //set this room as current
             EnvironmentManager.setCurrentEnvironment(gameObject);

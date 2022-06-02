@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3818248878683391052}
   - component: {fileID: 3665744448813408514}
   - component: {fileID: 3098352071009949283}
+  - component: {fileID: 6923023580848345861}
   m_Layer: 0
   m_Name: Hangar_Silo
   m_TagString: Untagged
@@ -83,6 +84,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6923023580848345861
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28483269225365322}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3508993083565472134, guid: 62c4b2d10d2002d4e8e1b5f612ca5189, type: 3}
 --- !u!1 &49628530332411176
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,6 +152,7 @@ MonoBehaviour:
   joins:
   - name: ConnectionPoint_Silo_02
     position: {fileID: 3121831810054685040}
+  connectedTo: 
 --- !u!1 &699849170199048872
 GameObject:
   m_ObjectHideFlags: 0
@@ -148,6 +164,7 @@ GameObject:
   - component: {fileID: 8886317124316285063}
   - component: {fileID: 7883300192908604830}
   - component: {fileID: 7283084523185019050}
+  - component: {fileID: 2458360261271479461}
   m_Layer: 0
   m_Name: Hangar_Silo_WeaponDoor
   m_TagString: Untagged
@@ -220,6 +237,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2458360261271479461
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699849170199048872}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8099042894007900768, guid: 62c4b2d10d2002d4e8e1b5f612ca5189, type: 3}
 --- !u!1 &3558632707244827883
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,6 +262,7 @@ GameObject:
   - component: {fileID: 7942750673781498808}
   - component: {fileID: 3563110543251983264}
   - component: {fileID: 7439753577459513335}
+  - component: {fileID: 8262818969729602240}
   m_Layer: 0
   m_Name: Hangar_Silo_MechElevator
   m_TagString: Untagged
@@ -303,6 +335,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8262818969729602240
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3558632707244827883}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1269664522003345569, guid: 62c4b2d10d2002d4e8e1b5f612ca5189, type: 3}
 --- !u!1 &3644535453175021455
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,6 +360,7 @@ GameObject:
   - component: {fileID: 938543859039889517}
   - component: {fileID: 6562797821742420919}
   - component: {fileID: 2837072864323272794}
+  - component: {fileID: 4071419941602487475}
   m_Layer: 0
   m_Name: Hangar_Silo_Elevator02
   m_TagString: Untagged
@@ -386,6 +433,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4071419941602487475
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3644535453175021455}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -642060021074244929, guid: 62c4b2d10d2002d4e8e1b5f612ca5189, type: 3}
 --- !u!1 &5635617416215569096
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,6 +458,7 @@ GameObject:
   - component: {fileID: 465922863127546444}
   - component: {fileID: 2319413102756197526}
   - component: {fileID: 138446166400944356}
+  - component: {fileID: 4313295614822908580}
   m_Layer: 0
   m_Name: Hangar_Silo_Elevator01
   m_TagString: Untagged
@@ -469,6 +531,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4313295614822908580
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5635617416215569096}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 9014339649262003416, guid: 62c4b2d10d2002d4e8e1b5f612ca5189, type: 3}
 --- !u!1 &7572534970697267584
 GameObject:
   m_ObjectHideFlags: 0
