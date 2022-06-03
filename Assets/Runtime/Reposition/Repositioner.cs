@@ -4,7 +4,7 @@ using SupremacyHangar.Runtime.Environment;
 using UnityEngine;
 using Zenject;
 
-namespace SupremacyHangar.Runtime
+namespace SupremacyHangar.Runtime.Reposition
 {
     public class Repositioner : MonoBehaviour
     {
@@ -43,7 +43,6 @@ namespace SupremacyHangar.Runtime
         public void MoveToZero(RepositionObjectSignal signal)
         {
             ToggleCharacterController();
-            Debug.Log($"{name} got move", this);
             transform.position -= signal.Position;
 
             ToggleCharacterController();

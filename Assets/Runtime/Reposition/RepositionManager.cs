@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-namespace SupremacyHangar.Runtime
+namespace SupremacyHangar.Runtime.Reposition
 {
     public struct RepositionObjectSignal
     {
@@ -29,7 +29,6 @@ namespace SupremacyHangar.Runtime
     {
         public override void InstallBindings()
         {
-            Debug.Log("My bindings are installed");
             SignalBusInstaller.Install(Container);
             Container.Bind<RepositionSignalHandler>().AsSingle().NonLazy();
             Container.DeclareSignal<RepositionObjectSignal>();

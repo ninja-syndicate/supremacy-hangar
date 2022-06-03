@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SupremacyHangar
+namespace SupremacyHangar.Runtime.Silo
 {
     [RequireComponent(typeof(Animator))]
-    public class siloDoorTrigger : MonoBehaviour
+    public class SiloDoorTrigger : MonoBehaviour
     {
-        public Animator _animator;
+        private Animator _animator;
 
         private void Start()
         {

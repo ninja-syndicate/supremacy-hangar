@@ -4,7 +4,7 @@ using System;
 using UnityEngine.InputSystem;
 #endif
 
-namespace SupremacyHangar
+namespace SupremacyHangar.Runtime
 {
 	[RequireComponent(typeof(CharacterController))]
 #if ENABLE_INPUT_SYSTEM

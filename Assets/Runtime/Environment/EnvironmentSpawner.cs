@@ -8,13 +8,15 @@ namespace SupremacyHangar.Runtime.Environment
 {
     public class EnvironmentSpawner : MonoBehaviour
     {
-        private EnvironmentManager EnvironmentManager;
+        private EnvironmentManager _environmentManager;
+
+        [SerializeField]
+        private EnvironmentSpawner otherEnvironmentSpawner;
 
         [SerializeField]
         private EnvironmentPrefab myConnectors;
 
-        [SerializeField]
-        private int environmentPrefabIndex = 0;
+        public EnvironmentPrefab MyConnectors => myConnectors;
 
         [SerializeField]
         private string myEnvironmentConnector;
@@ -23,44 +25,55 @@ namespace SupremacyHangar.Runtime.Environment
         private string to_Connect_to;
 
         [SerializeField]
-        private Collider otherCollider;
+        private Animator DoorAnim;
 
-        //ToDo make single (like silo doors)
-        [SerializeField]
-        private Animator[] DoorAnims;
+        public bool entered { get; private set; } = false;
 
-        private void Awake()
-        {
-            //Doors share the same environmentPrefab
-            if (myConnectors.ColliderList.Count == 0)
-            {
-                myConnectors.ColliderList.Add(otherCollider);
-                myConnectors.ColliderList.Add(GetComponent<Collider>());
-            }
-        }
+        public bool spawned { get; set; } = false;
+
+        private void Start()
+        {}
 
         [Inject]
         public void Construct(EnvironmentManager environmentManager)
         {
-            EnvironmentManager = environmentManager;
+            myConnectors.ColliderList.Add(GetComponent<Collider>());
+            _environmentManager = environmentManager;
         }
 
         private void OnTriggerEnter(Collider other)
         {
+            entered = true;
+            if (otherEnvironmentSpawner.spawned || otherEnvironmentSpawner.entered)
+            {
+                DoorAnim.SetBool("IsOpen", true);
+                return;
+            }
             
+            //Remove silo before proceeding
+            if (_environmentManager.SiloExists)
+                _environmentManager.unloadAssets();
+
+            //Debug.Log($"{name} spawned Section ", this);
             spawnSection();
 
-            foreach (Animator anim in DoorAnims)
-                anim.SetBool("isOpen", true);
+            DoorAnim.SetBool("IsOpen", true);
+        }
 
-            otherCollider.enabled = false;
-            EnvironmentManager.currentEnvironment.currentGameObejct.GetComponent<RoomHandler>().previousDoor = myConnectors.ColliderList[1];
-            myConnectors.ColliderList[1].enabled = false;
+        private void OnTriggerExit(Collider other)
+        {
+            entered = false;
+            DoorAnim.SetBool("IsOpen", false); 
+            
+            if(!otherEnvironmentSpawner.entered && spawned)
+                _environmentManager.resetConnection();
+
         }
 
         public void spawnSection()
         {
-            EnvironmentManager.spawnPart(myEnvironmentConnector, environmentPrefabIndex, to_Connect_to, myConnectors, otherCollider, DoorAnims);
+            _environmentManager.spawnPart(myEnvironmentConnector, to_Connect_to, myConnectors, DoorAnim);
+            spawned = true;
         }
     }
 }

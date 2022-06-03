@@ -15,7 +15,7 @@ namespace SupremacyHangar.Runtime.Environment
 
         public IReadOnlyDictionary<string, Transform> Joins;
 
-        public string connectedTo;
+        public GameObject connectedTo;
 
         public List<Collider> ColliderList  = new();
 

@@ -480,9 +480,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6387240603356791370}
   - component: {fileID: 2033514671677978826}
-  - component: {fileID: 2226270308865397330}
-  - component: {fileID: 7100932792610683290}
-  - component: {fileID: 2247006108391221795}
   m_Layer: 0
   m_Name: Hallway-DoubleSilo
   m_TagString: Untagged
@@ -530,49 +527,8 @@ MonoBehaviour:
     position: {fileID: 8828754845809123080}
   - name: ConnectionPoint_Silo_02
     position: {fileID: 3541950691217371676}
-  connectedTo: 
+  connectedTo: {fileID: 0}
   ColliderList: []
---- !u!65 &2226270308865397330
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2150796274959637628}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 4.0811043, z: 7.9623575}
-  m_Center: {x: -16, y: 2, z: 0}
---- !u!65 &7100932792610683290
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2150796274959637628}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 4.0811043, z: 7.9623575}
-  m_Center: {x: 16, y: 2, z: 0}
---- !u!114 &2247006108391221795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2150796274959637628}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1f6ffa6f121d57468f169c37bbb7053, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  previousDoor: {fileID: 0}
-  myDoor:
-  - {fileID: 0}
 --- !u!1 &2309301930338142819
 GameObject:
   m_ObjectHideFlags: 0
@@ -1102,7 +1058,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 403c0bdb558e8af4cbc323f347a59210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 0}
 --- !u!1 &4008832373547702439
 GameObject:
   m_ObjectHideFlags: 0
@@ -2642,7 +2597,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 403c0bdb558e8af4cbc323f347a59210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 0}
 --- !u!1 &8182771619928034580
 GameObject:
   m_ObjectHideFlags: 0

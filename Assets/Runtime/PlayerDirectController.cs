@@ -12,7 +12,7 @@ namespace SupremacyHangar.Runtime
         [SerializeField] private Transform cameraTransform;
         [SerializeField] private Vector2 cameraVerticalRotationRange = new Vector2(-89, 89);
         [SerializeField] private float walkSpeed = 1.0f;
-        [SerializeField] private float strafeSpeed = 1.0f;
+        //[SerializeField] private float strafeSpeed = 1.0f;
         [SerializeField] private float turnSpeed = 1.0f;
         
         private PlayerInput _playerInput;

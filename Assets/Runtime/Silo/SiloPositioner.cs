@@ -4,9 +4,9 @@ using UnityEngine;
 using SupremacyHangar.Runtime.Environment;
 using Zenject;
 
-namespace SupremacyHangar
+namespace SupremacyHangar.Runtime.Silo
 {
-    public class siloSpawner : MonoBehaviour
+    public class SiloPositioner : MonoBehaviour
     {
         private EnvironmentManager _environmentManager;
 
