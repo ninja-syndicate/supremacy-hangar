@@ -16,8 +16,12 @@ namespace BuildSystem
             
         }
         
-        public void DoBuild()
+        public void DoBuild(bool developerMode = false)
         {
+            if (developerMode) {
+                BuildPlayerOptions.options |= BuildOptions.Development;
+                BuildPlayerOptions.options |= BuildOptions.AllowDebugging;
+            }
             if (!PreBuild()) return;
             if (!Build()) return;
             if (!PostBuild()) return;
