@@ -30,12 +30,16 @@ namespace BuildSystem
             DevelopmentMode = false;
         }
         
-        
         [MenuItem("Builds/Platforms/WebGL")]
         public static void BuildWebGL()
         {
             var builder = new WebGL();
-            builder.DoBuild(DevelopmentMode);
+            builder.DoBuild(GetBuildParams());
+        }
+
+        private static BuildParams GetBuildParams()
+        {
+            return BuildParams.WithValues(DevelopmentMode);
         }
     }
 }

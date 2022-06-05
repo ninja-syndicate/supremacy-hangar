@@ -24,7 +24,10 @@ Unless the intention is to spawn an interactive session, the `-batchmode` and `-
 
 Despite the documentation implying otherwise `-buildTarget` should always be specified with the target platform.
 
+The `-logFile` method should be specified on windows, as the log will not go to the console output, and must be logged to a file.
+
 The `-executeMethod` parameter should be specified last with the desired static method to execute. The method cannot take arguments and you must omit the `()` from it.
+
 
 ### Build System Methods in Project
 
@@ -36,23 +39,35 @@ If run as part of a build script, the `PreWarm()` method should be run in a smal
 
 #### Build for Platform
 
-| Method | Matching buildTarget | Output Directory/File | Description |
-|--------|----------------------|-----------------------|-------------|
-| 
+| Method     | Matching buildTarget | Output Directory/File | Description            |
+|------------|----------------------|-----------------------|------------------------|
+| BuildWebGL | WebGL                | Builds/WebGL          | Build the WebGL Player |
 
 ### Build System Parameters / Environment Variables
 
 Parameters should be specified _after_ the -executeMethod argument. 
 
-| CLI Param    | Env. Var         | Default  | Description                                                                                |
-|--------------|------------------|----------|--------------------------------------------------------------------------------------------|
-| -development | DEVELOPMENT_MODE | disabled | If enabled/specified, build the project in development mode with debugging support enabled |
-|              |                  |          |                                                                                            |
-|              |                  |          |                                                                                            |
+| CLI Param       | Env. Var           | Default      | Description                                                                                |
+|-----------------|--------------------|--------------|--------------------------------------------------------------------------------------------|
+| `-development`  | `DEVELOPMENT_MODE` | disabled     | If enabled/specified, build the project in development mode with debugging support enabled |
 
 ### Examples
 
- - Editor 2021.3.4f1, windows, installed via Hub, Prewarm for WebGL, project in "C:\My Funky Project", run pre-warm
+ * Windows Editor 2021.3.4f1 installed via Hub
+ * WebGL Target
+ * Project in "E:\Ninja\supremacy-hangar"
+ * log to log.txt in current dir
+ * Run pre-warm
 ```
-"C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe" -batchmode -quit -buildTarget WebGL -projectPath "C:\My Funky Project" -executeMethod BuildSystem.CLI.PreWarm()
+"C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe" -batchmode -quit -buildTarget WebGL -projectPath "E:\Ninja\supremacy-hangar" -logFile log.txt -executeMethod BuildSystem.CLI.PreWarm
+```
+
+* Windows Editor 2021.3.4f1 installed via Hub
+* WebGL Target
+* Project in "E:\Ninja\supremacy-hangar"
+* log to log.txt in current dir
+* Build for WebGL
+* Build a development mode player
+```
+"C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe" -batchmode -quit -buildTarget WebGL -projectPath "E:\Ninja\supremacy-hangar" -logFile log.txt -executeMethod BuildSystem.CLI.BuildWebGL -development
 ```

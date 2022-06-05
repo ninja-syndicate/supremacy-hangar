@@ -4,9 +4,9 @@ namespace BuildSystem
 {
     public class WebGL : Base
     {
-        protected override bool PreBuild()
+        protected override bool PreBuild(BuildParams parameters)
         {
-            if (!base.PreBuild()) return false;
+            if (!base.PreBuild(parameters)) return false;
             BuildPlayerOptions.target = BuildTarget.WebGL;
             BuildPlayerOptions.scenes = GatherAllScenes();
             BuildPlayerOptions.locationPathName = "Builds/WebGL";
