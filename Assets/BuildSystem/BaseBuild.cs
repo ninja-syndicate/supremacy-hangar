@@ -1,7 +1,7 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEditor.Build.Reporting;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -47,10 +47,11 @@ namespace BuildSystem
         
         protected string[] GatherAllScenes()
         {
-            int sceneCount = SceneManager.sceneCountInBuildSettings;
-            string[] sceneList = new string[sceneCount];
-            for (int i = 0; i < sceneCount; i++) sceneList[i] = SceneManager.GetSceneByBuildIndex(i).path;
-            return sceneList;
+            var enabledScenes = 
+                from editorScene in EditorBuildSettings.scenes
+                where editorScene.enabled
+                select editorScene;
+            return (from editorScene in enabledScenes select editorScene.path).ToArray();
         }
     }
 }

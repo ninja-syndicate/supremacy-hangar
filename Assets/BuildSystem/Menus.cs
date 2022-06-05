@@ -2,7 +2,7 @@ using UnityEditor;
 
 namespace BuildSystem
 {
-    public static class Statics
+    public static class Menus
     {
         private static bool DevelopmentMode = true;
 
@@ -32,11 +32,10 @@ namespace BuildSystem
         
         
         [MenuItem("Builds/Platforms/WebGL")]
-        public static void BuildWebGLTest()
+        public static void BuildWebGL()
         {
             var builder = new WebGL();
             builder.DoBuild(DevelopmentMode);
         }
-        
     }
 }
