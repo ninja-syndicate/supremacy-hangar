@@ -8,13 +8,20 @@ namespace BuildSystem
     {
         private const string ExecuteMethod = "executemethod";
 
-        private const string DevelopmentModeEnable = "-development";
+        private static readonly string[] EnvTrueValues = new[] { "true", "t", "yes", "y" };
+
+        private const string DevelopmentModeEnableCLI = "-development";
+        private const string DevelopmentModeEnableEnv = "DEVELOPMENT_MODE";
 
         public bool DevelopmentMode { get; private set; }
 
         public void UpdateFromEnvironment()
         {
-            
+            var envVars = Environment.GetEnvironmentVariables();
+            if (envVars.Contains(DevelopmentModeEnableEnv)) 
+            {
+                DevelopmentMode = StringIsTrue(envVars[DevelopmentModeEnableEnv].ToString());
+            }
         }
 
         public void UpdateFromCLI()
@@ -32,7 +39,7 @@ namespace BuildSystem
                     continue;
                 }
 
-                if (foundExecute && !foundMethod)
+                if (!foundMethod)
                 {
                     foundMethod = true;
                     continue;
@@ -54,13 +61,23 @@ namespace BuildSystem
         {
             switch (parameter.ToLowerInvariant())
             {
-                case DevelopmentModeEnable:
+                case DevelopmentModeEnableCLI:
                     DevelopmentMode = true;
                     break;
                 default:
                     Debug.LogError($"Unknown CLI Parameter! {parameter}");
                     break;
             }
+        }
+
+        private bool StringIsTrue(string value)
+        {
+            foreach (var envTrueValue in EnvTrueValues)
+            {
+                if (value.Equals(envTrueValue, StringComparison.InvariantCultureIgnoreCase)) return true;
+            }
+
+            return false;
         }
     }
 }

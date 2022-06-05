@@ -6,7 +6,6 @@ namespace BuildSystem
     {
         public static void PreWarm()
         {
-            GetBuildParams();
             Debug.Log("Prewarm Successful");
         }
         
