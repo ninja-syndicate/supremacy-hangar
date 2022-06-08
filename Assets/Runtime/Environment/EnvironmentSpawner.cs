@@ -84,14 +84,13 @@ namespace SupremacyHangar.Runtime.Environment
             if (otherEnvironmentSpawner.Entered == false && Spawned == false)
             {
                 _environmentManager.resetConnection(true);
-                //Debug.Log($".. {_environmentManager.currentEnvironment.currentGameObject}", this);
             }
             else if(Spawned)
             {
                 _environmentManager.resetConnection();
             }
         }
-        public bool directionChanged = false;
+
         public void spawnSection()
         {
             Spawned = true;
@@ -99,17 +98,14 @@ namespace SupremacyHangar.Runtime.Environment
             if (to_Connect_to.Contains("2"))
             {
                 Debug.Log("dir = forward", this);
-                directionChanged = true;
                 _environmentManager.ChangeDirection(true);
             }
             else if (Spawned)
             {
                 Debug.Log("dir = backward", this);
-                directionChanged = true;
                 _environmentManager.ChangeDirection(false);
             }
             _environmentManager.spawnPart(myEnvironmentConnector, to_Connect_to, myConnectors, DoorAnim);
-            otherEnvironmentSpawner.directionChanged = false;
         }
     }
 }

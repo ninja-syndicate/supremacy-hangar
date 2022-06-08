@@ -126,7 +126,7 @@ public class AddressablesManager : MonoInstaller
             });
     }
 
-    public void unloadMech(bool completeUnload = false)
+    public void unloadMech()
     {
         if (myMech.skin != null)
         {
@@ -137,15 +137,12 @@ public class AddressablesManager : MonoInstaller
         if (targetMech != previousMech &&
             previousMech != null)
         {
-            Addressables.ReleaseInstance(myMech.mech);
+            previousMech.ReleaseAsset();
             myMech.mech = null;
         }
         else
         {
             Destroy(myMech.mech);
         }
-
-        if(completeUnload)
-            Addressables.Release(previousMech);
     }
 }

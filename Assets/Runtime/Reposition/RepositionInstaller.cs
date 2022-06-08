@@ -25,11 +25,10 @@ namespace SupremacyHangar.Runtime.Reposition
         }
     }
 
-    public class RepositionManager : MonoInstaller<RepositionManager>
+    public class RepositionSignalInstaller : Installer<RepositionSignalInstaller>
     {
         public override void InstallBindings()
         {
-            SignalBusInstaller.Install(Container);
             Container.Bind<RepositionSignalHandler>().AsSingle().NonLazy();
             Container.DeclareSignal<RepositionObjectSignal>();
         }

@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3997116689896100181}
   - component: {fileID: 7844517864398522888}
   - component: {fileID: 9048089558331618125}
-  - component: {fileID: 8652518148379509699}
   - component: {fileID: 7776942803935884160}
   - component: {fileID: 6627807978628970109}
   - component: {fileID: -2556463046954782812}
@@ -54,7 +53,6 @@ MonoBehaviour:
   _monoInstallers:
   - {fileID: -2556463046954782812}
   - {fileID: 6627807978628970109}
-  - {fileID: 8652518148379509699}
   - {fileID: 7776942803935884160}
   - {fileID: 9048089558331618125}
   _installerPrefabs: []
@@ -103,18 +101,6 @@ MonoBehaviour:
   loadedObjects: []
   objectsToUnload: []
   newlyLoadedObjects: []
---- !u!114 &8652518148379509699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1201026633296727714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3594f04514c86a4486e1dac8b6ae7bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7776942803935884160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,7 +110,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1201026633296727714}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6984341c9173880489957ff8bc563ed8, type: 3}
+  m_Script: {fileID: 11500000, guid: 9fb67cae60cea6e4a8add013b77ae6d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &6627807978628970109

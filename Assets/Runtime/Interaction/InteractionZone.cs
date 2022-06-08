@@ -32,89 +32,48 @@ namespace SupremacyHangar.Runtime.Interaction
         [SerializeField]
         private int siloIndex = 0;
 
-        private void Awake()
+        private SignalBus _bus;
+
+        [Inject]
+        public void Constuct(SignalBus bus)
         {
-            _playerInput = FindObjectOfType<PlayerInput>();
+            _bus = bus;
+            _bus.Subscribe<InteractionSignal>(OnInteraction);
         }
 
-        public void OnEnable()
+        private void OnDisable()
         {
-            if (!BindToInputs()) return;
+            _bus.Unsubscribe<InteractionSignal>(OnInteraction);
         }
 
-        public void OnDisable()
+        private void OnInteraction(InteractionSignal signal)
         {
-            UnbindInputs();
+            if (hasCollided == false) return;
+            Debug.Log(signal.message);
+            //Check message then do corresponding task
+            fillSilo();
         }
 
-        private bool BindToInputs()
+        private void fillSilo()
         {
-            bool valid = true;
-            valid &= BindActionToFunction("Interaction", OnInteractionChange);
-
-            enabled = valid;
-            return valid;
-        }
-
-        private void UnbindInputs()
-        {
-            UnbindFromFunction("Interaction", OnInteractionChange);
-        }
-
-        private void OnInteractionChange(InputAction.CallbackContext obj)
-        {
-            if (hasCollided)
+            //Todo: accept loot boxes
+            if (_siloContent[siloIndex].type.Contains("mech"))
             {
-                //Todo: accept loot boxes
-                if (_siloContent[siloIndex].type.Contains("mech"))
-                {
-                    _addressablesManager.targetMech = _supremacyDictionary.mechDictionary[_siloContent[siloIndex].chassisId];
-                    _addressablesManager.targetSkin = _supremacyDictionary.AllSkinsDictionary[_siloContent[siloIndex].chassisId][_siloContent[siloIndex].skinId];
-                }
-                else
-                {
-                    _addressablesManager.targetMech = _supremacyDictionary.lootBoxDictionary[_siloContent[siloIndex].id];
-                    _addressablesManager.targetSkin = null;
-                }
-                spawner.spawnSilo();
+                _addressablesManager.targetMech = _supremacyDictionary.mechDictionary[_siloContent[siloIndex].chassisId];
+                _addressablesManager.targetSkin = _supremacyDictionary.AllSkinsDictionary[_siloContent[siloIndex].chassisId][_siloContent[siloIndex].skinId];
             }
-        }
-
-        private bool BindActionToFunction(string actionName, Action<InputAction.CallbackContext> callback)
-        {
-            var action = _playerInput.actions[actionName];
-            if (action == null)
+            else
             {
-                Debug.LogError($"Action player input does not have a '{actionName}' action", this);
-                return false;
+                _addressablesManager.targetMech = _supremacyDictionary.lootBoxDictionary[_siloContent[siloIndex].id];
+                _addressablesManager.targetSkin = null;
             }
-
-            action.performed += callback;
-            action.canceled += callback;
-            return true;
-        }
-
-        private void UnbindFromFunction(string actionName, Action<InputAction.CallbackContext> callback)
-        {
-            var action = _playerInput.actions[actionName];
-            if (action == null) return;
-            action.performed -= callback;
-            action.canceled -= callback;
-        }
-
-        void OnGUI()
-        {
-            if (hasCollided == true)
-            {
-                //GUI.Box(new Rect(140, Screen.height - 50, Screen.width - 300, 120), (labelText));
-            }
+            spawner.spawnSilo();
         }
 
         private void OnTriggerEnter(Collider other)
         {
             labelText.enabled = true;
             hasCollided = true;
-            //labelText = "Hit E to pick up the key!";
         }
 
         private void OnTriggerExit(Collider other)

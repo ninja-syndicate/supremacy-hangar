@@ -1,15 +1,14 @@
 using UnityEngine;
 using System;
-#if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
-#endif
+using Zenject;
+using SupremacyHangar.Runtime.Interaction;
 
 namespace SupremacyHangar.Runtime
 {
 	[RequireComponent(typeof(CharacterController))]
-#if ENABLE_INPUT_SYSTEM
 	[RequireComponent(typeof(PlayerInput))]
-#endif
+
 	public class FirstPersonController : MonoBehaviour
 	{
 		[Header("Player")]
@@ -70,7 +69,7 @@ namespace SupremacyHangar.Runtime
 		private GameObject _mainCamera;
 
 		private const float _threshold = 0.01f;
-		
+
 		private bool IsCurrentDeviceMouse => _playerInput.currentControlScheme == "KeyboardMouse";
 
 		public bool jump = false;
@@ -88,6 +87,14 @@ namespace SupremacyHangar.Runtime
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
 #endif
+
+		private InteractionSignalHandler _interactionSignalHandler;
+
+		[Inject]
+		public void Construct(InteractionSignalHandler interactionSignalHandler)
+        {
+			_interactionSignalHandler = interactionSignalHandler;
+        }
 
 		public void Awake()
 		{
@@ -159,6 +166,7 @@ namespace SupremacyHangar.Runtime
 			valid &= BindActionToFunction("Look", OnTurnChange);
 			valid &= BindActionToFunction("Jump", OnJumpChange);
 			valid &= BindActionToFunction("Sprint", OnSprintChange);
+			valid &= BindActionToFunction("Interaction", OnInteractionChange);
 
 			enabled = valid;
 			return valid;
@@ -170,6 +178,7 @@ namespace SupremacyHangar.Runtime
 			UnbindFromFunction("Look", OnTurnChange);
 			UnbindFromFunction("Jump", OnJumpChange);
 			UnbindFromFunction("Sprint", OnSprintChange);
+			UnbindFromFunction("Interaction", OnInteractionChange);
 		}
 
 		private bool BindActionToFunction(string actionName, Action<InputAction.CallbackContext> callback)
@@ -221,6 +230,11 @@ namespace SupremacyHangar.Runtime
 		public void OnSprintChange(InputAction.CallbackContext context)
 		{
 			sprint = FloatToBoolean(context.ReadValue<float>());
+		}
+		
+		private void OnInteractionChange(InputAction.CallbackContext context)
+		{
+			_interactionSignalHandler.PressurizeSilo();
 		}
 
 		private void Update()

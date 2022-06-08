@@ -242,7 +242,7 @@
                 {
                     "name": "",
                     "id": "7760e305-6b22-4b21-8c85-51384dd481d7",
-                    "path": "<XInputController>/buttonWest",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "Xbox Controller",
