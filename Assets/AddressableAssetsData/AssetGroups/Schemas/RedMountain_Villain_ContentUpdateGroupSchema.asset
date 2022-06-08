@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: RedMountain_Villain_ContentUpdateGroupSchema
   m_EditorClassIdentifier: 
   m_Group: {fileID: 11400000, guid: 198b340a81216694185f18ec21347b40, type: 2}
-  m_StaticContent: 0
+  m_StaticContent: 1

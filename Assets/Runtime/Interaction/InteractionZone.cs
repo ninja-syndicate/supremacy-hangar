@@ -66,16 +66,17 @@ namespace SupremacyHangar.Runtime.Interaction
             if (hasCollided)
             {
                 //Todo: accept loot boxes
-                //if (_siloContent[siloIndex].type.Contains("mech"))
-                //{
+                if (_siloContent[siloIndex].type.Contains("mech"))
+                {
                     _addressablesManager.targetMech = _supremacyDictionary.mechDictionary[_siloContent[siloIndex].chassisId];
                     _addressablesManager.targetSkin = _supremacyDictionary.AllSkinsDictionary[_siloContent[siloIndex].chassisId][_siloContent[siloIndex].skinId];
-                //}
-                //else
-                //{
-                //    _addressablesManager.targetMech = _supremacyDictionary.lootBoxDictionary[_siloContent[siloIndex].id];
-                //}
-                    spawner.spawnSilo();
+                }
+                else
+                {
+                    _addressablesManager.targetMech = _supremacyDictionary.lootBoxDictionary[_siloContent[siloIndex].id];
+                    _addressablesManager.targetSkin = null;
+                }
+                spawner.spawnSilo();
             }
         }
 

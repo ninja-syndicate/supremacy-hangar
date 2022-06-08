@@ -16,14 +16,6 @@ public class ColorArrayStorage : SerializableDictionary.Storage<Color[]> {}
 [Serializable]
 public class StringColorArrayDictionary : SerializableDictionary<string, Color[], ColorArrayStorage> {}
 
-[Serializable]
-public class StringAssetDictionary : SerializableDictionary<string, AssetReference> {}
-
-[Serializable]
-public class StringAssetStorage : SerializableDictionary.Storage<StringAssetDictionary> { }
-
-[Serializable]
-public class StringStringAssetDictionary : SerializableDictionary<string, StringAssetDictionary, StringAssetStorage> { }
 
 [Serializable]
 public class MyClass

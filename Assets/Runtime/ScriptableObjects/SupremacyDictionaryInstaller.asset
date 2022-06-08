@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: SupremacyDictionaryInstaller
   m_EditorClassIdentifier: 
   mechSkinDictionary:
-    lootBoxAssets: []
+    lootBoxAssets:
+    - m_AssetGUID: feda125ae455b094faa4c272c784b499
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
     lootBoxKeys:
     - Rare
     RedMountainSkins:

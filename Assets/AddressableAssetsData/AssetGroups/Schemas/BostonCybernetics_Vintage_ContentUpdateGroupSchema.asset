@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: BostonCybernetics_Vintage_ContentUpdateGroupSchema
   m_EditorClassIdentifier: 
   m_Group: {fileID: 11400000, guid: 72508fb0ad48b5d4ca210a8d29d2357a, type: 2}
-  m_StaticContent: 0
+  m_StaticContent: 1

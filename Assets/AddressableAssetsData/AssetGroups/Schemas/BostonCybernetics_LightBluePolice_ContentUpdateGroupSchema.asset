@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: BostonCybernetics_LightBluePolice_ContentUpdateGroupSchema
   m_EditorClassIdentifier: 
   m_Group: {fileID: 11400000, guid: 9d390ef1dd855854bb70ec5269fb5f3b, type: 2}
-  m_StaticContent: 0
+  m_StaticContent: 1

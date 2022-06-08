@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Zaibatsu_BlackDigi_ContentUpdateGroupSchema
   m_EditorClassIdentifier: 
   m_Group: {fileID: 11400000, guid: f6a20bbe46d2fdd468a53d26d61067ae, type: 2}
-  m_StaticContent: 0
+  m_StaticContent: 1

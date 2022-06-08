@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: RedMountain_Mech_ContentUpdateGroupSchema
   m_EditorClassIdentifier: 
   m_Group: {fileID: 11400000, guid: c258271d32cdce84cbfa28746c2d6d3d, type: 2}
-  m_StaticContent: 0
+  m_StaticContent: 1

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: BostonCybernetics_RustBucket_ContentUpdateGroupSchema
   m_EditorClassIdentifier: 
   m_Group: {fileID: 11400000, guid: a835108c576dc054c8198c9e6a65c3d6, type: 2}
-  m_StaticContent: 0
+  m_StaticContent: 1

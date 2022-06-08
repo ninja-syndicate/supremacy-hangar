@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Zaibatsu_Ukraine_ContentUpdateGroupSchema
   m_EditorClassIdentifier: 
   m_Group: {fileID: 11400000, guid: b94a8944957372147a6dabcbb47d8f82, type: 2}
-  m_StaticContent: 0
+  m_StaticContent: 1

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: RedMountain_Beetle_ContentUpdateGroupSchema
   m_EditorClassIdentifier: 
   m_Group: {fileID: 11400000, guid: 25efa27da73603c40a3a3d30e87e7c53, type: 2}
-  m_StaticContent: 0
+  m_StaticContent: 1

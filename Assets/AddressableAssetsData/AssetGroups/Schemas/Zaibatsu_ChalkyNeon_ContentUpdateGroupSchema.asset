@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Zaibatsu_ChalkyNeon_ContentUpdateGroupSchema
   m_EditorClassIdentifier: 
   m_Group: {fileID: 11400000, guid: 555f61c9d1c62c94999fc9a8c2178976, type: 2}
-  m_StaticContent: 0
+  m_StaticContent: 1

@@ -23,7 +23,7 @@ public class BridgeScript : MonoInstaller
         string obj = "{faction: 'factionID'," +
             "silos:[" +
             "{type: 'mech',id: 'mech/assetID',chassisId: 'Zaibatsu', skinID: 'CherryBlossom' }, " +
-            "{type: 'lootBox', id: 'Rare', expires: 'iso8601timestamp'}," +
+            //"{type: 'lootBox', id: 'Rare', expires: 'iso8601timestamp'}," +
             "{type: 'mech',id: 'mech/assetID',chassisId: 'RedMountain', skinID: 'Evo' }, " +
             "{type: 'mech',id: 'mech/assetID',chassisId: 'BostonCybernetics', skinID: 'Cyber' }, " +
             "{type: 'lootBox', id: 'lootbot/assetID', expires: 'iso8601timestamp'}" +

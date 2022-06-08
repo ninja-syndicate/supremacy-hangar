@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: RedMountain_Nautical_ContentUpdateGroupSchema
   m_EditorClassIdentifier: 
   m_Group: {fileID: 11400000, guid: 3156d3f6cf233e14c8e29d49d9500fd3, type: 2}
-  m_StaticContent: 0
+  m_StaticContent: 1

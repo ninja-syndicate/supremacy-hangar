@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Zaibatsu_WhiteGold_ContentUpdateGroupSchema
   m_EditorClassIdentifier: 
   m_Group: {fileID: 11400000, guid: 933c85dff888e7442bb1492b1f27dc5c, type: 2}
-  m_StaticContent: 0
+  m_StaticContent: 1

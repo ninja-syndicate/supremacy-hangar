@@ -112,6 +112,7 @@ public class AddressablesManager : MonoInstaller
                 targetMech.InstantiateAsync(spawnLocation.position, spawnLocation.rotation, spawnLocation).Completed += (mech) =>
                 {
                     myMech.mech = mech.Result;
+                    if (targetSkin == null) return;
                     loadSkinReference(
                         (skin) =>//22.77
                         {
@@ -136,7 +137,7 @@ public class AddressablesManager : MonoInstaller
         if (targetMech != previousMech &&
             previousMech != null)
         {
-            Addressables.Release(myMech.mech);
+            Addressables.ReleaseInstance(myMech.mech);
             myMech.mech = null;
         }
         else

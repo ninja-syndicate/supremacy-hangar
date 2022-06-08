@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: BostonCybernetics_WhiteBlue_ContentUpdateGroupSchema
   m_EditorClassIdentifier: 
   m_Group: {fileID: 11400000, guid: 79e97d75166f0ba429e6f8e8aeda0269, type: 2}
-  m_StaticContent: 0
+  m_StaticContent: 1

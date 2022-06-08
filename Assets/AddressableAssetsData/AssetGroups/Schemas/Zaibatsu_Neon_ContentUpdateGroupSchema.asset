@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Zaibatsu_Neon_ContentUpdateGroupSchema
   m_EditorClassIdentifier: 
   m_Group: {fileID: 11400000, guid: c5328cd3510b71d4fae2b8d5f5f60ccd, type: 2}
-  m_StaticContent: 0
+  m_StaticContent: 1

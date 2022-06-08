@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: RedMountain_Irradiated_ContentUpdateGroupSchema
   m_EditorClassIdentifier: 
   m_Group: {fileID: 11400000, guid: 1b766387f291ed945934eb7866cd2bff, type: 2}
-  m_StaticContent: 0
+  m_StaticContent: 1

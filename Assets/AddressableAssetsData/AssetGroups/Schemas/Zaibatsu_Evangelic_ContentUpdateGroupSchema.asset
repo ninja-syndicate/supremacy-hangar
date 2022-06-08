@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Zaibatsu_Evangelic_ContentUpdateGroupSchema
   m_EditorClassIdentifier: 
   m_Group: {fileID: 11400000, guid: 5492ff091707c1540b7ee6b7ad4257c1, type: 2}
-  m_StaticContent: 0
+  m_StaticContent: 1

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: BostonCybernetics_Ukraine_ContentUpdateGroupSchema
   m_EditorClassIdentifier: 
   m_Group: {fileID: 11400000, guid: e8d3d33f213466941a6ed952983fcc41, type: 2}
-  m_StaticContent: 0
+  m_StaticContent: 1

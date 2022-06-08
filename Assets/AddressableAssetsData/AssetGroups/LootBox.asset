@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
   m_Name: LootBox
   m_EditorClassIdentifier: 
-  m_GroupName: New Group
+  m_GroupName: LootBox
   m_Data:
     m_SerializedData: []
   m_GUID: c69d0de4e306b2a43b300841ed4f2ae5

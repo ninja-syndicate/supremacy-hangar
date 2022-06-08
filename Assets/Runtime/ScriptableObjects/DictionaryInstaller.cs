@@ -2,6 +2,7 @@ using UnityEngine;
 using Zenject;
 using UnityEngine.AddressableAssets;
 using System;
+using SupremacyHangar.Runtime.Dictionaries;
 
 namespace SupremacyHangar.Runtime.Scriptable
 {

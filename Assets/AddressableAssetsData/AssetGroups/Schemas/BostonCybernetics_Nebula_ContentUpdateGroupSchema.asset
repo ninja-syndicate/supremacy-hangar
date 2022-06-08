@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: BostonCybernetics_Nebula_ContentUpdateGroupSchema
   m_EditorClassIdentifier: 
   m_Group: {fileID: 11400000, guid: c9827da824a54fe408cef148c538034d, type: 2}
-  m_StaticContent: 0
+  m_StaticContent: 1
