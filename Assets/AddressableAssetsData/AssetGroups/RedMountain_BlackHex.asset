@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: RedMountain_BlackHex
+  m_EditorClassIdentifier: 
+  m_GroupName: RedMountain_BlackHex
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 958f9f849029c564cbdecfe905600492
+  m_SerializeEntries:
+  - m_GUID: ce3354c03adad9e42944dfa8d15a1088
+    m_Address: BlackHex
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 48156cce7c96b0642b6284c691b58aff, type: 2}
+    - {fileID: 11400000, guid: 2f7b9e29e57380e4f88f12c12fd542ed, type: 2}

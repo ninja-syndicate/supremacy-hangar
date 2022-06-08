@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691a633fee507c468fbb61f649f459a, type: 3}
+  m_Name: Nebula
+  m_EditorClassIdentifier: 
+  mats:
+  - {fileID: 2100000, guid: 068a8492df7948748a2d589a827667cb, type: 2}
+  - {fileID: 2100000, guid: 3bd6795af34c9614488e56845ac82cb5, type: 2}
+  - {fileID: 2100000, guid: 0cc7fda10747aed4b80817a65ae488d4, type: 2}
+  - {fileID: 2100000, guid: 5bf1ec68ae25f1a4ba2c7edf7638353a, type: 2}

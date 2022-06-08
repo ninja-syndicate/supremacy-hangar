@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: BostonCybernetics_LightBluePolice
+  m_EditorClassIdentifier: 
+  m_GroupName: BostonCybernetics_LightBluePolice
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 5e388ca034530954f95dd4726cb9276e
+  m_SerializeEntries:
+  - m_GUID: a50aed933830c3c439477a26af0b1ee7
+    m_Address: LightBluePolice
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 0b1c4bf3dac618f4c8f95156ce04efcb, type: 2}
+    - {fileID: 11400000, guid: 5810347f2b6e0e2479245a6b4f4b6c5c, type: 2}

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Zaibatsu_Gumban
+  m_EditorClassIdentifier: 
+  m_GroupName: Zaibatsu_Gumban
+  m_Data:
+    m_SerializedData: []
+  m_GUID: a0c581a0746ddf24587fd9aa5f99efc7
+  m_SerializeEntries:
+  - m_GUID: 873a0bb1945456346b4eedf249f9bc9a
+    m_Address: Gumban
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 970f4892d065e684ead09202ef8fd516, type: 2}
+    - {fileID: 11400000, guid: 654f482058359c445a95ac39bc13e7a1, type: 2}

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691a633fee507c468fbb61f649f459a, type: 3}
+  m_Name: Destroyer
+  m_EditorClassIdentifier: Assembly-CSharp::MechSkin
+  mats:
+  - {fileID: 2100000, guid: d96d56aa6c51a5d498c6b879b607c932, type: 2}
+  - {fileID: 2100000, guid: 42cf037fb90d3d348ade014e4dc76bde, type: 2}
+  - {fileID: 2100000, guid: 91457525debe412449ef5bd16e906949, type: 2}
+  - {fileID: 2100000, guid: 8c81a18650bc39c4d9fdbeafa7154365, type: 2}
+  - {fileID: 2100000, guid: 27873f0609471194899c7adc82c53177, type: 2}
+  - {fileID: 2100000, guid: 3c0c6c9192def194583d8865b192911c, type: 2}

@@ -610,7 +610,7 @@ PrefabInstance:
     - target: {fileID: 5955572307729721473, guid: 5331a0cd36225ab48b8f27bc1060fa10,
         type: 3}
       propertyPath: SprintSpeed
-      value: 9
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5955572307729721473, guid: 5331a0cd36225ab48b8f27bc1060fa10,
         type: 3}
@@ -620,7 +620,7 @@ PrefabInstance:
     - target: {fileID: 5955572307729721473, guid: 5331a0cd36225ab48b8f27bc1060fa10,
         type: 3}
       propertyPath: SpeedChangeRate
-      value: 10
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 5955572307729721473, guid: 5331a0cd36225ab48b8f27bc1060fa10,
         type: 3}

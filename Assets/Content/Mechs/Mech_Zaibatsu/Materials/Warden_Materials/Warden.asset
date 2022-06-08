@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691a633fee507c468fbb61f649f459a, type: 3}
+  m_Name: Warden
+  m_EditorClassIdentifier: Assembly-CSharp::MechSkin
+  mats:
+  - {fileID: 2100000, guid: 810200cf7aeb1a94e997f522606f18b6, type: 2}
+  - {fileID: 2100000, guid: fb60aafaf641b154e8a0c1283f26846b, type: 2}
+  - {fileID: 2100000, guid: d695fe440c7ae624a8379b81a363abad, type: 2}
+  - {fileID: 2100000, guid: 732252d7a5fed524a881c3c71f9e2b30, type: 2}
+  - {fileID: 2100000, guid: d97de25780198e144b47f4fe1dc18b61, type: 2}
+  - {fileID: 2100000, guid: 744583c770234fa478b491b99b5e8d1e, type: 2}

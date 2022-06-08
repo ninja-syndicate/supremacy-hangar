@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691a633fee507c468fbb61f649f459a, type: 3}
+  m_Name: DynamicYellow
+  m_EditorClassIdentifier: 
+  mats:
+  - {fileID: 2100000, guid: f9f131a944051b849af8cb81ddcbfccf, type: 2}
+  - {fileID: 2100000, guid: e2c96c8595f7be345a5d2af2ae33fd54, type: 2}
+  - {fileID: 2100000, guid: 77efbc85e4197b94684432c3c0d89096, type: 2}
+  - {fileID: 2100000, guid: 0cac4e2faa1412f4cace363347ba58d6, type: 2}

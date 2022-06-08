@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: RedMountain_Beetle
+  m_EditorClassIdentifier: 
+  m_GroupName: RedMountain_Beetle
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 9bc91be031766dc4a9910982a2ecbe77
+  m_SerializeEntries:
+  - m_GUID: 04bf9f0f980840147b6e36b85e5f2ad7
+    m_Address: Beetle
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - RedMountain_Beetle
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 67c7ae0bda7c99d4a86ddf25a02e38e0, type: 2}
+    - {fileID: 11400000, guid: 21c0328b982fd0e458b409ad32bafef7, type: 2}

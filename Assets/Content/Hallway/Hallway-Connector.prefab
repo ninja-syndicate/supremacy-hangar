@@ -44,7 +44,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.83, y: 3.5300083, z: 8}
+  m_Size: {x: 2.04, y: 3.5300083, z: 8}
   m_Center: {x: 0.51019996, y: 1.2650042, z: 0.015433311}
 --- !u!114 &5065545422582821971
 MonoBehaviour:
@@ -60,7 +60,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   otherEnvironmentSpawner: {fileID: 2193748051335723608}
   myConnectors: {fileID: 1835963907996916371}
-  environmentPrefabIndex: 0
   myEnvironmentConnector: ConnectionPoint_HallwayConnector_02
   to_Connect_to: ConnectionPoint_HallwayConnector_01
   DoorAnim: {fileID: 9124716031259521551}
@@ -108,7 +107,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.83, y: 3.5508947, z: 8}
+  m_Size: {x: 2.04, y: 3.5508947, z: 8}
   m_Center: {x: -0.52349347, y: 1.2754474, z: 0.015433311}
 --- !u!114 &2193748051335723608
 MonoBehaviour:
@@ -124,7 +123,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   otherEnvironmentSpawner: {fileID: 5065545422582821971}
   myConnectors: {fileID: 1835963907996916371}
-  environmentPrefabIndex: 0
   myEnvironmentConnector: ConnectionPoint_HallwayConnector_01
   to_Connect_to: ConnectionPoint_HallwayConnector_02
   DoorAnim: {fileID: 9124716031259521551}
@@ -497,6 +495,7 @@ MonoBehaviour:
   - {fileID: 5065545422582821971}
   - {fileID: 2193748051335723608}
   myConnections: {fileID: 1835963907996916371}
+  myRoot: {fileID: 2175959993548932280}
 --- !u!1 &7755842107874857780
 GameObject:
   m_ObjectHideFlags: 0

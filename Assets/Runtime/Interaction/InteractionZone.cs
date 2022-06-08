@@ -1,8 +1,10 @@
+using SupremacyHangar.Runtime.Scriptable;
 using SupremacyHangar.Runtime.Silo;
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using Zenject;
 
 namespace SupremacyHangar.Runtime.Interaction
 {
@@ -17,6 +19,18 @@ namespace SupremacyHangar.Runtime.Interaction
         private SiloPositioner spawner;
 
         private PlayerInput _playerInput;
+
+        [Inject]
+        private AddressablesManager _addressablesManager;
+        
+        [Inject]
+        private SiloContent[] _siloContent;
+
+        [Inject]
+        private SupremacyDictionary _supremacyDictionary;
+
+        [SerializeField]
+        private int siloIndex = 0;
 
         private void Awake()
         {
@@ -50,7 +64,19 @@ namespace SupremacyHangar.Runtime.Interaction
         private void OnInteractionChange(InputAction.CallbackContext obj)
         {
             if (hasCollided)
-                spawner.spawnSilo();
+            {
+                //Todo: accept loot boxes
+                //if (_siloContent[siloIndex].type.Contains("mech"))
+                //{
+                    _addressablesManager.targetMech = _supremacyDictionary.mechDictionary[_siloContent[siloIndex].chassisId];
+                    _addressablesManager.targetSkin = _supremacyDictionary.AllSkinsDictionary[_siloContent[siloIndex].chassisId][_siloContent[siloIndex].skinId];
+                //}
+                //else
+                //{
+                //    _addressablesManager.targetMech = _supremacyDictionary.lootBoxDictionary[_siloContent[siloIndex].id];
+                //}
+                    spawner.spawnSilo();
+            }
         }
 
         private bool BindActionToFunction(string actionName, Action<InputAction.CallbackContext> callback)

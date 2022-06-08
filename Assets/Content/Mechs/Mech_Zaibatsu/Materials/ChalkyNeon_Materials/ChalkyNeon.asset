@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691a633fee507c468fbb61f649f459a, type: 3}
+  m_Name: ChalkyNeon
+  m_EditorClassIdentifier: Assembly-CSharp::MechSkin
+  mats:
+  - {fileID: 2100000, guid: 3d513fee5b9af5f43a91a2ef9966cd67, type: 2}
+  - {fileID: 2100000, guid: 2ba713b6a4f82024b8c31b9bc78e1cf9, type: 2}
+  - {fileID: 2100000, guid: fafe6219958af29448ccdf293accd8f9, type: 2}
+  - {fileID: 2100000, guid: dd4d15b2fe3c030429167e6d5b1dc7cf, type: 2}
+  - {fileID: 2100000, guid: 97d0467e8b59d8e4295e487125404e92, type: 2}
+  - {fileID: 2100000, guid: 58f48a44390dcca4692e8bc5bfce18cd, type: 2}

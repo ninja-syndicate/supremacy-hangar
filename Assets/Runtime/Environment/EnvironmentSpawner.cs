@@ -27,12 +27,9 @@ namespace SupremacyHangar.Runtime.Environment
         [SerializeField]
         private Animator DoorAnim;
 
-        public bool entered { get; private set; } = false;
+        public bool Entered { get; private set; } = false;
 
-        public bool spawned { get; set; } = false;
-
-        private void Start()
-        {}
+        public bool Spawned = false;
 
         [Inject]
         public void Construct(EnvironmentManager environmentManager)
@@ -41,12 +38,29 @@ namespace SupremacyHangar.Runtime.Environment
             _environmentManager = environmentManager;
         }
 
+        private void EnableDoors()
+        {
+            Debug.Log("Enable Doors", this);
+            _environmentManager.toggleDoor(MyConnectors);
+        }
+
+        private void DisableDoors()
+        {
+            Debug.Log("Disable Doors", this);
+            _environmentManager.toggleDoor(MyConnectors);
+        }
+
         private void OnTriggerEnter(Collider other)
         {
-            entered = true;
-            if (otherEnvironmentSpawner.spawned || otherEnvironmentSpawner.entered)
+            Entered = true;
+            if (otherEnvironmentSpawner.Spawned || otherEnvironmentSpawner.Entered)
             {
                 DoorAnim.SetBool("IsOpen", true);
+                if (Spawned)
+                {
+                    _environmentManager.resetConnection();
+                    Debug.Log($"..2 {_environmentManager.currentEnvironment.currentGameObject}", this);
+                }
                 return;
             }
             
@@ -57,23 +71,45 @@ namespace SupremacyHangar.Runtime.Environment
             //Debug.Log($"{name} spawned Section ", this);
             spawnSection();
 
+            //_doorSignalHandler.DoorOpen(myConnectors.gameObject);
             DoorAnim.SetBool("IsOpen", true);
         }
 
         private void OnTriggerExit(Collider other)
         {
-            entered = false;
-            DoorAnim.SetBool("IsOpen", false); 
-            
-            if(!otherEnvironmentSpawner.entered && spawned)
+            Entered = false;
+            if(!otherEnvironmentSpawner.Entered)
+                DoorAnim.SetBool("IsOpen", false);
+
+            if (otherEnvironmentSpawner.Entered == false && Spawned == false)
+            {
+                _environmentManager.resetConnection(true);
+                //Debug.Log($".. {_environmentManager.currentEnvironment.currentGameObject}", this);
+            }
+            else if(Spawned)
+            {
                 _environmentManager.resetConnection();
-
+            }
         }
-
+        public bool directionChanged = false;
         public void spawnSection()
         {
+            Spawned = true;
+
+            if (to_Connect_to.Contains("2"))
+            {
+                Debug.Log("dir = forward", this);
+                directionChanged = true;
+                _environmentManager.ChangeDirection(true);
+            }
+            else if (Spawned)
+            {
+                Debug.Log("dir = backward", this);
+                directionChanged = true;
+                _environmentManager.ChangeDirection(false);
+            }
             _environmentManager.spawnPart(myEnvironmentConnector, to_Connect_to, myConnectors, DoorAnim);
-            spawned = true;
+            otherEnvironmentSpawner.directionChanged = false;
         }
     }
 }

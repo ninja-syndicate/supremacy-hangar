@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691a633fee507c468fbb61f649f459a, type: 3}
+  m_Name: BlackDigi
+  m_EditorClassIdentifier: 
+  mats:
+  - {fileID: 2100000, guid: 884827e874cb15247bffec8cdf84e51e, type: 2}
+  - {fileID: 2100000, guid: 1ad20c4095c9ad64f9bd6e5e4b2119b3, type: 2}
+  - {fileID: 2100000, guid: a3bfe8cae0ca41a4e9fc98950300a0e3, type: 2}
+  - {fileID: 2100000, guid: 2a9e494e81b1245438aaa7bee2408d80, type: 2}
+  - {fileID: 2100000, guid: eb0b2c896f882bb4a90a55c68793b8e4, type: 2}
+  - {fileID: 2100000, guid: c00d542c3d4a5f740ac4347b258d654a, type: 2}
