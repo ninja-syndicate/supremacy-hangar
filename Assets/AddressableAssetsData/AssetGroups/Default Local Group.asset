@@ -29,6 +29,14 @@ MonoBehaviour:
     m_Address: Hallway-Connector
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 6c3809ce056848149ba60e4a313aa781
+    m_Address: Hangar_Silo_02_Greybox.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9a955d9e8bbecf4449c699e011487558
+    m_Address: Hangar_Silo_01_Greybox.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
   m_SchemaSet:

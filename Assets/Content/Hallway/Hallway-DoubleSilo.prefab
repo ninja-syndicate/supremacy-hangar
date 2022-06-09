@@ -542,6 +542,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabName: Hallway-DoubleSilo
+  myAssetRef:
+    m_AssetGUID: 9320372745f3f45e4971cba976134fb7
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
   joins:
   - name: ConnectionPoint_HallwayConnector_01
     position: {fileID: 3408442014351228977}

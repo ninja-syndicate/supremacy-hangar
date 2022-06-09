@@ -39,17 +39,17 @@ namespace SupremacyHangar.Runtime.Silo
             //siloWindowAnim.SetBool("open", false);
         }
 
-        public void spawnSilo()
+        public void SpawnSilo()
         {
             //Prevent same silo spawning again
             if (SiloSpawned) return;
             SiloSpawned = true;
 
             //Clean-up existing silo (Only one silo at a time)
-            _environmentManager.unloadAssets();
+            _environmentManager.UnloadAssets();
 
             //Spawn silo
-            _environmentManager.spawnSilo(myEnvironmentConnector, 0, this);
+            _environmentManager.SpawnSilo(myEnvironmentConnector, 0, this);
 
             //unlock doors
             siloDoorTrigger.enabled = true;

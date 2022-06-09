@@ -1,15 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System;
 using Zenject;
+using SupremacyHangar.Runtime.ContentLoader;
 
 namespace SupremacyHangar.Runtime.Silo
 {
     public class SiloFiller : MonoBehaviour
     {
         [SerializeField]
-        private Transform MechSpawner;
+        private Transform mechSpawner;
 
         AddressablesManager _addressablesManager;
 
@@ -21,7 +19,7 @@ namespace SupremacyHangar.Runtime.Silo
 
         private void Start()
         {
-            _addressablesManager.spawnMech(MechSpawner);
+            _addressablesManager.SpawnMech(mechSpawner);
         }
     }
 }

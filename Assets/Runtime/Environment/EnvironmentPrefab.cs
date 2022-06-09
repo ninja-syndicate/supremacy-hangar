@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.UIElements;
 
 namespace SupremacyHangar.Runtime.Environment
@@ -8,6 +9,10 @@ namespace SupremacyHangar.Runtime.Environment
     public class EnvironmentPrefab : MonoBehaviour
     {
         [SerializeField] private string prefabName;
+     
+        [SerializeField] private AssetReference myAssetRef;
+
+        public AssetReference MyAssetRef => myAssetRef;
         
         [SerializeField] private List<Joiner> joins = new();
 
@@ -23,10 +28,10 @@ namespace SupremacyHangar.Runtime.Environment
 
         public void Awake()
         {
-            initialize();
+            Initialize();
         }
 
-        public void initialize()
+        public void Initialize()
         {
             foreach (var join in joins)
             {

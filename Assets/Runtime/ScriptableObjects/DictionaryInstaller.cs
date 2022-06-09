@@ -4,7 +4,7 @@ using UnityEngine.AddressableAssets;
 using System;
 using SupremacyHangar.Runtime.Dictionaries;
 
-namespace SupremacyHangar.Runtime.Scriptable
+namespace SupremacyHangar.Runtime.ScriptableObjects
 {
 
     [CreateAssetMenu(fileName = "DictionaryInstaller", menuName = "Installers/DictionaryInstaller")]
@@ -16,7 +16,6 @@ namespace SupremacyHangar.Runtime.Scriptable
         public override void InstallBindings()
         {
             mechSkinDictionary.Initialize();
-            Debug.Log("init " + mechSkinDictionary.mechDictionary.Keys.Count);
             // Create one definitive instance of supremacyDictionary and re-use that for every class that asks for it
             Container.Bind<SupremacyDictionary>().FromInstance(mechSkinDictionary).AsSingle().NonLazy();
         }
@@ -27,41 +26,47 @@ namespace SupremacyHangar.Runtime.Scriptable
     {
         public void Initialize()
         {
-            RedMountainSkinDictionary.Clear();
-            BostonCyberneticsSkinDictionary.Clear();
-            ZaibatsuSkinDictionary.Clear();
-            mechDictionary.Clear();
+            redMountainSkinDictionary.Clear();
+            bostonCyberneticsSkinDictionary.Clear();
+            zaibatsuSkinDictionary.Clear();
+            MechDictionary.Clear();
             AllSkinsDictionary.Clear();
-            lootBoxDictionary.Clear();
+            LootBoxDictionary.Clear();
+            FactionDictionary.Clear();
             
             for (int i = 0; i < lootBoxKeys.Length; i++)
             {
-                lootBoxDictionary.Add(lootBoxKeys[i], lootBoxAssets[i]);
+                LootBoxDictionary.Add(lootBoxKeys[i], lootBoxAssets[i]);
             }
 
-            for (int i = 0; i < RedMountainSkinKeys.Length; i++)
+            for (int i = 0; i < redMountainSkinKeys.Length; i++)
             {
-                RedMountainSkinDictionary.Add(RedMountainSkinKeys[i], RedMountainSkins[i]);
+                redMountainSkinDictionary.Add(redMountainSkinKeys[i], redMountainSkins[i]);
             }
 
-            for (int i = 0; i < BostonCyberneticsSkinKeys.Length; i++)
+            for (int i = 0; i < bostonCyberneticsSkinKeys.Length; i++)
             {
-                BostonCyberneticsSkinDictionary.Add(BostonCyberneticsSkinKeys[i], BostonCyberneticsSkins[i]);
+                bostonCyberneticsSkinDictionary.Add(bostonCyberneticsSkinKeys[i], bostonCyberneticsSkins[i]);
             }
 
-            for (int i = 0; i < ZaibatsuSkinKeys.Length; i++)
+            for (int i = 0; i < zaibatsuSkinKeys.Length; i++)
             {
-                ZaibatsuSkinDictionary.Add(ZaibatsuSkinKeys[i], ZaibatsuSkins[i]);
+                zaibatsuSkinDictionary.Add(zaibatsuSkinKeys[i], zaibatsuSkins[i]);
             }
 
-            for (int i = 0; i < MechKeys.Length; i++)
+            for (int i = 0; i < mechKeys.Length; i++)
             {
-                mechDictionary.Add(MechKeys[i], MechList[i]);
+                MechDictionary.Add(mechKeys[i], mechList[i]);
             }
 
-            AllSkinsDictionary.Add("BostonCybernetics", BostonCyberneticsSkinDictionary);
-            AllSkinsDictionary.Add("RedMountain", RedMountainSkinDictionary);
-            AllSkinsDictionary.Add("Zaibatsu", ZaibatsuSkinDictionary);
+            for (int i = 0; i < factionKeys.Length; i++)
+            {
+                FactionDictionary.Add(factionKeys[i], factionGraphList[i]);
+            }
+
+            AllSkinsDictionary.Add("BostonCybernetics", bostonCyberneticsSkinDictionary);
+            AllSkinsDictionary.Add("RedMountain", redMountainSkinDictionary);
+            AllSkinsDictionary.Add("Zaibatsu", zaibatsuSkinDictionary);
         }
     }
 
@@ -75,42 +80,45 @@ namespace SupremacyHangar.Runtime.Scriptable
         protected string[] lootBoxKeys;
 
         [SerializeField]
-        protected AssetReference[] RedMountainSkins;
+        protected AssetReference[] redMountainSkins;
 
         [SerializeField]
-        protected string[] RedMountainSkinKeys;
+        protected string[] redMountainSkinKeys;
 
         [SerializeField]
-        protected AssetReference[] BostonCyberneticsSkins;
+        protected AssetReference[] bostonCyberneticsSkins;
 
         [SerializeField]
-        protected string[] BostonCyberneticsSkinKeys;
+        protected string[] bostonCyberneticsSkinKeys;
 
         [SerializeField]
-        protected AssetReference[] ZaibatsuSkins;
+        protected AssetReference[] zaibatsuSkins;
 
         [SerializeField]
-        protected string[] ZaibatsuSkinKeys;
+        protected string[] zaibatsuSkinKeys;
 
         [SerializeField]
-        protected AssetReference[] MechList;
+        protected AssetReferenceGameObject[] mechList;
 
         [SerializeField]
-        protected string[] MechKeys;
+        protected string[] mechKeys;
 
-        protected StringAssetDictionary RedMountainSkinDictionary = new StringAssetDictionary();
-        protected StringAssetDictionary BostonCyberneticsSkinDictionary = new StringAssetDictionary();
-        protected StringAssetDictionary ZaibatsuSkinDictionary = new StringAssetDictionary();
+        [SerializeField]
+        protected AssetReference[] factionGraphList;
 
-        public StringAssetDictionary mechDictionary { get; protected set; } = new StringAssetDictionary();
+        [SerializeField]
+        protected string[] factionKeys;
 
-        public StringAssetDictionary lootBoxDictionary { get; protected set; } = new StringAssetDictionary();
+        protected StringAssetDictionary redMountainSkinDictionary = new StringAssetDictionary();
+        protected StringAssetDictionary bostonCyberneticsSkinDictionary = new StringAssetDictionary();
+        protected StringAssetDictionary zaibatsuSkinDictionary = new StringAssetDictionary();
+
+        public StringAssetDictionary MechDictionary { get; protected set; } = new StringAssetDictionary();
+
+        public StringAssetDictionary LootBoxDictionary { get; protected set; } = new StringAssetDictionary();
 
         public StringStringAssetDictionary AllSkinsDictionary { get; protected set; } = new StringStringAssetDictionary();
 
-
-
-
-
+        public StringAssetDictionary FactionDictionary { get; protected set; } = new StringAssetDictionary();
     }
 }

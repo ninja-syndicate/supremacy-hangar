@@ -1,8 +1,6 @@
 using SupremacyHangar.Runtime.Environment;
-using SupremacyHangar.Runtime.Scriptable;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using SupremacyHangar.Runtime.ScriptableObjects;
+using SupremacyHangar.Runtime.Types;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -34,11 +32,11 @@ namespace SupremacyHangar.Runtime.Silo
             _siloContent = siloContents;
 
             if (_siloContent[siloIndex].type == null)
-                setEmptyInfoDisplay();
+                SetEmptyInfoDisplay();
             else if (_siloContent[siloIndex].type.Contains("mech"))
-                setMechInfoDisplay();
+                SetMechInfoDisplay();
             else if (_siloContent[siloIndex].type.Contains("loot"))
-                setLootBoxInfoDisplay();
+                SetLootBoxInfoDisplay();
             else
                 Debug.LogError($"Unknown silo silo type of {_siloContent[siloIndex].type}.", this);
         }
@@ -82,7 +80,7 @@ namespace SupremacyHangar.Runtime.Silo
         //    return temp;
         //}
 
-        private void setEmptyInfoDisplay()
+        private void SetEmptyInfoDisplay()
         {
             _siloNumber.text = "" + (_environmentManager.SiloOffset + siloIndex + 1);
             mechDisplayLayout[0].text = "Empty";
@@ -91,7 +89,7 @@ namespace SupremacyHangar.Runtime.Silo
         }
 
         //ToDo: convert to key values not GUIDs & working timer and enable layout after its set
-        private void setMechInfoDisplay()
+        private void SetMechInfoDisplay()
         {
             _siloNumber.text = "" + (_environmentManager.SiloOffset + siloIndex + 1);
             mechDisplayLayout[0].text = _siloContent[siloIndex].type;
@@ -99,7 +97,7 @@ namespace SupremacyHangar.Runtime.Silo
             mechDisplayLayout[2].text = _siloContent[siloIndex].skinId;
         }
 
-        private void setLootBoxInfoDisplay()
+        private void SetLootBoxInfoDisplay()
         {
             _siloNumber.text = "" + (_environmentManager.SiloOffset + siloIndex + 1);
             mechDisplayLayout[0].text = _siloContent[siloIndex].type;

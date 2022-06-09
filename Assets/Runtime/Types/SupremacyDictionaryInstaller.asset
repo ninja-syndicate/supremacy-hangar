@@ -20,7 +20,7 @@ MonoBehaviour:
       m_EditorAssetChanged: 0
     lootBoxKeys:
     - Rare
-    RedMountainSkins:
+    redMountainSkins:
     - m_AssetGUID: 5a65575b09e70f4439410c28b7bdebf6
       m_SubObjectName: 
       m_SubObjectType: 
@@ -85,14 +85,14 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    RedMountainSkinKeys:
+    redMountainSkinKeys:
     - BasicBlackRed
     - BasicWhiteRed
     - Beetle
     - BlackHex
     - Desert
     - Evo
-    BostonCyberneticsSkins:
+    bostonCyberneticsSkins:
     - m_AssetGUID: 775a15d124985f54f8e1cf4593a4b872
       m_SubObjectName: 
       m_SubObjectType: 
@@ -153,12 +153,12 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    BostonCyberneticsSkinKeys:
+    bostonCyberneticsSkinKeys:
     - BioHazard
     - Crystalised
     - Cyber
     - Dune
-    ZaibatsuSkins:
+    zaibatsuSkins:
     - m_AssetGUID: eb59005045be8104db4485442543d3a2
       m_SubObjectName: 
       m_SubObjectType: 
@@ -215,12 +215,12 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    ZaibatsuSkinKeys:
+    zaibatsuSkinKeys:
     - BlackDigi
     - ChalkyNeon
     - CherryBlossom
     - Destroyer
-    MechList:
+    mechList:
     - m_AssetGUID: be1f8bf55bb63424a864f296f20b400e
       m_SubObjectName: 
       m_SubObjectType: 
@@ -233,7 +233,14 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-    MechKeys:
+    mechKeys:
     - BostonCybernetics
     - RedMountain
+    - Zaibatsu
+    factionGraphList:
+    - m_AssetGUID: 2952c0ae40dbb404ebd1d194fdc95eba
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    factionKeys:
     - Zaibatsu

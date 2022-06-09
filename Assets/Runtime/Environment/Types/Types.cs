@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
-namespace SupremacyHangar.Runtime.Environment
+namespace SupremacyHangar.Runtime.Environment.Types
 {
     [Serializable]
     public class EnvironmentPart
