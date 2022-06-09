@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691a633fee507c468fbb61f649f459a, type: 3}
+  m_Name: Evangelic
+  m_EditorClassIdentifier: Assembly-CSharp::MechSkin
+  mats:
+  - {fileID: 2100000, guid: d9bbd23373dd74b4b919bbd541bcbed7, type: 2}
+  - {fileID: 2100000, guid: bbb1fe3aac0401446add5eaafca6b50e, type: 2}
+  - {fileID: 2100000, guid: daa4db9f6043fe24f95fb443fd251536, type: 2}
+  - {fileID: 2100000, guid: fb72e935ad8f50f4f83a2432566ade0a, type: 2}
+  - {fileID: 2100000, guid: a50555a94aa89b04fa0ec148af67f224, type: 2}
+  - {fileID: 2100000, guid: 1e69241168410174da1173125f5fb3c6, type: 2}

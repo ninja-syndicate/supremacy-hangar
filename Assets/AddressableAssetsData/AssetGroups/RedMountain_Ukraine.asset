@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: RedMountain_Ukraine
+  m_EditorClassIdentifier: 
+  m_GroupName: RedMountain_Ukraine
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 5835b4abc376121498d2c0550bb9d28e
+  m_SerializeEntries:
+  - m_GUID: 9057a9e52b5e87c45814084a378c6de2
+    m_Address: Ukraine
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 61b4729e783840443ba678c33a0cecb3, type: 2}
+    - {fileID: 11400000, guid: ae2727db692e2b44287c11b7f54edc46, type: 2}

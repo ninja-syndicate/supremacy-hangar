@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691a633fee507c468fbb61f649f459a, type: 3}
+  m_Name: RustBucket
+  m_EditorClassIdentifier: 
+  mats:
+  - {fileID: 2100000, guid: d3dbbd26a56628841ba2d41adc459e4e, type: 2}
+  - {fileID: 2100000, guid: 8c6d7b6d4255aae40a14b5ac8f27dbe1, type: 2}
+  - {fileID: 2100000, guid: aa6d9436ad501634ba518f3d581fb5a3, type: 2}
+  - {fileID: 2100000, guid: 7c3c0a8a7a73c804fab8ac5f143f552a, type: 2}

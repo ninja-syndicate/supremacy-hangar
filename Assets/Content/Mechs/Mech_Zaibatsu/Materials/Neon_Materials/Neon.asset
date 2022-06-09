@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691a633fee507c468fbb61f649f459a, type: 3}
+  m_Name: Neon
+  m_EditorClassIdentifier: Assembly-CSharp::MechSkin
+  mats:
+  - {fileID: 2100000, guid: 5c6f2920219ad5d4ca04c9837147a8ea, type: 2}
+  - {fileID: 2100000, guid: 79d3eb36489c2e9439a1b9cb30746cca, type: 2}
+  - {fileID: 2100000, guid: 8a0a1d823f8b32447bc4ab383ea76fb0, type: 2}
+  - {fileID: 2100000, guid: e9af6161c0e05904f8f0461fbc570d5c, type: 2}
+  - {fileID: 2100000, guid: 103003355326fd54a926c123508c5dcc, type: 2}
+  - {fileID: 2100000, guid: 457b20f331c7a7c41a94ccafe51a7906, type: 2}

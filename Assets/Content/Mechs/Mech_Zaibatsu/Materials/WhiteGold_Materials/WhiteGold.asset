@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691a633fee507c468fbb61f649f459a, type: 3}
+  m_Name: WhiteGold
+  m_EditorClassIdentifier: Assembly-CSharp::MechSkin
+  mats:
+  - {fileID: 2100000, guid: 924c4de50be153945b700c63b2f80d3d, type: 2}
+  - {fileID: 2100000, guid: 643b79753ee658a409ac6bddb9382e3b, type: 2}
+  - {fileID: 2100000, guid: 30ea0b6ea1f118f4485ede362fe79160, type: 2}
+  - {fileID: 2100000, guid: 9cdfcc35adc8ef5429981ff46bf4d915, type: 2}
+  - {fileID: 2100000, guid: f4fa930550ec84c4db2563825d0a88c2, type: 2}
+  - {fileID: 2100000, guid: 4938ba9c1bf40274c931ec8162a1e7b6, type: 2}

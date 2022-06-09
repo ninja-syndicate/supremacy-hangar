@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691a633fee507c468fbb61f649f459a, type: 3}
+  m_Name: Static
+  m_EditorClassIdentifier: Assembly-CSharp::MechSkin
+  mats:
+  - {fileID: 2100000, guid: 1c73ca75b63bb9d4fb0043bab81f9251, type: 2}
+  - {fileID: 2100000, guid: f6c2c9430494b384895aca84922ca971, type: 2}
+  - {fileID: 2100000, guid: f235aec5318c6c74186e80f5d36a821a, type: 2}
+  - {fileID: 2100000, guid: 2895f75111cd689489342815d983c989, type: 2}
+  - {fileID: 2100000, guid: c8ea7d75b5899f84d8538038f7d2f660, type: 2}
+  - {fileID: 2100000, guid: 40574cecea57f6a49825eae9a72da976, type: 2}

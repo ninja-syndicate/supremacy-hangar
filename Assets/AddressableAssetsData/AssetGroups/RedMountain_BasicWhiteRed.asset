@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: RedMountain_BasicWhiteRed
+  m_EditorClassIdentifier: 
+  m_GroupName: RedMountain_BasicWhiteRed
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 7c4f421f9a9d15542bcd8f66d89b3ef1
+  m_SerializeEntries:
+  - m_GUID: ee08b41a4017cab4fbea04a68d162467
+    m_Address: BasicWhiteRed
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - RedMountain_BasicWhiteRed
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 3bde2db4d0f787d48b809dcc204ad2d4, type: 2}
+    - {fileID: 11400000, guid: 803cb826c07e8cc468f420e60dff35ff, type: 2}

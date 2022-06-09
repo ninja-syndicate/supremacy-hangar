@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691a633fee507c468fbb61f649f459a, type: 3}
+  m_Name: Dune
+  m_EditorClassIdentifier: 
+  mats:
+  - {fileID: 2100000, guid: e8bbc10c8664faf4888a0349390d64c6, type: 2}
+  - {fileID: 2100000, guid: 065634ab0159ebe40b01bdba432d67be, type: 2}
+  - {fileID: 2100000, guid: f3b77dd7dbadb7744a9383926e5859b8, type: 2}
+  - {fileID: 2100000, guid: 830f783d1b8810a488350a2221940475, type: 2}

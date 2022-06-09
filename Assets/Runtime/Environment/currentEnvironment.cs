@@ -8,6 +8,6 @@ namespace SupremacyHangar
     public class currentEnvironment
     {
         public EnvironmentPart currentPart { get; set; } = null;
-        public GameObject currentGameObejct { get; set; } = null;
+        public GameObject currentGameObject { get; set; } = null;
     }
 }

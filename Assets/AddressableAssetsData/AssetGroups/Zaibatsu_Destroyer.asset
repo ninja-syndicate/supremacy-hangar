@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Zaibatsu_Destroyer
+  m_EditorClassIdentifier: 
+  m_GroupName: Zaibatsu_Destroyer
+  m_Data:
+    m_SerializedData: []
+  m_GUID: d28c95aa67feaa04db0ea2cac8191f91
+  m_SerializeEntries:
+  - m_GUID: a09bd3e62e7a8234fbaee3fae4ce4c48
+    m_Address: Destroyer
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 7422bc278f91c1d43a66e0a6513eb321, type: 2}
+    - {fileID: 11400000, guid: 9222bdfb12f15e444baacae4f3005b54, type: 2}
