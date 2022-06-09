@@ -17,21 +17,30 @@ jobs:
     build:
         # The type of runner that the job will run on
         runs-on: [self-hosted]
+        strategy:
+            fail-fast: false
+            matrix:
+                unityVersion:
+                    - 2021.3.4f1
+                targetPlatform:
+                    - WebGL
 
         # Steps represent a sequence of tasks that will be executed as part of the job
         steps:
-            # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-            - uses: actions/checkout@v3
+            # support longpaths
+            - name: Support longpaths
+              run: git config --system core.longpaths true
 
-            # set up Unity version requirement
-            - name: Setup Unity
-              uses: kuler90/setup-unity@v1
-              with:
-                  unity-version: 2021.3.3f1
-                  unity-modules: webgl
+            # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+            - name: Checkout repository
+            - uses: actions/checkout@v3
+            - with:
+                  lfs: true
 
             # build Unity
-            - name: Build Unity
+            - name: Build Unity project
               run: |
-                  "C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe" -batchmode -quit -buildTarget WebGL -projectPath "C:\Ninja\Documents\supremacy-hangar" -logFile log.txt -executeMethod BuildSystem.CLI.PreWarm
-                  "C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe" -batchmode -quit -buildTarget WebGL -projectPath "C:\Ninja\Documents\supremacy-hangar" -logFile log.txt -executeMethod BuildSystem.CLI.BuildWebGL -development
+                  "C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe" -batchmode -quit -buildTarget WebGL -projectPath "C:\Users\Ninja\Documents\Unity Projects\supremacy-hangar" -logFile log.txt -executeMethod BuildSystem.CLI.PreWarm
+                  "C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe" -batchmode -quit -buildTarget WebGL -projectPath "C:\Users\Ninja\Documents\Unity Projects\supremacy-hangar" -logFile log.txt -executeMethod BuildSystem.CLI.BuildWebGL -development
+
+            # upload build
