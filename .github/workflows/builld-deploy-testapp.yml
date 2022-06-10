@@ -25,14 +25,14 @@ jobs:
         # Steps represent a sequence of tasks that will be executed as part of the job
         steps:
             # support longpaths
-            # - name: Support longpaths
-            #   run: |
-            #       git config --system core.longpaths true
+            - name: Support longpaths
+              run: |
+                  git config --system core.longpaths true
 
             # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
             - name: Checkout repository
-            - uses: actions/checkout@v3
-            - with:
+              uses: actions/checkout@v3
+              with:
                   lfs: true
 
             # build Unity
