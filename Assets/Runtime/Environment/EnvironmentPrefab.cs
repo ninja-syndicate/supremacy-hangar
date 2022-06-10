@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 
 namespace SupremacyHangar.Runtime.Environment
 {
@@ -9,10 +8,6 @@ namespace SupremacyHangar.Runtime.Environment
     {
         [SerializeField] private string prefabName;
         public string PrefabName => prefabName;
-
-        [SerializeField] private AssetReference myAssetRef;
-
-        public AssetReference MyAssetRef => myAssetRef;
         
         [SerializeField] private List<Joiner> joins = new();
 
@@ -22,7 +17,7 @@ namespace SupremacyHangar.Runtime.Environment
 
         public GameObject connectedTo;
 
-        public List<Collider> ColliderList  = new();
+        public List<Collider> ColliderList { get; set; } = new();
 
         public bool wasConnected { get; internal set; }
 

@@ -37,7 +37,7 @@ namespace SupremacyHangar.Runtime.Environment
         [Inject]
         public void Construct(EnvironmentManager environmentManager)
         {
-            //myConnectors.ColliderList.Add(GetComponent<Collider>());
+            myConnectors.ColliderList.Add(GetComponent<Collider>());
             _environmentManager = environmentManager;
         }
 

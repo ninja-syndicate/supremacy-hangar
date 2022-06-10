@@ -52,14 +52,14 @@ namespace SupremacyHangar.Runtime.Environment
 
         public override void InstallBindings()
         {
-            MaxSiloOffset = _playerInventory.Silos.Length - 1;
+            MaxSiloOffset = _playerInventory.Silos.Count - 1;
 
             if (MaxSiloOffset < 0)
                 MaxSiloOffset++;
 
             Container.Bind<EnvironmentManager>().FromInstance(this);
 
-            Container.Bind<SiloContent[]>().FromInstance(GetCurrentSiloInfo()).AsCached();
+            Container.Bind<SiloItem[]>().FromInstance(GetCurrentSiloInfo()).AsCached();
         }
 
         private void Awake()
@@ -72,7 +72,7 @@ namespace SupremacyHangar.Runtime.Environment
                 SpawnInitialHallway();
             };
         }
-        //PLayer og hiehgt = 0.03999907
+        //PLayer og height = 0.03999907
         private void SpawnInitialHallway()
         {
             //Spawn initial environment
@@ -121,6 +121,14 @@ namespace SupremacyHangar.Runtime.Environment
                 c.enabled = !c.enabled;
         }
 
+        private void DoorOpened()
+        {
+            foreach(var obj in objectsToUnload)
+            {
+                ToggleDoor(obj.GetComponent<EnvironmentPrefab>());
+            }
+        }
+
         public void SpawnPart(string myEnvironmentConnector, string to_Connect_to, EnvironmentPrefab myConnectors)
         {
             interactedDoor = myConnectors; 
@@ -130,6 +138,9 @@ namespace SupremacyHangar.Runtime.Environment
                 if(obj.GetInstanceID() != myConnectors.gameObject.GetInstanceID())
                     objectsToUnload.Add(obj);
             }
+
+            DoorOpened();
+
             string nextRoomName = _connectivityGraph.MyJoins[myConnectors.PrefabName].MyJoinsByConnector[to_Connect_to].Destinations[NextRoomIndex(myConnectors)].PrefabName;
 
             currentEnvironment.CurrentPrefabAsset = _connectivityGraph.MyJoins[nextRoomName];
@@ -213,20 +224,21 @@ namespace SupremacyHangar.Runtime.Environment
             ReBindSiloInfo();
         }
 
-        private SiloContent[] GetCurrentSiloInfo()
+        private SiloItem[] GetCurrentSiloInfo()
         {
+            //ToDo try remove the creation of new SiloItems
             if (MaxSiloOffset == 0)
-                return new SiloContent[] { new(), new() };
+                return new SiloItem[] { new Mech(), new Mech() };
 
             if (SiloOffset + 1 >= MaxSiloOffset)
-                return new[] { _playerInventory.Silos[SiloOffset], new() };
+                return new[] { _playerInventory.Silos[SiloOffset], new Mech() };
 
             return new[] { _playerInventory.Silos[SiloOffset], _playerInventory.Silos[SiloOffset + 1] };
         }
 
         private void ReBindSiloInfo()
         {
-            Container.Rebind<SiloContent[]>().FromInstance(GetCurrentSiloInfo()).AsCached();
+            Container.Rebind<SiloItem[]>().FromInstance(GetCurrentSiloInfo()).AsCached();
         }
 
         private int NextRoomIndex(EnvironmentPrefab myConnectors)
@@ -242,6 +254,8 @@ namespace SupremacyHangar.Runtime.Environment
 
         public void UnloadAssets()
         {
+            //Enable doors again
+            DoorOpened();
 
             if (_currentSilo)
                 _currentSilo.SiloSpawned = false;

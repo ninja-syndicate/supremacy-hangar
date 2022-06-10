@@ -24,7 +24,7 @@ namespace SupremacyHangar.Runtime.Interaction
         private AddressablesManager _addressablesManager;
         
         [Inject]
-        private SiloContent[] _siloContent;
+        private SiloItem[] _siloContent;
 
         [Inject]
         private SupremacyDictionary _supremacyDictionary;
@@ -44,6 +44,8 @@ namespace SupremacyHangar.Runtime.Interaction
         private float maxHeight;
         public float minHeight;
         Vector3 moveDirection = Vector3.down; // *assuming your platform starts at the top
+
+        private bool enableElevator = false;
 
         private void Start()
         {
@@ -100,20 +102,22 @@ namespace SupremacyHangar.Runtime.Interaction
 
         private void FillSilo()
         {
-            if (_siloContent[siloIndex].type.Contains("mech"))
+            switch(_siloContent[siloIndex])
             {
-                _addressablesManager.TargetMech = _supremacyDictionary.MechDictionary[_siloContent[siloIndex].chassisId];
-                _addressablesManager.TargetSkin = _supremacyDictionary.AllSkinsDictionary[_siloContent[siloIndex].chassisId][_siloContent[siloIndex].skinId];
-            }
-            else
-            {
-                _addressablesManager.TargetMech = _supremacyDictionary.LootBoxDictionary[_siloContent[siloIndex].id];
-                _addressablesManager.TargetSkin = null;
+                case Mech mech:
+                    _addressablesManager.TargetMech = _supremacyDictionary.MechDictionary[mech.mech_id];
+                    _addressablesManager.TargetSkin = _supremacyDictionary.AllSkinsDictionary[mech.mech_id][mech.skin_id];
+                    break;
+                case MysteryBox box:
+                    _addressablesManager.TargetMech = _supremacyDictionary.LootBoxDictionary[box.ownership_id];
+                    _addressablesManager.TargetSkin = null;
+                    break;
+                default:
+                    break;
             }
             spawner.SpawnSilo();
         }
 
-        private bool enableElevator = false;
         private void Elevator()
         {
             enableElevator = !enableElevator;

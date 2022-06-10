@@ -24,11 +24,11 @@ public class BridgeScript : MonoInstaller
     {
         string obj = "{faction: 'Zaibatsu'," +
             "silos:[" +
-            "{type: 'mech',id: 'mech/assetID',chassisId: 'Zaibatsu', skinID: 'CherryBlossom' }, " +
-            "{type: 'lootBox', id: 'Rare', expires: '2022-06-09T09:32:38+00:00'}," +
-            "{type: 'mech',id: 'mech/assetID',chassisId: 'RedMountain', skinID: 'Evo' }, " +
-            "{type: 'mech',id: 'mech/assetID',chassisId: 'BostonCybernetics', skinID: 'Cyber' }, " +
-            "{type: 'lootBox', id: 'lootbot/assetID', expires: '2022-06-010T09:32:38+00:00'}" +
+            "{type: 'mech', ownership_id: 'mech/assetID', mech_id: 'Zaibatsu', skin_id: 'CherryBlossom' }, " +
+            "{type: 'mystery_crate', ownership_id: 'Rare', can_open_on: '2022-06-09T09:32:38+00:00'}," +
+            "{type: 'mech', ownership_id: 'mech/assetID', mech_id: 'RedMountain', skin_id: 'Evo' }, " +
+            "{type: 'mech', ownership_id: 'mech/assetID', mech_id: 'BostonCybernetics', skin_id: 'Cyber' }, " +
+            "{type: 'mystery_crate', ownership_id: 'lootbot/assetID', can_open_on: '2022-06-010T09:32:38+00:00'}" +
             "]}";
 
         GetPlayerInventoryFromPage(obj);
@@ -36,9 +36,14 @@ public class BridgeScript : MonoInstaller
 
     public void GetPlayerInventoryFromPage(string message)
     {
-        JsonSerializer serializer = new JsonSerializer();
-        readData = serializer.Deserialize(new JsonTextReader(new StringReader(message)), typeof(SupremacyGameObject)) as SupremacyGameObject;
+        //JsonSerializer serializer = new JsonSerializer();
+        //readData = serializer.Deserialize(new JsonTextReader(new StringReader(message)), typeof(SupremacyGameObject)) as SupremacyGameObject;
+
+        readData = JsonConvert.DeserializeObject<SupremacyGameObject>(message, new SiloItemConterter());
+
+        //Debug.Log(readData);
     }
+
 
     public void SiloReady()
     {
