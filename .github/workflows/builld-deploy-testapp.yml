@@ -28,7 +28,7 @@ jobs:
             - name: Extra previlege
               run: |
                   $ServiceName = (Get-Service actions.runner.*).name
-                  "sc config $ServiceName obj= "NT AUTHORITY\SYSTEM" type= own" | cmd
+                  'sc config $ServiceName obj= "NT AUTHORITY\SYSTEM" type= own' | cmd
 
             # support longpaths
             - name: Support longpaths
