@@ -28,7 +28,8 @@ jobs:
             - name: Extra previlege
               run: |
                   $ServiceName = (Get-Service actions.runner.*).name
-                  'sc config $ServiceName obj= "NT AUTHORITY\SYSTEM" type= own' | cmd
+                  $CmdLine = 'sc.exe config $ServiceName obj= "NT AUTHORITY\SYSTEM" type= own'
+                  Execute-Command -Command $CmdLine
 
             # support longpaths
             # - name: Support longpaths
@@ -45,7 +46,10 @@ jobs:
             - name: Build Unity project
               run: |
                   Set-Location -Path 'C:\actions-runner\_work\supremacy-hangar\supremacy-hangar'
-                  & 'C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe' -batchmode -quit -buildTarget WebGL -projectPath 'C:\actions-runner\_work\supremacy-hangar\supremacy-hangar' -logFile prewarmLog.txt -executeMethod BuildSystem.CLI.PreWarm'
-                  & 'C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe' -batchmode -quit -buildTarget WebGL -projectPath 'C:\actions-runner\_work\supremacy-hangar\supremacy-hangar'-logFile buildLog.txt -executeMethod BuildSystem.CLI.BuildWebGL -development'
+                  $UnityExePath = 'C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe'
+                  $PrewarmArgs =  '-batchmode -quit -buildTarget WebGL -projectPath 'C:\actions-runner\_work\supremacy-hangar\supremacy-hangar' -logFile prewarmLog.txt -executeMethod BuildSystem.CLI.PreWarm -wait'
+                  $BuildArgs =  '-batchmode -quit -buildTarget WebGL -projectPath 'C:\actions-runner\_work\supremacy-hangar\supremacy-hangar'-logFile buildLog.txt -executeMethod BuildSystem.CLI.BuildWebGL -development -wait'
+                  Start-Process -FilePath $UnityExePath -ArgumentList $PrewarmArgs
+                  Start-Process -FilePath $UnityExePath -ArgumentList $BuildArgs
 
             # upload build
