@@ -25,11 +25,11 @@ jobs:
         # Steps represent a sequence of tasks that will be executed as part of the job
         steps:
             # give extra previlege to the runner
-            - name: Extra previlege
-              run: |
-                  $ServiceName = (Get-Service actions.runner.*).name
-                  $CmdLine = 'sc.exe config $ServiceName obj= "NT AUTHORITY\SYSTEM" type= own'
-                  Execute-Command -Command $CmdLine
+            # - name: Extra previlege
+            #   run: |
+            #       $ServiceName = (Get-Service actions.runner.*).name
+            #       $CmdLine = 'sc.exe config $ServiceName obj= "NT AUTHORITY\SYSTEM" type= own'
+            #       Execute-Command -Command $CmdLine
 
             # support longpaths
             # - name: Support longpaths
