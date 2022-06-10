@@ -49,6 +49,6 @@ jobs:
             - name: Build Unity project
               run: |
                   Set-Location -Path 'C:\actions-runner\_work\supremacy-hangar\supremacy-hangar'
-                  Start-Process -FilePath "%cd%" -Wait -WindowStyle Hidden
-                  Start-Process -FilePath "%cd%" -Wait -WindowStyle Hidden
+                  Start-Process -FilePath "C:\actions-runner\_work\supremacy-hangar\supremacy-hangar\prewarm.bat" -Wait -WindowStyle Hidden
+                  Start-Process -FilePath "C:\actions-runner\_work\supremacy-hangar\supremacy-hangar\build.bat" -Wait -WindowStyle Hidden
             # upload build
