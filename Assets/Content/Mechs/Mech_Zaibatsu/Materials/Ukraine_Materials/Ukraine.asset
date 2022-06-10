@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691a633fee507c468fbb61f649f459a, type: 3}
+  m_Name: Ukraine
+  m_EditorClassIdentifier: Assembly-CSharp::MechSkin
+  mats:
+  - {fileID: 2100000, guid: 509a0ce848eab1e44abfa4a03ecd050f, type: 2}
+  - {fileID: 2100000, guid: 777a8f5480f8c74419193ff4669173f9, type: 2}
+  - {fileID: 2100000, guid: 81d772dcd488aca45a89164108b5b580, type: 2}
+  - {fileID: 2100000, guid: 07e86609a25656d4c8b085a986367ea4, type: 2}
+  - {fileID: 2100000, guid: ec8af3b7a43a0fc49a181c3fdd29ab72, type: 2}
+  - {fileID: 2100000, guid: 02ca30608e07b9542a065c4a6bbf25c7, type: 2}

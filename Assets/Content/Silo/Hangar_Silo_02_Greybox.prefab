@@ -108,6 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 863424826931445650}
   - component: {fileID: 6771770578741418503}
+  - component: {fileID: 3937463783445960829}
   m_Layer: 0
   m_Name: Hangar_Silo_02_Greybox
   m_TagString: Untagged
@@ -133,6 +134,7 @@ Transform:
   - {fileID: 938543859039889517}
   - {fileID: 7942750673781498808}
   - {fileID: 8886317124316285063}
+  - {fileID: 7566148300344217877}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -152,7 +154,21 @@ MonoBehaviour:
   joins:
   - name: ConnectionPoint_Silo_02
     position: {fileID: 3121831810054685040}
-  connectedTo: 
+  connectedTo: {fileID: 0}
+  ColliderList: []
+--- !u!114 &3937463783445960829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49628530332411176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f7d6ade9fa564547ba49c071b49ce0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MechSpawner: {fileID: 7566148300344217877}
 --- !u!1 &699849170199048872
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,3 +592,34 @@ Transform:
   m_Father: {fileID: 863424826931445650}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8409310128412015976
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7566148300344217877}
+  m_Layer: 0
+  m_Name: Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7566148300344217877
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8409310128412015976}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -18, z: 26.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 863424826931445650}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}

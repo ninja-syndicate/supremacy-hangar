@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691a633fee507c468fbb61f649f459a, type: 3}
+  m_Name: BasicBlackRed
+  m_EditorClassIdentifier: 
+  mats:
+  - {fileID: 2100000, guid: ba36277cdbee5264b9f00b80ab3148e0, type: 2}
+  - {fileID: 2100000, guid: acfacd841e9abac4485898a5559d476d, type: 2}
+  - {fileID: 2100000, guid: f461ea1dbcf50a944bec900da9d7cbc5, type: 2}
+  - {fileID: 2100000, guid: 260773ad8a4ba6a4690e844723f7934e, type: 2}
+  - {fileID: 2100000, guid: cfdfd1bd242c141419a07b29f85689c7, type: 2}
+  - {fileID: 2100000, guid: 1de19aa95b98bdb4ea352518fc719e31, type: 2}
+  - {fileID: 2100000, guid: 6682cf040af7f014b95724907140ce08, type: 2}
+  - {fileID: 2100000, guid: 44b3749c6d652994bbdab137898ee48e, type: 2}
+  - {fileID: 2100000, guid: 5e250b0bfe538ad429a0670134aa6458, type: 2}
+  - {fileID: 2100000, guid: acb0d6c117be79c41a8f8401cdd9bd28, type: 2}
+  - {fileID: 2100000, guid: 6a4235f5bdd2a49418ce17918c2f0b06, type: 2}
+  - {fileID: 2100000, guid: ab4daf3b123cda0429f7b2d8546ef8ea, type: 2}
+  - {fileID: 2100000, guid: c051926c03cb5ca429c6cad9b4d0d0a5, type: 2}
+  - {fileID: 2100000, guid: 367627e90c61272478fcc63bf09451b5, type: 2}

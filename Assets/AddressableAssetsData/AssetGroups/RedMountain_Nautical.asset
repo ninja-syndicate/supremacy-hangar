@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: RedMountain_Nautical
+  m_EditorClassIdentifier: 
+  m_GroupName: RedMountain_Nautical
+  m_Data:
+    m_SerializedData: []
+  m_GUID: bff8534c0aa1c864296930938c84e1c5
+  m_SerializeEntries:
+  - m_GUID: 908abe6fcce17a84fa894f5f7593a29b
+    m_Address: Nautical
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: f5e4ebf755013e7439081c5a880a6dd1, type: 2}
+    - {fileID: 11400000, guid: 1de718f2a1745a540ae925e3461aad59, type: 2}

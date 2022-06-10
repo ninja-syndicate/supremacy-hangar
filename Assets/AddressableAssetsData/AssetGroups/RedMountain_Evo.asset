@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: RedMountain_Evo
+  m_EditorClassIdentifier: 
+  m_GroupName: RedMountain_Evo
+  m_Data:
+    m_SerializedData: []
+  m_GUID: ddec51db64d9d954695ff63290a6b1b9
+  m_SerializeEntries:
+  - m_GUID: df35e7759cf4c7d4dbfa47289e49b790
+    m_Address: Evo
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 76d3c6102875a6a48afc77f3fc9b1532, type: 2}
+    - {fileID: 11400000, guid: 5d8450696fcdc0d4ba4c14751147a21c, type: 2}
