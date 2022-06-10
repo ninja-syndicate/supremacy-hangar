@@ -44,7 +44,9 @@ jobs:
             # build Unity
             - name: Build Unity project
               run: |
-                  '"C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe" -batchmode -quit -buildTarget WebGL -projectPath "C:\actions-runner\_work\supremacy-hangar\supremacy-hangar" -logFile log.txt -executeMethod BuildSystem.CLI.PreWarm' | cmd
-                  '"C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe" -batchmode -quit -buildTarget WebGL -projectPath "C:\actions-runner\_work\supremacy-hangar\supremacy-hangar" -logFile log.txt -executeMethod BuildSystem.CLI.BuildWebGL -development' | cmd
+                  Set_Location "C:\actions-runner\_work\supremacy-hangar\supremacy-hangar"
+                  $UnityExePath= "C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe"
+                  '$UnityExePath -batchmode -quit -buildTarget WebGL -projectPath "%cd%" -logFile log.txt -executeMethod BuildSystem.CLI.PreWarm' | cmd
+                  '$UnityExePath -batchmode -quit -buildTarget WebGL -projectPath "%cd%" -logFile log.txt -executeMethod BuildSystem.CLI.BuildWebGL -development' | cmd
 
             # upload build
