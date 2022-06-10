@@ -14,20 +14,20 @@ jobs:
     build:
         # The type of runner that the job will run on
         runs-on: [self-hosted]
-        # strategy:
-        #     fail-fast: false
-        #     matrix:
-        #         unityVersion:
-        #             - 2021.3.4f1
-        #         targetPlatform:
-        #             - WebGL
+        strategy:
+            fail-fast: false
+            matrix:
+                unityVersion:
+                    - 2021.3.4f1
+                targetPlatform:
+                    - WebGL
 
         # Steps represent a sequence of tasks that will be executed as part of the job
         steps:
             # support longpaths
-            - name: Support longpaths
-              run: |
-                  git config --system core.longpaths true
+            # - name: Support longpaths
+            #   run: |
+            #       git config --system core.longpaths true
 
             # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
             - name: Checkout repository
