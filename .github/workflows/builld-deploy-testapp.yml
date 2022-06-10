@@ -45,7 +45,6 @@ jobs:
             - name: Build Unity project
               run: |
                   Set-Location -Path 'C:\actions-runner\_work\supremacy-hangar\supremacy-hangar'
-                  Start-Process -FilePath "C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe" -ArgumentList -batchmode -quit -buildTarget WebGL -projectPath "C:\actions-runner\_work\supremacy-hangar\supremacy-hangar" -logFile prewarmLog.txt -executeMethod BuildSystem.CLI.PreWarm
-                  Start-Process -FilePath "C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe" -ArgumentList -batchmode -quit -buildTarget WebGL -projectPath "C:\actions-runner\_work\supremacy-hangar\supremacy-hangar" -logFile buildLog.txt -executeMethod BuildSystem.CLI.BuildWebGL -development
-
+                  Start-Process -FilePath "C:\actions-runner\_work\supremacy-hangar\HangarPrewarm.bat" -Wait -WindowStyle Hidden
+                  Start-Process -FilePath "C:\actions-runner\_work\supremacy-hangar\HangarBuild.bat" -Wait -WindowStyle Hidden
             # upload build
