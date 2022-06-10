@@ -25,16 +25,16 @@ jobs:
         # Steps represent a sequence of tasks that will be executed as part of the job
         steps:
             # give extra previlege to the runner
-            # - name: Extra previlege
-            #   run: |
-            #       $ServiceName = (Get-Service actions.runner.*).name
-            #       $CmdLine = 'sc.exe config $ServiceName obj= "NT AUTHORITY\SYSTEM" type= own'
-            #       Execute-Command -Command $CmdLine
+            - name: Extra previlege
+              run: |
+                  $ServiceName = (Get-Service actions.runner.*).name
+                  $CmdLine = 'sc.exe config $ServiceName obj= "NT AUTHORITY\SYSTEM" type= own'
+                  $CmdLine
 
             # support longpaths
-            # - name: Support longpaths
-            #   run: |
-            #       git config --system core.longpaths true | cmd as
+            - name: Support longpaths
+              run: |
+                  git config --system core.longpaths true
 
             # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
             - name: Checkout repository
@@ -46,10 +46,7 @@ jobs:
             - name: Build Unity project
               run: |
                   Set-Location -Path 'C:\actions-runner\_work\supremacy-hangar\supremacy-hangar'
-                  $UnityExePath = 'C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe'
-                  $PrewarmArgs =  '-batchmode -quit -buildTarget WebGL -projectPath 'C:\actions-runner\_work\supremacy-hangar\supremacy-hangar' -logFile prewarmLog.txt -executeMethod BuildSystem.CLI.PreWarm -wait'
-                  $BuildArgs =  '-batchmode -quit -buildTarget WebGL -projectPath 'C:\actions-runner\_work\supremacy-hangar\supremacy-hangar'-logFile buildLog.txt -executeMethod BuildSystem.CLI.BuildWebGL -development -wait'
-                  Start-Process -FilePath $UnityExePath -ArgumentList $PrewarmArgs
-                  Start-Process -FilePath $UnityExePath -ArgumentList $BuildArgs
+                  & 'C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe' -batchmode -quit -buildTarget WebGL -projectPath 'C:\actions-runner\_work\supremacy-hangar\supremacy-hangar' -logFile log.txt -executeMethod BuildSystem.CLI.PreWarm' | Out-Null
+                  & 'C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe' -batchmode -quit -buildTarget WebGL -projectPath 'C:\actions-runner\_work\supremacy-hangar\supremacy-hangar'-logFile log.txt -executeMethod BuildSystem.CLI.BuildWebGL -development'
 
             # upload build
