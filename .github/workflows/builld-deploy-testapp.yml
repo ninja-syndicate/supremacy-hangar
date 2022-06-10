@@ -40,11 +40,15 @@ jobs:
               uses: actions/checkout@v3
               with:
                   lfs: "true"
+            - name: Checkout LFS
+              uses: actions/checkout@v3
+            - run: |
+                  git lfs pull
 
             # build Unity
             - name: Build Unity project
               run: |
                   Set-Location -Path 'C:\actions-runner\_work\supremacy-hangar\supremacy-hangar'
-                  Start-Process -FilePath "C:\actions-runner\_work\supremacy-hangar\HangarPrewarm.bat" -Wait -WindowStyle Hidden
-                  Start-Process -FilePath "C:\actions-runner\_work\supremacy-hangar\HangarBuild.bat" -Wait -WindowStyle Hidden
+                  Start-Process -FilePath "%cd%" -Wait -WindowStyle Hidden
+                  Start-Process -FilePath "%cd%" -Wait -WindowStyle Hidden
             # upload build
