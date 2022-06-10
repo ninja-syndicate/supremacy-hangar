@@ -3,11 +3,7 @@ using System.ComponentModel;
 using UnityEngine;
 using Zenject;
 
-<<<<<<<< HEAD:Assets/Runtime/Environment/Repositioner.cs
 namespace SupremacyHangar.Runtime.Environment
-========
-namespace SupremacyHangar.Runtime.Reposition
->>>>>>>> develop:Assets/Runtime/Reposition/Repositioner.cs
 {
     public class Repositioner : MonoBehaviour
     {

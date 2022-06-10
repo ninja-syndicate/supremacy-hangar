@@ -3,11 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-<<<<<<<< HEAD:Assets/Runtime/Environment/RepositionInstaller.cs
 namespace SupremacyHangar.Runtime.Environment
-========
-namespace SupremacyHangar.Runtime.Reposition
->>>>>>>> develop:Assets/Runtime/Reposition/RepositionInstaller.cs
 {
     public struct RepositionObjectSignal
     {
