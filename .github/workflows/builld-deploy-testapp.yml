@@ -25,10 +25,10 @@ jobs:
         # Steps represent a sequence of tasks that will be executed as part of the job
         steps:
             # give extra previlege to the runner
-            - name: Extra previlege
-              run: |
-                  $ServiceName = (Get-Service actions.runner.*).name
-                  'sc.exe config $ServiceName obj= "NT AUTHORITY\SYSTEM" type= own'
+            # - name: Extra previlege
+            #   run: |
+            #       $ServiceName = (Get-Service actions.runner.*).name
+            #       'sc.exe config $ServiceName obj= "NT AUTHORITY\SYSTEM" type= own'
 
             # support longpaths
             # - name: Support longpaths
@@ -39,14 +39,14 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v3
               with:
-                  lfs: true
+                  lfs: "true"
 
             # build Unity
             - name: Build Unity project
               run: |
                   Set-Location -Path 'C:\actions-runner\_work\supremacy-hangar\supremacy-hangar'
-                  'C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe' -batchmode -quit -buildTarget WebGL -projectPath 'C:\actions-runner\_work\supremacy-hangar\supremacy-hangar' -logFile log.txt -executeMethod BuildSystem.CLI.PreWarm' | Out-Null
-
-            #'C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe' -batchmode -quit -buildTarget WebGL -projectPath 'C:\actions-runner\_work\supremacy-hangar\supremacy-hangar'-logFile log.txt -executeMethod BuildSystem.CLI.BuildWebGL -development'
+                  cmd
+                  start /wait "Obligatory Atavistic Window Title" "C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe" -batchmode -quit -buildTarget WebGL -projectPath "C:\actions-runner\_work\supremacy-hangar\supremacy-hangar" -logFile prewarmLog.txt -executeMethod BuildSystem.CLI.PreWarm
+                  start /wait "Obligatory Atavistic Window Title" "C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe" -batchmode -quit -buildTarget WebGL -projectPath "C:\actions-runner\_work\supremacy-hangar\supremacy-hangar" -logFile buildLog.txt -executeMethod BuildSystem.CLI.BuildWebGL -development
 
             # upload build
