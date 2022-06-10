@@ -37,7 +37,7 @@ namespace SupremacyHangar.Runtime.Environment
         [Inject]
         public void Construct(EnvironmentManager environmentManager)
         {
-            myConnectors.ColliderList.Add(GetComponent<Collider>());
+            //myConnectors.ColliderList.Add(GetComponent<Collider>());
             _environmentManager = environmentManager;
         }
 
@@ -92,7 +92,7 @@ namespace SupremacyHangar.Runtime.Environment
                 _environmentManager.ChangeDirection(false);
             }
 
-            _environmentManager.SpawnPart(myEnvironmentConnector, to_Connect_to, myConnectors, DoorAnim);
+            _environmentManager.SpawnPart(myEnvironmentConnector, to_Connect_to, myConnectors);
         }
     }
 }

@@ -2,14 +2,14 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using UnityEngine.UIElements;
 
 namespace SupremacyHangar.Runtime.Environment
 {
-    public class EnvironmentPrefab : MonoBehaviour
+    public class EnvironmentPrefab : MonoBehaviour, ISerializationCallbackReceiver
     {
         [SerializeField] private string prefabName;
-     
+        public string PrefabName => prefabName;
+
         [SerializeField] private AssetReference myAssetRef;
 
         public AssetReference MyAssetRef => myAssetRef;
@@ -26,12 +26,12 @@ namespace SupremacyHangar.Runtime.Environment
 
         public bool wasConnected { get; internal set; }
 
-        public void Awake()
+
+        public void OnBeforeSerialize()
         {
-            Initialize();
         }
 
-        public void Initialize()
+        public void OnAfterDeserialize()
         {
             foreach (var join in joins)
             {
@@ -39,6 +39,15 @@ namespace SupremacyHangar.Runtime.Environment
             }
             Joins = new Dictionary<string, Transform>(joinsByName);
         }
+
+        //public void Awake()
+        //{
+        //    Initialize();
+        //}
+
+        //public void Initialize()
+        //{
+        //}
 
         [Serializable]
         public class Joiner
@@ -57,6 +66,5 @@ namespace SupremacyHangar.Runtime.Environment
 
             transform.position += delta;
         }
-
     }
 }

@@ -188,7 +188,9 @@ MonoBehaviour:
   - name: ConnectionPoint_HallwayConnector_02
     position: {fileID: 1831540969451434398}
   connectedTo: {fileID: 0}
-  ColliderList: []
+  ColliderList:
+  - {fileID: 417834440377862024}
+  - {fileID: 443929912161151435}
 --- !u!114 &-2688548455563843632
 MonoBehaviour:
   m_ObjectHideFlags: 0

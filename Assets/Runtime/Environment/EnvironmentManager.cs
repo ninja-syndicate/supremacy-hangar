@@ -8,6 +8,7 @@ using SupremacyHangar.Runtime.Types;
 using SupremacyHangar.Runtime.Environment.Types;
 using UnityEngine.AddressableAssets;
 using SupremacyHangar.Runtime.ContentLoader.Types;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace SupremacyHangar.Runtime.Environment
 {
@@ -47,7 +48,7 @@ namespace SupremacyHangar.Runtime.Environment
         private bool forward = true;
         private CurrentEnvironment nextRoom;
 
-        public bool SiloExists { get; private set; }
+        public bool SiloExists { get; private set; } = false;
 
         public override void InstallBindings()
         {
@@ -71,8 +72,7 @@ namespace SupremacyHangar.Runtime.Environment
                 SpawnInitialHallway();
             };
         }
-
-        private bool initLoadComplete = false;
+        //PLayer og hiehgt = 0.03999907
         private void SpawnInitialHallway()
         {
             //Spawn initial environment
@@ -86,12 +86,14 @@ namespace SupremacyHangar.Runtime.Environment
                 {
                     var hallLeft = door.Result;
                     var hallLeftEnvironmentPrefab = hallLeft.GetComponent<EnvironmentPrefab>();
-                    hallLeftEnvironmentPrefab.connectedTo = currentEnvironment.CurrentGameObject;//Todo Part.Joins is NULL yet private joins is full
+                    hallLeftEnvironmentPrefab.connectedTo = currentEnvironment.CurrentGameObject;
                     hallLeftEnvironmentPrefab.JoinTo("ConnectionPoint_HallwayConnector_01", currentEnvironment.CurrentPrefabAsset.Part.Joins["ConnectionPoint_HallwayConnector_01"]);
 
-                    loadedObjects.Add(hallLeft);
+                    _container.InjectGameObject(hallLeft);
                     //Disable door colliders
                     ToggleDoor(hallLeftEnvironmentPrefab);
+
+                    loadedObjects.Add(hallLeft);
                 };
 
                 _connectivityGraph.MyJoins["Hallway-Connector"].Reference.InstantiateAsync().Completed += (door) =>
@@ -101,80 +103,17 @@ namespace SupremacyHangar.Runtime.Environment
                     hallRightEnvironmentPrefab.connectedTo = currentEnvironment.CurrentGameObject;
                     hallRightEnvironmentPrefab.JoinTo("ConnectionPoint_HallwayConnector_01", currentEnvironment.CurrentPrefabAsset.Part.Joins["ConnectionPoint_HallwayConnector_02"]);
 
-                    loadedObjects.Add(hallRight);
+                    _container.InjectGameObject(hallRight);
 
                     if (MaxSiloOffset <= 1)
                         ToggleDoor(hallRightEnvironmentPrefab);
+
+                    loadedObjects.Add(hallRight);
                 };
 
                 _container.InjectGameObject(currentEnvironment.CurrentGameObject);
-            };            
-            //Store current environment
-            //Inject to environment spawners
+            };
         }
-
-        //public void Awake()
-        //{
-        //    foreach (var part in parts) prefabsByName[part.ReferenceName] = part;
-
-        //    //TODO: replace this with json loader code and editor.
-        //    var hallDoorway = prefabsByName["Hallway-Connector"];
-        //    var hallDoubleSilo = prefabsByName["Hallway-DoubleSilo"];
-        //    var hallJoinRoom = prefabsByName["Hallway-SmallStraightJoin"];
-        //    var siloRoomLeft = prefabsByName["Hallway - Silo_Left"];
-        //    var siloRoomRight = prefabsByName["Hallway - Silo_Right"];
-
-        //    //Initialize public connector references
-        //    hallDoorway.Reference.Initialize();
-        //    hallDoubleSilo.Reference.Initialize();
-        //    hallJoinRoom.Reference.Initialize();
-        //    siloRoomLeft.Reference.Initialize();
-        //    siloRoomRight.Reference.Initialize();
-
-        //    //Create Joins (connectivity graph)
-        //    siloRoomRight.AddJoin("ConnectionPoint_Silo_01", new[] { hallDoubleSilo });
-        //    siloRoomLeft.AddJoin("ConnectionPoint_Silo_02", new[] { hallDoubleSilo });
-
-        //    hallDoorway.AddJoin("ConnectionPoint_HallwayConnector_01", new[] { hallDoubleSilo, hallJoinRoom });
-        //    hallDoorway.AddJoin("ConnectionPoint_HallwayConnector_02", new[] { hallDoubleSilo, hallJoinRoom });
-
-        //    hallDoubleSilo.AddJoin("ConnectionPoint_HallwayConnector_01", new[] { hallDoorway });
-        //    hallDoubleSilo.AddJoin("ConnectionPoint_HallwayConnector_02", new[] { hallDoorway });
-        //    hallDoubleSilo.AddJoin("ConnectionPoint_Silo_02", new[] { siloRoomLeft });
-        //    hallDoubleSilo.AddJoin("ConnectionPoint_Silo_01", new[] { siloRoomRight });
-
-        //    hallJoinRoom.AddJoin("ConnectionPoint_HallwayConnector_01", new[] { hallDoorway });
-        //    hallJoinRoom.AddJoin("ConnectionPoint_HallwayConnector_02", new[] { hallDoorway });
-
-        //    //Spawn initial environment
-        //    var g = Instantiate(hallDoubleSilo.Reference);
-        //    currentEnvironment.CurrentPart = hallDoubleSilo;
-        //    currentEnvironment.CurrentGameObject = g.gameObject;
-        //    loadedObjects.Add(currentEnvironment.CurrentGameObject);
-
-        //    //Store current environment
-        //    //Inject to environment spawners
-        //    var hallLeft = _container.InstantiatePrefab(hallDoorway.Reference);
-        //    var hallLeftEnvironmentPrefab = hallLeft.GetComponent<EnvironmentPrefab>();
-        //    hallLeftEnvironmentPrefab.connectedTo = currentEnvironment.CurrentGameObject;
-        //    hallLeftEnvironmentPrefab.JoinTo("ConnectionPoint_HallwayConnector_01", g.Joins["ConnectionPoint_HallwayConnector_01"]);
-
-        //    //Disable door colliders
-        //    ToggleDoor(hallLeftEnvironmentPrefab);
-
-        //    var hallRight = _container.InstantiatePrefab(hallDoorway.Reference);
-        //    var hallRightEnvironmentPrefab = hallRight.GetComponent<EnvironmentPrefab>();
-        //    hallRightEnvironmentPrefab.connectedTo = currentEnvironment.CurrentGameObject;
-        //    hallRightEnvironmentPrefab.JoinTo("ConnectionPoint_HallwayConnector_02", g.Joins["ConnectionPoint_HallwayConnector_02"]);
-
-        //    if (MaxSiloOffset <= 1)
-        //        ToggleDoor(hallRightEnvironmentPrefab);
-
-        //    loadedObjects.Add(hallRight);
-        //    loadedObjects.Add(hallLeft);
-
-        //    _container.InjectGameObject(currentEnvironment.CurrentGameObject);
-        //}
 
         public void ToggleDoor(EnvironmentPrefab door)
         {
@@ -182,7 +121,7 @@ namespace SupremacyHangar.Runtime.Environment
                 c.enabled = !c.enabled;
         }
 
-        public void SpawnPart(string myEnvironmentConnector, string to_Connect_to, EnvironmentPrefab myConnectors, Animator doorAnimator)
+        public void SpawnPart(string myEnvironmentConnector, string to_Connect_to, EnvironmentPrefab myConnectors)
         {
             interactedDoor = myConnectors; 
 
@@ -190,61 +129,67 @@ namespace SupremacyHangar.Runtime.Environment
             {
                 if(obj.GetInstanceID() != myConnectors.gameObject.GetInstanceID())
                     objectsToUnload.Add(obj);
-
             }
-            _container.Bind<Animator>().FromInstance(doorAnimator);
+            string nextRoomName = _connectivityGraph.MyJoins[myConnectors.PrefabName].MyJoinsByConnector[to_Connect_to].Destinations[NextRoomIndex(myConnectors)].PrefabName;
 
-            //Next Main Room spawn
-            var roomPart = currentEnvironment.CurrentPart.MyJoins[myEnvironmentConnector][0].MyJoins[myEnvironmentConnector][NextRoomIndex(myConnectors)];
+            currentEnvironment.CurrentPrefabAsset = _connectivityGraph.MyJoins[nextRoomName];
             nextRoom = new()
             {
-                CurrentPart = roomPart,
-                CurrentGameObject = _container.InstantiatePrefab(roomPart.Reference).gameObject,
+                CurrentPrefabAsset = _connectivityGraph.MyJoins[nextRoomName]
             };
 
-            interactedDoor.wasConnected = true;
-            var nextRoomEnvironmentPrefabRef = nextRoom.CurrentGameObject.GetComponent<EnvironmentPrefab>();
+            _connectivityGraph.MyJoins[nextRoomName].Reference.InstantiateAsync().Completed += (room) =>
+            {
+                nextRoom.CurrentGameObject = room.Result;
 
-            loadedObjects.Add(nextRoom.CurrentGameObject);
-            //Reposition new room
-            nextRoomEnvironmentPrefabRef.JoinTo(myEnvironmentConnector, myConnectors.Joins[myEnvironmentConnector]);
+                _container.InjectGameObject(nextRoom.CurrentGameObject);
 
-            var connectorDoor = _container.InstantiatePrefab(currentEnvironment.CurrentPart.MyJoins[myEnvironmentConnector][0].Reference);
-            loadedObjects.Add(connectorDoor.gameObject);
+                interactedDoor.wasConnected = true;
+                var nextRoomEnvironmentPrefabRef = nextRoom.CurrentGameObject.GetComponent<EnvironmentPrefab>();
+                //Reposition new room
+                nextRoomEnvironmentPrefabRef.JoinTo(myEnvironmentConnector, myConnectors.Joins[to_Connect_to]);
 
-            newDoor = connectorDoor.GetComponent<EnvironmentPrefab>();
-            //Reposition door & set connection point
-            newDoor.JoinTo(myEnvironmentConnector, nextRoomEnvironmentPrefabRef.Joins[to_Connect_to]);
-            newDoor.connectedTo = nextRoom.CurrentGameObject;
+                loadedObjects.Add(nextRoom.CurrentGameObject);
+                newlyLoadedObjects.Add(nextRoom.CurrentGameObject);
+                
+                _connectivityGraph.MyJoins[myConnectors.PrefabName].Reference.InstantiateAsync().Completed += (door) =>
+                {
+                    var connectedDoor = door.Result;
+                    newDoor = connectedDoor.GetComponent<EnvironmentPrefab>();
+                    newDoor.connectedTo = nextRoom.CurrentGameObject;
+                    newDoor.JoinTo(myEnvironmentConnector, nextRoomEnvironmentPrefabRef.Joins[to_Connect_to]);
 
-            if(SiloOffset == 0 || SiloOffset >= MaxSiloOffset)
-                ToggleDoor(newDoor);
+                    _container.InjectGameObject(connectedDoor);
+                    //Disable door colliders
+                    ToggleDoor(newDoor);
 
-            //update what current doors connected to
-            interactedDoor.connectedTo = nextRoom.CurrentGameObject;
+                    loadedObjects.Add(connectedDoor);
+                    //update what current doors connected to
+                    interactedDoor.connectedTo = nextRoom.CurrentGameObject;
 
-            //Save for unload on going back to current room (MAY NEED TO MOVE BACK UP)
-            newlyLoadedObjects.Add(connectorDoor);
-            newlyLoadedObjects.Add(nextRoom.CurrentGameObject);
-
-            //Injects animations for closing into active room
-            _container.InjectGameObject(currentEnvironment.CurrentGameObject);
-            _container.Unbind<Animator>();
+                    //Save for unload on going back to current room
+                    newlyLoadedObjects.Add(connectedDoor);
+                };
+            };
         }
 
-        public void SpawnSilo(string myEnvironmentConnector, int environmentPrefabIndex, SiloPositioner currentSilo)
+        public void SpawnSilo(string prefabName, string to_Connect_to, SiloPositioner currentSilo)
         {
             _currentSilo = currentSilo;
             SiloExists = true;
 
             var nextRoomEnvironmentPrefabRef = currentEnvironment.CurrentGameObject.GetComponent<EnvironmentPrefab>();
 
-            var silo = _container.InstantiatePrefab(currentEnvironment.CurrentPart.MyJoins[myEnvironmentConnector][environmentPrefabIndex].Reference);
-            loadedObjects.Add(silo.gameObject);
-            newlyLoadedObjects.Add(silo.gameObject);
+            _connectivityGraph.MyJoins[prefabName].Reference.InstantiateAsync().Completed += (silo) =>
+            {
+                var newSilo = silo.Result;
+                _container.InjectGameObject(newSilo);
+                //Reposition door & set connection point
+                newSilo.GetComponent<EnvironmentPrefab>().JoinTo(to_Connect_to, nextRoomEnvironmentPrefabRef.Joins[to_Connect_to]);
 
-            //Reposition door & set connection point
-            silo.GetComponent<EnvironmentPrefab>().JoinTo(myEnvironmentConnector, nextRoomEnvironmentPrefabRef.Joins[myEnvironmentConnector]);
+                loadedObjects.Add(newSilo);
+                newlyLoadedObjects.Add(newSilo);
+            };
         }
 
         public void ChangeDirection(bool direction)
@@ -314,7 +259,7 @@ namespace SupremacyHangar.Runtime.Environment
                 foreach (var obj in objectsToUnload)
                 {
                     loadedObjects.Remove(obj);
-                    Destroy(obj);
+                    Addressables.ReleaseInstance(obj);
                 }
                 objectsToUnload.Clear();
                 newlyLoadedObjects.Clear();
@@ -328,7 +273,7 @@ namespace SupremacyHangar.Runtime.Environment
                 foreach (var obj in newlyLoadedObjects)
                 {
                     loadedObjects.Remove(obj);
-                    Destroy(obj);
+                    Addressables.ReleaseInstance(obj);
                 }
                 newlyLoadedObjects.Clear();
                 objectsToUnload.Clear();
@@ -340,7 +285,6 @@ namespace SupremacyHangar.Runtime.Environment
         {
             if (interactedDoor)
             {
-                //Debug.Log("Reset connection");
                 if (interactedDoor.connectedTo == currentEnvironment.CurrentGameObject)
                     interactedDoor.connectedTo = nextRoom.CurrentGameObject;
                 else if (commited == false)

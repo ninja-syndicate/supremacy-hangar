@@ -14,13 +14,14 @@ namespace SupremacyHangar.Runtime.Silo
         private GameObject siloAsset;
 
         [SerializeField]
-        private string myEnvironmentConnector;
+        private string to_Connect_to;
+
+        [SerializeField]
+        private string prefabName;
 
         [SerializeField]
         private Collider siloDoorTrigger;
 
-        [SerializeField]
-        private Animator siloWindowAnim;
         public bool SiloSpawned { get; set; } = false;
 
 
@@ -49,7 +50,7 @@ namespace SupremacyHangar.Runtime.Silo
             _environmentManager.UnloadAssets();
 
             //Spawn silo
-            _environmentManager.SpawnSilo(myEnvironmentConnector, 0, this);
+            _environmentManager.SpawnSilo(prefabName, to_Connect_to, this);
 
             //unlock doors
             siloDoorTrigger.enabled = true;

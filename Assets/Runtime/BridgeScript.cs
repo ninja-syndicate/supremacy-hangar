@@ -14,6 +14,7 @@ public class BridgeScript : MonoInstaller
     
     public override void InstallBindings()
     {
+        //SiloReady();
         JSONtesting();
         //Might have to bind again after data is read
         Container.Bind<SupremacyGameObject>().FromInstance(readData).AsSingle();
