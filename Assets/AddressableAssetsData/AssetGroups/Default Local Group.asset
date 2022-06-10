@@ -37,6 +37,10 @@ MonoBehaviour:
     m_Address: Hangar_Silo_01_Greybox.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 5331a0cd36225ab48b8f27bc1060fa10
+    m_Address: Assets/Content/Player/Player.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
   m_SchemaSet:

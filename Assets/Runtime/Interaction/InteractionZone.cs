@@ -42,7 +42,8 @@ namespace SupremacyHangar.Runtime.Interaction
 
         public float speed = 2f;
         private float maxHeight;
-        public float minHeight;
+        [SerializeField]
+        private float minHeight;
         Vector3 moveDirection = Vector3.down; // *assuming your platform starts at the top
 
         private bool enableElevator = false;
@@ -84,7 +85,6 @@ namespace SupremacyHangar.Runtime.Interaction
         private void OnInteraction(InteractionSignal signal)
         {
             if (hasCollided == false) return;
-            Debug.Log("Interaction", this);
             //Check message then do corresponding task
             switch(signal.Type)
             {
@@ -131,6 +131,12 @@ namespace SupremacyHangar.Runtime.Interaction
 
         private void move()
         {
+            Vector3 direction = moveDirection * Time.deltaTime * speed;
+
+            //Todo make smoother
+            transform.Translate(direction);
+            MovePlayer(direction);
+
             if (transform.localPosition.y >= maxHeight)
             {
                 moveDirection = Vector3.down; 
@@ -140,22 +146,33 @@ namespace SupremacyHangar.Runtime.Interaction
             {
                 moveDirection = Vector3.up;
                 enableElevator = false;
-            }
-
-            //Todo make smoother
-            transform.Translate(moveDirection * Time.deltaTime * speed);
+            }            
         }
 
+        private void MovePlayer(Vector3 direction)
+        {
+            _playerController.enabled = false;
+
+            _player.transform.Translate(direction);
+
+            _playerController.enabled = true;
+        }
+
+        private CharacterController _playerController;
+        private GameObject _player;
         private void OnTriggerEnter(Collider other)
         {
+            _player = other.gameObject;
+            _playerController = _player.GetComponent<CharacterController>();
+
             _signalHandler.ChangePlayerInteraction(_interactionType);
             hasCollided = true;
-            labelText.enabled = true;
+            //labelText.enabled = true;
         }
 
         private void OnTriggerExit(Collider other)
         {
-            labelText.enabled = false;
+            //labelText.enabled = false;
             hasCollided = false;
         }
     }

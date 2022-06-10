@@ -50,6 +50,9 @@ namespace SupremacyHangar.Runtime.Environment
 
         public bool SiloExists { get; private set; } = false;
 
+        [SerializeField]
+        private AssetReferenceGameObject _playerObject;
+
         public override void InstallBindings()
         {
             MaxSiloOffset = _playerInventory.Silos.Count - 1;
@@ -72,7 +75,7 @@ namespace SupremacyHangar.Runtime.Environment
                 SpawnInitialHallway();
             };
         }
-        //PLayer og height = 0.03999907
+
         private void SpawnInitialHallway()
         {
             //Spawn initial environment
@@ -109,9 +112,19 @@ namespace SupremacyHangar.Runtime.Environment
                         ToggleDoor(hallRightEnvironmentPrefab);
 
                     loadedObjects.Add(hallRight);
+                    loadPlayer();
                 };
 
                 _container.InjectGameObject(currentEnvironment.CurrentGameObject);
+            };
+        }
+
+        private void loadPlayer()
+        {
+            _playerObject.InstantiateAsync().Completed += (player) =>
+            {
+                _container.InjectGameObject(player.Result);
+                player.Result.SetActive(true);
             };
         }
 
@@ -130,9 +143,14 @@ namespace SupremacyHangar.Runtime.Environment
         }
 
         public void SpawnPart(string myEnvironmentConnector, string to_Connect_to, EnvironmentPrefab myConnectors)
-        {
-            interactedDoor = myConnectors; 
-
+        {            
+            if (interactedDoor != myConnectors)
+            {
+                if(interactedDoor) interactedDoor.wasConnected = false;
+                
+                interactedDoor = myConnectors;
+            }
+         
             foreach (var obj in loadedObjects)
             {
                 if(obj.GetInstanceID() != myConnectors.gameObject.GetInstanceID())
