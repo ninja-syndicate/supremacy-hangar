@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 namespace SupremacyData.Runtime
@@ -20,5 +21,12 @@ namespace SupremacyData.Runtime
             if (brands != null) Brands = brands.AsReadOnly();
             if (factions != null) Factions = factions.AsReadOnly();
         }
+
+        public async Task UpdateFromStaticData(string sourceDirectory)
+        {
+            await Task.Delay(5000);
+            throw new Exception("OH NO");
+        }
+        
     }
 }
