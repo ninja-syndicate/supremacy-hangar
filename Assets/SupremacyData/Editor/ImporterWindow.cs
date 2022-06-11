@@ -20,6 +20,7 @@ namespace SupremacyData.Editor
         private Importers.BattleAbilities battleAbilitiesImporter;
         private Importers.GameAbilities gameAbilitiesImporter;
         private Importers.MechModels mechModelsImporter;
+        private Importers.MechSkins mechSkinsImporter;
         
         [MenuItem("Supremacy/Data/Importer")]
         public static void Spawn()
@@ -82,6 +83,7 @@ namespace SupremacyData.Editor
             battleAbilitiesImporter = new Importers.BattleAbilities(logWidget, directory);
             gameAbilitiesImporter = new Importers.GameAbilities(logWidget, directory);
             mechModelsImporter = new Importers.MechModels(logWidget, directory);
+            mechSkinsImporter = new Importers.MechSkins(logWidget, directory);
 
             bool valid = true;
             valid &= factionsImporter.ValidateFile();
@@ -89,6 +91,7 @@ namespace SupremacyData.Editor
             valid &= battleAbilitiesImporter.ValidateFile();
             valid &= gameAbilitiesImporter.ValidateFile();
             valid &= mechModelsImporter.ValidateFile();
+            valid &= mechSkinsImporter.ValidateFile();
 
             if (!valid) return;
             importDirectory = directory;
@@ -113,6 +116,7 @@ namespace SupremacyData.Editor
                 battleAbilitiesImporter ??= new Importers.BattleAbilities(logWidget, importDirectory);
                 gameAbilitiesImporter ??= new Importers.GameAbilities(logWidget, importDirectory);
                 mechModelsImporter ??= new Importers.MechModels(logWidget, importDirectory);
+                mechSkinsImporter ??= new Importers.MechSkins(logWidget, importDirectory);
                 
                 logWidget.LogNormal("Updating factions");
                 Repaint();
@@ -129,6 +133,9 @@ namespace SupremacyData.Editor
                 logWidget.LogNormal("Updating mech models");
                 Repaint();
                 await mechModelsImporter.Update(myData);
+                logWidget.LogNormal("Updating mech skins");
+                Repaint();
+                await mechSkinsImporter.Update(myData);
                 
                 logWidget.LogNormal("Import completed");
             }

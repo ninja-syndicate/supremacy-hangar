@@ -10,11 +10,12 @@ namespace SupremacyData.Runtime
             Platform,
         }
         
-        //TODO: add skin id
         public Brand Brand => brand;
         public ModelType Type => type;
+        public MechSkin DefaultSkin => defaultSkin;
         
         [SerializeField] [SerializeReference] internal Brand brand;
         [SerializeField] [SerializeReference] internal ModelType type;
+        [SerializeField] [SerializeReference] internal MechSkin defaultSkin;
     }
 }
