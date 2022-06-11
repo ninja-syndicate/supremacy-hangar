@@ -19,6 +19,7 @@ namespace SupremacyData.Editor
         private Importers.Brands brandsImporter;
         private Importers.BattleAbilities battleAbilitiesImporter;
         private Importers.GameAbilities gameAbilitiesImporter;
+        private Importers.MechModels mechModelsImporter;
         
         [MenuItem("Supremacy/Data/Importer")]
         public static void Spawn()
@@ -80,12 +81,14 @@ namespace SupremacyData.Editor
             brandsImporter = new Importers.Brands(logWidget, directory);
             battleAbilitiesImporter = new Importers.BattleAbilities(logWidget, directory);
             gameAbilitiesImporter = new Importers.GameAbilities(logWidget, directory);
+            mechModelsImporter = new Importers.MechModels(logWidget, directory);
 
             bool valid = true;
             valid &= factionsImporter.ValidateFile();
             valid &= brandsImporter.ValidateFile();
             valid &= battleAbilitiesImporter.ValidateFile();
             valid &= gameAbilitiesImporter.ValidateFile();
+            valid &= mechModelsImporter.ValidateFile();
 
             if (!valid) return;
             importDirectory = directory;
@@ -109,6 +112,7 @@ namespace SupremacyData.Editor
                 brandsImporter ??= new Importers.Brands(logWidget, importDirectory);
                 battleAbilitiesImporter ??= new Importers.BattleAbilities(logWidget, importDirectory);
                 gameAbilitiesImporter ??= new Importers.GameAbilities(logWidget, importDirectory);
+                mechModelsImporter ??= new Importers.MechModels(logWidget, importDirectory);
                 
                 logWidget.LogNormal("Updating factions");
                 Repaint();
@@ -122,7 +126,10 @@ namespace SupremacyData.Editor
                 logWidget.LogNormal("Updating game abilities");
                 Repaint();
                 await gameAbilitiesImporter.Update(myData);
-
+                logWidget.LogNormal("Updating mech models");
+                Repaint();
+                await mechModelsImporter.Update(myData);
+                
                 logWidget.LogNormal("Import completed");
             }
             catch (Exception e)
