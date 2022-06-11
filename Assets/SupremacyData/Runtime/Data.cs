@@ -11,9 +11,9 @@ namespace SupremacyData.Runtime
         public IReadOnlyList<Brand> Brands { get; private set; }
         public IReadOnlyList<Faction> Factions { get; private set; }
 
-        [SerializeField] private List<BattleAbility> battleAbilities = new List<BattleAbility>();
-        [SerializeField] private List<Brand> brands = new List<Brand>();
-        [SerializeField] private List<Faction> factions = new List<Faction>();
+        [SerializeField] internal List<BattleAbility> battleAbilities = new();
+        [SerializeField] internal List<Brand> brands = new();
+        [SerializeField] internal List<Faction> factions = new();
         
         public void Awake()
         {
@@ -21,12 +21,5 @@ namespace SupremacyData.Runtime
             if (brands != null) Brands = brands.AsReadOnly();
             if (factions != null) Factions = factions.AsReadOnly();
         }
-
-        public async Task UpdateFromStaticData(string sourceDirectory)
-        {
-            await Task.Delay(5000);
-            throw new Exception("OH NO");
-        }
-        
     }
 }

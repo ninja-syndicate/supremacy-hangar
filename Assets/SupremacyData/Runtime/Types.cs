@@ -1,38 +1,37 @@
 using System;
+using System.Runtime.CompilerServices;
 using UnityEngine;
+using Zenject;
 
+[assembly: InternalsVisibleTo("SupremacyData.Editor")]
 namespace SupremacyData.Runtime
 {
-    [Serializable]
-    public abstract class BaseData
+    public abstract class BaseData : ScriptableObject
     {
         public Guid Id => id;
         
-        [SerializeField] private Guid id;
+        [SerializeField] internal Guid id;
     }
-    
-    [Serializable]
+
     public class BattleAbility : BaseData
     {
         
     }
-
-    [Serializable]
+    
     public class Brand : BaseData
     {
-        public string Name => Name;
+        public string HumanName => humanName;
         private Faction Faction => faction;
 
-        private string name;
-        private Faction faction;
+        [SerializeField] internal string humanName;
+        [SerializeField] internal Faction faction;
     }
     
-    [Serializable]
     public class Faction : BaseData
     {
-        public string Name => Name;
+        public string HumanName => humanName;
 
-        private string name;
+        [SerializeField] internal string humanName;
     }    
     
 }

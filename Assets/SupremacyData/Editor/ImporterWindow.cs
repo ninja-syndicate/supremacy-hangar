@@ -14,6 +14,8 @@ namespace SupremacyData.Editor
         private readonly LogWidget logWidget = new LogWidget();
         private bool busy;
         private Vector2 logWindowPos;
+
+        private FactionsImporter factionsImporter;
         
         [MenuItem("Supremacy/Data/Importer")]
         public static void Spawn()
@@ -42,6 +44,7 @@ namespace SupremacyData.Editor
         
         private void RenderDataObjectFields()
         {
+            
             myData = EditorGUILayout.ObjectField(
                 "Static Data Object",
                 myData, 
@@ -70,6 +73,13 @@ namespace SupremacyData.Editor
             var directory = EditorUtility.OpenFolderPanel("Select Static Data Directory", importDirectory, "test");
             if (!Directory.Exists(directory)) return;
             //TODO: verify the directory contains import stuff
+            factionsImporter = new FactionsImporter(logWidget, directory);
+
+            bool valid = true;
+            valid &= factionsImporter.ValidateFile();
+
+            if (!valid) return;
+            Debug.Log("things were valid");
             importDirectory = directory;
         }
 
@@ -87,15 +97,22 @@ namespace SupremacyData.Editor
             logWidget.LogNormal("Importing...");
             try
             {
-                await myData.UpdateFromStaticData(importDirectory);
+                factionsImporter ??= new FactionsImporter(logWidget, importDirectory);
+
+                await factionsImporter.Update(myData);
+                
                 logWidget.LogNormal("Import completed");
             }
             catch (Exception e)
             {
                 logWidget.LogError("Exception occured during import!");
+                logWidget.LogError(e.ToString());
+                logWidget.LogError(e.StackTrace);
             }
             finally
             {
+                EditorUtility.SetDirty(myData);
+                AssetDatabase.SaveAssetIfDirty(myData);
                 busy = false;
                 Repaint();
             }
