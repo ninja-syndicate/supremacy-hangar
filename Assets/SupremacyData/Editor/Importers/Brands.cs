@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using UnityEditor;
-using UnityEditor.VersionControl;
 using UnityEngine;
 
 namespace SupremacyData.Editor.Importers
@@ -32,13 +30,10 @@ namespace SupremacyData.Editor.Importers
         
         protected override void ProcessRecord(Runtime.Data data, int index, string[] fields)
         {
-            var id = ParseGuid(index, fields[0], "id");
-            if (id == Guid.Empty) return;
+            if (!TryParseGuid(index, fields[0], "id", out var id)) return;
+            if (!TryParseGuid(index, fields[1], "faction id", out var factionId)) return;
 
-            var factionId = ParseGuid(index, fields[1], "faction id");
-            if (factionId == Guid.Empty) return;
-
-            var faction = data.factions.Find(x => x.id == factionId);
+            var faction = data.factions.Find(x => x.Id == factionId);
             if (faction == null)
             {
                 logger.LogError($"{ImporterName} data - could not find faction with ID {factionId} referenced by {dataPath}:{index}");
@@ -50,7 +45,7 @@ namespace SupremacyData.Editor.Importers
             {
                 brand = ScriptableObject.CreateInstance<Runtime.Brand>();
                 AssetDatabase.AddObjectToAsset(brand, data);
-                brand.id = id;
+                brand.Id = id;
                 data.brands.Add(brand);
             }
 

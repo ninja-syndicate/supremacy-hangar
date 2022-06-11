@@ -14,9 +14,10 @@ namespace SupremacyData.Editor
         private readonly LogWidget logWidget = new LogWidget();
         private bool busy;
         private Vector2 logWindowPos;
-
+        
         private Importers.Factions factionsImporter;
         private Importers.Brands brandsImporter;
+        private Importers.BattleAbility battleAbility;
         
         [MenuItem("Supremacy/Data/Importer")]
         public static void Spawn()
@@ -73,13 +74,15 @@ namespace SupremacyData.Editor
         {
             var directory = EditorUtility.OpenFolderPanel("Select Static Data Directory", importDirectory, "test");
             if (!Directory.Exists(directory)) return;
-            //TODO: verify the directory contains import stuff
+
             factionsImporter = new Importers.Factions(logWidget, directory);
             brandsImporter = new Importers.Brands(logWidget, directory);
+            battleAbility = new Importers.BattleAbility(logWidget, directory);
 
             bool valid = true;
             valid &= factionsImporter.ValidateFile();
             valid &= brandsImporter.ValidateFile();
+            valid &= battleAbility.ValidateFile();
 
             if (!valid) return;
             importDirectory = directory;
@@ -96,15 +99,23 @@ namespace SupremacyData.Editor
         {
             busy = true;
             logWidget.Reset();
-            logWidget.LogNormal("Importing...");
+            logWidget.LogNormal("Update Begins");
             try
             {
                 factionsImporter ??= new Importers.Factions(logWidget, importDirectory);
                 brandsImporter ??= new Importers.Brands(logWidget, importDirectory);
-
+                battleAbility ??= new Importers.BattleAbility(logWidget, importDirectory);
                 
+                logWidget.LogNormal("Updating factions");
+                Repaint();
                 await factionsImporter.Update(myData);
+                logWidget.LogNormal("Updating brands");
+                Repaint();
                 await brandsImporter.Update(myData);
+                logWidget.LogNormal("Updating battle abilities");
+                Repaint();
+                await battleAbility.Update(myData);
+
                 logWidget.LogNormal("Import completed");
             }
             catch (Exception e)

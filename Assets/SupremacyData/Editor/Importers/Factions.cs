@@ -1,8 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Threading.Tasks;
-using SupremacyData.Runtime;
 using UnityEditor;
 using UnityEngine;
 
@@ -37,26 +33,42 @@ namespace SupremacyData.Editor.Importers
         {
         }
         
-        protected override void SetupForImport(Data data)
+        protected override void SetupForImport(Runtime.Data data)
         {
-            data.factions ??= new List<Faction>();
+            data.factions ??= new List<Runtime.Faction>();
         }
 
-        protected override void ProcessRecord(Data data, int index, string[] fields)
+        protected override void ProcessRecord(Runtime.Data data, int index, string[] fields)
         {
-            var id = ParseGuid(index, fields[0], "id");
-            if (id == Guid.Empty) return;
+            if (!TryParseGuid(index, fields[0], "id", out var id)) return;
 
             var faction = data.factions.Find(x => x.Id == id);
             if (faction == null)
             {
-                faction = ScriptableObject.CreateInstance<Faction>();
+                faction = ScriptableObject.CreateInstance<Runtime.Faction>();
                 AssetDatabase.AddObjectToAsset(faction, data);
-                faction.id = id;
+                faction.Id = id;
                 data.factions.Add(faction);
             }
                 
             faction.humanName = fields[3];
+            if (TryParseColor(index, fields[8], "primary color", out var color))
+            {
+                faction.primaryColor = color;
+            }
+            if (TryParseColor(index, fields[9], "secondary color", out color))
+            {
+                faction.secondaryColor = color;
+            }
+            if (TryParseColor(index, fields[10], "background color", out color))
+            {
+                faction.backgroundColor = color;
+            }
+
+            faction.logoURL = fields[11];
+            faction.backgroundURL = fields[12];
+            faction.description = fields[13];
+
             faction.name = $"Faction - {faction.humanName}";
         }
     }

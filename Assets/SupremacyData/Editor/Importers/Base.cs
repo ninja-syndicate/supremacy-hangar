@@ -1,7 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace SupremacyData.Editor.Importers
 {
@@ -142,12 +145,29 @@ namespace SupremacyData.Editor.Importers
             reader.Close();
         }
 
-        protected Guid ParseGuid(int index, string guid, string idName)
+        protected bool TryParseGuid(int index, string guidString, string idName, out Guid guid)
         {
-            if (Guid.TryParse(guid, out var id)) return id;
+            if (Guid.TryParse(guidString, out guid)) return true;
 
-            logger.LogError($"{ImporterName} data - Could not parse {idName} on line {index} from data file at {dataPath}");
-            return Guid.Empty;
+            logger.LogError($"{ImporterName} data - Could not parse GUID {idName} on line {index} from data file at {dataPath}");
+            return false;
+        }
+
+        protected bool TryParseColor(int index, string colorString, string colorName, out Color color)
+        {
+            if (ColorUtility.TryParseHtmlString(colorString, out color)) return true;
+            
+            logger.LogError($"{ImporterName} data - Could not parse color {colorName} on line {index} from data file at {dataPath}");
+            color = Color.black;
+            return false;
+        }
+
+        protected bool TryParseInt(int index, string intString, string intName, out int intValue)
+        {
+            if (Int32.TryParse(intString, out intValue)) return true;
+            logger.LogError($"{ImporterName} data - Could not parse integer {intName} on line {index} from data file at {dataPath}");
+            intValue = -1;
+            return false;
         }
         
         protected abstract void SetupForImport(Runtime.Data data);
