@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using Zenject;
 
 [assembly: InternalsVisibleTo("SupremacyData.Editor")]
 namespace SupremacyData.Runtime
@@ -28,19 +29,17 @@ namespace SupremacyData.Runtime
     {
         public Guid Id { get; internal set; } = Guid.Empty;
         
-        [SerializeField] private string idString;
+        [SerializeField] private byte[] idBytes;
 
         public virtual void OnBeforeSerialize()
         {
             if (Id == Guid.Empty) return;
-            idString = Id.ToString();
+            idBytes = Id.ToByteArray();
         }
 
         public virtual void OnAfterDeserialize()
         {
-            if (string.IsNullOrEmpty(idString)) Id = Guid.Empty;
-            if (!Guid.TryParse(idString, out var guid)) Id = Guid.Empty;
-            Id = guid;
+            Id = idBytes != null ? new Guid(idBytes) : Guid.Empty;
         }
     }
 }
