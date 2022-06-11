@@ -15,7 +15,8 @@ namespace SupremacyData.Editor
         private bool busy;
         private Vector2 logWindowPos;
 
-        private FactionsImporter factionsImporter;
+        private Importers.Factions factionsImporter;
+        private Importers.Brands brandsImporter;
         
         [MenuItem("Supremacy/Data/Importer")]
         public static void Spawn()
@@ -73,13 +74,14 @@ namespace SupremacyData.Editor
             var directory = EditorUtility.OpenFolderPanel("Select Static Data Directory", importDirectory, "test");
             if (!Directory.Exists(directory)) return;
             //TODO: verify the directory contains import stuff
-            factionsImporter = new FactionsImporter(logWidget, directory);
+            factionsImporter = new Importers.Factions(logWidget, directory);
+            brandsImporter = new Importers.Brands(logWidget, directory);
 
             bool valid = true;
             valid &= factionsImporter.ValidateFile();
+            valid &= brandsImporter.ValidateFile();
 
             if (!valid) return;
-            Debug.Log("things were valid");
             importDirectory = directory;
         }
 
@@ -97,10 +99,12 @@ namespace SupremacyData.Editor
             logWidget.LogNormal("Importing...");
             try
             {
-                factionsImporter ??= new FactionsImporter(logWidget, importDirectory);
+                factionsImporter ??= new Importers.Factions(logWidget, importDirectory);
+                brandsImporter ??= new Importers.Brands(logWidget, importDirectory);
 
-                await factionsImporter.Update(myData);
                 
+                await factionsImporter.Update(myData);
+                await brandsImporter.Update(myData);
                 logWidget.LogNormal("Import completed");
             }
             catch (Exception e)
