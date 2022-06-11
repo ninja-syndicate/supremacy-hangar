@@ -17,7 +17,8 @@ namespace SupremacyData.Editor
         
         private Importers.Factions factionsImporter;
         private Importers.Brands brandsImporter;
-        private Importers.BattleAbility battleAbility;
+        private Importers.BattleAbilities battleAbilitiesImporter;
+        private Importers.GameAbilities gameAbilitiesImporter;
         
         [MenuItem("Supremacy/Data/Importer")]
         public static void Spawn()
@@ -77,12 +78,14 @@ namespace SupremacyData.Editor
 
             factionsImporter = new Importers.Factions(logWidget, directory);
             brandsImporter = new Importers.Brands(logWidget, directory);
-            battleAbility = new Importers.BattleAbility(logWidget, directory);
+            battleAbilitiesImporter = new Importers.BattleAbilities(logWidget, directory);
+            gameAbilitiesImporter = new Importers.GameAbilities(logWidget, directory);
 
             bool valid = true;
             valid &= factionsImporter.ValidateFile();
             valid &= brandsImporter.ValidateFile();
-            valid &= battleAbility.ValidateFile();
+            valid &= battleAbilitiesImporter.ValidateFile();
+            valid &= gameAbilitiesImporter.ValidateFile();
 
             if (!valid) return;
             importDirectory = directory;
@@ -104,7 +107,8 @@ namespace SupremacyData.Editor
             {
                 factionsImporter ??= new Importers.Factions(logWidget, importDirectory);
                 brandsImporter ??= new Importers.Brands(logWidget, importDirectory);
-                battleAbility ??= new Importers.BattleAbility(logWidget, importDirectory);
+                battleAbilitiesImporter ??= new Importers.BattleAbilities(logWidget, importDirectory);
+                gameAbilitiesImporter ??= new Importers.GameAbilities(logWidget, importDirectory);
                 
                 logWidget.LogNormal("Updating factions");
                 Repaint();
@@ -114,7 +118,10 @@ namespace SupremacyData.Editor
                 await brandsImporter.Update(myData);
                 logWidget.LogNormal("Updating battle abilities");
                 Repaint();
-                await battleAbility.Update(myData);
+                await battleAbilitiesImporter.Update(myData);
+                logWidget.LogNormal("Updating game abilities");
+                Repaint();
+                await gameAbilitiesImporter.Update(myData);
 
                 logWidget.LogNormal("Import completed");
             }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace SupremacyData.Editor.Importers
 {
-    public class BattleAbility : Base 
+    public class BattleAbilities : Base 
     {
         private static readonly string[] BattleAbilityHeaders =
         {   
@@ -16,7 +16,7 @@ namespace SupremacyData.Editor.Importers
         public override string ImporterName => "Battle Abilities";
         protected override string Filename => "battle_abilities.csv";
         protected override string[] Headers => BattleAbilityHeaders;
-        public BattleAbility(ILogInterface logger, string staticDataDir) : base(logger, staticDataDir) { }
+        public BattleAbilities(ILogInterface logger, string staticDataDir) : base(logger, staticDataDir) { }
         
         protected override void SetupForImport(Runtime.Data data)
         {

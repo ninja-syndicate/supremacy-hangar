@@ -4,7 +4,6 @@ namespace SupremacyData.Runtime
 {
     public class Faction : BaseRecord
     {
-        public string HumanName => humanName;
         public string Description => description;
         public string LogoURL => humanName;
         public string BackgroundURL => humanName;
@@ -12,7 +11,6 @@ namespace SupremacyData.Runtime
         public Color SecondaryColor => secondaryColor;
         public Color BackgroundColor => backgroundColor;
         
-        [SerializeField] internal string humanName;
         [SerializeField] internal Color primaryColor;
         [SerializeField] internal Color secondaryColor;
         [SerializeField] internal Color backgroundColor;

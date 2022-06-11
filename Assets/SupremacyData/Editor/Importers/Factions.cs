@@ -7,22 +7,22 @@ namespace SupremacyData.Editor.Importers
     public class Factions : Base
     {
         private static readonly string[] FactionHeaders =
-            {   
-                "id",
-                "vote_price",
-                "contract_reward",
-                "label",
-                "guild_id",
-                "deleted_at",
-                "updated_at",
-                "created_at",
-                "primary_color",
-                "secondary_color",
-                "background_color",
-                "logo_url",
-                "background_url",
-                "description",
-            };
+        {   
+            "id",
+            "vote_price",
+            "contract_reward",
+            "label",
+            "guild_id",
+            "deleted_at",
+            "updated_at",
+            "created_at",
+            "primary_color",
+            "secondary_color",
+            "background_color",
+            "logo_url",
+            "background_url",
+            "description",
+        };
 
         public override string ImporterName => "Factions";
 
@@ -52,6 +52,8 @@ namespace SupremacyData.Editor.Importers
             }
                 
             faction.humanName = fields[3];
+            faction.name = $"Faction - {faction.humanName}";
+
             if (TryParseColor(index, fields[8], "primary color", out var color))
             {
                 faction.primaryColor = color;
@@ -68,8 +70,6 @@ namespace SupremacyData.Editor.Importers
             faction.logoURL = fields[11];
             faction.backgroundURL = fields[12];
             faction.description = fields[13];
-
-            faction.name = $"Faction - {faction.humanName}";
         }
     }
 }
