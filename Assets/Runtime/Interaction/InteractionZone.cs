@@ -3,6 +3,7 @@ using SupremacyHangar.Runtime.ContentLoader;
 using SupremacyHangar.Runtime.Types;
 using SupremacyHangar.Runtime.Silo;
 using System;
+using Runtime.Addressables;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
