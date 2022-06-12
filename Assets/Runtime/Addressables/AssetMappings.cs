@@ -21,15 +21,44 @@ namespace SupremacyHangar.Runtime.Addressables
         public void OnEnable()
         {
             var hallwaysByGuid = new Dictionary<Guid, FactionMapping>();
-            foreach (var factionMapping in factions) hallwaysByGuid.Add(factionMapping.DataFaction.Id, factionMapping);
+            int index = 0;
+            foreach (var factionMapping in factions)
+            {
+                if (factionMapping.DataFaction == null)
+                {
+                    Debug.LogError($"No static data set for faction at index {index}", this);
+                    index++;
+                    continue;
+                }
+                hallwaysByGuid.Add(factionMapping.DataFaction.Id, factionMapping);
+                index++;
+            }
             FactionHallwayByGuid = hallwaysByGuid;
             
             var mechChassisByGuid = new Dictionary<Guid, MechChassisMapping>();
-            foreach (var chassisMapping in mechChassis) mechChassisByGuid.Add(chassisMapping.DataMechModel.Id, chassisMapping);
+            foreach (var chassisMapping in mechChassis)
+            {
+                if (chassisMapping.DataMechModel == null)
+                {
+                    Debug.LogError($"No static data set for mech model at index {index}", this);
+                    index++;
+                    continue;
+                }
+                mechChassisByGuid.Add(chassisMapping.DataMechModel.Id, chassisMapping);
+            }
             MechChassisPrefabByGuid = mechChassisByGuid;
 
             var mechSkinByGuid = new Dictionary<Guid, MechSkinMapping>();
-            foreach (var skinMapping in mechSkins) mechSkinByGuid.Add(skinMapping.DataMechSkin.Id, skinMapping);
+            foreach (var skinMapping in mechSkins)
+            {
+                if (skinMapping.DataMechSkin == null)
+                {
+                    Debug.LogError($"No static data set for mech skin at index {index}", this);
+                    index++;
+                    continue;
+                }            
+                mechSkinByGuid.Add(skinMapping.DataMechSkin.Id, skinMapping);
+            }
             MechSkinAssetByGuid = mechSkinByGuid;            
         }
     }
