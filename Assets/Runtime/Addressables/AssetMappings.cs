@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Runtime.Addressables
 {
     [CreateAssetMenu(fileName = "AssetMappings.asset", menuName = "Supremacy/Create Asset Mapping")]
-    public class AssetMappings : ScriptableObject, ISerializationCallbackReceiver
+    public class AssetMappings : ScriptableObject
     {
         //TODO: these should just return the actual destination objects, rather than the mappings.
         public IReadOnlyDictionary<Guid, FactionMapping> FactionHallwayByGuid { get; private set; }
@@ -16,10 +16,9 @@ namespace Runtime.Addressables
         [SerializeField] private List<MechChassisMapping> mechChassis;
         [SerializeField] private List<MechSkinMapping> mechSkins;
 
-
-        public void OnBeforeSerialize() { }
-
-        public void OnAfterDeserialize()
+        //For some unity-lifecycle related reason, we can't do this as part of deserialization, which is why it's in enable.
+        //Hopefully this is early enough for consumers of this data...
+        public void OnEnable()
         {
             var hallwaysByGuid = new Dictionary<Guid, FactionMapping>();
             foreach (var factionMapping in factions) hallwaysByGuid.Add(factionMapping.DataFaction.Id, factionMapping);
@@ -31,7 +30,7 @@ namespace Runtime.Addressables
 
             var mechSkinByGuid = new Dictionary<Guid, MechSkinMapping>();
             foreach (var skinMapping in mechSkins) mechSkinByGuid.Add(skinMapping.DataMechSkin.Id, skinMapping);
-            MechSkinAssetByGuid = mechSkinByGuid;
+            MechSkinAssetByGuid = mechSkinByGuid;            
         }
     }
     
