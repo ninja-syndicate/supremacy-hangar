@@ -1,5 +1,5 @@
 using UnityEngine;
-using Runtime.Addressables;
+using SupremacyHangar.Runtime.Addressables;
 using Zenject;
 using SupremacyHangar.Runtime.ContentLoader;
 
@@ -13,7 +13,7 @@ namespace SupremacyHangar.Runtime.Silo
         AddressablesManager _addressablesManager;
 
         [Inject]
-        public void Constrct(AddressablesManager addressablesManager)
+        public void Construct(AddressablesManager addressablesManager)
         {
             _addressablesManager = addressablesManager;
         }

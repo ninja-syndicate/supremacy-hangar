@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Runtime.Addressables
+namespace SupremacyHangar.Runtime.Addressables
 {
     [CreateAssetMenu(fileName = "AssetMappings.asset", menuName = "Supremacy/Create Asset Mapping")]
     public class AssetMappings : ScriptableObject
@@ -40,7 +40,6 @@ namespace Runtime.Addressables
         public SupremacyData.Runtime.Faction DataFaction => dataFaction;
         
         [SerializeField][SerializeReference] private SupremacyData.Runtime.Faction dataFaction;
-        //TODO: add the environment connectivity graph here.
     }
 
     [Serializable]
