@@ -18,7 +18,7 @@ namespace SupremacyHangar.Runtime.Environment
 
         public GameObject connectedTo;
 
-        public List<Collider> ColliderList  = new();
+        public List<Collider> ColliderList { get; set; } = new();
 
         public bool wasConnected { get; internal set; }
 

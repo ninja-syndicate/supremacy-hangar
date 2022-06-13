@@ -46,6 +46,7 @@ namespace SupremacyHangar.Runtime.Interaction
         private float minHeight;
         Vector3 moveDirection = Vector3.down; // *assuming your platform starts at the top
 
+        private bool empty = false;
         private bool enableElevator = false;
 
         private void Start()
@@ -105,17 +106,22 @@ namespace SupremacyHangar.Runtime.Interaction
             switch(_siloContent[siloIndex])
             {
                 case Mech mech:
+                    empty = false;
                     _addressablesManager.TargetMech = _supremacyDictionary.MechDictionary[mech.mech_id];
                     _addressablesManager.TargetSkin = _supremacyDictionary.AllSkinsDictionary[mech.mech_id][mech.skin_id];
                     break;
                 case MysteryBox box:
+                    empty = false;
                     _addressablesManager.TargetMech = _supremacyDictionary.LootBoxDictionary[box.ownership_id];
                     _addressablesManager.TargetSkin = null;
                     break;
                 default:
+                    empty = true;
                     break;
             }
-            spawner.SpawnSilo();
+
+            if(!empty)
+                spawner.SpawnSilo();
         }
 
         private void Elevator()

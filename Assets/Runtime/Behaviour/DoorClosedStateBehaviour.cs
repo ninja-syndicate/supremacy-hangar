@@ -15,7 +15,7 @@ namespace SupremacyHangar
             }
             else
             {
-                Debug.LogError("Could not find Door Collision Handler!", this);
+                Debug.LogError("Could not find Door Collision Handler!", animator.gameObject);
             }
         }
     }
