@@ -1,17 +1,16 @@
 name: Acquire activation file
 on:
-  workflow_dispatch: {}
+    workflow_dispatch: {}
 jobs:
-  activation:
-    runs-on: self-hosted
-    steps:
-      - name: Request manual activation file
-        id: getManualLicenseFile
-        uses: game-ci/unity-request-activation-file@v2
+    activation:
+        runs-on: ["self-hosted"]
+        steps:
+            - name: Request manual activation file
+              id: getManualLicenseFile
+              uses: game-ci/unity-request-activation-file@v2
 
-      - name: Expose as artifact
-        uses: actions/upload-artifact@v2
-        with: 
-          name: ${{ steps.getManualLicenseFile.outputs.filePath }}
-          path: ${{ steps.getManualLicenseFile.outputs.filePath }}
-  
+            - name: Expose as artifact
+              uses: actions/upload-artifact@v2
+              with:
+                  name: ${{ steps.getManualLicenseFile.outputs.filePath }}
+                  path: ${{ steps.getManualLicenseFile.outputs.filePath }}
