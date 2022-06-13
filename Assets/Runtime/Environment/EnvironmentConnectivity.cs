@@ -32,6 +32,12 @@ namespace SupremacyHangar.Runtime.Environment
     }
 
     [Serializable]
+    public class AssetReferenceEnvironmentPrefab : AssetReferenceT<EnvironmentPrefab>
+    {
+        public AssetReferenceEnvironmentPrefab(string guid) : base(guid) {}
+    }
+
+    [Serializable]
     public class EnvironmentPartAddressable : ISerializationCallbackReceiver
     {
         [SerializeField] private string referenceName;

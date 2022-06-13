@@ -60,7 +60,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   otherEnvironmentSpawner: {fileID: 2193748051335723608}
   myConnectors: {fileID: 1835963907996916371}
-  myEnvironmentConnector: ConnectionPoint_HallwayConnector_02
+  myEnvironmentConnector: ConnectionPoint_HallwayConnector_01
   to_Connect_to: ConnectionPoint_HallwayConnector_01
   DoorAnim: {fileID: 9124716031259521551}
   Spawned: 0
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   otherEnvironmentSpawner: {fileID: 5065545422582821971}
   myConnectors: {fileID: 1835963907996916371}
-  myEnvironmentConnector: ConnectionPoint_HallwayConnector_01
+  myEnvironmentConnector: ConnectionPoint_HallwayConnector_02
   to_Connect_to: ConnectionPoint_HallwayConnector_02
   DoorAnim: {fileID: 9124716031259521551}
   Spawned: 0
@@ -177,11 +177,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabName: Hallway-Connector
-  myAssetRef:
-    m_AssetGUID: bd6bede1b22c84322b7c26f35b80b908
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
   joins:
   - name: ConnectionPoint_HallwayConnector_01
     position: {fileID: 7643843178622741940}

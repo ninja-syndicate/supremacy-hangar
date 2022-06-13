@@ -91,7 +91,7 @@ namespace SupremacyHangar.Runtime.Environment
 
                     _container.InjectGameObject(hallLeft);
                     //Disable door colliders
-                    ToggleDoor(hallLeftEnvironmentPrefab);
+                    hallLeftEnvironmentPrefab.ToggleDoor();
 
                     loadedObjects.Add(hallLeft);
                 };
@@ -106,7 +106,7 @@ namespace SupremacyHangar.Runtime.Environment
                     _container.InjectGameObject(hallRight);
 
                     if (MaxSiloOffset <= 1)
-                        ToggleDoor(hallRightEnvironmentPrefab);
+                        hallRightEnvironmentPrefab.ToggleDoor();
 
                     loadedObjects.Add(hallRight);
                 };
@@ -115,22 +115,16 @@ namespace SupremacyHangar.Runtime.Environment
             };
         }
 
-        public void ToggleDoor(EnvironmentPrefab door)
+        public void SpawnPart(EnvironmentSpawner otherSpawner, EnvironmentSpawner mySpawner)
         {
-            foreach (Collider c in door.ColliderList)
-                c.enabled = !c.enabled;
-        }
-
-        public void SpawnPart(string myEnvironmentConnector, string to_Connect_to, EnvironmentPrefab myConnectors)
-        {
-            interactedDoor = myConnectors; 
+            interactedDoor = mySpawner.MyConnectors; 
 
             foreach (var obj in loadedObjects)
             {
-                if(obj.GetInstanceID() != myConnectors.gameObject.GetInstanceID())
+                if(obj.GetInstanceID() != mySpawner.MyConnectors.gameObject.GetInstanceID())
                     objectsToUnload.Add(obj);
             }
-            string nextRoomName = _connectivityGraph.MyJoins[myConnectors.PrefabName].MyJoinsByConnector[to_Connect_to].Destinations[NextRoomIndex(myConnectors)].PrefabName;
+            string nextRoomName = _connectivityGraph.MyJoins[mySpawner.MyConnectors.PrefabName].MyJoinsByConnector[otherSpawner.ToConnectTo].Destinations[NextRoomIndex(mySpawner.MyConnectors)].PrefabName;
 
             currentEnvironment.CurrentPrefabAsset = _connectivityGraph.MyJoins[nextRoomName];
             nextRoom = new()
@@ -138,6 +132,7 @@ namespace SupremacyHangar.Runtime.Environment
                 CurrentPrefabAsset = _connectivityGraph.MyJoins[nextRoomName]
             };
 
+            Debug.Log(_connectivityGraph.MyJoins[nextRoomName].Reference);
             _connectivityGraph.MyJoins[nextRoomName].Reference.InstantiateAsync().Completed += (room) =>
             {
                 nextRoom.CurrentGameObject = room.Result;
@@ -147,21 +142,21 @@ namespace SupremacyHangar.Runtime.Environment
                 interactedDoor.wasConnected = true;
                 var nextRoomEnvironmentPrefabRef = nextRoom.CurrentGameObject.GetComponent<EnvironmentPrefab>();
                 //Reposition new room
-                nextRoomEnvironmentPrefabRef.JoinTo(myEnvironmentConnector, myConnectors.Joins[to_Connect_to]);
+                nextRoomEnvironmentPrefabRef.JoinTo(otherSpawner.ToConnectTo, mySpawner.MyConnectors.Joins[otherSpawner.ToConnectTo]);
 
                 loadedObjects.Add(nextRoom.CurrentGameObject);
                 newlyLoadedObjects.Add(nextRoom.CurrentGameObject);
                 
-                _connectivityGraph.MyJoins[myConnectors.PrefabName].Reference.InstantiateAsync().Completed += (door) =>
+                _connectivityGraph.MyJoins[mySpawner.MyConnectors.PrefabName].Reference.InstantiateAsync().Completed += (door) =>
                 {
                     var connectedDoor = door.Result;
                     newDoor = connectedDoor.GetComponent<EnvironmentPrefab>();
                     newDoor.connectedTo = nextRoom.CurrentGameObject;
-                    newDoor.JoinTo(myEnvironmentConnector, nextRoomEnvironmentPrefabRef.Joins[to_Connect_to]);
+                    newDoor.JoinTo(mySpawner.ToConnectTo, nextRoomEnvironmentPrefabRef.Joins[mySpawner.ToConnectTo]);
 
                     _container.InjectGameObject(connectedDoor);
                     //Disable door colliders
-                    ToggleDoor(newDoor);
+                    newDoor.ToggleDoor();
 
                     loadedObjects.Add(connectedDoor);
                     //update what current doors connected to
@@ -249,9 +244,9 @@ namespace SupremacyHangar.Runtime.Environment
             if (newDoor)
             {
                 if (newDoor.connectedTo.name != "Hallway-SmallStraightJoin(Clone)" && SiloOffset > 0 && SiloOffset < MaxSiloOffset)
-                    ToggleDoor(newDoor);
+                    newDoor.ToggleDoor();
                 else if (newDoor.connectedTo.name == "Hallway-SmallStraightJoin(Clone)")
-                    ToggleDoor(newDoor);
+                    newDoor.ToggleDoor();
             }
 
             if (roomChanged == true)

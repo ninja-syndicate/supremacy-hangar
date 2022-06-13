@@ -1,18 +1,13 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 
 namespace SupremacyHangar.Runtime.Environment
 {
     public class EnvironmentPrefab : MonoBehaviour, ISerializationCallbackReceiver
     {
-        [SerializeField] private string prefabName;
+        private string prefabName;
         public string PrefabName => prefabName;
-
-        [SerializeField] private AssetReference myAssetRef;
-
-        public AssetReference MyAssetRef => myAssetRef;
         
         [SerializeField] private List<Joiner> joins = new();
 
@@ -26,10 +21,18 @@ namespace SupremacyHangar.Runtime.Environment
 
         public bool wasConnected { get; internal set; }
 
-
-        public void OnBeforeSerialize()
+        public void ToggleDoor()
         {
+            foreach (Collider c in ColliderList)
+                c.enabled = !c.enabled;
         }
+
+        private void Start()
+        {
+            prefabName = name.Replace("(Clone)", "").Trim();    
+        }
+
+        public void OnBeforeSerialize() {}
 
         public void OnAfterDeserialize()
         {
@@ -39,15 +42,6 @@ namespace SupremacyHangar.Runtime.Environment
             }
             Joins = new Dictionary<string, Transform>(joinsByName);
         }
-
-        //public void Awake()
-        //{
-        //    Initialize();
-        //}
-
-        //public void Initialize()
-        //{
-        //}
 
         [Serializable]
         public class Joiner

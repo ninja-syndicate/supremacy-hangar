@@ -18,11 +18,9 @@ namespace SupremacyHangar.Runtime.Environment
 
         public EnvironmentPrefab MyConnectors => myConnectors;
 
-        [SerializeField]
-        private string myEnvironmentConnector;
-        
-        [SerializeField]
         private string to_Connect_to;
+
+        public string ToConnectTo=> to_Connect_to;
 
         [SerializeField]
         private Animator DoorAnim;
@@ -39,6 +37,7 @@ namespace SupremacyHangar.Runtime.Environment
         {
             //myConnectors.ColliderList.Add(GetComponent<Collider>());
             _environmentManager = environmentManager;
+            to_Connect_to = this.gameObject.name;
         }
 
         private void OnTriggerEnter(Collider other)
@@ -92,7 +91,7 @@ namespace SupremacyHangar.Runtime.Environment
                 _environmentManager.ChangeDirection(false);
             }
 
-            _environmentManager.SpawnPart(myEnvironmentConnector, to_Connect_to, myConnectors);
+            _environmentManager.SpawnPart(otherEnvironmentSpawner, this);
         }
     }
 }
