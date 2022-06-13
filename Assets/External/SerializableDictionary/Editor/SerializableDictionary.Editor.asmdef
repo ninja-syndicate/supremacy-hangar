@@ -2,7 +2,6 @@
     "name": "SerializableDictionary.Editor",
     "rootNamespace": "",
     "references": [
-        "GUID:dc72d96ad69ad492eb0b09edb50953ff",
         "GUID:2bafac87e7f4b9b418d9448d219b01ab"
     ],
     "includePlatforms": [

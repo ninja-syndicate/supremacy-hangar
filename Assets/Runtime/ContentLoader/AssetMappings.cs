@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SupremacyHangar.Runtime.Addressables
+namespace SupremacyHangar.Runtime.ContentLoader
 {
     [CreateAssetMenu(fileName = "AssetMappings.asset", menuName = "Supremacy/Create Asset Mapping")]
     public class AssetMappings : ScriptableObject
@@ -21,45 +21,50 @@ namespace SupremacyHangar.Runtime.Addressables
         public void OnEnable()
         {
             var hallwaysByGuid = new Dictionary<Guid, FactionMapping>();
+            PopulateDictionary(hallwaysByGuid, factions, "factions", GetFactionMapping);
+            FactionHallwayByGuid = hallwaysByGuid;
+
+            var mechChassisByGuid = new Dictionary<Guid, MechChassisMapping>();
+            PopulateDictionary(mechChassisByGuid, mechChassis, "mechModels", GetMechMapping);
+            MechChassisPrefabByGuid = mechChassisByGuid;                
+            
+            var mechSkinByGuid = new Dictionary<Guid, MechSkinMapping>();
+            PopulateDictionary(mechSkinByGuid, mechSkins, "mechSkins", GetSkinMapping);
+            MechSkinAssetByGuid = mechSkinByGuid;
+        }
+
+        private SupremacyData.Runtime.Faction GetFactionMapping(FactionMapping arg)
+        {
+            return arg.DataFaction;
+        }
+        
+        private SupremacyData.Runtime.MechModel GetMechMapping(MechChassisMapping arg)
+        {
+            return arg.DataMechModel;
+        }
+        
+        private SupremacyData.Runtime.MechSkin GetSkinMapping(MechSkinMapping arg)
+        {
+            return arg.DataMechSkin;
+        }
+
+        private void PopulateDictionary<T,U>(Dictionary<Guid, T> dict, List<T> list, string typeName, Func<T,U> getRecord) where U: SupremacyData.Runtime.BaseRecord
+        {
+            if (list == null) return;
+
             int index = 0;
-            foreach (var factionMapping in factions)
+            foreach (var mapping in list)
             {
-                if (factionMapping.DataFaction == null)
+                var record = getRecord(mapping);
+                if (record == null)
                 {
-                    Debug.LogError($"No static data set for faction at index {index}", this);
+                    Debug.LogError($"No static data set for {typeName} at index {index}", this);
                     index++;
                     continue;
                 }
-                hallwaysByGuid.Add(factionMapping.DataFaction.Id, factionMapping);
+                dict.Add(record.Id, mapping);
                 index++;
             }
-            FactionHallwayByGuid = hallwaysByGuid;
-            
-            var mechChassisByGuid = new Dictionary<Guid, MechChassisMapping>();
-            foreach (var chassisMapping in mechChassis)
-            {
-                if (chassisMapping.DataMechModel == null)
-                {
-                    Debug.LogError($"No static data set for mech model at index {index}", this);
-                    index++;
-                    continue;
-                }
-                mechChassisByGuid.Add(chassisMapping.DataMechModel.Id, chassisMapping);
-            }
-            MechChassisPrefabByGuid = mechChassisByGuid;
-
-            var mechSkinByGuid = new Dictionary<Guid, MechSkinMapping>();
-            foreach (var skinMapping in mechSkins)
-            {
-                if (skinMapping.DataMechSkin == null)
-                {
-                    Debug.LogError($"No static data set for mech skin at index {index}", this);
-                    index++;
-                    continue;
-                }            
-                mechSkinByGuid.Add(skinMapping.DataMechSkin.Id, skinMapping);
-            }
-            MechSkinAssetByGuid = mechSkinByGuid;            
         }
     }
     

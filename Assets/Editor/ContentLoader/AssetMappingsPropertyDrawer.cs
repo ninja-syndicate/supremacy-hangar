@@ -1,8 +1,7 @@
-using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-namespace SupremacyHangar.Editor.Addressables
+namespace SupremacyHangar.Editor.ContentLoader
 {
     public abstract class BaseMappingDrawer<T> : PropertyDrawer where T: class
     {

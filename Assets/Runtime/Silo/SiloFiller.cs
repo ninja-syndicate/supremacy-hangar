@@ -1,5 +1,4 @@
 using UnityEngine;
-using SupremacyHangar.Runtime.Addressables;
 using Zenject;
 using SupremacyHangar.Runtime.ContentLoader;
 

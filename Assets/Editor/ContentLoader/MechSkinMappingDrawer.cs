@@ -1,9 +1,9 @@
 using SupremacyData.Runtime;
 using UnityEditor;
 
-namespace SupremacyHangar.Editor.Addressables
+namespace SupremacyHangar.Editor.ContentLoader
 {
-    [CustomPropertyDrawer(typeof(Runtime.Addressables.MechSkinMapping))]
+    [CustomPropertyDrawer(typeof(Runtime.ContentLoader.MechSkinMapping))]
     public class MechSkinMappingDrawer : BaseMappingDrawer<MechSkin>
     {
         protected override string StaticDataPropertyName => "dataMechSkin";

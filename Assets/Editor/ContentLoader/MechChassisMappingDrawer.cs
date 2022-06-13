@@ -1,9 +1,9 @@
 using SupremacyData.Runtime;
 using UnityEditor;
 
-namespace SupremacyHangar.Editor.Addressables
+namespace SupremacyHangar.Editor.ContentLoader
 {
-    [CustomPropertyDrawer(typeof(Runtime.Addressables.MechChassisMapping))]
+    [CustomPropertyDrawer(typeof(Runtime.ContentLoader.MechChassisMapping))]
     public class MechChassisMappingDrawer : BaseMappingDrawer<MechModel>
     {
         protected override string StaticDataPropertyName => "dataMechModel";
