@@ -457,9 +457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 635b27c1e5c26c74b836536519f30664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  siloAsset: {fileID: 12822200296412448, guid: 9a955d9e8bbecf4449c699e011487558, type: 3}
-  to_Connect_to: ConnectionPoint_Silo_01
-  prefabName: Hallway-Silo_Right
+  to_Connect_to: {fileID: 11400000, guid: 9c6adcde0dc67734cb2711fd493d1eee, type: 2}
   siloDoorTrigger: {fileID: 4861171405328393359}
 --- !u!65 &5916775535431724488
 BoxCollider:
@@ -544,20 +542,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9c8348928343a8bc54fdc3420bcb02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabName: Hallway-DoubleSilo
-  myAssetRef:
-    m_AssetGUID: 9320372745f3f45e4971cba976134fb7
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
+  prefabName: {fileID: 11400000, guid: b1455639bfd83dc48a72059e08ab397f, type: 2}
   joins:
-  - name: ConnectionPoint_HallwayConnector_01
+  - name: {fileID: 11400000, guid: 499c008a075ca6e4399691bc97c1f797, type: 2}
     position: {fileID: 3408442014351228977}
-  - name: ConnectionPoint_HallwayConnector_02
+  - name: {fileID: 11400000, guid: 9f006f5a32a5fc4488c4eb3bc8d7e589, type: 2}
     position: {fileID: 6643836280445590555}
-  - name: ConnectionPoint_Silo_01
+  - name: {fileID: 11400000, guid: 9c6adcde0dc67734cb2711fd493d1eee, type: 2}
     position: {fileID: 8828754845809123080}
-  - name: ConnectionPoint_Silo_02
+  - name: {fileID: 11400000, guid: 4e9ae6ee017577449bbaef68f6882ef1, type: 2}
     position: {fileID: 3541950691217371676}
   connectedTo: {fileID: 0}
   ColliderList: []
@@ -1887,9 +1880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 635b27c1e5c26c74b836536519f30664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  siloAsset: {fileID: 49628530332411176, guid: 6c3809ce056848149ba60e4a313aa781, type: 3}
-  to_Connect_to: ConnectionPoint_Silo_02
-  prefabName: Hallway-Silo_Left
+  to_Connect_to: {fileID: 11400000, guid: 4e9ae6ee017577449bbaef68f6882ef1, type: 2}
   siloDoorTrigger: {fileID: 3230706503980203563}
 --- !u!65 &62340275779691916
 BoxCollider:

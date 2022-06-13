@@ -151,13 +151,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabName: Hangar_Silo_02_Greybox
-  myAssetRef:
-    m_AssetGUID: 6c3809ce056848149ba60e4a313aa781
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
   joins:
-  - name: ConnectionPoint_Silo_02
+  - name: {fileID: 11400000, guid: 4e9ae6ee017577449bbaef68f6882ef1, type: 2}
     position: {fileID: 3121831810054685040}
   connectedTo: {fileID: 0}
   ColliderList: []

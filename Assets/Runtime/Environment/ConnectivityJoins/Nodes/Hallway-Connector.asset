@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a53a9becb7b4cf6b43b36a4968a25d9, type: 3}
-  m_Name: Settings_Environment
+  m_Script: {fileID: 11500000, guid: 6ce19572bb87d844791c8825491d192d, type: 3}
+  m_Name: Hallway-Connector
   m_EditorClassIdentifier: 
-  parts: []
