@@ -17,10 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: d5c1dbabceb0b7a45b50342efadbae58
   m_SerializeEntries:
-  - m_GUID: ee287b69aeb80451e8893e36609a5b6f
-    m_Address: Hallway-SmallStraightJoin
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 9320372745f3f45e4971cba976134fb7
     m_Address: Hallway-DoubleSilo
     m_ReadOnly: 0
@@ -37,8 +33,8 @@ MonoBehaviour:
     m_Address: Hangar_Silo_01_Greybox.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 5331a0cd36225ab48b8f27bc1060fa10
-    m_Address: Assets/Content/Player/Player.prefab
+  - m_GUID: b90b9b7825ebb344a89a6d6f28cad701
+    m_Address: Hallway-SmallStraightJoin.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

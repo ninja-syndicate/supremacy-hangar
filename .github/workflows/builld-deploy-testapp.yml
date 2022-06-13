@@ -8,9 +8,6 @@ on:
     push:
         branches: ["develop"]
 
-    # Allows you to run this workflow manually from the Actions tab
-    workflow_dispatch:
-
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
     # This workflow contains a single job called "build"
@@ -27,20 +24,31 @@ jobs:
 
         # Steps represent a sequence of tasks that will be executed as part of the job
         steps:
+            # give extra previlege to the runner
+            # - name: Extra previlege
+            #   run: |
+            #       $ServiceName = (Get-Service actions.runner.*).name
+            #       'sc.exe config $ServiceName obj= "NT AUTHORITY\SYSTEM" type= own'
+
             # support longpaths
-            - name: Support longpaths
-              run: git config --system core.longpaths true
+            # - name: Support longpaths
+            #   run: |
+            #       git config --system core.longpaths true
 
             # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-            - name: Checkout repository
-            - uses: actions/checkout@v3
-            - with:
-                  lfs: true
+            - name: Checkout Repository
+              uses: actions/checkout@v3
+              with:
+                  lfs: "true"
+
+            - name: Git LFS Pull
+              run: |
+                  git lfs pull
 
             # build Unity
-            - name: Build Unity project
+            - name: Build Unity Project
               run: |
-                  "C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe" -batchmode -quit -buildTarget WebGL -projectPath "C:\Users\Ninja\Documents\Unity Projects\supremacy-hangar" -logFile log.txt -executeMethod BuildSystem.CLI.PreWarm
-                  "C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe" -batchmode -quit -buildTarget WebGL -projectPath "C:\Users\Ninja\Documents\Unity Projects\supremacy-hangar" -logFile log.txt -executeMethod BuildSystem.CLI.BuildWebGL -development
-
+                  Set-Location -Path 'C:\actions-runner\_work\supremacy-hangar\supremacy-hangar'
+                  Start-Process -FilePath "C:\actions-runner\_work\supremacy-hangar\supremacy-hangar\prewarm.bat" -Wait -WindowStyle Hidden
+                  Start-Process -FilePath "C:\actions-runner\_work\supremacy-hangar\supremacy-hangar\build.bat" -Wait -WindowStyle Hidden
             # upload build

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using SupremacyHangar.Runtime.Environment;
 using Zenject;
+using SupremacyHangar.Runtime.ScriptableObjects;
 
 namespace SupremacyHangar.Runtime.Silo
 {
@@ -11,13 +12,9 @@ namespace SupremacyHangar.Runtime.Silo
         private EnvironmentManager _environmentManager;
 
         [SerializeField]
-        private GameObject siloAsset;
+        private ConnectivityJoin to_Connect_to;
 
-        [SerializeField]
-        private string to_Connect_to;
-
-        [SerializeField]
-        private string prefabName;
+        public ConnectivityJoin ToConnectTo => to_Connect_to; 
 
         [SerializeField]
         private Collider siloDoorTrigger;
@@ -50,7 +47,7 @@ namespace SupremacyHangar.Runtime.Silo
             _environmentManager.UnloadAssets();
 
             //Spawn silo
-            _environmentManager.SpawnSilo(prefabName, to_Connect_to, this);
+            _environmentManager.SpawnSilo(this);
 
             //unlock doors
             siloDoorTrigger.enabled = true;

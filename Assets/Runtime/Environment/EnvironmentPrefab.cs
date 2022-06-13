@@ -1,3 +1,4 @@
+using SupremacyHangar.Runtime.ScriptableObjects;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,25 +7,28 @@ namespace SupremacyHangar.Runtime.Environment
 {
     public class EnvironmentPrefab : MonoBehaviour, ISerializationCallbackReceiver
     {
-        [SerializeField] private string prefabName;
-        public string PrefabName => prefabName;
+        [SerializeField] private ConnectivityJoin prefabName;
+        public ConnectivityJoin PrefabName => prefabName;
         
         [SerializeField] private List<Joiner> joins = new();
 
-        private readonly Dictionary<string, Transform> joinsByName = new Dictionary<string, Transform>();
+        private readonly Dictionary<ConnectivityJoin, Transform> joinsByName = new Dictionary<ConnectivityJoin, Transform>();
 
-        public IReadOnlyDictionary<string, Transform> Joins;
+        public IReadOnlyDictionary<ConnectivityJoin, Transform> Joins;
 
         public GameObject connectedTo;
 
-        public List<Collider> ColliderList { get; set; } = new();
+        public List<Collider> ColliderList  = new();
 
         public bool wasConnected { get; internal set; }
 
-
-        public void OnBeforeSerialize()
+        public void ToggleDoor()
         {
+            foreach (Collider c in ColliderList)
+                c.enabled = !c.enabled;
         }
+
+        public void OnBeforeSerialize() {}
 
         public void OnAfterDeserialize()
         {
@@ -32,26 +36,17 @@ namespace SupremacyHangar.Runtime.Environment
             {
                 joinsByName[join.name] = join.position;
             }
-            Joins = new Dictionary<string, Transform>(joinsByName);
+            Joins = new Dictionary<ConnectivityJoin, Transform>(joinsByName);
         }
-
-        //public void Awake()
-        //{
-        //    Initialize();
-        //}
-
-        //public void Initialize()
-        //{
-        //}
 
         [Serializable]
         public class Joiner
         {
-            [SerializeField] public string name;
+            [SerializeField] public ConnectivityJoin name;
             [SerializeField] public Transform position;
         }
 
-        public void JoinTo(string name, Transform otherHalf)
+        public void JoinTo(ConnectivityJoin name, Transform otherHalf)
         {
             if (!joinsByName.TryGetValue(name, out var connection)) {
                 Debug.LogError($"Could not find connection called {name}", this);

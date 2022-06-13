@@ -1,3 +1,4 @@
+using SupremacyHangar.Runtime.ScriptableObjects;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,9 +9,19 @@ namespace SupremacyHangar.Runtime.Environment
     [CreateAssetMenu(fileName = "Settings/Environment", menuName = "Supremacy/Environment Connectivity Graph")]
     public class EnvironmentConnectivity : ScriptableObject, ISerializationCallbackReceiver
     {
+        [SerializeField] private int initialSection = 0;
+        [SerializeField] private List<ConnectivityJoin> requiredJoins;
+
+        public List<ConnectivityJoin> RequiredJoins => requiredJoins;
+
         [SerializeField] private List<EnvironmentPartAddressable> parts = new();
 
-        public Dictionary<string, EnvironmentPartAddressable> MyJoins { get; private set; } = new();
+        public Dictionary<ConnectivityJoin, EnvironmentPartAddressable> MyJoins { get; private set; } = new();
+
+        public EnvironmentPartAddressable GetInitialSection()
+        {
+            return parts[initialSection];
+        }
 
         public void OnAfterDeserialize()
         {
@@ -26,31 +37,29 @@ namespace SupremacyHangar.Runtime.Environment
             }
         }
 
-        public void OnBeforeSerialize()
-        {
-        }
+        public void OnBeforeSerialize() {}
+    }
+
+    [Serializable]
+    public class AssetReferenceEnvironmentPrefab : AssetReferenceT<EnvironmentPrefab>
+    {
+        public AssetReferenceEnvironmentPrefab(string guid) : base(guid) {}
     }
 
     [Serializable]
     public class EnvironmentPartAddressable : ISerializationCallbackReceiver
     {
-        [SerializeField] private string referenceName;
+        [SerializeField] private ConnectivityJoin referenceName;
 
-        public string ReferenceName => referenceName;
-
-        public EnvironmentPrefab Part => part;
+        public ConnectivityJoin ReferenceName => referenceName;
 
         public AssetReferenceGameObject Reference;
 
-        [SerializeField][SerializeReference] private EnvironmentPrefab part;
-
         [SerializeField] private List<PartJoin> joins = new();
 
-        public Dictionary<string, PartJoin> MyJoinsByConnector = new();
+        public Dictionary<ConnectivityJoin, PartJoin> MyJoinsByConnector = new();
 
-        public void OnBeforeSerialize()
-        {
-        }
+        public void OnBeforeSerialize() {}
 
         public void OnAfterDeserialize()
         {
@@ -69,11 +78,11 @@ namespace SupremacyHangar.Runtime.Environment
     [Serializable]
     public class PartJoin
     {
-        public string Connector => connector;
-        public List<EnvironmentPrefab> Destinations => destinations;
+        public ConnectivityJoin Connector => connector;
+        public List<ConnectivityJoin> Destinations => destinations;
 
-        [SerializeField] private string connector;
+        [SerializeField] private ConnectivityJoin connector;
 
-        [SerializeField][SerializeReference] private List<EnvironmentPrefab> destinations;
+        [SerializeField] private List<ConnectivityJoin> destinations;
     }
 }

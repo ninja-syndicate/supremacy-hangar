@@ -15,7 +15,7 @@ namespace SupremacyHangar
             }
             else
             {
-                Debug.LogError("Could not find Room Tracker!", this);
+                Debug.LogError("Could not find Room Tracker!", animator.gameObject);
             }
         }
 
@@ -28,7 +28,7 @@ namespace SupremacyHangar
             }
             else
             {
-                Debug.LogError("Could not find Room Tracker!", this);
+                Debug.LogError("Could not find Room Tracker!", animator.gameObject);
             }
         }
     }

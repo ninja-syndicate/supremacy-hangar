@@ -46,16 +46,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9c8348928343a8bc54fdc3420bcb02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabName: Hallway-SmallStraightJoin
-  myAssetRef:
-    m_AssetGUID: ee287b69aeb80451e8893e36609a5b6f
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
+  prefabName: {fileID: 11400000, guid: 9a076b2650fe9e74cbec6834753181e0, type: 2}
   joins:
-  - name: ConnectionPoint_HallwayConnector_01
+  - name: {fileID: 11400000, guid: 499c008a075ca6e4399691bc97c1f797, type: 2}
     position: {fileID: 2842438848924748227}
-  - name: ConnectionPoint_HallwayConnector_02
+  - name: {fileID: 11400000, guid: 9f006f5a32a5fc4488c4eb3bc8d7e589, type: 2}
     position: {fileID: 6056441012527420905}
   connectedTo: {fileID: 0}
   ColliderList: []
