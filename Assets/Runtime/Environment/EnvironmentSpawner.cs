@@ -1,3 +1,4 @@
+using SupremacyHangar.Runtime.ScriptableObjects;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -18,11 +19,9 @@ namespace SupremacyHangar.Runtime.Environment
 
         public EnvironmentPrefab MyConnectors => myConnectors;
 
-        [SerializeField]
-        private string myEnvironmentConnector;
-        
-        [SerializeField]
-        private string to_Connect_to;
+        [SerializeField] private ConnectivityJoin to_Connect_to;
+
+        public ConnectivityJoin ToConnectTo => to_Connect_to;
 
         [SerializeField]
         private Animator DoorAnim;
@@ -30,24 +29,15 @@ namespace SupremacyHangar.Runtime.Environment
         public bool Entered { get; private set; } = false;
 
         public bool Spawned = false;
+        
+        [SerializeField]
+        private bool increment;
 
         [Inject]
         public void Construct(EnvironmentManager environmentManager)
         {
-            myConnectors.ColliderList.Add(GetComponent<Collider>());
+            //myConnectors.ColliderList.Add(GetComponent<Collider>());
             _environmentManager = environmentManager;
-        }
-
-        private void EnableDoors()
-        {
-            Debug.Log("Enable Doors", this);
-            _environmentManager.toggleDoor(MyConnectors);
-        }
-
-        private void DisableDoors()
-        {
-            Debug.Log("Disable Doors", this);
-            _environmentManager.toggleDoor(MyConnectors);
         }
 
         private void OnTriggerEnter(Collider other)
@@ -59,19 +49,16 @@ namespace SupremacyHangar.Runtime.Environment
                 if (Spawned)
                 {
                     _environmentManager.resetConnection();
-                    Debug.Log($"..2 {_environmentManager.currentEnvironment.currentGameObject}", this);
                 }
                 return;
             }
             
             //Remove silo before proceeding
             if (_environmentManager.SiloExists)
-                _environmentManager.unloadAssets();
+                _environmentManager.UnloadAssets();
 
-            //Debug.Log($"{name} spawned Section ", this);
-            spawnSection();
+            SpawnSection();
 
-            //_doorSignalHandler.DoorOpen(myConnectors.gameObject);
             DoorAnim.SetBool("IsOpen", true);
         }
 
@@ -91,21 +78,20 @@ namespace SupremacyHangar.Runtime.Environment
             }
         }
 
-        public void spawnSection()
+        private void SpawnSection()
         {
             Spawned = true;
 
-            if (to_Connect_to.Contains("2"))
+            if (increment)
             {
-                Debug.Log("dir = forward", this);
                 _environmentManager.ChangeDirection(true);
             }
             else if (Spawned)
             {
-                Debug.Log("dir = backward", this);
                 _environmentManager.ChangeDirection(false);
             }
-            _environmentManager.spawnPart(myEnvironmentConnector, to_Connect_to, myConnectors, DoorAnim);
+
+            _environmentManager.SpawnPart(otherEnvironmentSpawner, this);
         }
     }
 }

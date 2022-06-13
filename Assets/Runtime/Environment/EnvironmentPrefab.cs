@@ -1,19 +1,20 @@
+using SupremacyHangar.Runtime.ScriptableObjects;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace SupremacyHangar.Runtime.Environment
 {
-    public class EnvironmentPrefab : MonoBehaviour
+    public class EnvironmentPrefab : MonoBehaviour, ISerializationCallbackReceiver
     {
-        [SerializeField] private string prefabName;
+        [SerializeField] private ConnectivityJoin prefabName;
+        public ConnectivityJoin PrefabName => prefabName;
         
         [SerializeField] private List<Joiner> joins = new();
 
-        private readonly Dictionary<string, Transform> joinsByName = new Dictionary<string, Transform>();
+        private readonly Dictionary<ConnectivityJoin, Transform> joinsByName = new Dictionary<ConnectivityJoin, Transform>();
 
-        public IReadOnlyDictionary<string, Transform> Joins;
+        public IReadOnlyDictionary<ConnectivityJoin, Transform> Joins;
 
         public GameObject connectedTo;
 
@@ -21,28 +22,31 @@ namespace SupremacyHangar.Runtime.Environment
 
         public bool wasConnected { get; internal set; }
 
-        public void Awake()
+        public void ToggleDoor()
         {
-            initialize();
+            foreach (Collider c in ColliderList)
+                c.enabled = !c.enabled;
         }
 
-        public void initialize()
+        public void OnBeforeSerialize() {}
+
+        public void OnAfterDeserialize()
         {
             foreach (var join in joins)
             {
                 joinsByName[join.name] = join.position;
             }
-            Joins = new Dictionary<string, Transform>(joinsByName);
+            Joins = new Dictionary<ConnectivityJoin, Transform>(joinsByName);
         }
 
         [Serializable]
         public class Joiner
         {
-            [SerializeField] public string name;
+            [SerializeField] public ConnectivityJoin name;
             [SerializeField] public Transform position;
         }
 
-        public void JoinTo(string name, Transform otherHalf)
+        public void JoinTo(ConnectivityJoin name, Transform otherHalf)
         {
             if (!joinsByName.TryGetValue(name, out var connection)) {
                 Debug.LogError($"Could not find connection called {name}", this);
@@ -52,6 +56,5 @@ namespace SupremacyHangar.Runtime.Environment
 
             transform.position += delta;
         }
-
     }
 }

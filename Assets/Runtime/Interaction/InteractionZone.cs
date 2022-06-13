@@ -1,4 +1,6 @@
-using SupremacyHangar.Runtime.Scriptable;
+using SupremacyHangar.Runtime.ScriptableObjects;
+using SupremacyHangar.Runtime.ContentLoader;
+using SupremacyHangar.Runtime.Types;
 using SupremacyHangar.Runtime.Silo;
 using System;
 using UnityEngine;
@@ -18,8 +20,6 @@ namespace SupremacyHangar.Runtime.Interaction
         [SerializeField]
         private SiloPositioner spawner;
 
-        private PlayerInput _playerInput;
-
         [Inject]
         private AddressablesManager _addressablesManager;
         
@@ -33,47 +33,120 @@ namespace SupremacyHangar.Runtime.Interaction
         private int siloIndex = 0;
 
         private SignalBus _bus;
+        private bool _subscribed;
+
+        [SerializeField]
+        private InteractionType _interactionType;
+
+        private InteractionSignalHandler _signalHandler;
+
+        public float speed = 2f;
+        private float maxHeight;
+        public float minHeight;
+        Vector3 moveDirection = Vector3.down; // *assuming your platform starts at the top
+
+        private void Start()
+        {
+            maxHeight = transform.localPosition.y;
+        }
 
         [Inject]
-        public void Constuct(SignalBus bus)
+        public void Constuct(SignalBus bus, InteractionSignalHandler interactionSignalHandler)
         {
             _bus = bus;
+            _signalHandler = interactionSignalHandler;
+            SubscribeToSignal();
+        }
+
+        private void SubscribeToSignal()
+        {
+            if (_bus == null || _subscribed) return;
             _bus.Subscribe<InteractionSignal>(OnInteraction);
+            _subscribed = true;
+        }
+
+        private void OnEnable()
+        {
+            SubscribeToSignal();
         }
 
         private void OnDisable()
         {
-            _bus.Unsubscribe<InteractionSignal>(OnInteraction);
+            if (_subscribed)
+            {
+                _bus.Unsubscribe<InteractionSignal>(OnInteraction);
+                _subscribed = false;
+            }
         }
 
         private void OnInteraction(InteractionSignal signal)
         {
             if (hasCollided == false) return;
-            Debug.Log(signal.message);
+            Debug.Log("Interaction", this);
             //Check message then do corresponding task
-            fillSilo();
+            switch(signal.Type)
+            {
+                case InteractionType.Silo:
+                    FillSilo();
+                    break;
+                case InteractionType.Elevator:
+                    Elevator();
+                    break;
+                default:
+                    Debug.LogError($"Unkown signal type {signal.Type}", this);
+                    break;
+            }
         }
 
-        private void fillSilo()
+        private void FillSilo()
         {
-            //Todo: accept loot boxes
             if (_siloContent[siloIndex].type.Contains("mech"))
             {
-                _addressablesManager.targetMech = _supremacyDictionary.mechDictionary[_siloContent[siloIndex].chassisId];
-                _addressablesManager.targetSkin = _supremacyDictionary.AllSkinsDictionary[_siloContent[siloIndex].chassisId][_siloContent[siloIndex].skinId];
+                _addressablesManager.TargetMech = _supremacyDictionary.MechDictionary[_siloContent[siloIndex].chassisId];
+                _addressablesManager.TargetSkin = _supremacyDictionary.AllSkinsDictionary[_siloContent[siloIndex].chassisId][_siloContent[siloIndex].skinId];
             }
             else
             {
-                _addressablesManager.targetMech = _supremacyDictionary.lootBoxDictionary[_siloContent[siloIndex].id];
-                _addressablesManager.targetSkin = null;
+                _addressablesManager.TargetMech = _supremacyDictionary.LootBoxDictionary[_siloContent[siloIndex].id];
+                _addressablesManager.TargetSkin = null;
             }
-            spawner.spawnSilo();
+            spawner.SpawnSilo();
+        }
+
+        private bool enableElevator = false;
+        private void Elevator()
+        {
+            enableElevator = !enableElevator;
+        }
+
+        private void Update()
+        {
+            if (enableElevator)
+                move();
+        }
+
+        private void move()
+        {
+            if (transform.localPosition.y >= maxHeight)
+            {
+                moveDirection = Vector3.down; 
+                enableElevator = false;
+            }
+            else if (transform.localPosition.y <= minHeight)
+            {
+                moveDirection = Vector3.up;
+                enableElevator = false;
+            }
+
+            //Todo make smoother
+            transform.Translate(moveDirection * Time.deltaTime * speed);
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            labelText.enabled = true;
+            _signalHandler.ChangePlayerInteraction(_interactionType);
             hasCollided = true;
+            labelText.enabled = true;
         }
 
         private void OnTriggerExit(Collider other)

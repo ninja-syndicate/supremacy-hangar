@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-namespace SupremacyHangar.Runtime.Reposition
+namespace SupremacyHangar.Runtime.Environment
 {
     public struct RepositionObjectSignal
     {
@@ -19,7 +19,7 @@ namespace SupremacyHangar.Runtime.Reposition
             _signalBus = signalBus;
         }
 
-        public void repositionObject(Vector3 pos)
+        public void RepositionObject(Vector3 pos)
         {
             _signalBus.Fire(new RepositionObjectSignal() { Position = pos});
         }

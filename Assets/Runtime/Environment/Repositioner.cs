@@ -1,18 +1,24 @@
 using System;
 using System.ComponentModel;
-using SupremacyHangar.Runtime.Environment;
 using UnityEngine;
 using Zenject;
 
-namespace SupremacyHangar.Runtime.Reposition
+namespace SupremacyHangar.Runtime.Environment
 {
     public class Repositioner : MonoBehaviour
     {
         private SignalBus _bus;
         private bool _subscribed;
         
-        [SerializeField]
         private CharacterController _characterController;
+
+        private void Awake()
+        {
+            if(TryGetComponent(out CharacterController controller))
+            {
+                _characterController = controller;
+            }
+        }
 
         [Inject]
         public void Initialize(SignalBus bus)

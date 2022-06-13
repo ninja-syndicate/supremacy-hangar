@@ -54,7 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabName: Hangar_Silo_01_Greybox
   joins:
-  - name: ConnectionPoint_Silo_01
+  - name: {fileID: 11400000, guid: 9c6adcde0dc67734cb2711fd493d1eee, type: 2}
     position: {fileID: 6948672163709246572}
   connectedTo: {fileID: 0}
   ColliderList: []
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f7d6ade9fa564547ba49c071b49ce0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MechSpawner: {fileID: 3377010337067339204}
+  mechSpawner: {fileID: 3377010337067339204}
 --- !u!1 &70065529768906562
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,6 +377,8 @@ GameObject:
   - component: {fileID: 6597316617979438015}
   - component: {fileID: 2865014931617198162}
   - component: {fileID: 3208953557770275073}
+  - component: {fileID: 8944844640179054649}
+  - component: {fileID: 7650048271217785428}
   m_Layer: 0
   m_Name: Hangar_Silo_Elevator02
   m_TagString: Untagged
@@ -463,6 +465,37 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -642060021074244929, guid: b7d0a9258b92c3d4b97d08135c9d0ba7, type: 3}
+--- !u!65 &8944844640179054649
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3606856587891199879}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3148918, y: 3.0671568, z: 2.6819897}
+  m_Center: {x: 1.14, y: 0.83801126, z: -0.03}
+--- !u!114 &7650048271217785428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3606856587891199879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25df99a152887474286d722df81b5a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  labelText: {fileID: 0}
+  spawner: {fileID: 0}
+  siloIndex: 0
+  _interactionType: 1
+  speed: 2
+  minHeight: -17.7
 --- !u!1 &4149002585019451199
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,6 +539,8 @@ GameObject:
   - component: {fileID: 2354794048867484830}
   - component: {fileID: 105273108089272556}
   - component: {fileID: 6712267176641280283}
+  - component: {fileID: 8223115253316457764}
+  - component: {fileID: 3779383252699529622}
   m_Layer: 0
   m_Name: Hangar_Silo_Elevator01
   m_TagString: Untagged
@@ -592,6 +627,37 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 9014339649262003416, guid: b7d0a9258b92c3d4b97d08135c9d0ba7, type: 3}
+--- !u!65 &8223115253316457764
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5667887290132763328}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3148918, y: 3.0671568, z: 2.6819897}
+  m_Center: {x: -1.14, y: 0.83801126, z: -0.03}
+--- !u!114 &3779383252699529622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5667887290132763328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25df99a152887474286d722df81b5a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  labelText: {fileID: 0}
+  spawner: {fileID: 0}
+  siloIndex: 0
+  _interactionType: 1
+  speed: 2
+  minHeight: -17.7
 --- !u!1 &6239920165013470174
 GameObject:
   m_ObjectHideFlags: 0

@@ -90,9 +90,15 @@ namespace SupremacyHangar.Runtime
 
 		private InteractionSignalHandler _interactionSignalHandler;
 
+		private InteractionType interactedWith;
+		private bool _subscribed;
+		private SignalBus _bus;
+
 		[Inject]
-		public void Construct(InteractionSignalHandler interactionSignalHandler)
+		public void Construct(InteractionSignalHandler interactionSignalHandler, SignalBus bus)
         {
+			_bus = bus;
+			SubscribeToSignal();
 			_interactionSignalHandler = interactionSignalHandler;
         }
 
@@ -106,6 +112,13 @@ namespace SupremacyHangar.Runtime
 			if (!ValidateAndSetupComponentReferences()) return;
 		}
 
+		private void SubscribeToSignal()
+		{
+			if (_bus == null || _subscribed) return;
+			_bus.Subscribe<PlayerInteractionChangeSignal>(ChangeMyInteraction);
+			_subscribed = true;
+		}
+		
 		private void Start()
 		{
 			_controller = GetComponent<CharacterController>();
@@ -118,12 +131,18 @@ namespace SupremacyHangar.Runtime
 
 		public void OnEnable()
 		{
-			if (!BindToInputs()) return;
+			if (!BindToInputs()) return; 
+			SubscribeToSignal();
 		}
 
 		public void OnDisable()
 		{
 			UnbindInputs();
+			if(_subscribed)
+			{
+				_bus.Unsubscribe<PlayerInteractionChangeSignal>(ChangeMyInteraction);
+				_subscribed = false;
+			}
 		}
 
 		private bool ValidateAndSetupComponentReferences()
@@ -216,25 +235,33 @@ namespace SupremacyHangar.Runtime
 		public void OnJumpChange(InputAction.CallbackContext context)
 		{
 			if (Grounded)
-				jump = FloatToBoolean(context.ReadValue<float>());
+				jump = context.phase == InputActionPhase.Performed;
 		}
-
-		private bool FloatToBoolean(float val)
-        {
-			if (val > 0)
-				return true;
-
-			return false;
-        }
 
 		public void OnSprintChange(InputAction.CallbackContext context)
 		{
-			sprint = FloatToBoolean(context.ReadValue<float>());
+			sprint = context.phase == InputActionPhase.Performed;
 		}
-		
-		private void OnInteractionChange(InputAction.CallbackContext context)
+
+        private void OnInteractionChange(InputAction.CallbackContext context)
 		{
-			_interactionSignalHandler.PressurizeSilo();
+			if (context.phase == InputActionPhase.Canceled) return;
+            switch (interactedWith)
+            {
+                case InteractionType.Silo:
+                    _interactionSignalHandler.LoadSilo(interactedWith);
+                    break;
+                case InteractionType.Elevator:
+                    _interactionSignalHandler.InteractWithElevator(interactedWith);
+                    break;
+                default:
+                    Debug.LogError($"Unkown signal type {interactedWith}", this);
+                    break;
+            }
+        }
+		private void ChangeMyInteraction(PlayerInteractionChangeSignal signal)
+		{
+			interactedWith = signal.Type;
 		}
 
 		private void Update()

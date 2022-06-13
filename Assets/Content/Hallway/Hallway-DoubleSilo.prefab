@@ -442,6 +442,9 @@ MonoBehaviour:
   labelText: {fileID: 4592121025565001974}
   spawner: {fileID: 8962178593567118285}
   siloIndex: 1
+  _interactionType: 0
+  speed: 2
+  minHeight: 0
 --- !u!114 &8962178593567118285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -454,10 +457,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 635b27c1e5c26c74b836536519f30664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  siloAsset: {fileID: 12822200296412448, guid: 9a955d9e8bbecf4449c699e011487558, type: 3}
-  myEnvironmentConnector: ConnectionPoint_Silo_01
+  to_Connect_to: {fileID: 11400000, guid: 9c6adcde0dc67734cb2711fd493d1eee, type: 2}
   siloDoorTrigger: {fileID: 4861171405328393359}
-  siloWindowAnim: {fileID: 0}
 --- !u!65 &5916775535431724488
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -541,15 +542,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9c8348928343a8bc54fdc3420bcb02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabName: Hallway-DoubleSilo
+  prefabName: {fileID: 11400000, guid: b1455639bfd83dc48a72059e08ab397f, type: 2}
   joins:
-  - name: ConnectionPoint_HallwayConnector_01
+  - name: {fileID: 11400000, guid: 499c008a075ca6e4399691bc97c1f797, type: 2}
     position: {fileID: 3408442014351228977}
-  - name: ConnectionPoint_HallwayConnector_02
+  - name: {fileID: 11400000, guid: 9f006f5a32a5fc4488c4eb3bc8d7e589, type: 2}
     position: {fileID: 6643836280445590555}
-  - name: ConnectionPoint_Silo_01
+  - name: {fileID: 11400000, guid: 9c6adcde0dc67734cb2711fd493d1eee, type: 2}
     position: {fileID: 8828754845809123080}
-  - name: ConnectionPoint_Silo_02
+  - name: {fileID: 11400000, guid: 4e9ae6ee017577449bbaef68f6882ef1, type: 2}
     position: {fileID: 3541950691217371676}
   connectedTo: {fileID: 0}
   ColliderList: []
@@ -1316,6 +1317,7 @@ GameObject:
   - component: {fileID: 3075988702108021276}
   - component: {fileID: 1186498865398744702}
   - component: {fileID: 4211035879097962661}
+  - component: {fileID: 4848817630305959809}
   m_Layer: 0
   m_Name: Hangar_Hallway_Main
   m_TagString: Untagged
@@ -1403,6 +1405,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4505935484202703681, guid: 79e8e2d3e5527ee4eb9f45a5883495b1, type: 3}
+--- !u!65 &4848817630305959809
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4488394083695524898}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 38.00002, y: 2.04, z: 8.836122}
+  m_Center: {x: 0, y: -2.91, z: 0}
 --- !u!1 &4492408976923508582
 GameObject:
   m_ObjectHideFlags: 0
@@ -1850,6 +1865,9 @@ MonoBehaviour:
   labelText: {fileID: 2304188416327348712}
   spawner: {fileID: 3707960456775732632}
   siloIndex: 0
+  _interactionType: 0
+  speed: 2
+  minHeight: 0
 --- !u!114 &3707960456775732632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1862,10 +1880,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 635b27c1e5c26c74b836536519f30664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  siloAsset: {fileID: 49628530332411176, guid: 6c3809ce056848149ba60e4a313aa781, type: 3}
-  myEnvironmentConnector: ConnectionPoint_Silo_02
+  to_Connect_to: {fileID: 11400000, guid: 4e9ae6ee017577449bbaef68f6882ef1, type: 2}
   siloDoorTrigger: {fileID: 3230706503980203563}
-  siloWindowAnim: {fileID: 0}
 --- !u!65 &62340275779691916
 BoxCollider:
   m_ObjectHideFlags: 0

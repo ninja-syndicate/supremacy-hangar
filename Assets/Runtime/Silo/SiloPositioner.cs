@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using SupremacyHangar.Runtime.Environment;
 using Zenject;
+using SupremacyHangar.Runtime.ScriptableObjects;
 
 namespace SupremacyHangar.Runtime.Silo
 {
@@ -11,16 +12,13 @@ namespace SupremacyHangar.Runtime.Silo
         private EnvironmentManager _environmentManager;
 
         [SerializeField]
-        private GameObject siloAsset;
+        private ConnectivityJoin to_Connect_to;
 
-        [SerializeField]
-        private string myEnvironmentConnector;
+        public ConnectivityJoin ToConnectTo => to_Connect_to; 
 
         [SerializeField]
         private Collider siloDoorTrigger;
 
-        [SerializeField]
-        private Animator siloWindowAnim;
         public bool SiloSpawned { get; set; } = false;
 
 
@@ -39,17 +37,17 @@ namespace SupremacyHangar.Runtime.Silo
             //siloWindowAnim.SetBool("open", false);
         }
 
-        public void spawnSilo()
+        public void SpawnSilo()
         {
             //Prevent same silo spawning again
             if (SiloSpawned) return;
             SiloSpawned = true;
 
             //Clean-up existing silo (Only one silo at a time)
-            _environmentManager.unloadAssets();
+            _environmentManager.UnloadAssets();
 
             //Spawn silo
-            _environmentManager.spawnSilo(myEnvironmentConnector, 0, this);
+            _environmentManager.SpawnSilo(this);
 
             //unlock doors
             siloDoorTrigger.enabled = true;

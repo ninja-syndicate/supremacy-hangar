@@ -5,8 +5,18 @@ using Zenject;
 
 namespace SupremacyHangar.Runtime.Interaction
 {
+    public enum InteractionType
+    {
+        Silo,
+        Elevator
+    }
+
     public class InteractionSignal {
-        public string message;
+        public InteractionType Type;
+    }
+
+    public class PlayerInteractionChangeSignal {
+        public InteractionType Type;
     }
 
     public class InteractionSignalHandler
@@ -18,19 +28,24 @@ namespace SupremacyHangar.Runtime.Interaction
             _signalBus = signalBus;
         }
 
-        public void PressurizeSilo()
+        public void LoadSilo(InteractionType type)
         {
-            _signalBus.Fire(new InteractionSignal() { message = "pressurize"});
+            _signalBus.Fire(new InteractionSignal() { Type = type });
         }
 
-        public void InteractWithElevator()
+        public void InteractWithElevator(InteractionType type)
         {
-            _signalBus.Fire(new InteractionSignal() { message = "elevator" });
+            _signalBus.Fire(new InteractionSignal() { Type = type });
         }
 
         public void InteractWithCrate()
         {
 
+        }
+
+        public void ChangePlayerInteraction(InteractionType type)
+        {
+            _signalBus.Fire(new PlayerInteractionChangeSignal() { Type = type });
         }
     }
 
@@ -40,6 +55,7 @@ namespace SupremacyHangar.Runtime.Interaction
         {
             Container.Bind<InteractionSignalHandler>().AsSingle().NonLazy();
             Container.DeclareSignal<InteractionSignal>();
+            Container.DeclareSignal<PlayerInteractionChangeSignal>();
         }
     }
 }

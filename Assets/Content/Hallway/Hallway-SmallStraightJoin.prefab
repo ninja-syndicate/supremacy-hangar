@@ -46,11 +46,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9c8348928343a8bc54fdc3420bcb02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabName: Hallway-SmallStraightJoin
+  prefabName: {fileID: 11400000, guid: 9a076b2650fe9e74cbec6834753181e0, type: 2}
   joins:
-  - name: ConnectionPoint_HallwayConnector_01
+  - name: {fileID: 11400000, guid: 499c008a075ca6e4399691bc97c1f797, type: 2}
     position: {fileID: 2842438848924748227}
-  - name: ConnectionPoint_HallwayConnector_02
+  - name: {fileID: 11400000, guid: 9f006f5a32a5fc4488c4eb3bc8d7e589, type: 2}
     position: {fileID: 6056441012527420905}
   connectedTo: {fileID: 0}
   ColliderList: []
@@ -66,7 +66,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c80beb9e63908c842bd67f991935f4a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characterController: {fileID: 0}
 --- !u!1001 &2178372002423366375
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -142,6 +141,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2178372002423366375}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &4254291256970703775
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838642791509404551}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.000019, y: 1.8350728, z: 8.134585}
+  m_Center: {x: 0, y: -2.9191403, z: 0}
 --- !u!64 &7703735658049548447
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -156,19 +168,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8408853529538963937, guid: 1f94e6e745097be489f50032ce939bb0, type: 3}
---- !u!65 &4254291256970703775
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1838642791509404551}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 8.000019, y: 1.8350728, z: 8.134585}
-  m_Center: {x: 0, y: -2.9191403, z: 0}
 --- !u!4 &1851428829539894540 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1f94e6e745097be489f50032ce939bb0,

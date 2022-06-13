@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace SupremacyHangar.Scriptable
+namespace SupremacyHangar.Runtime.ScriptableObjects
 {
     public class Skin : ScriptableObject
     {

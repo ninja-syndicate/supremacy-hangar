@@ -32,13 +32,7 @@ namespace SupremacyHangar.Runtime.Environment
 
         private bool newObject = true;
 
-        private void Update()
-        {
-            if (newObject && myAnim.GetCurrentAnimatorClipInfo(0)[0].clip.name.Contains("Open"))
-                newObject = false;
-        }
-
-        public void updateRoom()
+        public void UpdateRoom()
         {
             if (!newObject)
             {
@@ -46,12 +40,17 @@ namespace SupremacyHangar.Runtime.Environment
                 {
                     s.Spawned = false;
                 }
-                //Debug.Log("New room", this);
+                Debug.Log("New room", this);
                 _environmentManager.setCurrentEnvironment(myConnections.connectedTo);
 
                 //unload previous room/s & connectors
-                _environmentManager.unloadAssets();
+                _environmentManager.UnloadAssets();
             }
+        }
+
+        public void NotNewRoom()
+        {
+            newObject = false;
         }
     }
 }

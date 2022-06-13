@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-using SupremacyHangar.Scriptable;
+using SupremacyHangar.Runtime.ScriptableObjects;
 
-namespace SupremacyHangar
+namespace SupremacyHangar.Editor
 {
     public class SkinEditor
     {
