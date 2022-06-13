@@ -3,7 +3,7 @@ on:
     workflow_dispatch: {}
 jobs:
     activation:
-        runs-on: ["self-hosted"]
+        runs-on: ubuntu-latest
         steps:
             - name: Request manual activation file
               id: getManualLicenseFile
