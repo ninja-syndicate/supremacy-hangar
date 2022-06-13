@@ -1,6 +1,6 @@
 namespace SupremacyHangar.Editor
 {
-    public static class ManualGUIStatics
+    public static class GUIStatics
     {
         public static class Controls
         {
