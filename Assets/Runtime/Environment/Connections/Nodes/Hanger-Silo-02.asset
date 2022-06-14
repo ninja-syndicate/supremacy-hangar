@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ce19572bb87d844791c8825491d192d, type: 3}
-  m_Name: ConnectionPoint_HallwayConnector_01
+  m_Script: {fileID: 11500000, guid: 74896566ce2299f4bb41b58bc3f74a33, type: 3}
+  m_Name: Hanger-Silo-02
   m_EditorClassIdentifier: 
-  idBytes: 069e1141d261264da5627b121e5b5ba8
+  idBytes: ba9bf672cfdeec4d8bd1531f9d02d9d7

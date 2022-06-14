@@ -1,4 +1,4 @@
-using SupremacyHangar.Runtime.ScriptableObjects;
+using SupremacyHangar.Runtime.Environment.Connections;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,7 +16,7 @@ namespace SupremacyHangar.Runtime.Environment
 
         [SerializeField] private List<EnvironmentPartAddressable> parts = new();
 
-        public Dictionary<Guid, EnvironmentPartAddressable> MyJoins { get; private set; } = new();
+        public Dictionary<ConnectivityNode, EnvironmentPartAddressable> MyJoins { get; private set; } = new();
 
         public EnvironmentPartAddressable GetInitialSection()
         {
@@ -30,7 +30,7 @@ namespace SupremacyHangar.Runtime.Environment
 
             foreach (var part in parts)
             {
-                MyJoins.Add(part.ReferenceName.Id, part);
+                MyJoins.Add(part.ReferenceName, part);
                 part.InitJoins();
             }
         }
@@ -39,25 +39,23 @@ namespace SupremacyHangar.Runtime.Environment
     [Serializable]
     public class EnvironmentPartAddressable
     {
-        [SerializeField] private ConnectivityJoin referenceName;
+        [SerializeField] private ConnectivityNode referenceName;
 
-        public ConnectivityJoin ReferenceName => referenceName;
+        public ConnectivityNode ReferenceName => referenceName;
 
         public AssetReferenceGameObject Reference;
 
         [SerializeField] private List<PartJoin> joins = new();
 
-        public Dictionary<Guid, PartJoin> MyJoinsByConnector = new();
+        public Dictionary<ConnectivityJoin, PartJoin> MyJoinsByConnector = new();
         
         public void InitJoins()
         {
             if (joins == null) return;
-            int n = joins.Count;
             MyJoinsByConnector.Clear();
-            for (int i = 0; i < n; ++i)
-            {
-                MyJoinsByConnector[joins[i].Connector.Id] = joins[i];
-            }
+
+            foreach(var join in joins)
+                MyJoinsByConnector.Add(join.Connector, join);
         }
     }
 
@@ -65,10 +63,10 @@ namespace SupremacyHangar.Runtime.Environment
     public class PartJoin
     {
         public ConnectivityJoin Connector => connector;
-        public List<ConnectivityJoin> Destinations => destinations;
+        public List<ConnectivityNode> Destinations => destinations;
 
         [SerializeField] private ConnectivityJoin connector;
 
-        [SerializeField] private List<ConnectivityJoin> destinations;
+        [SerializeField] private List<ConnectivityNode> destinations;
     }
 }

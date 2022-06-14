@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ce19572bb87d844791c8825491d192d, type: 3}
-  m_Name: ConnectionPoint_Silo_01
+  m_Script: {fileID: 11500000, guid: 74896566ce2299f4bb41b58bc3f74a33, type: 3}
+  m_Name: Hallway-DoubleSilo
   m_EditorClassIdentifier: 
-  idBytes: a5c61c6de3fa7d4cb6a775e3d4dd0e52
+  idBytes: 3898b532d112664baf9b3cd6e06c31cd

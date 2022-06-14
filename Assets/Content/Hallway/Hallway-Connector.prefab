@@ -46,9 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9c8348928343a8bc54fdc3420bcb02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabName: {fileID: 11400000, guid: 004dd4c92a7788b40be75ca4064756f8, type: 2}
+  prefabName: {fileID: 11400000, guid: 4f5b45fc739a31b49ac1097314cd8995, type: 2}
   joins:
-  - name: {fileID: 11400000, guid: 499c008a075ca6e4399691bc97c1f797, type: 2}
+  - name: {fileID: 11400000, guid: e438fbcd3b20a9c4cb563501cd8d9963, type: 2}
     position: {fileID: 1689536308976228990}
   - name: {fileID: 11400000, guid: 9f006f5a32a5fc4488c4eb3bc8d7e589, type: 2}
     position: {fileID: 7209385884201043540}
@@ -413,7 +413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   otherEnvironmentSpawner: {fileID: 6492150184449526246}
   myConnectors: {fileID: 1835963907996916371}
-  to_Connect_to: {fileID: 11400000, guid: 499c008a075ca6e4399691bc97c1f797, type: 2}
+  to_Connect_to: {fileID: 11400000, guid: e438fbcd3b20a9c4cb563501cd8d9963, type: 2}
   DoorAnim: {fileID: 4229028505539775523}
   Spawned: 0
   increment: 0

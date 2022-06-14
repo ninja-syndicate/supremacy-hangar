@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ce19572bb87d844791c8825491d192d, type: 3}
-  m_Name: Hanger-Silo-01
-  m_EditorClassIdentifier: 
-  idBytes: 4a16e2412eec634f9c57b3033a2f9b6c
+  m_Script: {fileID: 11500000, guid: 7345186d5b64809449821aee97299c09, type: 3}
+  m_Name: ConnectionPoint_Silo_02
+  m_EditorClassIdentifier: SupremacyHangar.Realtime:SupremacyHangar.Runtime.ScriptableObjects:ConnectivityJoin
+  idBytes: 6e25d7b8d2b345428c9eeba49a9551bb

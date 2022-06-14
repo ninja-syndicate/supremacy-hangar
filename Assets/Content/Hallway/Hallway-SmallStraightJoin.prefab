@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabName: {fileID: 11400000, guid: 9a076b2650fe9e74cbec6834753181e0, type: 2}
   joins:
-  - name: {fileID: 11400000, guid: 499c008a075ca6e4399691bc97c1f797, type: 2}
+  - name: {fileID: 11400000, guid: e438fbcd3b20a9c4cb563501cd8d9963, type: 2}
     position: {fileID: 8913892762834364067}
   - name: {fileID: 11400000, guid: 9f006f5a32a5fc4488c4eb3bc8d7e589, type: 2}
     position: {fileID: 633336482547448457}
