@@ -7,12 +7,6 @@ using UnityEngine.AddressableAssets;
 
 namespace SupremacyHangar.Runtime.ContentLoader.Types
 {
-    [Serializable]
-    public class AssetReferenceAudioClip : AssetReferenceT<AudioClip>
-    {
-        public AssetReferenceAudioClip(string guid) : base(guid) { }
-    }
-
     public class LoadedAsset
     {
         public GameObject mech = null;

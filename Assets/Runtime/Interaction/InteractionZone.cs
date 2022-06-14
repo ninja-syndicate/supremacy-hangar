@@ -116,12 +116,12 @@ namespace SupremacyHangar.Runtime.Interaction
                     _addressablesManager.TargetSkin = null;
                     break;
                 default:
+                    Debug.LogWarning($"Unexpected type of {_siloContent[siloIndex].Type} making silo empty");
                     empty = true;
                     break;
             }
 
-            if(!empty)
-                spawner.SpawnSilo();
+            if(!empty) spawner.SpawnSilo();
         }
 
         private void Elevator()
@@ -173,12 +173,12 @@ namespace SupremacyHangar.Runtime.Interaction
 
             _signalHandler.ChangePlayerInteraction(_interactionType);
             hasCollided = true;
-            //labelText.enabled = true;
+            labelText.enabled = true;
         }
 
         private void OnTriggerExit(Collider other)
         {
-            //labelText.enabled = false;
+            labelText.enabled = false;
             hasCollided = false;
         }
     }
