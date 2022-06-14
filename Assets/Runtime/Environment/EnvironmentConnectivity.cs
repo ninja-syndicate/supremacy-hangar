@@ -16,7 +16,7 @@ namespace SupremacyHangar.Runtime.Environment
 
         [SerializeField] private List<EnvironmentPartAddressable> parts = new();
 
-        public Dictionary<ConnectivityJoin, EnvironmentPartAddressable> MyJoins { get; private set; } = new();
+        public Dictionary<Guid, EnvironmentPartAddressable> MyJoins { get; private set; } = new();
 
         public EnvironmentPartAddressable GetInitialSection()
         {
@@ -31,19 +31,20 @@ namespace SupremacyHangar.Runtime.Environment
                 MyJoins.Clear();
                 for (int i = 0; i < n; ++i)
                 {
-                    MyJoins[parts[i].ReferenceName] = parts[i];
+                    MyJoins[parts[i].ReferenceName.Id] = parts[i];
                 }
                 //parts = null;
             }
+
+            //if (requiredJoins != null)
+            //{
+            //    RequiredJoins.Clear();
+            //    foreach (var part in requiredJoins)
+            //        RequiredJoins.Add(part.Id);
+            //}
         }
 
         public void OnBeforeSerialize() {}
-    }
-
-    [Serializable]
-    public class AssetReferenceEnvironmentPrefab : AssetReferenceT<EnvironmentPrefab>
-    {
-        public AssetReferenceEnvironmentPrefab(string guid) : base(guid) {}
     }
 
     [Serializable]
@@ -57,7 +58,7 @@ namespace SupremacyHangar.Runtime.Environment
 
         [SerializeField] private List<PartJoin> joins = new();
 
-        public Dictionary<ConnectivityJoin, PartJoin> MyJoinsByConnector = new();
+        public Dictionary<Guid, PartJoin> MyJoinsByConnector = new();
 
         public void OnBeforeSerialize() {}
 
@@ -69,7 +70,7 @@ namespace SupremacyHangar.Runtime.Environment
                 MyJoinsByConnector.Clear();
                 for (int i = 0; i < n; ++i)
                 {
-                    MyJoinsByConnector[joins[i].Connector] = joins[i];
+                    MyJoinsByConnector[joins[i].Connector.Id] = joins[i];
                 }
             }
         }

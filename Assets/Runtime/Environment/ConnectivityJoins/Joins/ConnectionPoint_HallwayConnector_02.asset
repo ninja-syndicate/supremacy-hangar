@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce19572bb87d844791c8825491d192d, type: 3}
   m_Name: ConnectionPoint_HallwayConnector_02
   m_EditorClassIdentifier: 
+  idBytes: 3708022adba9fb4bbda8f5b1c3f0b78b

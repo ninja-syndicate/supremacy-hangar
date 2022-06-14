@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce19572bb87d844791c8825491d192d, type: 3}
   m_Name: Hanger-Silo-02
   m_EditorClassIdentifier: 
+  idBytes: c37917de40ee794e984c1c3136db1d9d

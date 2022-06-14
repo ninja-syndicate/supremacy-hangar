@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce19572bb87d844791c8825491d192d, type: 3}
   m_Name: Hallway-DoubleSilo
   m_EditorClassIdentifier: 
+  idBytes: 2bf618345713b7479203ee9f6723e3b5

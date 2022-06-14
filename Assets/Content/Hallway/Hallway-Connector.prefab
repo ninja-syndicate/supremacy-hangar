@@ -48,10 +48,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabName: {fileID: 11400000, guid: 004dd4c92a7788b40be75ca4064756f8, type: 2}
   joins:
-  - name: {fileID: 11400000, guid: 9f006f5a32a5fc4488c4eb3bc8d7e589, type: 2}
-    position: {fileID: 7209385884201043540}
   - name: {fileID: 11400000, guid: 499c008a075ca6e4399691bc97c1f797, type: 2}
     position: {fileID: 1689536308976228990}
+  - name: {fileID: 11400000, guid: 9f006f5a32a5fc4488c4eb3bc8d7e589, type: 2}
+    position: {fileID: 7209385884201043540}
   connectedTo: {fileID: 0}
 --- !u!114 &-2688548455563843632
 MonoBehaviour:

@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce19572bb87d844791c8825491d192d, type: 3}
   m_Name: ConnectionPoint_Silo_02
   m_EditorClassIdentifier: 
+  idBytes: f07f8efe21d7e24599867048a75f27a9
