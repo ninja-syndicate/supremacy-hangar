@@ -7,7 +7,7 @@ using UnityEngine.AddressableAssets;
 namespace SupremacyHangar.Runtime.Environment
 {
     [CreateAssetMenu(fileName = "Settings/Environment", menuName = "Supremacy/Environment Connectivity Graph")]
-    public class EnvironmentConnectivity : ScriptableObject, ISerializationCallbackReceiver
+    public class EnvironmentConnectivity : ScriptableObject
     {
         [SerializeField] private int initialSection = 0;
         [SerializeField] private List<ConnectivityJoin> requiredJoins;
@@ -23,32 +23,21 @@ namespace SupremacyHangar.Runtime.Environment
             return parts[initialSection];
         }
 
-        public void OnAfterDeserialize()
+        public void OnEnable()
         {
-            if (parts != null)
+            if (parts == null) return;
+            MyJoins.Clear();
+
+            foreach (var part in parts)
             {
-                int n = parts.Count;
-                MyJoins.Clear();
-                for (int i = 0; i < n; ++i)
-                {
-                    MyJoins[parts[i].ReferenceName.Id] = parts[i];
-                }
-                //parts = null;
+                MyJoins.Add(part.ReferenceName.Id, part);
+                part.InitJoins();
             }
-
-            //if (requiredJoins != null)
-            //{
-            //    RequiredJoins.Clear();
-            //    foreach (var part in requiredJoins)
-            //        RequiredJoins.Add(part.Id);
-            //}
         }
-
-        public void OnBeforeSerialize() {}
     }
 
     [Serializable]
-    public class EnvironmentPartAddressable : ISerializationCallbackReceiver
+    public class EnvironmentPartAddressable
     {
         [SerializeField] private ConnectivityJoin referenceName;
 
@@ -59,19 +48,15 @@ namespace SupremacyHangar.Runtime.Environment
         [SerializeField] private List<PartJoin> joins = new();
 
         public Dictionary<Guid, PartJoin> MyJoinsByConnector = new();
-
-        public void OnBeforeSerialize() {}
-
-        public void OnAfterDeserialize()
+        
+        public void InitJoins()
         {
-            if (joins != null)
+            if (joins == null) return;
+            int n = joins.Count;
+            MyJoinsByConnector.Clear();
+            for (int i = 0; i < n; ++i)
             {
-                int n = joins.Count;
-                MyJoinsByConnector.Clear();
-                for (int i = 0; i < n; ++i)
-                {
-                    MyJoinsByConnector[joins[i].Connector.Id] = joins[i];
-                }
+                MyJoinsByConnector[joins[i].Connector.Id] = joins[i];
             }
         }
     }

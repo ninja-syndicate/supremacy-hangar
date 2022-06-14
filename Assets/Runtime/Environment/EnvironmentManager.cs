@@ -73,19 +73,20 @@ namespace SupremacyHangar.Runtime.Environment
             //Spawn initial environment
             currentEnvironment.CurrentPrefabAsset = _connectivityGraph.GetInitialSection();
 
-            currentEnvironment.CurrentPrefabAsset.Reference.InstantiateAsync().Completed += (operationHandle) =>
+            currentEnvironment.CurrentPrefabAsset.Reference.InstantiateAsync().Completed += (handle1) =>
             {
-                currentEnvironment.CurrentGameObject = operationHandle.Result;
+                currentEnvironment.CurrentGameObject = handle1.Result;
                 nextRoomEnvironmentPrefabRef = currentEnvironment.CurrentGameObject.GetComponent<EnvironmentPrefab>();
                 loadedObjects.Add(currentEnvironment.CurrentGameObject);
 
                 int i = 0;
                 foreach (ConnectivityJoin join in _connectivityGraph.RequiredJoins)
                 {
-                    Debug.Log($"{join.name} " + join.GetHashCode());
-                    _connectivityGraph.MyJoins[currentEnvironment.CurrentPrefabAsset.MyJoinsByConnector[join.Id].Destinations[0].Id].Reference.InstantiateAsync().Completed += (operationHandle) =>
+                    var partForJoin = currentEnvironment.CurrentPrefabAsset.MyJoinsByConnector[join.Id];
+                    var nodeForJoin = partForJoin.Destinations[0];
+                    _connectivityGraph.MyJoins[nodeForJoin.Id].Reference.InstantiateAsync().Completed += (handle2) =>
                     {
-                        var newSection = operationHandle.Result;
+                        var newSection = handle2.Result;
                         var newSectionEnvironmentPrefab = newSection.GetComponent<EnvironmentPrefab>();
                         newSectionEnvironmentPrefab.connectedTo = currentEnvironment.CurrentGameObject;
 
