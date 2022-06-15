@@ -3,9 +3,10 @@ using UnityEngine;
 
 namespace SupremacyHangar.Editor.ContentLoader
 {
-    public abstract class BaseMappingDrawer<T> : PropertyDrawer where T: class
+    public abstract class BaseMappingDrawer<TMapping> : PropertyDrawer
     {
-        protected abstract string StaticDataPropertyName { get;}
+        protected abstract string StaticDataPropertyName { get; }
+        protected abstract string AssetDataPropertyName { get; }
         
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
@@ -22,7 +23,10 @@ namespace SupremacyHangar.Editor.ContentLoader
                 return;
             }
             RenderSummary(position, property, label);
-        }
+        } 
+        
+        protected abstract string StaticDataPropertySummary(TMapping data);
+        protected abstract string AssetPropertySummary(TMapping data);
         
         private void RenderSummary(Rect position, SerializedProperty property, GUIContent label)
         {
@@ -32,15 +36,11 @@ namespace SupremacyHangar.Editor.ContentLoader
             Rect dataRect = new Rect(position.x, position.y, controlWidth, position.height);
             Rect otherRect = new Rect(position.x + dataRect.width + GUIStatics.Controls.HorizontalPadding, position.y, controlWidth, position.height);
 
-            string dataLabel;
-            var data =
-                property.FindPropertyRelative(StaticDataPropertyName).objectReferenceValue as T;
-            dataLabel = data == null ? "No Data Linked" : StaticDataPropertySummary(data); 
-            EditorGUI.LabelField(dataRect, dataLabel);
-            EditorGUI.LabelField(otherRect, "Linking not defined");
+            string targetLabel = null;
+            var targetObj = property.GetActualObjectForSerializedProperty<TMapping>(fieldInfo, ref targetLabel);
+            EditorGUI.LabelField(dataRect, StaticDataPropertySummary(targetObj));
+            EditorGUI.LabelField(otherRect, AssetPropertySummary(targetObj));
         }
-
-        protected abstract string StaticDataPropertySummary(T data);
 
         private void RenderExpanded(Rect position, SerializedProperty property, GUIContent label)
         {
@@ -50,7 +50,8 @@ namespace SupremacyHangar.Editor.ContentLoader
             var controlLabel = new GUIContent("Data Reference", "The static data reference for this element");
             EditorGUI.PropertyField(controlRect, property.FindPropertyRelative(StaticDataPropertyName), controlLabel);
             controlRect.y += EditorGUIUtility.singleLineHeight + GUIStatics.Controls.VerticalPadding;
-            EditorGUI.LabelField(controlRect, "No linking model defined");
+            controlLabel = new GUIContent("Asset Reference", "The unity asset/addressable reference for this element");
+            EditorGUI.PropertyField(controlRect, property.FindPropertyRelative(AssetDataPropertyName), controlLabel);
         }           
     }
 }

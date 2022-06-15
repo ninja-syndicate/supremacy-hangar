@@ -15,52 +15,37 @@ namespace SupremacyHangar.Runtime.ContentLoader
     {
         public AssetReference TargetMech { get; set; }
         public AssetReference TargetSkin { get; set; }
-        
-        public string FactionName { get; set; }
-
-        [SerializeField] private AssetMappings mappings;
 
         private AssetReference previousMech;
 
+        public string FactionName { get; set; }
+
         private LoadedAsset myMech { get; set; } = new LoadedAsset();
+
+        [SerializeField] private AssetMappings assetMappings;
 
         public override void InstallBindings()
         {
             Container.Bind<AddressablesManager>().FromInstance(this).AsSingle().NonLazy();
         }
-        
+
         public void Awake()
         {
             bool valid = true;
-            if (ValidateMappings())
-            {
-                DebugMappings();
-            }
-            else
-            {
-                valid = false;
-            }
+            valid &= ValidateMappings();
 
             if (!valid) enabled = false;
         }
 
         private bool ValidateMappings()
         {
-            if (mappings != null) return true;
+            if (assetMappings != null) return true;
             Debug.LogError("No asset mapping file assigned to AddressablesManager!", this);
             return false;
         }
 
-        private void DebugMappings()
-        {
-            Debug.Log("Factions:");
-            foreach (var pair in mappings.FactionHallwayByGuid) Debug.Log($"\t{pair.Key} = {pair.Value.DataFaction.HumanName}");
-            Debug.Log("Chassis:");
-            foreach (var pair in mappings.MechChassisPrefabByGuid) Debug.Log($"\t{pair.Key} = {pair.Value.DataMechModel.HumanName}");
-            Debug.Log("Skins:");
-            foreach (var pair in mappings.MechSkinAssetByGuid) Debug.Log($"\t{pair.Key} = {pair.Value.DataMechSkin.HumanName}");
-        }        
 
+        // Start is called before the first frame update
         public override void Start()
         {
             Debug.Log("Initializing Addressables...");
