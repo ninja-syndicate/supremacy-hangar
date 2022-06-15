@@ -40,13 +40,13 @@ jobs:
                       Library-
 
             # Test
-            - name: Run Tests
-              uses: game-ci/unity-test-runner@v2
-              env:
-                  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-              with:
-                  unityVersion: 2021.3.4f1
-                  githubToken: ${{secrets.GITHUB_TOKEN}}
+            # - name: Run Tests
+            #   uses: game-ci/unity-test-runner@v2
+            #   env:
+            #       UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+            #   with:
+            #       unityVersion: 2021.3.4f1
+            #       githubToken: ${{secrets.GITHUB_TOKEN}}
 
             # Build
             - name: Build Project
