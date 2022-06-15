@@ -42,6 +42,7 @@ MonoBehaviour:
   m_overridePlayerVersion: 
   m_GroupAssets:
   - {fileID: 11400000, guid: c0f398242e003af42ad4ecf28cd08cac, type: 2}
+  - {fileID: 11400000, guid: d69e2d6482088b94e9fafbe734e747dd, type: 2}
   - {fileID: 11400000, guid: a43ceb5e1650e214795d968ec57fc4c9, type: 2}
   - {fileID: 11400000, guid: 5b70270e243f8504f83b3f95746160cd, type: 2}
   - {fileID: 11400000, guid: 55bbe897e21767b43af190c74a75cf2f, type: 2}
