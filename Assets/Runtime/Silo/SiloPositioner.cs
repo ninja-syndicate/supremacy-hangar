@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using SupremacyHangar.Runtime.Environment;
 using Zenject;
-using SupremacyHangar.Runtime.ScriptableObjects;
+using SupremacyHangar.Runtime.Environment.Connections;
 
 namespace SupremacyHangar.Runtime.Silo
 {

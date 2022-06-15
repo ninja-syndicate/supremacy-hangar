@@ -17,20 +17,13 @@ namespace SupremacyHangar.Runtime.Environment
         [SerializeField] private GameObject myRoot;
         public GameObject MyRoot => myRoot;
 
-        private Animator myAnim;
+        private bool newObject = true;
 
         [Inject]
         public void Construct(EnvironmentManager environmentManager)
         {
             _environmentManager = environmentManager;
         }
-
-        private void Start()
-        {
-            myAnim = GetComponent<Animator>();
-        }
-
-        private bool newObject = true;
 
         public void UpdateRoom()
         {

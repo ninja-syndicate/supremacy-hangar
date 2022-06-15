@@ -150,12 +150,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9c8348928343a8bc54fdc3420bcb02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabName: Hangar_Silo_02_Greybox
+  prefabName: {fileID: 11400000, guid: 529252d15a06d6546826646e401deb92, type: 2}
   joins:
   - name: {fileID: 11400000, guid: 4e9ae6ee017577449bbaef68f6882ef1, type: 2}
     position: {fileID: 3121831810054685040}
   connectedTo: {fileID: 0}
-  ColliderList: []
 --- !u!114 &3937463783445960829
 MonoBehaviour:
   m_ObjectHideFlags: 0

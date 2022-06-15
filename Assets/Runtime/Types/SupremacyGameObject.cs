@@ -1,8 +1,10 @@
+using System.Collections.Generic;
+
 namespace SupremacyHangar.Runtime.Types
 {
     public class SupremacyGameObject
     {
         public string faction;
-        public SiloContent[] Silos;
+        public List<SiloItem> Silos = new();
     }
 }

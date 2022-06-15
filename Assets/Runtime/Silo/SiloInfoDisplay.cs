@@ -10,7 +10,7 @@ namespace SupremacyHangar.Runtime.Silo
     public class SiloInfoDisplay : MonoBehaviour
     {
         private EnvironmentManager _environmentManager;
-        private SiloContent[] _siloContent;
+        private SiloItem[] _siloContent;
         private SupremacyDictionary _supremacyDictionary;
 
         [SerializeField]
@@ -26,19 +26,22 @@ namespace SupremacyHangar.Runtime.Silo
         private int siloIndex = 0;
 
         [Inject]
-        public void Construct(EnvironmentManager environmentManager, SiloContent[] siloContents, SupremacyDictionary supremacyDictionary)
+        public void Construct(EnvironmentManager environmentManager, SiloItem[] siloContents, SupremacyDictionary supremacyDictionary)
         { 
             _environmentManager = environmentManager;
             _siloContent = siloContents;
-
-            if (_siloContent[siloIndex].type == null)
-                SetEmptyInfoDisplay();
-            else if (_siloContent[siloIndex].type.Contains("mech"))
-                SetMechInfoDisplay();
-            else if (_siloContent[siloIndex].type.Contains("loot"))
-                SetLootBoxInfoDisplay();
-            else
-                Debug.LogError($"Unknown silo silo type of {_siloContent[siloIndex].type}.", this);
+            switch(_siloContent[siloIndex])
+            {
+                case Mech mech:
+                    SetMechInfoDisplay(mech);
+                    break;
+                case MysteryBox box:
+                    SetLootBoxInfoDisplay(box);
+                    break;
+                default:
+                    SetEmptyInfoDisplay();
+                    break;
+            }
         }
 
         //private SiloContent[] currentSiloInfo()
@@ -89,20 +92,20 @@ namespace SupremacyHangar.Runtime.Silo
         }
 
         //ToDo: convert to key values not GUIDs & working timer and enable layout after its set
-        private void SetMechInfoDisplay()
+        private void SetMechInfoDisplay(Mech mech)
         {
             _siloNumber.text = "" + (_environmentManager.SiloOffset + siloIndex + 1);
-            mechDisplayLayout[0].text = _siloContent[siloIndex].type;
-            mechDisplayLayout[1].text = _siloContent[siloIndex].chassisId;
-            mechDisplayLayout[2].text = _siloContent[siloIndex].skinId;
+            mechDisplayLayout[0].text = "Mech";
+            mechDisplayLayout[1].text = mech.mech_id;
+            mechDisplayLayout[2].text = mech.skin_id;
         }
 
-        private void SetLootBoxInfoDisplay()
+        private void SetLootBoxInfoDisplay(MysteryBox box)
         {
             _siloNumber.text = "" + (_environmentManager.SiloOffset + siloIndex + 1);
-            mechDisplayLayout[0].text = _siloContent[siloIndex].type;
-            mechDisplayLayout[1].text = _siloContent[siloIndex].id;
-            mechDisplayLayout[2].text = _siloContent[siloIndex].expires;
+            mechDisplayLayout[0].text = "Myster Box";
+            mechDisplayLayout[1].text = box.ownership_id;
+            mechDisplayLayout[2].text = box.can_open_on;
         }
     }
 }

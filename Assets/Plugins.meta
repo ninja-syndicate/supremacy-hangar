@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Plugins.meta
+guid: abf3c79a4a9c6d944924b50efdc1869d
+========
+guid: f8241b905a847b8438e1e3be7cde5c50
+>>>>>>>> develop:Assets/Runtime/ContentLoader.meta
+folderAsset: yes
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
