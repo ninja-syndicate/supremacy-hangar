@@ -25,4 +25,17 @@ namespace SupremacyHangar.Runtime.Environment.Types
             MyJoins = new Dictionary<string, List<EnvironmentPart>>(joins);
         }
     }
+
+    struct DoorTuple
+    {
+        public EnvironmentSpawner Door1;
+        public EnvironmentSpawner Door2;
+    }
+
+    public class CurrentEnvironment
+    {
+        public EnvironmentPart CurrentPart { get; set; } = null;
+        public EnvironmentPartAddressable CurrentPrefabAsset { get; set; } = null;
+        public GameObject CurrentGameObject { get; set; } = null;
+    }
 }
