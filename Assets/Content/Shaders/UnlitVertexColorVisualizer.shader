@@ -1,4 +1,4 @@
-Shader "Supremacy/Debug/VertexColorVisualizer"
+Shader "Supremacy/Debug/UnlitVertexColorVisualizer"
 {
     Properties
     {
