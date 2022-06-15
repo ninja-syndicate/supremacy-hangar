@@ -1,7 +1,4 @@
-using SupremacyHangar.Runtime.ScriptableObjects;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using SupremacyHangar.Runtime.Environment.Connections;
 using UnityEngine;
 using Zenject;
 
@@ -36,7 +33,7 @@ namespace SupremacyHangar.Runtime.Environment
         [Inject]
         public void Construct(EnvironmentManager environmentManager)
         {
-            //myConnectors.ColliderList.Add(GetComponent<Collider>());
+            myConnectors.ColliderList.Add(GetComponent<Collider>());
             _environmentManager = environmentManager;
         }
 

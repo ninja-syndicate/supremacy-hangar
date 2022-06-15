@@ -13,4 +13,7 @@ namespace SupremacyHangar.Runtime.ContentLoader.Types
         public Skin skin = null;
         public AssetReference assetReference = null;
     }
+
+    [Serializable]
+    public class IntLoadedAssetDictionary : SerializableDictionary<int, LoadedAsset> { }
 }

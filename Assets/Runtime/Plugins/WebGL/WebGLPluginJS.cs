@@ -10,7 +10,7 @@ namespace SupremacyHangar.Runtime.Plugins.WebGL
 {
     public static class WebGLPluginJS
     {
-        // Importing "SendMessageToPage"
+        // Importing "SiloReady"
         [DllImport("__Internal")]
         public static extern void SiloReady();
     }

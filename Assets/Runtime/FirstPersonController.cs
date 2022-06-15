@@ -127,6 +127,8 @@ namespace SupremacyHangar.Runtime
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
+			
+			SetCursorState(cursorLocked);
 		}
 
 		public void OnEnable()

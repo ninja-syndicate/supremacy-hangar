@@ -1,4 +1,4 @@
-using SupremacyHangar.Runtime.ScriptableObjects;
+using SupremacyHangar.Runtime.Environment.Connections;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,8 +7,8 @@ namespace SupremacyHangar.Runtime.Environment
 {
     public class EnvironmentPrefab : MonoBehaviour, ISerializationCallbackReceiver
     {
-        [SerializeField] private ConnectivityJoin prefabName;
-        public ConnectivityJoin PrefabName => prefabName;
+        [SerializeField] private ConnectivityNode prefabName;
+        public ConnectivityNode PrefabName => prefabName;
         
         [SerializeField] private List<Joiner> joins = new();
 
@@ -18,7 +18,7 @@ namespace SupremacyHangar.Runtime.Environment
 
         public GameObject connectedTo;
 
-        public List<Collider> ColliderList  = new();
+        public List<Collider> ColliderList { get; set; } = new();
 
         public bool wasConnected { get; internal set; }
 

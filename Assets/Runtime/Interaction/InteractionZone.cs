@@ -24,7 +24,7 @@ namespace SupremacyHangar.Runtime.Interaction
         private AddressablesManager _addressablesManager;
         
         [Inject]
-        private SiloContent[] _siloContent;
+        private SiloItem[] _siloContent;
 
         [Inject]
         private SupremacyDictionary _supremacyDictionary;
@@ -42,8 +42,12 @@ namespace SupremacyHangar.Runtime.Interaction
 
         public float speed = 2f;
         private float maxHeight;
-        public float minHeight;
+        [SerializeField]
+        private float minHeight;
         Vector3 moveDirection = Vector3.down; // *assuming your platform starts at the top
+
+        private bool empty = false;
+        private bool enableElevator = false;
 
         private void Start()
         {
@@ -82,7 +86,6 @@ namespace SupremacyHangar.Runtime.Interaction
         private void OnInteraction(InteractionSignal signal)
         {
             if (hasCollided == false) return;
-            Debug.Log("Interaction", this);
             //Check message then do corresponding task
             switch(signal.Type)
             {
@@ -100,20 +103,27 @@ namespace SupremacyHangar.Runtime.Interaction
 
         private void FillSilo()
         {
-            if (_siloContent[siloIndex].type.Contains("mech"))
+            switch(_siloContent[siloIndex])
             {
-                _addressablesManager.TargetMech = _supremacyDictionary.MechDictionary[_siloContent[siloIndex].chassisId];
-                _addressablesManager.TargetSkin = _supremacyDictionary.AllSkinsDictionary[_siloContent[siloIndex].chassisId][_siloContent[siloIndex].skinId];
+                case Mech mech:
+                    empty = false;
+                    _addressablesManager.TargetMech = _supremacyDictionary.MechDictionary[mech.mech_id];
+                    _addressablesManager.TargetSkin = _supremacyDictionary.AllSkinsDictionary[mech.mech_id][mech.skin_id];
+                    break;
+                case MysteryBox box:
+                    empty = false;
+                    _addressablesManager.TargetMech = _supremacyDictionary.LootBoxDictionary[box.ownership_id];
+                    _addressablesManager.TargetSkin = null;
+                    break;
+                default:
+                    Debug.LogWarning($"Unexpected type of {_siloContent[siloIndex].Type} making silo empty");
+                    empty = true;
+                    break;
             }
-            else
-            {
-                _addressablesManager.TargetMech = _supremacyDictionary.LootBoxDictionary[_siloContent[siloIndex].id];
-                _addressablesManager.TargetSkin = null;
-            }
-            spawner.SpawnSilo();
+
+            if(!empty) spawner.SpawnSilo();
         }
 
-        private bool enableElevator = false;
         private void Elevator()
         {
             enableElevator = !enableElevator;
@@ -127,6 +137,12 @@ namespace SupremacyHangar.Runtime.Interaction
 
         private void move()
         {
+            Vector3 direction = moveDirection * Time.deltaTime * speed;
+
+            //Todo make smoother
+            transform.Translate(direction);
+            MovePlayer(direction);
+
             if (transform.localPosition.y >= maxHeight)
             {
                 moveDirection = Vector3.down; 
@@ -136,14 +152,25 @@ namespace SupremacyHangar.Runtime.Interaction
             {
                 moveDirection = Vector3.up;
                 enableElevator = false;
-            }
-
-            //Todo make smoother
-            transform.Translate(moveDirection * Time.deltaTime * speed);
+            }            
         }
 
+        private void MovePlayer(Vector3 direction)
+        {
+            _playerController.enabled = false;
+
+            _player.transform.Translate(direction);
+
+            _playerController.enabled = true;
+        }
+
+        private CharacterController _playerController;
+        private GameObject _player;
         private void OnTriggerEnter(Collider other)
         {
+            _player = other.gameObject;
+            _playerController = _player.GetComponent<CharacterController>();
+
             _signalHandler.ChangePlayerInteraction(_interactionType);
             hasCollided = true;
             labelText.enabled = true;
