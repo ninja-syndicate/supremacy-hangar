@@ -22,6 +22,7 @@ namespace SupremacyData.Editor.Importers
             "background_color",
             "youtube_url",
             "mech_type",
+            "stat_modifier",
         };
 
         protected override string Filename => "mech_skins.csv";
