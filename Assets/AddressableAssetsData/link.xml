@@ -1,14 +1,8 @@
 <linker>
-  <assembly fullname="SupremacyData.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-    <type fullname="SupremacyData.Runtime.Faction" preserve="all" />
-    <type fullname="SupremacyData.Runtime.MechModel" preserve="all" />
-    <type fullname="SupremacyData.Runtime.MechSkin" preserve="all" />
-  </assembly>
-  <assembly fullname="SupremacyHangar.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+  <assembly fullname="SupremacyHangar.Realtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="SupremacyHangar.DoorClosedStateBehaviour" preserve="all" />
     <type fullname="SupremacyHangar.DoorOpenStateBehaviour" preserve="all" />
     <type fullname="SupremacyHangar.DoorStateBehaviour" preserve="all" />
-    <type fullname="SupremacyHangar.Runtime.ContentLoader.AssetMappings" preserve="all" />
     <type fullname="SupremacyHangar.Runtime.Environment.Connections.ConnectivityJoin" preserve="all" />
     <type fullname="SupremacyHangar.Runtime.Environment.Connections.ConnectivityNode" preserve="all" />
     <type fullname="SupremacyHangar.Runtime.Environment.DoorCollisionHandler" preserve="all" />
@@ -24,16 +18,12 @@
     <type fullname="SupremacyHangar.Runtime.Silo.SiloFiller" preserve="all" />
     <type fullname="SupremacyHangar.Runtime.Silo.SiloInfoDisplay" preserve="all" />
     <type fullname="SupremacyHangar.Runtime.Silo.SiloPositioner" preserve="all" />
-    <type fullname="SupremacyHangar.Runtime.ContentLoader.FactionMapping" preserve="nothing" serialized="true" />
-    <type fullname="SupremacyHangar.Runtime.ContentLoader.MechChassisMapping" preserve="nothing" serialized="true" />
-    <type fullname="SupremacyHangar.Runtime.ContentLoader.MechSkinMapping" preserve="nothing" serialized="true" />
     <type fullname="SupremacyHangar.Runtime.Environment.EnvironmentPrefab/Joiner" preserve="nothing" serialized="true" />
     <type fullname="SupremacyHangar.Runtime.Environment.EnvironmentPartAddressable" preserve="nothing" serialized="true" />
     <type fullname="SupremacyHangar.Runtime.Environment.PartJoin" preserve="nothing" serialized="true" />
   </assembly>
   <assembly fullname="Unity.Addressables, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
     <type fullname="UnityEngine.AddressableAssets.Addressables" preserve="all" />
-    <type fullname="UnityEngine.AddressableAssets.AssetReference" preserve="nothing" serialized="true" />
     <type fullname="UnityEngine.AddressableAssets.AssetReferenceGameObject" preserve="nothing" serialized="true" />
   </assembly>
   <assembly fullname="Unity.InputSystem, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null">
