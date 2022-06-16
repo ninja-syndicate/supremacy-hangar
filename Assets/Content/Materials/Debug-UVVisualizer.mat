@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Debug-UV0Visualizer
+  m_Name: Debug-UVVisualizer
   m_Shader: {fileID: 4800000, guid: 3e1c453d574a54e078eba44b0fd4be18, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
