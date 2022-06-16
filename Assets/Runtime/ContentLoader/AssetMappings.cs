@@ -109,6 +109,11 @@ namespace SupremacyHangar.Runtime.ContentLoader
         
         [SerializeField][SerializeReference] private SupremacyData.Runtime.MechSkin dataMechSkin;
         [SerializeField] private AssetReference skinReference;
-    }    
-    
+    }
+ 
+    [Serializable]
+    public class AssetReferenceAssetMappings : AssetReferenceT<AssetMappings>
+    {
+        public AssetReferenceAssetMappings(string guid) : base(guid) { }
+    }
 }

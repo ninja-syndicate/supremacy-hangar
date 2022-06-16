@@ -111,7 +111,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19bb7db97060ab043acd356823768f3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  assetMappings: {fileID: 11400000, guid: 803e5cb4a07a7474ca807f6f5941b7be, type: 2}
+  assetMappingsReference:
+    m_AssetGUID: 803e5cb4a07a7474ca807f6f5941b7be
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
 --- !u!114 &-2783684923435114094
 MonoBehaviour:
   m_ObjectHideFlags: 0
