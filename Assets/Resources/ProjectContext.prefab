@@ -128,3 +128,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f95414623b6d10046a61dfd6eda58f19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jsonTestFragment: "{\n    \"faction\": \"Zaibatsu\",\n    \"silos\":\n    [\n       
+    {\n            \"type\": \"mech\",\n            \"ownership_id\": \"mech/assetID\",\n           
+    \"mech_id\": \"Zaibatsu\",\n            \"skin_id\": \"CherryBlossom\"\n       
+    },\n        {\n            \"type\": \"mystery_crate\",\n            \"ownership_id\":
+    \"Rare\",\n            \"can_open_on\": \"2022-06-09T09:32:38+00:00\"\n       
+    },\n        {\n            \"type\": \"mech\",\n            \"ownership_id\":
+    \"mech/assetID\",\n            \"mech_id\": \"RedMountain\",\n            \"skin_id\":
+    \"Evo\"\n        },\n        {\n            \"type\": \"mech\",\n           
+    \"ownership_id\": \"mech/assetID\",\n            \"mech_id\": \"BostonCybernetics\",\n           
+    \"skin_id\": \"Cyber\"\n        },\n        {\n            \"type\": \"mystery_crate\",\n           
+    \"ownership_id\": \"lootbot/assetID\",\n            \"can_open_on\": \"2022-06-010T09:32:38+00:00\"\n       
+    }\n    ]\n}"
