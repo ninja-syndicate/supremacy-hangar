@@ -3,6 +3,7 @@ Shader "Supremacy/Debug/UVVisualizer"
     Properties
     {
         [UVIndex] _UVIndex("UV Index", int) = 0
+        [_Modulus] _Modulus("Mod 1 UVs", int) = 0
     }
     SubShader
     {
@@ -44,6 +45,7 @@ Shader "Supremacy/Debug/UVVisualizer"
 
             CBUFFER_START(UnityPerMaterial)
                 int _UVIndex;
+                int _Modulus;
             CBUFFER_END
             
             VertexOutput vert (VertexInput input)
@@ -71,6 +73,8 @@ Shader "Supremacy/Debug/UVVisualizer"
                 uv = _UVIndex > 4. ? input.uv5 : uv;
                 uv = _UVIndex > 5. ? input.uv6 : uv;
                 uv = _UVIndex > 6. ? input.uv7 : uv;
+
+                uv = _Modulus < 0.5 ? uv : fmod(uv, 1);
                 
                 half4 col = half4(uv.x, uv.y, 0, 1);
                 return col;
