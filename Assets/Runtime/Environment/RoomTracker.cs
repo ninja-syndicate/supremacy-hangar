@@ -33,7 +33,6 @@ namespace SupremacyHangar.Runtime.Environment
                 {
                     s.Spawned = false;
                 }
-                Debug.Log("New room", this);
                 _environmentManager.setCurrentEnvironment(myConnections.connectedTo);
 
                 //unload previous room/s & connectors

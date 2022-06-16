@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9201863520351048078
+--- !u!114 &-8858896915645137584
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Law Enforcer X-1000 - Sleek
+  m_Name: Mech Skin - KENJI - 2501 - Tachikoma
   m_EditorClassIdentifier: 
-  humanName: Sleek
-  idBytes: bf534dadd0992942a5d10a8a7040c881
-  mechModel: {fileID: -2553898132268990873}
---- !u!114 &-9096283979892362311
+  humanName: 2501 - Tachikoma
+  idBytes: 3878523bb7a2934a876f661862838b50
+  mechModel: {fileID: 3160154348487789334}
+--- !u!114 &-8228776907035124105
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -25,42 +25,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - RMOMC Humanoid - Unified Martian Corporation
-  m_EditorClassIdentifier: 
-  humanName: Unified Martian Corporation
-  idBytes: 4076fa85cb30ee4d8e884b6f39bf2d9d
-  mechModel: {fileID: -7892259140449291445}
---- !u!114 &-9093592036142542373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - ZHI Platform - ZHI Default
-  m_EditorClassIdentifier: 
-  humanName: ZHI Default
-  idBytes: 1457fb99018438498f9020b5c2e78a44
-  mechModel: {fileID: -4146420379355250391}
---- !u!114 &-8964423961378344267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Tenshi Mk1 - Gold
+  m_Name: Mech Skin - Olympus Mons LY07 - Gold
   m_EditorClassIdentifier: 
   humanName: Gold
-  idBytes: f7df9743ae45e24baa129b0a56190b7e
-  mechModel: {fileID: 5249671688039504270}
---- !u!114 &-8724186037200724544
+  idBytes: e6d500f85446d546957cecb3387cf588
+  mechModel: {fileID: -6094031022545233519}
+--- !u!114 &-8140594569937933541
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -70,27 +40,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - BC Humanoid - Gold
+  m_Name: Mech Skin - Tenshi Mk1 - Vector
+  m_EditorClassIdentifier: 
+  humanName: Vector
+  idBytes: c5c95c4d93d1ed48bbe475cafa55f3fb
+  mechModel: {fileID: -3017104320611050935}
+--- !u!114 &-8067338306772624333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - WAR ENFORCER - Gold
   m_EditorClassIdentifier: 
   humanName: Gold
-  idBytes: 2b3144366ad97f4f8b74ca2256bfd5db
-  mechModel: {fileID: -3998116186586477526}
---- !u!114 &-8709558677077808096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Olympus Mons LY07 - Red Blue
-  m_EditorClassIdentifier: 
-  humanName: Red Blue
-  idBytes: 00076a9688adb3419656c1058733ebc2
-  mechModel: {fileID: -3104421721943779409}
---- !u!114 &-8643965203654870742
+  idBytes: 802587203f71af488a08b4f0b5e0887e
+  mechModel: {fileID: 4956909745880066220}
+--- !u!114 &-8025664511339609467
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,66 +73,15 @@ MonoBehaviour:
   m_Name: Game Ability - NUKE
   m_EditorClassIdentifier: 
   humanName: NUKE
-  idBytes: d7d182f91d852b4db1e3d68f9c100a5a
-  faction: {fileID: 8031011972669704014}
-  battleAbility: {fileID: 3760666987429900225}
+  idBytes: 6f4c4ec1d3dbe94387cec8b5981f7001
+  faction: {fileID: 9100265950593429017}
+  battleAbility: {fileID: -6971698899732224290}
   color: {r: 0.9098039, g: 0.4, b: 0.12941177, a: 1}
   textColor: {r: 1, g: 1, b: 1, a: 1}
   imageURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/ability-nuke.jpg
   description: The show-stopper. A tactical nuke at your fingertips.
   level: 1
---- !u!114 &-8398191172689286016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22627eb2829e42d7a3c75a059a532c68, type: 3}
-  m_Name: Game Ability - FIREWORKS
-  m_EditorClassIdentifier: 
-  humanName: FIREWORKS
-  idBytes: 1dcb9719188ed843819566941d6f2eff
-  faction: {fileID: 8031011972669704014}
-  battleAbility: {fileID: 0}
-  color: {r: 1, g: 0.77254903, b: 0.14117648, a: 1}
-  textColor: {r: 0, g: 0, b: 0, a: 1}
-  imageURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/ability-fireworks.jpg
-  description: display firework on targeted mech
-  level: 0
---- !u!114 &-8301779378580913240
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8967aab236a450a90fb94b01715d70c, type: 3}
-  m_Name: Brand - Red Mountain Offworld Mining Corporation
-  m_EditorClassIdentifier: 
-  humanName: Red Mountain Offworld Mining Corporation
-  idBytes: fcd43a95a93a1f47a852f39e9f36cd04
-  faction: {fileID: 2711784343201348312}
---- !u!114 &-8124571012536219177
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - BC Humanoid - Blue Camo
-  m_EditorClassIdentifier: 
-  humanName: Blue Camo
-  idBytes: 30a1d71b84b6c142b79881a58e6fab03
-  mechModel: {fileID: -3998116186586477526}
---- !u!114 &-8088545677146932260
+--- !u!114 &-7804484069953300586
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -176,8 +95,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   humanName: Boston Cybernetics
   idBytes: fc719f009435244da6e2f05070d66f40
-  faction: {fileID: -8006057967132061708}
---- !u!114 &-8054351975928814175
+  faction: {fileID: -1697855209747215840}
+--- !u!114 &-7686926382663101909
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -187,12 +106,546 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - BC Platform - Blue Camo
+  m_Name: Mech Skin - ARIES - Molten
   m_EditorClassIdentifier: 
-  humanName: Blue Camo
-  idBytes: b1d98d7485db7f48b27c0b8be8748142
-  mechModel: {fileID: 5319711663269508982}
---- !u!114 &-8006057967132061708
+  humanName: Molten
+  idBytes: 0ac8fcaa16d7d84fb1efcf7ef27b8fb8
+  mechModel: {fileID: 1673369590579329074}
+--- !u!114 &-7580677416772480718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22627eb2829e42d7a3c75a059a532c68, type: 3}
+  m_Name: Game Ability - AIRSTRIKE
+  m_EditorClassIdentifier: 
+  humanName: AIRSTRIKE
+  idBytes: 92f5b3ed8cc60a4f93e6a041313f5be2
+  faction: {fileID: -1697855209747215840}
+  battleAbility: {fileID: -7169268659357277686}
+  color: {r: 0.09019608, g: 0.23921569, b: 0.81960785, a: 1}
+  textColor: {r: 1, g: 1, b: 1, a: 1}
+  imageURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/ability-airstrike.jpg
+  description: '''Rain fury on the arena with a targeted airstrike.'
+  level: 1
+--- !u!114 &-7169268659357277686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3231ac0869c4fb99a46d3341afec6f7, type: 3}
+  m_Name: BattleAbility - AIRSTRIKE
+  m_EditorClassIdentifier: 
+  humanName: AIRSTRIKE
+  idBytes: c121fe35085e614ab31fefd7db659e00
+  cooldown: 20
+  description: Rain fury on the arena with a targeted airstrike.
+--- !u!114 &-7083467838897228900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Olympus Mons LY07 - Desert
+  m_EditorClassIdentifier: 
+  humanName: Desert
+  idBytes: 6c13197b41488744a04dfbd3b201af6b
+  mechModel: {fileID: -6094031022545233519}
+--- !u!114 &-6971698899732224290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3231ac0869c4fb99a46d3341afec6f7, type: 3}
+  m_Name: BattleAbility - NUKE
+  m_EditorClassIdentifier: 
+  humanName: NUKE
+  idBytes: e36b5e7eeba4e5498b0b121ccc7c1c77
+  cooldown: 30
+  description: The show-stopper. A tactical nuke at your fingertips.
+--- !u!114 &-6924407672097071136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Law Enforcer X-1000 - White Blue
+  m_EditorClassIdentifier: 
+  humanName: White Blue
+  idBytes: 7f4d5b26fbfef94cb94de279af28f2e6
+  mechModel: {fileID: 8413216818550338364}
+--- !u!114 &-6602071638436785772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8967aab236a450a90fb94b01715d70c, type: 3}
+  m_Name: Brand - Red Mountain Offworld Mining Corporation
+  m_EditorClassIdentifier: 
+  humanName: Red Mountain Offworld Mining Corporation
+  idBytes: fcd43a95a93a1f47a852f39e9f36cd04
+  faction: {fileID: 9100265950593429017}
+--- !u!114 &-6494078999902683035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8967aab236a450a90fb94b01715d70c, type: 3}
+  m_Name: Brand - Archon Miltech
+  m_EditorClassIdentifier: 
+  humanName: Archon Miltech
+  idBytes: 0c3984cb1e59c04aa8b4d283c83504a4
+  faction: {fileID: -1697855209747215840}
+--- !u!114 &-6235256079972794011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3231ac0869c4fb99a46d3341afec6f7, type: 3}
+  m_Name: BattleAbility - REPAIR
+  m_EditorClassIdentifier: 
+  humanName: REPAIR
+  idBytes: bdb6d2654c11a746a0121924b8d712b3
+  cooldown: 15
+  description: Support your Syndicate with a well-timed repair.
+--- !u!114 &-6201045537752904673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22627eb2829e42d7a3c75a059a532c68, type: 3}
+  m_Name: Game Ability - AIRSTRIKE
+  m_EditorClassIdentifier: 
+  humanName: AIRSTRIKE
+  idBytes: 26dd5ef9d20b4d4bae0450bfc137e261
+  faction: {fileID: 9100265950593429017}
+  battleAbility: {fileID: -7169268659357277686}
+  color: {r: 0.09019608, g: 0.23921569, b: 0.81960785, a: 1}
+  textColor: {r: 1, g: 1, b: 1, a: 1}
+  imageURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/ability-airstrike.jpg
+  description: '''Rain fury on the arena with a targeted airstrike.'
+  level: 1
+--- !u!114 &-6162281157822556492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22627eb2829e42d7a3c75a059a532c68, type: 3}
+  m_Name: Game Ability - ROBOT DOGS
+  m_EditorClassIdentifier: 
+  humanName: ROBOT DOGS
+  idBytes: 39a6ee341cd5364cac2e2478ddd62ada
+  faction: {fileID: -1697855209747215840}
+  battleAbility: {fileID: 0}
+  color: {r: 0.25882354, g: 0.5568628, b: 0.75686276, a: 1}
+  textColor: {r: 1, g: 1, b: 1, a: 1}
+  imageURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/ability-dogs.jpg
+  description: Boston Cybernetic unique ability. Release the hounds!
+  level: 1
+--- !u!114 &-6104889772416837408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - SHIROKUMA - XHANCR
+  m_EditorClassIdentifier: 
+  humanName: XHANCR
+  idBytes: 91b835bd78be254c8be41d32aacfccf0
+  mechModel: {fileID: -1725972078085913312}
+--- !u!114 &-6094031022545233519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d957b6e175af483494adde72dbc9ad51, type: 3}
+  m_Name: Mech Model - Olympus Mons LY07
+  m_EditorClassIdentifier: 
+  humanName: Olympus Mons LY07
+  idBytes: b9f327ac3d75ce4a84a921c041195344
+  brand: {fileID: 0}
+  type: 0
+  defaultSkin: {fileID: 0}
+--- !u!114 &-5891623121309946560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Law Enforcer X-1000 - Dynamic Yellow
+  m_EditorClassIdentifier: 
+  humanName: Dynamic Yellow
+  idBytes: 00858ebfb4ae204a8181b1e1ff2db4e4
+  mechModel: {fileID: 8413216818550338364}
+--- !u!114 &-5704413230523180057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Tenshi Mk1 - Gumdan
+  m_EditorClassIdentifier: 
+  humanName: Gumdan
+  idBytes: 5e0649c3bd627d41a38ce9af3626fe43
+  mechModel: {fileID: -3017104320611050935}
+--- !u!114 &-5416780157565602162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - ARIES - Gold
+  m_EditorClassIdentifier: 
+  humanName: Gold
+  idBytes: 51fc82d7e0a52e4b81d95124269f5f0a
+  mechModel: {fileID: 1673369590579329074}
+--- !u!114 &-4817614478516941428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22627eb2829e42d7a3c75a059a532c68, type: 3}
+  m_Name: Game Ability - FIREWORKS
+  m_EditorClassIdentifier: 
+  humanName: FIREWORKS
+  idBytes: 80507611ae066044af8ee58fe15d1b82
+  faction: {fileID: 9100265950593429017}
+  battleAbility: {fileID: 0}
+  color: {r: 1, g: 0.77254903, b: 0.14117648, a: 1}
+  textColor: {r: 0, g: 0, b: 0, a: 1}
+  imageURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/ability-fireworks.jpg
+  description: display firework on targeted mech
+  level: 0
+--- !u!114 &-4545376390131229601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Tenshi Mk1 - Gold Pattern
+  m_EditorClassIdentifier: 
+  humanName: Gold Pattern
+  idBytes: a1d41a90492771458d5a0ef321a5b294
+  mechModel: {fileID: -3017104320611050935}
+--- !u!114 &-4535026231242940858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Olympus Mons LY07 - Evo
+  m_EditorClassIdentifier: 
+  humanName: Evo
+  idBytes: 32b9317ec5c1bb4297e2b71666e2aea2
+  mechModel: {fileID: -6094031022545233519}
+--- !u!114 &-4404582217796110862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - SHIROKUMA - Synth Punk
+  m_EditorClassIdentifier: 
+  humanName: Synth Punk
+  idBytes: 4943e5f6ce36d54597128e3f005d5d27
+  mechModel: {fileID: -1725972078085913312}
+--- !u!114 &-4266207778213790419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Law Enforcer X-1000 - Vintage
+  m_EditorClassIdentifier: 
+  humanName: Vintage
+  idBytes: fd339a72876ba14e8a56d415aa2ebcc6
+  mechModel: {fileID: 8413216818550338364}
+--- !u!114 &-4262553992820508583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Olympus Mons LY07 - Slava Ukraini
+  m_EditorClassIdentifier: 
+  humanName: Slava Ukraini
+  idBytes: 72ecd6115ee73a439bdf3d82f4ebec9a
+  mechModel: {fileID: -6094031022545233519}
+--- !u!114 &-4245435855674346657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Olympus Mons LY07 - Beetle
+  m_EditorClassIdentifier: 
+  humanName: Beetle
+  idBytes: 01bd35b88afd374d8e6ec7f14111ff4e
+  mechModel: {fileID: -6094031022545233519}
+--- !u!114 &-4143991506952125527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - SHIROKUMA - Gold
+  m_EditorClassIdentifier: 
+  humanName: Gold
+  idBytes: 2b97e0e2b072a04c842e858b9cf4896d
+  mechModel: {fileID: -1725972078085913312}
+--- !u!114 &-4124479688830079913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Law Enforcer X-1000 - Slava Ukraini
+  m_EditorClassIdentifier: 
+  humanName: Slava Ukraini
+  idBytes: a26070374dec014eb5f9a93657ad409f
+  mechModel: {fileID: 8413216818550338364}
+--- !u!114 &-4029689221901601830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Law Enforcer X-1000 - Crystal Blue
+  m_EditorClassIdentifier: 
+  humanName: Crystal Blue
+  idBytes: 918bdf2efa6efb40a3d9d624766a5e10
+  mechModel: {fileID: 8413216818550338364}
+--- !u!114 &-3976867425329580788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Olympus Mons LY07 - Irradiated
+  m_EditorClassIdentifier: 
+  humanName: Irradiated
+  idBytes: f29b04a3a746864b8775f978d51b1914
+  mechModel: {fileID: -6094031022545233519}
+--- !u!114 &-3156426103317846531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22627eb2829e42d7a3c75a059a532c68, type: 3}
+  m_Name: Game Ability - NUKE
+  m_EditorClassIdentifier: 
+  humanName: NUKE
+  idBytes: d64c2a20ac9c0445a6db1c5ff0fbf22d
+  faction: {fileID: -1697855209747215840}
+  battleAbility: {fileID: -6971698899732224290}
+  color: {r: 0.9098039, g: 0.4, b: 0.12941177, a: 1}
+  textColor: {r: 1, g: 1, b: 1, a: 1}
+  imageURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/ability-nuke.jpg
+  description: The show-stopper. A tactical nuke at your fingertips.
+  level: 1
+--- !u!114 &-3017104320611050935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d957b6e175af483494adde72dbc9ad51, type: 3}
+  m_Name: Mech Model - Tenshi Mk1
+  m_EditorClassIdentifier: 
+  humanName: Tenshi Mk1
+  idBytes: 81d35c62667c2f4e9f69f81589105730
+  brand: {fileID: 0}
+  type: 0
+  defaultSkin: {fileID: 0}
+--- !u!114 &-2861658713213178342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Law Enforcer X-1000 - Light Blue Police
+  m_EditorClassIdentifier: 
+  humanName: Light Blue Police
+  idBytes: 6977792b6ae9164e837cdbbf455a32a1
+  mechModel: {fileID: 8413216818550338364}
+--- !u!114 &-2322832727499526800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Tenshi Mk1 - Destroyer
+  m_EditorClassIdentifier: 
+  humanName: Destroyer
+  idBytes: df8bf1aa30f0aa41bb679f3545ce0d48
+  mechModel: {fileID: -3017104320611050935}
+--- !u!114 &-2304915102452273334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Olympus Mons LY07 - Navy
+  m_EditorClassIdentifier: 
+  humanName: Navy
+  idBytes: 530b9decb3ef064593d8366def90b4d7
+  mechModel: {fileID: -6094031022545233519}
+--- !u!114 &-2160408432840934716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - ARIES - UMC
+  m_EditorClassIdentifier: 
+  humanName: UMC
+  idBytes: 8ab1394dfd459044a26b1ac4ef97426b
+  mechModel: {fileID: 1673369590579329074}
+--- !u!114 &-1725972078085913312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d957b6e175af483494adde72dbc9ad51, type: 3}
+  m_Name: Mech Model - SHIROKUMA
+  m_EditorClassIdentifier: 
+  humanName: SHIROKUMA
+  idBytes: deeb3906bafb8b4988acf7122ead9c90
+  brand: {fileID: 8516979270638858874}
+  type: 1
+  defaultSkin: {fileID: 0}
+--- !u!114 &-1697855209747215840
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -214,7 +667,7 @@ MonoBehaviour:
   description: '"Boston Cybernetics is the major commercial leader within the Supremacy
     Era. It has secure territories comprising 275 districts located on the east coast
     of the former United States. In addition to the production of War Machines'
---- !u!114 &-7976887201187703058
+--- !u!114 &-1637903879074925390
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -224,44 +677,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - BC Platform - Police
+  m_Name: Mech Skin - WAR ENFORCER - Paladin
   m_EditorClassIdentifier: 
-  humanName: Police
-  idBytes: b774324f2880e5439ea44e316810bafa
-  mechModel: {fileID: 5319711663269508982}
---- !u!114 &-7900368739831513004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Law Enforcer X-1000 - Vintage
-  m_EditorClassIdentifier: 
-  humanName: Vintage
-  idBytes: 276e034069aec74f827fc653d4544d4d
-  mechModel: {fileID: -2553898132268990873}
---- !u!114 &-7892259140449291445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d957b6e175af483494adde72dbc9ad51, type: 3}
-  m_Name: Mech Model - RMOMC Humanoid
-  m_EditorClassIdentifier: 
-  humanName: RMOMC Humanoid
-  idBytes: 9d898e6d8d403e449c69c9e3fc1255d3
-  brand: {fileID: -2456337306530641387}
-  type: 0
-  defaultSkin: {fileID: 0}
---- !u!114 &-7863502498262971313
+  humanName: Paladin
+  idBytes: 8fa9225a92d00e44a57d3b13cefe3194
+  mechModel: {fileID: 4956909745880066220}
+--- !u!114 &-1406760736099763311
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -271,601 +692,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22627eb2829e42d7a3c75a059a532c68, type: 3}
-  m_Name: Game Ability - AIRSTRIKE
+  m_Name: Game Ability - REPAIR
   m_EditorClassIdentifier: 
-  humanName: AIRSTRIKE
-  idBytes: 26dd5ef9d20b4d4bae0450bfc137e261
-  faction: {fileID: 2711784343201348312}
-  battleAbility: {fileID: 624630246880502107}
-  color: {r: 0.09019608, g: 0.23921569, b: 0.81960785, a: 1}
+  humanName: REPAIR
+  idBytes: 9bd9c8dde5f4d34283d156cf4dd07754
+  faction: {fileID: -1697855209747215840}
+  battleAbility: {fileID: -6235256079972794011}
+  color: {r: 0.13725491, g: 0.68235296, b: 0.23529412, a: 1}
   textColor: {r: 1, g: 1, b: 1, a: 1}
-  imageURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/ability-airstrike.jpg
-  description: '''Rain fury on the arena with a targeted airstrike.'
+  imageURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/ability-repair.jpg
+  description: Support your Syndcate with a well-timed repair.
   level: 1
---- !u!114 &-7703247095829329989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Law Enforcer X-1000 - White Blue
-  m_EditorClassIdentifier: 
-  humanName: White Blue
-  idBytes: 3ac617f99a94e64aada17e123e40db68
-  mechModel: {fileID: -2553898132268990873}
---- !u!114 &-7679462919622128877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - BC Platform - Crystal
-  m_EditorClassIdentifier: 
-  humanName: Crystal
-  idBytes: 7fda60d4de5ab846bb5bca1650bf12e2
-  mechModel: {fileID: 5319711663269508982}
---- !u!114 &-7641570573306003465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Tenshi Mk1 - Evangelica
-  m_EditorClassIdentifier: 
-  humanName: Evangelica
-  idBytes: 8f624633ea677743b96d4d17c52d7d27
-  mechModel: {fileID: 5249671688039504270}
---- !u!114 &-7547467713387244401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Law Enforcer X-1000 - Nebula
-  m_EditorClassIdentifier: 
-  humanName: Nebula
-  idBytes: 9d26070b8457f145bf18f213b16d121f
-  mechModel: {fileID: -2553898132268990873}
---- !u!114 &-7515326525308531069
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - RMOMC Humanoid - RMOMC Default
-  m_EditorClassIdentifier: 
-  humanName: RMOMC Default
-  idBytes: c2c152721a536e4faad31f391ae20b83
-  mechModel: {fileID: -7892259140449291445}
---- !u!114 &-7169866342566722915
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d957b6e175af483494adde72dbc9ad51, type: 3}
-  m_Name: Mech Model - ZHI Humanoid
-  m_EditorClassIdentifier: 
-  humanName: ZHI Humanoid
-  idBytes: 113b679614a5994f97ff2f248c2e48f8
-  brand: {fileID: 7605043653709507494}
-  type: 0
-  defaultSkin: {fileID: 0}
---- !u!114 &-7159974090390334787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Olympus Mons LY07 - Vintage
-  m_EditorClassIdentifier: 
-  humanName: Vintage
-  idBytes: 585196b92cce39469907f50286c0811e
-  mechModel: {fileID: -3104421721943779409}
---- !u!114 &-7083340651041692821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8967aab236a450a90fb94b01715d70c, type: 3}
-  m_Name: Brand - Pyrotronics
-  m_EditorClassIdentifier: 
-  humanName: Pyrotronics
-  idBytes: ffa33c5b05426f4d9b6ce3edf7a88775
-  faction: {fileID: 2711784343201348312}
---- !u!114 &-6892626423545267362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Law Enforcer X-1000 - Dune
-  m_EditorClassIdentifier: 
-  humanName: Dune
-  idBytes: 4cd0136ed5d0184c9578d73c4d4dbe12
-  mechModel: {fileID: -2553898132268990873}
---- !u!114 &-6676687301468817863
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8967aab236a450a90fb94b01715d70c, type: 3}
-  m_Name: Brand - Daison Avionics
-  m_EditorClassIdentifier: 
-  humanName: Daison Avionics
-  idBytes: 58471fb02233d14d90a79d14a4b8407f
-  faction: {fileID: -8006057967132061708}
---- !u!114 &-6621744303725776446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Tenshi Mk1 - White Neon
-  m_EditorClassIdentifier: 
-  humanName: White Neon
-  idBytes: 97db7e73d29af840aa1be80657856a2b
-  mechModel: {fileID: 5249671688039504270}
---- !u!114 &-6526854145015017560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Olympus Mons LY07 - Gold
-  m_EditorClassIdentifier: 
-  humanName: Gold
-  idBytes: 5356716904662c47842ea214397cbb7d
-  mechModel: {fileID: -3104421721943779409}
---- !u!114 &-6162810834096252771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22627eb2829e42d7a3c75a059a532c68, type: 3}
-  m_Name: Game Ability - FIREWORKS
-  m_EditorClassIdentifier: 
-  humanName: FIREWORKS
-  idBytes: 80507611ae066044af8ee58fe15d1b82
-  faction: {fileID: 2711784343201348312}
-  battleAbility: {fileID: 0}
-  color: {r: 1, g: 0.77254903, b: 0.14117648, a: 1}
-  textColor: {r: 0, g: 0, b: 0, a: 1}
-  imageURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/ability-fireworks.jpg
-  description: display firework on targeted mech
-  level: 0
---- !u!114 &-6157586448003524289
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Tenshi Mk1 - Static
-  m_EditorClassIdentifier: 
-  humanName: Static
-  idBytes: 156eac3b13dbd94bb66b213f9a69ff5a
-  mechModel: {fileID: 5249671688039504270}
---- !u!114 &-6029793322245285207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22627eb2829e42d7a3c75a059a532c68, type: 3}
-  m_Name: Game Ability - AIRSTRIKE
-  m_EditorClassIdentifier: 
-  humanName: AIRSTRIKE
-  idBytes: 1cc08650b8dad44f99a56df9dbb52193
-  faction: {fileID: 8031011972669704014}
-  battleAbility: {fileID: 624630246880502107}
-  color: {r: 0.09019608, g: 0.23921569, b: 0.81960785, a: 1}
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  imageURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/ability-airstrike.jpg
-  description: '''Rain fury on the arena with a targeted airstrike.'
-  level: 1
---- !u!114 &-5508419453256856151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Law Enforcer X-1000 - Slava Ukraini
-  m_EditorClassIdentifier: 
-  humanName: Slava Ukraini
-  idBytes: 9b15e491cd72b043b7b968bfe675b884
-  mechModel: {fileID: -2553898132268990873}
---- !u!114 &-5440364188303639213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - RMOMC Humanoid - Molten
-  m_EditorClassIdentifier: 
-  humanName: Molten
-  idBytes: 5f36297251784c42bbbc7c0591829f5d
-  mechModel: {fileID: -7892259140449291445}
---- !u!114 &-4875414038077514647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Tenshi Mk1 - Purple Haze
-  m_EditorClassIdentifier: 
-  humanName: Purple Haze
-  idBytes: baab4cc524c23c438c2958903606e067
-  mechModel: {fileID: 5249671688039504270}
---- !u!114 &-4740486240052120701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8967aab236a450a90fb94b01715d70c, type: 3}
-  m_Name: Brand - Archon Miltech
-  m_EditorClassIdentifier: 
-  humanName: Archon Miltech
-  idBytes: 5db24a82c8bb604ab0fa0ecd0dd690ba
-  faction: {fileID: -8006057967132061708}
---- !u!114 &-4306185609603572121
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22627eb2829e42d7a3c75a059a532c68, type: 3}
-  m_Name: Game Ability - NUKE
-  m_EditorClassIdentifier: 
-  humanName: NUKE
-  idBytes: d64c2a20ac9c0445a6db1c5ff0fbf22d
-  faction: {fileID: -8006057967132061708}
-  battleAbility: {fileID: 3760666987429900225}
-  color: {r: 0.9098039, g: 0.4, b: 0.12941177, a: 1}
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  imageURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/ability-nuke.jpg
-  description: The show-stopper. A tactical nuke at your fingertips.
-  level: 1
---- !u!114 &-4236709599255909015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - RMOMC Humanoid - Red Camo
-  m_EditorClassIdentifier: 
-  humanName: Red Camo
-  idBytes: 58c6e973d9ac3b45bc8e38b0e61ea07d
-  mechModel: {fileID: -7892259140449291445}
---- !u!114 &-4146420379355250391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d957b6e175af483494adde72dbc9ad51, type: 3}
-  m_Name: Mech Model - ZHI Platform
-  m_EditorClassIdentifier: 
-  humanName: ZHI Platform
-  idBytes: bbf6f1b540b41b46b32550e2a9000aa1
-  brand: {fileID: 7605043653709507494}
-  type: 1
-  defaultSkin: {fileID: 0}
---- !u!114 &-3998116186586477526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d957b6e175af483494adde72dbc9ad51, type: 3}
-  m_Name: Mech Model - BC Humanoid
-  m_EditorClassIdentifier: 
-  humanName: BC Humanoid
-  idBytes: 1ed8b645133e6f45bbd16dcbcff4362b
-  brand: {fileID: -6676687301468817863}
-  type: 0
-  defaultSkin: {fileID: 0}
---- !u!114 &-3817408933538615641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Law Enforcer X-1000 - Dynamic Yellow
-  m_EditorClassIdentifier: 
-  humanName: Dynamic Yellow
-  idBytes: ce99a1ff4834bb469917312b892c096f
-  mechModel: {fileID: -2553898132268990873}
---- !u!114 &-3722978263107137186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - ZHI Humanoid - x3 Wartech
-  m_EditorClassIdentifier: 
-  humanName: x3 Wartech
-  idBytes: 613825c16e40dd4aae1310298a6c0bf9
-  mechModel: {fileID: -7169866342566722915}
---- !u!114 &-3653804953105477067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - ZHI Humanoid - White Camo
-  m_EditorClassIdentifier: 
-  humanName: White Camo
-  idBytes: 89811ab84459904dbf24bb355963d898
-  mechModel: {fileID: -7169866342566722915}
---- !u!114 &-3530753275617745068
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Tenshi Mk1 - Cherry Blossom
-  m_EditorClassIdentifier: 
-  humanName: Cherry Blossom
-  idBytes: 4c6453d8d50ea846801d949c1cdff62f
-  mechModel: {fileID: 5249671688039504270}
---- !u!114 &-3491835308468942739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - ZHI Platform - White Camo
-  m_EditorClassIdentifier: 
-  humanName: White Camo
-  idBytes: 8eda05667882d04b91191d9c99c116d6
-  mechModel: {fileID: -4146420379355250391}
---- !u!114 &-3215956893949570541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Tenshi Mk1 - White Gold
-  m_EditorClassIdentifier: 
-  humanName: White Gold
-  idBytes: 4f31a9d8577f154887f2a4e75dbb1d1f
-  mechModel: {fileID: 5249671688039504270}
---- !u!114 &-3104421721943779409
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d957b6e175af483494adde72dbc9ad51, type: 3}
-  m_Name: Mech Model - Olympus Mons LY07
-  m_EditorClassIdentifier: 
-  humanName: Olympus Mons LY07
-  idBytes: 324b7e8bbd8d124db8ef720bc1853b21
-  brand: {fileID: 0}
-  type: 0
-  defaultSkin: {fileID: 0}
---- !u!114 &-2995471321202139481
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Tenshi Mk1 - Warden
-  m_EditorClassIdentifier: 
-  humanName: Warden
-  idBytes: cfe391710ed6fd4b8a8241bcfd0241b0
-  mechModel: {fileID: 5249671688039504270}
---- !u!114 &-2789637873335258495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - ZHI Humanoid - ZHI Default
-  m_EditorClassIdentifier: 
-  humanName: ZHI Default
-  idBytes: a3be85d3edebba47a92fc6327838845c
-  mechModel: {fileID: -7169866342566722915}
---- !u!114 &-2788659319844682894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - ZHI Humanoid - Gold
-  m_EditorClassIdentifier: 
-  humanName: Gold
-  idBytes: ce848dc908636e4caf713cbbd221e53d
-  mechModel: {fileID: -7169866342566722915}
---- !u!114 &-2643549425093456103
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - ZHI Platform - x3 Wartech
-  m_EditorClassIdentifier: 
-  humanName: x3 Wartech
-  idBytes: 649811b3e6e7a74c8ed1dc0d35310b4e
-  mechModel: {fileID: -4146420379355250391}
---- !u!114 &-2588466697223888205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Olympus Mons LY07 - Green Yellow
-  m_EditorClassIdentifier: 
-  humanName: Green Yellow
-  idBytes: 0e89a6e84a08634b9ae335ceb39d377d
-  mechModel: {fileID: -3104421721943779409}
---- !u!114 &-2553898132268990873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d957b6e175af483494adde72dbc9ad51, type: 3}
-  m_Name: Mech Model - Law Enforcer X-1000
-  m_EditorClassIdentifier: 
-  humanName: Law Enforcer X-1000
-  idBytes: 19eacbbbe65533418924e57966c4867d
-  brand: {fileID: 0}
-  type: 0
-  defaultSkin: {fileID: 0}
---- !u!114 &-2456337306530641387
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8967aab236a450a90fb94b01715d70c, type: 3}
-  m_Name: Brand - Unified Martian Corporation
-  m_EditorClassIdentifier: 
-  humanName: Unified Martian Corporation
-  idBytes: 50ccaaeaacce7342a349919e5ad14ad3
-  faction: {fileID: 2711784343201348312}
---- !u!114 &-2149236685230217106
+--- !u!114 &-1383009038386425828
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -878,9 +716,9 @@ MonoBehaviour:
   m_Name: Mech Skin - Law Enforcer X-1000 - Blue White
   m_EditorClassIdentifier: 
   humanName: Blue White
-  idBytes: 4b31e24406037d44940424087e382523
-  mechModel: {fileID: -2553898132268990873}
---- !u!114 &-2078910274973404140
+  idBytes: dc10c51d2b521b42a49c420a1ea48dd0
+  mechModel: {fileID: 8413216818550338364}
+--- !u!114 &-1270492474737854837
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -890,193 +728,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - RMOMC Platform - Mining
-  m_EditorClassIdentifier: 
-  humanName: Mining
-  idBytes: 0e33651549a6874ab556075e4da71c9b
-  mechModel: {fileID: 7083250124790611448}
---- !u!114 &-1912015914170386832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Olympus Mons LY07 - Slava Ukraini
-  m_EditorClassIdentifier: 
-  humanName: Slava Ukraini
-  idBytes: af3cd506b00e4c4b88982fcfff1cf8fa
-  mechModel: {fileID: -3104421721943779409}
---- !u!114 &-1831794593770026899
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Law Enforcer X-1000 - Cyber
-  m_EditorClassIdentifier: 
-  humanName: Cyber
-  idBytes: 7fe85d7b714c17499ff99b79f2215f8c
-  mechModel: {fileID: -2553898132268990873}
---- !u!114 &-1732637384994975048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Olympus Mons LY07 - Nautical
-  m_EditorClassIdentifier: 
-  humanName: Nautical
-  idBytes: 4dbd81376556674698b5ba3d757a135a
-  mechModel: {fileID: -3104421721943779409}
---- !u!114 &-1713105781344351246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Tenshi Mk1 - Gumdan
-  m_EditorClassIdentifier: 
-  humanName: Gumdan
-  idBytes: 9acd8acb843ae94d9985675c790817bd
-  mechModel: {fileID: 5249671688039504270}
---- !u!114 &-1639029576723741172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Tenshi Mk1 - Black Digi
-  m_EditorClassIdentifier: 
-  humanName: Black Digi
-  idBytes: 1d64865c40aef74f8afd6a54bb473459
-  mechModel: {fileID: 5249671688039504270}
---- !u!114 &-1638048746853894512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Tenshi Mk1 - Slava Ukraini
-  m_EditorClassIdentifier: 
-  humanName: Slava Ukraini
-  idBytes: 72533370ec539245a1365b29cf4e2944
-  mechModel: {fileID: 5249671688039504270}
---- !u!114 &-1550850742901751676
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Olympus Mons LY07 - Villain
-  m_EditorClassIdentifier: 
-  humanName: Villain
-  idBytes: bf02678ab91b7b4a9a49ee61d819283e
-  mechModel: {fileID: -3104421721943779409}
---- !u!114 &-1527501439796654737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - BC Platform - Gold
-  m_EditorClassIdentifier: 
-  humanName: Gold
-  idBytes: 01e6b0c2067eb14b82d36eb4caf9861f
-  mechModel: {fileID: 5319711663269508982}
---- !u!114 &-840904306098721317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Law Enforcer X-1000 - Crystal Blue
-  m_EditorClassIdentifier: 
-  humanName: Crystal Blue
-  idBytes: 718ed97cb80b41458df2679150f365be
-  mechModel: {fileID: -2553898132268990873}
---- !u!114 &-747034516249438714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - BC Humanoid - Crystal
-  m_EditorClassIdentifier: 
-  humanName: Crystal
-  idBytes: 7d5f4d6384aa534fa70c9c6f6a99666f
-  mechModel: {fileID: -3998116186586477526}
---- !u!114 &-742988851897016996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3231ac0869c4fb99a46d3341afec6f7, type: 3}
-  m_Name: BattleAbility - REPAIR
-  m_EditorClassIdentifier: 
-  humanName: REPAIR
-  idBytes: bdb6d2654c11a746a0121924b8d712b3
-  cooldown: 15
-  description: Support your Syndicate with a well-timed repair.
---- !u!114 &-454773139581637276
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - BC Platform - Daison Avionics
+  m_Name: Mech Skin - ANNIHILATOR - Daison Avionics
   m_EditorClassIdentifier: 
   humanName: Daison Avionics
-  idBytes: d3f1d3d9a2c04d4685e8bb56367cb46e
-  mechModel: {fileID: 5319711663269508982}
---- !u!114 &-88006528563391533
+  idBytes: bc32a0d87a767a42a2041387579d3421
+  mechModel: {fileID: 476358322255940664}
+--- !u!114 &-1229286182803026243
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1086,11 +743,173 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Law Enforcer X-1000 - Mystermech
+  m_Name: Mech Skin - SHIROKUMA - 2501 - Tachikoma
   m_EditorClassIdentifier: 
-  humanName: Mystermech
-  idBytes: 9f17d9a14ca0e546ae7dc10d8fa172eb
-  mechModel: {fileID: -2553898132268990873}
+  humanName: 2501 - Tachikoma
+  idBytes: 2901c9486f509640b82b87954d354c95
+  mechModel: {fileID: -1725972078085913312}
+--- !u!114 &-1211851141217113043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8967aab236a450a90fb94b01715d70c, type: 3}
+  m_Name: Brand - Zaibatsu Heavy Industries
+  m_EditorClassIdentifier: 
+  humanName: Zaibatsu Heavy Industries
+  idBytes: 873c202b8cade24caf17e079835fdbcb
+  faction: {fileID: 1148844585822575097}
+--- !u!114 &-1169160169303005077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Olympus Mons LY07 - Red Blue
+  m_EditorClassIdentifier: 
+  humanName: Red Blue
+  idBytes: 17bf51d04e48a14485374843e3325e77
+  mechModel: {fileID: -6094031022545233519}
+--- !u!114 &-944750198157493418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - ANNIHILATOR - Raptor
+  m_EditorClassIdentifier: 
+  humanName: Raptor
+  idBytes: ec3ae2c13f866345a31c7d2a72806ac7
+  mechModel: {fileID: 476358322255940664}
+--- !u!114 &-845710901490876126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Olympus Mons LY07 - Green Yellow
+  m_EditorClassIdentifier: 
+  humanName: Green Yellow
+  idBytes: 443d2b829430ca48ac433ca0c90bf408
+  mechModel: {fileID: -6094031022545233519}
+--- !u!114 &-699026611797671723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22627eb2829e42d7a3c75a059a532c68, type: 3}
+  m_Name: Game Ability - REPAIR
+  m_EditorClassIdentifier: 
+  humanName: REPAIR
+  idBytes: d4373f3323fde240bcc2a55a78458ba6
+  faction: {fileID: 9100265950593429017}
+  battleAbility: {fileID: -6235256079972794011}
+  color: {r: 0.13725491, g: 0.68235296, b: 0.23529412, a: 1}
+  textColor: {r: 1, g: 1, b: 1, a: 1}
+  imageURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/ability-repair.jpg
+  description: Support your Syndcate with a well-timed repair.
+  level: 1
+--- !u!114 &-579540894893135221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - SHIROKUMA - X3W
+  m_EditorClassIdentifier: 
+  humanName: X3W
+  idBytes: 08d65624ad60e44ea1eb50de615ddad4
+  mechModel: {fileID: -1725972078085913312}
+--- !u!114 &-556503133433299801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Tenshi Mk1 - Evangelica
+  m_EditorClassIdentifier: 
+  humanName: Evangelica
+  idBytes: 185bf132521aab47ba5496fa4a13be0d
+  mechModel: {fileID: -3017104320611050935}
+--- !u!114 &-463560587365098624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22627eb2829e42d7a3c75a059a532c68, type: 3}
+  m_Name: Game Ability - NUKE
+  m_EditorClassIdentifier: 
+  humanName: NUKE
+  idBytes: d7d182f91d852b4db1e3d68f9c100a5a
+  faction: {fileID: 1148844585822575097}
+  battleAbility: {fileID: -6971698899732224290}
+  color: {r: 0.9098039, g: 0.4, b: 0.12941177, a: 1}
+  textColor: {r: 1, g: 1, b: 1, a: 1}
+  imageURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/ability-nuke.jpg
+  description: The show-stopper. A tactical nuke at your fingertips.
+  level: 1
+--- !u!114 &-449666252351957915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Tenshi Mk1 - White Gold
+  m_EditorClassIdentifier: 
+  humanName: White Gold
+  idBytes: e54ed0115a3c2e46a25bff6fa4d9aadb
+  mechModel: {fileID: -3017104320611050935}
+--- !u!114 &-70662558367696744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - ARIES - Military
+  m_EditorClassIdentifier: 
+  humanName: Military
+  idBytes: d77dc42a8444694ca7d2aedbc539f504
+  mechModel: {fileID: 1673369590579329074}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1104,224 +923,133 @@ MonoBehaviour:
   m_Name: Static Data
   m_EditorClassIdentifier: 
   battleAbilities:
-  - {fileID: 624630246880502107}
-  - {fileID: 3760666987429900225}
-  - {fileID: -742988851897016996}
+  - {fileID: -7169268659357277686}
+  - {fileID: -6971698899732224290}
+  - {fileID: -6235256079972794011}
   brands:
-  - {fileID: 6603577088680323027}
-  - {fileID: -8301779378580913240}
-  - {fileID: -8088545677146932260}
-  - {fileID: -6676687301468817863}
-  - {fileID: -4740486240052120701}
-  - {fileID: 7605043653709507494}
-  - {fileID: 7368316538984744809}
-  - {fileID: -2456337306530641387}
-  - {fileID: -7083340651041692821}
+  - {fileID: -1211851141217113043}
+  - {fileID: -6602071638436785772}
+  - {fileID: -7804484069953300586}
+  - {fileID: 7780503666917371156}
+  - {fileID: -6494078999902683035}
+  - {fileID: 8516979270638858874}
+  - {fileID: 5771073806833304427}
+  - {fileID: 6014477459925995805}
+  - {fileID: 8873573352097235306}
   factions:
-  - {fileID: 2711784343201348312}
-  - {fileID: -8006057967132061708}
-  - {fileID: 8031011972669704014}
+  - {fileID: 9100265950593429017}
+  - {fileID: -1697855209747215840}
+  - {fileID: 1148844585822575097}
   gameAbilities:
-  - {fileID: -6162810834096252771}
-  - {fileID: -8643965203654870742}
-  - {fileID: 5222830943206587847}
-  - {fileID: 8481414101542663077}
-  - {fileID: 4681313467179381564}
-  - {fileID: -7863502498262971313}
-  - {fileID: -4306185609603572121}
-  - {fileID: 1032806099350315007}
-  - {fileID: -6029793322245285207}
-  - {fileID: 4151667671377408133}
-  - {fileID: 7582863607384135292}
-  - {fileID: 2963415025029165764}
-  - {fileID: -8398191172689286016}
-  - {fileID: 5307444448690455033}
-  - {fileID: 2457655947048198571}
+  - {fileID: 2627411129161432107}
+  - {fileID: -4817614478516941428}
+  - {fileID: -6162281157822556492}
+  - {fileID: -6201045537752904673}
+  - {fileID: -1406760736099763311}
+  - {fileID: -699026611797671723}
+  - {fileID: 8955153468336010428}
+  - {fileID: -7580677416772480718}
+  - {fileID: -3156426103317846531}
+  - {fileID: 6361023574174294910}
+  - {fileID: -8025664511339609467}
+  - {fileID: -463560587365098624}
+  - {fileID: 5276704385883843292}
+  - {fileID: 142784950642489541}
+  - {fileID: 3556041455267428020}
   mechModels:
-  - {fileID: -2553898132268990873}
-  - {fileID: 5249671688039504270}
-  - {fileID: -3104421721943779409}
-  - {fileID: -3998116186586477526}
-  - {fileID: 5319711663269508982}
-  - {fileID: -7169866342566722915}
-  - {fileID: -4146420379355250391}
-  - {fileID: -7892259140449291445}
-  - {fileID: 7083250124790611448}
+  - {fileID: 8413216818550338364}
+  - {fileID: -3017104320611050935}
+  - {fileID: -6094031022545233519}
+  - {fileID: 4956909745880066220}
+  - {fileID: 476358322255940664}
+  - {fileID: 3160154348487789334}
+  - {fileID: -1725972078085913312}
+  - {fileID: 1673369590579329074}
+  - {fileID: 6516618555034326667}
   mechSkins:
-  - {fileID: 2328084408787105987}
-  - {fileID: -454773139581637276}
-  - {fileID: -8054351975928814175}
-  - {fileID: -7976887201187703058}
-  - {fileID: -1527501439796654737}
-  - {fileID: -7159974090390334787}
-  - {fileID: 5749929379941893419}
-  - {fileID: 8676677015881428879}
-  - {fileID: 6708517346469210759}
-  - {fileID: 8306427974009325904}
-  - {fileID: -840904306098721317}
-  - {fileID: -2995471321202139481}
-  - {fileID: -7679462919622128877}
-  - {fileID: -2789637873335258495}
-  - {fileID: -3722978263107137186}
-  - {fileID: -3653804953105477067}
-  - {fileID: -3215956893949570541}
-  - {fileID: -6892626423545267362}
-  - {fileID: -2588466697223888205}
-  - {fileID: -8964423961378344267}
-  - {fileID: -1732637384994975048}
-  - {fileID: -3817408933538615641}
-  - {fileID: -7641570573306003465}
-  - {fileID: -1831794593770026899}
-  - {fileID: -1713105781344351246}
-  - {fileID: -6526854145015017560}
-  - {fileID: -1912015914170386832}
-  - {fileID: 2605406849084048283}
-  - {fileID: 3895302930364238023}
-  - {fileID: 378421576153787267}
-  - {fileID: 5701539484310716846}
-  - {fileID: -2788659319844682894}
-  - {fileID: -9093592036142542373}
-  - {fileID: 3470391050671818208}
-  - {fileID: -5508419453256856151}
-  - {fileID: -6621744303725776446}
-  - {fileID: -88006528563391533}
-  - {fileID: 2789430001824421143}
-  - {fileID: 4657625689094339836}
-  - {fileID: -3530753275617745068}
-  - {fileID: -7547467713387244401}
-  - {fileID: 2463644933227989866}
-  - {fileID: 6499718504391228632}
-  - {fileID: -2149236685230217106}
-  - {fileID: 4528509919259179292}
-  - {fileID: -1639029576723741172}
-  - {fileID: -2643549425093456103}
-  - {fileID: -9201863520351048078}
-  - {fileID: 8397242395020731040}
-  - {fileID: 4901793619994402978}
-  - {fileID: -7703247095829329989}
-  - {fileID: -7900368739831513004}
-  - {fileID: -4875414038077514647}
-  - {fileID: -1550850742901751676}
-  - {fileID: 5748126591138122668}
-  - {fileID: 2488169808879220515}
-  - {fileID: -1638048746853894512}
-  - {fileID: -6157586448003524289}
-  - {fileID: -8709558677077808096}
-  - {fileID: 445673938277574876}
-  - {fileID: 4928277032347893916}
-  - {fileID: -8124571012536219177}
-  - {fileID: 7873772669914213415}
-  - {fileID: -8724186037200724544}
-  - {fileID: -747034516249438714}
-  - {fileID: 8929492800928138338}
-  - {fileID: -3491835308468942739}
-  - {fileID: 6913060927723976162}
-  - {fileID: 3297220957526470183}
-  - {fileID: 2421861471076955512}
-  - {fileID: -7515326525308531069}
-  - {fileID: -9096283979892362311}
-  - {fileID: -4236709599255909015}
-  - {fileID: 283362867982928043}
-  - {fileID: -5440364188303639213}
-  - {fileID: 2863407389595164753}
-  - {fileID: 3169298426185966888}
-  - {fileID: 2319618614291579006}
-  - {fileID: 6964161643176552279}
-  - {fileID: -2078910274973404140}
-  - {fileID: 733098351954852045}
-  - {fileID: 865799176793390106}
---- !u!114 &283362867982928043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - RMOMC Humanoid - Mining
-  m_EditorClassIdentifier: 
-  humanName: Mining
-  idBytes: bc3c87d450b7424f8b9ef5caa5ad8644
-  mechModel: {fileID: -7892259140449291445}
---- !u!114 &378421576153787267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - ZHI Humanoid - Ninja
-  m_EditorClassIdentifier: 
-  humanName: Ninja
-  idBytes: 5f980d5a28732144b4fe153343492654
-  mechModel: {fileID: -7169866342566722915}
---- !u!114 &445673938277574876
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - BC Humanoid - BC Default
-  m_EditorClassIdentifier: 
-  humanName: BC Default
-  idBytes: c1c05821fb763a44aaa0c3d7f8271001
-  mechModel: {fileID: -3998116186586477526}
---- !u!114 &624630246880502107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3231ac0869c4fb99a46d3341afec6f7, type: 3}
-  m_Name: BattleAbility - AIRSTRIKE
-  m_EditorClassIdentifier: 
-  humanName: AIRSTRIKE
-  idBytes: c121fe35085e614ab31fefd7db659e00
-  cooldown: 20
-  description: Rain fury on the arena with a targeted airstrike.
---- !u!114 &733098351954852045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - RMOMC Platform - Molten
-  m_EditorClassIdentifier: 
-  humanName: Molten
-  idBytes: 5805fad6bfc15745a8ad32be83dedfa2
-  mechModel: {fileID: 7083250124790611448}
---- !u!114 &865799176793390106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - RMOMC Platform - Gold
-  m_EditorClassIdentifier: 
-  humanName: Gold
-  idBytes: 6db78b719147ab4989310f93e063df67
-  mechModel: {fileID: 7083250124790611448}
---- !u!114 &1032806099350315007
+  - {fileID: -4245435855674346657}
+  - {fileID: -1270492474737854837}
+  - {fileID: 5040184048739624796}
+  - {fileID: 5354940050194600984}
+  - {fileID: 6044281424002516637}
+  - {fileID: 2237074818435525261}
+  - {fileID: -4535026231242940858}
+  - {fileID: 8609603141515779540}
+  - {fileID: -2304915102452273334}
+  - {fileID: 2329605177543160300}
+  - {fileID: -4029689221901601830}
+  - {fileID: 955071744781921528}
+  - {fileID: 2855803916473553528}
+  - {fileID: 3844941103935888829}
+  - {fileID: 1523045613867893565}
+  - {fileID: -8858896915645137584}
+  - {fileID: -449666252351957915}
+  - {fileID: 8261834593674661847}
+  - {fileID: -845710901490876126}
+  - {fileID: 5010474493868462284}
+  - {fileID: 710222730928056950}
+  - {fileID: -5891623121309946560}
+  - {fileID: -556503133433299801}
+  - {fileID: 2886573480136998708}
+  - {fileID: -5704413230523180057}
+  - {fileID: -8228776907035124105}
+  - {fileID: -4262553992820508583}
+  - {fileID: -7083467838897228900}
+  - {fileID: -8140594569937933541}
+  - {fileID: 160280251802464107}
+  - {fileID: 6605502053376273359}
+  - {fileID: 6538104121505508670}
+  - {fileID: -6104889772416837408}
+  - {fileID: -2861658713213178342}
+  - {fileID: -4124479688830079913}
+  - {fileID: 8378807440968489508}
+  - {fileID: 2969399739952767232}
+  - {fileID: 7806161054298958550}
+  - {fileID: -3976867425329580788}
+  - {fileID: 9159800766268148365}
+  - {fileID: 4827538298866373524}
+  - {fileID: 4443794090727272840}
+  - {fileID: 4319933105495909278}
+  - {fileID: -1383009038386425828}
+  - {fileID: -2322832727499526800}
+  - {fileID: 5404396824684902286}
+  - {fileID: -579540894893135221}
+  - {fileID: 5786616772943612325}
+  - {fileID: -4545376390131229601}
+  - {fileID: 1836859625293672212}
+  - {fileID: -6924407672097071136}
+  - {fileID: -4266207778213790419}
+  - {fileID: 7589066357087304440}
+  - {fileID: 2036295150616032536}
+  - {fileID: 4814776620381181466}
+  - {fileID: 3712841073354593839}
+  - {fileID: 9133112000684462475}
+  - {fileID: 1066066592904423122}
+  - {fileID: -1169160169303005077}
+  - {fileID: 9116285095145712906}
+  - {fileID: 2857798538833399472}
+  - {fileID: 1725952824656310493}
+  - {fileID: -1637903879074925390}
+  - {fileID: 5412410140952576088}
+  - {fileID: -8067338306772624333}
+  - {fileID: -944750198157493418}
+  - {fileID: -1229286182803026243}
+  - {fileID: 3480265324592184728}
+  - {fileID: -4404582217796110862}
+  - {fileID: -4143991506952125527}
+  - {fileID: -70662558367696744}
+  - {fileID: -2160408432840934716}
+  - {fileID: 596715195408463631}
+  - {fileID: 7327846113703545636}
+  - {fileID: -7686926382663101909}
+  - {fileID: -5416780157565602162}
+  - {fileID: 574172811707424854}
+  - {fileID: 6821546469140460865}
+  - {fileID: 4971138635870204722}
+  - {fileID: 9118838159809701463}
+  - {fileID: 2964072342554003602}
+  - {fileID: 4136689497073312528}
+--- !u!114 &142784950642489541
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1331,18 +1059,274 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22627eb2829e42d7a3c75a059a532c68, type: 3}
-  m_Name: Game Ability - NUKE
+  m_Name: Game Ability - OVERCHARGE
   m_EditorClassIdentifier: 
-  humanName: NUKE
-  idBytes: 6f4c4ec1d3dbe94387cec8b5981f7001
-  faction: {fileID: 2711784343201348312}
-  battleAbility: {fileID: 3760666987429900225}
-  color: {r: 0.9098039, g: 0.4, b: 0.12941177, a: 1}
+  humanName: OVERCHARGE
+  idBytes: ec1852cfc642df418e2caa0b4e89bad6
+  faction: {fileID: 1148844585822575097}
+  battleAbility: {fileID: 0}
+  color: {r: 1, g: 1, b: 1, a: 1}
+  textColor: {r: 0, g: 0, b: 0, a: 1}
+  imageURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/ability-overcharge.jpg
+  description: Zaibatsu unique ability. Consume your remaining shield for an explosive
+    defence mechanism.
+  level: 0
+--- !u!114 &160280251802464107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - KENJI - Shinobi
+  m_EditorClassIdentifier: 
+  humanName: Shinobi
+  idBytes: b6fc12bbba1a4447a5c2247ed860e106
+  mechModel: {fileID: 3160154348487789334}
+--- !u!114 &476358322255940664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d957b6e175af483494adde72dbc9ad51, type: 3}
+  m_Name: Mech Model - ANNIHILATOR
+  m_EditorClassIdentifier: 
+  humanName: ANNIHILATOR
+  idBytes: 3eab6870dc89c14abcbb1089096a5eda
+  brand: {fileID: 7780503666917371156}
+  type: 1
+  defaultSkin: {fileID: 0}
+--- !u!114 &574172811707424854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - VIKING - Military
+  m_EditorClassIdentifier: 
+  humanName: Military
+  idBytes: 5f6646d763a87d45a38dae8b6008fb80
+  mechModel: {fileID: 6516618555034326667}
+--- !u!114 &596715195408463631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - ARIES - Mining
+  m_EditorClassIdentifier: 
+  humanName: Mining
+  idBytes: 7e4652c8bd5e644599554e542cd628f2
+  mechModel: {fileID: 1673369590579329074}
+--- !u!114 &710222730928056950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Olympus Mons LY07 - Nautical
+  m_EditorClassIdentifier: 
+  humanName: Nautical
+  idBytes: d27a1412b27ca04f810a02870a839fc6
+  mechModel: {fileID: -6094031022545233519}
+--- !u!114 &955071744781921528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Tenshi Mk1 - Warden
+  m_EditorClassIdentifier: 
+  humanName: Warden
+  idBytes: 63a720ac53665348b0b54c3780b0c8bd
+  mechModel: {fileID: -3017104320611050935}
+--- !u!114 &1066066592904423122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Tenshi Mk1 - Static
+  m_EditorClassIdentifier: 
+  humanName: Static
+  idBytes: ff760e725b19ce49bd144d9e2c08b828
+  mechModel: {fileID: -3017104320611050935}
+--- !u!114 &1148844585822575097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be9ad198553541d5a516f4116d241928, type: 3}
+  m_Name: Faction - Zaibatsu Heavy Industries
+  m_EditorClassIdentifier: 
+  humanName: Zaibatsu Heavy Industries
+  idBytes: 44b30d8805e48d4284e56ebebab1fe6d
+  primaryColor: {r: 1, g: 1, b: 1, a: 1}
+  secondaryColor: {r: 0, g: 0, b: 0, a: 1}
+  backgroundColor: {r: 0.050980393, g: 0.050980393, b: 0.050980393, a: 1}
+  logoURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/factions/zai-logo.svg
+  backgroundURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/factions/zai-bg.webp
+  description: '"Zaibatsu is the industrial leader within the Supremacy Era'
+--- !u!114 &1523045613867893565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - KENJI - X3W
+  m_EditorClassIdentifier: 
+  humanName: X3W
+  idBytes: 4cb23d2446c9784dbfe5dfd6a1f0529a
+  mechModel: {fileID: 3160154348487789334}
+--- !u!114 &1673369590579329074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d957b6e175af483494adde72dbc9ad51, type: 3}
+  m_Name: Mech Model - ARIES
+  m_EditorClassIdentifier: 
+  humanName: ARIES
+  idBytes: d04695fc82968e46af1f24eb1735315b
+  brand: {fileID: 6014477459925995805}
+  type: 0
+  defaultSkin: {fileID: 0}
+--- !u!114 &1725952824656310493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - WAR ENFORCER - Rexeon Guard
+  m_EditorClassIdentifier: 
+  humanName: Rexeon Guard
+  idBytes: ef032abe9d12ba49ba719f7f10286905
+  mechModel: {fileID: 4956909745880066220}
+--- !u!114 &1836859625293672212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Law Enforcer X-1000 - BioHazard
+  m_EditorClassIdentifier: 
+  humanName: BioHazard
+  idBytes: f3bd5dc778a78a4c932a37ada15a7cf5
+  mechModel: {fileID: 8413216818550338364}
+--- !u!114 &2036295150616032536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Olympus Mons LY07 - Villain
+  m_EditorClassIdentifier: 
+  humanName: Villain
+  idBytes: 4664a6ebceb819459218c143c5748a3c
+  mechModel: {fileID: -6094031022545233519}
+--- !u!114 &2237074818435525261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Olympus Mons LY07 - Vintage
+  m_EditorClassIdentifier: 
+  humanName: Vintage
+  idBytes: 35482b9886cb0e4fb5a924f3de0ffcba
+  mechModel: {fileID: -6094031022545233519}
+--- !u!114 &2329605177543160300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Tenshi Mk1 - Chalky Neon
+  m_EditorClassIdentifier: 
+  humanName: Chalky Neon
+  idBytes: 7a4242a15cd678438f24e57efb7f6a56
+  mechModel: {fileID: -3017104320611050935}
+--- !u!114 &2627411129161432107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22627eb2829e42d7a3c75a059a532c68, type: 3}
+  m_Name: Game Ability - AIRSTRIKE
+  m_EditorClassIdentifier: 
+  humanName: AIRSTRIKE
+  idBytes: 1cc08650b8dad44f99a56df9dbb52193
+  faction: {fileID: 1148844585822575097}
+  battleAbility: {fileID: -7169268659357277686}
+  color: {r: 0.09019608, g: 0.23921569, b: 0.81960785, a: 1}
   textColor: {r: 1, g: 1, b: 1, a: 1}
-  imageURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/ability-nuke.jpg
-  description: The show-stopper. A tactical nuke at your fingertips.
+  imageURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/ability-airstrike.jpg
+  description: '''Rain fury on the arena with a targeted airstrike.'
   level: 1
---- !u!114 &2319618614291579006
+--- !u!114 &2855803916473553528
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1352,42 +1336,418 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - RMOMC Platform - Unified Martian Corporation
-  m_EditorClassIdentifier: 
-  humanName: Unified Martian Corporation
-  idBytes: 3ab7a67beb0dc349ad651be3ae37295c
-  mechModel: {fileID: 7083250124790611448}
---- !u!114 &2328084408787105987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Olympus Mons LY07 - Beetle
-  m_EditorClassIdentifier: 
-  humanName: Beetle
-  idBytes: 8a5c3da41179fd458365a797f6e3224f
-  mechModel: {fileID: -3104421721943779409}
---- !u!114 &2421861471076955512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - ZHI Platform - Gold
+  m_Name: Mech Skin - ANNIHILATOR - Gold
   m_EditorClassIdentifier: 
   humanName: Gold
-  idBytes: 181e6cbc212ffe4fb74a8d2e5e7fb604
-  mechModel: {fileID: -4146420379355250391}
---- !u!114 &2457655947048198571
+  idBytes: 666dad4a2a9a3c4f9f140980842294c8
+  mechModel: {fileID: 476358322255940664}
+--- !u!114 &2857798538833399472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - WAR ENFORCER - Daison Avionics
+  m_EditorClassIdentifier: 
+  humanName: Daison Avionics
+  idBytes: b4a09d7f0a5639488a40216427e74d74
+  mechModel: {fileID: 4956909745880066220}
+--- !u!114 &2886573480136998708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Law Enforcer X-1000 - Cyber
+  m_EditorClassIdentifier: 
+  humanName: Cyber
+  idBytes: bc9e270c9aba904095877d56d2bb0ebb
+  mechModel: {fileID: 8413216818550338364}
+--- !u!114 &2964072342554003602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - VIKING - Molten
+  m_EditorClassIdentifier: 
+  humanName: Molten
+  idBytes: fe727328b641b247acc583774345d4a5
+  mechModel: {fileID: 6516618555034326667}
+--- !u!114 &2969399739952767232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Law Enforcer X-1000 - Mystermech
+  m_EditorClassIdentifier: 
+  humanName: Mystermech
+  idBytes: a90364d7638b7049a121f42c796791a4
+  mechModel: {fileID: 8413216818550338364}
+--- !u!114 &3160154348487789334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d957b6e175af483494adde72dbc9ad51, type: 3}
+  m_Name: Mech Model - KENJI
+  m_EditorClassIdentifier: 
+  humanName: KENJI
+  idBytes: 8b88c53dfff5084da52026fd3681707f
+  brand: {fileID: 8516979270638858874}
+  type: 0
+  defaultSkin: {fileID: 0}
+--- !u!114 &3480265324592184728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - SHIROKUMA - Shinobi
+  m_EditorClassIdentifier: 
+  humanName: Shinobi
+  idBytes: 3374356a71b02541811020ace307f4ea
+  mechModel: {fileID: -1725972078085913312}
+--- !u!114 &3556041455267428020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22627eb2829e42d7a3c75a059a532c68, type: 3}
+  m_Name: Game Ability - FIREWORKS
+  m_EditorClassIdentifier: 
+  humanName: FIREWORKS
+  idBytes: 1dcb9719188ed843819566941d6f2eff
+  faction: {fileID: 1148844585822575097}
+  battleAbility: {fileID: 0}
+  color: {r: 1, g: 0.77254903, b: 0.14117648, a: 1}
+  textColor: {r: 0, g: 0, b: 0, a: 1}
+  imageURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/ability-fireworks.jpg
+  description: display firework on targeted mech
+  level: 0
+--- !u!114 &3712841073354593839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Olympus Mons LY07 - Red White
+  m_EditorClassIdentifier: 
+  humanName: Red White
+  idBytes: 0a86b46a67c5024ab627ac732be96ded
+  mechModel: {fileID: -6094031022545233519}
+--- !u!114 &3844941103935888829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - KENJI - XHANCR
+  m_EditorClassIdentifier: 
+  humanName: XHANCR
+  idBytes: 99e0be26a685cf49ba2df2d2f2ff42dc
+  mechModel: {fileID: 3160154348487789334}
+--- !u!114 &4136689497073312528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - VIKING - Gold
+  m_EditorClassIdentifier: 
+  humanName: Gold
+  idBytes: d4b42a37d935654f968a7d506eef3d54
+  mechModel: {fileID: 6516618555034326667}
+--- !u!114 &4319933105495909278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Law Enforcer X-1000 - Gold
+  m_EditorClassIdentifier: 
+  humanName: Gold
+  idBytes: b903df80ec53cc45843d2ed921973129
+  mechModel: {fileID: 8413216818550338364}
+--- !u!114 &4443794090727272840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Olympus Mons LY07 - Red Hex
+  m_EditorClassIdentifier: 
+  humanName: Red Hex
+  idBytes: 22772b4e865c64408d9c83c1f1d53c68
+  mechModel: {fileID: -6094031022545233519}
+--- !u!114 &4814776620381181466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Law Enforcer X-1000 - Rust Bucket
+  m_EditorClassIdentifier: 
+  humanName: Rust Bucket
+  idBytes: 2c2d3e12a5ff49469641c2cafac64c85
+  mechModel: {fileID: 8413216818550338364}
+--- !u!114 &4827538298866373524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Law Enforcer X-1000 - Nebula
+  m_EditorClassIdentifier: 
+  humanName: Nebula
+  idBytes: 9da7f76fb7c70947b9c863039f8b20c1
+  mechModel: {fileID: 8413216818550338364}
+--- !u!114 &4956909745880066220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d957b6e175af483494adde72dbc9ad51, type: 3}
+  m_Name: Mech Model - WAR ENFORCER
+  m_EditorClassIdentifier: 
+  humanName: WAR ENFORCER
+  idBytes: b791ba02dc550a459fbde7337ae97a2b
+  brand: {fileID: 7780503666917371156}
+  type: 0
+  defaultSkin: {fileID: 0}
+--- !u!114 &4971138635870204722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - VIKING - Mining
+  m_EditorClassIdentifier: 
+  humanName: Mining
+  idBytes: 1543431e207acb4cb1aac180afde0778
+  mechModel: {fileID: 6516618555034326667}
+--- !u!114 &5010474493868462284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Tenshi Mk1 - Gold
+  m_EditorClassIdentifier: 
+  humanName: Gold
+  idBytes: 5cdbff7203c03447b1d107898f5bcb39
+  mechModel: {fileID: -3017104320611050935}
+--- !u!114 &5040184048739624796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - ANNIHILATOR - Rexeon Guard
+  m_EditorClassIdentifier: 
+  humanName: Rexeon Guard
+  idBytes: 3dc9f5d8b54fb34aa44a2ffc298a53f7
+  mechModel: {fileID: 476358322255940664}
+--- !u!114 &5276704385883843292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22627eb2829e42d7a3c75a059a532c68, type: 3}
+  m_Name: Game Ability - FIREWORKS
+  m_EditorClassIdentifier: 
+  humanName: FIREWORKS
+  idBytes: 7231c19f1ff7c64da20424a8d8ceed56
+  faction: {fileID: -1697855209747215840}
+  battleAbility: {fileID: 0}
+  color: {r: 1, g: 0.77254903, b: 0.14117648, a: 1}
+  textColor: {r: 0, g: 0, b: 0, a: 1}
+  imageURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/ability-fireworks.jpg
+  description: display firework on targeted mech
+  level: 0
+--- !u!114 &5354940050194600984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - ANNIHILATOR - Paladin
+  m_EditorClassIdentifier: 
+  humanName: Paladin
+  idBytes: 2d8efee91c03204d89284b32113108d2
+  mechModel: {fileID: 476358322255940664}
+--- !u!114 &5404396824684902286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Tenshi Mk1 - Black Digi
+  m_EditorClassIdentifier: 
+  humanName: Black Digi
+  idBytes: ab3cb31a6ba75745b672ba54545bdf6b
+  mechModel: {fileID: -3017104320611050935}
+--- !u!114 &5412410140952576088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - WAR ENFORCER - Hive
+  m_EditorClassIdentifier: 
+  humanName: Hive
+  idBytes: 5f664fad622f934e90654c6d7af5163d
+  mechModel: {fileID: 4956909745880066220}
+--- !u!114 &5771073806833304427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8967aab236a450a90fb94b01715d70c, type: 3}
+  m_Name: Brand - Warsui
+  m_EditorClassIdentifier: 
+  humanName: Warsui
+  idBytes: 0b233b95ef914949b831165b2b9f2ba8
+  faction: {fileID: 1148844585822575097}
+--- !u!114 &5786616772943612325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Law Enforcer X-1000 - Sleek
+  m_EditorClassIdentifier: 
+  humanName: Sleek
+  idBytes: ab89ed1996299144a8a3f5f3148a1206
+  mechModel: {fileID: 8413216818550338364}
+--- !u!114 &6014477459925995805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8967aab236a450a90fb94b01715d70c, type: 3}
+  m_Name: Brand - Unified Martian Corporation
+  m_EditorClassIdentifier: 
+  humanName: Unified Martian Corporation
+  idBytes: 824d707dd018064791e5f606277a91ea
+  faction: {fileID: 9100265950593429017}
+--- !u!114 &6044281424002516637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - ANNIHILATOR - Hive
+  m_EditorClassIdentifier: 
+  humanName: Hive
+  idBytes: f362fefe9a51f34cacf606c89572c839
+  mechModel: {fileID: 476358322255940664}
+--- !u!114 &6361023574174294910
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1401,14 +1761,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   humanName: REINFORCEMENTS
   idBytes: 4b79a19d2ae47f4aa34d2c62061e51e8
-  faction: {fileID: 2711784343201348312}
+  faction: {fileID: 9100265950593429017}
   battleAbility: {fileID: 0}
   color: {r: 0.77254903, g: 0.16470589, b: 0.12156863, a: 1}
   textColor: {r: 1, g: 1, b: 1, a: 1}
   imageURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/ability-reinforcement.jpg
   description: Red Mountain unique ability. Call an additional Mech to the arena.
   level: 1
---- !u!114 &2463644933227989866
+--- !u!114 &6516618555034326667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d957b6e175af483494adde72dbc9ad51, type: 3}
+  m_Name: Mech Model - VIKING
+  m_EditorClassIdentifier: 
+  humanName: VIKING
+  idBytes: 03c81adf900a3146b9e0b62a44bdadff
+  brand: {fileID: 6014477459925995805}
+  type: 1
+  defaultSkin: {fileID: 0}
+--- !u!114 &6538104121505508670
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1418,12 +1795,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Olympus Mons LY07 - Red Hex
+  m_Name: Mech Skin - KENJI - Gold
   m_EditorClassIdentifier: 
-  humanName: Red Hex
-  idBytes: 472f839ed375014ea675002ccf29d7ff
-  mechModel: {fileID: -3104421721943779409}
---- !u!114 &2488169808879220515
+  humanName: Gold
+  idBytes: 2632b908155a774f820dfe9ef02ccfcc
+  mechModel: {fileID: 3160154348487789334}
+--- !u!114 &6605502053376273359
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1433,12 +1810,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Olympus Mons LY07 - Red White
+  m_Name: Mech Skin - KENJI - Synth Punk
   m_EditorClassIdentifier: 
-  humanName: Red White
-  idBytes: c9a79917a04568419a0024eabae846e2
-  mechModel: {fileID: -3104421721943779409}
---- !u!114 &2605406849084048283
+  humanName: Synth Punk
+  idBytes: 8db80dab49bd4d4490ada732c698583e
+  mechModel: {fileID: 3160154348487789334}
+--- !u!114 &6821546469140460865
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1448,12 +1825,185 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Olympus Mons LY07 - Desert
+  m_Name: Mech Skin - VIKING - UMC
   m_EditorClassIdentifier: 
-  humanName: Desert
-  idBytes: dd78bc6e6cb0e64d987799b3c2c46807
-  mechModel: {fileID: -3104421721943779409}
---- !u!114 &2711784343201348312
+  humanName: UMC
+  idBytes: a391a1fcc241c845b1214ec78d1b8696
+  mechModel: {fileID: 6516618555034326667}
+--- !u!114 &7327846113703545636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - ARIES - Heavy Metal
+  m_EditorClassIdentifier: 
+  humanName: Heavy Metal
+  idBytes: f166b958c661224296387f9f618e8f7b
+  mechModel: {fileID: 1673369590579329074}
+--- !u!114 &7589066357087304440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Tenshi Mk1 - Purple Haze
+  m_EditorClassIdentifier: 
+  humanName: Purple Haze
+  idBytes: ed64ae6e381061498bd7b74da77e67bb
+  mechModel: {fileID: -3017104320611050935}
+--- !u!114 &7780503666917371156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8967aab236a450a90fb94b01715d70c, type: 3}
+  m_Name: Brand - Daison Avionics
+  m_EditorClassIdentifier: 
+  humanName: Daison Avionics
+  idBytes: 5b564c4434e9cf448b1f1b1014b169cc
+  faction: {fileID: -1697855209747215840}
+--- !u!114 &7806161054298958550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Law Enforcer X-1000 - Molten
+  m_EditorClassIdentifier: 
+  humanName: Molten
+  idBytes: fe4aeb2e5c49314cb23d1717b35d1cc4
+  mechModel: {fileID: 8413216818550338364}
+--- !u!114 &8261834593674661847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Law Enforcer X-1000 - Dune
+  m_EditorClassIdentifier: 
+  humanName: Dune
+  idBytes: ae9d156549d37a4ba6ca81c69d1ae843
+  mechModel: {fileID: 8413216818550338364}
+--- !u!114 &8378807440968489508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Tenshi Mk1 - White Neon
+  m_EditorClassIdentifier: 
+  humanName: White Neon
+  idBytes: 210a7bd29d25bd4d85bfcd15f03a27f1
+  mechModel: {fileID: -3017104320611050935}
+--- !u!114 &8413216818550338364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d957b6e175af483494adde72dbc9ad51, type: 3}
+  m_Name: Mech Model - Law Enforcer X-1000
+  m_EditorClassIdentifier: 
+  humanName: Law Enforcer X-1000
+  idBytes: 3b973a5d2bc63844b746d3de2699d42a
+  brand: {fileID: 0}
+  type: 0
+  defaultSkin: {fileID: 0}
+--- !u!114 &8516979270638858874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8967aab236a450a90fb94b01715d70c, type: 3}
+  m_Name: Brand - X3 Wartech
+  m_EditorClassIdentifier: 
+  humanName: X3 Wartech
+  idBytes: 841090a87004b649a8f45c93f30c8947
+  faction: {fileID: 1148844585822575097}
+--- !u!114 &8609603141515779540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - Olympus Mons LY07 - Military
+  m_EditorClassIdentifier: 
+  humanName: Military
+  idBytes: 2351bc22454aef4880a297f74c3c5d09
+  mechModel: {fileID: -6094031022545233519}
+--- !u!114 &8873573352097235306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8967aab236a450a90fb94b01715d70c, type: 3}
+  m_Name: Brand - Pyrotronics
+  m_EditorClassIdentifier: 
+  humanName: Pyrotronics
+  idBytes: 6936b60e983c674497afdabc2acc43a6
+  faction: {fileID: 9100265950593429017}
+--- !u!114 &8955153468336010428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22627eb2829e42d7a3c75a059a532c68, type: 3}
+  m_Name: Game Ability - REPAIR
+  m_EditorClassIdentifier: 
+  humanName: REPAIR
+  idBytes: 0ae9c74f5fbfb44ca8ed2b48860554b8
+  faction: {fileID: 1148844585822575097}
+  battleAbility: {fileID: -6235256079972794011}
+  color: {r: 0.13725491, g: 0.68235296, b: 0.23529412, a: 1}
+  textColor: {r: 1, g: 1, b: 1, a: 1}
+  imageURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/ability-repair.jpg
+  description: Support your Syndcate with a well-timed repair.
+  level: 1
+--- !u!114 &9100265950593429017
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1474,7 +2024,7 @@ MonoBehaviour:
   backgroundURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/factions/rm-bg.webp
   description: '"Red Mountain is the leader in autonomous mining operations in the
     Supremacy Era. It controls territory on Mars'
---- !u!114 &2789430001824421143
+--- !u!114 &9116285095145712906
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1484,12 +2034,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Law Enforcer X-1000 - Molten
+  m_Name: Mech Skin - WAR ENFORCER - Raptor
   m_EditorClassIdentifier: 
-  humanName: Molten
-  idBytes: 4cf950062129ad4fb60168c0205ebbf6
-  mechModel: {fileID: -2553898132268990873}
---- !u!114 &2863407389595164753
+  humanName: Raptor
+  idBytes: ead4a800d11fc145a0f41b117d28d0e1
+  mechModel: {fileID: 4956909745880066220}
+--- !u!114 &9118838159809701463
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1499,33 +2049,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - RMOMC Humanoid - Gold
+  m_Name: Mech Skin - VIKING - Heavy Metal
   m_EditorClassIdentifier: 
-  humanName: Gold
-  idBytes: 20227db6398c4941995ce7e047c4081b
-  mechModel: {fileID: -7892259140449291445}
---- !u!114 &2963415025029165764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22627eb2829e42d7a3c75a059a532c68, type: 3}
-  m_Name: Game Ability - REPAIR
-  m_EditorClassIdentifier: 
-  humanName: REPAIR
-  idBytes: 9bd9c8dde5f4d34283d156cf4dd07754
-  faction: {fileID: -8006057967132061708}
-  battleAbility: {fileID: -742988851897016996}
-  color: {r: 0.13725491, g: 0.68235296, b: 0.23529412, a: 1}
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  imageURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/ability-repair.jpg
-  description: Support your Syndcate with a well-timed repair.
-  level: 1
---- !u!114 &3169298426185966888
+  humanName: Heavy Metal
+  idBytes: e6f970f17fa92745a588fbf332f7e687
+  mechModel: {fileID: 6516618555034326667}
+--- !u!114 &9133112000684462475
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1535,12 +2064,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - RMOMC Platform - RMOMC Default
+  m_Name: Mech Skin - Tenshi Mk1 - Slava Ukraini
   m_EditorClassIdentifier: 
-  humanName: RMOMC Default
-  idBytes: c64f86c49db2f2478fe7cc2df10dfafc
-  mechModel: {fileID: 7083250124790611448}
---- !u!114 &3297220957526470183
+  humanName: Slava Ukraini
+  idBytes: 827d1bffb1401a4db93af5da92ec43ed
+  mechModel: {fileID: -3017104320611050935}
+--- !u!114 &9159800766268148365
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1550,537 +2079,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - ZHI Platform - Neon
+  m_Name: Mech Skin - Tenshi Mk1 - Cherry Blossom
   m_EditorClassIdentifier: 
-  humanName: Neon
-  idBytes: cad12af5b1d50043b956f4b1e5eeaf8f
-  mechModel: {fileID: -4146420379355250391}
---- !u!114 &3470391050671818208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Law Enforcer X-1000 - Light Blue Police
-  m_EditorClassIdentifier: 
-  humanName: Light Blue Police
-  idBytes: bde8e4afdd0e2542bb27415243c1131d
-  mechModel: {fileID: -2553898132268990873}
---- !u!114 &3760666987429900225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3231ac0869c4fb99a46d3341afec6f7, type: 3}
-  m_Name: BattleAbility - NUKE
-  m_EditorClassIdentifier: 
-  humanName: NUKE
-  idBytes: e36b5e7eeba4e5498b0b121ccc7c1c77
-  cooldown: 30
-  description: The show-stopper. A tactical nuke at your fingertips.
---- !u!114 &3895302930364238023
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Tenshi Mk1 - Vector
-  m_EditorClassIdentifier: 
-  humanName: Vector
-  idBytes: a68d7c6a67c96b43aca9fa675b41c291
-  mechModel: {fileID: 5249671688039504270}
---- !u!114 &4151667671377408133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22627eb2829e42d7a3c75a059a532c68, type: 3}
-  m_Name: Game Ability - REPAIR
-  m_EditorClassIdentifier: 
-  humanName: REPAIR
-  idBytes: d4373f3323fde240bcc2a55a78458ba6
-  faction: {fileID: 2711784343201348312}
-  battleAbility: {fileID: -742988851897016996}
-  color: {r: 0.13725491, g: 0.68235296, b: 0.23529412, a: 1}
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  imageURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/ability-repair.jpg
-  description: Support your Syndcate with a well-timed repair.
-  level: 1
---- !u!114 &4528509919259179292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Tenshi Mk1 - Destroyer
-  m_EditorClassIdentifier: 
-  humanName: Destroyer
-  idBytes: 8d88b38606eb53438109a233dc6c5ad6
-  mechModel: {fileID: 5249671688039504270}
---- !u!114 &4657625689094339836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Olympus Mons LY07 - Irradiated
-  m_EditorClassIdentifier: 
-  humanName: Irradiated
-  idBytes: 307a0ed7cf9cd647be0fb89a050699c8
-  mechModel: {fileID: -3104421721943779409}
---- !u!114 &4681313467179381564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22627eb2829e42d7a3c75a059a532c68, type: 3}
-  m_Name: Game Ability - AIRSTRIKE
-  m_EditorClassIdentifier: 
-  humanName: AIRSTRIKE
-  idBytes: 92f5b3ed8cc60a4f93e6a041313f5be2
-  faction: {fileID: -8006057967132061708}
-  battleAbility: {fileID: 624630246880502107}
-  color: {r: 0.09019608, g: 0.23921569, b: 0.81960785, a: 1}
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  imageURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/ability-airstrike.jpg
-  description: '''Rain fury on the arena with a targeted airstrike.'
-  level: 1
---- !u!114 &4901793619994402978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Law Enforcer X-1000 - BioHazard
-  m_EditorClassIdentifier: 
-  humanName: BioHazard
-  idBytes: bf948430fcd8fb42bfc3cbbd7576da61
-  mechModel: {fileID: -2553898132268990873}
---- !u!114 &4928277032347893916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - BC Humanoid - Daison Avionics
-  m_EditorClassIdentifier: 
-  humanName: Daison Avionics
-  idBytes: 38558818f691c542b00b9c5f6252faf9
-  mechModel: {fileID: -3998116186586477526}
---- !u!114 &5222830943206587847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22627eb2829e42d7a3c75a059a532c68, type: 3}
-  m_Name: Game Ability - ROBOT DOGS
-  m_EditorClassIdentifier: 
-  humanName: ROBOT DOGS
-  idBytes: 39a6ee341cd5364cac2e2478ddd62ada
-  faction: {fileID: -8006057967132061708}
-  battleAbility: {fileID: 0}
-  color: {r: 0.25882354, g: 0.5568628, b: 0.75686276, a: 1}
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  imageURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/ability-dogs.jpg
-  description: Boston Cybernetic unique ability. Release the hounds!
-  level: 1
---- !u!114 &5249671688039504270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d957b6e175af483494adde72dbc9ad51, type: 3}
-  m_Name: Mech Model - Tenshi Mk1
-  m_EditorClassIdentifier: 
-  humanName: Tenshi Mk1
-  idBytes: d72c990d3cc8af41a75b4cf0a5e13e54
-  brand: {fileID: 0}
-  type: 0
-  defaultSkin: {fileID: 0}
---- !u!114 &5307444448690455033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22627eb2829e42d7a3c75a059a532c68, type: 3}
-  m_Name: Game Ability - OVERCHARGE
-  m_EditorClassIdentifier: 
-  humanName: OVERCHARGE
-  idBytes: ec1852cfc642df418e2caa0b4e89bad6
-  faction: {fileID: 8031011972669704014}
-  battleAbility: {fileID: 0}
-  color: {r: 1, g: 1, b: 1, a: 1}
-  textColor: {r: 0, g: 0, b: 0, a: 1}
-  imageURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/ability-overcharge.jpg
-  description: Zaibatsu unique ability. Consume your remaining shield for an explosive
-    defence mechanism.
-  level: 0
---- !u!114 &5319711663269508982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d957b6e175af483494adde72dbc9ad51, type: 3}
-  m_Name: Mech Model - BC Platform
-  m_EditorClassIdentifier: 
-  humanName: BC Platform
-  idBytes: e788221bbc654e478aef8dfd26dcbbe7
-  brand: {fileID: -6676687301468817863}
-  type: 1
-  defaultSkin: {fileID: 0}
---- !u!114 &5701539484310716846
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - ZHI Humanoid - Neon
-  m_EditorClassIdentifier: 
-  humanName: Neon
-  idBytes: a2a105f8db84bd4786cbe80c3fa7c804
-  mechModel: {fileID: -7169866342566722915}
---- !u!114 &5748126591138122668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Law Enforcer X-1000 - Rust Bucket
-  m_EditorClassIdentifier: 
-  humanName: Rust Bucket
-  idBytes: 935a0e4f7418e94ba7c5f35f7b29196a
-  mechModel: {fileID: -2553898132268990873}
---- !u!114 &5749929379941893419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Olympus Mons LY07 - Evo
-  m_EditorClassIdentifier: 
-  humanName: Evo
-  idBytes: 3469da9324908f43ab8c9b2ca347702c
-  mechModel: {fileID: -3104421721943779409}
---- !u!114 &6499718504391228632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Law Enforcer X-1000 - Gold
-  m_EditorClassIdentifier: 
-  humanName: Gold
-  idBytes: 32ce0ba08cd90f469bc40da61d1eeac2
-  mechModel: {fileID: -2553898132268990873}
---- !u!114 &6603577088680323027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8967aab236a450a90fb94b01715d70c, type: 3}
-  m_Name: Brand - Zaibatsu Heavy Industries
-  m_EditorClassIdentifier: 
-  humanName: Zaibatsu Heavy Industries
-  idBytes: 873c202b8cade24caf17e079835fdbcb
-  faction: {fileID: 8031011972669704014}
---- !u!114 &6708517346469210759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Olympus Mons LY07 - Navy
-  m_EditorClassIdentifier: 
-  humanName: Navy
-  idBytes: 8fcc56a974db804ca3b92af6239c9bb4
-  mechModel: {fileID: -3104421721943779409}
---- !u!114 &6913060927723976162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - ZHI Platform - Ninja
-  m_EditorClassIdentifier: 
-  humanName: Ninja
-  idBytes: 44f0f5c97990f942bf0ffc8dc108caf5
-  mechModel: {fileID: -4146420379355250391}
---- !u!114 &6964161643176552279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - RMOMC Platform - Red Camo
-  m_EditorClassIdentifier: 
-  humanName: Red Camo
-  idBytes: 88eb2fc8a9234a4d941ea62538037d3d
-  mechModel: {fileID: 7083250124790611448}
---- !u!114 &7083250124790611448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d957b6e175af483494adde72dbc9ad51, type: 3}
-  m_Name: Mech Model - RMOMC Platform
-  m_EditorClassIdentifier: 
-  humanName: RMOMC Platform
-  idBytes: 456e55414c99154fb332a2e3b4ac457e
-  brand: {fileID: -2456337306530641387}
-  type: 1
-  defaultSkin: {fileID: 0}
---- !u!114 &7368316538984744809
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8967aab236a450a90fb94b01715d70c, type: 3}
-  m_Name: Brand - Warsui
-  m_EditorClassIdentifier: 
-  humanName: Warsui
-  idBytes: 0a66ea0c8fc14c4f894a066f5c530dd9
-  faction: {fileID: 8031011972669704014}
---- !u!114 &7582863607384135292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22627eb2829e42d7a3c75a059a532c68, type: 3}
-  m_Name: Game Ability - REPAIR
-  m_EditorClassIdentifier: 
-  humanName: REPAIR
-  idBytes: 0ae9c74f5fbfb44ca8ed2b48860554b8
-  faction: {fileID: 8031011972669704014}
-  battleAbility: {fileID: -742988851897016996}
-  color: {r: 0.13725491, g: 0.68235296, b: 0.23529412, a: 1}
-  textColor: {r: 1, g: 1, b: 1, a: 1}
-  imageURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/ability-repair.jpg
-  description: Support your Syndcate with a well-timed repair.
-  level: 1
---- !u!114 &7605043653709507494
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8967aab236a450a90fb94b01715d70c, type: 3}
-  m_Name: Brand - x3 Wartech
-  m_EditorClassIdentifier: 
-  humanName: x3 Wartech
-  idBytes: 0ef84865dbf4f741955ed9ed1f0f77c0
-  faction: {fileID: 8031011972669704014}
---- !u!114 &7873772669914213415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - BC Humanoid - Police
-  m_EditorClassIdentifier: 
-  humanName: Police
-  idBytes: f84a205098ecd84e959ae1cf2c2985b2
-  mechModel: {fileID: -3998116186586477526}
---- !u!114 &8031011972669704014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be9ad198553541d5a516f4116d241928, type: 3}
-  m_Name: Faction - Zaibatsu Heavy Industries
-  m_EditorClassIdentifier: 
-  humanName: Zaibatsu Heavy Industries
-  idBytes: 44b30d8805e48d4284e56ebebab1fe6d
-  primaryColor: {r: 1, g: 1, b: 1, a: 1}
-  secondaryColor: {r: 0, g: 0, b: 0, a: 1}
-  backgroundColor: {r: 0.050980393, g: 0.050980393, b: 0.050980393, a: 1}
-  logoURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/factions/zai-logo.svg
-  backgroundURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/factions/zai-bg.webp
-  description: '"Zaibatsu is the industrial leader within the Supremacy Era'
---- !u!114 &8306427974009325904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Tenshi Mk1 - Chalky Neon
-  m_EditorClassIdentifier: 
-  humanName: Chalky Neon
-  idBytes: 47f056215675f64ca9b865300e72d5d8
-  mechModel: {fileID: 5249671688039504270}
---- !u!114 &8397242395020731040
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Tenshi Mk1 - Gold Pattern
-  m_EditorClassIdentifier: 
-  humanName: Gold Pattern
-  idBytes: eb55e853b8fd1f4e9d602d6f7f94fed7
-  mechModel: {fileID: 5249671688039504270}
---- !u!114 &8481414101542663077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22627eb2829e42d7a3c75a059a532c68, type: 3}
-  m_Name: Game Ability - FIREWORKS
-  m_EditorClassIdentifier: 
-  humanName: FIREWORKS
-  idBytes: 7231c19f1ff7c64da20424a8d8ceed56
-  faction: {fileID: -8006057967132061708}
-  battleAbility: {fileID: 0}
-  color: {r: 1, g: 0.77254903, b: 0.14117648, a: 1}
-  textColor: {r: 0, g: 0, b: 0, a: 1}
-  imageURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/ability-fireworks.jpg
-  description: display firework on targeted mech
-  level: 0
---- !u!114 &8676677015881428879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - Olympus Mons LY07 - Military
-  m_EditorClassIdentifier: 
-  humanName: Military
-  idBytes: df986aab5ea6da409aa512044716efbb
-  mechModel: {fileID: -3104421721943779409}
---- !u!114 &8929492800928138338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - BC Platform - BC Default
-  m_EditorClassIdentifier: 
-  humanName: BC Default
-  idBytes: f46b167f619c034fae4a42a0d6de1538
-  mechModel: {fileID: 5319711663269508982}
+  humanName: Cherry Blossom
+  idBytes: d29bce631bbfdf4690d102dacb42c198
+  mechModel: {fileID: -3017104320611050935}

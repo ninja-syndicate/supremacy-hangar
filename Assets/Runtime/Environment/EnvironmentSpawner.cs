@@ -39,6 +39,8 @@ namespace SupremacyHangar.Runtime.Environment
 
         private void OnTriggerEnter(Collider other)
         {
+            if (Spawned) return;
+
             Entered = true;
             if (otherEnvironmentSpawner.Spawned || otherEnvironmentSpawner.Entered)
             {
@@ -49,7 +51,7 @@ namespace SupremacyHangar.Runtime.Environment
                 }
                 return;
             }
-            
+
             //Remove silo before proceeding
             if (_environmentManager.SiloExists)
                 _environmentManager.UnloadAssets();

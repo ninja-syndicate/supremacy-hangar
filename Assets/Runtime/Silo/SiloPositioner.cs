@@ -28,7 +28,7 @@ namespace SupremacyHangar.Runtime.Silo
             _environmentManager = environmentManager;
         }
 
-        private void OnDisable()
+        public void DisableDoor()
         {
             //Lock doors on silo unload
             siloDoorTrigger.enabled = false;

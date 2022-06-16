@@ -22,20 +22,54 @@ namespace SupremacyHangar.Runtime.ContentLoader
 
         private LoadedAsset myMech { get; set; } = new LoadedAsset();
 
+        [SerializeField] private AssetReferenceAssetMappings assetMappingsReference;
+
+        private AssetMappings mappings;
+        private bool mappingsLoaded = false;
+
         public override void InstallBindings()
         {
             Container.Bind<AddressablesManager>().FromInstance(this).AsSingle().NonLazy();
         }
 
+        public void Awake()
+        {
+            bool valid = true;
+            valid &= ValidateMappings();
+
+            if (!valid) enabled = false;
+        }
+        
         // Start is called before the first frame update
         public override void Start()
         {
-            Debug.Log("Initializing Addressables...");
             Addressables.InitializeAsync().Completed += AddressablesManager_Completed;
         }
 
         private void AddressablesManager_Completed(AsyncOperationHandle<IResourceLocator> obj)
         {
+            var mappingsOp = assetMappingsReference.LoadAssetAsync();
+            mappingsOp.Completed += LoadMappings;
+        }
+
+        private void LoadMappings(AsyncOperationHandle<AssetMappings> operation)
+        {
+            if (operation.Result == null)
+            {
+                Debug.LogError("Mappings were null!");
+                return;
+            }
+
+            Debug.Log("I AM LOAD");
+            mappingsLoaded = true;
+            mappings = operation.Result;
+        }
+        
+        private bool ValidateMappings()
+        {
+            if (assetMappingsReference != null) return true;
+            Debug.LogError("No asset mapping file assigned to AddressablesManager!", this);
+            return false;
         }
 
         private void LoadSkinReference(Action<Skin> callBack)

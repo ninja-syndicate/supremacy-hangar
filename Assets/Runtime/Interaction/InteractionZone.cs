@@ -2,9 +2,7 @@ using SupremacyHangar.Runtime.ScriptableObjects;
 using SupremacyHangar.Runtime.ContentLoader;
 using SupremacyHangar.Runtime.Types;
 using SupremacyHangar.Runtime.Silo;
-using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using Zenject;
 
