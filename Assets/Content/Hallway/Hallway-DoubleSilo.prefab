@@ -3437,6 +3437,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 8df21af210c7ee34791e9b09afe23bb3, type: 2}
     - target: {fileID: -157016880746382882, guid: ec31a226eb9b8d742a48ddb66ba5a482,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -157016880746382882, guid: ec31a226eb9b8d742a48ddb66ba5a482,
+        type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8df21af210c7ee34791e9b09afe23bb3, type: 2}
@@ -3484,6 +3489,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3734690282034930916, guid: ec31a226eb9b8d742a48ddb66ba5a482,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3734690282034930916, guid: ec31a226eb9b8d742a48ddb66ba5a482,
         type: 3}
@@ -4026,7 +4036,7 @@ Animator:
   m_GameObject: {fileID: 8277441956765727712}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 277bd8fa71aa3da4295c354854666232, type: 2}
+  m_Controller: {fileID: 9100000, guid: 16824743e41725e48ba8fc4b3f7d89cb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
