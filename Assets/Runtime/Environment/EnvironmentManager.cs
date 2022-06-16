@@ -3,7 +3,6 @@ using SupremacyHangar.Runtime.ScriptableObjects;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
-using System;
 using SupremacyHangar.Runtime.Types;
 using SupremacyHangar.Runtime.Environment.Types;
 using UnityEngine.AddressableAssets;
@@ -324,12 +323,12 @@ namespace SupremacyHangar.Runtime.Environment
                     newDoorEnvironmentPrefab.ToggleDoor();
             }
 
-            if (roomChanged == true)
+            if (roomChanged)
             {
                 foreach (var obj in objectsToUnload)
                 {
                     loadedObjects.Remove(obj);
-                    Addressables.ReleaseInstance(obj);
+                    UnityEngine.AddressableAssets.Addressables.ReleaseInstance(obj);
                 }
                 objectsToUnload.Clear();
                 newlyLoadedObjects.Clear();
@@ -343,7 +342,7 @@ namespace SupremacyHangar.Runtime.Environment
                 foreach (var obj in newlyLoadedObjects)
                 {
                     loadedObjects.Remove(obj);
-                    Addressables.ReleaseInstance(obj);
+                    UnityEngine.AddressableAssets.Addressables.ReleaseInstance(obj);
                 }
                 newlyLoadedObjects.Clear();
                 objectsToUnload.Clear();

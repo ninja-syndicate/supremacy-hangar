@@ -6,5 +6,11 @@ namespace SupremacyHangar.Runtime.Types
     {
         public string faction;
         public List<SiloItem> Silos = new();
+
+        public void CopyFrom(SupremacyGameObject other)
+        {
+            faction = other.faction;
+            Silos = other.Silos;
+        }
     }
 }

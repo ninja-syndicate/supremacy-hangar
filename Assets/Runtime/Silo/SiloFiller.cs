@@ -12,7 +12,7 @@ namespace SupremacyHangar.Runtime.Silo
         AddressablesManager _addressablesManager;
 
         [Inject]
-        public void Constrct(AddressablesManager addressablesManager)
+        public void Construct(AddressablesManager addressablesManager)
         {
             _addressablesManager = addressablesManager;
         }
