@@ -28,11 +28,6 @@ namespace SupremacyHangar.Runtime.Environment
                 
         private SignalBus _bus;
 
-        [Inject]
-        private SiloSignalHandler _siloSignalHandler;
-                
-        private SignalBus _bus;
-
         private EnvironmentConnectivity _connectivityGraph;
 
         EnvironmentPrefab nextRoomEnvironmentPrefabRef;
