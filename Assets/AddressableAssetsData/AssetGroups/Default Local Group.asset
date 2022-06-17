@@ -30,7 +30,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 9a955d9e8bbecf4449c699e011487558
-    m_Address: Hangar_Silo_01_Greybox.prefab
+    m_Address: Hangar_Silo_Left.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: b90b9b7825ebb344a89a6d6f28cad701
