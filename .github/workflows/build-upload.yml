@@ -24,12 +24,13 @@ jobs:
             - name: Build Unity Project
               run: |
                   cd ~/actions-runner/_work/${{ github.event.repository.name }}/${{ github.event.repository.name }}
-                  ~/Unity/Hub/Editor/2021.3.4f1/Editor/Unity -batchmode -quit -buildTarget WebGL -logFile log.txt  -executeMethod BuildSystem.CLI.PreWarm
-                  ~/Unity/Hub/Editor/2021.3.4f1/Editor/Unity -batchmode -quit -buildTarget WebGL -logFile log.txt -executeMethod BuildSystem.CLI.BuildWebGL -development
-                  # Zip Build
+                  ~/Unity/Hub/Editor/2021.3.4f1/Editor/Unity -batchmode -quit -buildTarget WebGL -logFile log.txt  -executeMethod BuildSystem.CLI.PreWarm &
+                  wait && ~/Unity/Hub/Editor/2021.3.4f1/Editor/Unity -batchmode -quit -buildTarget WebGL -logFile log.txt -executeMethod BuildSystem.CLI.BuildWebGL -development
 
+            # Zip Build
             - name: Zip Build
               run: |
+                  cd ~/actions-runner/_work/${{ github.event.repository.name }}/${{ github.event.repository.name }}
                   pushd Builds/WebGL
                   zip -r ../../build-v${{ github.run_number }}.zip .
                   popd
