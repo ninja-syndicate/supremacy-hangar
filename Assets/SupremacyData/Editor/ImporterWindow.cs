@@ -21,6 +21,7 @@ namespace SupremacyData.Editor
         private Importers.GameAbilities gameAbilitiesImporter;
         private Importers.MechModels mechModelsImporter;
         private Importers.MechSkins mechSkinsImporter;
+        private Importers.MysteryCrates mysteryCratesImporter;
         
         [MenuItem("Supremacy/Data/Importer")]
         public static void Spawn()
@@ -84,6 +85,7 @@ namespace SupremacyData.Editor
             gameAbilitiesImporter = new Importers.GameAbilities(logWidget, directory);
             mechModelsImporter = new Importers.MechModels(logWidget, directory);
             mechSkinsImporter = new Importers.MechSkins(logWidget, directory);
+            mysteryCratesImporter = new Importers.MysteryCrates(logWidget, directory);
 
             bool valid = true;
             valid &= factionsImporter.ValidateFile();
@@ -92,6 +94,7 @@ namespace SupremacyData.Editor
             valid &= gameAbilitiesImporter.ValidateFile();
             valid &= mechModelsImporter.ValidateFile();
             valid &= mechSkinsImporter.ValidateFile();
+            valid &= mysteryCratesImporter.ValidateFile();
 
             if (!valid) return;
             importDirectory = directory;
@@ -117,7 +120,8 @@ namespace SupremacyData.Editor
                 gameAbilitiesImporter ??= new Importers.GameAbilities(logWidget, importDirectory);
                 mechModelsImporter ??= new Importers.MechModels(logWidget, importDirectory);
                 mechSkinsImporter ??= new Importers.MechSkins(logWidget, importDirectory);
-                
+                mysteryCratesImporter ??= new Importers.MysteryCrates(logWidget, importDirectory);
+
                 logWidget.LogNormal("Updating factions");
                 Repaint();
                 await factionsImporter.Update(myData);
@@ -136,6 +140,9 @@ namespace SupremacyData.Editor
                 logWidget.LogNormal("Updating mech skins");
                 Repaint();
                 await mechSkinsImporter.Update(myData);
+                logWidget.LogNormal("Updating mystery crates");
+                Repaint();
+                await mysteryCratesImporter.Update(myData);
                 
                 logWidget.LogNormal("Import completed");
             }

@@ -13,10 +13,12 @@ namespace SupremacyHangar.Runtime.ContentLoader
         public IReadOnlyDictionary<Guid, EnvironmentConnectivity> FactionHallwayByGuid { get; private set; }
         public IReadOnlyDictionary<Guid, AssetReference> MechChassisPrefabByGuid { get; private set; }
         public IReadOnlyDictionary<Guid, AssetReference> MechSkinAssetByGuid { get; private set; }
+        public IReadOnlyDictionary<Guid, AssetReference> MysteryCrateAssetByGuid { get; private set; }
 
         [SerializeField] private List<FactionMapping> factions;
         [SerializeField] private List<MechChassisMapping> mechChassis;
         [SerializeField] private List<MechSkinMapping> mechSkins;
+        [SerializeField] private List<MysteryCrateMapping> mysteryCrates;
 
         //For some unity-lifecycle related reason, we can't do this as part of deserialization, which is why it's in enable.
         //Hopefully this is early enough for consumers of this data...
@@ -33,6 +35,10 @@ namespace SupremacyHangar.Runtime.ContentLoader
             var mechSkinByGuid = new Dictionary<Guid, AssetReference>();
             PopulateDictionary(mechSkinByGuid, mechSkins, "mechSkins", GetSkinMapping);
             MechSkinAssetByGuid = mechSkinByGuid;
+
+            var mysteryCrateByGuid = new Dictionary<Guid, AssetReference>();
+            PopulateDictionary(mechSkinByGuid, mysteryCrates, "mysteryCrates", GetMysteryCrateMapping);
+            MysteryCrateAssetByGuid = mechSkinByGuid;
         }
 
         private (SupremacyData.Runtime.Faction, EnvironmentConnectivity) GetFactionMapping(FactionMapping arg)
@@ -48,6 +54,11 @@ namespace SupremacyHangar.Runtime.ContentLoader
         private (SupremacyData.Runtime.MechSkin, AssetReference) GetSkinMapping(MechSkinMapping arg)
         {
             return (arg.DataMechSkin, arg.SkinReference);
+        }
+        
+        private (SupremacyData.Runtime.MysteryCrate, AssetReference) GetMysteryCrateMapping(MysteryCrateMapping arg)
+        {
+            return (arg.DataMysteryCrate, arg.MysteryCrateReference);
         }
 
         private void PopulateDictionary<TMapping, TValue, TRecord>(
@@ -109,6 +120,16 @@ namespace SupremacyHangar.Runtime.ContentLoader
         
         [SerializeField][SerializeReference] private SupremacyData.Runtime.MechSkin dataMechSkin;
         [SerializeField] private AssetReference skinReference;
+    }
+    
+    [Serializable]
+    public class MysteryCrateMapping
+    {
+        public SupremacyData.Runtime.MysteryCrate DataMysteryCrate => dataMysteryCrate;
+        public AssetReference MysteryCrateReference => mysteryCrateReference;
+        
+        [SerializeField][SerializeReference] private SupremacyData.Runtime.MysteryCrate dataMysteryCrate;
+        [SerializeField] private AssetReference mysteryCrateReference;
     }
  
     [Serializable]
