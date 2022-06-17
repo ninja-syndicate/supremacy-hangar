@@ -28,6 +28,11 @@ namespace SupremacyHangar.Runtime.Environment
                 
         private SignalBus _bus;
 
+        [Inject]
+        private SiloSignalHandler _siloSignalHandler;
+                
+        private SignalBus _bus;
+
         private EnvironmentConnectivity _connectivityGraph;
 
         EnvironmentPrefab nextRoomEnvironmentPrefabRef;
@@ -76,6 +81,7 @@ namespace SupremacyHangar.Runtime.Environment
             if (!_subscribed) return;
             _bus.Unsubscribe<SiloUnloadedSignal>(UnloadAssetsAfterSiloClosed);
             _bus.Unsubscribe<InventoryLoadedSignal>(LoadFactionGraph);
+
             _subscribed = false;
         }
 
@@ -84,6 +90,7 @@ namespace SupremacyHangar.Runtime.Environment
             if (_bus == null || _subscribed) return;
             _bus.Subscribe<SiloUnloadedSignal>(UnloadAssetsAfterSiloClosed);
             _bus.Subscribe<InventoryLoadedSignal>(LoadFactionGraph);
+
             _subscribed = true;
         }
 
