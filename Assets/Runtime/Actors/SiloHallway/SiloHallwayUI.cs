@@ -7,14 +7,13 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
     [RequireComponent(typeof(Canvas))]
     public class SiloHallwayUI : MonoBehaviour
     {
-        [SerializeField] private Color testFactionColorChange;
-        
         [SerializeField] private Image[] factionColorImages;
         [SerializeField] private Button[] factionColorButtons;
         [SerializeField] private TMP_Text[] factionColorText;
         [SerializeField] private float darkerFactionColorMultiplier;
         [SerializeField] private Image[] darkerFactionColorImages;
 
+        [SerializeField] private Image factionLogo;
         [SerializeField] private TMP_Text siloNumber;
         [SerializeField] private TMP_Text siloContentsType;
         [SerializeField] private TMP_Text siloContentsName1;
@@ -50,15 +49,39 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
                 image.SetMaterialDirty();
             }
         }
-        
-#if UNITY_EDITOR
-        public void Update()
+
+        public void UpdateFactionLogo(Sprite sprite)
         {
-            if (currentFactionColor != testFactionColorChange)
+            if (factionLogo == null)
             {
-                UpdateFactionColor(testFactionColorChange);
+                Debug.LogError("No Faction Logo Set!", this);
+                return;
             }
+
+            if (sprite == factionLogo.sprite) return;
+            factionLogo.sprite = sprite;
+            factionLogo.SetNativeSize();
+            factionLogo.SetMaterialDirty();
         }
-#endif        
+
+        public void UpdateSiloNumber(int newInt)
+        {
+            siloNumber.text = newInt.ToString();
+        }
+        
+        public void UpdateTypeString(string newString)
+        {
+            siloContentsType.text = newString;
+        }
+        
+        public void UpdateName1(string newString)
+        {
+            siloContentsName1.text = newString;
+        }
+        
+        public void UpdateName2(string newString)
+        {
+            siloContentsName2.text = newString;
+        }     
     }
 }
