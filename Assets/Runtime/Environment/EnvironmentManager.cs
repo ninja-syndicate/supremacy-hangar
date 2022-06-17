@@ -8,6 +8,8 @@ using SupremacyHangar.Runtime.Environment.Types;
 using UnityEngine.AddressableAssets;
 using SupremacyHangar.Runtime.Environment.Connections;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using SupremacyHangar.Runtime.ContentLoader.Types;
+using SupremacyHangar.Runtime.ContentLoader;
 
 namespace SupremacyHangar.Runtime.Environment
 {
@@ -20,9 +22,6 @@ namespace SupremacyHangar.Runtime.Environment
 
         [Inject]
         private SupremacyGameObject _playerInventory;
-
-        [Inject]
-        private SupremacyDictionary _supremacyDictionary;
 
         [Inject]
         private SiloSignalHandler _siloSignalHandler;
@@ -76,6 +75,7 @@ namespace SupremacyHangar.Runtime.Environment
         {
             if (!_subscribed) return;
             _bus.Unsubscribe<SiloUnloadedSignal>(UnloadAssetsAfterSiloClosed);
+            _bus.Unsubscribe<InventoryLoadedSignal>(LoadFactionGraph);
             _subscribed = false;
         }
 
@@ -83,6 +83,7 @@ namespace SupremacyHangar.Runtime.Environment
         {
             if (_bus == null || _subscribed) return;
             _bus.Subscribe<SiloUnloadedSignal>(UnloadAssetsAfterSiloClosed);
+            _bus.Subscribe<InventoryLoadedSignal>(LoadFactionGraph);
             _subscribed = true;
         }
 
@@ -95,9 +96,10 @@ namespace SupremacyHangar.Runtime.Environment
             Container.Bind<SiloItem[]>().FromInstance(GetCurrentSiloInfo()).AsCached();
         }
 
-        private void Awake()
+        private void LoadFactionGraph()
         {
-            AssetReference connectivityGraph = _supremacyDictionary.FactionDictionary[_playerInventory.faction];
+            //Todo: run from signal instead
+            AssetReferenceEnvironmentConnectivity connectivityGraph = _playerInventory.factionGraph;
 
             connectivityGraph.LoadAssetAsync<EnvironmentConnectivity>().Completed += (obj) =>
             {
@@ -199,7 +201,6 @@ namespace SupremacyHangar.Runtime.Environment
             var nodeForJoin = partForJoin.MyJoinsByConnector[Door1.ToConnectTo];
             var nextRoomToJoinTo = nodeForJoin.Destinations[NextRoomIndex(Door2.MyConnectors)];
 
-            //currentEnvironment.CurrentPrefabAsset = _connectivityGraph.MyJoins[nextRoomToJoinTo];
             nextRoom = new()
             {
                 CurrentPrefabAsset = _connectivityGraph.MyJoins[nextRoomToJoinTo]

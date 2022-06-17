@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
-using SupremacyHangar.Runtime.Environment;
-using SupremacyHangar.Runtime.ScriptableObjects;
+using SupremacyHangar.Runtime.ContentLoader.Types;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
@@ -10,10 +9,10 @@ namespace SupremacyHangar.Runtime.ContentLoader
     [CreateAssetMenu(fileName = "AssetMappings.asset", menuName = "Supremacy/Create Asset Mapping")]
     public class AssetMappings : ScriptableObject
     {
-        public IReadOnlyDictionary<Guid, EnvironmentConnectivity> FactionHallwayByGuid { get; private set; }
-        public IReadOnlyDictionary<Guid, AssetReference> MechChassisPrefabByGuid { get; private set; }
-        public IReadOnlyDictionary<Guid, AssetReference> MechSkinAssetByGuid { get; private set; }
-        public IReadOnlyDictionary<Guid, AssetReference> MysteryCrateAssetByGuid { get; private set; }
+        public IReadOnlyDictionary<Guid, FactionMapping> FactionHallwayByGuid { get; private set; }
+        public IReadOnlyDictionary<Guid, MechChassisMapping> MechChassisPrefabByGuid { get; private set; }
+        public IReadOnlyDictionary<Guid, MechSkinMapping> MechSkinAssetByGuid { get; private set; }
+        public IReadOnlyDictionary<Guid, MysteryCrateMapping> MysteryCrateAssetByGuid { get; private set; }
 
         [SerializeField] private List<FactionMapping> factions;
         [SerializeField] private List<MechChassisMapping> mechChassis;
@@ -24,68 +23,49 @@ namespace SupremacyHangar.Runtime.ContentLoader
         //Hopefully this is early enough for consumers of this data...
         public void OnEnable()
         {
-            var hallwaysByGuid = new Dictionary<Guid, EnvironmentConnectivity>();
+            var hallwaysByGuid = new Dictionary<Guid, FactionMapping>();
             PopulateDictionary(hallwaysByGuid, factions, "factions", GetFactionMapping);
             FactionHallwayByGuid = hallwaysByGuid;
 
-            var mechChassisByGuid = new Dictionary<Guid, AssetReference>();
+            var mechChassisByGuid = new Dictionary<Guid, MechChassisMapping>();
             PopulateDictionary(mechChassisByGuid, mechChassis, "mechModels", GetMechMapping);
             MechChassisPrefabByGuid = mechChassisByGuid;                
             
-            var mechSkinByGuid = new Dictionary<Guid, AssetReference>();
+            var mechSkinByGuid = new Dictionary<Guid, MechSkinMapping>();
             PopulateDictionary(mechSkinByGuid, mechSkins, "mechSkins", GetSkinMapping);
             MechSkinAssetByGuid = mechSkinByGuid;
 
-            var mysteryCrateByGuid = new Dictionary<Guid, AssetReference>();
-            PopulateDictionary(mechSkinByGuid, mysteryCrates, "mysteryCrates", GetMysteryCrateMapping);
-            MysteryCrateAssetByGuid = mechSkinByGuid;
+            var mysteryCrateByGuid = new Dictionary<Guid, MysteryCrateMapping>();
+            PopulateDictionary(mysteryCrateByGuid, mysteryCrates, "mysteryCrates", GetMysteryCrateMapping);
+            MysteryCrateAssetByGuid = mysteryCrateByGuid;
         }
 
-        private (SupremacyData.Runtime.Faction, EnvironmentConnectivity) GetFactionMapping(FactionMapping arg)
-        {
-            return (arg.DataFaction, arg.ConnectivityGraph);
-        }
-        
-        private (SupremacyData.Runtime.MechModel, AssetReference) GetMechMapping(MechChassisMapping arg)
-        {
-            return (arg.DataMechModel, arg.MechReference);
-        }
-        
-        private (SupremacyData.Runtime.MechSkin, AssetReference) GetSkinMapping(MechSkinMapping arg)
-        {
-            return (arg.DataMechSkin, arg.SkinReference);
-        }
-        
-        private (SupremacyData.Runtime.MysteryCrate, AssetReference) GetMysteryCrateMapping(MysteryCrateMapping arg)
-        {
-            return (arg.DataMysteryCrate, arg.MysteryCrateReference);
-        }
+        private SupremacyData.Runtime.Faction GetFactionMapping(FactionMapping arg) => arg.DataFaction;
 
-        private void PopulateDictionary<TMapping, TValue, TRecord>(
-            Dictionary<Guid, TValue> dict, List<TMapping> list, string typeName, 
-            Func<TMapping,(TRecord, TValue)> getRecord) where TRecord: SupremacyData.Runtime.BaseRecord
+        private SupremacyData.Runtime.MechModel GetMechMapping(MechChassisMapping arg) => arg.DataMechModel;
+
+        private SupremacyData.Runtime.MechSkin GetSkinMapping(MechSkinMapping arg) => arg.DataMechSkin;
+
+        private SupremacyData.Runtime.MysteryCrate GetMysteryCrateMapping(MysteryCrateMapping arg) => arg.DataMysteryCrate;
+        
+        private void PopulateDictionary<TMapping, TRecord>(
+            Dictionary<Guid, TMapping> dict, List<TMapping> list, string typeName,
+            Func<TMapping, TRecord> getRecord) where TRecord : SupremacyData.Runtime.BaseRecord
         {
             if (list == null) return;
 
             int index = 0;
             foreach (var mapping in list)
             {
-                var tuple = getRecord(mapping);
-                if (tuple.Item1 == null)
+                var record = getRecord(mapping);
+                if (record == null)
                 {
                     Debug.LogError($"No static data set for {typeName} at index {index}", this);
                     index++;
                     continue;
                 }
 
-                if (tuple.Item2 == null)
-                {
-                    Debug.LogError($"No mapping data set for {typeName} at index {index}", this);
-                    index++;
-                    continue;                    
-                }
-                
-                dict.Add(tuple.Item1.Id, tuple.Item2);
+                dict.Add(record.Id, mapping);
                 index++;
             }
         }
@@ -95,10 +75,10 @@ namespace SupremacyHangar.Runtime.ContentLoader
     public class FactionMapping
     {
         public SupremacyData.Runtime.Faction DataFaction => dataFaction;
-        public EnvironmentConnectivity ConnectivityGraph => connectivityGraph; 
+        public AssetReferenceEnvironmentConnectivity ConnectivityGraph => connectivityGraph; 
             
         [SerializeField][SerializeReference] private SupremacyData.Runtime.Faction dataFaction;
-        [SerializeField][SerializeReference] private EnvironmentConnectivity connectivityGraph;
+        [SerializeField] private AssetReferenceEnvironmentConnectivity connectivityGraph;
     }
 
     [Serializable]
@@ -116,10 +96,10 @@ namespace SupremacyHangar.Runtime.ContentLoader
     public class MechSkinMapping
     {
         public SupremacyData.Runtime.MechSkin DataMechSkin => dataMechSkin;
-        public AssetReference SkinReference => skinReference;
+        public AssetReferenceSkin SkinReference => skinReference;
         
         [SerializeField][SerializeReference] private SupremacyData.Runtime.MechSkin dataMechSkin;
-        [SerializeField] private AssetReference skinReference;
+        [SerializeField] private AssetReferenceSkin skinReference;
     }
     
     [Serializable]

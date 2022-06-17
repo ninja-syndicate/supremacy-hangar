@@ -24,9 +24,6 @@ namespace SupremacyHangar.Runtime.Interaction
         [Inject]
         private SiloItem[] _siloContent;
 
-        [Inject]
-        private SupremacyDictionary _supremacyDictionary;
-
         [SerializeField]
         private int siloIndex = 0;
 
@@ -105,12 +102,12 @@ namespace SupremacyHangar.Runtime.Interaction
             {
                 case Mech mech:
                     empty = false;
-                    _addressablesManager.TargetMech = _supremacyDictionary.MechDictionary[mech.mech_id];
-                    _addressablesManager.TargetSkin = _supremacyDictionary.AllSkinsDictionary[mech.mech_id][mech.skin_id];
+                    _addressablesManager.TargetMech = mech.MechChassisDetails.MechReference;
+                    _addressablesManager.TargetSkin = mech.MechSkinDetails.SkinReference;
                     break;
                 case MysteryBox box:
                     empty = false;
-                    _addressablesManager.TargetMech = _supremacyDictionary.LootBoxDictionary[box.ownership_id];
+                    _addressablesManager.TargetMech = box.MysteryCrateDetails.MysteryCrateReference;
                     _addressablesManager.TargetSkin = null;
                     break;
                 default:
