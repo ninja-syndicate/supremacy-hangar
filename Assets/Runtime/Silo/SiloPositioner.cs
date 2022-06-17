@@ -21,6 +21,7 @@ namespace SupremacyHangar.Runtime.Silo
 
         public bool SiloSpawned { get; set; } = false;
 
+        [SerializeField] Animator myWindowAnim;
 
         [Inject]
         public void Constuct(EnvironmentManager environmentManager)
@@ -34,7 +35,7 @@ namespace SupremacyHangar.Runtime.Silo
             siloDoorTrigger.enabled = false;
 
             //Close window on silo unload
-            //siloWindowAnim.SetBool("open", false);
+            myWindowAnim.SetBool("IsOpen", false);
         }
 
         public void SpawnSilo()
@@ -48,12 +49,15 @@ namespace SupremacyHangar.Runtime.Silo
 
             //Spawn silo
             _environmentManager.SpawnSilo(this);
+        }
 
+        public void OpenSilo()
+        {
             //unlock doors
             siloDoorTrigger.enabled = true;
 
             //open window
-            //siloWindowAnim.SetBool("open", true);
+            myWindowAnim.SetBool("IsOpen", true);
         }
     }
 }
