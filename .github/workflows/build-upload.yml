@@ -20,21 +20,23 @@ jobs:
                   git add .
                   git reset --hard
 
-            # Build
-            - name: Build Unity Project
+            - name: Prewarm
               run: |
                   cd ~/actions-runner/_work/${{ github.event.repository.name }}/${{ github.event.repository.name }}
-                  ~/Unity/Hub/Editor/2021.3.4f1/Editor/Unity -batchmode -quit -buildTarget WebGL -logFile log.txt  -executeMethod BuildSystem.CLI.PreWarm &
-                  wait && ~/Unity/Hub/Editor/2021.3.4f1/Editor/Unity -batchmode -quit -buildTarget WebGL -logFile log.txt -executeMethod BuildSystem.CLI.BuildWebGL -development
+                  ~/Unity/Hub/Editor/2021.3.4f1/Editor/Unity -batchmode -quit -buildTarget WebGL -logFile prewarm_log.txt  -executeMethod BuildSystem.CLI.PreWarm
 
-            # Zip Build
-            - name: Zip Build
-              run: |
-                  cd ~/actions-runner/_work/${{ github.event.repository.name }}/${{ github.event.repository.name }}
-                  pushd Builds/WebGL
-                  zip -r ../../build-v${{ github.run_number }}.zip .
-                  popd
+            - name: Build
+              run: ~/Unity/Hub/Editor/2021.3.4f1/Editor/Unity -batchmode -quit -buildTarget WebGL -logFile build_log.txt -executeMethod BuildSystem.CLI.BuildWebGL -development
 
-            # Rsync to aflies.server
-            - name: Rsync to afiles.ninja
-              run: rsync -av build-v${{ github.run_number }}.zip ${{ secrets.AFILES_SSH_HOST }}:/var/www/html/supremacy-hangar/
+            # # Zip Build
+            # - name: Zip Build
+            #   run: |
+            #       cd ~/actions-runner/_work/${{ github.event.repository.name }}/${{ github.event.repository.name }}
+
+            #       pushd Builds/WebGL
+            #       zip -r ../../build-v${{ github.run_number }}.zip .
+            #       popd
+
+            # # Rsync to aflies.server
+            # - name: Rsync to afiles.ninja
+            #   run: rsync -av build-v${{ github.run_number }}.zip ${{ secrets.AFILES_SSH_HOST }}:/var/www/html/supremacy-hangar/
