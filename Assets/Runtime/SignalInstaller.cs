@@ -2,6 +2,7 @@ using SupremacyHangar.Runtime.Interaction;
 using SupremacyHangar.Runtime.Environment;
 using Zenject;
 using SupremacyHangar.Runtime.Silo;
+using SupremacyHangar.Runtime.ContentLoader;
 
 public class SignalInstaller : MonoInstaller
 {
@@ -11,5 +12,6 @@ public class SignalInstaller : MonoInstaller
         RepositionSignalInstaller.Install(Container);
         InteractionSignalInstaller.Install(Container);
         SiloSignalInstaller.Install(Container);
+        ContentSignalInstaller.Install(Container);
     }
 }

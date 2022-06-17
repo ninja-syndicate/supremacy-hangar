@@ -1,10 +1,13 @@
+using SupremacyHangar.Runtime.ContentLoader.Types;
+using System;
 using System.Collections.Generic;
 
 namespace SupremacyHangar.Runtime.Types
 {
     public class SupremacyGameObject
     {
-        public string faction;
+        public Guid faction;
+        public AssetReferenceEnvironmentConnectivity factionGraph;
         public List<SiloItem> Silos = new();
 
         public void CopyFrom(SupremacyGameObject other)

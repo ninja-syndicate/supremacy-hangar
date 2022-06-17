@@ -15,6 +15,7 @@ namespace SupremacyData.Runtime
         public IReadOnlyCollection<GameAbility> GameAbilities { get; private set; }
         public IReadOnlyCollection<MechModel> MechModels { get; private set; }
         public IReadOnlyCollection<MechSkin> MechSkins { get; private set; }
+        public IReadOnlyCollection<MysteryCrate> MysteryCrates { get; private set; }
 
         [SerializeField] internal List<BattleAbility> battleAbilities = new();
         [SerializeField] internal List<Brand> brands = new();
@@ -22,6 +23,7 @@ namespace SupremacyData.Runtime
         [SerializeField] internal List<GameAbility> gameAbilities = new();
         [SerializeField] internal List<MechModel> mechModels = new();
         [SerializeField] internal List<MechSkin> mechSkins = new();
+        [SerializeField] internal List<MysteryCrate> mysteryCrates = new();
 
         public void OnBeforeSerialize() { }
 
@@ -33,6 +35,7 @@ namespace SupremacyData.Runtime
             if (gameAbilities != null) GameAbilities = gameAbilities.AsReadOnly();
             if (mechModels != null) MechModels = mechModels.AsReadOnly();
             if (mechSkins != null) MechSkins = mechSkins.AsReadOnly();
+            if (mysteryCrates != null) MysteryCrates = mysteryCrates.AsReadOnly();
         }
     }
     

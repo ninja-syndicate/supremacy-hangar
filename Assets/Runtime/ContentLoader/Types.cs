@@ -7,6 +7,18 @@ using UnityEngine.AddressableAssets;
 
 namespace SupremacyHangar.Runtime.ContentLoader.Types
 {
+    [Serializable]
+    public class AssetReferenceSkin : AssetReferenceT<Skin>
+    {
+        public AssetReferenceSkin(string guid) : base(guid) { }
+    }
+
+    [Serializable]
+    public class AssetReferenceEnvironmentConnectivity : AssetReferenceT<EnvironmentConnectivity>
+    { 
+        public AssetReferenceEnvironmentConnectivity(string guid) : base(guid) { }
+    }
+
     public class LoadedAsset
     {
         public GameObject mech = null;
