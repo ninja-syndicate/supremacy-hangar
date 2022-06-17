@@ -1,7 +1,7 @@
 using SupremacyHangar.Runtime.Environment;
 using UnityEngine;
 
-namespace SupremacyHangar
+namespace SupremacyHangar.Runtime.Behaviour
 {
     [SharedBetweenAnimators]
     public class DoorStateBehaviour : StateMachineBehaviour

@@ -124,7 +124,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Emission_Intentity: 1
-    - _Normal_Blend_Intesity: 0
+    - _Normal_Blend_Intesity: 0.5
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
