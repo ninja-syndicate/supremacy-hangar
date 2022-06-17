@@ -147,15 +147,10 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 myMech.skin = null;
             }
 
-            if (TargetMech != previousMech &&
-                previousMech != null)
+            if (previousMech != null &&
+                myMech.mech == null)
             {
                 previousMech.ReleaseAsset();
-                myMech.mech = null;
-            }
-            else
-            {
-                Destroy(myMech.mech);
             }
         }
     }

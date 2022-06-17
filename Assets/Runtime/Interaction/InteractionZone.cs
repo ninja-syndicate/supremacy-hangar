@@ -119,7 +119,7 @@ namespace SupremacyHangar.Runtime.Interaction
                     break;
             }
 
-            if(!empty) spawner.SpawnSilo();
+            if(!empty) spawner.PrepareSilo();
         }
 
         private void Elevator()
