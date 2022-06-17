@@ -28,15 +28,13 @@ jobs:
             - name: Build
               run: ~/Unity/Hub/Editor/2021.3.4f1/Editor/Unity -batchmode -quit -buildTarget WebGL -projectPath "." -logFile build_log.txt -executeMethod BuildSystem.CLI.BuildWebGL -development
 
-            # # Zip Build
-            # - name: Zip Build
-            #   run: |
-            #       cd ~/actions-runner/_work/${{ github.event.repository.name }}/${{ github.event.repository.name }}
+            # Zip Build
+            - name: Zip Build
+              run: |
+                  pushd Builds/WebGL
+                  zip -r ../../build-v${{ github.run_number }}.zip .
+                  popd
 
-            #       pushd Builds/WebGL
-            #       zip -r ../../build-v${{ github.run_number }}.zip .
-            #       popd
-
-            # # Rsync to aflies.server
-            # - name: Rsync to afiles.ninja
-            #   run: rsync -av build-v${{ github.run_number }}.zip ${{ secrets.AFILES_SSH_HOST }}:/var/www/html/supremacy-hangar/
+            # Rsync to aflies.server
+            - name: Rsync to afiles.ninja
+              run: rsync -av build-v${{ github.run_number }}.zip ${{ secrets.AFILES_SSH_USER }}@${{ secrets.AFILES_SSH_HOST }}:/var/www/html/supremacy-hangar/
