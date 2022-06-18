@@ -51,6 +51,8 @@ namespace SupremacyHangar.Runtime
 		[Tooltip("How far in degrees can you move the camera down")]
 		public float BottomClamp = -90.0f;
 
+		public event Action OnInteractionTriggered;
+		
 		// cinemachine
 		private float _cinemachineTargetPitch;
 
@@ -248,6 +250,7 @@ namespace SupremacyHangar.Runtime
         private void OnInteractionChange(InputAction.CallbackContext context)
 		{
 			if (context.phase == InputActionPhase.Canceled) return;
+			OnInteractionTriggered?.Invoke();
             switch (interactedWith)
             {
                 case InteractionType.Silo:

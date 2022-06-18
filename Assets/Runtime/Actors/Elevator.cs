@@ -34,11 +34,12 @@ namespace SupremacyHangar.Runtime.Actors
         public void OnEnable()
         {
             interactionZone.OnPlayerEntered += OnPlayerEntered;
-            interactionZone.OnPlayerExited += OnOnPlayerExited;
+            interactionZone.OnPlayerExited += OnPlayerExited;
         }
 
-        private void OnOnPlayerExited()
+        private void OnPlayerExited()
         {
+            playerController.OnInteractionTriggered -= PerformInteraction;
             playerPresent = false;
             player = null;
             playerController = null;
@@ -71,6 +72,12 @@ namespace SupremacyHangar.Runtime.Actors
             playerPresent = true;
             player = go;
             playerController = controller;
+            controller.OnInteractionTriggered += PerformInteraction;
+        }
+
+        private void PerformInteraction()
+        {
+            MoveToNextStop();
         }
 
         private void SetupInteractionZone()
