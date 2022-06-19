@@ -1,4 +1,3 @@
-using System;
 using SupremacyHangar.Runtime.Interaction;
 using UnityMath = Unity.Mathematics;
 using UnityEngine;
@@ -11,8 +10,7 @@ namespace SupremacyHangar.Runtime.Actors
         [SerializeField] private UnityMath.float3[] stops;
         [SerializeField] private int initialStop;
         [SerializeField] private float velocity;
-        [SerializeField] private bool testMove;
-        
+
         private bool playerPresent;
         private GameObject player;
         private FirstPersonController playerController;
@@ -37,9 +35,10 @@ namespace SupremacyHangar.Runtime.Actors
             interactionZone.OnPlayerExited += OnPlayerExited;
         }
 
-        private void OnPlayerExited()
+        public void OnPlayerExited()
         {
-            playerController.OnInteractionTriggered -= PerformInteraction;
+            playerController.OnInteractionTriggered -= MoveToNextStop;
+            playerController.PlatformVelocity = UnityMath.float3.zero;
             playerPresent = false;
             player = null;
             playerController = null;
@@ -47,37 +46,23 @@ namespace SupremacyHangar.Runtime.Actors
 
         public void Update()
         {
-            if (testMove)
-            {
-                if (MoveToNextStop())
-                {
-                    testMove = false;    
-                }
-            }
-            
             if (UnityMath.math.distancesq(currentPos, stops[nextStop]) < Mathf.Epsilon) return;
             Move(Time.deltaTime);
         }
 
-        public bool MoveToNextStop()
+        public void MoveToNextStop()
         {
-            if (UnityMath.math.distancesq(currentPos, stops[nextStop]) > Mathf.Epsilon) return false;
+            if (UnityMath.math.distancesq(currentPos, stops[nextStop]) > Mathf.Epsilon) return;
             nextStop++;
             if (nextStop >= stops.Length) nextStop = 0;
-            return true;
         }
 
-        private void OnPlayerEntered(GameObject go, FirstPersonController controller)
+        public void OnPlayerEntered(GameObject go, FirstPersonController controller)
         {
             playerPresent = true;
             player = go;
             playerController = controller;
-            controller.OnInteractionTriggered += PerformInteraction;
-        }
-
-        private void PerformInteraction()
-        {
-            MoveToNextStop();
+            controller.OnInteractionTriggered += MoveToNextStop;
         }
 
         private void SetupInteractionZone()
@@ -106,12 +91,15 @@ namespace SupremacyHangar.Runtime.Actors
             // if we can move more than the max distance, it's easy.
             if (sqDistanceThisFrame <= sqDistanceToDesired)
             {
-                currentPos += UnityMath.math.normalize(nextMove) * distanceThisFrame;
+                UnityMath.float3 thisMove = UnityMath.math.normalize(nextMove) * distanceThisFrame;
+                currentPos += thisMove;
+                if (playerPresent) playerController.PlatformVelocity = thisMove; 
                 transform.localPosition = currentPos;
                 return;
             }
             
             //otherwise we move straight to the stop.
+            if (playerPresent) playerController.PlatformVelocity = desiredPos - currentPos;
             transform.localPosition = desiredPos;
             currentPos = desiredPos;
         }

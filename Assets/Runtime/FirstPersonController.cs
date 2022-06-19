@@ -3,12 +3,13 @@ using System;
 using UnityEngine.InputSystem;
 using Zenject;
 using SupremacyHangar.Runtime.Interaction;
+using Unity.Mathematics;
 
 namespace SupremacyHangar.Runtime
 {
 	[RequireComponent(typeof(CharacterController))]
 	[RequireComponent(typeof(PlayerInput))]
-
+	[DefaultExecutionOrder(1)]
 	public class FirstPersonController : MonoBehaviour
 	{
 		[Header("Player")]
@@ -52,6 +53,8 @@ namespace SupremacyHangar.Runtime
 		public float BottomClamp = -90.0f;
 
 		public event Action OnInteractionTriggered;
+		
+		public float3 PlatformVelocity = float3.zero;
 		
 		// cinemachine
 		private float _cinemachineTargetPitch;
@@ -353,8 +356,13 @@ namespace SupremacyHangar.Runtime
 				inputDirection = transform.right * move.x + transform.forward * move.y;
 			}
 
+			var nextMove = inputDirection.normalized * (_speed * Time.deltaTime);
+			nextMove += new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime;
+			nextMove += new Vector3(PlatformVelocity.x, PlatformVelocity.y, PlatformVelocity.z);
+			PlatformVelocity = float3.zero;
+			
 			// move the player
-			_controller.Move(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+			_controller.Move(nextMove);
 		}
 
 		private void JumpAndGravity()
