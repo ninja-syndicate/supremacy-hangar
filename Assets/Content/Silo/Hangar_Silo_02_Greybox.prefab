@@ -115,7 +115,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &863424826931445650
 Transform:
   m_ObjectHideFlags: 0
@@ -377,8 +377,8 @@ GameObject:
   - component: {fileID: 2837072864323272794}
   - component: {fileID: 4071419941602487475}
   - component: {fileID: 7169311676767314772}
-  - component: {fileID: 5728993795979788153}
-  - component: {fileID: 5963004332622408060}
+  - component: {fileID: 1303171243860556056}
+  - component: {fileID: 2216724298612205193}
   m_Layer: 0
   m_Name: Hangar_Silo_Elevator02
   m_TagString: Untagged
@@ -476,9 +476,9 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.3148918, y: 3.0671568, z: 2.6819897}
-  m_Center: {x: 1.14, y: 0.83801126, z: -0.03}
---- !u!114 &5728993795979788153
+  m_Size: {x: 3.41, y: 3.0671568, z: 3.41}
+  m_Center: {x: 0, y: 0.83801126, z: 0}
+--- !u!114 &1303171243860556056
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -487,33 +487,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 3644535453175021455}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25df99a152887474286d722df81b5a41, type: 3}
+  m_Script: {fileID: 11500000, guid: de5f03ff444a4d4186b0f50767711256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  labelText: {fileID: 0}
-  spawner: {fileID: 0}
-  siloIndex: 0
-  _interactionType: 1
+--- !u!114 &2216724298612205193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3644535453175021455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd00e6b20f094350b9eab9ff1dc0d0b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionZone: {fileID: 1303171243860556056}
+  stops:
+  - x: -17
+    y: 1.304433
+    z: 26.5
+  - x: -17
+    y: -17.7
+    z: 26.5
+  initialStop: 0
   speed: 2
-  minHeight: -17.7
---- !u!114 &5963004332622408060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3644535453175021455}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25df99a152887474286d722df81b5a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  labelText: {fileID: 0}
-  spawner: {fileID: 0}
-  siloIndex: 0
-  _interactionType: 1
-  speed: 10
-  minHeight: -17.7
 --- !u!1 &5635617416215569096
 GameObject:
   m_ObjectHideFlags: 0
@@ -526,9 +524,9 @@ GameObject:
   - component: {fileID: 2319413102756197526}
   - component: {fileID: 138446166400944356}
   - component: {fileID: 4313295614822908580}
-  - component: {fileID: 6326532137619389564}
   - component: {fileID: 8437498300628898806}
-  - component: {fileID: 4552873356479457746}
+  - component: {fileID: 2255631058513680266}
+  - component: {fileID: 3182277578468105573}
   m_Layer: 0
   m_Name: Hangar_Silo_Elevator01
   m_TagString: Untagged
@@ -615,24 +613,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 9014339649262003416, guid: 62c4b2d10d2002d4e8e1b5f612ca5189, type: 3}
---- !u!114 &6326532137619389564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5635617416215569096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25df99a152887474286d722df81b5a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  labelText: {fileID: 0}
-  spawner: {fileID: 0}
-  siloIndex: 0
-  _interactionType: 1
-  speed: 2
-  minHeight: -17.7
 --- !u!65 &8437498300628898806
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -644,9 +624,9 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.3148918, y: 3.0671568, z: 2.6819897}
-  m_Center: {x: -1.14, y: 0.83801126, z: -0.03}
---- !u!114 &4552873356479457746
+  m_Size: {x: 3.41, y: 3.0671568, z: 3.41}
+  m_Center: {x: 0, y: 0.83801126, z: 0}
+--- !u!114 &2255631058513680266
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -655,15 +635,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 5635617416215569096}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25df99a152887474286d722df81b5a41, type: 3}
+  m_Script: {fileID: 11500000, guid: de5f03ff444a4d4186b0f50767711256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  labelText: {fileID: 0}
-  spawner: {fileID: 0}
-  siloIndex: 0
-  _interactionType: 1
-  speed: 10
-  minHeight: -17.7
+--- !u!114 &3182277578468105573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5635617416215569096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd00e6b20f094350b9eab9ff1dc0d0b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionZone: {fileID: 1303171243860556056}
+  stops:
+  - x: 17
+    y: 1.304433
+    z: 26.5
+  - x: 17
+    y: -17.7
+    z: 26.5
+  initialStop: 0
+  speed: 2
 --- !u!1 &7572534970697267584
 GameObject:
   m_ObjectHideFlags: 0

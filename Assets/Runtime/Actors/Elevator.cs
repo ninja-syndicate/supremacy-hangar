@@ -1,6 +1,7 @@
 using SupremacyHangar.Runtime.Interaction;
 using UnityMath = Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace SupremacyHangar.Runtime.Actors
 {
@@ -8,7 +9,7 @@ namespace SupremacyHangar.Runtime.Actors
     {
         [SerializeField] private UnityMath.float3[] stops;
         [SerializeField] private int initialStop;
-        [SerializeField] private float velocity;
+        [FormerlySerializedAs("velocity"),SerializeField] private float speed;
 
         private bool playerPresent;
         private GameObject player;
@@ -63,7 +64,7 @@ namespace SupremacyHangar.Runtime.Actors
             // we use square distance as it's quicker to calculate
             float sqDistanceToDesired = UnityMath.math.lengthsq(nextMove); 
             // max distance we can move in this frame (squared to easily compare with above)
-            float distanceThisFrame = velocity * deltaTime;
+            float distanceThisFrame = speed * deltaTime;
             float sqDistanceThisFrame = distanceThisFrame * distanceThisFrame;
             
             // if we can move more than the max distance, it's easy.
