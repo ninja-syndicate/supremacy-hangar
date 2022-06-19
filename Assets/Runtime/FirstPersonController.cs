@@ -93,20 +93,6 @@ namespace SupremacyHangar.Runtime
 		public bool cursorInputForLook = true;
 #endif
 
-		private InteractionSignalHandler _interactionSignalHandler;
-
-		private InteractionType interactedWith;
-		private bool _subscribed;
-		private SignalBus _bus;
-
-		[Inject]
-		public void Construct(InteractionSignalHandler interactionSignalHandler, SignalBus bus)
-        {
-			_bus = bus;
-			SubscribeToSignal();
-			_interactionSignalHandler = interactionSignalHandler;
-        }
-
 		public void Awake()
 		{
 			// get a reference to our main camera
@@ -115,13 +101,6 @@ namespace SupremacyHangar.Runtime
 				_mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 			}
 			if (!ValidateAndSetupComponentReferences()) return;
-		}
-
-		private void SubscribeToSignal()
-		{
-			if (_bus == null || _subscribed) return;
-			_bus.Subscribe<PlayerInteractionChangeSignal>(ChangeMyInteraction);
-			_subscribed = true;
 		}
 		
 		private void Start()
@@ -139,17 +118,11 @@ namespace SupremacyHangar.Runtime
 		public void OnEnable()
 		{
 			if (!BindToInputs()) return; 
-			SubscribeToSignal();
 		}
 
 		public void OnDisable()
 		{
 			UnbindInputs();
-			if(_subscribed)
-			{
-				_bus.Unsubscribe<PlayerInteractionChangeSignal>(ChangeMyInteraction);
-				_subscribed = false;
-			}
 		}
 
 		private bool ValidateAndSetupComponentReferences()
@@ -254,25 +227,9 @@ namespace SupremacyHangar.Runtime
 		{
 			if (context.phase == InputActionPhase.Canceled) return;
 			OnInteractionTriggered?.Invoke();
-            switch (interactedWith)
-            {
-                case InteractionType.Silo:
-                    _interactionSignalHandler.LoadSilo(interactedWith);
-                    break;
-                case InteractionType.Elevator:
-                    _interactionSignalHandler.InteractWithElevator(interactedWith);
-                    break;
-                default:
-                    Debug.LogError($"Unkown signal type {interactedWith}", this);
-                    break;
-            }
         }
-		private void ChangeMyInteraction(PlayerInteractionChangeSignal signal)
-		{
-			interactedWith = signal.Type;
-		}
 
-		private void Update()
+        private void Update()
 		{
 			JumpAndGravity();
 			GroundedCheck();
