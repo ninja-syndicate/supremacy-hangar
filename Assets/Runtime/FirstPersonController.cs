@@ -51,7 +51,7 @@ namespace SupremacyHangar.Runtime
 		public float TopClamp = 90.0f;
 		[Tooltip("How far in degrees can you move the camera down")]
 		public float BottomClamp = -90.0f;
-
+		
 		public event Action OnInteractionTriggered;
 		
 		public float3 PlatformVelocity = float3.zero;
@@ -288,6 +288,8 @@ namespace SupremacyHangar.Runtime
 		{
 			// set sphere position, with offset
 			Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z);
+			//If we're going down, to keep the grounded check working, we need to adjust the spherecheck
+			if (PlatformVelocity.y < 0) spherePosition.y += PlatformVelocity.y;
 			Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers, QueryTriggerInteraction.Ignore);
 		}
 
@@ -358,9 +360,9 @@ namespace SupremacyHangar.Runtime
 
 			var nextMove = inputDirection.normalized * (_speed * Time.deltaTime);
 			nextMove += new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime;
-			nextMove += new Vector3(PlatformVelocity.x, PlatformVelocity.y, PlatformVelocity.z);
+			if (Grounded) nextMove += new Vector3(PlatformVelocity.x, PlatformVelocity.y, PlatformVelocity.z);
 			PlatformVelocity = float3.zero;
-			
+
 			// move the player
 			_controller.Move(nextMove);
 		}
@@ -375,7 +377,7 @@ namespace SupremacyHangar.Runtime
 				// stop our velocity dropping infinitely when grounded
 				if (_verticalVelocity < 0.0f)
 				{
-					_verticalVelocity = -2f;
+					_verticalVelocity = 0;
 				}
 
 				// Jump
@@ -384,7 +386,7 @@ namespace SupremacyHangar.Runtime
 					// the square root of H * -2 * G = how much velocity needed to reach desired height
 					_verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
 				}
-
+				
 				// jump timeout
 				if (_jumpTimeoutDelta >= 0.0f)
 				{
@@ -404,12 +406,12 @@ namespace SupremacyHangar.Runtime
 
 				// if we are not grounded, do not jump
 				jump = false;
-			}
-
-			// apply gravity over time if under terminal (multiply by delta time twice to linearly speed up over time)
-			if (_verticalVelocity < _terminalVelocity)
-			{
-				_verticalVelocity += Gravity * Time.deltaTime;
+				
+				// apply gravity over time if under terminal (multiply by delta time twice to linearly speed up over time)
+				if (_verticalVelocity < _terminalVelocity)
+				{
+					_verticalVelocity += Gravity * Time.deltaTime;
+				}
 			}
 		}
 
