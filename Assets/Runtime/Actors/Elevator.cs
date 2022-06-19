@@ -4,9 +4,8 @@ using UnityEngine;
 
 namespace SupremacyHangar.Runtime.Actors
 {
-    public class Elevator : MonoBehaviour
+    public class Elevator : InteractionZoneResponder
     {
-        [SerializeField] private InteractionZone interactionZone;
         [SerializeField] private UnityMath.float3[] stops;
         [SerializeField] private int initialStop;
         [SerializeField] private float velocity;
@@ -17,25 +16,14 @@ namespace SupremacyHangar.Runtime.Actors
         private int nextStop;
         private UnityMath.float3 currentPos;
         
-        public void Awake()
-        {
-            SetupInteractionZone();
-        }
-
         public void Start()
         {
             currentPos = stops[initialStop];
             transform.localPosition = currentPos;
             nextStop = initialStop;
         }
-
-        public void OnEnable()
-        {
-            interactionZone.OnPlayerEntered += OnPlayerEntered;
-            interactionZone.OnPlayerExited += OnPlayerExited;
-        }
-
-        public void OnPlayerExited()
+        
+        public override void OnPlayerExited()
         {
             playerController.OnInteractionTriggered -= MoveToNextStop;
             playerController.PlatformVelocity = UnityMath.float3.zero;
@@ -43,7 +31,7 @@ namespace SupremacyHangar.Runtime.Actors
             player = null;
             playerController = null;
         }
-
+        
         public void Update()
         {
             if (UnityMath.math.distancesq(currentPos, stops[nextStop]) < Mathf.Epsilon) return;
@@ -57,24 +45,14 @@ namespace SupremacyHangar.Runtime.Actors
             if (nextStop >= stops.Length) nextStop = 0;
         }
 
-        public void OnPlayerEntered(GameObject go, FirstPersonController controller)
+        public override void OnPlayerEntered(GameObject go, FirstPersonController controller)
         {
             playerPresent = true;
             player = go;
             playerController = controller;
             controller.OnInteractionTriggered += MoveToNextStop;
         }
-
-        private void SetupInteractionZone()
-        {
-            if (interactionZone != null) return;
-            if (TryGetComponent(out interactionZone)) return;
-            {
-                Debug.LogError("No interaction Zone on this gameobject and none set!", this);
-                enabled = false;
-            }
-        }
-
+        
         private void Move(float deltaTime)
         {
             // get our current, and next move vectors;

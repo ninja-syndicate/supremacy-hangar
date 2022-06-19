@@ -8,7 +8,7 @@ namespace SupremacyHangar.Runtime.Interaction
         private bool currentInteraction;
         private GameObject currentPlayer;
         private FirstPersonController currentPlayerController;
-
+        
         public event Action<GameObject, FirstPersonController> OnPlayerEntered;
         public event Action OnPlayerExited;
         

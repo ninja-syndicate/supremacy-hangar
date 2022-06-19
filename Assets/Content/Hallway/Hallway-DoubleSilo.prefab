@@ -3594,7 +3594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorCollider: {fileID: 6621942498370904382}
---- !u!114 &6059265790126143978
+--- !u!114 &282124566634050631
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3603,9 +3603,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 686348632019533533}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 403c0bdb558e8af4cbc323f347a59210, type: 3}
+  m_Script: {fileID: 11500000, guid: de5f03ff444a4d4186b0f50767711256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3773351464781609989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686348632019533533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 188eb8d9f2fd4fd194a67e1516aaa06a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionZone: {fileID: 282124566634050631}
+  animator: {fileID: 1979110231276169381}
+  doorProperty: IsOpen
+  automaticOpen: 1
+  automaticClose: 1
 --- !u!1 &704794268497918722 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1343633730574344681, guid: ec31a226eb9b8d742a48ddb66ba5a482,
@@ -3888,7 +3905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorCollider: {fileID: 6492874082127571413}
---- !u!114 &7227305664365185648
+--- !u!114 &4399499903085751875
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3897,9 +3914,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 6035636074220557482}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 403c0bdb558e8af4cbc323f347a59210, type: 3}
+  m_Script: {fileID: 11500000, guid: de5f03ff444a4d4186b0f50767711256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4061392149414911327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6035636074220557482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 188eb8d9f2fd4fd194a67e1516aaa06a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionZone: {fileID: 4399499903085751875}
+  animator: {fileID: 6871629164434672072}
+  doorProperty: IsOpen
+  automaticOpen: 1
+  automaticClose: 1
 --- !u!1 &6259718326750450038 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5601521096746060701, guid: ec31a226eb9b8d742a48ddb66ba5a482,
