@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 5955572307729721534}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -17.04, y: 0.039999068, z: -0.09000394}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5955572307812626280}
   m_Father: {fileID: 0}
@@ -47,7 +47,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
+  m_Height: 1.6
   m_Radius: 0.1
   m_SlopeLimit: 45
   m_StepOffset: 0.3
@@ -134,6 +134,10 @@ MonoBehaviour:
   CinemachineCameraTarget: {fileID: 5955572307812626277}
   TopClamp: 90
   BottomClamp: -90
+  PlatformVelocity:
+    x: 0
+    y: 0
+    z: 0
   jump: 0
   sprint: 0
   analogMovement: 0
