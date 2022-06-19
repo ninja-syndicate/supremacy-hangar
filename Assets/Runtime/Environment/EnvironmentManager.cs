@@ -1,3 +1,4 @@
+using System.Buffers;
 using SupremacyHangar.Runtime.Silo;
 using SupremacyHangar.Runtime.ScriptableObjects;
 using System.Collections.Generic;
@@ -63,9 +64,8 @@ namespace SupremacyHangar.Runtime.Environment
         public void Construct(SignalBus bus)
         {
             _bus = bus;
-            SubscribeToSignal();
-
         }
+        
         private void OnEnable()
         {
             SubscribeToSignal();
@@ -137,10 +137,10 @@ namespace SupremacyHangar.Runtime.Environment
             foreach (var operation in operationsForJoins.Keys)
                 operation.Completed += InitializeDefaultDoor;
 
-            loadPlayer();
+            _playerObject.InstantiateAsync().Completed += PlayerLoaded;
             _container.InjectGameObject(currentEnvironment.CurrentGameObject);
         }
-                
+
         private void InitializeDefaultDoor(AsyncOperationHandle<GameObject> handle2)
         {
             var join = operationsForJoins[handle2];
@@ -165,15 +165,20 @@ namespace SupremacyHangar.Runtime.Environment
             operationsForJoins.Remove(handle2);
         }
 
-        private void loadPlayer()
+        private void PlayerLoaded(AsyncOperationHandle<GameObject> handle)
         {
-            _playerObject.InstantiateAsync().Completed += (player) =>
+            var result = handle.Result;
+            if (nextRoomEnvironmentPrefabRef.SpawnPointValid)
             {
-                _container.InjectGameObject(player.Result);
-                player.Result.SetActive(true);
-            };
+                var spawnPoint = nextRoomEnvironmentPrefabRef.SpawnPoint;
+                result.transform.position = spawnPoint.position;
+                result.transform.rotation = spawnPoint.rotation;
+            }
+
+            _container.InjectGameObject(result);
+            result.SetActive(true);
         }
-        
+
         private void DoorOpened()
         {
             foreach (var obj in objectsToUnload)

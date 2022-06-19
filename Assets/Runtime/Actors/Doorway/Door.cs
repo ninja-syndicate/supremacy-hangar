@@ -49,9 +49,13 @@ namespace SupremacyHangar.Runtime.Actors.Doorway
 
         public override void OnPlayerExited()
         {
-            playerPresent = false;
-            playerController.OnInteractionTriggered -= OnDoorInteraction;
-            playerController = null;
+            if (playerPresent)
+            {
+                playerPresent = false;
+                playerController.OnInteractionTriggered -= OnDoorInteraction;
+                playerController = null;
+            }
+
             if (automaticClose)
             {
                 animatorDoorState = false;
