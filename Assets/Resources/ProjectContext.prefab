@@ -48,12 +48,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e6589720da476459dc6dd71624b071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scriptableObjectInstallers:
-  - {fileID: 11400000, guid: 270e2b5c37647b34aac752f60bad22ae, type: 2}
+  _scriptableObjectInstallers: []
   _monoInstallers:
+  - {fileID: 7776942803935884160}
   - {fileID: -2783684923435114094}
   - {fileID: 6627807978628970109}
-  - {fileID: 7776942803935884160}
   - {fileID: 9048089558331618125}
   _installerPrefabs: []
   _parentNewObjectsUnderContext: 1
@@ -128,15 +127,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f95414623b6d10046a61dfd6eda58f19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonTestFragment: "{\n    \"faction\": \"Zaibatsu\",\n    \"silos\":\n    [\n       
-    {\n            \"type\": \"mech\",\n            \"ownership_id\": \"mech/assetID\",\n           
-    \"mech_id\": \"Zaibatsu\",\n            \"skin_id\": \"CherryBlossom\"\n       
-    },\n        {\n            \"type\": \"mystery_crate\",\n            \"ownership_id\":
-    \"Rare\",\n            \"can_open_on\": \"2022-06-09T09:32:38+00:00\"\n       
-    },\n        {\n            \"type\": \"mech\",\n            \"ownership_id\":
-    \"mech/assetID\",\n            \"mech_id\": \"RedMountain\",\n            \"skin_id\":
-    \"Evo\"\n        },\n        {\n            \"type\": \"mech\",\n           
-    \"ownership_id\": \"mech/assetID\",\n            \"mech_id\": \"BostonCybernetics\",\n           
-    \"skin_id\": \"Cyber\"\n        },\n        {\n            \"type\": \"mystery_crate\",\n           
-    \"ownership_id\": \"lootbot/assetID\",\n            \"can_open_on\": \"2022-06-010T09:32:38+00:00\"\n       
-    }\n    ]\n}"
+  jsonTestFragment: "{\n    \"faction\": \"880db344-e405-428d-84e5-6ebebab1fe6d\",\r\n   
+    \"silos\":\r\n    [\r\n        {\r\n            \"type\": \"mech\",\r\n           
+    \"ownership_id\": \"465fe68c-6487-4f78-92aa-218cf129e071\",\r\n            \"mech_id\":
+    \"625cd381-7c66-4e2f-9f69-f81589105730\",\r\n            \"skin_id\": \"72ffdb5c-c003-4734-b1d1-07898f5bcb39\",\r\n           
+    \"mystery_crate_id\": \"\"\r\n        },\r\n        {\r\n            \"type\":
+    \"mech\",\r\n            \"ownership_id\": \"4d87aea5-945d-42f4-9d80-9c44420bdfde\",\r\n           
+    \"mech_id\": \"625cd381-7c66-4e2f-9f69-f81589105730\",\r\n            \"skin_id\":
+    \"ff1b7d82-40b1-4d1a-b93a-f5da92ec43ed\",\r\n            \"mystery_crate_id\":
+    \"\"\r\n        }\r\n    ]\r\n}"

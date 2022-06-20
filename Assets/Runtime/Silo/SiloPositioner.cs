@@ -21,23 +21,60 @@ namespace SupremacyHangar.Runtime.Silo
 
         public bool SiloSpawned { get; set; } = false;
 
+        [SerializeField] private Animator myWindowAnim;
+
+        private SignalBus _bus;
+        private bool _subscribed;
+        private bool siloClosing = false;
 
         [Inject]
-        public void Constuct(EnvironmentManager environmentManager)
+        public void Constuct(EnvironmentManager environmentManager, SignalBus bus)
         {
             _environmentManager = environmentManager;
+            _bus = bus;
+            SubscribeToSignal();
         }
 
-        public void DisableDoor()
+        private void OnEnable()
+        {
+            SubscribeToSignal();
+        }
+
+        private void OnDisable()
+        {
+            if (!_subscribed) return;
+            _bus.Unsubscribe<CloseSiloSignal>(CloseSilo);
+            _bus.Unsubscribe<SiloUnloadedSignal>(SiloClosed);
+            _subscribed = false;
+        }
+
+        private void SubscribeToSignal()
+        {
+            if (_bus == null || _subscribed) return;
+            _bus.Subscribe<CloseSiloSignal>(CloseSilo);
+            _bus.Subscribe<SiloUnloadedSignal>(SiloClosed);
+            _subscribed = true;
+        }
+
+        public void CloseSilo()
         {
             //Lock doors on silo unload
             siloDoorTrigger.enabled = false;
 
+            siloClosing = true;
             //Close window on silo unload
-            //siloWindowAnim.SetBool("open", false);
+            myWindowAnim.SetBool("IsOpen", false);
         }
 
-        public void SpawnSilo()
+        private void SiloClosed()
+        {
+            siloClosing = false;
+            
+            if(SiloSpawned)
+                SpawnSilo();
+        }
+
+        public void PrepareSilo()
         {
             //Prevent same silo spawning again
             if (SiloSpawned) return;
@@ -45,15 +82,23 @@ namespace SupremacyHangar.Runtime.Silo
 
             //Clean-up existing silo (Only one silo at a time)
             _environmentManager.UnloadAssets();
+            
+            SpawnSilo();
+        }
 
+        private void SpawnSilo()
+        {
             //Spawn silo
-            _environmentManager.SpawnSilo(this);
+            if (!siloClosing && SiloSpawned) _environmentManager.SpawnSilo(this);
+        }
 
+        public void OpenSilo()
+        { 
             //unlock doors
             siloDoorTrigger.enabled = true;
 
             //open window
-            //siloWindowAnim.SetBool("open", true);
+            myWindowAnim.SetBool("IsOpen", true);
         }
     }
 }

@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &821446330027626394
 Transform:
   m_ObjectHideFlags: 0
@@ -37,7 +37,6 @@ Transform:
   - {fileID: 7973496680566068144}
   - {fileID: 8921445097112860815}
   - {fileID: 3377010337067339204}
-  - {fileID: 4061314886032518327}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -378,7 +377,8 @@ GameObject:
   - component: {fileID: 2865014931617198162}
   - component: {fileID: 3208953557770275073}
   - component: {fileID: 8944844640179054649}
-  - component: {fileID: 7650048271217785428}
+  - component: {fileID: 6171374961527258221}
+  - component: {fileID: 2778020424368341361}
   m_Layer: 0
   m_Name: Hangar_Silo_Elevator02
   m_TagString: Untagged
@@ -476,9 +476,9 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.3148918, y: 3.0671568, z: 2.6819897}
-  m_Center: {x: 1.14, y: 0.83801126, z: -0.03}
---- !u!114 &7650048271217785428
+  m_Size: {x: 3.44, y: 3.0671568, z: 3.44}
+  m_Center: {x: 0, y: 0.9, z: 0}
+--- !u!114 &6171374961527258221
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -487,15 +487,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 3606856587891199879}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25df99a152887474286d722df81b5a41, type: 3}
+  m_Script: {fileID: 11500000, guid: de5f03ff444a4d4186b0f50767711256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  labelText: {fileID: 0}
-  spawner: {fileID: 0}
-  siloIndex: 0
-  _interactionType: 1
+--- !u!114 &2778020424368341361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3606856587891199879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd00e6b20f094350b9eab9ff1dc0d0b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionZone: {fileID: 6171374961527258221}
+  stops:
+  - x: -17
+    y: 1.304433
+    z: -26.5
+  - x: -17
+    y: -17.7
+    z: -26.5
+  initialStop: 0
   speed: 2
-  minHeight: -17.7
 --- !u!1 &4149002585019451199
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,7 +556,8 @@ GameObject:
   - component: {fileID: 105273108089272556}
   - component: {fileID: 6712267176641280283}
   - component: {fileID: 8223115253316457764}
-  - component: {fileID: 3779383252699529622}
+  - component: {fileID: 7165139927262183724}
+  - component: {fileID: 8082381153804359867}
   m_Layer: 0
   m_Name: Hangar_Silo_Elevator01
   m_TagString: Untagged
@@ -638,9 +655,9 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.3148918, y: 3.0671568, z: 2.6819897}
-  m_Center: {x: -1.14, y: 0.83801126, z: -0.03}
---- !u!114 &3779383252699529622
+  m_Size: {x: 3.44, y: 3.0671568, z: 3.44}
+  m_Center: {x: 0, y: 0.9, z: 0}
+--- !u!114 &7165139927262183724
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -649,15 +666,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 5667887290132763328}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25df99a152887474286d722df81b5a41, type: 3}
+  m_Script: {fileID: 11500000, guid: de5f03ff444a4d4186b0f50767711256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  labelText: {fileID: 0}
-  spawner: {fileID: 0}
-  siloIndex: 0
-  _interactionType: 1
+--- !u!114 &8082381153804359867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5667887290132763328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd00e6b20f094350b9eab9ff1dc0d0b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionZone: {fileID: 0}
+  stops:
+  - x: 17
+    y: 1.304433
+    z: -26.5
+  - x: 17
+    y: -17.7
+    z: -26.5
+  initialStop: 0
   speed: 2
-  minHeight: -17.7
 --- !u!1 &6239920165013470174
 GameObject:
   m_ObjectHideFlags: 0
@@ -689,78 +722,3 @@ Transform:
   m_Father: {fileID: 821446330027626394}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &4599874117485988700
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 821446330027626394}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 321da620a95cc364ba1c1050cf3035b7,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 321da620a95cc364ba1c1050cf3035b7,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 321da620a95cc364ba1c1050cf3035b7,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 321da620a95cc364ba1c1050cf3035b7,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 321da620a95cc364ba1c1050cf3035b7,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 321da620a95cc364ba1c1050cf3035b7,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 321da620a95cc364ba1c1050cf3035b7,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 321da620a95cc364ba1c1050cf3035b7,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 321da620a95cc364ba1c1050cf3035b7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 321da620a95cc364ba1c1050cf3035b7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 321da620a95cc364ba1c1050cf3035b7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 321da620a95cc364ba1c1050cf3035b7,
-        type: 3}
-      propertyPath: m_Name
-      value: HangarSilo_CollisionMesh
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 321da620a95cc364ba1c1050cf3035b7, type: 3}
---- !u!4 &4061314886032518327 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 321da620a95cc364ba1c1050cf3035b7,
-    type: 3}
-  m_PrefabInstance: {fileID: 4599874117485988700}
-  m_PrefabAsset: {fileID: 0}

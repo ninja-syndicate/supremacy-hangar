@@ -1,3 +1,4 @@
+using System.Buffers;
 using SupremacyHangar.Runtime.Silo;
 using SupremacyHangar.Runtime.ScriptableObjects;
 using System.Collections.Generic;
@@ -8,6 +9,8 @@ using SupremacyHangar.Runtime.Environment.Types;
 using UnityEngine.AddressableAssets;
 using SupremacyHangar.Runtime.Environment.Connections;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using SupremacyHangar.Runtime.ContentLoader.Types;
+using SupremacyHangar.Runtime.ContentLoader;
 
 namespace SupremacyHangar.Runtime.Environment
 {
@@ -22,10 +25,13 @@ namespace SupremacyHangar.Runtime.Environment
         private SupremacyGameObject _playerInventory;
 
         [Inject]
-        private SupremacyDictionary _supremacyDictionary;
+        private SiloSignalHandler _siloSignalHandler;
+                
+        private SignalBus _bus;
 
         private EnvironmentConnectivity _connectivityGraph;
 
+        EnvironmentPrefab nextRoomEnvironmentPrefabRef;
         public CurrentEnvironment currentEnvironment = new();
 
         private List<GameObject> loadedObjects = new();
@@ -52,6 +58,36 @@ namespace SupremacyHangar.Runtime.Environment
         private Dictionary<AsyncOperationHandle<GameObject>, ConnectivityJoin> operationsForJoins = new Dictionary<AsyncOperationHandle<GameObject>, ConnectivityJoin>();
         private Dictionary<AsyncOperationHandle<GameObject>, DoorTuple> operationsForNewRoom = new Dictionary<AsyncOperationHandle<GameObject>, DoorTuple>();
         private Dictionary<AsyncOperationHandle<GameObject>, EnvironmentSpawner> operationsForNewDoor = new Dictionary<AsyncOperationHandle<GameObject>, EnvironmentSpawner>();
+        private bool _subscribed;
+
+        [Inject]
+        public void Construct(SignalBus bus)
+        {
+            _bus = bus;
+        }
+        
+        private void OnEnable()
+        {
+            SubscribeToSignal();
+        }
+
+        private void OnDisable()
+        {
+            if (!_subscribed) return;
+            _bus.Unsubscribe<SiloUnloadedSignal>(UnloadAssetsAfterSiloClosed);
+            _bus.Unsubscribe<InventoryLoadedSignal>(LoadFactionGraph);
+
+            _subscribed = false;
+        }
+
+        private void SubscribeToSignal()
+        {
+            if (_bus == null || _subscribed) return;
+            _bus.Subscribe<SiloUnloadedSignal>(UnloadAssetsAfterSiloClosed);
+            _bus.Subscribe<InventoryLoadedSignal>(LoadFactionGraph);
+
+            _subscribed = true;
+        }
 
         public override void InstallBindings()
         {
@@ -62,9 +98,10 @@ namespace SupremacyHangar.Runtime.Environment
             Container.Bind<SiloItem[]>().FromInstance(GetCurrentSiloInfo()).AsCached();
         }
 
-        private void Awake()
+        private void LoadFactionGraph()
         {
-            AssetReference connectivityGraph = _supremacyDictionary.FactionDictionary[_playerInventory.faction];
+            //Todo: run from signal instead
+            AssetReferenceEnvironmentConnectivity connectivityGraph = _playerInventory.factionGraph;
 
             connectivityGraph.LoadAssetAsync<EnvironmentConnectivity>().Completed += (obj) =>
             {
@@ -72,7 +109,6 @@ namespace SupremacyHangar.Runtime.Environment
                 SpawnInitialHallway();
             };
 		}
-        EnvironmentPrefab nextRoomEnvironmentPrefabRef;
 
         private void SpawnInitialHallway()
         {
@@ -101,10 +137,10 @@ namespace SupremacyHangar.Runtime.Environment
             foreach (var operation in operationsForJoins.Keys)
                 operation.Completed += InitializeDefaultDoor;
 
-            loadPlayer();
+            _playerObject.InstantiateAsync().Completed += PlayerLoaded;
             _container.InjectGameObject(currentEnvironment.CurrentGameObject);
         }
-                
+
         private void InitializeDefaultDoor(AsyncOperationHandle<GameObject> handle2)
         {
             var join = operationsForJoins[handle2];
@@ -129,15 +165,20 @@ namespace SupremacyHangar.Runtime.Environment
             operationsForJoins.Remove(handle2);
         }
 
-        private void loadPlayer()
+        private void PlayerLoaded(AsyncOperationHandle<GameObject> handle)
         {
-            _playerObject.InstantiateAsync().Completed += (player) =>
+            var result = handle.Result;
+            if (nextRoomEnvironmentPrefabRef.SpawnPointValid)
             {
-                _container.InjectGameObject(player.Result);
-                player.Result.SetActive(true);
-            };
+                var spawnPoint = nextRoomEnvironmentPrefabRef.SpawnPoint;
+                result.transform.position = spawnPoint.position;
+                result.transform.rotation = spawnPoint.rotation;
+            }
+
+            _container.InjectGameObject(result);
+            result.SetActive(true);
         }
-        
+
         private void DoorOpened()
         {
             foreach (var obj in objectsToUnload)
@@ -167,7 +208,6 @@ namespace SupremacyHangar.Runtime.Environment
             var nodeForJoin = partForJoin.MyJoinsByConnector[Door1.ToConnectTo];
             var nextRoomToJoinTo = nodeForJoin.Destinations[NextRoomIndex(Door2.MyConnectors)];
 
-            currentEnvironment.CurrentPrefabAsset = _connectivityGraph.MyJoins[nextRoomToJoinTo];
             nextRoom = new()
             {
                 CurrentPrefabAsset = _connectivityGraph.MyJoins[nextRoomToJoinTo]
@@ -236,7 +276,7 @@ namespace SupremacyHangar.Runtime.Environment
             _currentSilo = currentSilo;
             SiloExists = true;
 
-            var nextRoomEnvironmentPrefabRef = currentEnvironment.CurrentGameObject.GetComponent<EnvironmentPrefab>();
+            nextRoomEnvironmentPrefabRef = currentEnvironment.CurrentGameObject.GetComponent<EnvironmentPrefab>();
 
             var partForJoin = currentEnvironment.CurrentPrefabAsset.MyJoinsByConnector[currentSilo.ToConnectTo];
             var nodeForJoin = partForJoin.Destinations[0];
@@ -252,8 +292,9 @@ namespace SupremacyHangar.Runtime.Environment
 
             newSilo.SetActive(true);
 
-            loadedObjects.Add(newSilo);
-            newlyLoadedObjects.Add(newSilo);
+            _currentSilo.OpenSilo();
+
+            loadedSilo = newSilo;
         }
 
         public void ChangeDirection(bool direction)
@@ -305,14 +346,17 @@ namespace SupremacyHangar.Runtime.Environment
             return 0;
         }
 
+        private GameObject loadedSilo;
+
         public void UnloadAssets()
         {
             DoorOpened();
 
             if (_currentSilo)
             {
-                _currentSilo.DisableDoor(); 
+                _siloSignalHandler.CloseSilo();
                 _currentSilo.SiloSpawned = false;
+                return;
             }
 
             if (newDoorEnvironmentPrefab)
@@ -336,9 +380,9 @@ namespace SupremacyHangar.Runtime.Environment
             }
             else
             {
-                if(interactedDoor)
+                if (interactedDoor)
                     interactedDoor.connectedTo = currentEnvironment.CurrentGameObject;
-                
+
                 foreach (var obj in newlyLoadedObjects)
                 {
                     loadedObjects.Remove(obj);
@@ -348,6 +392,12 @@ namespace SupremacyHangar.Runtime.Environment
                 objectsToUnload.Clear();
             }
             SiloExists = false;
+        }
+
+        private void UnloadAssetsAfterSiloClosed()
+        {
+            _currentSilo = null;
+            UnityEngine.AddressableAssets.Addressables.ReleaseInstance(loadedSilo);
         }
 
         public void resetConnection(bool commited = false)
