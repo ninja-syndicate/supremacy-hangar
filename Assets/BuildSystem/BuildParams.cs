@@ -7,6 +7,14 @@ namespace BuildSystem
 {
     public struct BuildParams
     {
+        public enum AddressablesLocationType
+        {
+            Local,
+            Development,
+            Staging,
+            Production
+        }
+        
         private const string ExecuteMethod = "executemethod";
 
         private static readonly string[] EnvTrueValues = new[] { "true", "t", "yes", "y" };
@@ -14,14 +22,13 @@ namespace BuildSystem
         private const string DevelopmentModeEnableCLI = "-development";
         private const string DevelopmentModeEnableEnv = "DEVELOPMENT_MODE";
 
-        private const string LocalAddressablesEnableCLI = "-localaddressables";
-        private const string LocalAddressablesEnableENV = "LOCAL_ADDRESSABLES";
+        private const string AddressablesLocationCLI = "-addressableslocation";
+        private const string LocalAddressablesEnableENV = "ADDRESSABLES_LOCATION";
 
         public bool DevelopmentMode { get; private set; }
         public bool BuildAddressables { get; private set; } 
-        public bool LocalAddressables { get; private set; }
-        
-        public string BuildPath { get; private set; }
+
+        public AddressablesLocationType AddressablesLocation { get; private set; }
         public string BuildNumber { get; private set; }
 
         public void UpdateFromEnvironment()
@@ -34,7 +41,7 @@ namespace BuildSystem
 
             if (envVars.Contains(LocalAddressablesEnableENV))
             {
-                LocalAddressables = StringIsTrue(envVars[DevelopmentModeEnableEnv].ToString());
+                AddressablesLocation = ParseAddressablesLocation(envVars[DevelopmentModeEnableEnv].ToString());
             }
         }
 
@@ -63,12 +70,12 @@ namespace BuildSystem
             }
         }
         
-        public static BuildParams WithValues(bool development, bool localAddressables)
+        public static BuildParams WithValues(bool development, AddressablesLocationType addressablesLocation)
         {
             return new BuildParams()
             {
                 DevelopmentMode = development,
-                LocalAddressables = localAddressables,
+                AddressablesLocation = addressablesLocation,
                 //TODO: this should come from a project config file...
                 BuildAddressables = true,
             };
@@ -81,8 +88,8 @@ namespace BuildSystem
                 case DevelopmentModeEnableCLI:
                     DevelopmentMode = true;
                     break;
-                case LocalAddressablesEnableCLI:
-                    LocalAddressables = true;
+                case AddressablesLocationCLI:
+                    AddressablesLocation = ParseAddressablesLocation(paramQueue.Dequeue());
                     break;
                 default:
                     Debug.LogError($"Unknown CLI Parameter! {parameter}");
@@ -98,6 +105,27 @@ namespace BuildSystem
             }
 
             return false;
+        }
+        
+        private AddressablesLocationType ParseAddressablesLocation(string locationString)
+        {
+            locationString = locationString.ToLowerInvariant();
+            switch (locationString)
+            {
+                case "local":
+                    return AddressablesLocationType.Local;
+                case "dev":
+                case "development":
+                    return AddressablesLocationType.Development;
+                case "staging":
+                    return AddressablesLocationType.Staging;
+                case "prod":
+                case "production":
+                    return AddressablesLocationType.Production;
+                default:
+                    Debug.LogError("Unknown addressables location, defaulting to local");
+                    return AddressablesLocationType.Local;
+            }
         }
     }
 }

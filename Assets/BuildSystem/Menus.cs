@@ -5,8 +5,11 @@ namespace BuildSystem
     public static class Menus
     {
         private static bool DevelopmentMode = true;
-        private static bool LocalAddressables = true;
+        private static BuildParams.AddressablesLocationType AddressablesLocation =
+            BuildParams.AddressablesLocationType.Local;
 
+#region Development Mode        
+        
         [MenuItem("Builds/Settings/Enable Development Mode", true)]
         public static bool EnableDeveloperModeValidate()
         {
@@ -31,30 +34,68 @@ namespace BuildSystem
             DevelopmentMode = false;
         }
 
-        [MenuItem("Builds/Settings/Local Addressables", true)]
+#endregion        
+
+#region AddressablesLocation 
+
+#region Local Addressables Location
+        [MenuItem("Builds/Settings/Addressable Location/Local", true)]
         public static bool EnableLocalAddressablesValidate()
         {
-            return !LocalAddressables;
+            return AddressablesLocation != BuildParams.AddressablesLocationType.Local;
         }
 
-        [MenuItem("Builds/Settings/Local Addressables", false)]
+        [MenuItem("Builds/Settings/Addressable Location/Local", false)]
         public static void EnableLocalAddressables()
         {
-            LocalAddressables = true;
+            AddressablesLocation = BuildParams.AddressablesLocationType.Local;
         }
-
-        [MenuItem("Builds/Settings/Remote Addressables", true)]
-        public static bool DisableLocalAddressablesValidate()
-        {
-            return LocalAddressables;
-        }
-
-        [MenuItem("Builds/Settings/Remote Addressables", false)]
-        public static void DisableLocalAddressables()
-        {
-            LocalAddressables = false;
-        }        
+#endregion
         
+#region Dev Addressables Location
+        [MenuItem("Builds/Settings/Addressable Location/Dev", true)]
+        public static bool EnableDevlAddressablesValidate()
+        {
+            return AddressablesLocation != BuildParams.AddressablesLocationType.Development;
+        }
+
+        [MenuItem("Builds/Settings/Addressable Location/Dev", false)]
+        public static void EnableDevAddressables()
+        {
+            AddressablesLocation = BuildParams.AddressablesLocationType.Development;
+        }
+#endregion
+
+#region Staging Addressables Location
+        [MenuItem("Builds/Settings/Addressable Location/Staging", true)]
+        public static bool EnableStagingAddressablesValidate()
+        {
+            return AddressablesLocation != BuildParams.AddressablesLocationType.Staging;
+        }
+
+        [MenuItem("Builds/Settings/Addressable Location/Staging", false)]
+        public static void EnableStagingAddressables()
+        {
+            AddressablesLocation = BuildParams.AddressablesLocationType.Staging;
+        }
+#endregion
+
+#region Production Addressables Location
+        [MenuItem("Builds/Settings/Addressable Location/Prod", true)]
+        public static bool EnableProdAddressablesValidate()
+        {
+            return AddressablesLocation != BuildParams.AddressablesLocationType.Production;
+        }
+
+        [MenuItem("Builds/Settings/Addressable Location/Prod", false)]
+        public static void EnableProdAddressables()
+        {
+            AddressablesLocation = BuildParams.AddressablesLocationType.Production;
+        }
+#endregion
+
+#endregion
+
         [MenuItem("Builds/Platforms/WebGL")]
         public static void BuildWebGL()
         {
@@ -64,7 +105,7 @@ namespace BuildSystem
 
         private static BuildParams GetBuildParams()
         {
-            return BuildParams.WithValues(DevelopmentMode, LocalAddressables);
+            return BuildParams.WithValues(DevelopmentMode, AddressablesLocation);
         }
     }
 }

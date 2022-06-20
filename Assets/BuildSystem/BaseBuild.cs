@@ -55,29 +55,44 @@ namespace BuildSystem
 
         private bool SetAddressableBundleLocation(BuildParams parameters)
         {
-            var buildPath = new StringBuilder();
-            if (!string.IsNullOrWhiteSpace(parameters.BuildPath)) buildPath.Append(parameters.BuildPath);
-            if (!string.IsNullOrWhiteSpace(parameters.BuildNumber)) buildPath.Append(parameters.BuildNumber);
             var settings = AddressableAssetSettingsDefaultObject.Settings;
-            if (parameters.LocalAddressables)
+
+            if (parameters.AddressablesLocation == BuildParams.AddressablesLocationType.Local)
             {
                 Debug.Log("Setting Build and Load paths to Local");
-                SetAddressablePathTypes(settings, "LocalBuildPath", "LocalLoadPath");
-                return true;
+                return SetAddressablePathTypes(settings, "LocalBuildPath", "LocalLoadPath");;
             }
 
+            string buildPath;
+            switch (parameters.AddressablesLocation)
+            {
+                case BuildParams.AddressablesLocationType.Development:
+                    buildPath = $"build-{parameters.BuildNumber}";
+                    break;
+                case BuildParams.AddressablesLocationType.Staging:
+                    buildPath = "staging";
+                    break;
+                case BuildParams.AddressablesLocationType.Production:
+                    buildPath = "production";
+                    break;
+                default:
+                    Debug.LogError($"Unknown addressables location {parameters.AddressablesLocation}");
+                    return false;
+            }
+            
             try
             {
                 Debug.Log("Setting Build and Load paths to Remote");
-                SetAddressablePathTypes(settings, "RemoteBuildPath", "RemoteLoadPath");
-                if (buildPath.Length == 0) return true;
-                string buildPathString = buildPath.ToString();
+                if (!SetAddressablePathTypes(settings, "RemoteBuildPath", "RemoteLoadPath"))
+                {
+                    return false;
+                }
                 List<string> profileNames = settings.profileSettings.GetAllProfileNames();
                 foreach (string profileName in profileNames)
                 {
-                    Debug.Log($"Setting {profileName} build path to {buildPathString}");
+                    Debug.Log($"Setting {profileName} build path to {buildPath}");
                     string id = settings.profileSettings.GetProfileId(profileName);
-                    settings.profileSettings.SetValue(id, "BuildPath", buildPathString);
+                    settings.profileSettings.SetValue(id, "BuildPath", buildPath);
                 }
 
                 return true;
