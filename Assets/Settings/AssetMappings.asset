@@ -15,16 +15,25 @@ MonoBehaviour:
   factions:
   - dataFaction: {fileID: -1697855209747215840, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
       type: 2}
-    connectivityGraph: {fileID: 11400000, guid: 2952c0ae40dbb404ebd1d194fdc95eba,
-      type: 2}
+    connectivityGraph:
+      m_AssetGUID: 2952c0ae40dbb404ebd1d194fdc95eba
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
   - dataFaction: {fileID: 9100265950593429017, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
       type: 2}
-    connectivityGraph: {fileID: 11400000, guid: 2952c0ae40dbb404ebd1d194fdc95eba,
-      type: 2}
+    connectivityGraph:
+      m_AssetGUID: 2952c0ae40dbb404ebd1d194fdc95eba
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
   - dataFaction: {fileID: 1148844585822575097, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
       type: 2}
-    connectivityGraph: {fileID: 11400000, guid: 2952c0ae40dbb404ebd1d194fdc95eba,
-      type: 2}
+    connectivityGraph:
+      m_AssetGUID: 2952c0ae40dbb404ebd1d194fdc95eba
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
   mechChassis:
   - dataMechModel: {fileID: 8413216818550338364, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
       type: 2}
@@ -62,3 +71,4 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
+  mysteryCrates: []

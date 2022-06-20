@@ -13,6 +13,12 @@ namespace SupremacyHangar.Runtime.ContentLoader
 { 
     public class AddressablesManager : MonoInstaller
     {
+        [Inject]
+        private SupremacyGameObject _playerInventory;
+
+        [Inject]
+        private ContentSignalHandler _contentSignalHandler;
+
         public AssetReference TargetMech { get; set; }
         public AssetReference TargetSkin { get; set; }
 
@@ -25,7 +31,6 @@ namespace SupremacyHangar.Runtime.ContentLoader
         [SerializeField] private AssetReferenceAssetMappings assetMappingsReference;
 
         private AssetMappings mappings;
-        private bool mappingsLoaded = false;
 
         public override void InstallBindings()
         {
@@ -60,9 +65,26 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 return;
             }
 
-            Debug.Log("I AM LOAD");
-            mappingsLoaded = true;
             mappings = operation.Result;
+
+            _playerInventory.factionGraph = mappings.FactionHallwayByGuid[_playerInventory.faction].ConnectivityGraph;
+            foreach(var silo in _playerInventory.Silos)
+            {
+                switch(silo)
+                {
+                    case Mech mech:
+                        mech.MechChassisDetails = mappings.MechChassisPrefabByGuid[mech.mech_id];
+                        mech.MechSkinDetails = mappings.MechSkinAssetByGuid[mech.skin_id];
+                        break;
+                    case MysteryBox box:
+                        box.MysteryCrateDetails = mappings.MysteryCrateAssetByGuid[box.mystery_crate_id];
+                        break;
+                    default:
+                        Debug.LogError($"Unknown silo of type {silo}.");
+                        break;
+                }
+            }
+            _contentSignalHandler.InventoryLoaded();
         }
         
         private bool ValidateMappings()
