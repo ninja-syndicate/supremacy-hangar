@@ -5,6 +5,7 @@ using UnityEditorInternal;
 using UnityEngine;
 using System.Reflection;
 using SupremacyHangar.Runtime.ContentLoader;
+using SupremacyHangar.Runtime.ContentLoader.Types;
 
 namespace SupremacyHangar.Editor.ContentLoader
 {
@@ -14,6 +15,7 @@ namespace SupremacyHangar.Editor.ContentLoader
         private ReorderableList factionList;
         private ReorderableList mechChassisList;
         private ReorderableList mechSkinList;
+        private ReorderableList mysteryCrateList;
 
         private int selectedIndex;
         private UnityEditor.Editor _editor;
@@ -23,6 +25,7 @@ namespace SupremacyHangar.Editor.ContentLoader
             faction,
             mechChassis,
             mechSkin,
+            mysteryCrate,
         };
 
         listType currentListType;
@@ -31,10 +34,12 @@ namespace SupremacyHangar.Editor.ContentLoader
         private void OnEnable()
         {
             initTypeToNameMap();
-               selectedIndex = -1;
+            selectedIndex = -1;
+
             factionList = new ReorderableList(serializedObject, serializedObject.FindProperty("factions"));
             mechChassisList = new ReorderableList(serializedObject, serializedObject.FindProperty("mechChassis"));
             mechSkinList = new ReorderableList(serializedObject, serializedObject.FindProperty("mechSkins"));
+            mysteryCrateList = new ReorderableList(serializedObject, serializedObject.FindProperty("mysteryCrates"));
         }
 
         private void initTypeToNameMap()
@@ -46,27 +51,31 @@ namespace SupremacyHangar.Editor.ContentLoader
                 1 - data reference property name
                 2 - asset reference property name
             */
-            typeToNameMap.Add(listType.faction, new[] { "Faction", "dataFaction", "connectivityGraph" });
+            typeToNameMap.Add(listType.faction, new[] { "Factions", "dataFaction", "connectivityGraph" });
             typeToNameMap.Add(listType.mechChassis, new[] { "Mech Chassis", "dataMechModel", "mechReference" });
-            typeToNameMap.Add(listType.mechSkin, new[] { "Mech Skin", "dataMechSkin", "skinReference" });
+            typeToNameMap.Add(listType.mechSkin, new[] { "Mech Skins", "dataMechSkin", "skinReference" });
+            typeToNameMap.Add(listType.mysteryCrate, new[] { "Mystery Crates", "dataMysteryCrate", "mysteryCrateReference" });
         }
 
         public override void OnInspectorGUI()
         {
             serializedObject.Update();
+
             factionList.DoLayoutList();
             mechChassisList.DoLayoutList();
             mechSkinList.DoLayoutList();
+            mysteryCrateList.DoLayoutList();
 
-            factionListDrawElement(factionList, listType.faction);
-            factionListDrawElement(mechChassisList, listType.mechChassis);
-            factionListDrawElement(mechSkinList, listType.mechSkin);
+            DrawListElements(factionList, listType.faction);
+            DrawListElements(mechChassisList, listType.mechChassis);
+            DrawListElements(mechSkinList, listType.mechSkin);
+            DrawListElements(mysteryCrateList, listType.mysteryCrate);
 
-            SelectCallBack();
+            ElementSelectionDisplay();
             serializedObject.ApplyModifiedProperties();
         }
 
-        private void factionListDrawElement(ReorderableList list, listType type)
+        private void DrawListElements(ReorderableList list, listType type)
         {
             list.drawHeaderCallback = (Rect rect) =>
             {
@@ -83,7 +92,7 @@ namespace SupremacyHangar.Editor.ContentLoader
 
             list.elementHeightCallback = (int index) =>
             {
-                var element = factionList.serializedProperty.GetArrayElementAtIndex(index);
+                var element = list.serializedProperty.GetArrayElementAtIndex(index);
                 return EditorGUI.GetPropertyHeight(element);
             };
 
@@ -93,9 +102,11 @@ namespace SupremacyHangar.Editor.ContentLoader
                 selectedList = l;
                 currentListType = type;
             };
+
+            //Todo fix last selected element removal
         }
 
-        public void SelectCallBack()
+        public void ElementSelectionDisplay()
         {
             if (selectedIndex < 0) return;
 
@@ -116,7 +127,7 @@ namespace SupremacyHangar.Editor.ContentLoader
                 CreateCachedEditor(dataReference.objectReferenceValue, null, ref _editor);
                 _editor.OnInspectorGUI();
                 GUILayout.EndVertical();
-            }            
+            }
 
             GUILayout.EndHorizontal();
 
@@ -124,18 +135,37 @@ namespace SupremacyHangar.Editor.ContentLoader
             {
                 GUILayout.BeginVertical("GroupBox");
                 EditorGUILayout.PropertyField(assetReference);
-                if (currentListType != listType.mechChassis)
-                {
-                    string label = null;
-                    System.Type type = MyExtensionMethods.GetType(assetReference);
-                    FieldInfo fieldInfo = MyExtensionMethods.GetFieldViaPath(type, assetReference.propertyPath);
-                    CreateCachedEditor(assetReference.GetActualObjectForSerializedProperty<Skin>(fieldInfo, ref label), null, ref _editor);
-                    _editor.OnInspectorGUI();
-                }
+                AssetReferenceSelecter(assetReference);
                 GUILayout.EndVertical();
             }
             GUILayout.EndVertical();
-        }        
+        }
+        
+        private void AssetReferenceSelecter(SerializedProperty assetReference)
+        {
+            if (currentListType == listType.mechChassis || currentListType == listType.mysteryCrate) return;
+
+            string label = null;
+            System.Type type = MyExtensionMethods.GetType(assetReference);
+            FieldInfo fieldInfo = MyExtensionMethods.GetFieldViaPath(type, assetReference.propertyPath);
+
+            switch (currentListType)
+            {
+                case listType.faction:
+                    CreateCachedEditor(assetReference.GetActualObjectForSerializedProperty<AssetReferenceEnvironmentConnectivity>(fieldInfo, ref label).editorAsset, null, ref _editor);
+                    break;
+                case listType.mechChassis:
+                    Debug.LogError($"You Should not see me {currentListType}");
+                    break;
+                case listType.mechSkin:
+                    CreateCachedEditor(assetReference.GetActualObjectForSerializedProperty<AssetReferenceSkin>(fieldInfo, ref label).editorAsset, null, ref _editor);
+                    break;
+                default:
+                    Debug.LogError($"Unknown listType {currentListType}");
+                    break;
+            }
+            _editor.OnInspectorGUI();
+        }
     }
 
     public static class MyExtensionMethods
@@ -144,26 +174,15 @@ namespace SupremacyHangar.Editor.ContentLoader
         {
             var parentType = property.serializedObject.targetObject as AssetMappings;
 
-            //FieldInfo[] fi = parentType.GetFields(BindingFlags.Instance | BindingFlags.NonPublic);
-            foreach (var s in parentType.MechSkinAssetByGuid.Values)//fi[6].FieldType;
-                return s.GetType();   
+            foreach (var s in parentType.MechSkinAssetByGuid.Values)
+                return s.GetType();
             
             return null;
         }   
 
         public static FieldInfo GetFieldViaPath(this System.Type type, string path)
         {
-            System.Type parentType = type;
             FieldInfo[] fi = type.GetFields(BindingFlags.Instance | BindingFlags.NonPublic);
-            string[] perDot = path.Split('.');
-            //foreach (string fieldName in perDot)
-            //{
-            //    fi = parentType.GetField(fieldName);
-            //    if (fi != null)
-            //        parentType = fi.FieldType;
-            //    else
-            //        return null;
-            //}
             if (fi != null)
                 return fi[1];
             else return null;

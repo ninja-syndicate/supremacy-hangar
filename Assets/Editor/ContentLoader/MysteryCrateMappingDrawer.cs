@@ -21,7 +21,7 @@ namespace SupremacyHangar.Editor.ContentLoader
             {
                 return data.MysteryCrateReference.editorAsset.name;
             }
-            return "No Mech Skin Ref";
+            return "No Mystery Crate Ref";
         }
     }
 }
