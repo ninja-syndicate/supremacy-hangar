@@ -5,6 +5,7 @@ namespace BuildSystem
     public static class Menus
     {
         private static bool DevelopmentMode = true;
+        private static bool LocalAddressables = true;
 
         [MenuItem("Builds/Settings/Enable Development Mode", true)]
         public static bool EnableDeveloperModeValidate()
@@ -29,6 +30,30 @@ namespace BuildSystem
         {
             DevelopmentMode = false;
         }
+
+        [MenuItem("Builds/Settings/Local Addressables", true)]
+        public static bool EnableLocalAddressablesValidate()
+        {
+            return !LocalAddressables;
+        }
+
+        [MenuItem("Builds/Settings/Local Addressables", false)]
+        public static void EnableLocalAddressables()
+        {
+            LocalAddressables = true;
+        }
+
+        [MenuItem("Builds/Settings/Remote Addressables", true)]
+        public static bool DisableLocalAddressablesValidate()
+        {
+            return LocalAddressables;
+        }
+
+        [MenuItem("Builds/Settings/Remote Addressables", false)]
+        public static void DisableLocalAddressables()
+        {
+            LocalAddressables = false;
+        }        
         
         [MenuItem("Builds/Platforms/WebGL")]
         public static void BuildWebGL()
@@ -39,7 +64,7 @@ namespace BuildSystem
 
         private static BuildParams GetBuildParams()
         {
-            return BuildParams.WithValues(DevelopmentMode);
+            return BuildParams.WithValues(DevelopmentMode, LocalAddressables);
         }
     }
 }

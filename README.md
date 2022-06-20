@@ -47,10 +47,11 @@ If run as part of a build script, the `PreWarm()` method should be run in a smal
 
 Parameters should be specified _after_ the -executeMethod argument. 
 
-| CLI Param       | Env. Var           | Default      | Description                                                                                            |
-|-----------------|--------------------|--------------|--------------------------------------------------------------------------------------------------------|
-| `-development`  | `DEVELOPMENT_MODE` | disabled     | If specified (CLI) or true (ENV), build the project in development mode with debugging support enabled |
-
+| CLI Param            | Env. Var             | Default      | Description                                                                                            |
+|----------------------|----------------------|--------------|--------------------------------------------------------------------------------------------------------|
+| `-development`       | `DEVELOPMENT_MODE`   | disabled     | If specified (CLI) or true (ENV), build the project in development mode with debugging support enabled |
+| `-localaddressables` | `LOCAL_ADDRESSABLES` | disabled     | If specified (CLI) or true (ENV), addressables are build to run from the local location                |
+  
 ### Examples
 
  * Windows Editor 2021.3.4f1 installed via Hub
