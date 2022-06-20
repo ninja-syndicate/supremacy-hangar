@@ -3,12 +3,13 @@ using System;
 using UnityEngine.InputSystem;
 using Zenject;
 using SupremacyHangar.Runtime.Interaction;
+using Unity.Mathematics;
 
 namespace SupremacyHangar.Runtime
 {
 	[RequireComponent(typeof(CharacterController))]
 	[RequireComponent(typeof(PlayerInput))]
-
+	[DefaultExecutionOrder(1)]
 	public class FirstPersonController : MonoBehaviour
 	{
 		[Header("Player")]
@@ -50,7 +51,11 @@ namespace SupremacyHangar.Runtime
 		public float TopClamp = 90.0f;
 		[Tooltip("How far in degrees can you move the camera down")]
 		public float BottomClamp = -90.0f;
-
+		
+		public event Action OnInteractionTriggered;
+		
+		public float3 PlatformVelocity = float3.zero;
+		
 		// cinemachine
 		private float _cinemachineTargetPitch;
 
@@ -88,20 +93,6 @@ namespace SupremacyHangar.Runtime
 		public bool cursorInputForLook = true;
 #endif
 
-		private InteractionSignalHandler _interactionSignalHandler;
-
-		private InteractionType interactedWith;
-		private bool _subscribed;
-		private SignalBus _bus;
-
-		[Inject]
-		public void Construct(InteractionSignalHandler interactionSignalHandler, SignalBus bus)
-        {
-			_bus = bus;
-			SubscribeToSignal();
-			_interactionSignalHandler = interactionSignalHandler;
-        }
-
 		public void Awake()
 		{
 			// get a reference to our main camera
@@ -110,13 +101,6 @@ namespace SupremacyHangar.Runtime
 				_mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 			}
 			if (!ValidateAndSetupComponentReferences()) return;
-		}
-
-		private void SubscribeToSignal()
-		{
-			if (_bus == null || _subscribed) return;
-			_bus.Subscribe<PlayerInteractionChangeSignal>(ChangeMyInteraction);
-			_subscribed = true;
 		}
 		
 		private void Start()
@@ -134,17 +118,11 @@ namespace SupremacyHangar.Runtime
 		public void OnEnable()
 		{
 			if (!BindToInputs()) return; 
-			SubscribeToSignal();
 		}
 
 		public void OnDisable()
 		{
 			UnbindInputs();
-			if(_subscribed)
-			{
-				_bus.Unsubscribe<PlayerInteractionChangeSignal>(ChangeMyInteraction);
-				_subscribed = false;
-			}
 		}
 
 		private bool ValidateAndSetupComponentReferences()
@@ -248,25 +226,10 @@ namespace SupremacyHangar.Runtime
         private void OnInteractionChange(InputAction.CallbackContext context)
 		{
 			if (context.phase == InputActionPhase.Canceled) return;
-            switch (interactedWith)
-            {
-                case InteractionType.Silo:
-                    _interactionSignalHandler.LoadSilo(interactedWith);
-                    break;
-                case InteractionType.Elevator:
-                    _interactionSignalHandler.InteractWithElevator(interactedWith);
-                    break;
-                default:
-                    Debug.LogError($"Unkown signal type {interactedWith}", this);
-                    break;
-            }
+			OnInteractionTriggered?.Invoke();
         }
-		private void ChangeMyInteraction(PlayerInteractionChangeSignal signal)
-		{
-			interactedWith = signal.Type;
-		}
 
-		private void Update()
+        private void Update()
 		{
 			JumpAndGravity();
 			GroundedCheck();
@@ -282,6 +245,8 @@ namespace SupremacyHangar.Runtime
 		{
 			// set sphere position, with offset
 			Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z);
+			//If we're going down, to keep the grounded check working, we need to adjust the spherecheck
+			if (PlatformVelocity.y < 0) spherePosition.y += PlatformVelocity.y;
 			Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers, QueryTriggerInteraction.Ignore);
 		}
 
@@ -350,8 +315,13 @@ namespace SupremacyHangar.Runtime
 				inputDirection = transform.right * move.x + transform.forward * move.y;
 			}
 
+			var nextMove = inputDirection.normalized * (_speed * Time.deltaTime);
+			nextMove += new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime;
+			if (Grounded) nextMove += new Vector3(PlatformVelocity.x, PlatformVelocity.y, PlatformVelocity.z);
+			PlatformVelocity = float3.zero;
+
 			// move the player
-			_controller.Move(inputDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+			_controller.Move(nextMove);
 		}
 
 		private void JumpAndGravity()
@@ -364,7 +334,7 @@ namespace SupremacyHangar.Runtime
 				// stop our velocity dropping infinitely when grounded
 				if (_verticalVelocity < 0.0f)
 				{
-					_verticalVelocity = -2f;
+					_verticalVelocity = 0;
 				}
 
 				// Jump
@@ -373,7 +343,7 @@ namespace SupremacyHangar.Runtime
 					// the square root of H * -2 * G = how much velocity needed to reach desired height
 					_verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
 				}
-
+				
 				// jump timeout
 				if (_jumpTimeoutDelta >= 0.0f)
 				{
@@ -393,12 +363,12 @@ namespace SupremacyHangar.Runtime
 
 				// if we are not grounded, do not jump
 				jump = false;
-			}
-
-			// apply gravity over time if under terminal (multiply by delta time twice to linearly speed up over time)
-			if (_verticalVelocity < _terminalVelocity)
-			{
-				_verticalVelocity += Gravity * Time.deltaTime;
+				
+				// apply gravity over time if under terminal (multiply by delta time twice to linearly speed up over time)
+				if (_verticalVelocity < _terminalVelocity)
+				{
+					_verticalVelocity += Gravity * Time.deltaTime;
+				}
 			}
 		}
 

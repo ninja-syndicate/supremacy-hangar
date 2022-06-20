@@ -65,7 +65,6 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 return;
             }
 
-            Debug.Log("I AM LOAD");
             mappings = operation.Result;
 
             _playerInventory.factionGraph = mappings.FactionHallwayByGuid[_playerInventory.faction].ConnectivityGraph;

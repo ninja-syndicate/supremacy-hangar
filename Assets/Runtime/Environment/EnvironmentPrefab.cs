@@ -8,6 +8,9 @@ namespace SupremacyHangar.Runtime.Environment
     public class EnvironmentPrefab : MonoBehaviour, ISerializationCallbackReceiver
     {
         [SerializeField] private ConnectivityNode prefabName;
+
+        [SerializeField] private Transform spawnPoint;
+        
         public ConnectivityNode PrefabName => prefabName;
         
         [SerializeField] private List<Joiner> joins = new();
@@ -20,8 +23,16 @@ namespace SupremacyHangar.Runtime.Environment
 
         public List<Collider> ColliderList { get; set; } = new();
 
+        public Transform SpawnPoint => spawnPoint;
+        public bool SpawnPointValid { get; private set; }
+        
         public bool wasConnected { get; internal set; }
 
+        public void Awake()
+        {
+            SpawnPointValid = spawnPoint != null;
+        }
+        
         public void ToggleDoor()
         {
             foreach (Collider c in ColliderList)

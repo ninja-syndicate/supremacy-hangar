@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8403417602339647703
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ccb82bab09b41d4296657230636e11d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorColliderOption: 1
+  updateRoom: 0
 --- !u!1101 &-8016958753744767507
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -133,6 +147,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec34a5b2fbab95841ad38512b8d41bfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-3320311064835040931
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ccb82bab09b41d4296657230636e11d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorColliderOption: 2
+  updateRoom: 0
 --- !u!1102 &-2901591505859213191
 AnimatorState:
   serializedVersion: 6
@@ -145,8 +173,7 @@ AnimatorState:
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -5346335302245305665}
-  m_StateMachineBehaviours:
-  - {fileID: 4670247252807872747}
+  m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -174,7 +201,7 @@ AnimatorState:
   m_Transitions:
   - {fileID: -7497014409312778202}
   m_StateMachineBehaviours:
-  - {fileID: -6412865794211208659}
+  - {fileID: -3320311064835040931}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -311,7 +338,7 @@ AnimatorState:
   m_Transitions:
   - {fileID: 2490481359739812381}
   m_StateMachineBehaviours:
-  - {fileID: -5343533164324401568}
+  - {fileID: -8403417602339647703}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
