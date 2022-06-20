@@ -76,7 +76,7 @@ MonoBehaviour:
       - {fileID: 11400000, guid: b1455639bfd83dc48a72059e08ab397f, type: 2}
   - referenceName: {fileID: 11400000, guid: 529252d15a06d6546826646e401deb92, type: 2}
     Reference:
-      m_AssetGUID: 6c3809ce056848149ba60e4a313aa781
+      m_AssetGUID: b018ad848f4114e62bd27cd1b7cbe2b0
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0

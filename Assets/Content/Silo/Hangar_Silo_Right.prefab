@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &821446330027626394
 Transform:
   m_ObjectHideFlags: 0
@@ -878,7 +878,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ff01ddb75b74d43c793f9ef2e5f2114f,
         type: 3}
       propertyPath: m_Name
-      value: MechSilo_Final
+      value: MechSilo_Right
       objectReference: {fileID: 0}
     - target: {fileID: 1279619006098796215, guid: ff01ddb75b74d43c793f9ef2e5f2114f,
         type: 3}
