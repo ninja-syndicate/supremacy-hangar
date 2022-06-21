@@ -11,12 +11,13 @@ namespace SupremacyHangar.Editor.ContentLoader
         
         protected override string StaticDataPropertySummary(Runtime.ContentLoader.MysteryCrateMapping data)
         {
+            if (data == null) return "No Data";
             return data.DataMysteryCrate != null ? data.DataMysteryCrate.name : "No Static Data";
         }
 
         protected override string AssetPropertySummary(Runtime.ContentLoader.MysteryCrateMapping data)
         {
-            
+            if (data == null) return "No Data";
             if (data.MysteryCrateReference != null && data.MysteryCrateReference.editorAsset != null)
             {
                 return data.MysteryCrateReference.editorAsset.name;

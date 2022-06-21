@@ -1,11 +1,10 @@
-using SupremacyHangar.Runtime.ScriptableObjects;
 using System.Collections.Generic;
 using UnityEditor;
-using UnityEditorInternal;
 using UnityEngine;
 using System.Reflection;
 using SupremacyHangar.Runtime.ContentLoader;
 using SupremacyHangar.Runtime.ContentLoader.Types;
+using Malee.List;
 
 namespace SupremacyHangar.Editor.ContentLoader
 {
@@ -36,10 +35,12 @@ namespace SupremacyHangar.Editor.ContentLoader
             initTypeToNameMap();
             selectedIndex = -1;
 
-            factionList = new ReorderableList(serializedObject, serializedObject.FindProperty("factions"));
-            mechChassisList = new ReorderableList(serializedObject, serializedObject.FindProperty("mechChassis"));
-            mechSkinList = new ReorderableList(serializedObject, serializedObject.FindProperty("mechSkins"));
-            mysteryCrateList = new ReorderableList(serializedObject, serializedObject.FindProperty("mysteryCrates"));
+            factionList = new ReorderableList(serializedObject.FindProperty("factions"));
+            mechChassisList = new ReorderableList(serializedObject.FindProperty("mechChassis"));
+            mechSkinList = new ReorderableList(serializedObject.FindProperty("mechSkins"));
+            mechSkinList.paginate = true;
+            mechSkinList.pageSize = 20;
+            mysteryCrateList = new ReorderableList(serializedObject.FindProperty("mysteryCrates"));
         }
 
         private void initTypeToNameMap()
@@ -75,42 +76,28 @@ namespace SupremacyHangar.Editor.ContentLoader
             serializedObject.ApplyModifiedProperties();
         }
 
-        private void DrawListElements(ReorderableList list, listType type)
+        private void DrawListElements(ReorderableList list, listType type) 
         {
-            list.drawHeaderCallback = (Rect rect) =>
-            {
-                EditorGUI.LabelField(rect, typeToNameMap[type][0]);
-            };
-
-            list.drawElementCallback =
-                (Rect rect, int index, bool isActive, bool isFocused) =>
-                {
-                    var element = list.serializedProperty.GetArrayElementAtIndex(index);
-                    rect.x += 10;
-                    EditorGUI.PropertyField(rect, element);
-                };
-
-            list.elementHeightCallback = (int index) =>
-            {
-                var element = list.serializedProperty.GetArrayElementAtIndex(index);
-                return EditorGUI.GetPropertyHeight(element);
-            };
-
             list.onSelectCallback = (ReorderableList l) =>
             {
-                selectedIndex = l.index;
+                selectedIndex = l.Index;
                 selectedList = l;
                 currentListType = type;
             };
 
             //Todo fix last selected element removal
+            list.onRemoveCallback = (ReorderableList l) =>
+            {
+                selectedIndex = -1;
+                l.RemoveItem(l.Index);
+            };
         }
 
         public void ElementSelectionDisplay()
         {
             if (selectedIndex < 0) return;
 
-            var selectedElement = selectedList.serializedProperty.GetArrayElementAtIndex(selectedIndex);
+            var selectedElement = selectedList.GetItem(selectedIndex);
             var dataReference = selectedElement.FindPropertyRelative(typeToNameMap[currentListType][1]);
             var assetReference = selectedElement.FindPropertyRelative(typeToNameMap[currentListType][2]);
 
@@ -140,7 +127,7 @@ namespace SupremacyHangar.Editor.ContentLoader
             }
             GUILayout.EndVertical();
         }
-        
+
         private void AssetReferenceSelecter(SerializedProperty assetReference)
         {
             if (currentListType == listType.mechChassis || currentListType == listType.mysteryCrate) return;
@@ -174,7 +161,7 @@ namespace SupremacyHangar.Editor.ContentLoader
         {
             var parentType = property.serializedObject.targetObject as AssetMappings;
 
-            foreach (var s in parentType.MechSkinAssetByGuid.Values)
+            foreach (var s in parentType.MechSkinAssetByGuid.Values) 
                 return s.GetType();
             
             return null;

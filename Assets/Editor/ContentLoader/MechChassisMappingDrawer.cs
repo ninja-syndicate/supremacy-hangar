@@ -10,11 +10,13 @@ namespace SupremacyHangar.Editor.ContentLoader
 
         protected override string StaticDataPropertySummary(Runtime.ContentLoader.MechChassisMapping data)
         {
+            if (data == null) return "No Data";
             return data.DataMechModel != null ? data.DataMechModel.name : "No Static Data";
         }
 
         protected override string AssetPropertySummary(Runtime.ContentLoader.MechChassisMapping data)
         {
+            if (data == null) return "No Data";
             if (data.MechReference != null && data.MechReference.editorAsset != null)
             {
                 return data.MechReference.editorAsset.name; 
