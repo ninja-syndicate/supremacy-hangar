@@ -31,4 +31,4 @@ jobs:
         steps:
             - name: Synchronize
               run: |
-                  winscp "scp://${{ secrets.SSH_USER}}@${{ secrets.SSH_HOST }}" /privatekey=C:\etc\ssh\build_machine.ppk /command "synchronize remote C:\actions-runner\_work\supremacy-hangar\supremacy-hangar\Builds\WebGL\ /var/www/html/supremacy-hangar/dev-build/" "exit"
+                  winscp "scp://${{ secrets.SSH_USER}}@${{ secrets.SSH_HOST }}" /privatekey=C:\etc\ssh\build_machine.ppk -hostkey="${{ secrets.SSH_KNOWN_HOSTS }}" /command "synchronize remote C:\actions-runner\_work\supremacy-hangar\supremacy-hangar\Builds\WebGL\ /var/www/html/supremacy-hangar/dev-build/" "exit"
