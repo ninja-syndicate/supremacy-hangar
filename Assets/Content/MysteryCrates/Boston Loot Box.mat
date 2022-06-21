@@ -127,6 +127,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _Emission_Intensity: 5.55
+    - _Enable_Tiled_Emission: 0
     - _EnvironmentReflections: 1
     - _Global_Normal_Intensity: 1
     - _GlossMapScale: 0

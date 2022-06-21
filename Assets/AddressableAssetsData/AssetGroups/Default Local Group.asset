@@ -41,6 +41,30 @@ MonoBehaviour:
     m_Address: AssetMappings.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 332fa22ebccb8564c8be3c0bfc8a4810
+    m_Address: Assets/Content/MysteryCrates/LootBox_Boston_External.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f23e285582382894fb3e7e4a4d8ccccf
+    m_Address: Assets/Content/MysteryCrates/Lootbox_Archon_External.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6f256335596761241b6a807e8183ad85
+    m_Address: Assets/Content/MysteryCrates/LootBox_RM_External.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6259ec431237e304d92a5653ba193e92
+    m_Address: Assets/Content/MysteryCrates/LootBox_Pyro_External.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7c13b8492c7a4074087c61976c06d3e3
+    m_Address: Assets/Content/MysteryCrates/LootBox_Zaibatsu_External.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fa3eb5c4fa97bc14a900f0b7aa2bd498
+    m_Address: Assets/Content/MysteryCrates/LootBox_Warsui_External.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
   m_SchemaSet:
