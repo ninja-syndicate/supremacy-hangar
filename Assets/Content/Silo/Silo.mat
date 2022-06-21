@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Silo
-  m_Shader: {fileID: -6465566751694194690, guid: f9c8e51614f1949c9bf2d6fb16d85a21,
+  m_Shader: {fileID: -6465566751694194690, guid: c68d1059eba91814c89528c99476ff53,
     type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
