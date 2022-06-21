@@ -4,31 +4,25 @@ on:
     workflow_dispatch: {}
 
 jobs:
-    # build:
-    #     runs-on: [self-hosted, windows, x64]
-    #     steps:
-    #         - name: Checkout Repository
-    #           uses: actions/checkout@v3
-    #           with:
-    #               fetch-depth: "0"
-    #               lfs: true
+    build:
+        runs-on: [self-hosted, windows, x64]
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v3
+              with:
+                  fetch-depth: "0"
+                  lfs: true
 
-    #         - name: Prewarm
-    #           run: Start-Process -FilePath "C:\actions-runner\_work\supremacy-hangar\supremacy-hangar\prewarm.bat" -Wait -WindowStyle Hidden
+            - name: Prewarm
+              run: Start-Process -FilePath "C:\actions-runner\_work\supremacy-hangar\supremacy-hangar\prewarm.bat" -Wait -WindowStyle Hidden
 
-    #         - name: Build
-    #           run: Start-Process -FilePath "C:\actions-runner\_work\supremacy-hangar\supremacy-hangar\build.bat" -Wait -WindowStyle Hidden
+            - name: Build
+              run: Start-Process -FilePath "C:\actions-runner\_work\supremacy-hangar\supremacy-hangar\build.bat" -Wait -WindowStyle Hidden
 
-    #         - name: Zip Build
-    #           run: |
-    #               Set-Location -Path 'C:\actions-runner\_work\supremacy-hangar\supremacy-hangar'
-    #               Push-Location '.\Builds\WebGL\'
-    #               Compress-Archive -Path ".\*" -DestinationPath "..\..\build-v${{ github.run_number }}.zip"
-    #               Pop-Location
     deploy:
-        # needs: [build]
+        needs: [build]
         runs-on: [self-hosted, windows, x64]
         steps:
             - name: Synchronize
               run: |
-                  winscp "scp://${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}" /privatekey=C:\etc\ssh\build_machine.ppk -hostkey="${{ secrets.SSH_HOSTKEY }}" /command "synchronize remote C:\actions-runner\_work\supremacy-hangar\supremacy-hangar\Builds\WebGL\ /var/www/html/supremacy-hangar/dev-build/" "exit"
+                  winscp "scp://${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}" /privatekey=C:\etc\ssh\build_machine.ppk -hostkey="${{ secrets.SSH_HOSTKEY }}" /command "synchronize remote -mirror C:\actions-runner\_work\supremacy-hangar\supremacy-hangar\Builds\WebGL\ /var/www/html/supremacy-hangar/dev-build/" "exit"
