@@ -25,12 +25,12 @@ MonoBehaviour:
     m_Address: Hallway-Connector
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 6c3809ce056848149ba60e4a313aa781
-    m_Address: Hangar_Silo_02_Greybox.prefab
+  - m_GUID: b018ad848f4114e62bd27cd1b7cbe2b0
+    m_Address: Hangar_Silo_Left.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 9a955d9e8bbecf4449c699e011487558
-    m_Address: Hangar_Silo_01_Greybox.prefab
+    m_Address: Hangar_Silo_Left.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: b90b9b7825ebb344a89a6d6f28cad701
@@ -38,7 +38,7 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 803e5cb4a07a7474ca807f6f5941b7be
-    m_Address: Assets/Settings/AssetMappings.asset
+    m_Address: AssetMappings.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
