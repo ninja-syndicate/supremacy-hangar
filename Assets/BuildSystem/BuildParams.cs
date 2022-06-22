@@ -30,7 +30,7 @@ namespace BuildSystem
 
         public AddressablesLocationType AddressablesLocation { get; private set; }
         public string BuildNumber { get; private set; }
-
+        
         public void UpdateFromEnvironment()
         {
             var envVars = Environment.GetEnvironmentVariables();
@@ -41,6 +41,7 @@ namespace BuildSystem
 
             if (envVars.Contains(LocalAddressablesEnableENV))
             {
+                BuildAddressables = true;
                 AddressablesLocation = ParseAddressablesLocation(envVars[DevelopmentModeEnableEnv].ToString());
             }
         }
@@ -89,6 +90,7 @@ namespace BuildSystem
                     DevelopmentMode = true;
                     break;
                 case AddressablesLocationCLI:
+                    BuildAddressables = true;
                     AddressablesLocation = ParseAddressablesLocation(paramQueue.Dequeue());
                     break;
                 default:

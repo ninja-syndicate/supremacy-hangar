@@ -48,9 +48,8 @@ namespace BuildSystem
             if (!SetAddressableBundleLocation(parameters)) return false;
             AddressableAssetSettings.CleanPlayerContent();
             BuildCache.PurgeCache(false);
-            AddressableAssetSettings.BuildPlayerContent();
-            
-            return true;
+            AddressableAssetSettings.BuildPlayerContent(out var result);
+            return string.IsNullOrEmpty(result.Error);
         }
 
         private bool SetAddressableBundleLocation(BuildParams parameters)
