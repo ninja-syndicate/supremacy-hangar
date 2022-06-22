@@ -1,0 +1,45 @@
+name: Production CI
+
+on:
+    push:
+        branches: ["main"]
+
+jobs:
+    build:
+        runs-on: [self-hosted, windows, x64]
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v3
+              with:
+                  fetch-depth: "0"
+                  lfs: true
+
+            - name: Git LFS Pull
+              run: |
+                  git lfs pull
+                  git add .
+                  git reset --hard
+
+            - name: Prewarm
+              run: |
+                  $unityPath="C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe"
+                  $projectPath="C:\actions-runner\_work\supremacy-hangar\supremacy-hangar"
+                  Set-Location -Path "$projectPath\"
+                  Start-Process -FilePath $unityPath -ArgumentList "-batchmode -quit -buildTarget WebGL -projectPath $projectPath -logFile prewarm_log.txt -executeMethod BuildSystem.CLI.PreWarm -addressablesLocation prod" -Wait -WindowStyle Hidden
+
+            - name: Build
+              run: |
+                  $unityPath="C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe"
+                  $projectPath="C:\actions-runner\_work\supremacy-hangar\supremacy-hangar"
+                  Set-Location -Path "$projectPath\"
+                  Start-Process -FilePath $unityPath -ArgumentList "-batchmode -quit -buildTarget WebGL -projectPath $projectPath -logFile build_log.txt -executeMethod BuildSystem.CLI.BuildWebGL -addressablesLocation prod" -Wait -WindowStyle Hidden
+
+    deploy:
+        needs: [build]
+        runs-on: [self-hosted, windows, x64]
+        steps:
+            - name: Synchronize
+              run: |
+                  winscp "scp://${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}" /privatekey=C:\etc\ssh\build_machine.ppk -hostkey="${{ secrets.SSH_HOSTKEY }}" /command "synchronize remote -mirror C:\actions-runner\_work\supremacy-hangar\supremacy-hangar\Builds\WebGL\Build\ /var/www/html/supremacy-hangar/build/production/" "exit"
+                  winscp "scp://${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}" /privatekey=C:\etc\ssh\build_machine.ppk -hostkey="${{ secrets.SSH_HOSTKEY }}" /command "synchronize remote -mirror C:\actions-runner\_work\supremacy-hangar\supremacy-hangar\Builds\WebGL\StreamingAssets /var/www/html/supremacy-hangar/build/production/" "exit"
+                  winscp "scp://${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}" /privatekey=C:\etc\ssh\build_machine.ppk -hostkey="${{ secrets.SSH_HOSTKEY }}" /command "synchronize remote -mirror C:\actions-runner\_work\supremacy-hangar\supremacy-hangar\ServerData\WebGL /var/www/html/supremacy-hangar/addressables/production/" "exit"
