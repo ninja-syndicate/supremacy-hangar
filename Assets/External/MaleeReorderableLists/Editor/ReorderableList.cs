@@ -1626,10 +1626,7 @@ namespace Malee.List {
 				selection.Select(pressIndex = index);
 			}
 
-			if (onSelectCallback != null) {
-
-				onSelectCallback(this);
-			}
+			onSelectCallback?.Invoke(this);
 
 			if (draggable) {
 
