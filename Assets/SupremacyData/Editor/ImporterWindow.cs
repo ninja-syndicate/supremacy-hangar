@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using UnityEditor;
+using UnityEditor.VersionControl;
 using UnityEngine;
 
 namespace SupremacyData.Editor
@@ -114,6 +115,7 @@ namespace SupremacyData.Editor
             logWidget.LogNormal("Update Begins");
             try
             {
+                AssetDatabase.StartAssetEditing();
                 factionsImporter ??= new Importers.Factions(logWidget, importDirectory);
                 brandsImporter ??= new Importers.Brands(logWidget, importDirectory);
                 battleAbilitiesImporter ??= new Importers.BattleAbilities(logWidget, importDirectory);
@@ -143,7 +145,6 @@ namespace SupremacyData.Editor
                 logWidget.LogNormal("Updating mystery crates");
                 Repaint();
                 await mysteryCratesImporter.Update(myData);
-                
                 logWidget.LogNormal("Import completed");
             }
             catch (Exception e)
@@ -154,6 +155,7 @@ namespace SupremacyData.Editor
             }
             finally
             {
+                AssetDatabase.StopAssetEditing();
                 EditorUtility.SetDirty(myData);
                 AssetDatabase.SaveAssetIfDirty(myData);
                 busy = false;
