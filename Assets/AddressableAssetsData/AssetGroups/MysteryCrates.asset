@@ -17,10 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: c69d0de4e306b2a43b300841ed4f2ae5
   m_SerializeEntries:
-  - m_GUID: feda125ae455b094faa4c272c784b499
-    m_Address: SampleLoot.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 332fa22ebccb8564c8be3c0bfc8a4810
     m_Address: LootBox_Boston_External.prefab
     m_ReadOnly: 0
