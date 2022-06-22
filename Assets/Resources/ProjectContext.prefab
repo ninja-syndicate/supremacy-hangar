@@ -127,12 +127,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f95414623b6d10046a61dfd6eda58f19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonTestFragment: "{\n    \"faction\": \"880db344-e405-428d-84e5-6ebebab1fe6d\",\r\n   
-    \"silos\":\r\n    [\r\n        {\r\n            \"type\": \"mech\",\r\n           
-    \"ownership_id\": \"465fe68c-6487-4f78-92aa-218cf129e071\",\r\n            \"mech_id\":
-    \"625cd381-7c66-4e2f-9f69-f81589105730\",\r\n            \"skin_id\": \"72ffdb5c-c003-4734-b1d1-07898f5bcb39\",\r\n           
-    \"mystery_crate_id\": \"\"\r\n        },\r\n        {\r\n            \"type\":
-    \"mech\",\r\n            \"ownership_id\": \"4d87aea5-945d-42f4-9d80-9c44420bdfde\",\r\n           
-    \"mech_id\": \"625cd381-7c66-4e2f-9f69-f81589105730\",\r\n            \"skin_id\":
-    \"ff1b7d82-40b1-4d1a-b93a-f5da92ec43ed\",\r\n            \"mystery_crate_id\":
-    \"\"\r\n        }\r\n    ]\r\n}"
+  jsonTestFragment: "{\n    \"faction\": \"880db344-e405-428d-84e5-6ebebab1fe6d\",\n   
+    \"silos\": [\n        {\n            \"type\": \"mech\",\n            \"ownership_id\":
+    \"465fe68c-6487-4f78-92aa-218cf129e071\",\n            \"mech_id\": \"625cd381-7c66-4e2f-9f69-f81589105730\",\n           
+    \"skin_id\": \"72ffdb5c-c003-4734-b1d1-07898f5bcb39\",\n            \"mystery_crate_id\":
+    \"\"\n        },\n        {\n            \"type\": \"mech\",\n            \"ownership_id\":
+    \"4d87aea5-945d-42f4-9d80-9c44420bdfde\",\n            \"mech_id\": \"625cd381-7c66-4e2f-9f69-f81589105730\",\n           
+    \"skin_id\": \"ff1b7d82-40b1-4d1a-b93a-f5da92ec43ed\",\n            \"mystery_crate_id\":
+    \"\"\n        },\n        {\n            \"type\": \"mystery_crate\",\n           
+    \"ownership_id\": \"9f9275eb-491a-47aa-b9d7-dd8185f179ca\",\n            \"mystery_crate_id\":
+    \"9f9275eb-491a-47aa-b9d7-dd8185f179ca\",\n            \"can_open_on\": \"Thu
+    Jul  7 13:00:00 UTC 2022\"\n        },\n        {\n            \"type\": \"mystery_crate\",\n           
+    \"ownership_id\": \"3ca1d928-51fa-4c9e-8a82-6ee5819b93d2\",\n            \"mystery_crate_id\":
+    \"3ca1d928-51fa-4c9e-8a82-6ee5819b93d2\",\n            \"can_open_on\": \"Thu
+    Jul  7 13:00:00 UTC 2022\"\n        }\n    ]\n}"

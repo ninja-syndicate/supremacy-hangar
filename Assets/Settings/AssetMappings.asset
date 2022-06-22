@@ -71,4 +71,46 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-  mysteryCrates: []
+  mysteryCrates:
+  - dataMysteryCrate: {fileID: 8767646594810958716, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    mysteryCrateReference:
+      m_AssetGUID: 332fa22ebccb8564c8be3c0bfc8a4810
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+  - dataMysteryCrate: {fileID: -4697754508663322447, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    mysteryCrateReference:
+      m_AssetGUID: f23e285582382894fb3e7e4a4d8ccccf
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+  - dataMysteryCrate: {fileID: -7455525991398043635, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    mysteryCrateReference:
+      m_AssetGUID: 6f256335596761241b6a807e8183ad85
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+  - dataMysteryCrate: {fileID: -8167071826264728218, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    mysteryCrateReference:
+      m_AssetGUID: 6259ec431237e304d92a5653ba193e92
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+  - dataMysteryCrate: {fileID: 1006159853416651708, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    mysteryCrateReference:
+      m_AssetGUID: 7c13b8492c7a4074087c61976c06d3e3
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+  - dataMysteryCrate: {fileID: 9087054852861791458, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    mysteryCrateReference:
+      m_AssetGUID: fa3eb5c4fa97bc14a900f0b7aa2bd498
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0

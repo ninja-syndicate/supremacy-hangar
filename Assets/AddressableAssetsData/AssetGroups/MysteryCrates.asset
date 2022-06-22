@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: LootBox
+  m_Name: MysteryCrates
   m_EditorClassIdentifier: 
   m_GroupName: LootBox
   m_Data:
@@ -19,6 +19,30 @@ MonoBehaviour:
   m_SerializeEntries:
   - m_GUID: feda125ae455b094faa4c272c784b499
     m_Address: SampleLoot.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 332fa22ebccb8564c8be3c0bfc8a4810
+    m_Address: LootBox_Boston_External.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6259ec431237e304d92a5653ba193e92
+    m_Address: LootBox_Pyro_External.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7c13b8492c7a4074087c61976c06d3e3
+    m_Address: LootBox_Zaibatsu_External.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fa3eb5c4fa97bc14a900f0b7aa2bd498
+    m_Address: LootBox_Warsui_External.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6f256335596761241b6a807e8183ad85
+    m_Address: LootBox_RM_External.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f23e285582382894fb3e7e4a4d8ccccf
+    m_Address: Lootbox_Archon_External.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
