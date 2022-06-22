@@ -11,6 +11,10 @@ namespace BuildSystem
             if (parameters.DevelopmentMode) {
                 BuildPlayerOptions.options ^= BuildOptions.AllowDebugging;
             }
+            else
+            {
+                PlayerSettings.WebGL.compressionFormat = WebGLCompressionFormat.Brotli;
+            }
             BuildPlayerOptions.target = BuildTarget.WebGL;
             BuildPlayerOptions.scenes = GatherAllScenes();
             BuildPlayerOptions.locationPathName = "Builds/WebGL";
