@@ -14,10 +14,13 @@ jobs:
                   lfs: true
 
             - name: Prewarm
-              run: Start-Process -FilePath "C:\actions-runner\_work\supremacy-hangar\supremacy-hangar\prewarm.bat" -Wait -WindowStyle Hidden
+              run: |
+                  $unityPath="C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe"
+                  $projectPath="C:\actions-runner\_work\supremacy-hangar\supremacy-hangar"
+                  Start-Process -FilePath $unityPath -ArgumentList "-batchmode -quit -buildTarget WebGL -projectPath $projectPath -logFile prewarm_log.txt -executeMethod BuildSystem.CLI.PreWarm" -Wait -WindowStyle Hidden
 
             - name: Build
-              run: Start-Process -FilePath "C:\actions-runner\_work\supremacy-hangar\supremacy-hangar\build.bat" -Wait -WindowStyle Hidden
+              run: Start-Process -FilePath $unityPath -ArgumentList "-batchmode -quit -buildTarget WebGL -projectPath $projectPath -logFile build_log.txt -executeMethod BuildSystem.CLI.BuildWebGL -development" -Wait -WindowStyle Hidden
 
     deploy:
         needs: [build]
