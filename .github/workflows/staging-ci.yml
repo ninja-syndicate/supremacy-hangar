@@ -41,8 +41,8 @@ jobs:
             - name: Synchronize
               run: |
                   $projectPath="C:\actions-runner\_work\supremacy-hangar\supremacy-hangar"
-                  New-Item -Path '$projectPath\BuildB' -ItemType Directory
+                  New-Item -Path "$projectPath" -Name "BuildB" -ItemType "directory"
                   Copy-Item "$projectPath\Builds\WebGL\Build\*" -Destination "$projectPath\BuildB" -Recurse
                   Copy-Item "$projectPath\Builds\WebGL\StreamingAssets" -Destination "$projectPath\BuildB" -Recurse
-                  winscp "scp://${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}" /privatekey=C:\etc\ssh\build_machine.ppk -hostkey="${{ secrets.SSH_HOSTKEY }}" /command "synchronize remote -mirror C:\actions-runner\_work\supremacy-hangar\supremacy-hangar\BuildB\ /var/www/html/supremacy-hangar/build/staging/" "exit"
-                  winscp "scp://${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}" /privatekey=C:\etc\ssh\build_machine.ppk -hostkey="${{ secrets.SSH_HOSTKEY }}" /command "synchronize remote -mirror C:\actions-runner\_work\supremacy-hangar\supremacy-hangar\ServerData\WebGL /var/www/html/supremacy-hangar/addressables/staging/" "exit"
+                  winscp "scp://${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}" /privatekey=C:\etc\ssh\build_machine.ppk -hostkey="${{ secrets.SSH_HOSTKEY }}" /command "synchronize remote -mirror $projectPath\BuildB\ /var/www/html/supremacy-hangar/build/staging/" "exit"
+                  winscp "scp://${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}" /privatekey=C:\etc\ssh\build_machine.ppk -hostkey="${{ secrets.SSH_HOSTKEY }}" /command "synchronize remote -mirror $projectPath\ServerData\WebGL /var/www/html/supremacy-hangar/addressables/staging/" "exit"
