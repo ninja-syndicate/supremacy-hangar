@@ -1,6 +1,7 @@
 using UnityEngine;
 using Newtonsoft.Json;
 using System.IO;
+using System.Threading.Tasks;
 using Zenject;
 using SupremacyHangar.Runtime.Types;
 using SupremacyHangar.Runtime.Plugins.WebGL;
@@ -16,12 +17,22 @@ public class BridgeScript : MonoInstaller
 #if UNITY_EDITOR
     [TextArea(3, 50)]
     [SerializeField] public string jsonTestFragment;
+
+    [SerializeField] public float jsonTestFragmentDelay = 5f;
 #endif
     
     public override void InstallBindings()
     {
 #if UNITY_EDITOR
-        if (!string.IsNullOrWhiteSpace(jsonTestFragment)) GetPlayerInventoryFromPage(jsonTestFragment);
+        if (!string.IsNullOrWhiteSpace(jsonTestFragment))
+        {
+            Task.Run(async () =>
+            {
+                await Task.Delay((int)(jsonTestFragmentDelay * 1000));
+                Debug.Log("Set inventory");
+                GetPlayerInventoryFromPage(jsonTestFragment);
+            });
+        }
 #elif UNITY_WEBGL
         SiloReady();
 #endif
