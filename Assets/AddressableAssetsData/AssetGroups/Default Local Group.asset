@@ -37,10 +37,6 @@ MonoBehaviour:
     m_Address: Hallway-SmallStraightJoin.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 803e5cb4a07a7474ca807f6f5941b7be
-    m_Address: Assets/Settings/AssetMappings.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
   m_SchemaSet:

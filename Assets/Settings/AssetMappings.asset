@@ -13,21 +13,24 @@ MonoBehaviour:
   m_Name: AssetMappings
   m_EditorClassIdentifier: 
   factions:
-  - dataFaction: {fileID: -1697855209747215840, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+  - containsError: 0
+    dataFaction: {fileID: -1697855209747215840, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
       type: 2}
     connectivityGraph:
       m_AssetGUID: 2952c0ae40dbb404ebd1d194fdc95eba
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-  - dataFaction: {fileID: 9100265950593429017, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+  - containsError: 0
+    dataFaction: {fileID: 9100265950593429017, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
       type: 2}
     connectivityGraph:
       m_AssetGUID: 2952c0ae40dbb404ebd1d194fdc95eba
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-  - dataFaction: {fileID: 1148844585822575097, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+  - containsError: 0
+    dataFaction: {fileID: 1148844585822575097, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
       type: 2}
     connectivityGraph:
       m_AssetGUID: 2952c0ae40dbb404ebd1d194fdc95eba
@@ -35,21 +38,24 @@ MonoBehaviour:
       m_SubObjectType: 
       m_EditorAssetChanged: 0
   mechChassis:
-  - dataMechModel: {fileID: 8413216818550338364, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+  - containsError: 0
+    dataMechModel: {fileID: 8413216818550338364, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
       type: 2}
     mechReference:
       m_AssetGUID: be1f8bf55bb63424a864f296f20b400e
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-  - dataMechModel: {fileID: -6094031022545233519, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+  - containsError: 0
+    dataMechModel: {fileID: -6094031022545233519, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
       type: 2}
     mechReference:
       m_AssetGUID: 0dfee75fecab7bd4c9096bd09d42a47e
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-  - dataMechModel: {fileID: -3017104320611050935, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+  - containsError: 0
+    dataMechModel: {fileID: -3017104320611050935, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
       type: 2}
     mechReference:
       m_AssetGUID: 06f1ce1dddd608a49aea4d983e6a8b0d
@@ -57,14 +63,16 @@ MonoBehaviour:
       m_SubObjectType: 
       m_EditorAssetChanged: 0
   mechSkins:
-  - dataMechSkin: {fileID: 4319933105495909278, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+  - containsError: 0
+    dataMechSkin: {fileID: 4319933105495909278, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
       type: 2}
     skinReference:
       m_AssetGUID: 1a5e7689f6263584990fb354a881af58
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-  - dataMechSkin: {fileID: -4124479688830079913, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+  - containsError: 0
+    dataMechSkin: {fileID: -4124479688830079913, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
       type: 2}
     skinReference:
       m_AssetGUID: 9057a9e52b5e87c45814084a378c6de2
@@ -72,42 +80,48 @@ MonoBehaviour:
       m_SubObjectType: 
       m_EditorAssetChanged: 0
   mysteryCrates:
-  - dataMysteryCrate: {fileID: 8624956271369622205, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+  - containsError: 0
+    dataMysteryCrate: {fileID: 8624956271369622205, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
       type: 2}
     mysteryCrateReference:
       m_AssetGUID: feda125ae455b094faa4c272c784b499
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-  - dataMysteryCrate: {fileID: 2354239676899094440, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+  - containsError: 0
+    dataMysteryCrate: {fileID: 2354239676899094440, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
       type: 2}
     mysteryCrateReference:
       m_AssetGUID: feda125ae455b094faa4c272c784b499
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-  - dataMysteryCrate: {fileID: 6124517729904803181, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+  - containsError: 0
+    dataMysteryCrate: {fileID: 6124517729904803181, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
       type: 2}
     mysteryCrateReference:
       m_AssetGUID: feda125ae455b094faa4c272c784b499
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-  - dataMysteryCrate: {fileID: 5209389135500915112, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+  - containsError: 0
+    dataMysteryCrate: {fileID: 5209389135500915112, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
       type: 2}
     mysteryCrateReference:
       m_AssetGUID: feda125ae455b094faa4c272c784b499
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-  - dataMysteryCrate: {fileID: -780730931285524055, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+  - containsError: 0
+    dataMysteryCrate: {fileID: -780730931285524055, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
       type: 2}
     mysteryCrateReference:
       m_AssetGUID: feda125ae455b094faa4c272c784b499
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-  - dataMysteryCrate: {fileID: -2954037181567158363, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+  - containsError: 0
+    dataMysteryCrate: {fileID: -2954037181567158363, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
       type: 2}
     mysteryCrateReference:
       m_AssetGUID: feda125ae455b094faa4c272c784b499

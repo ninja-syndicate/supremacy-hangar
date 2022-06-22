@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using SupremacyData.Editor;
 using SupremacyHangar.Runtime.ContentLoader.Types;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -13,6 +14,11 @@ namespace SupremacyHangar.Runtime.ContentLoader
         public IReadOnlyDictionary<Guid, MechChassisMapping> MechChassisPrefabByGuid { get; private set; }
         public IReadOnlyDictionary<Guid, MechSkinMapping> MechSkinAssetByGuid { get; private set; }
         public IReadOnlyDictionary<Guid, MysteryCrateMapping> MysteryCrateAssetByGuid { get; private set; }
+
+        public List<FactionMapping> Factions => factions;
+        public List<MechChassisMapping> MechChassis => mechChassis;
+        public List<MechSkinMapping> MechSkins => mechSkins;
+        public List<MysteryCrateMapping> MysteryCrates => mysteryCrates;
 
         [SerializeField] private List<FactionMapping> factions;
         [SerializeField] private List<MechChassisMapping> mechChassis;
@@ -65,8 +71,11 @@ namespace SupremacyHangar.Runtime.ContentLoader
                     continue;
                 }
 
-                dict.Add(record.Id, mapping);
-                index++;
+                if(!dict.ContainsKey(record.Id))
+                { 
+                    dict.Add(record.Id, mapping);
+                    index++;
+                }
             }
         }
     }
@@ -74,6 +83,9 @@ namespace SupremacyHangar.Runtime.ContentLoader
     [Serializable]
     public class FactionMapping
     {
+        public bool ContainsError { get { return containsError; } set { containsError = value; } }
+        [SerializeField] private bool containsError = false;
+
         public SupremacyData.Runtime.Faction DataFaction => dataFaction;
         public AssetReferenceEnvironmentConnectivity ConnectivityGraph => connectivityGraph; 
             
@@ -84,6 +96,8 @@ namespace SupremacyHangar.Runtime.ContentLoader
     [Serializable]
     public class MechChassisMapping
     {
+        public bool ContainsError { get { return containsError; } set { containsError = value; } }
+        [SerializeField] private bool containsError = false;
         public SupremacyData.Runtime.MechModel DataMechModel => dataMechModel;
         public AssetReference MechReference => mechReference;
         
@@ -95,6 +109,8 @@ namespace SupremacyHangar.Runtime.ContentLoader
     [Serializable]
     public class MechSkinMapping
     {
+        public bool ContainsError { get { return containsError; } set { containsError = value; } }
+        [SerializeField] private bool containsError = false;
         public SupremacyData.Runtime.MechSkin DataMechSkin => dataMechSkin;
         public AssetReferenceSkin SkinReference => skinReference;
         
@@ -105,6 +121,9 @@ namespace SupremacyHangar.Runtime.ContentLoader
     [Serializable]
     public class MysteryCrateMapping
     {
+
+        public bool ContainsError { get { return containsError; } set { containsError = value; } }
+        [SerializeField] private bool containsError = false;
         public SupremacyData.Runtime.MysteryCrate DataMysteryCrate => dataMysteryCrate;
         public AssetReference MysteryCrateReference => mysteryCrateReference;
         

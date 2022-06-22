@@ -11,17 +11,27 @@ namespace SupremacyHangar.Editor.ContentLoader
         protected override string StaticDataPropertySummary(Runtime.ContentLoader.MechChassisMapping data)
         {
             if (data == null) return "No Data";
+            CheckForErrors(data);
             return data.DataMechModel != null ? data.DataMechModel.name : "No Static Data";
         }
 
         protected override string AssetPropertySummary(Runtime.ContentLoader.MechChassisMapping data)
         {
             if (data == null) return "No Data";
+            CheckForErrors(data);
             if (data.MechReference != null && data.MechReference.editorAsset != null)
             {
                 return data.MechReference.editorAsset.name; 
             }
             return "No Mech Asset Ref";
+        }
+
+        protected override void CheckForErrors(Runtime.ContentLoader.MechChassisMapping data)
+        {
+            if (data.MechReference.editorAsset == null || data.DataMechModel == null)
+                data.ContainsError = true;
+            else
+                data.ContainsError = false;
         }
     }
 }

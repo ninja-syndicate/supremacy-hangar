@@ -27,6 +27,7 @@ namespace SupremacyHangar.Editor.ContentLoader
         
         protected abstract string StaticDataPropertySummary(TMapping data);
         protected abstract string AssetPropertySummary(TMapping data);
+        protected abstract void CheckForErrors(TMapping data);
         
         private void RenderSummary(Rect position, SerializedProperty property, GUIContent label)
         {

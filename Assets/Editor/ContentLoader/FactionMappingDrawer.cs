@@ -1,4 +1,5 @@
 using UnityEditor;
+using UnityEngine;
 
 namespace SupremacyHangar.Editor.ContentLoader
 {
@@ -9,14 +10,24 @@ namespace SupremacyHangar.Editor.ContentLoader
         protected override string AssetDataPropertyName => "connectivityGraph";
         protected override string StaticDataPropertySummary(Runtime.ContentLoader.FactionMapping data)
         {
-            if (data == null) return "No Data";
+            if (data == null) return "No Data"; 
+            CheckForErrors(data);
             return data.DataFaction != null ? data.DataFaction.name : "No Static Data";
         }
 
         protected override string AssetPropertySummary(Runtime.ContentLoader.FactionMapping data)
         {
             if (data == null) return "No Data";
-            return data.ConnectivityGraph != null ? data.ConnectivityGraph.editorAsset.name : "No Connectivity Graph";
+            CheckForErrors(data);
+            return data.ConnectivityGraph.editorAsset != null ? data.ConnectivityGraph.editorAsset.name : "No Connectivity Graph";
+        }
+
+        protected override void CheckForErrors(Runtime.ContentLoader.FactionMapping data)
+        {
+            if (data.ConnectivityGraph.editorAsset == null || data.DataFaction == null)
+                data.ContainsError = true;
+            else
+                data.ContainsError = false;
         }
     }
 }
