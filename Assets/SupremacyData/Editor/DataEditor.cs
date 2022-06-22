@@ -17,10 +17,22 @@ namespace SupremacyData.Editor
         private SerializedProperty mysteryCratesProperty;
 
         private Runtime.Data targetData;
+        private bool targetDataSet;
+        private LogWidget logger;
         
         public void OnEnable()
         {
+            if (logger == null)
+            {
+                logger = new LogWidget();
+            }
+            else
+            {
+                logger.Reset();
+            }
+
             targetData = serializedObject.targetObject as Runtime.Data;
+            targetDataSet = targetData != null;
             factionsProperty = serializedObject.FindProperty("factions");
             battleAbilitiesProperty = serializedObject.FindProperty("battleAbilities");
             gameAbilitiesProperty = serializedObject.FindProperty("gameAbilities");
@@ -31,7 +43,7 @@ namespace SupremacyData.Editor
 
         public override void OnInspectorGUI()
         {
-            if (targetData == null)
+            if (!targetDataSet)
             {
                 EditorGUILayout.LabelField("Invalid Data!");
                 return;
@@ -39,6 +51,8 @@ namespace SupremacyData.Editor
             
             serializedObject.Update();
             RenderDefaultEditor();
+            EditorGUILayout.Space(10f);
+            logger.Render(GUILayout.Height(100));
         }
 
         private void RenderDefaultEditor()
@@ -69,16 +83,22 @@ namespace SupremacyData.Editor
         {
             AssetDatabase.StartAssetEditing();
             var subAssets = AssetDatabase.LoadAllAssetRepresentationsAtPath(AssetDatabase.GetAssetPath(targetData));
-
+            logger.LogNormal($"Removing unused {typeof(T)}");
+            bool removedSomething = false;
+            
             foreach (var subAsset in subAssets)
             {
                 if (subAsset is not T typedAsset) continue;
                 if (records.Contains(typedAsset)) continue;
+                removedSomething = true;
+                logger.LogNormal($"Removing unused {typedAsset.name}");
                 AssetDatabase.RemoveObjectFromAsset(typedAsset);
                 EditorUtility.SetDirty(targetData);
             }
             AssetDatabase.StopAssetEditing();
             AssetDatabase.SaveAssetIfDirty(targetData);
+
+            if (!removedSomething) logger.LogNormal("Did not remove anything");
         }
     }
 }
