@@ -1,7 +1,8 @@
 name: Build and Upload Supremacy Hangar
 
 on:
-    workflow_dispatch: {}
+    push:
+        branches: ["develop"]
 
 jobs:
     build:
@@ -20,7 +21,10 @@ jobs:
                   Start-Process -FilePath $unityPath -ArgumentList "-batchmode -quit -buildTarget WebGL -projectPath $projectPath -logFile prewarm_log.txt -executeMethod BuildSystem.CLI.PreWarm -addressablesLocation staging" -Wait -WindowStyle Hidden
 
             - name: Build
-              run: Start-Process -FilePath $unityPath -ArgumentList "-batchmode -quit -buildTarget WebGL -projectPath $projectPath -logFile build_log.txt -executeMethod BuildSystem.CLI.BuildWebGL -addressablesLocation staging" -Wait -WindowStyle Hidden
+              run: |
+                  $unityPath="C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe"
+                  $projectPath="C:\actions-runner\_work\supremacy-hangar\supremacy-hangar" 
+                  Start-Process -FilePath $unityPath -ArgumentList "-batchmode -quit -buildTarget WebGL -projectPath $projectPath -logFile build_log.txt -executeMethod BuildSystem.CLI.BuildWebGL -addressablesLocation staging" -Wait -WindowStyle Hidden
 
     deploy:
         needs: [build]
