@@ -1,1 +1,0 @@
-start /wait "Obligatory Atavistic Window Title" "C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe" -batchmode -quit -buildTarget WebGL -projectPath "C:\actions-runner\_work\supremacy-hangar\supremacy-hangar" -logFile buildLog.txt -executeMethod BuildSystem.CLI.BuildWebGL -development

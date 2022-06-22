@@ -1,4 +1,4 @@
-name: Build and Upload Supremacy Hangar
+name: Staging CI
 
 on:
     push:
@@ -18,12 +18,14 @@ jobs:
               run: |
                   $unityPath="C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe"
                   $projectPath="C:\actions-runner\_work\supremacy-hangar\supremacy-hangar"
+                  Set-Location -Path "$projectPath\"
                   Start-Process -FilePath $unityPath -ArgumentList "-batchmode -quit -buildTarget WebGL -projectPath $projectPath -logFile prewarm_log.txt -executeMethod BuildSystem.CLI.PreWarm -addressablesLocation staging" -Wait -WindowStyle Hidden
 
             - name: Build
               run: |
                   $unityPath="C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe"
-                  $projectPath="C:\actions-runner\_work\supremacy-hangar\supremacy-hangar" 
+                  $projectPath="C:\actions-runner\_work\supremacy-hangar\supremacy-hangar"
+                  Set-Location -Path "$projectPath\"
                   Start-Process -FilePath $unityPath -ArgumentList "-batchmode -quit -buildTarget WebGL -projectPath $projectPath -logFile build_log.txt -executeMethod BuildSystem.CLI.BuildWebGL -addressablesLocation staging" -Wait -WindowStyle Hidden
 
     deploy:
@@ -32,6 +34,6 @@ jobs:
         steps:
             - name: Synchronize
               run: |
-                  winscp "scp://${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}" /privatekey=C:\etc\ssh\build_machine.ppk -hostkey="${{ secrets.SSH_HOSTKEY }}" /command "synchronize remote C:\actions-runner\_work\supremacy-hangar\supremacy-hangar\Builds\WebGL\Build\ /var/www/html/supremacy-hangar/build/staging/" "exit"
-                  winscp "scp://${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}" /privatekey=C:\etc\ssh\build_machine.ppk -hostkey="${{ secrets.SSH_HOSTKEY }}" /command "synchronize remote C:\actions-runner\_work\supremacy-hangar\supremacy-hangar\Builds\WebGL\StreamingAssets /var/www/html/supremacy-hangar/build/staging/" "exit"
-                  winscp "scp://${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}" /privatekey=C:\etc\ssh\build_machine.ppk -hostkey="${{ secrets.SSH_HOSTKEY }}" /command "synchronize remote C:\actions-runner\_work\supremacy-hangar\supremacy-hangar\ServerData\WebGL /var/www/html/supremacy-hangar/addressables/staging/" "exit"
+                  winscp "scp://${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}" /privatekey=C:\etc\ssh\build_machine.ppk -hostkey="${{ secrets.SSH_HOSTKEY }}" /command "synchronize remote -mirror C:\actions-runner\_work\supremacy-hangar\supremacy-hangar\Builds\WebGL\Build\ /var/www/html/supremacy-hangar/build/staging/" "exit"
+                  winscp "scp://${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}" /privatekey=C:\etc\ssh\build_machine.ppk -hostkey="${{ secrets.SSH_HOSTKEY }}" /command "synchronize remote -mirror C:\actions-runner\_work\supremacy-hangar\supremacy-hangar\Builds\WebGL\StreamingAssets /var/www/html/supremacy-hangar/build/staging/" "exit"
+                  winscp "scp://${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}" /privatekey=C:\etc\ssh\build_machine.ppk -hostkey="${{ secrets.SSH_HOSTKEY }}" /command "synchronize remote -mirror C:\actions-runner\_work\supremacy-hangar\supremacy-hangar\ServerData\WebGL /var/www/html/supremacy-hangar/addressables/staging/" "exit"
