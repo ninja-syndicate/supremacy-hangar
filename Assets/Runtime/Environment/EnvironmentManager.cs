@@ -96,8 +96,6 @@ namespace SupremacyHangar.Runtime.Environment
 
         private void LoadFactionGraph()
         {
-            Debug.Log("faction loading");
-
             MaxSiloOffset = _playerInventory.Silos.Count;
             Container.Bind<SiloItem[]>().FromInstance(GetCurrentSiloInfo()).AsCached();
             //Todo: run from signal instead
