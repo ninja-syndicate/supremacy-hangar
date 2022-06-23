@@ -104,7 +104,7 @@ namespace SupremacyHangar.Editor.ContentLoader
                 DrawListElements(listPair.Key, listPair.Value);
             }
 
-            ElementSelectionDisplay(); 
+            ElementSelectionDisplay();
             serializedObject.ApplyModifiedProperties();
         }
         
@@ -204,7 +204,7 @@ namespace SupremacyHangar.Editor.ContentLoader
                                 list.GetItem(x).FindPropertyRelative("containsError").boolValue = true;
                                 
                                 if (!dupeKeyFound)
-                                    logDictionary[property.propertyPath].LogError($"Dublicate Key: {dataReference.objectReferenceValue.name}");
+                                    logDictionary[property.propertyPath].LogError($"Duplicate Key: {dataReference.objectReferenceValue.name}");
                                 
                                 dupeKeyFound = true;
                             }

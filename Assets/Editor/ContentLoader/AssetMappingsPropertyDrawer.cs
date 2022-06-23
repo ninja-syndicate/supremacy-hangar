@@ -7,7 +7,9 @@ namespace SupremacyHangar.Editor.ContentLoader
     {
         protected abstract string StaticDataPropertyName { get; }
         protected abstract string AssetDataPropertyName { get; }
-        
+
+        private string targetLabel = null;
+
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
             float size = EditorGUIUtility.singleLineHeight;
@@ -17,19 +19,22 @@ namespace SupremacyHangar.Editor.ContentLoader
         
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
         {
+            var targetObj = property.GetActualObjectForSerializedProperty<TMapping>(fieldInfo, ref targetLabel);
+            SetValidity(targetObj);
+            property.serializedObject.ApplyModifiedProperties();
             if (property.isExpanded)
             {
                 RenderExpanded(position, property, label);
                 return;
             }
-            RenderSummary(position, property, label);
+            RenderSummary(position, property, label, targetObj);
         } 
         
         protected abstract string StaticDataPropertySummary(TMapping data);
         protected abstract string AssetPropertySummary(TMapping data);
-        protected abstract void CheckForErrors(TMapping data);
+        protected abstract void SetValidity(TMapping data);
         
-        private void RenderSummary(Rect position, SerializedProperty property, GUIContent label)
+        private void RenderSummary(Rect position, SerializedProperty property, GUIContent label, TMapping targetObj)
         {
             position.height = EditorGUIUtility.singleLineHeight;
             float controlWidth = position.width * 0.5f - GUIStatics.Controls.HorizontalPadding;
@@ -37,10 +42,8 @@ namespace SupremacyHangar.Editor.ContentLoader
             Rect dataRect = new Rect(position.x, position.y, controlWidth, position.height);
             Rect otherRect = new Rect(position.x + dataRect.width + GUIStatics.Controls.HorizontalPadding, position.y, controlWidth, position.height);
 
-            string targetLabel = null;
-            var targetObj = property.GetActualObjectForSerializedProperty<TMapping>(fieldInfo, ref targetLabel);
-            EditorGUI.LabelField(dataRect, StaticDataPropertySummary(targetObj));
-            EditorGUI.LabelField(otherRect, AssetPropertySummary(targetObj));
+            EditorGUI.LabelField(dataRect, targetObj != null ? StaticDataPropertySummary(targetObj) : "No Data");
+            EditorGUI.LabelField(otherRect, targetObj != null ? AssetPropertySummary(targetObj) : "No Data");
         }
 
         private void RenderExpanded(Rect position, SerializedProperty property, GUIContent label)
