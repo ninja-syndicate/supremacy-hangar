@@ -94,8 +94,8 @@ namespace Malee.List {
 
 		public int pageSize {
 
-			get { return pagination.fixedPageSize; }
-			set { pagination.fixedPageSize = value; }
+			get { return pagination.defaultPageSize; }
+			set { pagination.defaultPageSize = value; }
 		}
 
 		internal readonly int id;
@@ -682,6 +682,30 @@ namespace Malee.List {
 					ExpandElements(false);
 				}
 
+				Rect bRect3 = rect;
+				bRect3.xMin = bRect2.xMin - 60;
+				bRect3.xMax = bRect2.xMin;
+
+				int newSize = EditorGUI.DelayedIntField(bRect3, list.arraySize);
+
+				//Increase array size based on input
+				if(newSize > list.arraySize)
+                {
+					for (int i = list.arraySize; i < newSize; i++)
+					{
+						AddItem();
+					}
+                }
+
+				//Decrease array size based on input
+				if (newSize < list.arraySize)
+				{
+					for (int i = list.arraySize; i >= newSize; i--)
+					{
+						RemoveItem(i);
+					}
+				}
+
 				rect.xMax = bRect2.xMin + 5;
 			}
 
@@ -1224,10 +1248,8 @@ namespace Malee.List {
 
 			//if we're allowed to control the page size manually, show an editor
 
-			bool useFixedPageSize = pagination.fixedPageSize > 0;
-			int currentPageSize = useFixedPageSize ? pagination.fixedPageSize : pagination.customPageSize;
-
-			EditorGUI.BeginDisabledGroup(useFixedPageSize);
+			bool useFixedPageSize = pagination.defaultPageSize > 0;
+			int currentPageSize = useFixedPageSize ? pagination.defaultPageSize : pagination.customPageSize;
 
 			pageSizeContent.text = currentPageSize.ToString();
 
@@ -1253,11 +1275,19 @@ namespace Malee.List {
 
 			if (EditorGUI.EndChangeCheck()) {
 
-				pagination.customPageSize = Mathf.Clamp(newPageSize, 0, total);
+				if(pagination.defaultPageSize < newPageSize)
+					pagination.defaultPageSize = newPageSize;
+
+				pagination.customPageSize = pagination.defaultPageSize = Mathf.Clamp(newPageSize, 0, pagination.defaultPageSize);
 				pagination.page = Mathf.Min(pagination.GetPageCount(total) - 1, pagination.page);
 			}
 
 			EditorGUI.EndDisabledGroup();
+		}
+
+		public int GetCurrentPage()
+        {
+			return pagination.page + 1;
 		}
 
 		private void OnPageDropDownSelect(object userData) {
@@ -2186,7 +2216,8 @@ namespace Malee.List {
 		struct Pagination {
 
 			internal bool enabled;
-			internal int fixedPageSize;
+			internal int defaultPageSize;
+			internal int prevPageSize;
 			internal int customPageSize;
 			internal int page;
 
@@ -2197,7 +2228,7 @@ namespace Malee.List {
 
 			internal int pageSize {
 
-				get { return fixedPageSize > 0 ? fixedPageSize : customPageSize; }
+				get { return defaultPageSize > 0 ? defaultPageSize : customPageSize; }
 			}
 
 			internal int GetVisibleLength(int total) {
