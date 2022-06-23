@@ -1,0 +1,42 @@
+name: Production CI
+
+on:
+    push:
+        branches: ["main"]
+
+jobs:
+    build:
+        runs-on: [self-hosted, windows, x64]
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v3
+              with:
+                  fetch-depth: "0"
+                  lfs: true
+
+            - name: Prewarm
+              run: |
+                  $unityPath="C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe"
+                  $projectPath="C:\actions-runner\_work\supremacy-hangar\supremacy-hangar"
+                  Start-Process -FilePath $unityPath -ArgumentList "-batchmode -quit -buildTarget WebGL -projectPath $projectPath -logFile prewarm_log.txt -executeMethod BuildSystem.CLI.PreWarm -addressablesLocation prod" -Wait -WindowStyle Hidden
+
+            - name: Build
+              run: |
+                  $unityPath="C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe"
+                  $projectPath="C:\actions-runner\_work\supremacy-hangar\supremacy-hangar"
+                  Start-Process -FilePath $unityPath -ArgumentList "-batchmode -quit -buildTarget WebGL -projectPath $projectPath -logFile build_log.txt -executeMethod BuildSystem.CLI.BuildWebGL -addressablesLocation prod" -Wait -WindowStyle Hidden
+
+    deploy:
+        needs: [build]
+        runs-on: [self-hosted, windows, x64]
+        steps:
+            - name: Synchronize
+              run: |
+                  $projectPath="C:\actions-runner\_work\supremacy-hangar\supremacy-hangar"
+                  New-Item -Path "$projectPath" -Name "BuildB" -ItemType "directory"
+                  Copy-Item "$projectPath\Builds\WebGL\Build\*" -Destination "$projectPath\BuildB" -Recurse
+                  Copy-Item "$projectPath\Builds\WebGL\StreamingAssets" -Destination "$projectPath\BuildB" -Recurse
+                  $runnerHome = "/cygdrive/c/users/${{ secrets.RUNNER_USER }}"
+                  $cygdriveProjectPath = "/cygdrive/c/actions-runner/_work/supremacy-hangar/supremacy-hangar"
+                  rsync -av -e "'/cygdrive/c/cygwin64/bin/ssh.exe' -o UserKnownHostsFile=$runnerHome/.ssh/known_hosts -i $runnerHome/.ssh/build_machine" $cygdriveProjectPath/BuildB/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/html/supremacy-hangar/build/production/
+                  rsync -av -e "'/cygdrive/c/cygwin64/bin/ssh.exe' -o UserKnownHostsFile=$runnerHome/.ssh/known_hosts -i $runnerHome/.ssh/build_machine" $cygdriveProjectPath/ServerData/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/html/supremacy-hangar/addressables/production/

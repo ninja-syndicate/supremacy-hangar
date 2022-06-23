@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabName: {fileID: 11400000, guid: 9a076b2650fe9e74cbec6834753181e0, type: 2}
+  spawnPoint: {fileID: 0}
   joins:
   - name: {fileID: 11400000, guid: e438fbcd3b20a9c4cb563501cd8d9963, type: 2}
     position: {fileID: 8913892762834364067}
@@ -371,7 +372,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c5cc311834d24704e88e7f9632c17802, type: 2}
+      objectReference: {fileID: 2100000, guid: f3909762067844490bd920bbabcfb734, type: 2}
     - target: {fileID: -4319425727278041717, guid: eb67338c93fdc7340b5f2deee85bd543,
         type: 3}
       propertyPath: m_Enabled
@@ -391,7 +392,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c5cc311834d24704e88e7f9632c17802, type: 2}
+      objectReference: {fileID: 2100000, guid: f3909762067844490bd920bbabcfb734, type: 2}
     - target: {fileID: -447193255260109681, guid: eb67338c93fdc7340b5f2deee85bd543,
         type: 3}
       propertyPath: m_Enabled
@@ -401,7 +402,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c5cc311834d24704e88e7f9632c17802, type: 2}
+      objectReference: {fileID: 2100000, guid: f3909762067844490bd920bbabcfb734, type: 2}
     - target: {fileID: 919132149155446097, guid: eb67338c93fdc7340b5f2deee85bd543,
         type: 3}
       propertyPath: m_Name
@@ -421,13 +422,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c5cc311834d24704e88e7f9632c17802, type: 2}
+      objectReference: {fileID: 2100000, guid: f3909762067844490bd920bbabcfb734, type: 2}
     - target: {fileID: 8004335472631461045, guid: eb67338c93fdc7340b5f2deee85bd543,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c5cc311834d24704e88e7f9632c17802, type: 2}
-    m_RemovedComponents: []
+      objectReference: {fileID: 2100000, guid: f3909762067844490bd920bbabcfb734, type: 2}
+    m_RemovedComponents:
+    - {fileID: -447193255260109681, guid: eb67338c93fdc7340b5f2deee85bd543, type: 3}
+    - {fileID: 4623028198438983032, guid: eb67338c93fdc7340b5f2deee85bd543, type: 3}
+    - {fileID: -7871471691369129918, guid: eb67338c93fdc7340b5f2deee85bd543, type: 3}
+    - {fileID: -4088738213635369516, guid: eb67338c93fdc7340b5f2deee85bd543, type: 3}
+    - {fileID: -3186950342545969374, guid: eb67338c93fdc7340b5f2deee85bd543, type: 3}
+    - {fileID: -4319425727278041717, guid: eb67338c93fdc7340b5f2deee85bd543, type: 3}
+    - {fileID: 3437311865248167152, guid: eb67338c93fdc7340b5f2deee85bd543, type: 3}
+    - {fileID: -6006373218842285006, guid: eb67338c93fdc7340b5f2deee85bd543, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: eb67338c93fdc7340b5f2deee85bd543, type: 3}
 --- !u!4 &633336482547448457 stripped
 Transform:

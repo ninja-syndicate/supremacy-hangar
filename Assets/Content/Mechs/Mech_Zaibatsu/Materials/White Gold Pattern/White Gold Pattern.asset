@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691a633fee507c468fbb61f649f459a, type: 3}
+  m_Name: White Gold Pattern
+  m_EditorClassIdentifier: Assembly-CSharp::MechSkin
+  mats:
+  - {fileID: 2100000, guid: a18feca0e8364504780be8881f0b15e4, type: 2}
+  - {fileID: 2100000, guid: f5dcc8c1caa56ac46b06404e479517ff, type: 2}
+  - {fileID: 2100000, guid: 0faa3e318eb08db42ada9f4a91c4fe1b, type: 2}
+  - {fileID: 2100000, guid: db373334980b78048b2eff491e13ffe4, type: 2}
+  - {fileID: 2100000, guid: b0ea21792779e9041a05cffe363766ac, type: 2}
+  - {fileID: 2100000, guid: a4b130ddf0e00704f8558c5834af9493, type: 2}

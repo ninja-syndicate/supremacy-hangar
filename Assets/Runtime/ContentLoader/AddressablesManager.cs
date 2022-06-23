@@ -32,6 +32,35 @@ namespace SupremacyHangar.Runtime.ContentLoader
 
         private AssetMappings mappings;
 
+        private SignalBus _bus;
+        private bool _subscribed;
+
+        [Inject]
+        public void Construct(SignalBus bus)
+        {
+            _bus = bus;
+        }
+        private void OnEnable()
+        {
+            SubscribeToSignal();
+        }
+
+        private void OnDisable()
+        {
+            if (!_subscribed) return;
+            _bus.Unsubscribe<InventoryRecievedSignal>(SetPlayerInventory);
+
+            _subscribed = false;
+        }
+
+        private void SubscribeToSignal()
+        {
+            if (_bus == null || _subscribed) return;
+            _bus.Subscribe<InventoryRecievedSignal>(SetPlayerInventory);
+
+            _subscribed = true;
+        }
+
         public override void InstallBindings()
         {
             Container.Bind<AddressablesManager>().FromInstance(this).AsSingle().NonLazy();
@@ -66,11 +95,25 @@ namespace SupremacyHangar.Runtime.ContentLoader
             }
 
             mappings = operation.Result;
-
-            _playerInventory.factionGraph = mappings.FactionHallwayByGuid[_playerInventory.faction].ConnectivityGraph;
-            foreach(var silo in _playerInventory.Silos)
+            if (!TryGetComponent(out BridgeScript bridge))
             {
-                switch(silo)
+                Debug.LogError("Bridgescript isn't on this component!", this);
+                return;
+            } 
+            
+#if UNITY_EDITOR
+            bridge.SetPlayerInventoryFromFragment();
+#elif UNITY_WEBGL
+            Plugins.WebGL.WebGLPluginJS.SiloReady();
+#endif
+        }
+
+        private void SetPlayerInventory()
+        {
+            _playerInventory.factionGraph = mappings.FactionHallwayByGuid[_playerInventory.faction].ConnectivityGraph;
+            foreach (var silo in _playerInventory.Silos)
+            {
+                switch (silo)
                 {
                     case Mech mech:
                         mech.MechChassisDetails = mappings.MechChassisPrefabByGuid[mech.mech_id];
@@ -98,17 +141,14 @@ namespace SupremacyHangar.Runtime.ContentLoader
         {
             if (myMech.skin == null)
             {
-                Debug.Log("loading skin");
                 TargetSkin.LoadAssetAsync<Skin>().Completed += (skin) =>
                 {
-                    Debug.Log("saving Skin" + skin.Result);
                     myMech.skin = skin.Result;
                     callBack(myMech.skin);
                 };
             }
             else
             {
-                Debug.Log("existing skin");
                 //Skin alreasy loaded
                 callBack(myMech.skin);
             }
@@ -119,10 +159,8 @@ namespace SupremacyHangar.Runtime.ContentLoader
             if (myMech.mech == null)
             {
                 previousMech = TargetMech;
-                Debug.Log("loading mech");
                 TargetMech.LoadAssetAsync<GameObject>().Completed += (mech) =>
                 {
-                    Debug.Log("saving Mech");
                     myMech.mech = mech.Result;
 
                     callBack(myMech.mech);
@@ -130,7 +168,6 @@ namespace SupremacyHangar.Runtime.ContentLoader
             }
             else
             {//Mech already loaded
-                Debug.Log("Existing mech");
                 callBack(myMech.mech);
             }
         }
@@ -151,7 +188,6 @@ namespace SupremacyHangar.Runtime.ContentLoader
                         LoadSkinReference(
                             (skin) =>
                             {
-                                Debug.Log("Setting Skin");
                                 MeshRenderer mechMesh = myMech.mech.GetComponentInChildren<MeshRenderer>();
                                 mechMesh.sharedMaterials = skin.mats;
                                 mechMesh.enabled = true;

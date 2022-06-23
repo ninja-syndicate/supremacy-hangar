@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2424807430162175449
 Transform:
   m_ObjectHideFlags: 0
@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabName: {fileID: 11400000, guid: 4f5b45fc739a31b49ac1097314cd8995, type: 2}
+  spawnPoint: {fileID: 0}
   joins:
   - name: {fileID: 11400000, guid: e438fbcd3b20a9c4cb563501cd8d9963, type: 2}
     position: {fileID: 1689536308976228990}
@@ -151,7 +152,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c16a357c1a20ccc4284e64853944628b, type: 2}
+      objectReference: {fileID: 2100000, guid: e7e473b39102945d690865b892d2198b, type: 2}
     - target: {fileID: 919132149155446097, guid: e56eef3e9fd436843bdaf0a026d339bc,
         type: 3}
       propertyPath: m_Name
@@ -171,7 +172,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c16a357c1a20ccc4284e64853944628b, type: 2}
+      objectReference: {fileID: 2100000, guid: e7e473b39102945d690865b892d2198b, type: 2}
     - target: {fileID: 6130475820577399059, guid: e56eef3e9fd436843bdaf0a026d339bc,
         type: 3}
       propertyPath: m_Enabled
@@ -181,8 +182,13 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c16a357c1a20ccc4284e64853944628b, type: 2}
-    m_RemovedComponents: []
+      objectReference: {fileID: 2100000, guid: e7e473b39102945d690865b892d2198b, type: 2}
+    m_RemovedComponents:
+    - {fileID: -4158569947654015518, guid: e56eef3e9fd436843bdaf0a026d339bc, type: 3}
+    - {fileID: -5671839934080724575, guid: e56eef3e9fd436843bdaf0a026d339bc, type: 3}
+    - {fileID: -1362682817362956478, guid: e56eef3e9fd436843bdaf0a026d339bc, type: 3}
+    - {fileID: 2432883158447708437, guid: e56eef3e9fd436843bdaf0a026d339bc, type: 3}
+    - {fileID: 6130475820577399059, guid: e56eef3e9fd436843bdaf0a026d339bc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e56eef3e9fd436843bdaf0a026d339bc, type: 3}
 --- !u!1 &1092686876248123988 stripped
 GameObject:
