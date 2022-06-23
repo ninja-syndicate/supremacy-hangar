@@ -5,7 +5,10 @@ mergeInto(LibraryManager.library, {
 
    // Method used to send a message to the page
    SiloReady: function () {
-      // Pass message to the page
-      SiloReady(); // This function is embeded into the page
+      try {
+        window.dispatchReactUnityEvent("SiloReady");
+      } catch (e) {
+        console.warn("Unable to dispatch");
+      }
    }
 });

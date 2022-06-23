@@ -92,6 +92,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 602e4e74528b1aa46aa68b8eaf0aee48, type: 2}
   - {fileID: 11400000, guid: 933c85dff888e7442bb1492b1f27dc5c, type: 2}
   - {fileID: 11400000, guid: 7328a03168a8dfc469047ceb30ffa356, type: 2}
+  - {fileID: 11400000, guid: 46fec8252a8d8c642961d799ca3e0904, type: 2}
   - {fileID: 11400000, guid: f823c5d282bd14d4881a6509a4a0f795, type: 2}
   - {fileID: 11400000, guid: 77142e1e8b35cd242a206295efa4892e, type: 2}
   m_BuildSettings:
@@ -114,7 +115,9 @@ MonoBehaviour:
       - m_Id: 6f064d973e68a7f4d8cc1ad3c41fc138
         m_Value: ServerData/[BuildTarget]
       - m_Id: 7427d4870fdf9bc4b9453213cf7fa1ea
-        m_Value: https://ninja-dev-static-site-test.s3.ap-southeast-2.amazonaws.com/1bb3f23eb96a423f9f98e74762b08c67/Addressable/[BuildTarget]
+        m_Value: https://afiles.ninja-cdn.com/supremacy-hangar/addressables/[BuildPath]/[BuildTarget]
+      - m_Id: 2f4dea65b3b4c4cdc8c590ecbfde80a3
+        m_Value: staging
     m_ProfileEntryNames:
     - m_Id: e1e1d0eb700315441908c2b43c9044ba
       m_Name: BuildTarget
@@ -130,6 +133,9 @@ MonoBehaviour:
       m_InlineUsage: 0
     - m_Id: 7427d4870fdf9bc4b9453213cf7fa1ea
       m_Name: Remote.LoadPath
+      m_InlineUsage: 0
+    - m_Id: 2f4dea65b3b4c4cdc8c590ecbfde80a3
+      m_Name: BuildPath
       m_InlineUsage: 0
     m_ProfileVersion: 1
   m_LabelTable:
