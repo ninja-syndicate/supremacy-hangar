@@ -116,7 +116,6 @@ namespace SupremacyHangar.Runtime.ContentLoader
                         break;
                 }
             }
-            Debug.Log("Inventory saved");
             _contentSignalHandler.InventoryLoaded();
         }
         
@@ -131,17 +130,14 @@ namespace SupremacyHangar.Runtime.ContentLoader
         {
             if (myMech.skin == null)
             {
-                Debug.Log("loading skin");
                 TargetSkin.LoadAssetAsync<Skin>().Completed += (skin) =>
                 {
-                    Debug.Log("saving Skin" + skin.Result);
                     myMech.skin = skin.Result;
                     callBack(myMech.skin);
                 };
             }
             else
             {
-                Debug.Log("existing skin");
                 //Skin alreasy loaded
                 callBack(myMech.skin);
             }
@@ -152,10 +148,8 @@ namespace SupremacyHangar.Runtime.ContentLoader
             if (myMech.mech == null)
             {
                 previousMech = TargetMech;
-                Debug.Log("loading mech");
                 TargetMech.LoadAssetAsync<GameObject>().Completed += (mech) =>
                 {
-                    Debug.Log("saving Mech");
                     myMech.mech = mech.Result;
 
                     callBack(myMech.mech);
@@ -163,7 +157,6 @@ namespace SupremacyHangar.Runtime.ContentLoader
             }
             else
             {//Mech already loaded
-                Debug.Log("Existing mech");
                 callBack(myMech.mech);
             }
         }
@@ -184,7 +177,6 @@ namespace SupremacyHangar.Runtime.ContentLoader
                         LoadSkinReference(
                             (skin) =>
                             {
-                                Debug.Log("Setting Skin");
                                 MeshRenderer mechMesh = myMech.mech.GetComponentInChildren<MeshRenderer>();
                                 mechMesh.sharedMaterials = skin.mats;
                                 mechMesh.enabled = true;
