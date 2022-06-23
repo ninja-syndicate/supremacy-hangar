@@ -20,36 +20,59 @@ namespace SupremacyHangar.Editor.ContentLoader
         private int selectedIndex;
         private UnityEditor.Editor _editor;
         private ReorderableList selectedList;
-        enum listType
+        enum ListType
         {
-            faction,
-            mechChassis,
-            mechSkin,
-            mysteryCrate,
+            Faction,
+            MechChassis,
+            MechSkin,
+            MysteryCrate,
         };
 
-        listType currentListType;
-        Dictionary<listType, string[]> typeToNameMap = new();
-        Dictionary<SerializedProperty, LogWidget> logDictionary = new();
+        ListType currentListType;
+        Dictionary<ListType, string[]> typeToNameMap = new();
+        Dictionary<string, LogWidget> logDictionary = new();
+        Dictionary<ReorderableList, ListType> typeByList = new();
 
         private string refLabel = null;
         private void OnEnable()
         {
+            typeToNameMap.Clear();
+            logDictionary.Clear();
+            typeByList.Clear();
+            
             initTypeToNameMap();
             selectedIndex = -1;
 
             factionList = new ReorderableList(serializedObject.FindProperty("factions"));
+            typeByList.Add(factionList, ListType.Faction);
             mechChassisList = new ReorderableList(serializedObject.FindProperty("mechChassis"));
+            typeByList.Add(mechChassisList, ListType.MechChassis);
             mechSkinList = new ReorderableList(serializedObject.FindProperty("mechSkins"));
+            typeByList.Add(mechSkinList, ListType.MechSkin);
             mechSkinList.paginate = true;
             mechSkinList.pageSize = 20;
             mysteryCrateList = new ReorderableList(serializedObject.FindProperty("mysteryCrates"));
+            typeByList.Add(mysteryCrateList, ListType.MysteryCrate);
 
-            //Enable Error highlighting
-            factionList.HighlightErrors = true;
-            mechChassisList.HighlightErrors = true;
-            mechSkinList.HighlightErrors = true;
-            mysteryCrateList.HighlightErrors = true;
+            foreach (var listPair in typeByList)
+            {
+                listPair.Key.onSelectCallback += (l) =>
+                {
+                    selectedIndex = l.Index;
+                    selectedList = l;
+                    currentListType = typeByList[l];
+                    Debug.Log($"Selecta! {currentListType}");
+                };
+
+                //Todo fix last selected element removal
+                listPair.Key.onRemoveCallback += (ReorderableList l) =>
+                {
+                    l.RemoveItem(selectedIndex);
+                    selectedIndex = -1;
+                };
+                
+                listPair.Key.HighlightErrors = true;
+            }
         }
 
         private void initTypeToNameMap()
@@ -61,10 +84,10 @@ namespace SupremacyHangar.Editor.ContentLoader
                 1 - data reference property name
                 2 - asset reference property name
             */
-            typeToNameMap.Add(listType.faction, new[] { "Factions", "dataFaction", "connectivityGraph" });
-            typeToNameMap.Add(listType.mechChassis, new[] { "Mech Chassis", "dataMechModel", "mechReference" });
-            typeToNameMap.Add(listType.mechSkin, new[] { "Mech Skins", "dataMechSkin", "skinReference" });
-            typeToNameMap.Add(listType.mysteryCrate, new[] { "Mystery Crates", "dataMysteryCrate", "mysteryCrateReference" });
+            typeToNameMap.Add(ListType.Faction, new[] { "Factions", "dataFaction", "connectivityGraph" });
+            typeToNameMap.Add(ListType.MechChassis, new[] { "Mech Chassis", "dataMechModel", "mechReference" });
+            typeToNameMap.Add(ListType.MechSkin, new[] { "Mech Skins", "dataMechSkin", "skinReference" });
+            typeToNameMap.Add(ListType.MysteryCrate, new[] { "Mystery Crates", "dataMysteryCrate", "mysteryCrateReference" });
         }
 
         public override void OnInspectorGUI()
@@ -77,33 +100,33 @@ namespace SupremacyHangar.Editor.ContentLoader
             mechSkinList.DoLayoutList();
             mysteryCrateList.DoLayoutList();
 
-            DrawListElements(factionList, listType.faction);
-            DrawListElements(mechChassisList, listType.mechChassis);
-            DrawListElements(mechSkinList, listType.mechSkin);
-            DrawListElements(mysteryCrateList, listType.mysteryCrate);
+            DrawListElements(factionList, ListType.Faction);
+            DrawListElements(mechChassisList, ListType.MechChassis);
+            DrawListElements(mechSkinList, ListType.MechSkin);
+            DrawListElements(mysteryCrateList, ListType.MysteryCrate);
 
             ElementSelectionDisplay(); 
             serializedObject.ApplyModifiedProperties();
         }
 
-        private void DrawListElements(ReorderableList list, listType type)
+        private void DrawListElements(ReorderableList list, ListType type)
         {
             list.drawElementCallback += (Rect rect, SerializedProperty element, GUIContent label, bool selected, bool focused) =>
             {
-                listType myType = listType.faction;
+                ListType myType = ListType.Faction;
                 switch (element.type)
                 {
                     case "FactionMapping":
-                        myType = listType.faction;
+                        myType = ListType.Faction;
                         break;
                     case "MechChassisMapping":
-                        myType = listType.mechChassis;
+                        myType = ListType.MechChassis;
                         break;
                     case "MechSkinMapping":
-                        myType = listType.mechSkin;
+                        myType = ListType.MechSkin;
                         break;
                     case "MysteryCrateMapping":
-                        myType = listType.mysteryCrate;
+                        myType = ListType.MysteryCrate;
                         break;
                     default:
                         break;
@@ -115,22 +138,24 @@ namespace SupremacyHangar.Editor.ContentLoader
                     var dataReference = property.FindPropertyRelative(typeToNameMap[myType][1]);
                     var assetReference = property.FindPropertyRelative(typeToNameMap[myType][2]);
                     var objectRef = dataReference.objectReferenceValue;
-                                        
-                    if (!logDictionary.ContainsKey(property))
-                        logDictionary.Add(property, new LogWidget());
+
+                    if (!logDictionary.ContainsKey(property.propertyPath))
+                    {
+                        logDictionary.Add(property.propertyPath, new LogWidget());
+                    }
 
 
                     for (int x = 0; x < list.Length; x++)
                     {
                         if (i == x) continue;
 
-                        logDictionary[property].Reset();
+                        logDictionary[property.propertyPath].Reset();
                         var otherDataReference = list.GetItem(x).FindPropertyRelative(typeToNameMap[myType][1]);
                         var otherAssetReference = list.GetItem(x).FindPropertyRelative(typeToNameMap[myType][2]);
 
                         if (!dataReference.objectReferenceValue || !otherDataReference.objectReferenceValue)
                         {
-                            logDictionary[property].LogError($"{dataReference.displayName} is empty");
+                            logDictionary[property.propertyPath].LogError($"{dataReference.displayName} is empty");
                             continue;
                         }
                         //Check dublicate keys
@@ -138,69 +163,57 @@ namespace SupremacyHangar.Editor.ContentLoader
                         {
                             list.GetItem(x).FindPropertyRelative("containsError").boolValue = true;
                             
-                            logDictionary[property].LogError("Dublicate Key");
+                            logDictionary[property.propertyPath].LogError("Dublicate Key");
                         }
 
                         //Check dublicate values
                         switch (myType)
                         {
-                            case listType.faction:
+                            case ListType.Faction:
                                 var factionGraph = GetFactionGraphAssetReferenceValue(assetReference, ref refLabel);
                                 var otherFactionGraph = GetFactionGraphAssetReferenceValue(otherAssetReference, ref refLabel);
                                 if (!factionGraph.editorAsset || !otherFactionGraph.editorAsset)
                                 {
-                                    logDictionary[property].LogError($"{assetReference.displayName} is empty");
+                                    logDictionary[property.propertyPath].LogError($"{assetReference.displayName} is empty");
                                     continue;
                                 }
                                 if (factionGraph.editorAsset.Equals(otherFactionGraph.editorAsset))
                                 {
                                     list.GetItem(x).FindPropertyRelative("containsError").boolValue = true;
 
-                                    logDictionary[property].LogError("Dublicate Value");
+                                    logDictionary[property.propertyPath].LogError("Dublicate Value");
                                 }
                                 break; 
-                            case listType.mechSkin:
+                            case ListType.MechSkin:
                                 var skin = GetSkinAssetReferenceValue(assetReference, ref refLabel);
                                 var otherSkin = GetSkinAssetReferenceValue(otherAssetReference, ref refLabel);
                                 if (!skin.editorAsset || !otherSkin.editorAsset)
                                 {
-                                    logDictionary[property].LogError($"{assetReference.displayName} is empty");
+                                    logDictionary[property.propertyPath].LogError($"{assetReference.displayName} is empty");
                                     continue;
                                 }
                                 if (skin.editorAsset.Equals(otherSkin.editorAsset))
                                 {
                                     list.GetItem(x).FindPropertyRelative("containsError").boolValue = true;
-                                    logDictionary[property].LogError("Dublicate Value");
+                                    logDictionary[property.propertyPath].LogError("Dublicate Value");
                                 }
                                 break;
-                            case listType.mechChassis:
+                            case ListType.MechChassis:
                                 break;
-                            case listType.mysteryCrate:
+                            case ListType.MysteryCrate:
                                 break;
                             default:
+                                Debug.LogError($"Unknown list type {type}");
                                 break;
                         }
                         list.GetItem(x).serializedObject.ApplyModifiedProperties();
                     }
                 }
 
-                Debug.Log(temp.Count);
                 list.DrawErrorHighlightingElement(rect, element);
             };
 
-            list.onSelectCallback += (ReorderableList l) =>
-            {
-                selectedIndex = l.Index;
-                selectedList = list;
-                currentListType = type;
-            };
 
-            //Todo fix last selected element removal
-            list.onRemoveCallback += (ReorderableList l) =>
-            {
-                l.RemoveItem(selectedIndex);
-                selectedIndex = -1;
-            };
         }
 
         public void ElementSelectionDisplay()
@@ -216,7 +229,7 @@ namespace SupremacyHangar.Editor.ContentLoader
 
             GUILayout.Label("Selected Data");
 
-            logDictionary[selectedElement].Render(GUILayout.ExpandHeight(true), GUILayout.ExpandWidth(true));
+            logDictionary[selectedElement.propertyPath].Render(GUILayout.ExpandHeight(true), GUILayout.ExpandWidth(true));
             GUILayout.BeginHorizontal();
 
             if (dataReference != null)
@@ -259,24 +272,24 @@ namespace SupremacyHangar.Editor.ContentLoader
 
         private void AssetReferenceSelecter(SerializedProperty assetReference)
         {
-            if (currentListType == listType.mechChassis || currentListType == listType.mysteryCrate) return;
+            if (currentListType == ListType.MechChassis || currentListType == ListType.MysteryCrate) return;
 
             switch (currentListType)
             {
-                case listType.faction:
+                case ListType.Faction:
                     var graphRef = GetFactionGraphAssetReferenceValue(assetReference, ref refLabel);
                     if (!graphRef.editorAsset) return;
                     CreateCachedEditor(graphRef.editorAsset, null, ref _editor);
                     break;
-                case listType.mechChassis:
+                case ListType.MechChassis:
                     Debug.LogError($"You Should not see me {currentListType}");
                     break;
-                case listType.mechSkin:
+                case ListType.MechSkin:
                     var skinRef = GetSkinAssetReferenceValue(assetReference, ref refLabel);
                     if (!skinRef.editorAsset) return;
                     CreateCachedEditor(skinRef.editorAsset, null, ref _editor);
                     break;
-                case listType.mysteryCrate:
+                case ListType.MysteryCrate:
                     Debug.LogError($"You Should not see me {currentListType}");
                     break;
                 default:
