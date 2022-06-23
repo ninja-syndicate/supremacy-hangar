@@ -204,7 +204,7 @@ namespace SupremacyHangar.Editor.ContentLoader
                                 list.GetItem(x).FindPropertyRelative("containsError").boolValue = true;
                                 
                                 if (!dupeKeyFound)
-                                    logDictionary[property.propertyPath].LogError("Dublicate Key");
+                                    logDictionary[property.propertyPath].LogError($"Dublicate Key: {dataReference.objectReferenceValue.name}");
                                 
                                 dupeKeyFound = true;
                             }
@@ -222,7 +222,6 @@ namespace SupremacyHangar.Editor.ContentLoader
                                 {
                                     if (!valueIsEmpty)
                                     {
-                                        //list.GetItem(x).FindPropertyRelative("containsError").boolValue = true;
                                         logDictionary[property.propertyPath].LogError($"{assetReference.displayName} is empty");
                                     }
                                     valueIsEmpty = true;
@@ -232,7 +231,7 @@ namespace SupremacyHangar.Editor.ContentLoader
                                 {
                                     list.GetItem(x).FindPropertyRelative("containsError").boolValue = true;
                                     if(!dupeValueFound)
-                                        logDictionary[property.propertyPath].LogError("Dublicate Value");
+                                        logDictionary[property.propertyPath].LogError($"Dublicate Value: {factionGraph.editorAsset.name}");
 
                                     dupeValueFound = true;
                                 }
@@ -258,7 +257,7 @@ namespace SupremacyHangar.Editor.ContentLoader
                                     list.GetItem(x).FindPropertyRelative("containsError").boolValue = true;
 
                                     if (!dupeValueFound)
-                                        logDictionary[property.propertyPath].LogError("Dublicate Value");
+                                        logDictionary[property.propertyPath].LogError($"Dublicate Value: {skin.editorAsset.name}");
                                     
                                     dupeValueFound = true;
                                 }
@@ -274,7 +273,6 @@ namespace SupremacyHangar.Editor.ContentLoader
                                 {
                                     if (!valueIsEmpty)
                                     {
-                                        //list.GetItem(x).FindPropertyRelative("containsError").boolValue = true;
                                         logDictionary[property.propertyPath].LogError($"{assetReference.displayName} is empty");
                                     }
                                     valueIsEmpty = true;
@@ -285,7 +283,7 @@ namespace SupremacyHangar.Editor.ContentLoader
                                     list.GetItem(x).FindPropertyRelative("containsError").boolValue = true;
 
                                     if (!dupeValueFound)
-                                        logDictionary[property.propertyPath].LogError("Dublicate Value");
+                                        logDictionary[property.propertyPath].LogError($"Dublicate Value: {mechChassis.editorAsset.name}");
 
                                     dupeValueFound = true;
                                 }
@@ -301,7 +299,6 @@ namespace SupremacyHangar.Editor.ContentLoader
                                 {
                                     if (!valueIsEmpty)
                                     {
-                                        //list.GetItem(x).FindPropertyRelative("containsError").boolValue = true;
                                         logDictionary[property.propertyPath].LogError($"{assetReference.displayName} is empty");
                                     }
                                     valueIsEmpty = true;
@@ -312,7 +309,7 @@ namespace SupremacyHangar.Editor.ContentLoader
                                     list.GetItem(x).FindPropertyRelative("containsError").boolValue = true;
 
                                     if (!dupeValueFound)
-                                        logDictionary[property.propertyPath].LogError("Dublicate Value");
+                                        logDictionary[property.propertyPath].LogError($"Dublicate Value: {mysteryCrate.editorAsset.name}");
 
                                     dupeValueFound = true;
                                 }
