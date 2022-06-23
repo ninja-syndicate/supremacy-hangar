@@ -91,15 +91,15 @@ namespace SupremacyHangar.Runtime.Environment
 
         public override void InstallBindings()
         {
-            MaxSiloOffset = _playerInventory.Silos.Count;
-
             Container.Bind<EnvironmentManager>().FromInstance(this);
-
-            Container.Bind<SiloItem[]>().FromInstance(GetCurrentSiloInfo()).AsCached();
         }
 
         private void LoadFactionGraph()
         {
+            Debug.Log("faction loading");
+
+            MaxSiloOffset = _playerInventory.Silos.Count;
+            Container.Bind<SiloItem[]>().FromInstance(GetCurrentSiloInfo()).AsCached();
             //Todo: run from signal instead
             AssetReferenceEnvironmentConnectivity connectivityGraph = _playerInventory.factionGraph;
 
