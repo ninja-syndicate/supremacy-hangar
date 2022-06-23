@@ -23,7 +23,9 @@ namespace BuildSystem
         private const string DevelopmentModeEnableEnv = "DEVELOPMENT_MODE";
 
         private const string AddressablesLocationCLI = "-addressableslocation";
-        private const string LocalAddressablesEnableENV = "ADDRESSABLES_LOCATION";
+        private const string LocalAddressablesEnableEnv = "ADDRESSABLES_LOCATION";
+
+        private const string BuildNumberEnv = "GITHUB_RUN_ATTEMPT";
 
         public bool DevelopmentMode { get; private set; }
         public bool BuildAddressables { get; private set; } 
@@ -39,10 +41,16 @@ namespace BuildSystem
                 DevelopmentMode = StringIsTrue(envVars[DevelopmentModeEnableEnv].ToString());
             }
 
-            if (envVars.Contains(LocalAddressablesEnableENV))
+            if (envVars.Contains(LocalAddressablesEnableEnv))
             {
                 BuildAddressables = true;
                 AddressablesLocation = ParseAddressablesLocation(envVars[DevelopmentModeEnableEnv].ToString());
+            }
+
+            if (envVars.Contains(BuildNumberEnv))
+            {
+                Debug.Log($"Build number is: {envVars[BuildNumberEnv].ToString()}");
+                BuildNumber = envVars[BuildNumberEnv].ToString();
             }
         }
 
