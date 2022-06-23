@@ -6,6 +6,7 @@ using Zenject;
 namespace SupremacyHangar.Runtime.ContentLoader
 {
     public class InventoryLoadedSignal { }
+    public class InventoryRecievedSignal { }
 
     public class ContentSignalHandler
     {
@@ -20,6 +21,11 @@ namespace SupremacyHangar.Runtime.ContentLoader
         {
             _signalBus.Fire<InventoryLoadedSignal>();
         }
+        
+        public void InventoryRecieved()
+        {
+            _signalBus.Fire<InventoryRecievedSignal>();
+        }
     }
 
     public class ContentSignalInstaller : Installer<ContentSignalInstaller>
@@ -28,6 +34,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
         {
             Container.Bind<ContentSignalHandler>().AsSingle().NonLazy();
             Container.DeclareSignal<InventoryLoadedSignal>();
+            Container.DeclareSignal<InventoryRecievedSignal>().RunAsync();
         }
     }
 }

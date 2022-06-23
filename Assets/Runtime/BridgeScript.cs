@@ -1,9 +1,12 @@
 using UnityEngine;
 using Newtonsoft.Json;
 using System.IO;
+using System.Threading.Tasks;
 using Zenject;
 using SupremacyHangar.Runtime.Types;
 using SupremacyHangar.Runtime.Plugins.WebGL;
+using System;
+using SupremacyHangar.Runtime.ContentLoader;
 
 /// <summary>
 /// Bridge used to communicate with a page
@@ -13,15 +16,28 @@ public class BridgeScript : MonoInstaller
     //TODO: this probably needs to be done better later.
     private SupremacyGameObject inventoryData = new();
 
+    [Inject]
+    private ContentSignalHandler _contentSignalHandler;
+
 #if UNITY_EDITOR
     [TextArea(3, 50)]
     [SerializeField] public string jsonTestFragment;
+
+    [SerializeField] public float jsonTestFragmentDelay = 5f;
 #endif
     
     public override void InstallBindings()
     {
 #if UNITY_EDITOR
-        if (!string.IsNullOrWhiteSpace(jsonTestFragment)) GetPlayerInventoryFromPage(jsonTestFragment);
+        if (!string.IsNullOrWhiteSpace(jsonTestFragment))
+        {
+            Task.Run(async () =>
+            {
+                await Task.Delay((int)(jsonTestFragmentDelay * 1000));
+                Debug.Log("Set inventory");
+                GetPlayerInventoryFromPage(jsonTestFragment);
+            });
+        }
 #elif UNITY_WEBGL
         SiloReady();
 #endif
@@ -33,6 +49,7 @@ public class BridgeScript : MonoInstaller
     {
         var newInventoryData = JsonConvert.DeserializeObject<SupremacyGameObject>(message, new SiloItemConterter());
         inventoryData.CopyFrom(newInventoryData);
+        _contentSignalHandler.InventoryRecieved();
     }
 
     public void SiloReady()
