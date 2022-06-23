@@ -32,6 +32,35 @@ namespace SupremacyHangar.Runtime.ContentLoader
 
         private AssetMappings mappings;
 
+        private SignalBus _bus;
+        private bool _subscribed;
+
+        [Inject]
+        public void Construct(SignalBus bus)
+        {
+            _bus = bus;
+        }
+        private void OnEnable()
+        {
+            SubscribeToSignal();
+        }
+
+        private void OnDisable()
+        {
+            if (!_subscribed) return;
+            _bus.Unsubscribe<InventoryRecievedSignal>(SetPlayerInventory);
+
+            _subscribed = false;
+        }
+
+        private void SubscribeToSignal()
+        {
+            if (_bus == null || _subscribed) return;
+            _bus.Subscribe<InventoryRecievedSignal>(SetPlayerInventory);
+
+            _subscribed = true;
+        }
+
         public override void InstallBindings()
         {
             Container.Bind<AddressablesManager>().FromInstance(this).AsSingle().NonLazy();
@@ -65,12 +94,15 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 return;
             }
 
-            mappings = operation.Result;
+            mappings = operation.Result;           
+        }
 
+        private void SetPlayerInventory()
+        {
             _playerInventory.factionGraph = mappings.FactionHallwayByGuid[_playerInventory.faction].ConnectivityGraph;
-            foreach(var silo in _playerInventory.Silos)
+            foreach (var silo in _playerInventory.Silos)
             {
-                switch(silo)
+                switch (silo)
                 {
                     case Mech mech:
                         mech.MechChassisDetails = mappings.MechChassisPrefabByGuid[mech.mech_id];
@@ -84,6 +116,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
                         break;
                 }
             }
+            Debug.Log("Inventory saved");
             _contentSignalHandler.InventoryLoaded();
         }
         

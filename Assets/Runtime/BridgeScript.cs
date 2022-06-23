@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Zenject;
 using SupremacyHangar.Runtime.Types;
 using SupremacyHangar.Runtime.Plugins.WebGL;
+using System;
+using SupremacyHangar.Runtime.ContentLoader;
 
 /// <summary>
 /// Bridge used to communicate with a page
@@ -13,6 +15,9 @@ public class BridgeScript : MonoInstaller
 {
     //TODO: this probably needs to be done better later.
     private SupremacyGameObject inventoryData = new();
+
+    [Inject]
+    private ContentSignalHandler _contentSignalHandler;
 
 #if UNITY_EDITOR
     [TextArea(3, 50)]
@@ -44,6 +49,7 @@ public class BridgeScript : MonoInstaller
     {
         var newInventoryData = JsonConvert.DeserializeObject<SupremacyGameObject>(message, new SiloItemConterter());
         inventoryData.CopyFrom(newInventoryData);
+        _contentSignalHandler.InventoryRecieved();
     }
 
     public void SiloReady()
