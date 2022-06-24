@@ -30,7 +30,7 @@ namespace SupremacyHangar.Runtime.Types
     public class MysteryBox : SiloItem
     {        
         public Guid MysteryCrateID;
-        public string CanOpenOn;
+        public DateTime CanOpenOn;
         public MysteryCrateMapping MysteryCrateDetails;
     }
 }

@@ -1,3 +1,6 @@
+using System;
+using System.Collections;
+using System.Threading.Tasks;
 using SupremacyData.Runtime;
 using SupremacyHangar.Runtime.ContentLoader;
 using SupremacyHangar.Runtime.Environment;
@@ -29,6 +32,9 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
         
         private Color currentFactionColor = Color.black;
 
+        private Coroutine counter = null;
+        private WaitForSeconds counterDelay = new (0.25f);
+        
         [Inject]
         public void SetDependencies(AddressablesManager addressablesManager, EnvironmentManager environmentManager)
         {
@@ -45,8 +51,7 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
                 case MysteryBox box:
                     UpdateTypeString(box);
                     UpdateName1(addressablesManager.CurrentFaction, box);
-                    //TODO: this needs to be changed to a counter...
-                    UpdateName2(box.CanOpenOn);
+                    counter = StartCoroutine(Countdown(box.CanOpenOn));
                     break;
                default:
                    UpdateTypeString("Empty");
@@ -55,7 +60,14 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
                    break;
             }
         }
-        
+
+        public void OnDisable()
+        {
+            if (counter == null) return;
+            StopCoroutine(counter);
+            counter = null;
+        }
+
         public void UpdateFactionColor(Color newColor)
         {
             if (newColor == currentFactionColor) return;
@@ -154,6 +166,17 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
         private void UpdateName2(Mech mech)
         {
             siloContentsName2.text = mech.MechSkinDetails.DataMechSkin.HumanName;
-        }             
+        }
+
+        private IEnumerator Countdown(DateTime boxOpeningTime)
+        {
+            while (true)
+            {
+                var now = DateTime.UtcNow;
+                var diff = boxOpeningTime - now;
+                siloContentsName2.text = diff.ToString(diff.Days > 0 ? "d':'hh':'mm':'ss" : "hh':'mm':'ss");
+                yield return counterDelay;
+            }
+        }
     }
 }
