@@ -19,7 +19,7 @@ namespace SupremacyHangar.Runtime.Silo
         [SerializeField]
         private Collider siloDoorTrigger;
 
-        public bool SiloSpawned { get; set; } = false;
+        public bool SiloSpawned = false;
 
         [SerializeField] private Animator myWindowAnim;
 
@@ -45,6 +45,7 @@ namespace SupremacyHangar.Runtime.Silo
             if (!_subscribed) return;
             _bus.Unsubscribe<CloseSiloSignal>(CloseSilo);
             _bus.Unsubscribe<SiloUnloadedSignal>(SiloClosed);
+            _bus.Unsubscribe<SiloFilledSignal>(OpenSilo);
             _subscribed = false;
         }
 
@@ -53,6 +54,7 @@ namespace SupremacyHangar.Runtime.Silo
             if (_bus == null || _subscribed) return;
             _bus.Subscribe<CloseSiloSignal>(CloseSilo);
             _bus.Subscribe<SiloUnloadedSignal>(SiloClosed);
+            _bus.Subscribe<SiloFilledSignal>(OpenSilo);
             _subscribed = true;
         }
 
@@ -81,7 +83,7 @@ namespace SupremacyHangar.Runtime.Silo
             SiloSpawned = true;
 
             //Clean-up existing silo (Only one silo at a time)
-            _environmentManager.UnloadAssets();
+            _environmentManager.UnloadSilo();
             
             SpawnSilo();
         }
@@ -93,7 +95,8 @@ namespace SupremacyHangar.Runtime.Silo
         }
 
         public void OpenSilo()
-        { 
+        {
+            if (!SiloSpawned) return;
             //unlock doors
             siloDoorTrigger.enabled = true;
 

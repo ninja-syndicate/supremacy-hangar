@@ -1,6 +1,7 @@
 using SupremacyHangar.Runtime.ContentLoader.Types;
 using SupremacyHangar.Runtime.Environment;
 using SupremacyHangar.Runtime.ScriptableObjects;
+using SupremacyHangar.Runtime.Silo;
 using SupremacyHangar.Runtime.Types;
 using System;
 using UnityEngine;
@@ -45,10 +46,13 @@ namespace SupremacyHangar.Runtime.ContentLoader
         private SignalBus _bus;
         private bool _subscribed;
 
+        private SiloSignalHandler _signalHandler;
+
         [Inject]
-        public void Construct(SignalBus bus)
+        public void Construct(SignalBus bus, SiloSignalHandler siloHandler)
         {
             _bus = bus;
+            _signalHandler = siloHandler;
         }
         private void OnEnable()
         {
@@ -150,7 +154,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
 
         private void LoadSkinReference(Action<Skin> callBack)
         {
-            if (myMech.skin == null)
+            if (myMech.skin == null && TargetSkin != null)
             {
                 TargetSkin.LoadAssetAsync<Skin>().Completed += (skin) =>
                 {
@@ -195,13 +199,16 @@ namespace SupremacyHangar.Runtime.ContentLoader
                     TargetMech.InstantiateAsync(spawnLocation.position, spawnLocation.rotation, spawnLocation).Completed += (mech) =>
                     {
                         myMech.mech = mech.Result;
-                        if (TargetSkin == null) return;
+                        //if (TargetSkin == null) return;
                         LoadSkinReference(
                             (skin) =>
                             {
                                 MeshRenderer mechMesh = myMech.mech.GetComponentInChildren<MeshRenderer>();
-                                mechMesh.sharedMaterials = skin.mats;
+                                if(skin != null)
+                                    mechMesh.sharedMaterials = skin.mats;
+                                
                                 mechMesh.enabled = true;
+                                _signalHandler.SiloFilled();
                             }
                         );
                     };

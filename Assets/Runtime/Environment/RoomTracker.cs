@@ -37,6 +37,7 @@ namespace SupremacyHangar.Runtime.Environment
 
                 //unload previous room/s & connectors
                 _environmentManager.UnloadAssets();
+                _environmentManager.UnloadSilo(false);
             }
         }
 

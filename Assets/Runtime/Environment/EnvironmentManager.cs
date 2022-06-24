@@ -291,8 +291,9 @@ namespace SupremacyHangar.Runtime.Environment
 
             newSilo.SetActive(true);
 
-            _currentSilo.OpenSilo();
-
+            if (loadedSilo != null)
+                UnloadAssetsAfterSiloClosed();
+            
             loadedSilo = newSilo;
         }
 
@@ -347,16 +348,20 @@ namespace SupremacyHangar.Runtime.Environment
 
         private GameObject loadedSilo;
 
-        public void UnloadAssets()
+        public void UnloadSilo(bool waitOnWindow = true)
         {
-            DoorOpened();
-
-            if (_currentSilo)
+            if (_currentSilo && waitOnWindow)
             {
                 _siloSignalHandler.CloseSilo();
                 _currentSilo.SiloSpawned = false;
-                return;
             }
+            else if (!waitOnWindow && loadedSilo)
+                UnloadAssetsAfterSiloClosed();
+        }
+
+        public void UnloadAssets()
+        {
+            DoorOpened();            
 
             if (newDoorEnvironmentPrefab)
             {

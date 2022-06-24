@@ -54,7 +54,7 @@ namespace SupremacyHangar.Runtime.Environment
 
             //Remove silo before proceeding
             if (_environmentManager.SiloExists)
-                _environmentManager.UnloadAssets();
+                _environmentManager.UnloadSilo();
 
             SpawnSection();
 
