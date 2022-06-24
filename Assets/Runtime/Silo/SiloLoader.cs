@@ -25,12 +25,14 @@ namespace SupremacyHangar.Runtime.Silo
             playerPresent = true;
             playerController = controller;
             playerController.OnInteractionTriggered += StartLoad;
+            playerController.IncrementInteractionPromptRequests();
         }
         
         public override void OnPlayerExited()
         {
             if (!playerPresent) return;
             playerController.OnInteractionTriggered -= StartLoad;
+            playerController.DecrementInteractionPromptRequests();
             playerPresent = false;
             playerController = null;
         }

@@ -51,6 +51,9 @@ namespace SupremacyHangar.Runtime
 		public float TopClamp = 90.0f;
 		[Tooltip("How far in degrees can you move the camera down")]
 		public float BottomClamp = -90.0f;
+
+		[SerializeField] private AnimatorBoolController interactionPromptController;
+		private bool interactionPromptControllerSet;
 		
 		public event Action OnInteractionTriggered;
 		
@@ -84,6 +87,8 @@ namespace SupremacyHangar.Runtime
 
 		private Vector2 look;
 
+		private int interactionPrompts = 0;
+
 		[Header("Movement Settings")]
 		public bool analogMovement;
 
@@ -101,6 +106,7 @@ namespace SupremacyHangar.Runtime
 				_mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 			}
 			if (!ValidateAndSetupComponentReferences()) return;
+			interactionPromptControllerSet = interactionPromptController != null;
 		}
 		
 		private void Start()
@@ -123,6 +129,16 @@ namespace SupremacyHangar.Runtime
 		public void OnDisable()
 		{
 			UnbindInputs();
+		}
+
+		public void DecrementInteractionPromptRequests()
+		{
+			if (interactionPrompts > 0) interactionPrompts--;
+		}
+
+		public void IncrementInteractionPromptRequests()
+		{
+			interactionPrompts++;
 		}
 
 		private bool ValidateAndSetupComponentReferences()
@@ -226,11 +242,20 @@ namespace SupremacyHangar.Runtime
         private void OnInteractionChange(InputAction.CallbackContext context)
 		{
 			if (context.phase == InputActionPhase.Canceled) return;
-			OnInteractionTriggered?.Invoke();
-        }
+			if (OnInteractionTriggered == null) return;
+			
+			OnInteractionTriggered.Invoke();
+			interactionPrompts = 0;
+		}
 
         private void Update()
 		{
+			if (interactionPromptControllerSet)
+			{
+				bool showPrompt = OnInteractionTriggered != null;
+				showPrompt &= interactionPrompts > 0;
+				interactionPromptController.Set(showPrompt);
+			}
 			JumpAndGravity();
 			GroundedCheck();
 			Move();

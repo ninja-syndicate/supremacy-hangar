@@ -28,9 +28,11 @@ namespace SupremacyHangar.Runtime.Actors
         {
             playerController.OnInteractionTriggered -= MoveToNextStop;
             playerController.PlatformVelocity = UnityMath.float3.zero;
+            playerController.DecrementInteractionPromptRequests();
             playerPresent = false;
             player = null;
             playerController = null;
+            
         }
         
         public void Update()
@@ -51,7 +53,8 @@ namespace SupremacyHangar.Runtime.Actors
             playerPresent = true;
             player = go;
             playerController = controller;
-            controller.OnInteractionTriggered += MoveToNextStop;
+            playerController.OnInteractionTriggered += MoveToNextStop;
+            playerController.IncrementInteractionPromptRequests();
         }
         
         private void Move(float deltaTime)
