@@ -63,9 +63,6 @@ namespace Malee.List {
 		public event ActionBoolDelegate onCanRemoveCallback;
 		public event ActionDelegate onChangedCallback;
 
-
-		public bool HighlightErrors = false;
-		public string ErrorBoolPropertyName = "containsError";
 		public bool canAdd;
 		public bool canRemove;
 		public bool draggable;
@@ -586,7 +583,7 @@ namespace Malee.List {
 		private Rect GetElementDrawRect(int index, Rect desiredRect) {
 
 			if (slideEasing <= 0) {
-
+				
 				return desiredRect;
 			}
 			else {
@@ -851,6 +848,13 @@ namespace Malee.List {
 			}
 		}
 
+		public Rect GetElementRect(int index)
+        {
+		//	if(!dragging)
+				return GetElementDrawRect(index, elementRects[index]);
+
+        }
+
 		private void DrawElements(Rect rect, Event evt) {
 
 			//draw list background
@@ -971,13 +975,11 @@ namespace Malee.List {
 
 			Rect renderRect = GetElementRenderRect(element, rect);
 
-			if (drawElementCallback != null) {
-
+			if (drawElementCallback != null) {				
 				drawElementCallback(renderRect, element, label, selected, focused);
-				drawElementCallback = null;
 			}
 			else {
-				DrawErrorHighlightingElement(renderRect, element);
+				EditorGUI.PropertyField(renderRect, element, label, true);
 			}
 
 			//handle context click
@@ -995,17 +997,6 @@ namespace Malee.List {
 
 					break;
 			}
-		}
-
-        public void DrawErrorHighlightingElement(Rect renderRect, SerializedProperty element)
-        {
-			if (HighlightErrors && element.FindPropertyRelative(ErrorBoolPropertyName).boolValue)
-			{
-				GUI.color = Color.red;
-				EditorGUI.PropertyField(renderRect, element, label, true);
-				GUI.color = Color.white;
-			}
-			else EditorGUI.PropertyField(renderRect, element, label, true);
 		}
 
         private GUIContent GetElementLabel(SerializedProperty element, bool allowElementLabel) {
@@ -1305,17 +1296,17 @@ namespace Malee.List {
 
 		private void HandleSingleContextClick(Event evt, SerializedProperty element) {
 
-			selection.Select(IndexOf(element));
+			//selection.Select(IndexOf(element));
 
-			GenericMenu menu = new GenericMenu();
+			//GenericMenu menu = new GenericMenu();
 
-			if (element.isInstantiatedPrefab) {
+			//if (element.isInstantiatedPrefab) {
 
-				menu.AddItem(new GUIContent($"Revert { GetElementLabel(element, true).text } to Prefab"), false, selection.RevertValues, list);
-				menu.AddSeparator(string.Empty);
-			}
+			//	menu.AddItem(new GUIContent($"Revert { GetElementLabel(element, true).text } to Prefab"), false, selection.RevertValues, list);
+			//	menu.AddSeparator(string.Empty);
+			//}
 
-			HandleSharedContextClick(evt, menu, "Duplicate Array Element", "Delete Array Element", "Move Array Element");
+			//HandleSharedContextClick(evt, menu, "Duplicate Array Element", "Delete Array Element", "Move Array Element");
 		}
 
 		private void HandleMultipleContextClick(Event evt) {
@@ -2204,7 +2195,6 @@ namespace Malee.List {
 
 					animIDs.Add(id, rect);
 				}
-
 				return rect;
 			}
 		}

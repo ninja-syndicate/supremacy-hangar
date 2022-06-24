@@ -22,13 +22,5 @@ namespace SupremacyHangar.Editor.ContentLoader
             }
             return "No Mech Skin Ref";
         }
-
-        protected override void SetValidity(Runtime.ContentLoader.MechSkinMapping data)
-        {
-            if (data.SkinReference.editorAsset == null || data.DataMechSkin == null)
-                data.ContainsError = true;
-            else
-                data.ContainsError = false;
-        }
     }
 }

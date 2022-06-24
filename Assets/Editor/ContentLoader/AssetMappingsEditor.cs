@@ -29,9 +29,15 @@ namespace SupremacyHangar.Editor.ContentLoader
             MysteryCrate,
         };
 
+        class AssetMapItem
+        {
+            public bool ContainsError = false;
+            public LogWidget Log = new();
+        }
+
         ListType currentListType;
         Dictionary<ListType, string[]> typeToNameMap = new();
-        Dictionary<string, LogWidget> logDictionary = new();
+        Dictionary<string, AssetMapItem> logDictionary = new();
         Dictionary<ReorderableList, ListType> typeByList = new();
 
         private string refLabel = null;
@@ -57,6 +63,8 @@ namespace SupremacyHangar.Editor.ContentLoader
 
             foreach (var listPair in typeByList)
             {
+                DrawListElements(listPair.Key, listPair.Value);
+             
                 listPair.Key.onSelectCallback += (l) =>
                 {
                     selectedIndex = l.Index;
@@ -70,8 +78,6 @@ namespace SupremacyHangar.Editor.ContentLoader
                     l.RemoveItem(selectedIndex);
                     selectedIndex = -1;
                 };
-                
-                listPair.Key.HighlightErrors = true;
             }
         }
 
@@ -98,11 +104,6 @@ namespace SupremacyHangar.Editor.ContentLoader
             mechChassisList.DoLayoutList();
             mechSkinList.DoLayoutList();
             mysteryCrateList.DoLayoutList();
-
-            foreach (var listPair in typeByList)
-            {
-                DrawListElements(listPair.Key, listPair.Value);
-            }
 
             ElementSelectionDisplay();
             serializedObject.ApplyModifiedProperties();
@@ -138,7 +139,6 @@ namespace SupremacyHangar.Editor.ContentLoader
                 int t = list.Length - (list.Length % listSize);
                 int fullPages = t / listSize;
 
-
                 if (list.GetCurrentPage() > fullPages)
                 {
                     startIndex -= 2;
@@ -147,183 +147,195 @@ namespace SupremacyHangar.Editor.ContentLoader
                 else
                     listSize = listSize == list.pageSize ? listSize * list.GetCurrentPage() : listSize;
 
-
-                for (int i = startIndex; i < listSize; i++)
-                {
-                    var property = list.GetItem(i);
-                    var dataReference = property.FindPropertyRelative(typeToNameMap[myType][1]);
-                    var assetReference = property.FindPropertyRelative(typeToNameMap[myType][2]);
+                    string propertyPath = element.propertyPath;
+                    var dataReference = element.FindPropertyRelative(typeToNameMap[myType][1]);
+                    var assetReference = element.FindPropertyRelative(typeToNameMap[myType][2]);
                     var objectRef = dataReference.objectReferenceValue;
 
-                    if (!logDictionary.ContainsKey(property.propertyPath))
+                    if (!logDictionary.ContainsKey(propertyPath))
                     {
-                        logDictionary.Add(property.propertyPath, new LogWidget());
+                        logDictionary.Add(propertyPath, new AssetMapItem());
                     }
 
-                    bool dupeKeyFound = false;
-                    bool dupeValueFound = false;
-                    bool keyIsEmpty = false;
-                    bool valueIsEmpty = false;
-                    //Use listSize for per page validation otherwise use list.Length
-                    for (int x = startIndex; x < listSize; x++)
+                bool dupeKeyFound = false;
+                bool dupeValueFound = false;
+                bool keyIsEmpty = false;
+                bool valueIsEmpty = false;
+
+                if (dataReference == null)
+                {
+                    if (!dupeKeyFound && !dupeValueFound && !keyIsEmpty && !valueIsEmpty)
+                        logDictionary[propertyPath].Log.Reset();
+
+                    if (!keyIsEmpty)
+                        logDictionary[propertyPath].Log.LogError($"{dataReference.displayName} property {typeToNameMap[myType][1]} could not be found");
+
+                    keyIsEmpty = true;
+                }
+                else if (!dataReference.objectReferenceValue)
+                {
+                    if (!dupeKeyFound && !dupeValueFound && !keyIsEmpty && !valueIsEmpty)
+                        logDictionary[propertyPath].Log.Reset();
+
+                    if (!keyIsEmpty)
+                        logDictionary[propertyPath].Log.LogError($"{dataReference.displayName} is empty");
+
+                    keyIsEmpty = true;
+                }
+
+                //Use listSize for per page validation otherwise use list.Length
+                for (int x = startIndex; x < listSize; x++)
+                {                        
+                    var loopElement = list.GetItem(x);
+
+                    if (loopElement.propertyPath == propertyPath) continue;
+
+                    var otherDataReference = loopElement.FindPropertyRelative(typeToNameMap[myType][1]);
+                    var otherAssetReference = loopElement.FindPropertyRelative(typeToNameMap[myType][2]);
+
+                    //Check dublicate keys
+                    if (dataReference.objectReferenceValue == otherDataReference.objectReferenceValue)
                     {
-                        if (i == x) continue;
-                        
-                        var otherDataReference = list.GetItem(x).FindPropertyRelative(typeToNameMap[myType][1]);
-                        var otherAssetReference = list.GetItem(x).FindPropertyRelative(typeToNameMap[myType][2]);
+                        if (!dupeKeyFound && !dupeValueFound && !keyIsEmpty && !valueIsEmpty)
+                            logDictionary[propertyPath].Log.Reset();
 
-                        if (dataReference == null)
+                        if (dataReference.objectReferenceValue != null && otherDataReference.objectReferenceValue != null)
                         {
-                            if(!dupeKeyFound && !dupeValueFound && !keyIsEmpty && !valueIsEmpty)
-                                logDictionary[property.propertyPath].Reset();
-                            
-                            if(!keyIsEmpty)
-                                logDictionary[property.propertyPath].LogError($"{dataReference.displayName} property {typeToNameMap[myType][1]} could not be found");
-
-                            keyIsEmpty = true;
+                            list.GetItem(x).FindPropertyRelative("containsError").boolValue = true;
+                                
+                            if (!dupeKeyFound)
+                                logDictionary[propertyPath].Log.LogError($"Duplicate Key: {dataReference.objectReferenceValue.name}");
+                                
+                            dupeKeyFound = true;
                         }
-                        else if (!dataReference.objectReferenceValue)
-                        { 
-                            if (!dupeKeyFound && !dupeValueFound && !keyIsEmpty && !valueIsEmpty)
-                                logDictionary[property.propertyPath].Reset();
+                    }
+                    //Check dublicate values
+                    switch (myType)
+                    {
+                        case ListType.Faction:
+                            if(!dupeValueFound && !dupeKeyFound && !keyIsEmpty && !valueIsEmpty)
+                                logDictionary[propertyPath].Log.Reset();
 
-                            if(!keyIsEmpty)
-                                logDictionary[property.propertyPath].LogError($"{dataReference.displayName} is empty");
-
-                            keyIsEmpty = true;
-                        }
-
-                        //Check dublicate keys
-                        if (dataReference.objectReferenceValue == otherDataReference.objectReferenceValue)
-                        {
-                            if (!dupeKeyFound && !dupeValueFound && !keyIsEmpty && !valueIsEmpty)
-                                logDictionary[property.propertyPath].Reset();
-
-                            if (dataReference.objectReferenceValue != null && otherDataReference.objectReferenceValue != null)
+                            var factionGraph = GetFactionGraphAssetReferenceValue(assetReference, ref refLabel); 
+                            var otherFactionGraph = GetFactionGraphAssetReferenceValue(otherAssetReference, ref refLabel);
+                            if (factionGraph == null || !factionGraph.editorAsset)
+                            {
+                                if (!valueIsEmpty)
+                                {
+                                    logDictionary[propertyPath].Log.LogError($"{assetReference.displayName} is empty");
+                                }
+                                valueIsEmpty = true;
+                                continue;
+                            }
+                            if (factionGraph.editorAsset.Equals(otherFactionGraph.editorAsset)) 
                             {
                                 list.GetItem(x).FindPropertyRelative("containsError").boolValue = true;
-                                
-                                if (!dupeKeyFound)
-                                    logDictionary[property.propertyPath].LogError($"Duplicate Key: {dataReference.objectReferenceValue.name}");
-                                
-                                dupeKeyFound = true;
+                                if(!dupeValueFound)
+                                    logDictionary[propertyPath].Log.LogError($"Dublicate Value: {factionGraph.editorAsset.name}");
+
+                                dupeValueFound = true;
                             }
-                        }
-                        //Check dublicate values
-                        switch (myType)
-                        {
-                            case ListType.Faction:
-                                if(!dupeValueFound && !dupeKeyFound && !keyIsEmpty && !valueIsEmpty)
-                                    logDictionary[property.propertyPath].Reset();
+                            break; 
+                        case ListType.MechSkin:
+                            if (!dupeValueFound && !dupeKeyFound && !keyIsEmpty && !valueIsEmpty)
+                                logDictionary[propertyPath].Log.Reset();
 
-                                var factionGraph = GetFactionGraphAssetReferenceValue(assetReference, ref refLabel); 
-                                var otherFactionGraph = GetFactionGraphAssetReferenceValue(otherAssetReference, ref refLabel);
-                                if (factionGraph == null || !factionGraph.editorAsset)
+                            var skin = GetSkinAssetReferenceValue(assetReference, ref refLabel);
+                            var otherSkin = GetSkinAssetReferenceValue(otherAssetReference, ref refLabel);
+
+                            if (skin == null || !skin.editorAsset)
+                            {
+                                if (!valueIsEmpty)
                                 {
-                                    if (!valueIsEmpty)
-                                    {
-                                        logDictionary[property.propertyPath].LogError($"{assetReference.displayName} is empty");
-                                    }
-                                    valueIsEmpty = true;
-                                    continue;
+                                    logDictionary[propertyPath].Log.LogError($"{assetReference.displayName} is empty");
                                 }
-                                if (factionGraph.editorAsset.Equals(otherFactionGraph.editorAsset)) 
-                                {
-                                    list.GetItem(x).FindPropertyRelative("containsError").boolValue = true;
-                                    if(!dupeValueFound)
-                                        logDictionary[property.propertyPath].LogError($"Dublicate Value: {factionGraph.editorAsset.name}");
+                                valueIsEmpty = true;
+                                continue;
+                            }
+                            if (skin.editorAsset.Equals(otherSkin.editorAsset))
+                            {
+                                list.GetItem(x).FindPropertyRelative("containsError").boolValue = true;
 
-                                    dupeValueFound = true;
-                                }
-                                break; 
-                            case ListType.MechSkin:
-                                if (!dupeValueFound && !dupeKeyFound && !keyIsEmpty && !valueIsEmpty)
-                                    logDictionary[property.propertyPath].Reset();
-
-                                var skin = GetSkinAssetReferenceValue(assetReference, ref refLabel);
-                                var otherSkin = GetSkinAssetReferenceValue(otherAssetReference, ref refLabel);
-
-                                if (skin == null || !skin.editorAsset)
-                                {
-                                    if (!valueIsEmpty)
-                                    {
-                                        logDictionary[property.propertyPath].LogError($"{assetReference.displayName} is empty");
-                                    }
-                                    valueIsEmpty = true;
-                                    continue;
-                                }
-                                if (skin.editorAsset.Equals(otherSkin.editorAsset))
-                                {
-                                    list.GetItem(x).FindPropertyRelative("containsError").boolValue = true;
-
-                                    if (!dupeValueFound)
-                                        logDictionary[property.propertyPath].LogError($"Dublicate Value: {skin.editorAsset.name}");
+                                if (!dupeValueFound)
+                                    logDictionary[propertyPath].Log.LogError($"Dublicate Value: {skin.editorAsset.name}");
                                     
-                                    dupeValueFound = true;
-                                }
-                                break;
-                            case ListType.MechChassis:
+                                dupeValueFound = true;
+                            }
+                            break;
+                        case ListType.MechChassis:
 
-                                if (!dupeValueFound && !dupeKeyFound && !keyIsEmpty && !valueIsEmpty)
-                                    logDictionary[property.propertyPath].Reset();
+                            if (!dupeValueFound && !dupeKeyFound && !keyIsEmpty && !valueIsEmpty)
+                                logDictionary[propertyPath].Log.Reset();
 
-                                var mechChassis = GetAssetReferenceValue(assetReference, ref refLabel);
-                                var otherMechChassis = GetAssetReferenceValue(otherAssetReference, ref refLabel);
-                                if (mechChassis == null || !mechChassis.editorAsset)
+                            var mechChassis = GetAssetReferenceValue(assetReference, ref refLabel);
+                            var otherMechChassis = GetAssetReferenceValue(otherAssetReference, ref refLabel);
+                            if (mechChassis == null || !mechChassis.editorAsset)
+                            {
+                                if (!valueIsEmpty)
                                 {
-                                    if (!valueIsEmpty)
-                                    {
-                                        logDictionary[property.propertyPath].LogError($"{assetReference.displayName} is empty");
-                                    }
-                                    valueIsEmpty = true;
-                                    continue;
+                                    logDictionary[propertyPath].Log.LogError($"{assetReference.displayName} is empty");
                                 }
-                                if (mechChassis.editorAsset.Equals(otherMechChassis.editorAsset))
-                                {
-                                    list.GetItem(x).FindPropertyRelative("containsError").boolValue = true;
+                                valueIsEmpty = true;
+                                continue;
+                            }
+                            if (mechChassis.editorAsset.Equals(otherMechChassis.editorAsset))
+                            {
+                                list.GetItem(x).FindPropertyRelative("containsError").boolValue = true;
 
-                                    if (!dupeValueFound)
-                                        logDictionary[property.propertyPath].LogError($"Dublicate Value: {mechChassis.editorAsset.name}");
+                                if (!dupeValueFound)
+                                    logDictionary[propertyPath].Log.LogError($"Dublicate Value: {mechChassis.editorAsset.name}");
 
-                                    dupeValueFound = true;
-                                }
-                                break;
-                            case ListType.MysteryCrate:
+                                dupeValueFound = true;
+                            }
+                            break;
+                        case ListType.MysteryCrate:
                                 
-                                if (!dupeValueFound && !dupeKeyFound && !keyIsEmpty && !valueIsEmpty)
-                                    logDictionary[property.propertyPath].Reset();
+                            if (!dupeValueFound && !dupeKeyFound && !keyIsEmpty && !valueIsEmpty)
+                                logDictionary[propertyPath].Log.Reset();
 
-                                var mysteryCrate = GetAssetReferenceValue(assetReference, ref refLabel);
-                                var otherMysteryCrate = GetAssetReferenceValue(otherAssetReference, ref refLabel);
-                                if (mysteryCrate == null || !mysteryCrate.editorAsset)
+                            var mysteryCrate = GetAssetReferenceValue(assetReference, ref refLabel);
+                            var otherMysteryCrate = GetAssetReferenceValue(otherAssetReference, ref refLabel);
+                            if (mysteryCrate == null || !mysteryCrate.editorAsset)
+                            {
+                                if (!valueIsEmpty)
                                 {
-                                    if (!valueIsEmpty)
-                                    {
-                                        logDictionary[property.propertyPath].LogError($"{assetReference.displayName} is empty");
-                                    }
-                                    valueIsEmpty = true;
-                                    continue;
+                                    logDictionary[propertyPath].Log.LogError($"{assetReference.displayName} is empty");
                                 }
-                                if (mysteryCrate.editorAsset.Equals(otherMysteryCrate.editorAsset))
-                                {
-                                    list.GetItem(x).FindPropertyRelative("containsError").boolValue = true;
+                                valueIsEmpty = true;
+                                continue;
+                            }
+                            if (mysteryCrate.editorAsset.Equals(otherMysteryCrate.editorAsset))
+                            {
+                                if (!dupeValueFound)
+                                    logDictionary[propertyPath].Log.LogError($"Dublicate Value: {mysteryCrate.editorAsset.name}");
 
-                                    if (!dupeValueFound)
-                                        logDictionary[property.propertyPath].LogError($"Dublicate Value: {mysteryCrate.editorAsset.name}");
-
-                                    dupeValueFound = true;
-                                }
-                                break;
-                            default:
-                                Debug.LogError($"Unknown list type {type}");
-                                break;
-                        }
-
-                        list.GetItem(x).serializedObject.ApplyModifiedProperties();
+                                dupeValueFound = true;
+                            }
+                            break;
+                        default:
+                            Debug.LogError($"Unknown list type {type}");
+                            break;
                     }
-                    list.GetItem(i).serializedObject.ApplyModifiedProperties();
+
+
+                    loopElement.serializedObject.ApplyModifiedProperties();
                 }
-                list.DrawErrorHighlightingElement(rect, element);
+
+                if (dupeKeyFound || dupeValueFound || keyIsEmpty || valueIsEmpty)
+                    logDictionary[propertyPath].ContainsError = true;
+
+                if (!dupeKeyFound && !dupeValueFound && !keyIsEmpty && !valueIsEmpty)
+                    logDictionary[propertyPath].ContainsError = false;
+
+                element.serializedObject.ApplyModifiedProperties();
+
+                if (logDictionary[propertyPath].ContainsError)
+                {
+                    GUI.color = Color.red;
+                    EditorGUI.PropertyField(rect, element, label, true);
+                    GUI.color = Color.white;
+                }
+                else EditorGUI.PropertyField(rect, element, label, true);
             }; 
         }
 
@@ -340,7 +352,7 @@ namespace SupremacyHangar.Editor.ContentLoader
 
             GUILayout.Label("Selected Data");
 
-            logDictionary[selectedElement.propertyPath].Render(GUILayout.ExpandHeight(true), GUILayout.ExpandWidth(true));
+            logDictionary[selectedElement.propertyPath].Log.Render(GUILayout.ExpandHeight(true), GUILayout.ExpandWidth(true));
             GUILayout.BeginHorizontal();
 
             if (dataReference != null)

@@ -22,13 +22,5 @@ namespace SupremacyHangar.Editor.ContentLoader
             }
             return "No Mystery Crate Ref";
         }
-
-        protected override void SetValidity(Runtime.ContentLoader.MysteryCrateMapping data)
-        {
-            if (data.MysteryCrateReference.editorAsset == null || data.DataMysteryCrate == null)
-                data.ContainsError = true;
-            else
-                data.ContainsError = false;
-        }
     }
 }

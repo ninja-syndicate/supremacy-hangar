@@ -21,13 +21,5 @@ namespace SupremacyHangar.Editor.ContentLoader
             }
             return "No Mech Asset Ref";
         }
-
-        protected override void SetValidity(Runtime.ContentLoader.MechChassisMapping data)
-        {
-            if (data.MechReference.editorAsset == null || data.DataMechModel == null)
-                data.ContainsError = true;
-            else
-                data.ContainsError = false;
-        }
     }
 }

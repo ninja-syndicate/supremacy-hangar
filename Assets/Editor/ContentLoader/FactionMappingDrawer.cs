@@ -17,13 +17,5 @@ namespace SupremacyHangar.Editor.ContentLoader
         {
             return data.ConnectivityGraph.editorAsset != null ? data.ConnectivityGraph.editorAsset.name : "No Connectivity Graph";
         }
-
-        protected override void SetValidity(Runtime.ContentLoader.FactionMapping data)
-        {
-            if (data.ConnectivityGraph.editorAsset == null || data.DataFaction == null)
-                data.ContainsError = true;
-            else
-                data.ContainsError = false;
-        }
     }
 }
