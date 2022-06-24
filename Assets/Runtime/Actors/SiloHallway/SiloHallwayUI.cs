@@ -19,6 +19,8 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
         [SerializeField] private TMP_Text siloContentsName1;
         [SerializeField] private TMP_Text siloContentsName2;
         [SerializeField] private Button loadButton;
+
+        [SerializeField] private int siloOffset;
         
         private Color currentFactionColor = Color.black;
 
