@@ -44,6 +44,7 @@ namespace SupremacyHangar.Runtime.Environment
         private SiloPositioner _currentSilo;
         private EnvironmentPrefab newDoorEnvironmentPrefab;
         public int SiloOffset { get; private set; } = 0;
+        public IReadOnlyList<SiloItem> SiloItems => _playerInventory?.Silos;
 
         public int MaxSiloOffset { get; private set; }
         private bool forward = true;
@@ -121,7 +122,7 @@ namespace SupremacyHangar.Runtime.Environment
             currentEnvironment.CurrentGameObject = handle1.Result;
             nextRoomEnvironmentPrefabRef = currentEnvironment.CurrentGameObject.GetComponent<EnvironmentPrefab>();
             loadedObjects.Add(currentEnvironment.CurrentGameObject);
-
+            
             currentEnvironment.CurrentGameObject.SetActive(true);
 
             foreach (ConnectivityJoin join in _connectivityGraph.RequiredJoins)

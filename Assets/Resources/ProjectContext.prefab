@@ -141,3 +141,4 @@ MonoBehaviour:
     \"ownership_id\": \"3ca1d928-51fa-4c9e-8a82-6ee5819b93d2\",\n            \"mystery_crate_id\":
     \"3ca1d928-51fa-4c9e-8a82-6ee5819b93d2\",\n            \"can_open_on\": \"Thu
     Jul  7 13:00:00 UTC 2022\"\n        }\n    ]\n}"
+  jsonTestFragmentDelay: 0.2

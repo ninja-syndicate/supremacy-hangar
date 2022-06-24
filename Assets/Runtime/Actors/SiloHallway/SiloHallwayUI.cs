@@ -1,6 +1,9 @@
+using SupremacyHangar.Runtime.Environment;
+using SupremacyHangar.Runtime.Types;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace SupremacyHangar.Runtime.Actors.SiloHallway
 {
@@ -24,6 +27,33 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
         
         private Color currentFactionColor = Color.black;
 
+        [Inject]
+        public void SetDependencies(EnvironmentManager manager)
+        {
+            int mySiloNumber = manager.SiloOffset + siloOffset;
+            var myContents = manager.SiloItems[mySiloNumber];
+            siloNumber.text = (mySiloNumber + 1).ToString();
+            switch (myContents)
+            {
+                case Mech mech:
+                    UpdateTypeString("Mech");
+                    UpdateName1(mech.MechChassisDetails.DataMechModel.HumanName);
+                    UpdateName2(mech.MechSkinDetails.DataMechSkin.HumanName);
+                    break;
+                case MysteryBox box:
+                    UpdateTypeString("Mystery Box");
+                    UpdateName1(box.MysteryCrateDetails.DataMysteryCrate.HumanName);
+                    //TODO: this needs to be changed to a counter...
+                    UpdateName2(box.CanOpenOn);
+                    break;
+               default:
+                   UpdateTypeString("Empty");
+                   UpdateName1("");
+                   UpdateName2("");
+                   break;
+            }
+        }
+        
         public void UpdateFactionColor(Color newColor)
         {
             if (newColor == currentFactionColor) return;
