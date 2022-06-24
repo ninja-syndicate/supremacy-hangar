@@ -1,11 +1,8 @@
 using UnityEngine;
 using Newtonsoft.Json;
-using System.IO;
 using System.Threading.Tasks;
 using Zenject;
 using SupremacyHangar.Runtime.Types;
-using SupremacyHangar.Runtime.Plugins.WebGL;
-using System;
 using SupremacyHangar.Runtime.ContentLoader;
 
 /// <summary>
@@ -23,24 +20,11 @@ public class BridgeScript : MonoInstaller
     [TextArea(3, 50)]
     [SerializeField] public string jsonTestFragment;
 
-    [SerializeField] public float jsonTestFragmentDelay = 5f;
+    [SerializeField] public float jsonTestFragmentDelay = 0.2f;
 #endif
     
     public override void InstallBindings()
     {
-#if UNITY_EDITOR
-        if (!string.IsNullOrWhiteSpace(jsonTestFragment))
-        {
-            Task.Run(async () =>
-            {
-                await Task.Delay((int)(jsonTestFragmentDelay * 1000));
-                Debug.Log("Set inventory");
-                GetPlayerInventoryFromPage(jsonTestFragment);
-            });
-        }
-#elif UNITY_WEBGL
-        SiloReady();
-#endif
         //Might have to bind again after data is read
         Container.Bind<SupremacyGameObject>().FromInstance(inventoryData).AsSingle();
     }
@@ -52,8 +36,17 @@ public class BridgeScript : MonoInstaller
         _contentSignalHandler.InventoryRecieved();
     }
 
-    public void SiloReady()
+#if UNITY_EDITOR
+    public void SetPlayerInventoryFromFragment()
     {
-        WebGLPluginJS.SiloReady();
+        if (!string.IsNullOrWhiteSpace(jsonTestFragment))
+        {
+            Task.Run(async () =>
+            {
+                await Task.Delay((int)(jsonTestFragmentDelay * 1000));
+                GetPlayerInventoryFromPage(jsonTestFragment);
+            });
+        }
     }
+#endif        
 }

@@ -94,7 +94,18 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 return;
             }
 
-            mappings = operation.Result;           
+            mappings = operation.Result;
+            if (!TryGetComponent(out BridgeScript bridge))
+            {
+                Debug.LogError("Bridgescript isn't on this component!", this);
+                return;
+            } 
+            
+#if UNITY_EDITOR
+            bridge.SetPlayerInventoryFromFragment();
+#elif UNITY_WEBGL
+            Plugins.WebGL.WebGLPluginJS.SiloReady();
+#endif
         }
 
         private void SetPlayerInventory()
