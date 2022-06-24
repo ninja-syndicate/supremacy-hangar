@@ -1,3 +1,5 @@
+using SupremacyData.Runtime;
+using SupremacyHangar.Runtime.ContentLoader;
 using SupremacyHangar.Runtime.Environment;
 using SupremacyHangar.Runtime.Types;
 using TMPro;
@@ -28,21 +30,21 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
         private Color currentFactionColor = Color.black;
 
         [Inject]
-        public void SetDependencies(EnvironmentManager manager)
+        public void SetDependencies(AddressablesManager addressablesManager, EnvironmentManager environmentManager)
         {
-            int mySiloNumber = manager.SiloOffset + siloOffset;
-            var myContents = manager.SiloItems[mySiloNumber];
+            int mySiloNumber = environmentManager.SiloOffset + siloOffset;
+            var myContents = environmentManager.SiloItems[mySiloNumber];
             siloNumber.text = (mySiloNumber + 1).ToString();
             switch (myContents)
             {
                 case Mech mech:
-                    UpdateTypeString("Mech");
-                    UpdateName1(mech.MechChassisDetails.DataMechModel.HumanName);
-                    UpdateName2(mech.MechSkinDetails.DataMechSkin.HumanName);
+                    UpdateTypeString(mech);
+                    UpdateName1(mech);
+                    UpdateName2(mech);
                     break;
                 case MysteryBox box:
-                    UpdateTypeString("Mystery Box");
-                    UpdateName1(box.MysteryCrateDetails.DataMysteryCrate.HumanName);
+                    UpdateTypeString(box);
+                    UpdateName1(addressablesManager.CurrentFaction, box);
                     //TODO: this needs to be changed to a counter...
                     UpdateName2(box.CanOpenOn);
                     break;
@@ -106,14 +108,52 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
             siloContentsType.text = newString;
         }
         
+        private void UpdateTypeString(Mech mech)
+        {
+            siloContentsType.text = "Mech";
+        }
+
+        private void UpdateTypeString(MysteryBox box)
+        {
+            switch (box.MysteryCrateDetails.DataMysteryCrate.Type)
+            {
+                case MysteryCrate.ModelType.Mech:
+                    siloContentsType.text = "War Machine Crate";
+                    break;
+                case MysteryCrate.ModelType.Weapon:
+                    siloContentsType.text = "Weapon Crate";
+                    break;
+                default:
+                    siloContentsType.text = "Mystery Crate";
+                    Debug.LogError("Unknown crate type!");
+                    break;
+            }
+        }        
+        
         public void UpdateName1(string newString)
         {
             siloContentsName1.text = newString;
+        }
+
+        private void UpdateName1(Mech mech)
+        {
+            siloContentsName1.text = mech.MechChassisDetails.DataMechModel.HumanName;
+        }
+
+        private void UpdateName1(Faction currentFaction, MysteryBox box)
+        {
+            var boxFaction = box.MysteryCrateDetails.DataMysteryCrate.Faction;
+            siloContentsName1.text = boxFaction == currentFaction ? "" : boxFaction.HumanName;
         }
         
         public void UpdateName2(string newString)
         {
             siloContentsName2.text = newString;
         }     
+        
+        private void UpdateName2(Mech mech)
+        {
+            siloContentsName2.text = mech.MechSkinDetails.DataMechSkin.HumanName;
+        }             
     }
 }
