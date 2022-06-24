@@ -4,36 +4,33 @@ using SupremacyHangar.Runtime.ContentLoader.Types;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
 namespace SupremacyHangar.Runtime.Types
 {
-    public enum SupremacyType
-    {
-        empty,
-        mech,
-        mystery_crate
-    }
-
+    [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public class SiloItem
     {
-        public SupremacyType Type = SupremacyType.empty;
-        public Guid ownership_id;
+        public Guid OwnershipID;
     }
 
+    [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public class Mech : SiloItem
     {
-        public Guid mech_id;
-        public Guid skin_id;
+        public Guid MechID;
+        public Guid SkinID;
         public MechChassisMapping MechChassisDetails;
         public MechSkinMapping MechSkinDetails;
     }
 
+    [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public class MysteryBox : SiloItem
     {        
-        public Guid mystery_crate_id;
-        public string can_open_on;
+        public Guid MysteryCrateID;
+        public string CanOpenOn;
         public MysteryCrateMapping MysteryCrateDetails;
     }
 }

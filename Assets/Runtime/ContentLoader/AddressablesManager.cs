@@ -116,11 +116,11 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 switch (silo)
                 {
                     case Mech mech:
-                        mech.MechChassisDetails = mappings.MechChassisPrefabByGuid[mech.mech_id];
-                        mech.MechSkinDetails = mappings.MechSkinAssetByGuid[mech.skin_id];
+                        mech.MechChassisDetails = mappings.MechChassisPrefabByGuid[mech.MechID];
+                        mech.MechSkinDetails = mappings.MechSkinAssetByGuid[mech.SkinID];
                         break;
                     case MysteryBox box:
-                        box.MysteryCrateDetails = mappings.MysteryCrateAssetByGuid[box.mystery_crate_id];
+                        box.MysteryCrateDetails = mappings.MysteryCrateAssetByGuid[box.MysteryCrateID];
                         break;
                     default:
                         Debug.LogError($"Unknown silo of type {silo}.");

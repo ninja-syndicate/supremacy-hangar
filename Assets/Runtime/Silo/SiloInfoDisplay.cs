@@ -65,7 +65,7 @@ namespace SupremacyHangar.Runtime.Silo
             _siloNumber.text = "" + (_environmentManager.SiloOffset + siloIndex + 1);
             mechDisplayLayout[0].text = "Myster Box";
             mechDisplayLayout[1].text = box.MysteryCrateDetails.DataMysteryCrate.HumanName;
-            mechDisplayLayout[2].text = box.can_open_on;
+            mechDisplayLayout[2].text = box.CanOpenOn;
         }
     }
 }
