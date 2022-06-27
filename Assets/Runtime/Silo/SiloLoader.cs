@@ -19,18 +19,20 @@ namespace SupremacyHangar.Runtime.Silo
         
         private bool playerPresent;
         private FirstPersonController playerController;
-        
+
         public override void OnPlayerEntered(GameObject go, FirstPersonController controller)
         {
             playerPresent = true;
             playerController = controller;
             playerController.OnInteractionTriggered += StartLoad;
+            playerController.IncrementInteractionPromptRequests();
         }
         
         public override void OnPlayerExited()
         {
             if (!playerPresent) return;
             playerController.OnInteractionTriggered -= StartLoad;
+            playerController.DecrementInteractionPromptRequests();
             playerPresent = false;
             playerController = null;
         }
@@ -52,7 +54,7 @@ namespace SupremacyHangar.Runtime.Silo
                     addressablesManager.TargetSkin = null;
                     break;
                 default:
-                    Debug.LogWarning($"Unexpected type of {myContent.Type} - cowardly refusing to fill the silo", this);
+                    Debug.LogWarning($"Unexpected type of {myContent.GetType()} - cowardly refusing to fill the silo", this);
                     break;
             }
 

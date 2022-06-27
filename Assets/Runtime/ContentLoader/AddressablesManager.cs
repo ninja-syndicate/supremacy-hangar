@@ -22,15 +22,25 @@ namespace SupremacyHangar.Runtime.ContentLoader
         public AssetReference TargetMech { get; set; }
         public AssetReference TargetSkin { get; set; }
 
+        public SupremacyData.Runtime.Faction CurrentFaction
+        {
+            get
+            {
+                if (_playerInventory == null) return null;
+                if (_playerInventory.faction == Guid.Empty) return null;
+                if (!mappingsLoaded) return null;
+                return mappings.FactionHallwayByGuid[_playerInventory.faction].DataFaction;
+            }
+        }
+        
         private AssetReference previousMech;
-
-        public string FactionName { get; set; }
-
+        
         private LoadedAsset myMech { get; set; } = new LoadedAsset();
 
         [SerializeField] private AssetReferenceAssetMappings assetMappingsReference;
 
         private AssetMappings mappings;
+        private bool mappingsLoaded;
 
         private SignalBus _bus;
         private bool _subscribed;
@@ -95,6 +105,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
             }
 
             mappings = operation.Result;
+            mappingsLoaded = true;
             if (!TryGetComponent(out BridgeScript bridge))
             {
                 Debug.LogError("Bridgescript isn't on this component!", this);
@@ -116,11 +127,11 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 switch (silo)
                 {
                     case Mech mech:
-                        mech.MechChassisDetails = mappings.MechChassisPrefabByGuid[mech.mech_id];
-                        mech.MechSkinDetails = mappings.MechSkinAssetByGuid[mech.skin_id];
+                        mech.MechChassisDetails = mappings.MechChassisPrefabByGuid[mech.MechID];
+                        mech.MechSkinDetails = mappings.MechSkinAssetByGuid[mech.SkinID];
                         break;
                     case MysteryBox box:
-                        box.MysteryCrateDetails = mappings.MysteryCrateAssetByGuid[box.mystery_crate_id];
+                        box.MysteryCrateDetails = mappings.MysteryCrateAssetByGuid[box.MysteryCrateID];
                         break;
                     default:
                         Debug.LogError($"Unknown silo of type {silo}.");

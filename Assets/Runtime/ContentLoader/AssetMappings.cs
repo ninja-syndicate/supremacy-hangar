@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using SupremacyData.Editor;
 using SupremacyHangar.Runtime.ContentLoader.Types;
 using UnityEngine;
 using UnityEngine.AddressableAssets;

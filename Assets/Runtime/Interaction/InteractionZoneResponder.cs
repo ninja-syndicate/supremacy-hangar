@@ -30,10 +30,9 @@ namespace SupremacyHangar.Runtime.Interaction
         {
             if (interactionZone != null) return;
             if (TryGetComponent(out interactionZone)) return;
-            {
-                Debug.LogError("No interaction Zone on this gameobject and none set!", this);
-                enabled = false;
-            }
+
+            Debug.LogError("No interaction Zone on this GameObject and none set!", this);
+            enabled = false;
         }        
     }
 }
