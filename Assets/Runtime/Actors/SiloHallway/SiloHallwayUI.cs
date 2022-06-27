@@ -39,7 +39,16 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
         public void SetDependencies(AddressablesManager addressablesManager, EnvironmentManager environmentManager)
         {
             int mySiloNumber = environmentManager.SiloOffset + siloOffset;
-            var myContents = environmentManager.SiloItems[mySiloNumber];
+
+            SiloItem myContents;
+            if (mySiloNumber < environmentManager.SiloItems.Count)
+            {
+                myContents = environmentManager.SiloItems[mySiloNumber];
+            }
+            else
+            {
+                myContents = new SiloItem();
+            }
             siloNumber.text = (mySiloNumber + 1).ToString();
             switch (myContents)
             {

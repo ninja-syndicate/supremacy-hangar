@@ -8,6 +8,8 @@ namespace SupremacyHangar.Runtime.Silo
     public class CloseSiloSignal { }
     public class SiloUnloadedSignal { }
 
+    public class SiloFilledSignal { }
+
     public class SiloSignalHandler
     {
         readonly SignalBus _signalBus;
@@ -25,6 +27,11 @@ namespace SupremacyHangar.Runtime.Silo
         {
             _signalBus.Fire<SiloUnloadedSignal>();
         }
+
+        public void SiloFilled()
+        {
+            _signalBus.Fire<SiloFilledSignal>();
+        }
     }
 
     public class SiloSignalInstaller : Installer<SiloSignalInstaller>
@@ -34,6 +41,7 @@ namespace SupremacyHangar.Runtime.Silo
             Container.Bind<SiloSignalHandler>().AsSingle().NonLazy();
             Container.DeclareSignal<CloseSiloSignal>();
             Container.DeclareSignal<SiloUnloadedSignal>();
+            Container.DeclareSignal<SiloFilledSignal>();
         }
     }
 }

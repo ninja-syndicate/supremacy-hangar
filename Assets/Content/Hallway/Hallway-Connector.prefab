@@ -361,6 +361,7 @@ MonoBehaviour:
   DoorAnim: {fileID: 4229028505539775523}
   Spawned: 0
   increment: 1
+  doorCollider: {fileID: 9190618577487945576}
 --- !u!1 &8071268168828302258 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6789714277130126056, guid: e56eef3e9fd436843bdaf0a026d339bc,
@@ -438,3 +439,4 @@ MonoBehaviour:
   DoorAnim: {fileID: 4229028505539775523}
   Spawned: 0
   increment: 0
+  doorCollider: {fileID: 9190618577487945576}

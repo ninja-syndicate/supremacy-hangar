@@ -264,9 +264,15 @@ namespace SupremacyHangar.Runtime.Environment
             interactedDoor.connectedTo = nextRoom.CurrentGameObject;
 
             connectedDoor.SetActive(true);
+            
             //Save for unload on going back to current room
             newlyLoadedObjects.Add(connectedDoor);
 
+            if (newlyLoadedObjects.Count > 1)
+            {
+                Debug.Log("Door open as alls loaded");
+                Door2.OpenDoor();
+            }
             operationsForNewDoor.Remove(doorHandler);
         }
 
@@ -291,8 +297,9 @@ namespace SupremacyHangar.Runtime.Environment
 
             newSilo.SetActive(true);
 
-            _currentSilo.OpenSilo();
-
+            if (loadedSilo != null)
+                UnloadAssetsAfterSiloClosed();
+            
             loadedSilo = newSilo;
         }
 
@@ -347,16 +354,20 @@ namespace SupremacyHangar.Runtime.Environment
 
         private GameObject loadedSilo;
 
-        public void UnloadAssets()
+        public void UnloadSilo(bool waitOnWindow = true)
         {
-            DoorOpened();
-
-            if (_currentSilo)
+            if (_currentSilo && waitOnWindow)
             {
                 _siloSignalHandler.CloseSilo();
                 _currentSilo.SiloSpawned = false;
-                return;
             }
+            else if (!waitOnWindow && loadedSilo)
+                UnloadAssetsAfterSiloClosed();
+        }
+
+        public void UnloadAssets()
+        {
+            DoorOpened();            
 
             if (newDoorEnvironmentPrefab)
             {
