@@ -41,7 +41,7 @@ jobs:
           Copy-Item "$projectPath\Builds\WebGL\StreamingAssets" -Destination "$projectPath\BuildB" -Recurse
           $runnerHome = "/cygdrive/c/users/${{ secrets.RUNNER_USER }}"
           $cygdriveProjectPath = "/cygdrive/c/actions-runner/_work/supremacy-hangar/supremacy-hangar"
-          rclone sync " $cygdriveProjectPath/BuildB/" "${{secrets.RCLONE_USER}}:/var/www/html/supremacy-hangar/build/develop/$GITHUB_HEAD_REF-$GITHUB_RUN_ATTEMPT" --progress --verbose --multi-thread-streams-4
+          rclone sync " $cygdriveProjectPath/BuildB/" "${{secrets.RCLONE_USER}}:/var/www/html/supremacy-hangar/build/develop/$GITHUB_HEAD_REF-$GITHUB_RUN_ATTEMPT" --progress --verbose --multi-thread-streams 4
   deploy-addressables:
     needs: [ build ]
     runs-on: [ self-hosted, windows, x64 ]
@@ -51,4 +51,4 @@ jobs:
           $projectPath = "C:\actions-runner\_work\supremacy-hangar\supremacy-hangar"
           $runnerHome = "/cygdrive/c/users/${{ secrets.RUNNER_USER }}"
           $cygdriveProjectPath = "/cygdrive/c/actions-runner/_work/supremacy-hangar/supremacy-hangar"
-          rclone sync " $cygdriveProjectPath/ServerData/" "${{secrets.RCLONE_USER}}:/var/www/html/supremacy-hangar/addressables/develop/" --progress --verbose --multi-thread-streams-4
+          rclone sync " $cygdriveProjectPath/ServerData/" "${{secrets.RCLONE_USER}}:/var/www/html/supremacy-hangar/addressables/develop/" --progress --verbose --multi-thread-streams 4
