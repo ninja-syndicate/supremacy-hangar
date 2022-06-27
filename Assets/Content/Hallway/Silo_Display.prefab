@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 399289632728842783}
   - component: {fileID: 4455658631973401602}
   m_Layer: 0
-  m_Name: Silo_Display Latest
+  m_Name: Silo_Display
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,17 +75,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   factionColorImages:
-  - {fileID: 0}
   - {fileID: 1932116374712690320}
   - {fileID: 1107554554787850456}
   - {fileID: 1107554554787850456}
   - {fileID: 3254470940469393470}
+  - {fileID: 1428667537336537844}
+  - {fileID: 7929559109227790061}
+  - {fileID: 2498180662706083929}
+  - {fileID: 2498180662706083929}
+  - {fileID: 1107554554787850456}
   factionColorButtons:
   - {fileID: 2187088310494769674}
   factionColorText:
   - {fileID: 5723637578754220319}
   - {fileID: 4472911683331499170}
   - {fileID: 3000889080786872621}
+  - {fileID: 4345740600727491216}
+  factionColorOutlineText:
+  - {fileID: 2389442065814661020}
   darkerFactionColorMultiplier: 0.8
   darkerFactionColorImages:
   - {fileID: 7851809335629998684}
@@ -95,6 +102,7 @@ MonoBehaviour:
   siloContentsName1: {fileID: 4472911683331499170}
   siloContentsName2: {fileID: 3000889080786872621}
   loadButton: {fileID: 2187088310494769674}
+  siloOffset: 0
 --- !u!1 &573485225157745262
 GameObject:
   m_ObjectHideFlags: 0
@@ -1849,7 +1857,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 619, y: -258}
-  m_SizeDelta: {x: 335, y: 84}
+  m_SizeDelta: {x: 686, y: 75}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &3948782516022393492
 CanvasRenderer:
@@ -1879,7 +1887,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 576020a2bc9244b10820d55b0fad35f9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2701eaaafb2124c468159ed89a60dabd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
