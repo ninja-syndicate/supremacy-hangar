@@ -19,7 +19,7 @@ MonoBehaviour:
   parts:
   - referenceName: {fileID: 11400000, guid: 9a076b2650fe9e74cbec6834753181e0, type: 2}
     Reference:
-      m_AssetGUID: b90b9b7825ebb344a89a6d6f28cad701
+      m_AssetGUID: 123988ea16edc4550a27335f4627864c
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
@@ -32,7 +32,7 @@ MonoBehaviour:
       - {fileID: 11400000, guid: 4f5b45fc739a31b49ac1097314cd8995, type: 2}
   - referenceName: {fileID: 11400000, guid: b1455639bfd83dc48a72059e08ab397f, type: 2}
     Reference:
-      m_AssetGUID: 9320372745f3f45e4971cba976134fb7
+      m_AssetGUID: e2c41e60b17194fca9a3ef0f60d91ec6
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
@@ -66,7 +66,7 @@ MonoBehaviour:
       - {fileID: 11400000, guid: 9a076b2650fe9e74cbec6834753181e0, type: 2}
   - referenceName: {fileID: 11400000, guid: 89a12616bb7cbd4419ca8e7fd9ec3d05, type: 2}
     Reference:
-      m_AssetGUID: 9a955d9e8bbecf4449c699e011487558
+      m_AssetGUID: 43009c16fe78a4812a6d454ebd80f68c
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
@@ -76,7 +76,7 @@ MonoBehaviour:
       - {fileID: 11400000, guid: b1455639bfd83dc48a72059e08ab397f, type: 2}
   - referenceName: {fileID: 11400000, guid: 529252d15a06d6546826646e401deb92, type: 2}
     Reference:
-      m_AssetGUID: b018ad848f4114e62bd27cd1b7cbe2b0
+      m_AssetGUID: 2049358e475764b5aaf76071f37d2037
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0

@@ -1,0 +1,153 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4297981736134075246
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2150796274959637628, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_Name
+      value: Hallway-DoubleSilo RM
+      objectReference: {fileID: 0}
+    - target: {fileID: 2330969162365799569, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 4910272235709408ea70198b46dccb19, type: 2}
+    - target: {fileID: 2389930510350652683, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 335
+      objectReference: {fileID: 0}
+    - target: {fileID: 2389930510350652683, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 84
+      objectReference: {fileID: 0}
+    - target: {fileID: 3195991059854545715, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 576020a2bc9244b10820d55b0fad35f9,
+        type: 3}
+    - target: {fileID: 4370155300277935887, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: startFactionColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370155300277935887, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: startFactionColor.b
+      value: 0.12156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370155300277935887, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: startFactionColor.g
+      value: 0.16470589
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370155300277935887, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: startFactionColor.r
+      value: 0.77254903
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084819900365775767, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 4910272235709408ea70198b46dccb19, type: 2}
+    - target: {fileID: 5180003766917020173, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 335
+      objectReference: {fileID: 0}
+    - target: {fileID: 5180003766917020173, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 84
+      objectReference: {fileID: 0}
+    - target: {fileID: 5373880912367057973, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 576020a2bc9244b10820d55b0fad35f9,
+        type: 3}
+    - target: {fileID: 6387240603356791370, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387240603356791370, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387240603356791370, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387240603356791370, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387240603356791370, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387240603356791370, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387240603356791370, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387240603356791370, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387240603356791370, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387240603356791370, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387240603356791370, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515659517387927561, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: startFactionColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515659517387927561, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: startFactionColor.b
+      value: 0.12156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515659517387927561, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: startFactionColor.g
+      value: 0.16470589
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515659517387927561, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: startFactionColor.r
+      value: 0.77254903
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9320372745f3f45e4971cba976134fb7, type: 3}
