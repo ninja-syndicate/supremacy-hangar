@@ -474,7 +474,6 @@ GameObject:
   - component: {fileID: 896598984417407140}
   - component: {fileID: 8962178593567118285}
   - component: {fileID: 5916775535431724488}
-  - component: {fileID: 2385182798165170958}
   - component: {fileID: 3749240961342044095}
   - component: {fileID: 323857838324125707}
   m_Layer: 5
@@ -533,29 +532,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.4, y: 2.504079, z: 1.148261}
   m_Center: {x: 0, y: -0.1797489, z: 0.60878867}
---- !u!114 &2385182798165170958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2061902075139569773}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb9e75b86779744781e28671013c152, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _siloNumber: {fileID: 8277762360794768138}
-  mechDisplayLayout:
-  - {fileID: 910247175471248009}
-  - {fileID: 2940840244536730806}
-  - {fileID: 7832366807560474993}
-  lootBoxDisplayLayout:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  siloIndex: 1
 --- !u!114 &3749240961342044095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1573,7 +1549,6 @@ GameObject:
   - component: {fileID: 1746090069446551780}
   - component: {fileID: 3707960456775732632}
   - component: {fileID: 62340275779691916}
-  - component: {fileID: 4513388467641412079}
   - component: {fileID: 1850915454363511100}
   - component: {fileID: 6120751019091767948}
   m_Layer: 5
@@ -1632,29 +1607,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.4, y: 2.3996456, z: 1.1199836}
   m_Center: {x: 0, y: -0.20998275, z: -0.6141276}
---- !u!114 &4513388467641412079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5196435074066300949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6eb9e75b86779744781e28671013c152, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _siloNumber: {fileID: 6545144571698640129}
-  mechDisplayLayout:
-  - {fileID: 392898729630103436}
-  - {fileID: 6964333099546807067}
-  - {fileID: 5305686133822199162}
-  lootBoxDisplayLayout:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  siloIndex: 0
 --- !u!114 &1850915454363511100
 MonoBehaviour:
   m_ObjectHideFlags: 0
