@@ -33,7 +33,7 @@ jobs:
       - name: Synchronize Build
         run: |
           $projectPath = "C:\actions-runner\_work\supremacy-hangar\supremacy-hangar"
-#          New-Item -Path "$projectPath" -Name "BuildB" -ItemType "directory"
+          New-Item -Force -Path "$projectPath" -Name "BuildB" -ItemType "directory"
           Copy-Item "$projectPath\Builds\WebGL\Build\*" -Destination "$projectPath\BuildB" -Recurse
           Copy-Item "$projectPath\Builds\WebGL\StreamingAssets" -Destination "$projectPath\BuildB" -Recurse
           $runnerHome = "/cygdrive/c/users/${{ secrets.RUNNER_USER }}"
