@@ -37,6 +37,16 @@ namespace SupremacyHangar.Runtime.Environment
 
                 //unload previous room/s & connectors
                 _environmentManager.UnloadAssets();
+                _environmentManager.UnloadSilo(false);
+            }
+        }
+
+        public void NewlySpawned()
+        {
+            foreach (EnvironmentSpawner s in mySpawners)
+            {
+                s.Spawning = false;
+                if(!s.PlayerEntered()) s.CloseDoor();
             }
         }
 
