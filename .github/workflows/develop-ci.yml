@@ -9,11 +9,11 @@ jobs:
   build:
     runs-on: [ self-hosted, windows, x64 ]
     steps:
-     - name: Checkout Repository
-       uses: actions/checkout@v3
-       with:
-         fetch-depth: "0"
-         lfs: true
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: "0"
+          lfs: true
 
       - name: Prewarm
         run: |
