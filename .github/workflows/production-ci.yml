@@ -1,42 +1,74 @@
 name: Production CI
 
 on:
-    push:
-        branches: ["main"]
+  push:
+    branches: [ "main" ]
 
 jobs:
-    build:
-        runs-on: [self-hosted, windows, x64]
-        steps:
-            - name: Checkout Repository
-              uses: actions/checkout@v3
-              with:
-                  fetch-depth: "0"
-                  lfs: true
+  build:
+    runs-on: [ self-hosted, windows, x64 ]
+    steps:
+      # Checkout (without LFS)
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-            - name: Prewarm
-              run: |
-                  $unityPath="C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe"
-                  $projectPath="C:\actions-runner\_work\supremacy-hangar\supremacy-hangar"
-                  Start-Process -FilePath $unityPath -ArgumentList "-batchmode -quit -buildTarget WebGL -projectPath $projectPath -logFile prewarm_log.txt -executeMethod BuildSystem.CLI.PreWarm -addressablesLocation prod" -Wait -WindowStyle Hidden
+      # Git LFS
+      - name: Create LFS file list
+        run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
 
-            - name: Build
-              run: |
-                  $unityPath="C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe"
-                  $projectPath="C:\actions-runner\_work\supremacy-hangar\supremacy-hangar"
-                  Start-Process -FilePath $unityPath -ArgumentList "-batchmode -quit -buildTarget WebGL -projectPath $projectPath -logFile build_log.txt -executeMethod BuildSystem.CLI.BuildWebGL -addressablesLocation prod" -Wait -WindowStyle Hidden
+      - name: Restore LFS cache
+        uses: actions/cache@v3
+        id: lfs-cache
+        with:
+          path: .git/lfs
+          key: ${{ runner.os }}-lfs-${{ hashFiles('.lfs-assets-id') }}
 
-    deploy:
-        needs: [build]
-        runs-on: [self-hosted, windows, x64]
-        steps:
-            - name: Synchronize
-              run: |
-                  $projectPath="C:\actions-runner\_work\supremacy-hangar\supremacy-hangar"
-                  New-Item -Path "$projectPath" -Name "BuildB" -ItemType "directory"
-                  Copy-Item "$projectPath\Builds\WebGL\Build\*" -Destination "$projectPath\BuildB" -Recurse
-                  Copy-Item "$projectPath\Builds\WebGL\StreamingAssets" -Destination "$projectPath\BuildB" -Recurse
-                  $runnerHome = "/cygdrive/c/users/${{ secrets.RUNNER_USER }}"
-                  $cygdriveProjectPath = "/cygdrive/c/actions-runner/_work/supremacy-hangar/supremacy-hangar"
-                  rsync -av -e "'/cygdrive/c/cygwin64/bin/ssh.exe' -o UserKnownHostsFile=$runnerHome/.ssh/known_hosts -i $runnerHome/.ssh/build_machine" $cygdriveProjectPath/BuildB/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/html/supremacy-hangar/build/production/
-                  rsync -av -e "'/cygdrive/c/cygwin64/bin/ssh.exe' -o UserKnownHostsFile=$runnerHome/.ssh/known_hosts -i $runnerHome/.ssh/build_machine" $cygdriveProjectPath/ServerData/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/html/supremacy-hangar/addressables/production/
+      - name: Git LFS Pull
+        run: |
+          git lfs pull
+          git add .
+          git reset --hard
+
+      # Cache
+      - uses: actions/cache@v2
+        with:
+          path: Library
+          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-
+
+      - name: Prewarm
+        run: |
+          $unityPath="C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe"
+          $projectPath="C:\actions-runner\_work\supremacy-hangar\supremacy-hangar"
+          Start-Process -FilePath $unityPath -ArgumentList "-batchmode -quit -buildTarget WebGL -projectPath $projectPath -logFile prewarm_log.txt -executeMethod BuildSystem.CLI.PreWarm -addressablesLocation prod" -Wait -WindowStyle Hidden
+
+      - name: Build
+        run: |
+          $unityPath="C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe"
+          $projectPath="C:\actions-runner\_work\supremacy-hangar\supremacy-hangar"
+          Start-Process -FilePath $unityPath -ArgumentList "-batchmode -quit -buildTarget WebGL -projectPath $projectPath -logFile build_log.txt -executeMethod BuildSystem.CLI.BuildWebGL -addressablesLocation prod" -Wait -WindowStyle Hidden
+
+  deploy-build:
+    needs: [ build ]
+    runs-on: [ self-hosted, windows, x64 ]
+    steps:
+      - name: Synchronize Build
+        run: |
+          $projectPath = "C:\actions-runner\_work\supremacy-hangar\supremacy-hangar"
+          New-Item -Path "$projectPath" -Name "BuildB" -ItemType "directory"
+          Copy-Item "$projectPath\Builds\WebGL\Build\*" -Destination "$projectPath\BuildB" -Recurse
+          Copy-Item "$projectPath\Builds\WebGL\StreamingAssets" -Destination "$projectPath\BuildB" -Recurse
+          $runnerHome = "/cygdrive/c/users/${{ secrets.RUNNER_USER }}"
+          $cygdriveProjectPath = "/cygdrive/c/actions-runner/_work/supremacy-hangar/supremacy-hangar"
+          rclone sync " $cygdriveProjectPath/BuildB/" "${{secrets.RCLONE_USER}}:/var/www/html/supremacy-hangar/build/production/" --progress --verbose --multi-thread-streams 4
+  deploy-addressables:
+    needs: [ build ]
+    runs-on: [ self-hosted, windows, x64 ]
+    steps:
+      - name: Synchronize Addressables
+        run: |
+          $projectPath = "C:\actions-runner\_work\supremacy-hangar\supremacy-hangar"
+          $runnerHome = "/cygdrive/c/users/${{ secrets.RUNNER_USER }}"
+          $cygdriveProjectPath = "/cygdrive/c/actions-runner/_work/supremacy-hangar/supremacy-hangar"
+          rclone sync " $cygdriveProjectPath/ServerData/" "${{secrets.RCLONE_USER}}:/var/www/html/supremacy-hangar/addressables/production/" --progress --verbose --multi-thread-streams 4
