@@ -4,6 +4,7 @@ using UnityEngine;
 using SupremacyHangar.Runtime.Environment;
 using Zenject;
 using SupremacyHangar.Runtime.Environment.Connections;
+using SupremacyData.Runtime;
 
 namespace SupremacyHangar.Runtime.Silo
 {
@@ -26,6 +27,8 @@ namespace SupremacyHangar.Runtime.Silo
         private SignalBus _bus;
         private bool _subscribed;
         private bool siloClosing = false;
+
+        private BaseRecord myModelData;
 
         [Inject]
         public void Constuct(EnvironmentManager environmentManager, SignalBus bus)
@@ -76,11 +79,12 @@ namespace SupremacyHangar.Runtime.Silo
                 SpawnSilo();
         }
 
-        public void PrepareSilo()
+        public void PrepareSilo(BaseRecord modelData)
         {
             //Prevent same silo spawning again
             if (SiloSpawned) return;
             SiloSpawned = true;
+            myModelData = modelData;
 
             //Clean-up existing silo (Only one silo at a time)
             _environmentManager.UnloadSilo();
@@ -91,7 +95,7 @@ namespace SupremacyHangar.Runtime.Silo
         private void SpawnSilo()
         {
             //Spawn silo
-            if (!siloClosing && SiloSpawned) _environmentManager.SpawnSilo(this);
+            if (!siloClosing && SiloSpawned) _environmentManager.SpawnSilo(this, myModelData);
         }
 
         public void OpenSilo()

@@ -1,5 +1,6 @@
 using SupremacyHangar.Runtime.Environment;
 using SupremacyHangar.Runtime.ScriptableObjects;
+using SupremacyHangar.Runtime.Silo;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,12 @@ namespace SupremacyHangar.Runtime.ContentLoader.Types
     public class AssetReferenceEnvironmentConnectivity : AssetReferenceT<EnvironmentConnectivity>
     { 
         public AssetReferenceEnvironmentConnectivity(string guid) : base(guid) { }
+    }
+    
+    [Serializable]
+    public class AssetReferencePlatformStops : AssetReferenceT<PlatformStops>
+    { 
+        public AssetReferencePlatformStops(string guid) : base(guid) { }
     }
 
     public class LoadedAsset

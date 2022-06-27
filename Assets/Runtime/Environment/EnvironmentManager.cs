@@ -11,6 +11,7 @@ using SupremacyHangar.Runtime.Environment.Connections;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using SupremacyHangar.Runtime.ContentLoader.Types;
 using SupremacyHangar.Runtime.ContentLoader;
+using SupremacyData.Runtime;
 
 namespace SupremacyHangar.Runtime.Environment
 {
@@ -54,6 +55,8 @@ namespace SupremacyHangar.Runtime.Environment
 
         [SerializeField]
         private AssetReferenceGameObject _playerObject;
+
+        [SerializeField] private AssetReferencePlatformStops _platformStops;
 
         int doorCounter = 0;
         private Dictionary<AsyncOperationHandle<GameObject>, ConnectivityJoin> operationsForJoins = new Dictionary<AsyncOperationHandle<GameObject>, ConnectivityJoin>();
@@ -107,7 +110,15 @@ namespace SupremacyHangar.Runtime.Environment
                 _connectivityGraph = obj.Result;
                 SpawnInitialHallway();
             };
+
+            _platformStops.LoadAssetAsync<PlatformStops>().Completed += BindPlatformStopList;
 		}
+
+        //Todo - replace with internal silo line of size feature
+        private void BindPlatformStopList(AsyncOperationHandle<PlatformStops> stopList)
+        {
+            _container.Bind<PlatformStops>().FromInstance(stopList.Result);
+        }
 
         private void SpawnInitialHallway()
         {
@@ -276,10 +287,12 @@ namespace SupremacyHangar.Runtime.Environment
             operationsForNewDoor.Remove(doorHandler);
         }
 
-        public void SpawnSilo(SiloPositioner currentSilo)
+        public void SpawnSilo(SiloPositioner currentSilo, BaseRecord modelData)
         {
             _currentSilo = currentSilo;
             SiloExists = true;
+
+            _container.Bind<BaseRecord>().FromInstance(modelData);
 
             nextRoomEnvironmentPrefabRef = currentEnvironment.CurrentGameObject.GetComponent<EnvironmentPrefab>();
 
@@ -356,6 +369,7 @@ namespace SupremacyHangar.Runtime.Environment
 
         public void UnloadSilo(bool waitOnWindow = true)
         {
+            _container.Unbind<BaseRecord>();
             if (_currentSilo && waitOnWindow)
             {
                 _siloSignalHandler.CloseSilo();
