@@ -1,4 +1,5 @@
 using SupremacyHangar.Runtime.Environment.Connections;
+using System;
 using UnityEngine;
 using Zenject;
 
@@ -29,6 +30,9 @@ namespace SupremacyHangar.Runtime.Environment
         
         [SerializeField]
         private bool increment;
+        public bool Spawning { get; set; } = false;
+
+        [SerializeField] DoorCollisionHandler doorCollider;
 
         [Inject]
         public void Construct(EnvironmentManager environmentManager)
@@ -39,39 +43,55 @@ namespace SupremacyHangar.Runtime.Environment
 
         private void OnTriggerEnter(Collider other)
         {
-            if (Spawned) return;
-
             Entered = true;
-            if (otherEnvironmentSpawner.Spawned || otherEnvironmentSpawner.Entered)
-            {
-                DoorAnim.SetBool("IsOpen", true);
-                if (Spawned)
-                {
-                    _environmentManager.resetConnection();
-                }
-                return;
-            }
+            if (Spawned) return;
+            
+            if (otherEnvironmentSpawner.Spawned || otherEnvironmentSpawner.Entered) return;
+
+            Spawning = true;
 
             //Remove silo before proceeding
             if (_environmentManager.SiloExists)
                 _environmentManager.UnloadSilo();
 
             SpawnSection();
-
-            DoorAnim.SetBool("IsOpen", true);
         }
 
         private void OnTriggerExit(Collider other)
         {
             Entered = false;
-            if(!otherEnvironmentSpawner.Entered)
-                DoorAnim.SetBool("IsOpen", false);
+            CloseDoor();            
+        }
 
+        public void CloseDoor()
+        {
+            if (!otherEnvironmentSpawner.Entered && Spawning == false)
+            {
+                doorCollider.EnableDoorCollider();
+                DoorAnim.SetBool("IsOpen", false);
+            }
+            else return;
+
+            SetConnection();
+        }
+
+        public bool PlayerEntered()
+        {
+            return Entered || otherEnvironmentSpawner.Entered;
+        }
+
+        public void OpenDoor()
+        {
+            DoorAnim.SetBool("IsOpen", true);
+        }
+
+        private void SetConnection()
+        {
             if (otherEnvironmentSpawner.Entered == false && Spawned == false)
             {
                 _environmentManager.resetConnection(true);
             }
-            else if(Spawned)
+            else if (Spawned)
             {
                 _environmentManager.resetConnection();
             }
@@ -92,5 +112,6 @@ namespace SupremacyHangar.Runtime.Environment
 
             _environmentManager.SpawnPart(otherEnvironmentSpawner, this);
         }
+
     }
 }

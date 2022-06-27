@@ -264,9 +264,15 @@ namespace SupremacyHangar.Runtime.Environment
             interactedDoor.connectedTo = nextRoom.CurrentGameObject;
 
             connectedDoor.SetActive(true);
+            
             //Save for unload on going back to current room
             newlyLoadedObjects.Add(connectedDoor);
 
+            if (newlyLoadedObjects.Count > 1)
+            {
+                Debug.Log("Door open as alls loaded");
+                Door2.OpenDoor();
+            }
             operationsForNewDoor.Remove(doorHandler);
         }
 

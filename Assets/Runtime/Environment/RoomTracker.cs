@@ -41,6 +41,15 @@ namespace SupremacyHangar.Runtime.Environment
             }
         }
 
+        public void NewlySpawned()
+        {
+            foreach (EnvironmentSpawner s in mySpawners)
+            {
+                s.Spawning = false;
+                if(!s.PlayerEntered()) s.CloseDoor();
+            }
+        }
+
         public void NotNewRoom()
         {
             newObject = false;

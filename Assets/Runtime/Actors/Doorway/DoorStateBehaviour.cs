@@ -29,6 +29,7 @@ namespace SupremacyHangar.Runtime.Actors.Doorway
         // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
         public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
+            if (!updateRoom) HandleDoorCollider(animator, DoorColliderOptions.Enable);
             if (updateRoom) MarkRoomNotNewInTracker(animator);
         }
 
@@ -73,6 +74,7 @@ namespace SupremacyHangar.Runtime.Actors.Doorway
             }
 
             roomTracker.NotNewRoom();
+            roomTracker.NewlySpawned();
             
         }        
         
