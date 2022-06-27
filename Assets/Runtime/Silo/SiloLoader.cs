@@ -19,7 +19,7 @@ namespace SupremacyHangar.Runtime.Silo
         
         private bool playerPresent;
         private FirstPersonController playerController;
-        
+
         public override void OnPlayerEntered(GameObject go, FirstPersonController controller)
         {
             playerPresent = true;
@@ -54,7 +54,7 @@ namespace SupremacyHangar.Runtime.Silo
                     addressablesManager.TargetSkin = null;
                     break;
                 default:
-                    Debug.LogWarning($"Unexpected type of {myContent.Type} - cowardly refusing to fill the silo", this);
+                    Debug.LogWarning($"Unexpected type of {myContent.GetType()} - cowardly refusing to fill the silo", this);
                     break;
             }
 

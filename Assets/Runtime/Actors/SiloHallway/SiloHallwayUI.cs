@@ -1,6 +1,14 @@
+using System;
+using System.Collections;
+using System.Threading.Tasks;
+using SupremacyData.Runtime;
+using SupremacyHangar.Runtime.ContentLoader;
+using SupremacyHangar.Runtime.Environment;
+using SupremacyHangar.Runtime.Types;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace SupremacyHangar.Runtime.Actors.SiloHallway
 {
@@ -19,8 +27,46 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
         [SerializeField] private TMP_Text siloContentsName1;
         [SerializeField] private TMP_Text siloContentsName2;
         [SerializeField] private Button loadButton;
+
+        [SerializeField] private int siloOffset;
         
         private Color currentFactionColor = Color.black;
+
+        private Coroutine counter = null;
+        private WaitForSeconds counterDelay = new (0.25f);
+        
+        [Inject]
+        public void SetDependencies(AddressablesManager addressablesManager, EnvironmentManager environmentManager)
+        {
+            int mySiloNumber = environmentManager.SiloOffset + siloOffset;
+            var myContents = environmentManager.SiloItems[mySiloNumber];
+            siloNumber.text = (mySiloNumber + 1).ToString();
+            switch (myContents)
+            {
+                case Mech mech:
+                    UpdateTypeString(mech);
+                    UpdateName1(mech);
+                    UpdateName2(mech);
+                    break;
+                case MysteryBox box:
+                    UpdateTypeString(box);
+                    UpdateName1(addressablesManager.CurrentFaction, box);
+                    counter = StartCoroutine(Countdown(box.CanOpenOn));
+                    break;
+               default:
+                   UpdateTypeString("Empty");
+                   UpdateName1("");
+                   UpdateName2("");
+                   break;
+            }
+        }
+
+        public void OnDisable()
+        {
+            if (counter == null) return;
+            StopCoroutine(counter);
+            counter = null;
+        }
 
         public void UpdateFactionColor(Color newColor)
         {
@@ -74,14 +120,63 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
             siloContentsType.text = newString;
         }
         
+        private void UpdateTypeString(Mech mech)
+        {
+            siloContentsType.text = "Mech";
+        }
+
+        private void UpdateTypeString(MysteryBox box)
+        {
+            switch (box.MysteryCrateDetails.DataMysteryCrate.Type)
+            {
+                case MysteryCrate.ModelType.Mech:
+                    siloContentsType.text = "War Machine Crate";
+                    break;
+                case MysteryCrate.ModelType.Weapon:
+                    siloContentsType.text = "Weapon Crate";
+                    break;
+                default:
+                    siloContentsType.text = "Mystery Crate";
+                    Debug.LogError("Unknown crate type!");
+                    break;
+            }
+        }        
+        
         public void UpdateName1(string newString)
         {
             siloContentsName1.text = newString;
+        }
+
+        private void UpdateName1(Mech mech)
+        {
+            siloContentsName1.text = mech.MechChassisDetails.DataMechModel.HumanName;
+        }
+
+        private void UpdateName1(Faction currentFaction, MysteryBox box)
+        {
+            var boxFaction = box.MysteryCrateDetails.DataMysteryCrate.Faction;
+            siloContentsName1.text = boxFaction == currentFaction ? "" : boxFaction.HumanName;
         }
         
         public void UpdateName2(string newString)
         {
             siloContentsName2.text = newString;
         }     
+        
+        private void UpdateName2(Mech mech)
+        {
+            siloContentsName2.text = mech.MechSkinDetails.DataMechSkin.HumanName;
+        }
+
+        private IEnumerator Countdown(DateTime boxOpeningTime)
+        {
+            while (true)
+            {
+                var now = DateTime.UtcNow;
+                var diff = boxOpeningTime - now;
+                siloContentsName2.text = diff.ToString(diff.Days > 0 ? "d':'hh':'mm':'ss" : "hh':'mm':'ss");
+                yield return counterDelay;
+            }
+        }
     }
 }

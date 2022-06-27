@@ -128,7 +128,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jsonTestFragment: "{\n    \"faction\": \"880db344-e405-428d-84e5-6ebebab1fe6d\",\n   
-    \"silos\": [\n        {\n            \"type\": \"mech\",\n            \"ownership_id\":
+    \"silos\": [\n        {\n            \"type\": \"mystery_crate\",\n           
+    \"ownership_id\": \"9f9275eb-491a-47aa-b9d7-dd8185f179ca\",\n            \"mystery_crate_id\":
+    \"9f9275eb-491a-47aa-b9d7-dd8185f179ca\",\n            \"can_open_on\": \"2022-07-07T13:00:00.000Z\"\n       
+    },\n        {\n            \"type\": \"mech\",\n            \"ownership_id\":
     \"465fe68c-6487-4f78-92aa-218cf129e071\",\n            \"mech_id\": \"625cd381-7c66-4e2f-9f69-f81589105730\",\n           
     \"skin_id\": \"72ffdb5c-c003-4734-b1d1-07898f5bcb39\",\n            \"mystery_crate_id\":
     \"\"\n        },\n        {\n            \"type\": \"mech\",\n            \"ownership_id\":
@@ -136,8 +139,9 @@ MonoBehaviour:
     \"skin_id\": \"ff1b7d82-40b1-4d1a-b93a-f5da92ec43ed\",\n            \"mystery_crate_id\":
     \"\"\n        },\n        {\n            \"type\": \"mystery_crate\",\n           
     \"ownership_id\": \"9f9275eb-491a-47aa-b9d7-dd8185f179ca\",\n            \"mystery_crate_id\":
-    \"9f9275eb-491a-47aa-b9d7-dd8185f179ca\",\n            \"can_open_on\": \"Thu
-    Jul  7 13:00:00 UTC 2022\"\n        },\n        {\n            \"type\": \"mystery_crate\",\n           
-    \"ownership_id\": \"3ca1d928-51fa-4c9e-8a82-6ee5819b93d2\",\n            \"mystery_crate_id\":
-    \"3ca1d928-51fa-4c9e-8a82-6ee5819b93d2\",\n            \"can_open_on\": \"Thu
-    Jul  7 13:00:00 UTC 2022\"\n        }\n    ]\n}"
+    \"9f9275eb-491a-47aa-b9d7-dd8185f179ca\",\n            \"can_open_on\": \"2022-07-07T13:00:00.000Z\"\n       
+    },\n        {\n            \"type\": \"mystery_crate\",\n            \"ownership_id\":
+    \"3ca1d928-51fa-4c9e-8a82-6ee5819b93d2\",\n            \"mystery_crate_id\":
+    \"3ca1d928-51fa-4c9e-8a82-6ee5819b93d2\",\n            \"can_open_on\": \"2022-07-07T13:00:00.000Z\"\n       
+    }\n    ]\n}"
+  jsonTestFragmentDelay: 0.2

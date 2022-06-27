@@ -31,10 +31,13 @@ namespace SupremacyHangar.Editor.Actors.SiloHallway
         private SerializedProperty siloContentsName1Property;
         private SerializedProperty siloContentsName2Property;
         private SerializedProperty loadButtonProperty;
+        
+        private SerializedProperty siloOffsetProperty;
 
-        private readonly  HashSet<SerializedObject> showLinkedUIElements = new();
-        private readonly  HashSet<SerializedObject> showTestingFunctions = new();
         private readonly Dictionary<SerializedObject, Settings> settingsMap = new ();
+        private readonly  HashSet<SerializedObject> showTestingFunctions = new();
+        private readonly  HashSet<SerializedObject> showLinkedUIElements = new();
+        private readonly  HashSet<SerializedObject> showRuntimeElements = new();
         private SiloHallwayUI targetObject;
 
         private void OnEnable()
@@ -54,6 +57,8 @@ namespace SupremacyHangar.Editor.Actors.SiloHallway
             siloContentsName2Property = serializedObject.FindProperty("siloContentsName2");
             loadButtonProperty = serializedObject.FindProperty("loadButton");
             
+            siloOffsetProperty = serializedObject.FindProperty("siloOffset");
+            
             if (!settingsMap.ContainsKey(serializedObject)) settingsMap.Add(serializedObject, new Settings());
         }
 
@@ -62,21 +67,12 @@ namespace SupremacyHangar.Editor.Actors.SiloHallway
             serializedObject.Update();
             RenderTestingFunctions();
             RenderLinkedUIElements();
+            RenderRuntimeElements();
         }
 
         private void RenderTestingFunctions()
         {
-            bool visible = showTestingFunctions.Contains(serializedObject);
-            visible = EditorGUILayout.Foldout(visible, "Testing Functions");
-            if (visible)
-            {
-                showTestingFunctions.Add(serializedObject);
-            }
-            else
-            {
-                showTestingFunctions.Remove(serializedObject);
-                return;
-            }
+            if (!ShowElements("Testing Functions", showTestingFunctions)) return;
 
             EditorGUI.indentLevel++;
 
@@ -143,17 +139,7 @@ namespace SupremacyHangar.Editor.Actors.SiloHallway
 
         private void RenderLinkedUIElements()
         {
-            bool visible = showLinkedUIElements.Contains(serializedObject);
-            visible = EditorGUILayout.Foldout(visible, "Linked UI Elements");
-            if (visible)
-            {
-                showLinkedUIElements.Add(serializedObject);
-            }
-            else
-            {
-                showLinkedUIElements.Remove(serializedObject);
-                return;
-            }
+            if (!ShowElements("Linked UI Elements", showLinkedUIElements)) return;
 
             EditorGUI.indentLevel++;
             EditorGUI.BeginChangeCheck();
@@ -172,6 +158,30 @@ namespace SupremacyHangar.Editor.Actors.SiloHallway
             if (EditorGUI.EndChangeCheck()) serializedObject.ApplyModifiedProperties();
             
             EditorGUI.indentLevel--;
+        }
+
+        private void RenderRuntimeElements()
+        {
+            if (!ShowElements("Linked Runtime Elements", showRuntimeElements)) return;       
+            EditorGUI.BeginChangeCheck();
+            EditorGUILayout.PropertyField(siloOffsetProperty);
+            if (EditorGUI.EndChangeCheck()) serializedObject.ApplyModifiedProperties();
+        }
+
+        private bool ShowElements(string labelName, HashSet<SerializedObject> unfoldedTargets)
+        {
+            bool visible = unfoldedTargets.Contains(serializedObject);
+            visible = EditorGUILayout.Foldout(visible, labelName);
+            if (visible)
+            {
+                unfoldedTargets.Add(serializedObject);
+            }
+            else
+            {
+                unfoldedTargets.Remove(serializedObject);
+            }
+
+            return visible;
         }
         
     }
