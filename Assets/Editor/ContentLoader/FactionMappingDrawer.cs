@@ -1,4 +1,5 @@
 using UnityEditor;
+using UnityEngine;
 
 namespace SupremacyHangar.Editor.ContentLoader
 {
@@ -14,7 +15,7 @@ namespace SupremacyHangar.Editor.ContentLoader
 
         protected override string AssetPropertySummary(Runtime.ContentLoader.FactionMapping data)
         {
-            return data.ConnectivityGraph != null ? data.ConnectivityGraph.editorAsset.name : "No Connectivity Graph";
+            return data.ConnectivityGraph.editorAsset != null ? data.ConnectivityGraph.editorAsset.name : "No Connectivity Graph";
         }
     }
 }

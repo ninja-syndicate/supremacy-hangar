@@ -16,7 +16,6 @@ namespace SupremacyHangar.Editor.ContentLoader
 
         protected override string AssetPropertySummary(Runtime.ContentLoader.MechSkinMapping data)
         {
-            
             if (data.SkinReference != null && data.SkinReference.editorAsset != null)
             {
                 return data.SkinReference.editorAsset.name;
