@@ -16,7 +16,7 @@ namespace SupremacyHangar.Runtime.Actors
         protected int nextStop;
         protected UnityMath.float3 currentPos;
 
-        [SerializeField, Tooltip("Optional extra elevator control")] SiloPlatformElevator mechElevator;
+        [SerializeField, Tooltip("Optional linked elevator control")] SiloPlatformElevator linkedElevator;
 
         public void Start()
         {
@@ -35,17 +35,17 @@ namespace SupremacyHangar.Runtime.Actors
         {
             if (UnityMath.math.distancesq(currentPos, stops[nextStop]) > Mathf.Epsilon) return;
             nextStop++;
-            mechElevator?.MoveToNextStop();
+            linkedElevator?.MoveToNextStop();
             if (nextStop >= stops.Length) nextStop = 0;
         }
 
-        private void OnTriggerEnter(Collider other)
+        public void OnTriggerEnter(Collider other)
         {
             if (!other.TryGetComponent(out playerController)) return;
             playerPresent = true;
         }
 
-        private void OnTriggerExit(Collider other)
+        public void OnTriggerExit(Collider other)
         {
             playerController.PlatformVelocity = UnityMath.float3.zero;
             playerPresent = false;

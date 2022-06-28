@@ -55,9 +55,9 @@ namespace SupremacyHangar.Runtime.Actors
 
         private void SetupPlatform(PlatformRepositionSignal signal)
         {
-            currentPos = transform.position + CalcPlatformHeight(signal.Position);
-            stops = new[] { currentPos, transform.position };
-            transform.position = currentPos;
+            currentPos = transform.localPosition + CalcPlatformHeight(signal.Position);
+            stops = new[] { currentPos, transform.localPosition };
+            transform.localPosition = currentPos;
             stopsReady = true;
         }
 
@@ -66,7 +66,7 @@ namespace SupremacyHangar.Runtime.Actors
             Vector3 offset = filledTargetTransform.position - pos;
             offset.x = 0;
             offset.z = 0;
-            
+
             return offset;
         }
 
@@ -102,12 +102,12 @@ namespace SupremacyHangar.Runtime.Actors
             {
                 Vector3 thisMove = UnityMath.math.normalize(nextMove) * distanceThisFrame;
                 currentPos += thisMove;
-                transform.position = currentPos;
+                transform.localPosition = currentPos;
                 return;
             }
 
             //otherwise we move straight to the stop.
-            transform.position = desiredPos;
+            transform.localPosition = desiredPos;
             currentPos = desiredPos;
         }
     }

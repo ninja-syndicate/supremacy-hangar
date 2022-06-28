@@ -27,11 +27,10 @@ namespace SupremacyHangar.Runtime.Actors
 
         private void SetupElevatorInteraction()
         {
-            if (playerElevator == null)
-            {
-                Debug.LogError("No Player Elevate set!", this);
-                return;
-            }
+            if (playerElevator != null) return;
+
+            Debug.LogError("No Player Elevate set!", this);
+            enabled = false;
         }
     }
 }

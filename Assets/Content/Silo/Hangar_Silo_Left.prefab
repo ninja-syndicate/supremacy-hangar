@@ -975,7 +975,7 @@ MonoBehaviour:
   - {x: -16.97328, y: -17.54, z: 26.52799}
   initialStop: 0
   speed: 2
-  mechElevator: {fileID: 4406393382871468960}
+  linkedElevator: {fileID: 4406393382871468960}
 --- !u!4 &881882687362581041 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 456126404885200673, guid: 729215ee3505540e2bde466d223ab637,
@@ -1091,7 +1091,7 @@ MonoBehaviour:
   - {x: 16.97299, y: -17.54, z: 26.52799}
   initialStop: 0
   speed: 2
-  mechElevator: {fileID: 4406393382871468960}
+  linkedElevator: {fileID: 4406393382871468960}
 --- !u!4 &577184586198762405 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 456126404885200673, guid: 729215ee3505540e2bde466d223ab637,
