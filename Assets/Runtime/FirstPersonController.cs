@@ -22,6 +22,12 @@ namespace SupremacyHangar.Runtime
 		[Tooltip("Acceleration and deceleration")]
 		public float SpeedChangeRate = 10.0f;
 
+		public float UpdateRotationSpeed
+        {
+			get { return RotationSpeed; }
+			set { RotationSpeed = value; }
+        }
+
 		[Space(10)]
 		[Tooltip("The height the player can jump")]
 		public float JumpHeight = 1.2f;
@@ -119,6 +125,13 @@ namespace SupremacyHangar.Runtime
 			_fallTimeoutDelta = FallTimeout;
 			
 			SetCursorState(cursorLocked);
+
+			if (PlayerPrefs.GetInt("HelpShown") == 0)
+			{
+				ToggleHelpMenu();
+				PlayerPrefs.SetInt("HelpShown", 1);
+				PlayerPrefs.Save();
+			}
 		}
 
 		public void OnEnable()
@@ -128,6 +141,7 @@ namespace SupremacyHangar.Runtime
 
 		public void OnDisable()
 		{
+			PlayerPrefs.DeleteAll();
 			UnbindInputs();
 		}
 
@@ -182,6 +196,8 @@ namespace SupremacyHangar.Runtime
 			valid &= BindActionToFunction("Jump", OnJumpChange);
 			valid &= BindActionToFunction("Sprint", OnSprintChange);
 			valid &= BindActionToFunction("Interaction", OnInteractionChange);
+			valid &= BindActionToFunction("Settings", OnSettingsChange);
+			valid &= BindActionToFunction("Help", OnHelpChange);
 
 			enabled = valid;
 			return valid;
@@ -194,6 +210,8 @@ namespace SupremacyHangar.Runtime
 			UnbindFromFunction("Jump", OnJumpChange);
 			UnbindFromFunction("Sprint", OnSprintChange);
 			UnbindFromFunction("Interaction", OnInteractionChange);
+			UnbindFromFunction("Settings", OnSettingsChange);
+			UnbindFromFunction("Help", OnHelpChange);
 		}
 
 		private bool BindActionToFunction(string actionName, Action<InputAction.CallbackContext> callback)
@@ -248,8 +266,71 @@ namespace SupremacyHangar.Runtime
 			interactionPrompts = 0;
 		}
 
+		private bool showSettings = false;
+		private bool showHelpMenu = false;
+		[SerializeField] private GameObject settingsMenu;
+		[SerializeField] private GameObject helpMenu;
+		[SerializeField] private GameObject interactionPrompt;
+
+		private void OnSettingsChange(InputAction.CallbackContext context)
+		{
+			if (context.phase == InputActionPhase.Canceled) return;
+			ToggelSettingsMenu();
+		}
+
+		public void ToggelSettingsMenu()
+        {
+			if (!showSettings && !showHelpMenu)
+			{
+				interactionPrompt.SetActive(false);
+				
+				settingsMenu.SetActive(true);
+				Time.timeScale = 0;
+				SetCursorState(false);
+				showSettings = true;
+			}
+			else
+			{
+				interactionPrompt.SetActive(true);
+
+				settingsMenu.SetActive(false);
+				SetCursorState(true);
+				showSettings = false;
+				Time.timeScale = 1;
+			}
+		}
+
+		private void OnHelpChange(InputAction.CallbackContext context)
+		{
+			if (context.phase == InputActionPhase.Canceled) return;
+			ToggleHelpMenu();
+		}
+
+		public void ToggleHelpMenu()
+        {
+			if (!showHelpMenu && !showSettings)
+			{
+				interactionPrompt.SetActive(false);
+
+				helpMenu.SetActive(true);
+				SetCursorState(false);
+				Time.timeScale = 0;
+				showHelpMenu = true;
+			}
+			else
+			{
+				interactionPrompt.SetActive(true);
+
+				helpMenu.SetActive(false);
+				SetCursorState(true);
+				showHelpMenu = false;
+				Time.timeScale = 1;
+			}
+		}
+
         private void Update()
 		{
+			if (showSettings || showHelpMenu) return;
 			if (interactionPromptControllerSet)
 			{
 				bool showPrompt = OnInteractionTriggered != null;
@@ -263,6 +344,8 @@ namespace SupremacyHangar.Runtime
 
 		private void LateUpdate()
 		{
+			if (showSettings || showHelpMenu) return;
+
 			CameraRotation();
 		}
 		
@@ -420,7 +503,7 @@ namespace SupremacyHangar.Runtime
 
 		private void OnApplicationFocus(bool hasFocus)
 		{
-			SetCursorState(cursorLocked);
+				SetCursorState(cursorLocked);
 		}
 
 		private void SetCursorState(bool newState)
