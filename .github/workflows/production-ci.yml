@@ -35,7 +35,6 @@ jobs:
           Start-Process -FilePath $unityPath -ArgumentList "-batchmode -quit -buildTarget WebGL -projectPath $projectPath -logFile build_log.txt -executeMethod BuildSystem.CLI.BuildWebGL -addressablesLocation prod" -Wait -WindowStyle Hidden
 
   deploy-build:
-    needs: [ build ]
     runs-on: [ self-hosted, windows, x64 ]
     steps:
       - name: Synchronize Build
@@ -46,7 +45,6 @@ jobs:
           Copy-Item "$projectPath\Builds\WebGL\StreamingAssets" -Destination "$projectPath\BuildB" -Recurse
           rclone sync "$projectPath/BuildB/" "${{secrets.RCLONE_USER}}:/var/www/html/supremacy-hangar/build/production/" --progress --verbose --multi-thread-streams 4
   deploy-addressables:
-    needs: [ build ]
     runs-on: [ self-hosted, windows, x64 ]
     steps:
       - name: Synchronize Addressables
