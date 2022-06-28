@@ -1,18 +1,17 @@
 using SupremacyHangar.Runtime.Interaction;
-using UnityMath = Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace SupremacyHangar.Runtime.Actors
 {
     public class ElevatorInteraction : InteractionZoneResponder
     {
-        [SerializeField] ElevatorMovement playerElevator;
+        [SerializeField] PlayerElevator playerElevator;
 
         private FirstPersonController playerController;
 
         public override void OnPlayerExited()
         {
+            SetupElevatorInteraction();
             playerController.OnInteractionTriggered -= playerElevator.MoveToNextStop;
             playerController.DecrementInteractionPromptRequests();
             playerController = null;            
@@ -20,9 +19,19 @@ namespace SupremacyHangar.Runtime.Actors
 
         public override void OnPlayerEntered(GameObject go, FirstPersonController controller)
         {
-            playerElevator.playerController = playerController = controller;
+            SetupElevatorInteraction();
+            playerController = controller;
             playerController.OnInteractionTriggered += playerElevator.MoveToNextStop;
             playerController.IncrementInteractionPromptRequests();
+        }
+
+        private void SetupElevatorInteraction()
+        {
+            if (playerElevator == null)
+            {
+                Debug.LogError("No Player Elevate set!", this);
+                return;
+            }
         }
     }
 }

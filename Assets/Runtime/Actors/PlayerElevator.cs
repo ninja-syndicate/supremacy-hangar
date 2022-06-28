@@ -5,19 +5,18 @@ using UnityEngine.Serialization;
 
 namespace SupremacyHangar.Runtime.Actors
 {
-    //todo Change to static elevator (predetermined stops)
-    public class ElevatorMovement : MonoBehaviour
+    public class PlayerElevator : MonoBehaviour
     {
-        [SerializeField] protected UnityMath.float3[] stops;
+        [SerializeField] protected Vector3[] stops;
         [SerializeField] private int initialStop;
         [FormerlySerializedAs("velocity"), SerializeField] protected float speed;
 
         private bool playerPresent;
-        public FirstPersonController playerController { get; set; }
+        private FirstPersonController playerController;
         protected int nextStop;
         protected UnityMath.float3 currentPos;
 
-        [SerializeField] MechElevator mechElevator;
+        [SerializeField, Tooltip("Optional extra elevator control")] SiloPlatformElevator mechElevator;
 
         public void Start()
         {
@@ -30,7 +29,6 @@ namespace SupremacyHangar.Runtime.Actors
         {
             if (UnityMath.math.distancesq(currentPos, stops[nextStop]) < Mathf.Epsilon) return;
             Move(Time.deltaTime);
-            mechElevator?.Move(Time.deltaTime);
         }
 
         public void MoveToNextStop()
@@ -43,6 +41,7 @@ namespace SupremacyHangar.Runtime.Actors
 
         private void OnTriggerEnter(Collider other)
         {
+            if (!other.TryGetComponent(out playerController)) return;
             playerPresent = true;
         }
 

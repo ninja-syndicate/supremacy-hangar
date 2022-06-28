@@ -38,6 +38,7 @@ Transform:
   - {fileID: 2964096315885155092}
   - {fileID: 1820494245823837929}
   - {fileID: 2766851964591588238}
+  - {fileID: 154532248941104398}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -563,6 +564,37 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!1 &3679762651786903735
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 154532248941104398}
+  m_Layer: 0
+  m_Name: PlatformTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &154532248941104398
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3679762651786903735}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 7.86, z: -5.19}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 821446330027626394}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4149002585019451199
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,12 +976,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stops:
-  - x: -16.97328
-    y: 1.498981
-    z: -26.52799
-  - x: -16.97328
-    y: -17.54
-    z: -26.52799
+  - {x: -16.97328, y: 1.498981, z: -26.52799}
+  - {x: -16.97328, y: -17.54, z: -26.52799}
   initialStop: 0
   speed: 2
   mechElevator: {fileID: 2852044190446637423}
@@ -1069,12 +1097,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stops:
-  - x: 16.97299
-    y: 1.498981
-    z: -26.52799
-  - x: 16.97299
-    y: -17.54
-    z: -26.52799
+  - {x: 16.97299, y: 1.498981, z: -26.52799}
+  - {x: 16.97299, y: -17.54, z: -26.52799}
   initialStop: 0
   speed: 2
   mechElevator: {fileID: 2852044190446637423}
@@ -3416,10 +3440,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a009b0596b9645b4b9324c6cb0b95f7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stops: []
-  initialStop: 0
-  speed: 0
-  mechElevator: {fileID: 0}
+  speed: 1
+  filledTargetTransform: {fileID: 154532248941104398}
 --- !u!1 &9061144397545826037 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2829915908494130205, guid: ff01ddb75b74d43c793f9ef2e5f2114f,

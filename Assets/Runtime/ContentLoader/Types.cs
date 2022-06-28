@@ -19,12 +19,6 @@ namespace SupremacyHangar.Runtime.ContentLoader.Types
     { 
         public AssetReferenceEnvironmentConnectivity(string guid) : base(guid) { }
     }
-    
-    [Serializable]
-    public class AssetReferencePlatformStops : AssetReferenceT<PlatformStops>
-    { 
-        public AssetReferencePlatformStops(string guid) : base(guid) { }
-    }
 
     public class LoadedAsset
     {

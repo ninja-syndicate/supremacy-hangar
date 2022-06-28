@@ -56,8 +56,6 @@ namespace SupremacyHangar.Runtime.Environment
         [SerializeField]
         private AssetReferenceGameObject _playerObject;
 
-        [SerializeField] private AssetReferencePlatformStops _platformStops;
-
         int doorCounter = 0;
         private Dictionary<AsyncOperationHandle<GameObject>, ConnectivityJoin> operationsForJoins = new Dictionary<AsyncOperationHandle<GameObject>, ConnectivityJoin>();
         private Dictionary<AsyncOperationHandle<GameObject>, DoorTuple> operationsForNewRoom = new Dictionary<AsyncOperationHandle<GameObject>, DoorTuple>();
@@ -111,14 +109,7 @@ namespace SupremacyHangar.Runtime.Environment
                 SpawnInitialHallway();
             };
 
-            _platformStops.LoadAssetAsync<PlatformStops>().Completed += BindPlatformStopList;
 		}
-
-        //Todo - replace with internal silo line of size feature
-        private void BindPlatformStopList(AsyncOperationHandle<PlatformStops> stopList)
-        {
-            _container.Bind<PlatformStops>().FromInstance(stopList.Result);
-        }
 
         private void SpawnInitialHallway()
         {
@@ -287,12 +278,10 @@ namespace SupremacyHangar.Runtime.Environment
             operationsForNewDoor.Remove(doorHandler);
         }
 
-        public void SpawnSilo(SiloPositioner currentSilo, BaseRecord modelData)
+        public void SpawnSilo(SiloPositioner currentSilo)
         {
             _currentSilo = currentSilo;
             SiloExists = true;
-
-            _container.Bind<BaseRecord>().FromInstance(modelData);
 
             nextRoomEnvironmentPrefabRef = currentEnvironment.CurrentGameObject.GetComponent<EnvironmentPrefab>();
 

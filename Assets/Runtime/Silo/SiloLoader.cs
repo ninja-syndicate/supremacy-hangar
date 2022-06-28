@@ -42,18 +42,15 @@ namespace SupremacyHangar.Runtime.Silo
         {
             var myContent = siloContents[siloOffset];
             bool empty = true;
-            BaseRecord t = null;
             switch(myContent)
             {
                 case Mech mech:
                     empty = false;
-                    t = mech.MechChassisDetails.DataMechModel;
                     addressablesManager.TargetMech = mech.MechChassisDetails.MechReference;
                     addressablesManager.TargetSkin = mech.MechSkinDetails.SkinReference;
                     break;
                 case MysteryBox box:
                     empty = false;
-                    t = box.MysteryCrateDetails.DataMysteryCrate;
                     addressablesManager.TargetMech = box.MysteryCrateDetails.MysteryCrateReference;
                     addressablesManager.TargetSkin = null;
                     break;
@@ -62,7 +59,7 @@ namespace SupremacyHangar.Runtime.Silo
                     break;
             }
 
-            if(!empty) spawner.PrepareSilo(t);
+            if(!empty) spawner.PrepareSilo();
         }
     }
 }
