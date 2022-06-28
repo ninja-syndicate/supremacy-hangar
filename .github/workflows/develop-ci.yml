@@ -6,26 +6,26 @@ on:
       - develop
 
 jobs:
-#    build:
-#      runs-on: [ self-hosted, windows, x64 ]
-#      steps:
-#        - name: Checkout Repository
-#          uses: actions/checkout@v3
-#          with:
-#            fetch-depth: "0"
-#            lfs: true
-#
-#        - name: Prewarm
-#          run: |
-#            $unityPath="C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe"
-#            $projectPath="C:\actions-runner\_work\supremacy-hangar\supremacy-hangar"
-#            Start-Process -FilePath $unityPath -ArgumentList "-batchmode -quit -buildTarget WebGL -projectPath $projectPath -logFile prewarm_log.txt -executeMethod BuildSystem.CLI.PreWarm -addressablesLocation dev" -Wait -WindowStyle Hidden
-#
-#        - name: Build
-#          run: |
-#            $unityPath="C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe"
-#            $projectPath="C:\actions-runner\_work\supremacy-hangar\supremacy-hangar"
-#            Start-Process -FilePath $unityPath -ArgumentList "-batchmode -quit -buildTarget WebGL -projectPath $projectPath -logFile builds_log.txt -executeMethod BuildSystem.CLI.BuildWebGL -addressablesLocation dev" -Wait -WindowStyle Hidden
+    build:
+      runs-on: [ self-hosted, windows, x64 ]
+      steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v3
+          with:
+            fetch-depth: "0"
+            lfs: true
+
+        - name: Prewarm
+          run: |
+            $unityPath="C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe"
+            $projectPath="C:\actions-runner\_work\supremacy-hangar\supremacy-hangar"
+            Start-Process -FilePath $unityPath -ArgumentList "-batchmode -quit -buildTarget WebGL -projectPath $projectPath -logFile prewarm_log.txt -executeMethod BuildSystem.CLI.PreWarm -addressablesLocation dev" -Wait -WindowStyle Hidden
+
+        - name: Build
+          run: |
+            $unityPath="C:\Program Files\Unity\Hub\Editor\2021.3.4f1\Editor\Unity.exe"
+            $projectPath="C:\actions-runner\_work\supremacy-hangar\supremacy-hangar"
+            Start-Process -FilePath $unityPath -ArgumentList "-batchmode -quit -buildTarget WebGL -projectPath $projectPath -logFile builds_log.txt -executeMethod BuildSystem.CLI.BuildWebGL -addressablesLocation dev" -Wait -WindowStyle Hidden
 
   deploy-build:
     runs-on: [ self-hosted, windows, x64 ]
@@ -36,13 +36,11 @@ jobs:
           New-Item -Force -Path "$projectPath" -Name "BuildB" -ItemType "directory"
           Copy-Item -Force "$projectPath\Builds\WebGL\Build\*" -Destination "$projectPath\BuildB" -Recurse
           Copy-Item -Force "$projectPath\Builds\WebGL\StreamingAssets" -Destination "$projectPath\BuildB" -Recurse
-          rclone sync "$projectPath/BuildB" "afiles:/var/www/html/supremacy-hangar/build/develop/$GITHUB_HEAD_REF-$GITHUB_RUN_ATTEMPT" --progress --verbose --multi-thread-streams 2
+          rclone sync "$projectPath/BuildB" "afiles:/var/www/html/supremacy-hangar/build/develop/$GITHUB_HEAD_REF-$GITHUB_RUN_ATTEMPT" --progress --verbose --multi-thread-streams 4
   deploy-addressables:
     runs-on: [ self-hosted, windows, x64 ]
     steps:
       - name: Synchronize Addressables
         run: |
           $projectPath = "C:\actions-runner\_work\supremacy-hangar\supremacy-hangar"
-          $runnerHome = "/cygdrive/c/users/${{ secrets.RUNNER_USER }}"
-          $cygdriveProjectPath = "/cygdrive/c/actions-runner/_work/supremacy-hangar/supremacy-hangar"
-          rclone sync "$projectPath/ServerData/" "afiles:/var/www/html/supremacy-hangar/addressables/develop/" --progress --verbose --multi-thread-streams 2
+          rclone sync "$projectPath/ServerData/" "afiles:/var/www/html/supremacy-hangar/addressables/develop/" --progress --verbose --multi-thread-streams 4
