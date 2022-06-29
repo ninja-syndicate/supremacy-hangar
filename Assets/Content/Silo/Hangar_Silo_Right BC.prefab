@@ -10,7 +10,12 @@ PrefabInstance:
     - target: {fileID: 12822200296412448, guid: 9a955d9e8bbecf4449c699e011487558,
         type: 3}
       propertyPath: m_Name
-      value: Hangar_Silo_Right
+      value: Hangar_Silo_Right BC
+      objectReference: {fileID: 0}
+    - target: {fileID: 12822200296412448, guid: 9a955d9e8bbecf4449c699e011487558,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 821446330027626394, guid: 9a955d9e8bbecf4449c699e011487558,
         type: 3}
@@ -66,6 +71,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 970999571814906883, guid: 9a955d9e8bbecf4449c699e011487558,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ad474b864f18e4c71ac486f0673da47d, type: 2}
+    - target: {fileID: 3818979837104480647, guid: 9a955d9e8bbecf4449c699e011487558,
+        type: 3}
+      propertyPath: m_ColorTemperature
+      value: 6300
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429552849727828406, guid: 9a955d9e8bbecf4449c699e011487558,
+        type: 3}
+      propertyPath: m_ColorTemperature
+      value: 6300
+      objectReference: {fileID: 0}
+    - target: {fileID: 7130642443839877265, guid: 9a955d9e8bbecf4449c699e011487558,
+        type: 3}
+      propertyPath: m_ColorTemperature
+      value: 6300
+      objectReference: {fileID: 0}
+    - target: {fileID: 7802252961178404801, guid: 9a955d9e8bbecf4449c699e011487558,
+        type: 3}
+      propertyPath: m_ColorTemperature
+      value: 6300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8617756040455969066, guid: 9a955d9e8bbecf4449c699e011487558,
+        type: 3}
+      propertyPath: m_ColorTemperature
+      value: 6300
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a955d9e8bbecf4449c699e011487558, type: 3}

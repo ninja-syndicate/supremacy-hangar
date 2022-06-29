@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Hallway-Intersection Array
+  m_Name: Hallway-Intersection ArrayRM
   m_Shader: {fileID: -6465566751694194690, guid: c68d1059eba91814c89528c99476ff53,
     type: 3}
   m_ValidKeywords: []
@@ -46,7 +46,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Detail_Emissive:
-        m_Texture: {fileID: 2800000, guid: 3c1c5226c6654954cbb5931bb19f0cb4, type: 3}
+        m_Texture: {fileID: 2800000, guid: 23b2fb6aa83ede84da324baccd790989, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Detail_Metalic:

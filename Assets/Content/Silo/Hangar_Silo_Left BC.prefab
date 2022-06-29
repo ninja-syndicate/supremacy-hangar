@@ -10,7 +10,12 @@ PrefabInstance:
     - target: {fileID: 12822200296412448, guid: b018ad848f4114e62bd27cd1b7cbe2b0,
         type: 3}
       propertyPath: m_Name
-      value: Hangar_Silo_Left
+      value: Hangar_Silo_Left BC
+      objectReference: {fileID: 0}
+    - target: {fileID: 12822200296412448, guid: b018ad848f4114e62bd27cd1b7cbe2b0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 821446330027626394, guid: b018ad848f4114e62bd27cd1b7cbe2b0,
         type: 3}
@@ -66,6 +71,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3818979837104480647, guid: b018ad848f4114e62bd27cd1b7cbe2b0,
+        type: 3}
+      propertyPath: m_ColorTemperature
+      value: 6300
+      objectReference: {fileID: 0}
+    - target: {fileID: 6429552849727828406, guid: b018ad848f4114e62bd27cd1b7cbe2b0,
+        type: 3}
+      propertyPath: m_ColorTemperature
+      value: 6300
+      objectReference: {fileID: 0}
+    - target: {fileID: 7802252961178404801, guid: b018ad848f4114e62bd27cd1b7cbe2b0,
+        type: 3}
+      propertyPath: m_ColorTemperature
+      value: 6300
+      objectReference: {fileID: 0}
+    - target: {fileID: 8617756040455969066, guid: b018ad848f4114e62bd27cd1b7cbe2b0,
+        type: 3}
+      propertyPath: m_ColorTemperature
+      value: 6300
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b018ad848f4114e62bd27cd1b7cbe2b0, type: 3}

@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Hallway Array
+  m_Name: Hallway ArrayZai
   m_Shader: {fileID: -6465566751694194690, guid: c68d1059eba91814c89528c99476ff53,
     type: 3}
   m_ValidKeywords: []
@@ -46,7 +46,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Detail_Emissive:
-        m_Texture: {fileID: 2800000, guid: ecc254ff40170a343bab0cabe296ada8, type: 3}
+        m_Texture: {fileID: 2800000, guid: 88e723061588d5f449e438634acbf164, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Detail_Metalic:

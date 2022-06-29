@@ -10,7 +10,37 @@ PrefabInstance:
     - target: {fileID: 29434816920426713, guid: b90b9b7825ebb344a89a6d6f28cad701,
         type: 3}
       propertyPath: m_Name
-      value: Hallway-SmallStraightJoin
+      value: Hallway-SmallStraightJoin BC
+      objectReference: {fileID: 0}
+    - target: {fileID: 29434816920426713, guid: b90b9b7825ebb344a89a6d6f28cad701,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4144555250112564829, guid: b90b9b7825ebb344a89a6d6f28cad701,
+        type: 3}
+      propertyPath: m_ColorTemperature
+      value: 6300
+      objectReference: {fileID: 0}
+    - target: {fileID: 5474233883375768620, guid: b90b9b7825ebb344a89a6d6f28cad701,
+        type: 3}
+      propertyPath: m_ColorTemperature
+      value: 6300
+      objectReference: {fileID: 0}
+    - target: {fileID: 5498439900358953940, guid: b90b9b7825ebb344a89a6d6f28cad701,
+        type: 3}
+      propertyPath: m_ColorTemperature
+      value: 6300
+      objectReference: {fileID: 0}
+    - target: {fileID: 5771942958578127549, guid: b90b9b7825ebb344a89a6d6f28cad701,
+        type: 3}
+      propertyPath: m_ColorTemperature
+      value: 6300
+      objectReference: {fileID: 0}
+    - target: {fileID: 5888223496949832912, guid: b90b9b7825ebb344a89a6d6f28cad701,
+        type: 3}
+      propertyPath: m_ColorTemperature
+      value: 6300
       objectReference: {fileID: 0}
     - target: {fileID: 7230826607214851981, guid: b90b9b7825ebb344a89a6d6f28cad701,
         type: 3}
