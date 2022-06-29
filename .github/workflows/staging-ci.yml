@@ -51,8 +51,8 @@ jobs:
     steps:
       - name: Purging Cloudflare Cache
         env:
-          CLOUDFLARE_AUTH_EMAIL: ${{ secrets.CloudflareAuthEmail }}
-          CLOUDFLARE_AUTH_KEY: ${{ secrets.CloudflareAuthKey }}
-          CLOUDFLARE_IDENTIFIER: ${{ secrets.CloudflareIdentifier }}
+          CLOUDFLARE_AUTH_EMAIL: ${{ secrets.CLOUDFLARE_AUTH_EMAIL }}
+          CLOUDFLARE_AUTH_KEY: ${{ secrets.CLOUDFLARE_AUTH_KEY }}
+          CLOUDFLARE_IDENTIFIER: ${{ secrets.CLOUDFLARE_IDENTIFIER }}
         run: |
           cmd.exe /c 'curl.exe -H "X-Auth-Email: %CLOUDFLARE_AUTH_EMAIL%" -H "X-Auth-Key: %CLOUDFLARE_AUTH_KEY%" -H "Content-Type: application/json"  -d "{\"files\": [\"https://afiles.ninja-cdn.com/supremacy-hangar/build/staging/WebGL.loader.js\",\"https://afiles.ninja-cdn.com/supremacy-hangar/build/staging/WebGL.data.br\", \"https://afiles.ninja-cdn.com/supremacy-hangar/build/staging/WebGL.framework.js.br\",\"https://afiles.ninja-cdn.com/supremacy-hangar/build/staging/WebGL.wasm.br\",\"https://afiles.ninja-cdn.com/supremacy-hangar/build/staging/StreamingAssets\"]}" "https://api.cloudflare.com/client/v4/zones/%CLOUDFLARE_IDENTIFIER%/purge_cache"'
