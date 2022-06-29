@@ -10,6 +10,7 @@ namespace SupremacyHangar.Runtime.Silo
     {
         [SerializeField] private SiloPositioner spawner;
         [SerializeField] private int siloOffset;
+        [SerializeField] private ProgressBar progressbar;
 
         [Inject]
         private AddressablesManager addressablesManager;
@@ -22,6 +23,7 @@ namespace SupremacyHangar.Runtime.Silo
 
         public override void OnPlayerEntered(GameObject go, FirstPersonController controller)
         {
+            progressbar.IsTargeted = true;
             playerPresent = true;
             playerController = controller;
             playerController.OnInteractionTriggered += StartLoad;
@@ -30,6 +32,7 @@ namespace SupremacyHangar.Runtime.Silo
         
         public override void OnPlayerExited()
         {
+            progressbar.IsTargeted = false;
             if (!playerPresent) return;
             playerController.OnInteractionTriggered -= StartLoad;
             playerController.DecrementInteractionPromptRequests();
