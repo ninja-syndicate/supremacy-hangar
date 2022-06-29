@@ -11,7 +11,7 @@ using SupremacyHangar.Runtime.Silo;
 
 namespace SupremacyHangar.Runtime.Actors
 {        
-    public class SiloPlatformElevator : MonoBehaviour
+    public class SiloPlatformElevator : ElevatorMotor
     {
         private Vector3[] stops;
         private bool stopsReady = false;
@@ -59,6 +59,7 @@ namespace SupremacyHangar.Runtime.Actors
             stops = new[] { currentPos, transform.localPosition };
             transform.localPosition = currentPos;
             stopsReady = true;
+            InitializeMotor(stops, nextStop, currentPos, speed);
         }
 
         private Vector3 CalcPlatformHeight(Vector3 pos)
@@ -70,45 +71,10 @@ namespace SupremacyHangar.Runtime.Actors
             return offset;
         }
 
-        public void Update()
+        public override void Update()
         {
             if (!stopsReady) return;
-            if (UnityMath.math.distancesq(currentPos, stops[nextStop]) < Mathf.Epsilon) return;
-            Move(Time.deltaTime);
-        }
-
-        public void MoveToNextStop()
-        {
-            if (UnityMath.math.distancesq(currentPos, stops[nextStop]) > Mathf.Epsilon) return;
-            nextStop++;
-            if (nextStop >= stops.Length) nextStop = 0;
-        }
-
-        public void Move(float deltaTime)
-        {
-            // get our current, and next move vectors;
-            Vector3 desiredPos = stops[nextStop];
-            // get the movement vector
-            Vector3 nextMove = desiredPos - currentPos;
-
-            // we use square distance as it's quicker to calculate
-            float sqDistanceToDesired = UnityMath.math.lengthsq(nextMove);
-            // max distance we can move in this frame (squared to easily compare with above)
-            float distanceThisFrame = speed * deltaTime;
-            float sqDistanceThisFrame = distanceThisFrame * distanceThisFrame;
-
-            // if we can move more than the max distance, it's easy.
-            if (sqDistanceThisFrame <= sqDistanceToDesired)
-            {
-                Vector3 thisMove = UnityMath.math.normalize(nextMove) * distanceThisFrame;
-                currentPos += thisMove;
-                transform.localPosition = currentPos;
-                return;
-            }
-
-            //otherwise we move straight to the stop.
-            transform.localPosition = desiredPos;
-            currentPos = desiredPos;
+            base.Update();
         }
     }
 }
