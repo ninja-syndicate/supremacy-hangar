@@ -343,7 +343,7 @@ namespace SupremacyHangar.Runtime.Environment
 
         private int NextRoomIndex(EnvironmentPrefab myConnectors)
         {
-            if (myConnectors.connectedTo.name == "Hallway-DoubleSilo(Clone)")
+            if (myConnectors.connectedTo.name.StartsWith("Hallway-DoubleSilo"))
             {
                 return 1;
             }
