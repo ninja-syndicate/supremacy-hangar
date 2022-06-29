@@ -213,16 +213,22 @@ namespace SupremacyHangar.Runtime.ContentLoader
 
         private IEnumerator LoadingAsset()
         {
-            float percentageComplete = 0;
             do
             {
-                percentageComplete = skinOperationHandler.IsValid() ? mechOperationHandler.PercentComplete + skinOperationHandler.PercentComplete /2 : mechOperationHandler.PercentComplete;
-                percentageComplete *= 100;
-
-                Debug.Log("Downloading Asset: " + percentageComplete);
+                _contentSignalHandler.AssetLoadProgress(mechOperationHandler.PercentComplete);
                 yield return null;
             } while (!mechOperationHandler.IsDone);
-            Debug.Log("Downloading Asset: 100%");
+            _contentSignalHandler.AssetLoadProgress(1);
+        }
+
+        private IEnumerator LoadingSkin()
+        {
+            do
+            {
+                _contentSignalHandler.SkinLoadProgress(skinOperationHandler.PercentComplete);
+                yield return null;
+            } while (!mechOperationHandler.IsDone);
+            _contentSignalHandler.SkinLoadProgress(1);
         }
 
 #if UNITY_EDITOR
