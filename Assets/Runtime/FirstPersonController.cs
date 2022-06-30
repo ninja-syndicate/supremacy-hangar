@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 using Zenject;
 using SupremacyHangar.Runtime.Interaction;
 using Unity.Mathematics;
+using SupremacyHangar.Runtime.Actors.Player;
 
 namespace SupremacyHangar.Runtime
 {
@@ -104,6 +105,10 @@ namespace SupremacyHangar.Runtime
 		public bool cursorInputForLook = true;
 #endif
 
+		public bool showSettings = false;
+		public bool showHelpMenu = false;
+		private MenuController menuController;
+
 		public void Awake()
 		{
 			// get a reference to our main camera
@@ -119,16 +124,21 @@ namespace SupremacyHangar.Runtime
 		{
 			_controller = GetComponent<CharacterController>();
 			_playerInput = GetComponent<PlayerInput>();
+			if(!TryGetComponent(out menuController))
+            {
+				Debug.LogError("Cannot find or set Menu Controller", this);
+				enabled = false;
+            }
 
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
 			
 			SetCursorState(cursorLocked);
-
-			if (PlayerPrefs.GetInt("HelpShown") == 0)
+			
+			if (PlayerPrefs.GetInt("HelpShown", 0) == 0)
 			{
-				ToggleHelpMenu();
+				menuController.ToggleHelpMenu();
 				PlayerPrefs.SetInt("HelpShown", 1);
 				PlayerPrefs.Save();
 			}
@@ -141,7 +151,9 @@ namespace SupremacyHangar.Runtime
 
 		public void OnDisable()
 		{
+#if UNITY_EDITOR
 			PlayerPrefs.DeleteAll();
+#endif
 			UnbindInputs();
 		}
 
@@ -266,67 +278,17 @@ namespace SupremacyHangar.Runtime
 			interactionPrompts = 0;
 		}
 
-		private bool showSettings = false;
-		private bool showHelpMenu = false;
-		[SerializeField] private GameObject settingsMenu;
-		[SerializeField] private GameObject helpMenu;
-		[SerializeField] private GameObject interactionPrompt;
-
 		private void OnSettingsChange(InputAction.CallbackContext context)
 		{
 			if (context.phase == InputActionPhase.Canceled) return;
-			ToggelSettingsMenu();
-		}
-
-		public void ToggelSettingsMenu()
-        {
-			if (!showSettings && !showHelpMenu)
-			{
-				interactionPrompt.SetActive(false);
-				
-				settingsMenu.SetActive(true);
-				Time.timeScale = 0;
-				SetCursorState(false);
-				showSettings = true;
-			}
-			else
-			{
-				interactionPrompt.SetActive(true);
-
-				settingsMenu.SetActive(false);
-				SetCursorState(true);
-				showSettings = false;
-				Time.timeScale = 1;
-			}
+			menuController.ToggelSettingsMenu();
 		}
 
 		private void OnHelpChange(InputAction.CallbackContext context)
 		{
 			if (context.phase == InputActionPhase.Canceled) return;
-			ToggleHelpMenu();
-		}
-
-		public void ToggleHelpMenu()
-        {
-			if (!showHelpMenu && !showSettings)
-			{
-				interactionPrompt.SetActive(false);
-
-				helpMenu.SetActive(true);
-				SetCursorState(false);
-				Time.timeScale = 0;
-				showHelpMenu = true;
-			}
-			else
-			{
-				interactionPrompt.SetActive(true);
-
-				helpMenu.SetActive(false);
-				SetCursorState(true);
-				showHelpMenu = false;
-				Time.timeScale = 1;
-			}
-		}
+			menuController.ToggleHelpMenu();
+		}		
 
         private void Update()
 		{
