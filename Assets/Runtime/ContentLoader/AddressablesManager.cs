@@ -235,7 +235,8 @@ namespace SupremacyHangar.Runtime.ContentLoader
                     if (skin != null)
                         mechMesh.sharedMaterials = skin.mats;
 
-                    mechMesh.enabled = true;
+                    mechMesh.enabled = true; 
+                    Container.InjectGameObject(myMech.mech);
                     _signalHandler.SiloFilled();
                 }
             );
