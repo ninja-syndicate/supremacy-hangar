@@ -1,15 +1,9 @@
 using SupremacyHangar.Runtime.ContentLoader;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using Zenject;
-using TMPro;
-using static TMPro.TMP_Dropdown;
-using UnityEngine.AddressableAssets;
-using SupremacyHangar.Runtime.ContentLoader.Types;
-using SupremacyHangar.Editor.ContentLoader;
+#if UNITY_EDITOR
+    using SupremacyHangar.Editor.ContentLoader;
+#endif
 
 namespace SupremacyHangar
 {
@@ -24,11 +18,12 @@ namespace SupremacyHangar
         public void Construct(AddressablesManager addressableManager)
         {
             assetLoaderWindow = UnityEditor.EditorWindow.GetWindow<AssetLoaderWindow>();
-            assetLoaderWindow.AllMaps = allAssets;
-            assetLoaderWindow.MyAddressablesManager = addressableManager;
+            assetLoaderWindow.AllMaps(ref allAssets);
+            assetLoaderWindow.MyAddressablesManager(ref addressableManager);
+            assetLoaderWindow.Close();
         }
 
-        public void OnDisable()
+        public void OnDisable() 
         {
             assetLoaderWindow.Close();
         }

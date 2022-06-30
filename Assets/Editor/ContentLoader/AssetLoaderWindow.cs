@@ -19,8 +19,17 @@ namespace SupremacyHangar.Editor.ContentLoader
 
     public class AssetLoaderWindow : EditorWindow
     {
-        public AssetMappings AllMaps;
-        public AddressablesManager MyAddressablesManager;
+        private static AssetMappings allMaps;
+        public void AllMaps(ref AssetMappings map)
+        {
+            allMaps = map;
+        }
+        public static AddressablesManager myAddressablesManager;
+
+        public void MyAddressablesManager(ref AddressablesManager addressablesManager)
+        {
+            myAddressablesManager = addressablesManager;
+        }
 
         private int index = 0;
         private int spacerAmount = 20;
@@ -30,8 +39,7 @@ namespace SupremacyHangar.Editor.ContentLoader
         private bool optionsSet = false;
         private SerializedObject _serializedObject;
         List<MapOption> mapOptions = new();
-        private string dataSearch;
-        private string assetSearch;
+        private string searchValue;
 
         [MenuItem("Supremacy/AssetLoader")]
         public static void ShowWindow()
@@ -75,31 +83,34 @@ namespace SupremacyHangar.Editor.ContentLoader
         {
             EditorGUILayout.BeginHorizontal();
 
-            GUILayout.Label("Search by Data Ref");
-            dataSearch = EditorGUILayout.TextField(dataSearch, GUILayout.Height(20), GUILayout.Width(100));
-            GUILayout.Label("Search by Asset Ref");
-            assetSearch = EditorGUILayout.TextField(assetSearch, GUILayout.Height(20), GUILayout.Width(100));
+            GUILayout.Label("List Search");
+            searchValue = EditorGUILayout.DelayedTextField(searchValue);
             EditorGUILayout.EndHorizontal();
         }
 
         private void GetAssetsAndNames()
         {
-            if (!AllMaps) return;
-            
+            if (!allMaps) return;
+
             optionsSet = true;
-            _serializedObject = new SerializedObject(AllMaps);
-            foreach (var item in AllMaps.MechSkinAssetByGuid.Values)
+            _serializedObject = new SerializedObject(allMaps);
+            foreach (var item in allMaps.MechSkinAssetByGuid.Values)
             {
+                if (!allMaps.MechChassisPrefabByGuid.ContainsKey(item.DataMechSkin.MechModel.Id))
+                {
+                    Debug.Log($"Mech not found in Asset Map {item.DataMechSkin.MechModel.HumanName}");
+                    continue;
+                }
                 mapOptions.Add(new MapOption()
                 {
                     data = item.DataMechSkin,
-                    mech = AllMaps.MechChassisPrefabByGuid[item.DataMechSkin.MechModel.Id].MechReference,
+                    mech = allMaps.MechChassisPrefabByGuid[item.DataMechSkin.MechModel.Id].MechReference,
                     skin = item.SkinReference,
                     name = item.DataMechSkin.MechModel.HumanName + " - " + item.DataMechSkin.HumanName
                 });
             }
 
-            foreach (var item in AllMaps.MysteryCrateAssetByGuid.Values)
+            foreach (var item in allMaps.MysteryCrateAssetByGuid.Values)
             {
                 mapOptions.Add(new MapOption()
                 {
@@ -113,25 +124,23 @@ namespace SupremacyHangar.Editor.ContentLoader
         private void RenderButtonList()
         {   
             GUILayout.Space(spacerAmount);
-                        
+            
             int counter = 0;
             foreach (var item in mapOptions)
             {
                 if (counter == index) GUI.backgroundColor = selectedColour;
 
                 counter++;
-                if ((dataSearch != null && !item.name.ToLower().Contains(dataSearch)) || (assetSearch != null && !item.name.ToLower().Contains(assetSearch))) continue;
-
+                if (searchValue != null && !item.name.Contains(searchValue, StringComparison.InvariantCultureIgnoreCase)) 
+                    continue;
+                                
                 if (GUILayout.Button(item.name))
                 {
-                    MyAddressablesManager.TargetMech = item.mech;
-                    MyAddressablesManager.TargetSkin = item.skin;
-                    MyAddressablesManager.QuickSpawn();
+                    SetAndSpawnAsset();
                     index = counter - 1;
                 }
 
                 GUI.backgroundColor = Color.white;
-
             }
         }
 
@@ -148,16 +157,16 @@ namespace SupremacyHangar.Editor.ContentLoader
 
             //update listed item value
             var d = dataReference.objectReferenceValue as MechSkin;
-            if(!AllMaps.MechChassisPrefabByGuid.ContainsKey(d.MechModel.Id))
+            if(!allMaps.MechChassisPrefabByGuid.ContainsKey(d.MechModel.Id))
             {
                 Debug.LogError("Skin Data reference is not in Asset Mappings");
                 return;
             }
-            item.mech = AllMaps.MechChassisPrefabByGuid[d.MechModel.Id].MechReference;
-            item.skin = AllMaps.MechSkinAssetByGuid[d.Id].SkinReference;
+            item.mech = allMaps.MechChassisPrefabByGuid[d.MechModel.Id].MechReference;
+            item.skin = allMaps.MechSkinAssetByGuid[d.Id].SkinReference;
             item.name = d.MechModel.HumanName + " - " + d.HumanName;
 
-            EditorUtility.SetDirty(AllMaps);
+            EditorUtility.SetDirty(allMaps);
 
             _serializedObject.ApplyModifiedProperties();
         }
@@ -176,16 +185,16 @@ namespace SupremacyHangar.Editor.ContentLoader
 
             //update listed item value
             var d = dataReference.objectReferenceValue as MysteryCrate;
-            if (!AllMaps.MechChassisPrefabByGuid.ContainsKey(d.Id))
+            if (!allMaps.MechChassisPrefabByGuid.ContainsKey(d.Id))
             {
                 Debug.LogError("Mystery Crate Data reference is not in Asset Mappings");
                 return;
             }
-            item.mech = AllMaps.MysteryCrateAssetByGuid[d.Id].MysteryCrateReference;
+            item.mech = allMaps.MysteryCrateAssetByGuid[d.Id].MysteryCrateReference;
             item.skin = null;
             item.name = d.HumanName;
 
-            EditorUtility.SetDirty(AllMaps);
+            EditorUtility.SetDirty(allMaps);
 
             _serializedObject.ApplyModifiedProperties();
         }
@@ -201,9 +210,6 @@ namespace SupremacyHangar.Editor.ContentLoader
                 else
                     index = mapOptions.Count - 1;
 
-                MyAddressablesManager.TargetMech = mapOptions[index].mech;
-                MyAddressablesManager.TargetSkin = mapOptions[index].skin;
-                MyAddressablesManager.QuickSpawn();
             }
 
             if (GUILayout.Button("Next", GUILayout.Height(20), GUILayout.Width(100)))
@@ -213,21 +219,24 @@ namespace SupremacyHangar.Editor.ContentLoader
                 else
                     index = 0;
 
-                MyAddressablesManager.TargetMech = mapOptions[index].mech;
-                MyAddressablesManager.TargetSkin = mapOptions[index].skin;
-                MyAddressablesManager.QuickSpawn();
+                SetAndSpawnAsset();
             }
 
             GUILayout.Label("Current index: " + index);
 
             if (GUILayout.Button("Spawn Current", GUILayout.Height(20), GUILayout.Width(100)))
             {
-                MyAddressablesManager.TargetMech = mapOptions[index].mech;
-                MyAddressablesManager.TargetSkin = mapOptions[index].skin;
-                MyAddressablesManager.QuickSpawn();
+                SetAndSpawnAsset();
             }
 
             EditorGUILayout.EndHorizontal();
+        }
+
+        private void SetAndSpawnAsset()
+        {
+            myAddressablesManager.TargetMech = mapOptions[index].mech;
+            myAddressablesManager.TargetSkin = mapOptions[index].skin;
+            myAddressablesManager.QuickSpawn();
         }
     }
 }
