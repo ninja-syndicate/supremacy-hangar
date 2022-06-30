@@ -11,6 +11,7 @@ using SupremacyHangar.Runtime.Environment.Connections;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using SupremacyHangar.Runtime.ContentLoader.Types;
 using SupremacyHangar.Runtime.ContentLoader;
+using SupremacyData.Runtime;
 
 namespace SupremacyHangar.Runtime.Environment
 {
@@ -107,6 +108,7 @@ namespace SupremacyHangar.Runtime.Environment
                 _connectivityGraph = obj.Result;
                 SpawnInitialHallway();
             };
+
 		}
 
         private void SpawnInitialHallway()
@@ -356,6 +358,7 @@ namespace SupremacyHangar.Runtime.Environment
 
         public void UnloadSilo(bool waitOnWindow = true)
         {
+            _container.Unbind<BaseRecord>();
             if (_currentSilo && waitOnWindow)
             {
                 _siloSignalHandler.CloseSilo();
