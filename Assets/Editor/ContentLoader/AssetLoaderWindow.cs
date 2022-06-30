@@ -54,7 +54,11 @@ namespace SupremacyHangar.Editor.ContentLoader
             if (!optionsSet) GetAssetsAndNames();
 
             scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
-
+            allMaps = EditorGUILayout.ObjectField(
+                "Asset Mapping Object",
+                allMaps,
+                typeof(AssetMappings),
+                false) as AssetMappings;
             RenderNavigationSection();
             RenderSearchFields();
 
@@ -136,8 +140,8 @@ namespace SupremacyHangar.Editor.ContentLoader
                                 
                 if (GUILayout.Button(item.name))
                 {
-                    SetAndSpawnAsset();
                     index = counter - 1;
+                    SetAndSpawnAsset();
                 }
 
                 GUI.backgroundColor = Color.white;
@@ -210,6 +214,7 @@ namespace SupremacyHangar.Editor.ContentLoader
                 else
                     index = mapOptions.Count - 1;
 
+                SetAndSpawnAsset();
             }
 
             if (GUILayout.Button("Next", GUILayout.Height(20), GUILayout.Width(100)))
