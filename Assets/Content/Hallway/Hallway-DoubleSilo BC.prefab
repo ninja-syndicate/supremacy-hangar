@@ -1,0 +1,433 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4297981736134075246
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 57071425626925513, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_LightLayerMask
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 357384004115462624, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 357384004115462627, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0ebcf53f805030044af6165efe83e339, type: 2}
+    - target: {fileID: 503357369494744032, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0ebcf53f805030044af6165efe83e339, type: 2}
+    - target: {fileID: 503357369494744035, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 621997343663938448, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_ColorTemperature
+      value: 6300
+      objectReference: {fileID: 0}
+    - target: {fileID: 621997343663938448, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 858633005813077973, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_ColorTemperature
+      value: 6300
+      objectReference: {fileID: 0}
+    - target: {fileID: 858633005813077973, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1833348036204526677, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_ColorTemperature
+      value: 6300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1833348036204526677, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2150796274959637628, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_Name
+      value: Hallway-DoubleSilo BC
+      objectReference: {fileID: 0}
+    - target: {fileID: 2150796274959637628, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2250090348033429312, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_ColorTemperature
+      value: 6300
+      objectReference: {fileID: 0}
+    - target: {fileID: 2250090348033429312, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2330969162365799569, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 52a7242fb62354d4ab3ba0ef21d9de91, type: 2}
+    - target: {fileID: 2389930510350652683, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 2389930510350652683, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 2389930510350652683, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 2389930510350652683, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2791677064848662092, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2902260408012957815, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_ColorTemperature
+      value: 6300
+      objectReference: {fileID: 0}
+    - target: {fileID: 2902260408012957815, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2933581012205764111, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2933848321567926478, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3084756140598896524, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_LightLayerMask
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3195991059854545715, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2701eaaafb2124c468159ed89a60dabd,
+        type: 3}
+    - target: {fileID: 3195991059854545715, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.75686276
+      objectReference: {fileID: 0}
+    - target: {fileID: 3195991059854545715, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.5568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 3195991059854545715, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.25882354
+      objectReference: {fileID: 0}
+    - target: {fileID: 4128522395121549152, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4314334574559390510, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4338458910304926295, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_LightLayerMask
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370155300277935887, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: startFactionColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370155300277935887, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: startFactionColor.b
+      value: 0.75686276
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370155300277935887, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: startFactionColor.g
+      value: 0.5568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 4370155300277935887, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: startFactionColor.r
+      value: 0.25882354
+      objectReference: {fileID: 0}
+    - target: {fileID: 4678779810461950721, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4754170663692549364, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0ebcf53f805030044af6165efe83e339, type: 2}
+    - target: {fileID: 4754170663692549367, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4913446655563157855, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_LightLayerMask
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5065108364215929493, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5084819900365775767, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 52a7242fb62354d4ab3ba0ef21d9de91, type: 2}
+    - target: {fileID: 5109573480411839081, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5180003766917020173, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 5180003766917020173, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 5180003766917020173, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 5180003766917020173, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5322923393274394314, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_LightLayerMask
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5373880912367057973, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2701eaaafb2124c468159ed89a60dabd,
+        type: 3}
+    - target: {fileID: 5373880912367057973, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.75686276
+      objectReference: {fileID: 0}
+    - target: {fileID: 5373880912367057973, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.5568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 5373880912367057973, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.25882354
+      objectReference: {fileID: 0}
+    - target: {fileID: 5583388156398398199, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_ColorTemperature
+      value: 6300
+      objectReference: {fileID: 0}
+    - target: {fileID: 5583388156398398199, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995753245956367189, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_ColorTemperature
+      value: 6300
+      objectReference: {fileID: 0}
+    - target: {fileID: 5995753245956367189, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6242016888729995630, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_LightLayerMask
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6373429721233509337, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387240603356791370, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387240603356791370, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387240603356791370, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387240603356791370, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387240603356791370, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387240603356791370, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387240603356791370, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387240603356791370, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387240603356791370, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387240603356791370, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6387240603356791370, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515659517387927561, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: startFactionColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515659517387927561, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: startFactionColor.b
+      value: 0.75686276
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515659517387927561, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: startFactionColor.g
+      value: 0.5568628
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515659517387927561, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: startFactionColor.r
+      value: 0.25882354
+      objectReference: {fileID: 0}
+    - target: {fileID: 7038374607457620302, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7328947331547717232, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: 0ebcf53f805030044af6165efe83e339, type: 2}
+    - target: {fileID: 7328947331547717235, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7399498437475853109, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7856747078083495912, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_LightLayerMask
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7959752283598732419, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_ColorTemperature
+      value: 6300
+      objectReference: {fileID: 0}
+    - target: {fileID: 7959752283598732419, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8024616915501366496, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_LightLayerMask
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8382398380657977687, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9073791705119335365, guid: 9320372745f3f45e4971cba976134fb7,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9320372745f3f45e4971cba976134fb7, type: 3}

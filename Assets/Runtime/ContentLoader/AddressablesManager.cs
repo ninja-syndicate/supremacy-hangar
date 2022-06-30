@@ -40,9 +40,6 @@ namespace SupremacyHangar.Runtime.ContentLoader
 
         [SerializeField] private AssetReferenceAssetMappings assetMappingsReference;
 
-#if UNITY_EDITOR
-        public AssetMappings Mappings => mappings;
-#endif
         private AssetMappings mappings;
         private bool mappingsLoaded;
 

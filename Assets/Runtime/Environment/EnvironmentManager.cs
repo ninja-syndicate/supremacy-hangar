@@ -11,6 +11,7 @@ using SupremacyHangar.Runtime.Environment.Connections;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using SupremacyHangar.Runtime.ContentLoader.Types;
 using SupremacyHangar.Runtime.ContentLoader;
+using SupremacyData.Runtime;
 
 namespace SupremacyHangar.Runtime.Environment
 {
@@ -107,6 +108,7 @@ namespace SupremacyHangar.Runtime.Environment
                 _connectivityGraph = obj.Result;
                 SpawnInitialHallway();
             };
+
 		}
 
         private void SpawnInitialHallway()
@@ -343,7 +345,7 @@ namespace SupremacyHangar.Runtime.Environment
 
         private int NextRoomIndex(EnvironmentPrefab myConnectors)
         {
-            if (myConnectors.connectedTo.name == "Hallway-DoubleSilo(Clone)")
+            if (myConnectors.connectedTo.name.StartsWith("Hallway-DoubleSilo"))
             {
                 return 1;
             }
@@ -356,6 +358,7 @@ namespace SupremacyHangar.Runtime.Environment
 
         public void UnloadSilo(bool waitOnWindow = true)
         {
+            _container.Unbind<BaseRecord>();
             if (_currentSilo && waitOnWindow)
             {
                 _siloSignalHandler.CloseSilo();
@@ -371,9 +374,9 @@ namespace SupremacyHangar.Runtime.Environment
 
             if (newDoorEnvironmentPrefab)
             {
-                if (newDoorEnvironmentPrefab.connectedTo.name != "Hallway-SmallStraightJoin(Clone)" && SiloOffset > 0 && SiloOffset < MaxSiloOffset)
+                if (newDoorEnvironmentPrefab.connectedTo.name.StartsWith("Hallway-SmallStraightJoin") && SiloOffset > 0 && SiloOffset < MaxSiloOffset)
                     newDoorEnvironmentPrefab.ToggleDoor();
-                else if (newDoorEnvironmentPrefab.connectedTo.name == "Hallway-SmallStraightJoin(Clone)")
+                else if (newDoorEnvironmentPrefab.connectedTo.name.StartsWith("Hallway-SmallStraightJoin"))
                     newDoorEnvironmentPrefab.ToggleDoor();
             }
 
@@ -425,7 +428,7 @@ namespace SupremacyHangar.Runtime.Environment
 
         public void setCurrentEnvironment(GameObject gameObject)
         {
-            if (gameObject.name == "Hallway-SmallStraightJoin(Clone)" && gameObject.transform.position != Vector3.zero)
+            if (gameObject.name.StartsWith("Hallway-SmallStraightJoin") && gameObject.transform.position != Vector3.zero)
                 _repositionSignalHandler.RepositionObject(gameObject.transform.position);
 
             if (currentEnvironment.CurrentGameObject != gameObject)

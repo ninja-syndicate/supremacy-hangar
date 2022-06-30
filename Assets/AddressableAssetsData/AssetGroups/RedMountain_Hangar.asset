@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: RedMountain_Hangar
+  m_EditorClassIdentifier: 
+  m_GroupName: RedMountain_Hangar
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 9ac1906b626f046279679f2ee0331668
+  m_SerializeEntries:
+  - m_GUID: d09f455f777004d878fe82625704ca06
+    m_Address: Hangar_Silo_Left RM.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: db75c879d167a4ef1832e26d224d53a6
+    m_Address: Hangar_Silo_Right RM.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b9b02a471ec86476bb2c3c38c5a2d90d
+    m_Address: Hallway-SmallStraightJoin RM.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8d6320b88db414473b5905a9911dfc90
+    m_Address: Hallway-DoubleSilo RM.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: c964c8d35532b439a85d992ee69ef06d, type: 2}
+    - {fileID: 11400000, guid: d1b4779d1002a4667a89548681e89e17, type: 2}

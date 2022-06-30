@@ -1,9 +1,7 @@
 name: Dev Build CI
 
 on:
-  pull_request:
-    branches:
-      - develop
+  workflow_dispatch: {}
 
 jobs:
   build:
@@ -28,6 +26,7 @@ jobs:
           Start-Process -FilePath $unityPath -ArgumentList "-batchmode -quit -buildTarget WebGL -projectPath $projectPath -logFile builds_log.txt -executeMethod BuildSystem.CLI.BuildWebGL -addressablesLocation dev" -Wait -WindowStyle Hidden
 
   deploy-build:
+    needs: [build]
     runs-on: [ self-hosted, windows, x64 ]
     steps:
       - name: Synchronize Build
@@ -36,8 +35,9 @@ jobs:
           New-Item -Force -Path "$projectPath" -Name "BuildB" -ItemType "directory"
           Copy-Item -Force "$projectPath\Builds\WebGL\Build\*" -Destination "$projectPath\BuildB" -Recurse
           Copy-Item -Force "$projectPath\Builds\WebGL\StreamingAssets" -Destination "$projectPath\BuildB" -Recurse
-          rclone sync "$projectPath/BuildB" "afiles:/var/www/html/supremacy-hangar/build/develop/$GITHUB_HEAD_REF-$GITHUB_RUN_ATTEMPT" --progress --verbose --multi-thread-streams 4
+          rclone sync "$projectPath/BuildB" "afiles:/var/www/html/supremacy-hangar/build/develop/${{github.GITHUB_HEAD_REF}}-${{github.GITHUB_RUN_ATTEMPT}}" --progress --verbose --multi-thread-streams 4
   deploy-addressables:
+    needs: [build]
     runs-on: [ self-hosted, windows, x64 ]
     steps:
       - name: Synchronize Addressables

@@ -2,25 +2,17 @@ name: Production CI
 
 on:
   push:
-    branches: ["main"]
+    branches: [ "main" ]
 
 jobs:
   build:
-    runs-on: [self-hosted, windows, x64]
+    runs-on: [ self-hosted, windows, x64 ]
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
         with:
           fetch-depth: "0"
           lfs: true
-
-      # Cache
-      - uses: actions/cache@v2
-        with:
-          path: Library
-          key: Library-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
-          restore-keys: |
-            Library-
 
       - name: Prewarm
         run: |
@@ -35,8 +27,8 @@ jobs:
           Start-Process -FilePath $unityPath -ArgumentList "-batchmode -quit -buildTarget WebGL -projectPath $projectPath -logFile build_log.txt -executeMethod BuildSystem.CLI.BuildWebGL -addressablesLocation prod" -Wait -WindowStyle Hidden
 
   deploy-build:
-   needs: [build]
-    runs-on: [self-hosted, windows, x64]
+    needs: [ build ]
+    runs-on: [ self-hosted, windows, x64 ]
     steps:
       - name: Synchronize Build
         run: |
@@ -46,10 +38,21 @@ jobs:
           Copy-Item "$projectPath\Builds\WebGL\StreamingAssets" -Destination "$projectPath\BuildB" -Recurse
           rclone sync "$projectPath/BuildB/" "afiles:/var/www/html/supremacy-hangar/build/production/" --progress --verbose --multi-thread-streams 4
   deploy-addressables:
-    needs: [build]
-    runs-on: [self-hosted, windows, x64]
+    needs: [ build ]
+    runs-on: [ self-hosted, windows, x64 ]
     steps:
       - name: Synchronize Addressables
         run: |
           $projectPath = "C:\actions-runner\_work\supremacy-hangar\supremacy-hangar"
           rclone sync "$projectPath/ServerData/" "afiles:/var/www/html/supremacy-hangar/addressables/production/" --progress --verbose --multi-thread-streams 4
+  purge-cache:
+    needs: [deploy-build]
+    runs-on: [self-hosted, windows, x64]
+    steps:
+      - name: Purging Cloudflare Cache
+        env:
+          CLOUDFLARE_AUTH_EMAIL: ${{ secrets.CLOUDFLARE_AUTH_EMAIL }}
+          CLOUDFLARE_AUTH_KEY: ${{ secrets.CLOUDFLARE_AUTH_KEY }}
+          CLOUDFLARE_IDENTIFIER: ${{ secrets.CLOUDFLARE_IDENTIFIER }}
+        run: |
+          cmd.exe /c 'curl.exe -H "X-Auth-Email: %CLOUDFLARE_AUTH_EMAIL%" -H "X-Auth-Key: %CLOUDFLARE_AUTH_KEY%" -H "Content-Type: application/json"  -d "{\"files\": [\"https://afiles.ninja-cdn.com/supremacy-hangar/build/production/WebGL.loader.js\",\"https://afiles.ninja-cdn.com/supremacy-hangar/build/production/WebGL.data.br\", \"https://afiles.ninja-cdn.com/supremacy-hangar/build/production/WebGL.framework.js.br\",\"https://afiles.ninja-cdn.com/supremacy-hangar/build/production/WebGL.wasm.br\",\"https://afiles.ninja-cdn.com/supremacy-hangar/build/production/StreamingAssets\"]}" "https://api.cloudflare.com/client/v4/zones/%CLOUDFLARE_IDENTIFIER%/purge_cache"'          

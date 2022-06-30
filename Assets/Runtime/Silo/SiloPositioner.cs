@@ -4,6 +4,7 @@ using UnityEngine;
 using SupremacyHangar.Runtime.Environment;
 using Zenject;
 using SupremacyHangar.Runtime.Environment.Connections;
+using SupremacyData.Runtime;
 
 namespace SupremacyHangar.Runtime.Silo
 {
