@@ -7,4 +7,4 @@ jobs:
         steps:
             - name: Test github run number
               run: |
-                echo "This is the run number ${{env.GITHUB_RUN_ATTEMPT}}"
+                echo "This is the run number $env:GITHUB_RUN_ATTEMPT"
