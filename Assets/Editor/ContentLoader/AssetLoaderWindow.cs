@@ -30,6 +30,8 @@ namespace SupremacyHangar.Editor.ContentLoader
         private bool optionsSet = false;
         private SerializedObject _serializedObject;
         List<MapOption> mapOptions = new();
+        private string dataSearch;
+        private string assetSearch;
 
         [MenuItem("Supremacy/AssetLoader")]
         public static void ShowWindow()
@@ -42,7 +44,7 @@ namespace SupremacyHangar.Editor.ContentLoader
         void OnGUI()
         {
             if (!optionsSet) GetAssetsAndNames();
-            
+
             scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
 
             RenderNavigationSection();
@@ -68,8 +70,7 @@ namespace SupremacyHangar.Editor.ContentLoader
                     break;
             }
         }
-        private string dataSearch;
-        private string assetSearch;
+
         private void RenderSearchFields()
         {
             EditorGUILayout.BeginHorizontal();
@@ -83,6 +84,8 @@ namespace SupremacyHangar.Editor.ContentLoader
 
         private void GetAssetsAndNames()
         {
+            if (!AllMaps) return;
+            
             optionsSet = true;
             _serializedObject = new SerializedObject(AllMaps);
             foreach (var item in AllMaps.MechSkinAssetByGuid.Values)
@@ -145,6 +148,11 @@ namespace SupremacyHangar.Editor.ContentLoader
 
             //update listed item value
             var d = dataReference.objectReferenceValue as MechSkin;
+            if(!AllMaps.MechChassisPrefabByGuid.ContainsKey(d.MechModel.Id))
+            {
+                Debug.LogError("Skin Data reference is not in Asset Mappings");
+                return;
+            }
             item.mech = AllMaps.MechChassisPrefabByGuid[d.MechModel.Id].MechReference;
             item.skin = AllMaps.MechSkinAssetByGuid[d.Id].SkinReference;
             item.name = d.MechModel.HumanName + " - " + d.HumanName;
@@ -168,6 +176,11 @@ namespace SupremacyHangar.Editor.ContentLoader
 
             //update listed item value
             var d = dataReference.objectReferenceValue as MysteryCrate;
+            if (!AllMaps.MechChassisPrefabByGuid.ContainsKey(d.Id))
+            {
+                Debug.LogError("Mystery Crate Data reference is not in Asset Mappings");
+                return;
+            }
             item.mech = AllMaps.MysteryCrateAssetByGuid[d.Id].MysteryCrateReference;
             item.skin = null;
             item.name = d.HumanName;
