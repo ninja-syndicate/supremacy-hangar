@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: BostonCybernetics_Hangar
+  m_EditorClassIdentifier: 
+  m_GroupName: BostonCybernetics_Hangar
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 3db60e21a2a214f4682ea367b6b1ca42
+  m_SerializeEntries:
+  - m_GUID: 5d62833c329484d789b303b131adb6b7
+    m_Address: Hallway-SmallStraightJoin BC.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e8047a0d5f3b64f939fc9e5064bd2c65
+    m_Address: Hallway-DoubleSilo BC.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c1325b4ed7b3b4721a0a61d137eafcc9
+    m_Address: Hangar_Silo_Right BC.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c1a2bfb46af4d4ae09189cde830bcd7c
+    m_Address: Hangar_Silo_Left BC.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: b6d8fdbbbb713454587cb7956a1e0f2f, type: 2}
+    - {fileID: 11400000, guid: e4f50aa924d3c403c8c773e3e07d492e, type: 2}
