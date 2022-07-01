@@ -70,11 +70,12 @@ namespace SupremacyHangar.Runtime.ContentLoader
                     continue;
                 }
 
-                if(!dict.ContainsKey(record.Id))
-                { 
+                if (!dict.ContainsKey(record.Id))
+                {
                     dict.Add(record.Id, mapping);
                     index++;
                 }
+                else Debug.LogWarning($"Record not added due to duplicate key {record.HumanName} at index {index}");
             }
         }
     }

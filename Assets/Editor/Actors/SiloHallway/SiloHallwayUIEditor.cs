@@ -32,6 +32,7 @@ namespace SupremacyHangar.Editor.Actors.SiloHallway
         private SerializedProperty siloContentsName2Property;
         private SerializedProperty loadButtonProperty;
         
+        private SerializedProperty startFactionColorProperty;
         private SerializedProperty siloOffsetProperty;
 
         private readonly Dictionary<SerializedObject, Settings> settingsMap = new ();
@@ -57,6 +58,7 @@ namespace SupremacyHangar.Editor.Actors.SiloHallway
             siloContentsName2Property = serializedObject.FindProperty("siloContentsName2");
             loadButtonProperty = serializedObject.FindProperty("loadButton");
             
+            startFactionColorProperty = serializedObject.FindProperty("startFactionColor");
             siloOffsetProperty = serializedObject.FindProperty("siloOffset");
             
             if (!settingsMap.ContainsKey(serializedObject)) settingsMap.Add(serializedObject, new Settings());
@@ -164,6 +166,7 @@ namespace SupremacyHangar.Editor.Actors.SiloHallway
         {
             if (!ShowElements("Linked Runtime Elements", showRuntimeElements)) return;       
             EditorGUI.BeginChangeCheck();
+            EditorGUILayout.PropertyField(startFactionColorProperty);
             EditorGUILayout.PropertyField(siloOffsetProperty);
             if (EditorGUI.EndChangeCheck()) serializedObject.ApplyModifiedProperties();
         }

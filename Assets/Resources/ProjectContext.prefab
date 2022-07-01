@@ -86,6 +86,11 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
+  _platformStops:
+    m_AssetGUID: 19350e53e4a94d14aa8b9d996358f033
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
 --- !u!114 &7776942803935884160
 MonoBehaviour:
   m_ObjectHideFlags: 0

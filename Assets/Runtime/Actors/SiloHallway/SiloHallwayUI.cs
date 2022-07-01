@@ -28,12 +28,18 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
         [SerializeField] private TMP_Text siloContentsName2;
         [SerializeField] private Button loadButton;
 
+        [SerializeField] private Color startFactionColor;
         [SerializeField] private int siloOffset;
         
         private Color currentFactionColor = Color.black;
 
         private Coroutine counter = null;
         private WaitForSeconds counterDelay = new (0.25f);
+
+        public void Awake()
+        {
+            UpdateFactionColor(startFactionColor);
+        }
         
         [Inject]
         public void SetDependencies(AddressablesManager addressablesManager, EnvironmentManager environmentManager)
