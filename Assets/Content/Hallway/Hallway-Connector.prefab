@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2424807430162175449}
   - component: {fileID: 1835963907996916371}
   - component: {fileID: -2688548455563843632}
+  - component: {fileID: 1984714138037270705}
   m_Layer: 0
   m_Name: Hallway-Connector
   m_TagString: Untagged
@@ -66,6 +67,102 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c80beb9e63908c842bd67f991935f4a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &1984714138037270705
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2175959993548932280}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 3
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &3331272341804085594
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -359,6 +456,9 @@ MonoBehaviour:
   myConnectors: {fileID: 1835963907996916371}
   to_Connect_to: {fileID: 11400000, guid: 9f006f5a32a5fc4488c4eb3bc8d7e589, type: 2}
   DoorAnim: {fileID: 4229028505539775523}
+  doorAudioSource: {fileID: 1984714138037270705}
+  closeSoundClip: {fileID: 8300000, guid: 5ceba0a4b8a46d24b9f6fa7e3eb3175d, type: 3}
+  openSoundClip: {fileID: 8300000, guid: 2d02cc0c82f891344aa92c9dfde9e146, type: 3}
   Spawned: 0
   increment: 1
   doorCollider: {fileID: 9190618577487945576}
@@ -437,6 +537,9 @@ MonoBehaviour:
   myConnectors: {fileID: 1835963907996916371}
   to_Connect_to: {fileID: 11400000, guid: e438fbcd3b20a9c4cb563501cd8d9963, type: 2}
   DoorAnim: {fileID: 4229028505539775523}
+  doorAudioSource: {fileID: 1984714138037270705}
+  closeSoundClip: {fileID: 8300000, guid: 5ceba0a4b8a46d24b9f6fa7e3eb3175d, type: 3}
+  openSoundClip: {fileID: 8300000, guid: 2d02cc0c82f891344aa92c9dfde9e146, type: 3}
   Spawned: 0
   increment: 0
   doorCollider: {fileID: 9190618577487945576}

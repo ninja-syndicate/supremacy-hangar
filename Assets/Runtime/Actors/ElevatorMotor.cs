@@ -18,12 +18,19 @@ namespace SupremacyHangar
         private int myNextStop;
         private UnityMath.float3 myCurrentPos;
 
+        private AudioSource myAudioSource;
+
         public void InitializeMotor(Vector3[] newStops, int newNextStop, UnityMath.float3 newCurrentPos, float newSpeed)
-        {
+        {   
             myStops = newStops;
             myNextStop = newNextStop;
             myCurrentPos = newCurrentPos;
             mySpeed = newSpeed;
+
+            if (TryGetComponent(out myAudioSource)) return;
+
+            Debug.LogError("Cannot find and set audio source");
+            enabled = false;
         }
 
         public virtual void Update()
@@ -37,6 +44,7 @@ namespace SupremacyHangar
             if (UnityMath.math.distancesq(myCurrentPos, myStops[myNextStop]) > Mathf.Epsilon) return;
             myNextStop++;
             if (myNextStop >= myStops.Length) myNextStop = 0;
+            myAudioSource.Play();
         }
 
         public void OnTriggerEnter(Collider other)

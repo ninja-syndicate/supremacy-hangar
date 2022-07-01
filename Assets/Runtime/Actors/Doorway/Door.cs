@@ -10,6 +10,10 @@ namespace SupremacyHangar.Runtime.Actors.Doorway
         [SerializeField] private bool automaticOpen;
         [SerializeField] private bool automaticClose;
 
+        [SerializeField] private AudioClip closeSoundClip;
+        [SerializeField] private AudioClip openSoundClip;
+        private AudioSource myAudioSource;
+
         private int doorPropertyHash;
         private bool animatorDoorState;
 
@@ -19,7 +23,11 @@ namespace SupremacyHangar.Runtime.Actors.Doorway
         public override void Awake()
         {
             base.Awake();
-            SetupAnimator();
+            SetupAnimator();            
+            if (TryGetComponent(out myAudioSource)) return;
+
+            Debug.LogError("Cannot find and set audio source");
+            enabled = false;
         }
         
         public override void OnPlayerEntered(GameObject go, FirstPersonController controller)
@@ -31,6 +39,8 @@ namespace SupremacyHangar.Runtime.Actors.Doorway
             {
                 animatorDoorState = true;
                 animator.SetBool(doorPropertyHash, true);
+                myAudioSource.clip = openSoundClip;
+                myAudioSource.Play();
             }
         }
 
@@ -60,6 +70,8 @@ namespace SupremacyHangar.Runtime.Actors.Doorway
             {
                 animatorDoorState = false;
                 animator.SetBool(doorPropertyHash, false);
+                myAudioSource.clip = closeSoundClip;
+                myAudioSource.Play();
             }
         }
         
