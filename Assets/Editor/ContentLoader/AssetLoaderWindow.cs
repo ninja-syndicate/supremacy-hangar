@@ -69,7 +69,7 @@ namespace SupremacyHangar.Editor.ContentLoader
             RenderNavigationSection();
             RenderSearchFields();
 
-            if (mapOptions.Count > 0) RenderSelectedInformation(mapOptions[index]);
+            if (mapOptions.Count > 0) RenderSelectedInformation(searchResults.Count > 0 ? mapOptions[searchResults[searchIndex]] : mapOptions[index]);
 
             scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
             
@@ -88,7 +88,7 @@ namespace SupremacyHangar.Editor.ContentLoader
 
             if (GUILayout.Button("Refresh"))
             {
-                allMaps.OnEnable();
+                allMaps?.OnEnable();
                 mapOptions.Clear();
                 optionsSet = false;
             }
@@ -144,6 +144,7 @@ namespace SupremacyHangar.Editor.ContentLoader
                 });
             }
 
+            crateCount = 0;
             foreach (var item in allMaps.MysteryCrateAssetByGuid.Values)
             {
                 mapOptions.Add(new MapOption()
@@ -191,8 +192,8 @@ namespace SupremacyHangar.Editor.ContentLoader
         private void RenderSelectedSkinInformation(MapOption item)
         {
             GUILayout.Space(spacerAmount);
-
-            var selectedProperty = _serializedObject.FindProperty("mechSkins").GetArrayElementAtIndex(index);
+            int targetIndex = searchResults.Count > 0 ? searchResults[searchIndex] : index;
+            var selectedProperty = _serializedObject.FindProperty("mechSkins").GetArrayElementAtIndex(targetIndex);
             var skinReference = selectedProperty.FindPropertyRelative("skinReference");
             var dataReference = selectedProperty.FindPropertyRelative("dataMechSkin");
 
