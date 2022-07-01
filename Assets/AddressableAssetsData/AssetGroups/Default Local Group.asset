@@ -41,10 +41,6 @@ MonoBehaviour:
     m_Address: AssetMappings.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 19350e53e4a94d14aa8b9d996358f033
-    m_Address: Assets/Settings/PlatformStopList.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
   m_SchemaSet:
