@@ -115,7 +115,7 @@ MonoBehaviour:
     dataMechSkin: {fileID: 4319933105495909278, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
       type: 2}
     skinReference:
-      m_AssetGUID: 75e95c22c1c137849997c48afcec089c
+      m_AssetGUID: 6a37f1c162b7fb5448b618f3c80682f0
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0

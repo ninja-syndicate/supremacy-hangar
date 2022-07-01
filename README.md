@@ -7,7 +7,7 @@ This is the Unity hangar (because: mobile and WebGL) for players to see their me
 
 ## Pre-requisites
   1. Git client with LFS support
-  2. Unity 2021.3.3f1 ([Unity Hub Link](unityhub://2021.3.4f1/cb45f9cae8b7))
+  2. Unity 2021.3.5f1 ([Unity Hub Link](unityhub://2021.3.5f1/40eb3a945986))
 
 ## Building from the command line
 
