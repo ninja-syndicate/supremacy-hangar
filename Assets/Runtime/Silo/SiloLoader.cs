@@ -24,7 +24,7 @@ namespace SupremacyHangar.Runtime.Silo
 
         public override void OnPlayerEntered(GameObject go, FirstPersonController controller)
         {
-            progressbar.IsTargeted = true;
+            if(progressbar) progressbar.IsTargeted = true;
             playerPresent = true;
             playerController = controller;
             playerController.OnInteractionTriggered += StartLoad;
@@ -33,7 +33,7 @@ namespace SupremacyHangar.Runtime.Silo
         
         public override void OnPlayerExited()
         {
-            progressbar.IsTargeted = false;
+            if (progressbar) progressbar.IsTargeted = false;
             if (!playerPresent) return;
             playerController.OnInteractionTriggered -= StartLoad;
             playerController.DecrementInteractionPromptRequests();

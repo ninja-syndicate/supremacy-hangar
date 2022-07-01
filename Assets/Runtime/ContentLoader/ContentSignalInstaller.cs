@@ -16,10 +16,6 @@ namespace SupremacyHangar.Runtime.ContentLoader
     public class ContentSignalHandler
     {
         readonly SignalBus _signalBus;
-
-        private float siloLoadProgress = 0;
-        private float assetLoadProgress = 0;
-        private float skinLoadProgress = 0;
         private Dictionary<string, float> progressAmounts = new();
 
         public ContentSignalHandler(SignalBus signalBus)
