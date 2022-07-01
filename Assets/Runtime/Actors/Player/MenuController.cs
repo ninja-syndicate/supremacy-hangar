@@ -12,7 +12,7 @@ namespace SupremacyHangar.Runtime.Actors.Player
 		[SerializeField] private GameObject interactionPrompt;
 
 		private FirstPersonController playerController;
-
+		private MenuSignalHandler _menuSignalHandler;
         public void Start()
         {
 			if (TryGetComponent(out playerController)) return;
@@ -22,9 +22,9 @@ namespace SupremacyHangar.Runtime.Actors.Player
         }
 
         [Inject]
-		public void Construct()
+		public void Construct(MenuSignalHandler menuSignalHandler)
         {
-
+			_menuSignalHandler = menuSignalHandler;
         }
 
 		public void ToggleHelpMenu()
@@ -35,17 +35,17 @@ namespace SupremacyHangar.Runtime.Actors.Player
 
 				helpMenu.SetActive(true);
 				SetCursorState(false);
-				Time.timeScale = 0;
+				_menuSignalHandler.PauseGame();
 				playerController.showHelpMenu = true;
 			}
-			else
+			else if(!playerController.showSettings)
 			{
 				interactionPrompt.SetActive(true);
 
 				helpMenu.SetActive(false);
 				SetCursorState(true);
 				playerController.showHelpMenu = false;
-				Time.timeScale = 1;
+				_menuSignalHandler.ResumeGame();
 			}
 		}
 
@@ -56,18 +56,19 @@ namespace SupremacyHangar.Runtime.Actors.Player
 				interactionPrompt.SetActive(false);
 
 				settingsMenu.SetActive(true);
-				Time.timeScale = 0;
+
+				_menuSignalHandler.PauseGame();
 				SetCursorState(false);
 				playerController.showSettings = true;
 			}
-			else
+			else if(!playerController.showHelpMenu)
 			{
 				interactionPrompt.SetActive(true);
 
 				settingsMenu.SetActive(false);
 				SetCursorState(true);
 				playerController.showSettings = false;
-				Time.timeScale = 1;
+				_menuSignalHandler.ResumeGame();
 			}
 		}
 

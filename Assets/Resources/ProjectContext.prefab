@@ -149,4 +149,4 @@ MonoBehaviour:
     \"3ca1d928-51fa-4c9e-8a82-6ee5819b93d2\",\n            \"mystery_crate_id\":
     \"3ca1d928-51fa-4c9e-8a82-6ee5819b93d2\",\n            \"can_open_on\": \"2022-07-07T13:00:00.000Z\"\n       
     }\n    ]\n}"
-  jsonTestFragmentDelay: 0.2
+  jsonTestFragmentDelay: 5
