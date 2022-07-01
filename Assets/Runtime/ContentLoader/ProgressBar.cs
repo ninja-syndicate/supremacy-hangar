@@ -1,18 +1,40 @@
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.ResourceManagement.AsyncOperations;
 using UnityEngine.UI;
 using Zenject;
 
 
 namespace SupremacyHangar.Runtime.ContentLoader
 {
+    public class LoadingProgressContext
+    {
+        public static ProgressSignalHandler progressSignalHandler;
+
+        [Inject]
+        public void Constuct(ProgressSignalHandler signalHandler)
+        {
+            progressSignalHandler = signalHandler;
+        }
+
+        public IEnumerator LoadingAssetProgress(AsyncOperationHandle handle)
+        {
+            do
+            {
+                progressSignalHandler.ProgressBar(handle, handle.PercentComplete);
+                yield return null;
+            } while (!handle.IsDone);
+            progressSignalHandler.ProgressBar(handle, 1);
+        }
+    }
+
     public class ProgressBar : MonoBehaviour
     {
         private Slider mySlider;
         [SerializeField] private TextMeshProUGUI text;
         [SerializeField] private string newMessage = "Loading...";
+        [SerializeField] private bool loadingScreen = false;
 
         private string originalMessage;
         private SignalBus _bus;
@@ -58,7 +80,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
 
         private void SetSliderValue(AssetLoadingProgressSignal signal)
         {
-            if(!mySlider || !IsTargeted)
+            if(!IsTargeted && !loadingScreen)
             {
                 text.text = originalMessage;
                 return;

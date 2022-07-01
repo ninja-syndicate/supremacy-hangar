@@ -86,11 +86,6 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
-  _platformStops:
-    m_AssetGUID: 19350e53e4a94d14aa8b9d996358f033
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
 --- !u!114 &7776942803935884160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,4 +144,4 @@ MonoBehaviour:
     \"3ca1d928-51fa-4c9e-8a82-6ee5819b93d2\",\n            \"mystery_crate_id\":
     \"3ca1d928-51fa-4c9e-8a82-6ee5819b93d2\",\n            \"can_open_on\": \"2022-07-07T13:00:00.000Z\"\n       
     }\n    ]\n}"
-  jsonTestFragmentDelay: 5
+  jsonTestFragmentDelay: 0.2
