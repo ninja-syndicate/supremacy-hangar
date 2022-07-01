@@ -20,37 +20,18 @@ namespace SupremacyHangar.Runtime.Actors
         private int nextStop = 0;
         private Vector3 currentPos;
 
-        SignalBus _bus;
-        private bool _subscribed;
-
         [SerializeField] private Transform filledTargetTransform;
 
-        [Inject]
-        public void Construct(SignalBus bus)
+        public override void OnDisable()
         {
-            _bus = bus;
-            SubscribeToSignal();
-        }
-
-        private void OnEnable()
-        {
-            SubscribeToSignal();
-        }
-
-        private void OnDisable()
-        {
-            if (!_subscribed) return;
+            base.OnDisable();
             _bus.Unsubscribe<PlatformRepositionSignal>(SetupPlatform);
-
-            _subscribed = false;
         }
 
-        private void SubscribeToSignal()
+        protected override void SubscribeToSignal()
         {
-            if (_bus == null || _subscribed) return;
+            base.SubscribeToSignal();
             _bus.Subscribe<PlatformRepositionSignal>(SetupPlatform);
-
-            _subscribed = true;
         }
 
         private void SetupPlatform(PlatformRepositionSignal signal)
