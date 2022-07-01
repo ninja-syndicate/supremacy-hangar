@@ -42,6 +42,9 @@ namespace SupremacyHangar.Editor.ContentLoader
         private string searchValue = "";
 
         private int crateCount = 0;
+        private string prevSearch;
+        List<int> searchResults = new();
+        private int searchIndex = 0;
 
         [MenuItem("Supremacy/AssetLoader")]
         public static void ShowWindow()
@@ -53,15 +56,23 @@ namespace SupremacyHangar.Editor.ContentLoader
 
         void OnGUI()
         {
-            if (!optionsSet) GetAssetsAndNames();
-
-            scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
             RenderRefreshButton();
+            if (allMaps == null)
+            {
+                GUI.color = Color.red;
+                GUILayout.Label("No asset mapping set");
+                GUI.color = Color.white;
+                return;
+            }
+            if (!optionsSet) GetAssetsAndNames();
 
             RenderNavigationSection();
             RenderSearchFields();
 
             if (mapOptions.Count > 0) RenderSelectedInformation(mapOptions[index]);
+
+            scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
+            
             RenderButtonList();
 
             EditorGUILayout.EndScrollView();
@@ -69,7 +80,13 @@ namespace SupremacyHangar.Editor.ContentLoader
 
         private void RenderRefreshButton()
         {
-            if(GUILayout.Button("Refresh"))
+            allMaps = EditorGUILayout.ObjectField(
+                   "Asset Mapping Object",
+                   allMaps,
+                   typeof(AssetMappings),
+                   false) as AssetMappings;
+
+            if (GUILayout.Button("Refresh"))
             {
                 allMaps.OnEnable();
                 mapOptions.Clear();
@@ -170,9 +187,6 @@ namespace SupremacyHangar.Editor.ContentLoader
                 GUI.backgroundColor = Color.white;
             }
         }
-        private string prevSearch;
-        List<int> searchResults = new();
-        private int searchIndex = 0;
 
         private void RenderSelectedSkinInformation(MapOption item)
         {
@@ -281,6 +295,13 @@ namespace SupremacyHangar.Editor.ContentLoader
 
         private void SetAndSpawnAsset()
         {
+            if(!myAddressablesManager)
+            {
+                var targetName = searchResults.Count > 0 ? mapOptions[searchResults[searchIndex]].name : mapOptions[index].name;
+                Debug.LogWarning($"Cannot spawn mech outside Play Mode {targetName}");
+                return;
+            }
+
             myAddressablesManager.TargetMech = searchResults.Count > 0 ? mapOptions[searchResults[searchIndex]].mech : mapOptions[index].mech;
             myAddressablesManager.TargetSkin = searchResults.Count > 0 ? mapOptions[searchResults[searchIndex]].skin : mapOptions[index].skin;
             myAddressablesManager.QuickSpawn();
