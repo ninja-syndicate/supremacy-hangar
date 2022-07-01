@@ -29,6 +29,7 @@ namespace SupremacyHangar.Runtime.Environment
         private SiloSignalHandler _siloSignalHandler;
                 
         private SignalBus _bus;
+        private LoadingProgressContext loadingProgressContext = new();
 
         private EnvironmentConnectivity _connectivityGraph;
 
@@ -62,18 +63,16 @@ namespace SupremacyHangar.Runtime.Environment
         private Dictionary<AsyncOperationHandle<GameObject>, EnvironmentSpawner> operationsForNewDoor = new Dictionary<AsyncOperationHandle<GameObject>, EnvironmentSpawner>();
         private bool _subscribed;
 
-        private ContentSignalHandler _contentSignalHandler;
-
         [Inject]
-        public void Construct(SignalBus bus, ContentSignalHandler contentSignalHandler)
+        public void Construct(SignalBus bus)
         {
             _bus = bus;
-            _contentSignalHandler = contentSignalHandler;
         }
         
         private void OnEnable()
         {
             SubscribeToSignal();
+            _container.Inject(loadingProgressContext);
         }
 
         private void OnDisable()
@@ -106,7 +105,10 @@ namespace SupremacyHangar.Runtime.Environment
             //Todo: run from signal instead
             AssetReferenceEnvironmentConnectivity connectivityGraph = _playerInventory.factionGraph;
 
-            connectivityGraph.LoadAssetAsync<EnvironmentConnectivity>().Completed += (obj) =>
+            var connectivityGraphOp = connectivityGraph.LoadAssetAsync<EnvironmentConnectivity>();
+
+            StartCoroutine(loadingProgressContext.LoadingAssetProgress(connectivityGraphOp));
+            connectivityGraphOp.Completed += (obj) =>
             {
                 _connectivityGraph = obj.Result;
                 SpawnInitialHallway();
@@ -119,7 +121,9 @@ namespace SupremacyHangar.Runtime.Environment
             //Spawn initial environment
             currentEnvironment.CurrentPrefabAsset = _connectivityGraph.GetInitialSection();
 
-            currentEnvironment.CurrentPrefabAsset.Reference.InstantiateAsync().Completed += DefaultRoomSpawn;
+            var hallwayOp = currentEnvironment.CurrentPrefabAsset.Reference.InstantiateAsync();
+            StartCoroutine(loadingProgressContext.LoadingAssetProgress(hallwayOp));
+            hallwayOp.Completed += DefaultRoomSpawn;
         }
 
         private void DefaultRoomSpawn(AsyncOperationHandle<GameObject> handle1)
@@ -135,13 +139,17 @@ namespace SupremacyHangar.Runtime.Environment
                 var partForJoin = currentEnvironment.CurrentPrefabAsset.MyJoinsByConnector[join];
                 var nodeForJoin = partForJoin.Destinations[0];
 
-                operationsForJoins.Add(_connectivityGraph.MyJoins[nodeForJoin].Reference.InstantiateAsync(), join);
+                var joinOp = _connectivityGraph.MyJoins[nodeForJoin].Reference.InstantiateAsync();
+                StartCoroutine(loadingProgressContext.LoadingAssetProgress(joinOp));
+                operationsForJoins.Add(joinOp, join);
             }
 
             foreach (var operation in operationsForJoins.Keys)
                 operation.Completed += InitializeDefaultDoor;
 
-            _playerObject.InstantiateAsync().Completed += PlayerLoaded;
+            var playerOp = _playerObject.InstantiateAsync();
+            StartCoroutine(loadingProgressContext.LoadingAssetProgress(playerOp));
+            playerOp.Completed += PlayerLoaded;
             _container.InjectGameObject(currentEnvironment.CurrentGameObject);
         }
 
@@ -292,18 +300,8 @@ namespace SupremacyHangar.Runtime.Environment
             var partForJoin = currentEnvironment.CurrentPrefabAsset.MyJoinsByConnector[currentSilo.ToConnectTo];
             var nodeForJoin = partForJoin.Destinations[0];
             var siloOperationHandle = _connectivityGraph.MyJoins[nodeForJoin].Reference.InstantiateAsync();
-            StartCoroutine(LoadingSiloProgress(siloOperationHandle));
+            StartCoroutine(loadingProgressContext.LoadingAssetProgress(siloOperationHandle));
             siloOperationHandle.Completed += InstantiateSilo;
-        }
-
-        private IEnumerator LoadingSiloProgress(AsyncOperationHandle operationHandle)
-        {
-            do
-            {
-                _contentSignalHandler.SiloLoadProgress(operationHandle.PercentComplete);
-                yield return null;
-            } while (!operationHandle.IsDone);
-            _contentSignalHandler.SiloLoadProgress(1);
         }
 
         private void InstantiateSilo(AsyncOperationHandle<GameObject> operationHandler)

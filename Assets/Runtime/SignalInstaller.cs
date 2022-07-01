@@ -16,5 +16,6 @@ public class SignalInstaller : MonoInstaller
         ContentSignalInstaller.Install(Container);
         MenuSignalInstaller.Install(Container);
 		CrateSignalInstaller.Install(Container);
+		ProgressSignalInstaller.Install(Container);
     }
 }

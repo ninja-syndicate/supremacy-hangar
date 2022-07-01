@@ -20,6 +20,8 @@ namespace SupremacyHangar.Runtime.ContentLoader
 
         [Inject]
         private ContentSignalHandler _contentSignalHandler;
+        
+        private LoadingProgressContext loadingProgressContext = new();
 
         public AssetReference TargetMech { get; set; }
         public AssetReferenceSkin TargetSkin { get; set; }
@@ -64,6 +66,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
         private void OnEnable()
         {
             SubscribeToSignal();
+            Container.Inject(loadingProgressContext);
         }
 
         private void OnDisable()
@@ -104,6 +107,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
         private void AddressablesManager_Completed(AsyncOperationHandle<IResourceLocator> obj)
         {
             var mappingsOp = assetMappingsReference.LoadAssetAsync();
+            StartCoroutine(loadingProgressContext.LoadingAssetProgress(mappingsOp));
             mappingsOp.Completed += LoadMappings;
         }
 
@@ -196,8 +200,8 @@ namespace SupremacyHangar.Runtime.ContentLoader
             if (myMech.mech == null)
             {
                 previousMech = TargetMech;
-                mechOperationHandler = TargetMech.LoadAssetAsync<GameObject>();
-                StartCoroutine(LoadingAsset());
+                var mechOperationHandler = TargetMech.LoadAssetAsync<GameObject>();
+                StartCoroutine(loadingProgressContext.LoadingAssetProgress(mechOperationHandler));
                 mechOperationHandler.Completed += (mech) =>
                 {
                     myMech.mech = mech.Result as GameObject;
