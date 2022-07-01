@@ -11,7 +11,7 @@ using SupremacyHangar.Runtime.Environment.Connections;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using SupremacyHangar.Runtime.ContentLoader.Types;
 using SupremacyHangar.Runtime.ContentLoader;
-using SupremacyData.Runtime;
+using System.Collections;
 
 namespace SupremacyHangar.Runtime.Environment
 {
@@ -62,10 +62,13 @@ namespace SupremacyHangar.Runtime.Environment
         private Dictionary<AsyncOperationHandle<GameObject>, EnvironmentSpawner> operationsForNewDoor = new Dictionary<AsyncOperationHandle<GameObject>, EnvironmentSpawner>();
         private bool _subscribed;
 
+        private ContentSignalHandler _contentSignalHandler;
+
         [Inject]
-        public void Construct(SignalBus bus)
+        public void Construct(SignalBus bus, ContentSignalHandler contentSignalHandler)
         {
             _bus = bus;
+            _contentSignalHandler = contentSignalHandler;
         }
         
         private void OnEnable()
@@ -288,7 +291,19 @@ namespace SupremacyHangar.Runtime.Environment
 
             var partForJoin = currentEnvironment.CurrentPrefabAsset.MyJoinsByConnector[currentSilo.ToConnectTo];
             var nodeForJoin = partForJoin.Destinations[0];
-            _connectivityGraph.MyJoins[nodeForJoin].Reference.InstantiateAsync().Completed += InstantiateSilo;
+            var siloOperationHandle = _connectivityGraph.MyJoins[nodeForJoin].Reference.InstantiateAsync();
+            StartCoroutine(LoadingSiloProgress(siloOperationHandle));
+            siloOperationHandle.Completed += InstantiateSilo;
+        }
+
+        private IEnumerator LoadingSiloProgress(AsyncOperationHandle operationHandle)
+        {
+            do
+            {
+                _contentSignalHandler.SiloLoadProgress(operationHandle.PercentComplete);
+                yield return null;
+            } while (!operationHandle.IsDone);
+            _contentSignalHandler.SiloLoadProgress(1);
         }
 
         private void InstantiateSilo(AsyncOperationHandle<GameObject> operationHandler)
@@ -359,7 +374,6 @@ namespace SupremacyHangar.Runtime.Environment
 
         public void UnloadSilo(bool waitOnWindow = true)
         {
-            _container.Unbind<BaseRecord>();
             if (_currentSilo && waitOnWindow)
             {
                 _siloSignalHandler.CloseSilo();

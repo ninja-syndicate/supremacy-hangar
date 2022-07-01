@@ -4,6 +4,7 @@ using SupremacyHangar.Runtime.ScriptableObjects;
 using SupremacyHangar.Runtime.Silo;
 using SupremacyHangar.Runtime.Types;
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.AddressableAssets.ResourceLocators;
@@ -21,7 +22,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
         private ContentSignalHandler _contentSignalHandler;
 
         public AssetReference TargetMech { get; set; }
-        public AssetReference TargetSkin { get; set; }
+        public AssetReferenceSkin TargetSkin { get; set; }
 
         public SupremacyData.Runtime.Faction CurrentFaction
         {
@@ -48,8 +49,12 @@ namespace SupremacyHangar.Runtime.ContentLoader
 
         private SiloSignalHandler _signalHandler;
 
+
         private Transform prevTransform;
         private bool sameMechChassis = false;
+
+        private AsyncOperationHandle mechOperationHandler;
+        private AsyncOperationHandle skinOperationHandler;
 
         [Inject]
         public void Construct(SignalBus bus, SiloSignalHandler siloHandler)
@@ -159,9 +164,11 @@ namespace SupremacyHangar.Runtime.ContentLoader
         {
             if (myMech.skin == null && TargetSkin != null)
             {
-                TargetSkin.LoadAssetAsync<Skin>().Completed += (skin) =>
+                skinOperationHandler = TargetSkin.LoadAssetAsync(); 
+                StartCoroutine(LoadingSkin());
+                skinOperationHandler.Completed += (skin) =>
                 {
-                    myMech.skin = skin.Result;
+                    myMech.skin = skin.Result as Skin;
                     callBack(myMech.skin);
                 };
             }
@@ -177,9 +184,11 @@ namespace SupremacyHangar.Runtime.ContentLoader
             if (myMech.mech == null)
             {
                 previousMech = TargetMech;
-                TargetMech.LoadAssetAsync<GameObject>().Completed += (mech) =>
+                mechOperationHandler = TargetMech.LoadAssetAsync<GameObject>();
+                StartCoroutine(LoadingAsset());
+                mechOperationHandler.Completed += (mech) =>
                 {
-                    myMech.mech = mech.Result;
+                    myMech.mech = mech.Result as GameObject;
 
                     callBack(myMech.mech);
                 };
@@ -189,6 +198,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 callBack(myMech.mech);
             }
         }
+
 
 #if UNITY_EDITOR
         public void QuickSpawn()
@@ -202,6 +212,27 @@ namespace SupremacyHangar.Runtime.ContentLoader
             SpawnMech(prevTransform);
         }
 #endif
+
+        private IEnumerator LoadingAsset()
+        {
+            do
+            {
+                _contentSignalHandler.AssetLoadProgress(mechOperationHandler.PercentComplete);
+                yield return null;
+            } while (!mechOperationHandler.IsDone);
+            _contentSignalHandler.AssetLoadProgress(1);
+        }
+
+        private IEnumerator LoadingSkin()
+        {
+            do
+            {
+                _contentSignalHandler.SkinLoadProgress(skinOperationHandler.PercentComplete);
+                yield return null;
+            } while (!mechOperationHandler.IsDone);
+            _contentSignalHandler.SkinLoadProgress(1);
+        }
+
         public void SpawnMech(Transform spawnLocation)
         {
             prevTransform = spawnLocation;
