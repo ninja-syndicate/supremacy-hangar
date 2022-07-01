@@ -227,7 +227,6 @@ namespace SupremacyHangar.Runtime.ContentLoader
                     TargetMech.InstantiateAsync(spawnLocation.position, spawnLocation.rotation, spawnLocation).Completed += (mech) =>
                     {
                         myMech.mech = mech.Result;
-                        //if (TargetSkin == null) return;
                         LoadSkinReference(
                             (skin) =>
                             {
@@ -236,6 +235,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
                                     mechMesh.sharedMaterials = skin.mats;
                                 
                                 mechMesh.enabled = true;
+                                Container.InjectGameObject(myMech.mech);
                                 _signalHandler.SiloFilled();
                             }
                         );

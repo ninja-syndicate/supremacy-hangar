@@ -21,6 +21,14 @@ MonoBehaviour:
     m_Address: Zaibatsu_Connectivity.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: eeec7248b93f8954a88f500945031471
+    m_Address: BostonCybernetics_Connectivity.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: aa7b98383facf4ab189377921e364f49
+    m_Address: RedMountain_Connectivity.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
   m_SchemaSet:
