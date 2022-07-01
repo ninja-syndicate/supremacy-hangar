@@ -39,7 +39,9 @@ namespace SupremacyHangar.Editor.ContentLoader
         private bool optionsSet = false;
         private SerializedObject _serializedObject;
         List<MapOption> mapOptions = new();
-        private string searchValue;
+        private string searchValue = "";
+
+        private int crateCount = 0;
 
         [MenuItem("Supremacy/AssetLoader")]
         public static void ShowWindow()
@@ -88,7 +90,11 @@ namespace SupremacyHangar.Editor.ContentLoader
             EditorGUILayout.BeginHorizontal();
 
             GUILayout.Label("List Search");
+            prevSearch = searchValue;
             searchValue = EditorGUILayout.DelayedTextField(searchValue);
+            if (searchValue != prevSearch)
+                searchResults.Clear();
+
             EditorGUILayout.EndHorizontal();
         }
 
@@ -122,6 +128,7 @@ namespace SupremacyHangar.Editor.ContentLoader
                     mech = item.MysteryCrateReference,
                     name = item.DataMysteryCrate.HumanName
                 });
+                crateCount++;
             }
         }
 
@@ -132,21 +139,33 @@ namespace SupremacyHangar.Editor.ContentLoader
             int counter = 0;
             foreach (var item in mapOptions)
             {
-                if (counter == index) GUI.backgroundColor = selectedColour;
+                if ((searchValue == "" && counter == index) || (searchResults.Count > 0 && searchResults[searchIndex] == counter)) GUI.backgroundColor = selectedColour;
 
                 counter++;
-                if (searchValue != null && !item.name.Contains(searchValue, StringComparison.InvariantCultureIgnoreCase)) 
+                if (searchValue != "" && !item.name.Contains(searchValue, StringComparison.InvariantCultureIgnoreCase)) 
                     continue;
                                 
                 if (GUILayout.Button(item.name))
                 {
                     index = counter - 1;
+                    searchIndex = searchResults.Count > 0 ? SearchResultIndex(counter - 1) : 0;
                     SetAndSpawnAsset();
+                }
+                                
+                if (searchValue != "" && searchValue != prevSearch)
+                    searchResults.Add(counter - 1);
+
+                if (searchValue != "" && prevSearch != searchValue)
+                {
+                    index = searchResults[0];
                 }
 
                 GUI.backgroundColor = Color.white;
             }
         }
+        private string prevSearch;
+        List<int> searchResults = new();
+        private int searchIndex = 0;
 
         private void RenderSelectedSkinInformation(MapOption item)
         {
@@ -178,7 +197,7 @@ namespace SupremacyHangar.Editor.ContentLoader
         private void RenderSelectedCrateInformation(MapOption item)
         {
             GUILayout.Space(spacerAmount);
-            int crateIndex = mapOptions.Count - index - 1;
+            int crateIndex = crateCount - (mapOptions.Count - index);
 
             var selectedProperty = _serializedObject.FindProperty("mysteryCrates").GetArrayElementAtIndex(crateIndex);
             var assetReference = selectedProperty.FindPropertyRelative("mysteryCrateReference");
@@ -189,7 +208,7 @@ namespace SupremacyHangar.Editor.ContentLoader
 
             //update listed item value
             var d = dataReference.objectReferenceValue as MysteryCrate;
-            if (!allMaps.MechChassisPrefabByGuid.ContainsKey(d.Id))
+            if (!allMaps.MysteryCrateAssetByGuid.ContainsKey(d.Id))
             {
                 Debug.LogError("Mystery Crate Data reference is not in Asset Mappings");
                 return;
@@ -209,25 +228,36 @@ namespace SupremacyHangar.Editor.ContentLoader
 
             if (GUILayout.Button("Previous", GUILayout.Height(20), GUILayout.Width(100)))
             {
-                if(index > 0) 
+                if (searchValue == "" && index > 0)
                     index--;
+                else if (searchValue != "" && searchIndex > 0)
+                    searchIndex--;
                 else
+                {
                     index = mapOptions.Count - 1;
+                    if(searchResults.Count > 0) searchIndex = searchResults.Count - 1;
+                }
 
                 SetAndSpawnAsset();
             }
 
             if (GUILayout.Button("Next", GUILayout.Height(20), GUILayout.Width(100)))
             {
-                if(index < mapOptions.Count - 1) 
+                if (searchValue == "" && index < mapOptions.Count - 1)
                     index++;
+                else if (searchValue != "" && searchIndex < searchResults.Count - 1)
+                    searchIndex++;
                 else
+                {
                     index = 0;
+                    searchIndex = 0;
+                }
 
                 SetAndSpawnAsset();
             }
 
-            GUILayout.Label("Current index: " + index);
+            var t = searchResults.Count > 0 ? searchResults[searchIndex] : index;
+            GUILayout.Label($"Current index: {t}");
 
             if (GUILayout.Button("Spawn Current", GUILayout.Height(20), GUILayout.Width(100)))
             {
@@ -237,10 +267,15 @@ namespace SupremacyHangar.Editor.ContentLoader
             EditorGUILayout.EndHorizontal();
         }
 
+        private int SearchResultIndex(int targetIndex)
+        {
+            return searchResults[searchResults.IndexOf(targetIndex)];
+        }
+
         private void SetAndSpawnAsset()
         {
-            myAddressablesManager.TargetMech = mapOptions[index].mech;
-            myAddressablesManager.TargetSkin = mapOptions[index].skin;
+            myAddressablesManager.TargetMech = searchResults.Count > 0 ? mapOptions[searchResults[searchIndex]].mech : mapOptions[index].mech;
+            myAddressablesManager.TargetSkin = searchResults.Count > 0 ? mapOptions[searchResults[searchIndex]].skin : mapOptions[index].skin;
             myAddressablesManager.QuickSpawn();
         }
     }
