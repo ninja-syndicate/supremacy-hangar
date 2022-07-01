@@ -56,11 +56,8 @@ namespace SupremacyHangar.Editor.ContentLoader
             if (!optionsSet) GetAssetsAndNames();
 
             scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
-            allMaps = EditorGUILayout.ObjectField(
-                "Asset Mapping Object",
-                allMaps,
-                typeof(AssetMappings),
-                false) as AssetMappings;
+            RenderRefreshButton();
+
             RenderNavigationSection();
             RenderSearchFields();
 
@@ -68,6 +65,16 @@ namespace SupremacyHangar.Editor.ContentLoader
             RenderButtonList();
 
             EditorGUILayout.EndScrollView();
+        }
+
+        private void RenderRefreshButton()
+        {
+            if(GUILayout.Button("Refresh"))
+            {
+                allMaps.OnEnable();
+                mapOptions.Clear();
+                optionsSet = false;
+            }
         }
 
         private void RenderSelectedInformation(MapOption item)
@@ -91,7 +98,7 @@ namespace SupremacyHangar.Editor.ContentLoader
 
             GUILayout.Label("List Search");
             prevSearch = searchValue;
-            searchValue = EditorGUILayout.DelayedTextField(searchValue);
+            searchValue = EditorGUILayout.TextField(searchValue);
             if (searchValue != prevSearch)
                 searchResults.Clear();
 
