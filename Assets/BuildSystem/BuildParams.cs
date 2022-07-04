@@ -25,7 +25,7 @@ namespace BuildSystem
         private const string AddressablesLocationCLI = "-addressableslocation";
         private const string LocalAddressablesEnableEnv = "ADDRESSABLES_LOCATION";
 
-        private const string BuildNumberEnv = "GITHUB_RUN_ATTEMPT";
+        private const string BuildNumberEnv = "GITHUB_RUN_ID";
 
         public bool DevelopmentMode { get; private set; }
         public bool BuildAddressables { get; private set; } 

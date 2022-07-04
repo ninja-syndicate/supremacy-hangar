@@ -48,6 +48,9 @@ namespace SupremacyHangar.Runtime.ContentLoader
 
         private SiloSignalHandler _signalHandler;
 
+        private Transform prevTransform;
+        private bool sameMechChassis = false;
+
         [Inject]
         public void Construct(SignalBus bus, SiloSignalHandler siloHandler)
         {
@@ -187,10 +190,29 @@ namespace SupremacyHangar.Runtime.ContentLoader
             }
         }
 
+#if UNITY_EDITOR
+        public void QuickSpawn()
+        {
+            if (!prevTransform)
+            {
+                Debug.LogError("No prior spawn set");
+                return;
+            }
+
+            SpawnMech(prevTransform);
+        }
+#endif
         public void SpawnMech(Transform spawnLocation)
         {
+            prevTransform = spawnLocation;
             //When mech out of view release addressables
             UnloadMech();
+
+            if(sameMechChassis)
+            {
+                SetLoadedSkin(myMech.mech);
+                return;
+            }
 
             //Load new Mech & Skin
             LoadMechReference(
@@ -199,20 +221,25 @@ namespace SupremacyHangar.Runtime.ContentLoader
                     TargetMech.InstantiateAsync(spawnLocation.position, spawnLocation.rotation, spawnLocation).Completed += (mech) =>
                     {
                         myMech.mech = mech.Result;
-                        //if (TargetSkin == null) return;
-                        LoadSkinReference(
-                            (skin) =>
-                            {
-                                MeshRenderer mechMesh = myMech.mech.GetComponentInChildren<MeshRenderer>();
-                                if(skin != null)
-                                    mechMesh.sharedMaterials = skin.mats;
-                                
-                                mechMesh.enabled = true;
-                                _signalHandler.SiloFilled();
-                            }
-                        );
+                        SetLoadedSkin(myMech.mech);
                     };
                 });
+        }
+
+        private void SetLoadedSkin(GameObject mech)
+        {
+            LoadSkinReference(
+                (skin) =>
+                {
+                    MeshRenderer mechMesh = myMech.mech.GetComponentInChildren<MeshRenderer>();
+                    if (skin != null)
+                        mechMesh.sharedMaterials = skin.mats;
+
+                    mechMesh.enabled = true; 
+                    Container.InjectGameObject(myMech.mech);
+                    _signalHandler.SiloFilled();
+                }
+            );
         }
 
         public void UnloadMech()
@@ -224,10 +251,18 @@ namespace SupremacyHangar.Runtime.ContentLoader
             }
 
             if (previousMech != null &&
-                myMech.mech == null)
+                myMech.mech != null && previousMech != TargetMech)
             {
                 previousMech.ReleaseAsset();
+#if UNITY_EDITOR
+                sameMechChassis = false;
+                Destroy(myMech.mech);
+                myMech.mech = null;
+#endif
             }
+
+            if (previousMech != null && previousMech == TargetMech)
+                sameMechChassis = true;
         }
     }
 }
