@@ -9,24 +9,23 @@ namespace SupremacyHangar.Runtime.ContentLoader
     public class AssetLoadingProgressSignal
     {
         public float PercentageComplete;
+        public string Description;
     }
 
     public class ProgressSignalHandler
     {
         readonly SignalBus _signalBus;
-        private Dictionary<AsyncOperationHandle, float> progressAmounts = new();
+        private Dictionary<AsyncOperationHandle, string> progressAmounts = new();
 
         public ProgressSignalHandler(SignalBus signalBus)
         {
             _signalBus = signalBus;
         }
 
-        public void ProgressBar(AsyncOperationHandle key, float completePercentage)
-        {
+        public void ProgressBar(AsyncOperationHandle key, string message)
+        { 
             if (!progressAmounts.ContainsKey(key))
-                progressAmounts.Add(key, completePercentage);
-            else
-                progressAmounts[key] = completePercentage;
+                progressAmounts.Add(key, message);
 
             AssetLoadingProgress();
         }
@@ -35,9 +34,12 @@ namespace SupremacyHangar.Runtime.ContentLoader
         {
             float totalProgress = 0;
             float progress = 0;
-            foreach (var percentage in progressAmounts.Values)
+            string currentlyLoading = "";
+
+            foreach (var handle in progressAmounts)
             {
-                progress += percentage;
+                progress += handle.Key.PercentComplete;
+                currentlyLoading = handle.Key.PercentComplete < 1 ? currentlyLoading = handle.Value : "";
             }
 
             if (progress == progressAmounts.Count)
@@ -46,7 +48,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 totalProgress = progress / progressAmounts.Count;
 
             Debug.Log(totalProgress);
-            _signalBus.Fire(new AssetLoadingProgressSignal() { PercentageComplete = totalProgress });
+            _signalBus.Fire(new AssetLoadingProgressSignal() { PercentageComplete = totalProgress, Description = currentlyLoading });
         }
     }
 

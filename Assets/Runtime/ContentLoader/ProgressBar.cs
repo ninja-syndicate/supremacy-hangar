@@ -18,14 +18,14 @@ namespace SupremacyHangar.Runtime.ContentLoader
             progressSignalHandler = signalHandler;
         }
 
-        public IEnumerator LoadingAssetProgress(AsyncOperationHandle handle)
+        public IEnumerator LoadingAssetProgress(AsyncOperationHandle handle, string message = "")
         {
             do
             {
-                progressSignalHandler.ProgressBar(handle, handle.PercentComplete);
+                progressSignalHandler.ProgressBar(handle, message);
                 yield return null;
             } while (!handle.IsDone);
-            progressSignalHandler.ProgressBar(handle, 1);
+            progressSignalHandler.ProgressBar(handle, message);
         }
     }
 
@@ -33,7 +33,8 @@ namespace SupremacyHangar.Runtime.ContentLoader
     {
         private Slider mySlider;
         [SerializeField] private TextMeshProUGUI text;
-        [SerializeField] private string newMessage = "Loading...";
+        [SerializeField, Tooltip("Optional fixed name for loading indication")]
+        private string newMessage = "Loading...";
         [SerializeField] private bool loadingScreen = false;
 
         private string originalMessage;
@@ -85,7 +86,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 text.text = originalMessage;
                 return;
             }
-            text.text = newMessage;
+            text.text = signal.Description != "" ? signal.Description : newMessage;
             mySlider.value = signal.PercentageComplete;
         }
     }
