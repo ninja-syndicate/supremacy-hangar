@@ -1,6 +1,8 @@
+using UnityEngine;
+
 namespace SupremacyData.Runtime
 {
-    public class MechPowerCore
+    public class MechPowerCore : BaseRecord
     {
         
     }
