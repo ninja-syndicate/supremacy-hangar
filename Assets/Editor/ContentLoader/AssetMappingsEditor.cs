@@ -14,9 +14,9 @@ namespace SupremacyHangar.Editor.ContentLoader
     public class AssetMappingsEditor : UnityEditor.Editor
     {
         private ReorderableList factionList;
+        private ReorderableList mysteryCrateList;
         private ReorderableList mechChassisList;
         private ReorderableList mechSkinList;
-        private ReorderableList mysteryCrateList;
 
         private int selectedIndex;
         private UnityEditor.Editor _editor;
@@ -52,14 +52,14 @@ namespace SupremacyHangar.Editor.ContentLoader
 
             factionList = new ReorderableList(serializedObject.FindProperty("factions"));
             typeByList.Add(factionList, ListType.Faction);
+            mysteryCrateList = new ReorderableList(serializedObject.FindProperty("mysteryCrates"));
+            typeByList.Add(mysteryCrateList, ListType.MysteryCrate);
             mechChassisList = new ReorderableList(serializedObject.FindProperty("mechChassis"));
             typeByList.Add(mechChassisList, ListType.MechChassis);
             mechSkinList = new ReorderableList(serializedObject.FindProperty("mechSkins"));
             typeByList.Add(mechSkinList, ListType.MechSkin);
             mechSkinList.paginate = true;
             mechSkinList.pageSize = 10;
-            mysteryCrateList = new ReorderableList(serializedObject.FindProperty("mysteryCrates"));
-            typeByList.Add(mysteryCrateList, ListType.MysteryCrate);
 
             foreach (var listPair in typeByList)
             {
@@ -101,9 +101,9 @@ namespace SupremacyHangar.Editor.ContentLoader
             serializedObject.Update();
 
             factionList.DoLayoutList();
+            mysteryCrateList.DoLayoutList();
             mechChassisList.DoLayoutList();
             mechSkinList.DoLayoutList();
-            mysteryCrateList.DoLayoutList();
 
             ElementSelectionDisplay();
             serializedObject.ApplyModifiedProperties();
