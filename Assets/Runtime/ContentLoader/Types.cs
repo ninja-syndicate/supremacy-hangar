@@ -8,6 +8,13 @@ using UnityEngine.AddressableAssets;
 
 namespace SupremacyHangar.Runtime.ContentLoader.Types
 {
+    
+    [Serializable]
+    public class AssetReferenceAssetMappings : AssetReferenceT<AssetMappings>
+    {
+        public AssetReferenceAssetMappings(string guid) : base(guid) { }
+    }
+    
     [Serializable]
     public class AssetReferenceSkin : AssetReferenceT<Skin>
     {

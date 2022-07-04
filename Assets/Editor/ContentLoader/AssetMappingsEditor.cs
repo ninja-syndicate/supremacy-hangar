@@ -445,11 +445,11 @@ namespace SupremacyHangar.Editor.ContentLoader
             switch (type)
             {
                 case referenceTypes.graph:
-                    foreach (var s in parentType.FactionHallwayByGuid.Values)
+                    foreach (var s in parentType.FactionMappingByGuid.Values)
                         return s.GetType();
                     break;
                 case referenceTypes.skin:
-                    foreach (var s in parentType.MechSkinAssetByGuid.Values)
+                    foreach (var s in parentType.MechSkinMappingByGuid.Values)
                         return s.GetType();
                     break;
                 default:
