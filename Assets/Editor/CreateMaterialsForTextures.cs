@@ -15,7 +15,6 @@ namespace SupremacyHangar.Editor
     {
         public Shader shader;
         private string importDirectory;
-        private int materialCount;
 
         List<string> materialNames = new();
 
@@ -42,6 +41,8 @@ namespace SupremacyHangar.Editor
         {
             string label = String.IsNullOrWhiteSpace(importDirectory) ? "Select Material Directory" : $"{importDirectory}";
             if (GUILayout.Button(label)) SelectMatieralDirectory();
+
+            if (GUILayout.Button("Use defualt directory (Local Materials)")) SelectMatieralDirectory(true);
         }
 
         private void RenderSelectShader()
@@ -53,20 +54,19 @@ namespace SupremacyHangar.Editor
                    false) as Shader;
         }
 
-        private int GetMaterialCount(string assetPath, string destinationPath)
+        private List<string> GetMaterialNames(string assetPath, string destinationPath)
         {
             IEnumerable<Object> enumerable = from x in AssetDatabase.LoadAllAssetsAtPath(assetPath)
                                              where x.GetType() == typeof(Material)
                                              select x;
-            int count = 0;
-            materialNames.Clear();
+
+            List<string> materialNames = new();
             foreach (Object item in enumerable)
             {
                 materialNames.Add(item.name);
-                count++;
             }
 
-            return count;
+            return materialNames;
         }
 
         private int GetNthIndex(string s, char t, int n)
@@ -86,24 +86,59 @@ namespace SupremacyHangar.Editor
             return -1;
         }
 
-        private void SelectMatieralDirectory()
+        private string OpenCustomDirectory()
+        {
+            var directory = EditorUtility.OpenFolderPanel("Select Material Directory", importDirectory, "test");
+            if (!Directory.Exists(directory)) return null;
+
+            importDirectory = directory;
+            return directory;
+        }
+
+        private void SelectMatieralDirectory(bool useDefaultDir = false)
         {
             AssetDatabase.StartAssetEditing();
             var activePath = AssetDatabase.GetAssetPath(Selection.activeObject);
-            materialCount = GetMaterialCount(activePath, "Assets");
 
-            var directory = EditorUtility.OpenFolderPanel("Select Material Directory", importDirectory, "test");
-            if (!Directory.Exists(directory)) return;
+            materialNames = GetMaterialNames(activePath, "Assets");
+            if (materialNames.Count <= 0)
+            {
+                AssetDatabase.StopAssetEditing();
+                Debug.LogError("No Asset with materials selected");
+                return;
+            }
+            var defaultDir = activePath.Substring(0, activePath.LastIndexOf('/'));
 
-            importDirectory = directory;
+            var directory = useDefaultDir ? defaultDir + "/Materials" : OpenCustomDirectory();
+            if (directory == null) return;
 
-            var materialDirectories = Directory.GetDirectories(directory);
+            if(!Directory.Exists(directory))
+            {
+                AssetDatabase.StopAssetEditing();
+                Debug.LogError($"Cannot find Materials folder in path {directory}");
+                return;
+            }
+            var materialDirectories = useDefaultDir ?
+                AssetDatabase.GetSubFolders(directory) : Directory.GetDirectories(directory);
 
+            GenerateMaterial(materialDirectories, useDefaultDir);
+        }
+
+        private void GenerateMaterial(string[] materialDirectories, bool useDefaultDir)
+        {
             List<FileInfo> currentMaterialTextures = new();
             foreach (var dir in materialDirectories)
             {
                 //Get reference to all texture files for material
-                DirectoryInfo materialFolder = new DirectoryInfo(dir + "/Textures");
+                var currentTexDir = dir + "/Textures";
+                if (!Directory.Exists(currentTexDir))
+                {
+                    AssetDatabase.StopAssetEditing();
+                    Debug.LogError($"Cannot find Textures folder in path {currentTexDir}");
+                    return;
+                }
+
+                DirectoryInfo materialFolder = new DirectoryInfo(currentTexDir);
                 FileInfo[] textureFiles = materialFolder.GetFiles();
 
                 foreach (string matName in materialNames)
@@ -136,19 +171,21 @@ namespace SupremacyHangar.Editor
                     }
 
                     //Save Material
-                    string path = dir.Substring(GetNthIndex(dir, '/', 3) + 1).Replace("\\", "/") + "/" + matName + ".mat";
+                    string path = useDefaultDir ? dir : dir.Substring(GetNthIndex(dir, '/', 3) + 1).Replace("\\", "/");
+                    path += "/" + matName + ".mat";
 
                     if (AssetDatabase.LoadAssetAtPath(path, typeof(Material)) != null)
                     {
-                        AssetDatabase.StopAssetEditing();
-                        Debug.LogError("Can't create material, it already exists: " + path);
-                        return;
+                        Debug.LogWarning("Can't create material, it already exists: " + path);
+                        //Move to next material
+                        continue;
                     }
 
                     try
                     {
                         AssetDatabase.CreateAsset(mat, path);
-                    }catch (Exception e)
+                    }
+                    catch (Exception e)
                     {
                         Debug.LogError(e);
                         AssetDatabase.StopAssetEditing();
@@ -157,6 +194,5 @@ namespace SupremacyHangar.Editor
                 }
             }
         }
-
     }
 }
