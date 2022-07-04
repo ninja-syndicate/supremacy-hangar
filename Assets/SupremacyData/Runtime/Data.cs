@@ -16,6 +16,9 @@ namespace SupremacyData.Runtime
         public IReadOnlyCollection<MysteryCrate> MysteryCrates { get; private set; }
         public IReadOnlyCollection<MechModel> MechModels { get; private set; }
         public IReadOnlyCollection<MechSkin> MechSkins { get; private set; }
+        public IReadOnlyCollection<WeaponModel> WeaponModels { get; private set; }
+        public IReadOnlyCollection<WeaponSkin> WeaponSkins { get; private set; }
+        public IReadOnlyCollection<PowerCore> PowerCores { get; private set; }
 
         [SerializeField] internal List<BattleAbility> battleAbilities = new();
         [SerializeField] internal List<Brand> brands = new();
@@ -24,6 +27,9 @@ namespace SupremacyData.Runtime
         [SerializeField] internal List<MysteryCrate> mysteryCrates = new();
         [SerializeField] internal List<MechModel> mechModels = new();
         [SerializeField] internal List<MechSkin> mechSkins = new();
+        [SerializeField] internal List<WeaponModel> weaponModels = new();
+        [SerializeField] internal List<WeaponSkin> weaponSkins = new();
+        [SerializeField] internal List<PowerCore> powerCores = new();
 
         public void OnBeforeSerialize() { }
 
@@ -36,6 +42,9 @@ namespace SupremacyData.Runtime
             if (mechModels != null) MechModels = mechModels.AsReadOnly();
             if (mechSkins != null) MechSkins = mechSkins.AsReadOnly();
             if (mysteryCrates != null) MysteryCrates = mysteryCrates.AsReadOnly();
+            if (weaponModels != null) WeaponModels = weaponModels.AsReadOnly();
+            if (weaponSkins != null) WeaponSkins = weaponSkins.AsReadOnly();
+            if (powerCores != null) PowerCores = powerCores.AsReadOnly();
         }
     }
     
