@@ -106,7 +106,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
         private void AddressablesManager_Completed(AsyncOperationHandle<IResourceLocator> obj)
         {
             var mappingsOp = assetMappingsReference.LoadAssetAsync();
-            StartCoroutine(loadingProgressContext.LoadingAssetProgress(mappingsOp));
+            StartCoroutine(loadingProgressContext.LoadingAssetProgress(mappingsOp, "Loading Asset Map"));
             mappingsOp.Completed += LoadMappings;
         }
 
@@ -167,7 +167,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
             if (myMech.skin == null && TargetSkin != null)
             {
                 var skinOperationHandler = TargetSkin.LoadAssetAsync(); 
-                StartCoroutine(loadingProgressContext.LoadingAssetProgress(skinOperationHandler));
+                StartCoroutine(loadingProgressContext.LoadingAssetProgress(skinOperationHandler, "Loading Skin"));
                 skinOperationHandler.Completed += (skin) =>
                 {
                     myMech.skin = skin.Result as Skin;
@@ -187,7 +187,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
             {
                 previousMech = TargetMech;
                 var mechOperationHandler = TargetMech.LoadAssetAsync<GameObject>();
-                StartCoroutine(loadingProgressContext.LoadingAssetProgress(mechOperationHandler));
+                StartCoroutine(loadingProgressContext.LoadingAssetProgress(mechOperationHandler, "Loading Mesh"));
                 mechOperationHandler.Completed += (mech) =>
                 {
                     myMech.mech = mech.Result as GameObject;

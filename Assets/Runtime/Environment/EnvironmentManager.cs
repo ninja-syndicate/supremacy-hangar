@@ -107,7 +107,7 @@ namespace SupremacyHangar.Runtime.Environment
 
             var connectivityGraphOp = connectivityGraph.LoadAssetAsync<EnvironmentConnectivity>();
 
-            StartCoroutine(loadingProgressContext.LoadingAssetProgress(connectivityGraphOp));
+            StartCoroutine(loadingProgressContext.LoadingAssetProgress(connectivityGraphOp, "Loading Faction Layout"));
             connectivityGraphOp.Completed += (obj) =>
             {
                 _connectivityGraph = obj.Result;
@@ -122,7 +122,7 @@ namespace SupremacyHangar.Runtime.Environment
             currentEnvironment.CurrentPrefabAsset = _connectivityGraph.GetInitialSection();
 
             var hallwayOp = currentEnvironment.CurrentPrefabAsset.Reference.InstantiateAsync();
-            StartCoroutine(loadingProgressContext.LoadingAssetProgress(hallwayOp));
+            StartCoroutine(loadingProgressContext.LoadingAssetProgress(hallwayOp, "Loading Hallway"));
             hallwayOp.Completed += DefaultRoomSpawn;
         }
 
@@ -140,7 +140,7 @@ namespace SupremacyHangar.Runtime.Environment
                 var nodeForJoin = partForJoin.Destinations[0];
 
                 var joinOp = _connectivityGraph.MyJoins[nodeForJoin].Reference.InstantiateAsync();
-                StartCoroutine(loadingProgressContext.LoadingAssetProgress(joinOp));
+                StartCoroutine(loadingProgressContext.LoadingAssetProgress(joinOp, "Loading Doors"));
                 operationsForJoins.Add(joinOp, join);
             }
 
@@ -148,7 +148,7 @@ namespace SupremacyHangar.Runtime.Environment
                 operation.Completed += InitializeDefaultDoor;
 
             var playerOp = _playerObject.InstantiateAsync();
-            StartCoroutine(loadingProgressContext.LoadingAssetProgress(playerOp));
+            StartCoroutine(loadingProgressContext.LoadingAssetProgress(playerOp, "Loading Player"));
             playerOp.Completed += PlayerLoaded;
             _container.InjectGameObject(currentEnvironment.CurrentGameObject);
         }
