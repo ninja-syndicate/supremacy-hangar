@@ -165,6 +165,11 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
 
         private void UpdateName1(Mech mech)
         {
+            if (mech.MechChassisDetails == null)
+            {
+                siloContentsName1.text = "Unable to load";
+                return;
+            }
             siloContentsName1.text = mech.MechChassisDetails.DataMechModel.HumanName;
         }
 
@@ -181,6 +186,11 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
         
         private void UpdateName2(Mech mech)
         {
+            if (mech.MechSkinDetails == null)
+            {
+                siloContentsName2.text = "Unable to load";
+                return;
+            }
             siloContentsName2.text = mech.MechSkinDetails.DataMechSkin.HumanName;
         }
 

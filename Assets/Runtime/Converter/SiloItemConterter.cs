@@ -30,6 +30,15 @@ public class SiloItemConterter : JsonConverter<SiloItem>
             case "mystery_crate":
                 siloItem = new MysteryCrate();
                 break;
+            case "skin":
+                siloItem = new Skin();
+                break;
+            case "weapon":
+                siloItem = new Weapon();
+                break;
+            case "power_core":
+                siloItem = new PowerCore();
+                break;
             default:
                 Debug.LogError($"Unknown silo item type: {type}");
                 return null;

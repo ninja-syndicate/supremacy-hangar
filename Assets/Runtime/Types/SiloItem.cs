@@ -14,23 +14,41 @@ namespace SupremacyHangar.Runtime.Types
     [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public class SiloItem
     {
-        public Guid OwnershipID;
-    }
-
-    [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class Mech : SiloItem
-    {
-        public Guid MechID;
-        public Guid SkinID;
-        public MechChassisMapping MechChassisDetails;
-        public MechSkinMapping MechSkinDetails;
+        public Guid? OwnershipID;
+        public Guid StaticID;
     }
 
     [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public class MysteryCrate : SiloItem
     {        
-        public Guid MysteryCrateID;
         public DateTime CanOpenOn;
+
         public MysteryCrateMapping MysteryCrateDetails;
+    }    
+    
+    [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
+    public class Mech : SiloItem
+    {
+        public Skin Skin;
+        public SiloItem[] Accessories;
+
+        public MechChassisMapping MechChassisDetails;
+        public MechSkinMapping MechSkinDetails;
+    }
+
+    [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
+    public class Weapon : SiloItem
+    {
+        public Skin Skin;
+    }    
+
+    [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
+    public class PowerCore : SiloItem
+    {
+    }        
+    
+    [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
+    public class Skin : SiloItem
+    {        
     }
 }
