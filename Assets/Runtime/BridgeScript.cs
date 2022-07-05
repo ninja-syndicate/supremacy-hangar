@@ -11,10 +11,10 @@ using SupremacyHangar.Runtime.ContentLoader;
 public class BridgeScript : MonoInstaller
 {
     //TODO: this probably needs to be done better later.
-    private SupremacyGameObject inventoryData = new();
+    private HangarData hangarData = new();
 
     [Inject]
-    private ContentSignalHandler _contentSignalHandler;
+    private ContentSignalHandler contentSignalHandler;
 
 #if UNITY_EDITOR
     [TextArea(3, 50)]
@@ -26,14 +26,14 @@ public class BridgeScript : MonoInstaller
     public override void InstallBindings()
     {
         //Might have to bind again after data is read
-        Container.Bind<SupremacyGameObject>().FromInstance(inventoryData).AsSingle();
+        Container.Bind<HangarData>().FromInstance(hangarData).AsSingle();
     }
 
     public void GetPlayerInventoryFromPage(string message)
     {
-        var newInventoryData = JsonConvert.DeserializeObject<SupremacyGameObject>(message, new SiloItemConterter());
-        inventoryData.CopyFrom(newInventoryData);
-        _contentSignalHandler.InventoryRecieved();
+        var newInventoryData = JsonConvert.DeserializeObject<HangarData>(message, new SiloItemConterter());
+        hangarData.CopyFrom(newInventoryData);
+        contentSignalHandler.InventoryRecieved();
     }
 
 #if UNITY_EDITOR

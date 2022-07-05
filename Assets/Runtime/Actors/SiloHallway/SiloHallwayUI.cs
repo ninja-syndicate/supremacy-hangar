@@ -9,6 +9,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
+using MysteryCrate = SupremacyHangar.Runtime.Types.MysteryCrate;
 
 namespace SupremacyHangar.Runtime.Actors.SiloHallway
 {
@@ -63,7 +64,7 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
                     UpdateName1(mech);
                     UpdateName2(mech);
                     break;
-                case MysteryBox box:
+                case MysteryCrate box:
                     UpdateTypeString(box);
                     UpdateName1(addressablesManager.CurrentFaction, box);
                     counter = StartCoroutine(Countdown(box.CanOpenOn));
@@ -140,14 +141,14 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
             siloContentsType.text = "Mech";
         }
 
-        private void UpdateTypeString(MysteryBox box)
+        private void UpdateTypeString(MysteryCrate crate)
         {
-            switch (box.MysteryCrateDetails.DataMysteryCrate.Type)
+            switch (crate.MysteryCrateDetails.DataMysteryCrate.Type)
             {
-                case MysteryCrate.ModelType.Mech:
+                case SupremacyData.Runtime.MysteryCrate.ModelType.Mech:
                     siloContentsType.text = "War Machine Crate";
                     break;
-                case MysteryCrate.ModelType.Weapon:
+                case SupremacyData.Runtime.MysteryCrate.ModelType.Weapon:
                     siloContentsType.text = "Weapon Crate";
                     break;
                 default:
@@ -167,9 +168,9 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
             siloContentsName1.text = mech.MechChassisDetails.DataMechModel.HumanName;
         }
 
-        private void UpdateName1(Faction currentFaction, MysteryBox box)
+        private void UpdateName1(Faction currentFaction, MysteryCrate crate)
         {
-            var boxFaction = box.MysteryCrateDetails.DataMysteryCrate.Faction;
+            var boxFaction = crate.MysteryCrateDetails.DataMysteryCrate.Faction;
             siloContentsName1.text = boxFaction == currentFaction ? "" : boxFaction.HumanName;
         }
         

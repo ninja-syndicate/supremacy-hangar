@@ -15,7 +15,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
     public class AddressablesManager : MonoInstaller
     {
         [Inject]
-        private SupremacyGameObject _playerInventory;
+        private HangarData _playerInventory;
 
         [Inject]
         private ContentSignalHandler _contentSignalHandler;
@@ -137,7 +137,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
                         mech.MechChassisDetails = mappings.MechChassisMappingByGuid[mech.MechID];
                         mech.MechSkinDetails = mappings.MechSkinMappingByGuid[mech.SkinID];
                         break;
-                    case MysteryBox box:
+                    case MysteryCrate box:
                         box.MysteryCrateDetails = mappings.MysteryCrateMappingByGuid[box.MysteryCrateID];
                         break;
                     default:

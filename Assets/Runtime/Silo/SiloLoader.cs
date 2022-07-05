@@ -4,6 +4,7 @@ using SupremacyHangar.Runtime.Interaction;
 using SupremacyHangar.Runtime.Types;
 using UnityEngine;
 using Zenject;
+using MysteryCrate = SupremacyHangar.Runtime.Types.MysteryCrate;
 
 namespace SupremacyHangar.Runtime.Silo
 {
@@ -49,7 +50,7 @@ namespace SupremacyHangar.Runtime.Silo
                     addressablesManager.TargetMech = mech.MechChassisDetails.MechReference;
                     addressablesManager.TargetSkin = mech.MechSkinDetails.SkinReference;
                     break;
-                case MysteryBox box:
+                case MysteryCrate box:
                     empty = false;
                     addressablesManager.TargetMech = box.MysteryCrateDetails.MysteryCrateReference;
                     addressablesManager.TargetSkin = null;

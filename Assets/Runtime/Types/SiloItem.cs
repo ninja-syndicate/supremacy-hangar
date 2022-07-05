@@ -27,7 +27,7 @@ namespace SupremacyHangar.Runtime.Types
     }
 
     [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
-    public class MysteryBox : SiloItem
+    public class MysteryCrate : SiloItem
     {        
         public Guid MysteryCrateID;
         public DateTime CanOpenOn;
