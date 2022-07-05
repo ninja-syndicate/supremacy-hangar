@@ -23,7 +23,10 @@ namespace SupremacyData.Editor
         private Importers.MechModels mechModelsImporter;
         private Importers.MechSkins mechSkinsImporter;
         private Importers.MysteryCrates mysteryCratesImporter;
-        
+        private Importers.WeaponModels weaponModelsImporter;
+        private Importers.WeaponSkins weaponSkinsImporter;
+        private Importers.PowerCores powerCoresImporter;
+
         [MenuItem("Supremacy/Data/Importer")]
         public static void Spawn()
         {
@@ -87,6 +90,9 @@ namespace SupremacyData.Editor
             mechModelsImporter = new Importers.MechModels(logWidget, directory);
             mechSkinsImporter = new Importers.MechSkins(logWidget, directory);
             mysteryCratesImporter = new Importers.MysteryCrates(logWidget, directory);
+            weaponModelsImporter = new Importers.WeaponModels(logWidget, directory);
+            weaponSkinsImporter = new Importers.WeaponSkins(logWidget, directory);
+            powerCoresImporter = new Importers.PowerCores(logWidget, directory);
 
             bool valid = true;
             valid &= factionsImporter.ValidateFile();
@@ -96,6 +102,9 @@ namespace SupremacyData.Editor
             valid &= mechModelsImporter.ValidateFile();
             valid &= mechSkinsImporter.ValidateFile();
             valid &= mysteryCratesImporter.ValidateFile();
+            valid &= weaponModelsImporter.ValidateFile();
+            valid &= weaponSkinsImporter.ValidateFile();
+            valid &= powerCoresImporter.ValidateFile();
 
             if (!valid) return;
             importDirectory = directory;
@@ -123,6 +132,9 @@ namespace SupremacyData.Editor
                 mechModelsImporter ??= new Importers.MechModels(logWidget, importDirectory);
                 mechSkinsImporter ??= new Importers.MechSkins(logWidget, importDirectory);
                 mysteryCratesImporter ??= new Importers.MysteryCrates(logWidget, importDirectory);
+                weaponModelsImporter ??= new Importers.WeaponModels(logWidget, importDirectory);
+                weaponSkinsImporter ??= new Importers.WeaponSkins(logWidget, importDirectory);
+                powerCoresImporter ??= new Importers.PowerCores(logWidget, importDirectory);
 
                 logWidget.LogNormal("Updating factions");
                 Repaint();
@@ -145,6 +157,15 @@ namespace SupremacyData.Editor
                 logWidget.LogNormal("Updating mystery crates");
                 Repaint();
                 await mysteryCratesImporter.Update(myData);
+                logWidget.LogNormal("Updating weapon models");
+                Repaint();
+                await weaponModelsImporter.Update(myData);
+                logWidget.LogNormal("Updating weapon skins");
+                Repaint();
+                await weaponSkinsImporter.Update(myData);
+                logWidget.LogNormal("Updating power cores");
+                Repaint();
+                await powerCoresImporter.Update(myData);
                 logWidget.LogNormal("Import completed");
             }
             catch (Exception e)

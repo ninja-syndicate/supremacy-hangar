@@ -30,7 +30,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 if (_playerInventory == null) return null;
                 if (_playerInventory.faction == Guid.Empty) return null;
                 if (!mappingsLoaded) return null;
-                return mappings.FactionHallwayByGuid[_playerInventory.faction].DataFaction;
+                return mappings.FactionMappingByGuid[_playerInventory.faction].DataFaction;
             }
         }
         
@@ -128,17 +128,17 @@ namespace SupremacyHangar.Runtime.ContentLoader
 
         private void SetPlayerInventory()
         {
-            _playerInventory.factionGraph = mappings.FactionHallwayByGuid[_playerInventory.faction].ConnectivityGraph;
+            _playerInventory.factionGraph = mappings.FactionMappingByGuid[_playerInventory.faction].ConnectivityGraph;
             foreach (var silo in _playerInventory.Silos)
             {
                 switch (silo)
                 {
                     case Mech mech:
-                        mech.MechChassisDetails = mappings.MechChassisPrefabByGuid[mech.MechID];
-                        mech.MechSkinDetails = mappings.MechSkinAssetByGuid[mech.SkinID];
+                        mech.MechChassisDetails = mappings.MechChassisMappingByGuid[mech.MechID];
+                        mech.MechSkinDetails = mappings.MechSkinMappingByGuid[mech.SkinID];
                         break;
                     case MysteryBox box:
-                        box.MysteryCrateDetails = mappings.MysteryCrateAssetByGuid[box.MysteryCrateID];
+                        box.MysteryCrateDetails = mappings.MysteryCrateMappingByGuid[box.MysteryCrateID];
                         break;
                     default:
                         Debug.LogError($"Unknown silo of type {silo}.");

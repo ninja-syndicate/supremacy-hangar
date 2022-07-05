@@ -40,20 +40,8 @@ namespace SupremacyData.Editor.Importers
 
             mechModel.humanName = fields[1];
             mechModel.name = $"Mech Model - {mechModel.humanName}";
-
-            switch (fields[5].ToLowerInvariant())
-            {
-                case "humanoid":
-                    mechModel.type = Runtime.MechModel.ModelType.Humanoid;
-                    break;
-                case "platform":
-                    mechModel.type = Runtime.MechModel.ModelType.Platform;
-                    break;
-                default:
-                    logger.LogError($"{ImporterName} data - unknown mech type {fields[5]} from {dataPath}:{index}");
-                    break;
-            }
-
+            mechModel.type = ParseType(index, fields[5]);
+            
             if (string.IsNullOrWhiteSpace(fields[4])) return;
 
             if (!TryParseGuid(index, fields[4], "brand ID", out var brandId)) return;
@@ -66,6 +54,21 @@ namespace SupremacyData.Editor.Importers
             {
                 mechModel.brand = brand;
             }
+        }
+
+        private Runtime.MechModel.ModelType ParseType(int index, string field)
+        {
+            switch (field.ToLowerInvariant())
+            {
+                case "humanoid":
+                    return Runtime.MechModel.ModelType.Humanoid;
+                case "platform":
+                    return Runtime.MechModel.ModelType.Platform;
+                default:
+                    logger.LogError($"{ImporterName} data - unknown mech type {field} from {dataPath}:{index}");
+                    break;
+            }
+            return Runtime.MechModel.ModelType.Humanoid;
         }
     }
 }
