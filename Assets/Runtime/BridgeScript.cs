@@ -16,7 +16,7 @@ public class BridgeScript : MonoInstaller
     [Inject]
     private ContentSignalHandler contentSignalHandler;
 
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_ANDROID
     [TextArea(3, 50)]
     [SerializeField] public string jsonTestFragment;
 
@@ -36,7 +36,7 @@ public class BridgeScript : MonoInstaller
         contentSignalHandler.InventoryRecieved();
     }
 
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_ANDROID
     public void SetPlayerInventoryFromFragment()
     {
         if (!string.IsNullOrWhiteSpace(jsonTestFragment))

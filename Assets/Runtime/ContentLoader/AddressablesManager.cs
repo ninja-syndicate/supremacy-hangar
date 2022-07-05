@@ -119,7 +119,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 return;
             } 
             
-#if UNITY_EDITOR
+#if UNITY_EDITOR || UNITY_ANDROID
             bridge.SetPlayerInventoryFromFragment();
 #elif UNITY_WEBGL
             Plugins.WebGL.WebGLPluginJS.SiloReady();
