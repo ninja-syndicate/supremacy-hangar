@@ -49,5 +49,18 @@ namespace SupremacyHangar.Editor
 
             Selection.activeObject = asset;
         }
+
+        [MenuItem("Assets/Create/Supremacy/Skins/MeshMaterialNames")]
+        public static void CreateMeshMaterialNamesMap()
+        {
+            MeshMaterialNames asset = ScriptableObject.CreateInstance<MeshMaterialNames>();
+
+            AssetDatabase.CreateAsset(asset, "Assets/NewMeshMaterialNameMap.asset");
+            AssetDatabase.SaveAssets();
+
+            EditorUtility.FocusProjectWindow();
+
+            Selection.activeObject = asset;
+        }
     }
 }
