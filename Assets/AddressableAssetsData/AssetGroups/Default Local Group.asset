@@ -41,6 +41,10 @@ MonoBehaviour:
     m_Address: AssetMappings.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 5674ed4e3b1b2c84b92f6ee78353b4fe
+    m_Address: OVR-Player.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
   m_SchemaSet:
