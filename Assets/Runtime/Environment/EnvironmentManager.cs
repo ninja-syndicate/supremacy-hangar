@@ -374,7 +374,7 @@ namespace SupremacyHangar.Runtime.Environment
 
             if (newDoorEnvironmentPrefab)
             {
-                if (newDoorEnvironmentPrefab.connectedTo.name.StartsWith("Hallway-SmallStraightJoin") && SiloOffset > 0 && SiloOffset < MaxSiloOffset)
+                if (SiloOffset > 0 && SiloOffset < MaxSiloOffset - 2)
                     newDoorEnvironmentPrefab.ToggleDoor();
                 else if (newDoorEnvironmentPrefab.connectedTo.name.StartsWith("Hallway-SmallStraightJoin"))
                     newDoorEnvironmentPrefab.ToggleDoor();
