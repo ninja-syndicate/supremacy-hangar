@@ -199,14 +199,14 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 return;
             }
 
-            SpawnMech(prevTransform);
+            SpawnMech(prevTransform, true);
         }
 #endif
-        public void SpawnMech(Transform spawnLocation)
+        public void SpawnMech(Transform spawnLocation, bool quickLoad = false)
         {
             prevTransform = spawnLocation;
             //When mech out of view release addressables
-            UnloadMech();
+            UnloadMech(quickLoad);
 
             if(sameMechChassis)
             {
@@ -242,7 +242,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
             );
         }
 
-        public void UnloadMech()
+        public void UnloadMech(bool quickLoad = false)
         {
             if (myMech.skin != null)
             {
@@ -250,19 +250,23 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 myMech.skin = null;
             }
 
-            if (previousMech != null &&
-                myMech.mech != null && previousMech != TargetMech)
+            if (previousMech != null)
             {
-                previousMech.ReleaseAsset();
+                if(!quickLoad || previousMech != TargetMech) previousMech.ReleaseAsset();
 #if UNITY_EDITOR
-                sameMechChassis = false;
-                Destroy(myMech.mech);
-                myMech.mech = null;
+                if (previousMech != TargetMech &&
+                    myMech.mech != null)
+                {
+                    sameMechChassis = false;
+                    Destroy(myMech.mech);
+                    myMech.mech = null;
+                }
+
+                if (previousMech == TargetMech && myMech.mech)
+                    sameMechChassis = true;
 #endif
             }
 
-            if (previousMech != null && previousMech == TargetMech)
-                sameMechChassis = true;
         }
     }
 }
