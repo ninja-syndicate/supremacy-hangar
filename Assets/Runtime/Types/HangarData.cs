@@ -4,13 +4,13 @@ using System.Collections.Generic;
 
 namespace SupremacyHangar.Runtime.Types
 {
-    public class SupremacyGameObject
+    public class HangarData
     {
         public Guid faction;
         public AssetReferenceEnvironmentConnectivity factionGraph;
         public List<SiloItem> Silos = new();
 
-        public void CopyFrom(SupremacyGameObject other)
+        public void CopyFrom(HangarData other)
         {
             faction = other.faction;
             Silos = other.Silos;

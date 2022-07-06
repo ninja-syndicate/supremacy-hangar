@@ -15,7 +15,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
     public class AddressablesManager : MonoInstaller
     {
         [Inject]
-        private SupremacyGameObject _playerInventory;
+        private HangarData _playerInventory;
 
         [Inject]
         private ContentSignalHandler _contentSignalHandler;
@@ -134,11 +134,21 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 switch (silo)
                 {
                     case Mech mech:
-                        mech.MechChassisDetails = mappings.MechChassisMappingByGuid[mech.MechID];
-                        mech.MechSkinDetails = mappings.MechSkinMappingByGuid[mech.SkinID];
+                        if (!mappings.MechChassisMappingByGuid.TryGetValue(mech.StaticID, out mech.MechChassisDetails))
+                        {
+                            Debug.LogError($"No Chassis mapping found for {mech.StaticID}");
+                            break;
+                        }
+                        if (!mappings.MechSkinMappingByGuid.TryGetValue(mech.Skin.StaticID, out mech.MechSkinDetails))
+                        {
+                            Debug.LogError($"No Skin mapping found for {mech.Skin.StaticID}");
+                        }
                         break;
-                    case MysteryBox box:
-                        box.MysteryCrateDetails = mappings.MysteryCrateMappingByGuid[box.MysteryCrateID];
+                    case MysteryCrate crate:
+                        if (!mappings.MysteryCrateMappingByGuid.TryGetValue(crate.StaticID, out crate.MysteryCrateDetails))
+                        {
+                            Debug.LogError($"No Crate mapping found for {crate.StaticID}");
+                        }
                         break;
                     default:
                         Debug.LogError($"Unknown silo of type {silo}.");
@@ -155,11 +165,11 @@ namespace SupremacyHangar.Runtime.ContentLoader
             return false;
         }
 
-        private void LoadSkinReference(Action<Skin> callBack)
+        private void LoadSkinReference(Action<ScriptableObjects.Skin> callBack)
         {
             if (myMech.skin == null && TargetSkin != null)
             {
-                TargetSkin.LoadAssetAsync<Skin>().Completed += (skin) =>
+                TargetSkin.LoadAssetAsync<ScriptableObjects.Skin>().Completed += (skin) =>
                 {
                     myMech.skin = skin.Result;
                     callBack(myMech.skin);

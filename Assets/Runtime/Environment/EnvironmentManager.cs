@@ -23,7 +23,7 @@ namespace SupremacyHangar.Runtime.Environment
         private RepositionSignalHandler _repositionSignalHandler;
 
         [Inject]
-        private SupremacyGameObject _playerInventory;
+        private HangarData _playerInventory;
 
         [Inject]
         private SiloSignalHandler _siloSignalHandler;
