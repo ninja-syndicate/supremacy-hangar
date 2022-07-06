@@ -91,8 +91,6 @@ MonoBehaviour:
   - {fileID: 4472911683331499170}
   - {fileID: 3000889080786872621}
   - {fileID: 4345740600727491216}
-  factionColorOutlineText:
-  - {fileID: 2389442065814661020}
   darkerFactionColorMultiplier: 0.8
   darkerFactionColorImages:
   - {fileID: 7851809335629998684}
@@ -102,7 +100,9 @@ MonoBehaviour:
   siloContentsName1: {fileID: 4472911683331499170}
   siloContentsName2: {fileID: 3000889080786872621}
   loadButton: {fileID: 2187088310494769674}
+  startFactionColor: {r: 0, g: 0, b: 0, a: 0}
   siloOffset: 0
+  clockUpdateDelay: 0.25
 --- !u!1 &573485225157745262
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,12 +718,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 51.1
+  m_fontSize: 278.1
   m_fontSizeBase: 95
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_fontSizeMax: 300
   m_fontStyle: 16
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
@@ -754,7 +754,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -404.42212, w: -41.052666}
+  m_margin: {x: 0, y: 0, z: -404.42212, w: -263.45117}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1160,7 +1160,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -61, y: 44}
+  m_AnchoredPosition: {x: -61, y: -172}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3280069252140391037
@@ -1255,7 +1255,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -427.7118, w: -41.052666}
+  m_margin: {x: 0, y: 0, z: -675.6199, w: -41.052666}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
