@@ -102,23 +102,6 @@ namespace SupremacyHangar.Editor
             return null;
         }
 
-        private int GetNthIndex(string s, char t, int n)
-        {
-            int count = 0;
-            for (int i = 0; i < s.Length; i++)
-            {
-                if (s[i] == t)
-                {
-                    count++;
-                    if (count == n)
-                    {
-                        return i;
-                    }
-                }
-            }
-            return -1;
-        }
-
         private string OpenCustomDirectory()
         {
             var directory = EditorUtility.OpenFolderPanel("Select Material Directory", importDirectory, "Materials");
@@ -211,7 +194,7 @@ namespace SupremacyHangar.Editor
                     //Populate Material
                     foreach (var texName in currentMaterialTextures)
                     {
-                        var assetTexPath = texName.FullName.Substring(GetNthIndex(texName.FullName, '\\', 3) + 1).Replace('\\', '/');
+                        var assetTexPath = texName.FullName.Substring(texName.FullName.IndexOf('\\', 3) + 1).Replace('\\', '/');
                         var tex = AssetDatabase.LoadAssetAtPath(assetTexPath, typeof(Texture2D)) as Texture2D;
 
                         if (tex.name.EndsWith("BaseColor"))
@@ -225,14 +208,14 @@ namespace SupremacyHangar.Editor
                     }
 
                     //Save Material
-                    matFolderPath = useDefaultDir ? materialDir : materialDir.Substring(GetNthIndex(materialDir, '/', 3) + 1).Replace("\\", "/");
+                    matFolderPath = useDefaultDir ? materialDir : materialDir.Substring(materialDir.IndexOf('/', 3) + 1).Replace("\\", "/");
                     var matPath = matFolderPath + "/" + matName + ".mat";
                     matarialPaths.Add(matPath);
 
                     if (AssetDatabase.LoadAssetAtPath(matPath, typeof(Material)) != null)
                     {
                         string message = useDefaultDir ?
-                            matPath.Substring(GetNthIndex(materialDir, '/', 4)).Replace("\\", "/") :
+                            matPath.Substring(materialDir.IndexOf('/', 4)).Replace("\\", "/") :
                             matPath.Substring(matPath.IndexOf('/'));
 
                         logWidget.LogWarning("Can't create material, it already exists: " + message);
