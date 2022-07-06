@@ -146,7 +146,7 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
 
         private void UpdateTypeString(Mech mech)
         {
-            siloContentsType.text = "Mech";
+            siloContentsType.text = "War Machine";
         }
 
         private void UpdateTypeString(MysteryCrate crate)
