@@ -17,8 +17,8 @@ namespace SupremacyHangar.Runtime.Silo
 
         public ConnectivityJoin ToConnectTo => to_Connect_to; 
 
-        [SerializeField]
-        private Collider siloDoorTrigger;
+        [SerializeField] private Collider siloDoorTrigger;
+        [SerializeField] private Collider siloInteractionTrigger;
 
         public bool SiloSpawned = false;
 
@@ -82,6 +82,7 @@ namespace SupremacyHangar.Runtime.Silo
             //Prevent same silo spawning again
             if (SiloSpawned) return;
             SiloSpawned = true;
+            siloInteractionTrigger.enabled = false;
 
             //Clean-up existing silo (Only one silo at a time)
             _environmentManager.UnloadSilo();
@@ -100,6 +101,9 @@ namespace SupremacyHangar.Runtime.Silo
             if (!SiloSpawned) return;
             //unlock doors
             siloDoorTrigger.enabled = true;
+
+            //unlock other silo Trigger
+            siloInteractionTrigger.enabled = true;
 
             //open window
             myWindowAnim.SetBool("IsOpen", true);

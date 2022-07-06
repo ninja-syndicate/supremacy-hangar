@@ -23,7 +23,7 @@ namespace SupremacyHangar.Runtime.Environment
         private RepositionSignalHandler _repositionSignalHandler;
 
         [Inject]
-        private SupremacyGameObject _playerInventory;
+        private HangarData _playerInventory;
 
         [Inject]
         private SiloSignalHandler _siloSignalHandler;
@@ -374,7 +374,7 @@ namespace SupremacyHangar.Runtime.Environment
 
             if (newDoorEnvironmentPrefab)
             {
-                if (newDoorEnvironmentPrefab.connectedTo.name.StartsWith("Hallway-SmallStraightJoin") && SiloOffset > 0 && SiloOffset < MaxSiloOffset)
+                if (SiloOffset > 0 && SiloOffset < MaxSiloOffset - 2)
                     newDoorEnvironmentPrefab.ToggleDoor();
                 else if (newDoorEnvironmentPrefab.connectedTo.name.StartsWith("Hallway-SmallStraightJoin"))
                     newDoorEnvironmentPrefab.ToggleDoor();
