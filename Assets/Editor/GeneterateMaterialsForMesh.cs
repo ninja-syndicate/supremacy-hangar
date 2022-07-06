@@ -28,13 +28,21 @@ namespace SupremacyHangar.Editor
         private string meshName = "";
         private string activePath = "";
 
-        [MenuItem("Assets/GenerateMaterialsForMesh")]
+        [MenuItem("Assets/Supremacy/GenerateMaterialsForMesh", true)]
+        public static bool SpawnValidate()
+        {
+            var selection = Selection.activeGameObject;
+            return selection != null;
+        }
+
+        [MenuItem("Assets/Supremacy/GenerateMaterialsForMesh")]
         public static void Spawn()
         {
             var window = GetWindow<GenerateMaterialsForMesh>();
             window.titleContent = new GUIContent("Material Generator");
             window.Show();
         }
+
         public void OnGUI()
         {
             RenderImportDirectoryFields();
@@ -91,17 +99,6 @@ namespace SupremacyHangar.Editor
             GUI.color = Color.white;
         }
 
-        private List<string> GetMaterialNames(GameObject mesh)
-        {
-            foreach (var item in materialNameMap.MaterialNameMap)
-            {
-                if (mesh == item.Mesh)
-                    return item.MaterialNames;
-            }
-
-            return null;
-        }
-
         private string OpenCustomDirectory()
         {
             var directory = EditorUtility.OpenFolderPanel("Select Material Directory", importDirectory, "Materials");
@@ -121,8 +118,11 @@ namespace SupremacyHangar.Editor
             logWidget.Reset();
 
             AssetDatabase.StartAssetEditing();
-            materialNames = GetMaterialNames(SelectedMesh);
-            if (materialNames.Count <= 0)
+            materialNames = (from item in materialNameMap.MaterialNameMap
+                             where SelectedMesh == item.Mesh
+                             select item.MaterialNames).FirstOrDefault();
+
+            if (materialNames == null || materialNames.Count <= 0)
             {
                 AssetDatabase.StopAssetEditing();
                 logWidget.LogError("No Asset with material reference selected");
@@ -194,7 +194,7 @@ namespace SupremacyHangar.Editor
                     //Populate Material
                     foreach (var texName in currentMaterialTextures)
                     {
-                        var assetTexPath = texName.FullName.Substring(texName.FullName.IndexOf('\\', 3) + 1).Replace('\\', '/');
+                        var assetTexPath = String.Join('/', texName.FullName.Split('\\').Skip(3));
                         var tex = AssetDatabase.LoadAssetAtPath(assetTexPath, typeof(Texture2D)) as Texture2D;
 
                         if (tex.name.EndsWith("BaseColor"))
@@ -208,14 +208,14 @@ namespace SupremacyHangar.Editor
                     }
 
                     //Save Material
-                    matFolderPath = useDefaultDir ? materialDir : materialDir.Substring(materialDir.IndexOf('/', 3) + 1).Replace("\\", "/");
+                    matFolderPath = useDefaultDir ? materialDir : String.Join('/', materialDir.Split('/').Skip(3)).Replace("\\", "/");// materialDir.Substring(materialDir.IndexOf('/', 3) + 1).Replace("\\", "/");
                     var matPath = matFolderPath + "/" + matName + ".mat";
                     matarialPaths.Add(matPath);
 
                     if (AssetDatabase.LoadAssetAtPath(matPath, typeof(Material)) != null)
-                    {
+                    { 
                         string message = useDefaultDir ?
-                            matPath.Substring(materialDir.IndexOf('/', 4)).Replace("\\", "/") :
+                            String.Join('/', matPath.Split('/').Skip(4)) : //matPath.Substring(materialDir.IndexOf('/', 4)).Replace("\\", "/")
                             matPath.Substring(matPath.IndexOf('/'));
 
                         logWidget.LogWarning("Can't create material, it already exists: " + message);
