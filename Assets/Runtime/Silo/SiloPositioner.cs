@@ -5,6 +5,7 @@ using SupremacyHangar.Runtime.Environment;
 using Zenject;
 using SupremacyHangar.Runtime.Environment.Connections;
 using SupremacyData.Runtime;
+using TMPro;
 
 namespace SupremacyHangar.Runtime.Silo
 {
@@ -20,6 +21,9 @@ namespace SupremacyHangar.Runtime.Silo
         [SerializeField] private Collider siloDoorTrigger;
         [SerializeField] private Collider siloInteractionTrigger;
 
+        public bool ContainsCrate { get; set; } = false;
+        public bool canOpenCrate { get; set; } = false;
+        
         public bool SiloSpawned = false;
 
         [SerializeField] private Animator myWindowAnim;
@@ -27,6 +31,9 @@ namespace SupremacyHangar.Runtime.Silo
         private SignalBus _bus;
         private bool _subscribed;
         private bool siloClosing = false;
+
+        //ToDo link with progress bar text changer
+        [SerializeField] private TMP_Text loadButtonText;
 
         [Inject]
         public void Constuct(EnvironmentManager environmentManager, SignalBus bus)
@@ -72,8 +79,10 @@ namespace SupremacyHangar.Runtime.Silo
         private void SiloClosed()
         {
             siloClosing = false;
-            
-            if(SiloSpawned)
+            ContainsCrate = false;
+            loadButtonText.text = "Pressurize";
+
+            if (SiloSpawned)
                 SpawnSilo();
         }
 
@@ -81,6 +90,7 @@ namespace SupremacyHangar.Runtime.Silo
         {
             //Prevent same silo spawning again
             if (SiloSpawned) return;
+            
             SiloSpawned = true;
             siloInteractionTrigger.enabled = false;
 
@@ -107,6 +117,13 @@ namespace SupremacyHangar.Runtime.Silo
 
             //open window
             myWindowAnim.SetBool("IsOpen", true);
+
+            //change console button value
+            if (ContainsCrate)
+            {
+                canOpenCrate = true;
+                loadButtonText.text = "Open";
+            }
         }
     }
 }

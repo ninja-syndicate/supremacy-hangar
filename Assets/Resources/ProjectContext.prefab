@@ -128,7 +128,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jsonTestFragment: "{\n    \"faction\": \"880db344-e405-428d-84e5-6ebebab1fe6d\",\n   
-    \"silos\":\n    [\n        {\n            \"type\": \"mech\",\n            \"ownership_id\":
+    \"silos\":\n    [\n        {\n            \"type\": \"mystery_crate\",\n           
+    \"ownership_id\": \"3beaeae1-0ce9-4d7b-befd-3ccaad332ead\",\n            \"static_id\":
+    \"3ca1d928-51fa-4c9e-8a82-6ee5819b93d2\",\n            \"can_open_on\": \"2022-07-14T00:00:00.0Z\"\n       
+    },\n        {\n            \"type\": \"mech\",\n            \"ownership_id\":
     \"465fe68c-6487-4f78-92aa-218cf129e071\",\n            \"static_id\": \"625cd381-7c66-4e2f-9f69-f81589105730\",\n           
     \"skin\": {\n                \"type\": \"skin\",\n                \"static_id\":
     \"ff1b7d82-40b1-4d1a-b93a-f5da92ec43ed\"\n            }\n        },\n       
@@ -139,17 +142,14 @@ MonoBehaviour:
     \"ownership_id\": \"96df238c-dcbd-4913-bda9-8d18b5343c76\",\n            \"static_id\":
     \"9f9275eb-491a-47aa-b9d7-dd8185f179ca\",\n            \"can_open_on\": \"2022-07-14T00:00:00.0Z\"\n       
     },\n        {\n            \"type\": \"mystery_crate\",\n            \"ownership_id\":
-    \"3beaeae1-0ce9-4d7b-befd-3ccaad332ead\",\n            \"static_id\": \"3ca1d928-51fa-4c9e-8a82-6ee5819b93d2\",\n           
+    \"96df238c-dcbd-4913-bda9-8d18b5343c76\",\n            \"static_id\": \"c92c330a-76c6-4306-b25b-a8bd6512bec4\",\n           
     \"can_open_on\": \"2022-07-14T00:00:00.0Z\"\n        },\n        {\n           
-    \"type\": \"mystery_crate\",\n            \"ownership_id\": \"96df238c-dcbd-4913-bda9-8d18b5343c76\",\n           
-    \"static_id\": \"c92c330a-76c6-4306-b25b-a8bd6512bec4\",\n            \"can_open_on\":
-    \"2022-07-14T00:00:00.0Z\"\n        },\n        {\n            \"type\": \"mystery_crate\",\n           
-    \"ownership_id\": \"3beaeae1-0ce9-4d7b-befd-3ccaad332ead\",\n            \"static_id\":
-    \"cfe9b5eb-46bc-4947-8866-df4a4e3bf485\",\n            \"can_open_on\": \"2022-07-14T00:00:00.0Z\"\n       
-    },\n        {\n            \"type\": \"mech\",\n            \"ownership_id\":
-    \"d10b80af-55fe-409b-82fd-41b352905471\",\n            \"static_id\": \"3dc5888b-f5ff-4d08-a520-26fd3681707f\",\n           
-    \"skin\":\n            {\n                \"type\": \"skin\",\n               
-    \"ownership_id\": \"adc73179-7b49-4d0d-ac37-7e4ab9e2d879\",\n               
+    \"type\": \"mystery_crate\",\n            \"ownership_id\": \"3beaeae1-0ce9-4d7b-befd-3ccaad332ead\",\n           
+    \"static_id\": \"cfe9b5eb-46bc-4947-8866-df4a4e3bf485\",\n            \"can_open_on\":
+    \"2022-07-14T00:00:00.0Z\"\n        },\n        {\n            \"type\": \"mech\",\n           
+    \"ownership_id\": \"d10b80af-55fe-409b-82fd-41b352905471\",\n            \"static_id\":
+    \"3dc5888b-f5ff-4d08-a520-26fd3681707f\",\n            \"skin\":\n           
+    {\n                \"type\": \"skin\",\n                \"ownership_id\": \"adc73179-7b49-4d0d-ac37-7e4ab9e2d879\",\n               
     \"static_id\": \"bb12fcb6-1aba-4744-a5c2-247ed860e106\"\n            },\n           
     \"accessories\":\n            [\n                {\n                    \"type\":
     \"weapon\",\n                    \"ownership_id\": \"d7ecc916-425c-477c-bc77-fc4502b0226a\",\n                   
@@ -170,3 +170,7 @@ MonoBehaviour:
     \"static_id\": \"874db321-38e4-4aa9-aedc-b36feb1e31b5\"\n            }\n       
     }\n    ]\n}\n"
   jsonTestFragmentDelay: 0.2
+  jsonCrateText: "{\n            \"type\": \"mech\",\n            \"ownership_id\":
+    \"4d87aea5-945d-42f4-9d80-9c44420bdfde\",\n            \"static_id\": \"625cd381-7c66-4e2f-9f69-f81589105730\",\n           
+    \"skin\": {\n                \"type\": \"skin\",\n                \"static_id\":
+    \"72ffdb5c-c003-4734-b1d1-07898f5bcb39\"\n            }\n        }"
