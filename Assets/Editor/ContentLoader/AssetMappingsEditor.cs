@@ -8,6 +8,11 @@ using Malee.List;
 using SupremacyData.Editor;
 using UnityEngine.AddressableAssets;
 using SupremacyData.Runtime;
+using UnityEditor.AddressableAssets;
+using SupremacyHangar.Runtime.Environment;
+using SupremacyHangar.Runtime.ScriptableObjects;
+using System.IO;
+using System;
 
 namespace SupremacyHangar.Editor.ContentLoader
 {
@@ -131,6 +136,11 @@ namespace SupremacyHangar.Editor.ContentLoader
         public override void OnInspectorGUI()
         {
             serializedObject.Update();
+
+            if(GUILayout.Button("Help"))
+            {
+                EditorWindow.GetWindow<AssetMappingsEditorHelpWindow>();
+            }
 
             factionList.DoLayoutList();
             mysteryCrateList.DoLayoutList();
@@ -455,6 +465,8 @@ namespace SupremacyHangar.Editor.ContentLoader
 
             var selectedElement = selectedList.GetItem(selectedIndex);
 
+            if(selectedElement == null) return;
+
             var dataReference = selectedElement.FindPropertyRelative(typeToNameMap[currentListType][1]);
             var assetReference = selectedElement.FindPropertyRelative(typeToNameMap[currentListType][2]);
 
@@ -549,6 +561,7 @@ namespace SupremacyHangar.Editor.ContentLoader
         {
             //Get Static Data
             var staticDataGuids = AssetDatabase.FindAssets("t:Data");
+            var assetMapGuids = AssetDatabase.FindAssets("t:AssetMappings");
             
             if (staticDataGuids.Length != 1)
             { 
@@ -559,12 +572,16 @@ namespace SupremacyHangar.Editor.ContentLoader
             var dataPath = AssetDatabase.GUIDToAssetPath(staticDataGuids[0]);
             var staticData = AssetDatabase.LoadAssetAtPath(dataPath, typeof(Data)) as Data;
 
+            var assetMapPath = AssetDatabase.GUIDToAssetPath(assetMapGuids[0]);
+            var assetMap = AssetDatabase.LoadAssetAtPath(assetMapPath, typeof(AssetMappings)) as AssetMappings;
+
             if (staticData == null)
             {
                 Debug.Log("Couldn't load static data");
                 return;
             }
 
+            var settings = AddressableAssetSettingsDefaultObject.Settings;
             int firstNewItemIndex = -1;
             foreach (var dataKey in GetStatisDataList(type, staticData))
             {
@@ -580,18 +597,115 @@ namespace SupremacyHangar.Editor.ContentLoader
 
                 if (!matchFound)
                 {
-                    var parent = key.AddItem(); 
+                    var parent = key.AddItem();
                     if (firstNewItemIndex == -1) firstNewItemIndex = key.Length - 1;
-
+                    
                     var targetKey = parent.FindPropertyRelative(typeToNameMap[type][1]);
+                    var assetRef = parent.FindPropertyRelative(typeToNameMap[type][2]);
 
                     targetKey.objectReferenceValue = dataKey;
 
                     parent.serializedObject.ApplyModifiedProperties();
+
+                    string targetName = dataKey.name;
+                    string targetTypeName = dataKey.name;
+                    //single object name only
+                    if (type == ListType.WeaponSkin || type == ListType.MechSkin)
+                    {
+                        targetTypeName = targetTypeName.Split('-')[1];
+                        targetTypeName = targetTypeName.Split(' ')[1];
+                        targetTypeName = @"" + targetTypeName;
+                        targetName = targetName.Substring(targetName.LastIndexOf('-') + 2);
+                    }
+                    else
+                    {
+                        targetName = targetName.Substring(targetName.IndexOf('-') + 2);
+                        if (type == ListType.Faction) targetName = targetName.Split(' ')[0];
+                    }
+
+                    //asset ref only
+                    string[] targetAssetGuid = new string[1];
+                    switch (type)
+                    {
+                        case ListType.Faction:
+                            targetAssetGuid = AssetDatabase.FindAssets($"{targetName} t:EnvironmentConnectivity");
+                            break;
+                        case ListType.MechChassis:
+                            targetAssetGuid = AssetDatabase.FindAssets($"{targetName} t:GameObject");
+                            break;
+                        case ListType.MechSkin:
+                            string mechSkinfolderPath = SearchSubDirs("Assets/Content/Mechs", targetTypeName);
+                            if (mechSkinfolderPath != null)
+                                targetAssetGuid = AssetDatabase.FindAssets($"{targetName} t:Skin", new[] { $"{mechSkinfolderPath}" });
+                            break; 
+                        case ListType.MysteryCrate:
+                            targetAssetGuid = AssetDatabase.FindAssets($"{targetName} t:GameObject");
+                            break;
+                        case ListType.WeaponModel:
+                            targetAssetGuid = AssetDatabase.FindAssets($"{targetName} t:GameObject");
+                            break;
+                        case ListType.WeaponSkin:
+                            string weaponSkinfolderPath = SearchSubDirs("Assets/Content/Weapons", targetTypeName);
+                            if (weaponSkinfolderPath != null)
+                                targetAssetGuid = AssetDatabase.FindAssets($"{targetName} t:Skin", new[] {$"{weaponSkinfolderPath}"});
+                            break;
+                        case ListType.PowerCore:
+                            targetAssetGuid = AssetDatabase.FindAssets($"{targetName} t:GameObject");
+                            break;
+                        default:
+                            Debug.LogError($"Unknown type: {type}");
+                            break;
+                    }
+
+                    if (targetAssetGuid.Length > 0 && targetAssetGuid[0] != null)
+                    {
+                        switch (type)
+                        {
+                            case ListType.Faction:
+                                var targetFactionAsset = GetFactionGraphAssetReferenceValue(assetRef, ref refLabel);
+                                var newAsset = settings.FindAssetEntry(targetAssetGuid[0]).MainAsset as EnvironmentConnectivity;
+                                targetFactionAsset.SetEditorAsset(newAsset);
+                                break;
+                            case ListType.MechSkin:
+                                var targetMechSkinAsset = GetSkinAssetReferenceValue(assetRef, ref refLabel);
+                                var newMechSkinAsset = settings.FindAssetEntry(targetAssetGuid[0]).MainAsset as Skin;
+                                targetMechSkinAsset.SetEditorAsset(newMechSkinAsset);
+                                break;
+                            case ListType.WeaponSkin:
+                                var targetWeaponSkinAsset = GetSkinAssetReferenceValue(assetRef, ref refLabel);
+                                var newWeaponSkinAsset = settings.FindAssetEntry(targetAssetGuid[0]).MainAsset as Skin;
+                                targetWeaponSkinAsset.SetEditorAsset(newWeaponSkinAsset);
+                                break;
+                            case ListType.PowerCore:
+                            default:
+                                var targetAsset = GetAssetReferenceValue(assetRef, ref refLabel);
+                                var newGOAsset = settings.FindAssetEntry(targetAssetGuid[0]).MainAsset as GameObject;
+                                targetAsset.SetEditorAsset(newGOAsset);
+                                break;
+                        }
+                    }
+                    parent.serializedObject.ApplyModifiedProperties();
+                    parent.serializedObject.Update();
                 }
             }
 
             if(key.paginate) key.SetPage(firstNewItemIndex/key.pageSize);
+        }
+
+        private string SearchSubDirs(string dir, string targetFolder)
+        {
+            string[] subdirectoryEntries = Directory.GetDirectories(dir);
+
+            foreach (string subdirectory in subdirectoryEntries)
+            {
+                var result = SearchSubDirs(subdirectory, targetFolder);
+                if(result != null) return result;
+                
+                if(subdirectory.EndsWith(targetFolder, StringComparison.CurrentCultureIgnoreCase))
+                    return subdirectory;
+            }
+
+            return null;
         }
 
         private IEnumerable<BaseRecord> GetStatisDataList(ListType type, Data staticData)
