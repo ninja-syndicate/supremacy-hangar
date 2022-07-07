@@ -19,14 +19,18 @@ namespace SupremacyHangar.Runtime.Silo
         [Inject]
         private SiloItem[] siloContents;
         
+        [Inject]
+        private CrateSignalHandler _crateSignalHandler;
+
         private bool playerPresent;
         private FirstPersonController playerController;
-
+                
         public override void OnPlayerEntered(GameObject go, FirstPersonController controller)
         {
             playerPresent = true;
             playerController = controller;
             playerController.OnInteractionTriggered += StartLoad;
+            playerController.OnInteractionTriggered += RequestCrateContent;
             playerController.IncrementInteractionPromptRequests();
         }
         
@@ -34,6 +38,7 @@ namespace SupremacyHangar.Runtime.Silo
         {
             if (!playerPresent) return;
             playerController.OnInteractionTriggered -= StartLoad;
+            playerController.OnInteractionTriggered -= RequestCrateContent;
             playerController.DecrementInteractionPromptRequests();
             playerPresent = false;
             playerController = null;
@@ -52,6 +57,8 @@ namespace SupremacyHangar.Runtime.Silo
                     empty = false;
                     addressablesManager.TargetMech = box.MysteryCrateDetails.MysteryCrateReference;
                     addressablesManager.TargetSkin = null;
+                    spawner.ContainsCrate = true;
+                    playerController.IncrementInteractionPromptRequests();
                     break;
                 default:
                     Debug.LogWarning($"Unexpected type of {myContent.GetType()} - cowardly refusing to fill the silo", this);
@@ -59,6 +66,16 @@ namespace SupremacyHangar.Runtime.Silo
             }
 
             if(!empty) spawner.PrepareSilo();
+        }
+
+        private void RequestCrateContent()
+        {
+            if (!spawner.ContainsCrate || !spawner.canOpenCrate) return;
+            spawner.canOpenCrate = false;
+            _crateSignalHandler.NeedCrateContent();
+#if UNITY_WEBGL
+            Plugins.WebGL.WebGLPluginJS.GetCrateContent(siloContents[siloOffset].OwnershipID.ToString());
+#endif
         }
 
         private bool PopulateWithMech(Mech mech)

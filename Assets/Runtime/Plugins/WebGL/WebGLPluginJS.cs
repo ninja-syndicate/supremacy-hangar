@@ -13,5 +13,9 @@ namespace SupremacyHangar.Runtime.Plugins.WebGL
         // Importing "SiloReady"
         [DllImport("__Internal")]
         public static extern void SiloReady();
+
+        // Importing "GetCrateContent"
+        [DllImport("__Internal")]
+        public static extern void GetCrateContent(string ownership_id);
     }
 }

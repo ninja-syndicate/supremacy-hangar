@@ -4,14 +4,19 @@ using Zenject;
 using SupremacyHangar.Runtime.Silo;
 using SupremacyHangar.Runtime.ContentLoader;
 
-public class SignalInstaller : MonoInstaller
+
+namespace SupremacyHangar.Runtime
 {
-    public override void InstallBindings()
+    public class SignalInstaller : MonoInstaller
     {
-        SignalBusInstaller.Install(Container);
-        RepositionSignalInstaller.Install(Container);
-        InteractionSignalInstaller.Install(Container);
-        SiloSignalInstaller.Install(Container);
-        ContentSignalInstaller.Install(Container);
+        public override void InstallBindings()
+        {
+            SignalBusInstaller.Install(Container);
+            RepositionSignalInstaller.Install(Container);
+            InteractionSignalInstaller.Install(Container);
+            SiloSignalInstaller.Install(Container);
+            ContentSignalInstaller.Install(Container);
+            CrateSignalInstaller.Install(Container);
+        }
     }
 }

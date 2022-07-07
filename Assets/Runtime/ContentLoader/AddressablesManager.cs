@@ -35,7 +35,8 @@ namespace SupremacyHangar.Runtime.ContentLoader
         }
         
         private AssetReference previousMech;
-        
+        private AssetReference previousCrate;
+
         private LoadedAsset myMech { get; set; } = new LoadedAsset();
 
         [SerializeField] private AssetReferenceAssetMappings assetMappingsReference;
@@ -46,16 +47,18 @@ namespace SupremacyHangar.Runtime.ContentLoader
         private SignalBus _bus;
         private bool _subscribed;
 
-        private SiloSignalHandler _signalHandler;
+        private SiloSignalHandler _siloSignalHandler;
+        private CrateSignalHandler _crateSignalHandler;
 
         private Transform prevTransform;
         private bool sameMechChassis = false;
 
         [Inject]
-        public void Construct(SignalBus bus, SiloSignalHandler siloHandler)
+        public void Construct(SignalBus bus, SiloSignalHandler siloHandler, CrateSignalHandler crateHandler)
         {
             _bus = bus;
-            _signalHandler = siloHandler;
+            _siloSignalHandler = siloHandler;
+            _crateSignalHandler = crateHandler;
         }
         private void OnEnable()
         {
@@ -131,33 +134,38 @@ namespace SupremacyHangar.Runtime.ContentLoader
             _playerInventory.factionGraph = mappings.FactionMappingByGuid[_playerInventory.faction].ConnectivityGraph;
             foreach (var silo in _playerInventory.Silos)
             {
-                switch (silo)
-                {
-                    case Mech mech:
-                        if (!mappings.MechChassisMappingByGuid.TryGetValue(mech.StaticID, out mech.MechChassisDetails))
-                        {
-                            Debug.LogError($"No Chassis mapping found for {mech.StaticID}");
-                            break;
-                        }
-                        if (!mappings.MechSkinMappingByGuid.TryGetValue(mech.Skin.StaticID, out mech.MechSkinDetails))
-                        {
-                            Debug.LogError($"No Skin mapping found for {mech.Skin.StaticID}");
-                        }
-                        break;
-                    case MysteryCrate crate:
-                        if (!mappings.MysteryCrateMappingByGuid.TryGetValue(crate.StaticID, out crate.MysteryCrateDetails))
-                        {
-                            Debug.LogError($"No Crate mapping found for {crate.StaticID}");
-                        }
-                        break;
-                    default:
-                        Debug.LogError($"Unknown silo of type {silo}.");
-                        break;
-                }
+                MapSiloToAsset(silo);
             }
             _contentSignalHandler.InventoryLoaded();
         }
         
+        public void MapSiloToAsset(SiloItem silo)
+        {
+            switch (silo)
+            {
+                case Mech mech:
+                    if (!mappings.MechChassisMappingByGuid.TryGetValue(mech.StaticID, out mech.MechChassisDetails))
+                    {
+                        Debug.LogError($"No Chassis mapping found for {mech.StaticID}");
+                        break;
+                    }
+                    if (!mappings.MechSkinMappingByGuid.TryGetValue(mech.Skin.StaticID, out mech.MechSkinDetails))
+                    {
+                        Debug.LogError($"No Skin mapping found for {mech.Skin.StaticID}");
+                    }
+                    break;
+                case MysteryCrate crate:
+                    if (!mappings.MysteryCrateMappingByGuid.TryGetValue(crate.StaticID, out crate.MysteryCrateDetails))
+                    {
+                        Debug.LogError($"No Crate mapping found for {crate.StaticID}");
+                    }
+                    break;
+                default:
+                    Debug.LogError($"Unknown silo of type {silo}.");
+                    break;
+            }
+        }
+
         private bool ValidateMappings()
         {
             if (assetMappingsReference != null) return true;
@@ -212,13 +220,17 @@ namespace SupremacyHangar.Runtime.ContentLoader
             SpawnMech(prevTransform, true);
         }
 #endif
-        public void SpawnMech(Transform spawnLocation, bool quickLoad = false)
+        public void SpawnMech(Transform spawnLocation, bool insideCrate = false, bool quickLoad = false)
         {
             prevTransform = spawnLocation;
-            //When mech out of view release addressables
-            UnloadMech(quickLoad);
 
-            if(sameMechChassis)
+            //When new mech is spawned remove previous unless inside crate
+            if (!insideCrate)
+                UnloadMech(quickLoad);
+            else
+                previousCrate = previousMech;
+
+            if (sameMechChassis)
             {
                 SetLoadedSkin(myMech.mech);
                 return;
@@ -231,23 +243,30 @@ namespace SupremacyHangar.Runtime.ContentLoader
                     TargetMech.InstantiateAsync(spawnLocation.position, spawnLocation.rotation, spawnLocation).Completed += (mech) =>
                     {
                         myMech.mech = mech.Result;
-                        SetLoadedSkin(myMech.mech);
+                        SetLoadedSkin(myMech.mech, insideCrate);
                     };
                 });
         }
 
-        private void SetLoadedSkin(GameObject mech)
+        private void SetLoadedSkin(GameObject mech, bool insideCrate = false)
         {
             LoadSkinReference(
                 (skin) =>
                 {
                     MeshRenderer mechMesh = myMech.mech.GetComponentInChildren<MeshRenderer>();
+                    var mechRepostion = myMech.mech.GetComponentInChildren<SiloPlatformRepositioner>();
                     if (skin != null)
                         mechMesh.sharedMaterials = skin.mats;
 
-                    mechMesh.enabled = true; 
                     Container.InjectGameObject(myMech.mech);
-                    _signalHandler.SiloFilled();
+
+                    if (insideCrate)
+                        _crateSignalHandler.OpenCrate();
+                    else
+                    {
+                        mechRepostion.RepositionObject();
+                        _siloSignalHandler.SiloFilled();
+                    }
                 }
             );
         }
@@ -262,7 +281,12 @@ namespace SupremacyHangar.Runtime.ContentLoader
 
             if (previousMech != null)
             {
-                if(!quickLoad || previousMech != TargetMech) previousMech.ReleaseAsset();
+                if (!quickLoad || previousMech != TargetMech)
+                {
+                    if(previousCrate != null) previousCrate.ReleaseAsset();
+
+                    previousMech.ReleaseAsset();
+                }
 #if UNITY_EDITOR
                 if (previousMech != TargetMech &&
                     myMech.mech != null)

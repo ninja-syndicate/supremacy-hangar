@@ -172,6 +172,7 @@ MonoBehaviour:
   siloInteractionTrigger: {fileID: 62340275779691916}
   SiloSpawned: 0
   myWindowAnim: {fileID: 7151954685174816545}
+  loadButtonText: {fileID: 5084819900365775767}
 --- !u!65 &5916775535431724488
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -343,6 +344,7 @@ MonoBehaviour:
   siloInteractionTrigger: {fileID: 5916775535431724488}
   SiloSpawned: 0
   myWindowAnim: {fileID: 3601512598374419860}
+  loadButtonText: {fileID: 2330969162365799569}
 --- !u!65 &62340275779691916
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1231,6 +1233,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Silo_2_Display
       objectReference: {fileID: 0}
+    - target: {fileID: 2187088310494769674, guid: 5e1575350aa06474ca6ed221178965f2,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2187088310494769674, guid: 5e1575350aa06474ca6ed221178965f2,
+        type: 3}
+      propertyPath: m_Colors.m_DisabledColor.a
+      value: 0.5019608
+      objectReference: {fileID: 0}
     - target: {fileID: 3239196021290701059, guid: 5e1575350aa06474ca6ed221178965f2,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1341,8 +1353,40 @@ PrefabInstance:
       propertyPath: siloOffset
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4455658631973401602, guid: 5e1575350aa06474ca6ed221178965f2,
+        type: 3}
+      propertyPath: startFactionColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455658631973401602, guid: 5e1575350aa06474ca6ed221178965f2,
+        type: 3}
+      propertyPath: startFactionColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455658631973401602, guid: 5e1575350aa06474ca6ed221178965f2,
+        type: 3}
+      propertyPath: startFactionColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472911683331499170, guid: 5e1575350aa06474ca6ed221178965f2,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 51.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e1575350aa06474ca6ed221178965f2, type: 3}
+--- !u!114 &2330969162365799569 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2389442065814661020, guid: 5e1575350aa06474ca6ed221178965f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 103658641650232077}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &3279653394533464590 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3239196021290701059, guid: 5e1575350aa06474ca6ed221178965f2,
@@ -2622,8 +2666,25 @@ PrefabInstance:
       propertyPath: siloOffset
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4472911683331499170, guid: 5e1575350aa06474ca6ed221178965f2,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 51.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e1575350aa06474ca6ed221178965f2, type: 3}
+--- !u!114 &5084819900365775767 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2389442065814661020, guid: 5e1575350aa06474ca6ed221178965f2,
+    type: 3}
+  m_PrefabInstance: {fileID: 7474260299732845579}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &5425157200366900488 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3239196021290701059, guid: 5e1575350aa06474ca6ed221178965f2,

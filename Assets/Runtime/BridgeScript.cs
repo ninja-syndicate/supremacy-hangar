@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Zenject;
 using SupremacyHangar.Runtime.Types;
 using SupremacyHangar.Runtime.ContentLoader;
+using SupremacyHangar.Runtime.Silo;
 
 /// <summary>
 /// Bridge used to communicate with a page
@@ -16,11 +17,19 @@ public class BridgeScript : MonoInstaller
     [Inject]
     private ContentSignalHandler contentSignalHandler;
 
+    [Inject]
+    private CrateSignalHandler _crateSignalHandler;
+
 #if UNITY_EDITOR
     [TextArea(3, 50)]
     [SerializeField] public string jsonTestFragment;
 
     [SerializeField] public float jsonTestFragmentDelay = 0.2f;
+#endif
+    
+    #if UNITY_EDITOR
+    [TextArea(3, 50)]
+    [SerializeField] public string jsonCrateText;
 #endif
     
     public override void InstallBindings()
@@ -36,6 +45,17 @@ public class BridgeScript : MonoInstaller
         contentSignalHandler.InventoryRecieved();
     }
 
+    private void CrateContent()
+    {
+        GetCrateContentsFromPage(jsonCrateText);
+    }
+
+    public void GetCrateContentsFromPage(string message)
+    {
+        var crateContent = JsonConvert.DeserializeObject<SiloItem>(message, new SiloItemConterter());
+        _crateSignalHandler.FillCrate(crateContent);
+    }
+
 #if UNITY_EDITOR
     public void SetPlayerInventoryFromFragment()
     {
@@ -48,5 +68,33 @@ public class BridgeScript : MonoInstaller
             });
         }
     }
-#endif        
+#endif
+
+    private SignalBus _bus;
+    bool _subscribed = false;
+    [Inject]
+    public void Contruct(SignalBus bus)
+    {
+        _bus = bus;
+        SubscribeToSignal();
+    }
+
+    private void OnEnable()
+    {
+        SubscribeToSignal();
+    }
+
+    private void OnDisable()
+    {
+        if (!_subscribed) return;
+        _bus.Unsubscribe<CrateContentSignal>(CrateContent);
+        _subscribed = false;
+    }
+
+    private void SubscribeToSignal()
+    {
+        if (_bus == null || _subscribed) return;
+        _bus.Subscribe<CrateContentSignal>(CrateContent);
+        _subscribed = true;
+    }
 }
