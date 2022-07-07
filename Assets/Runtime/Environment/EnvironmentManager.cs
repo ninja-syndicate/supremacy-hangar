@@ -330,10 +330,10 @@ namespace SupremacyHangar.Runtime.Environment
         {
             //ToDo try remove the creation of new SiloItems
             if (MaxSiloOffset == 0)
-                return new SiloItem[] { new(), new() };
+                return new SiloItem[] { new EmptySilo(), new EmptySilo() };
 
             if (SiloOffset + 1 >= MaxSiloOffset)
-                return new[] { _playerInventory.Silos[SiloOffset], new() };
+                return new[] { _playerInventory.Silos[SiloOffset], new EmptySilo() };
 
             return new[] { _playerInventory.Silos[SiloOffset], _playerInventory.Silos[SiloOffset + 1] };
         }

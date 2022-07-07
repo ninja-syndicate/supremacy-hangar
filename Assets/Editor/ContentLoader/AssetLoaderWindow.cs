@@ -46,11 +46,11 @@ namespace SupremacyHangar.Editor.ContentLoader
         List<int> searchResults = new();
         private int searchIndex = 0;
 
-        [MenuItem("Supremacy/AssetLoader")]
+        [MenuItem("Supremacy/Asset Loader")]
         public static void ShowWindow()
         {
-            var window = EditorWindow.GetWindow(typeof(AssetLoaderWindow));
-            window.titleContent = new GUIContent("Asset Spawner");
+            var window = GetWindow(typeof(AssetLoaderWindow));
+            window.titleContent = new GUIContent("Asset Loader");
             window.Show();
         }
 
