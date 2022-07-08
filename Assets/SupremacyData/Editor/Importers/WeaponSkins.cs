@@ -57,7 +57,7 @@ namespace SupremacyData.Editor.Importers
             }
 
             weaponSkin.weaponModel = weaponModel;
-            weaponSkin.humanName = fields[3];
+            weaponSkin.humanName = fields[1];
             if (!WeaponModels.ParseType(fields[2], out weaponSkin.type))
             {
                 logger.LogError($"{ImporterName} data - unknown weapon type {fields[3]} from {dataPath}:{index}");
