@@ -34,9 +34,9 @@ MonoBehaviour:
   m_MonoScriptBundleNaming: 0
   m_MonoScriptBundleCustomNaming: 
   m_RemoteCatalogBuildPath:
-    m_Id: 6f064d973e68a7f4d8cc1ad3c41fc138
+    m_Id: a7d95c3045b5958409c9f6ccbc73c4f8
   m_RemoteCatalogLoadPath:
-    m_Id: 7427d4870fdf9bc4b9453213cf7fa1ea
+    m_Id: 3d4a98c1bf9c0084b84b7107bfdc7803
   m_ContentStateBuildPath: 
   m_BuildAddressablesWithPlayerBuild: 0
   m_overridePlayerVersion: 
@@ -121,6 +121,22 @@ MonoBehaviour:
         m_Value: https://afiles.ninja-cdn.com/supremacy-hangar/addressables/[BuildPath]/[BuildTarget]
       - m_Id: 2f4dea65b3b4c4cdc8c590ecbfde80a3
         m_Value: staging
+    - m_InheritedParent: 
+      m_Id: 14a6b20452fdcd8478ef0189b47fd6a6
+      m_ProfileName: VR
+      m_Values:
+      - m_Id: e1e1d0eb700315441908c2b43c9044ba
+        m_Value: '[UnityEditor.EditorUserBuildSettings.activeBuildTarget]'
+      - m_Id: a7d95c3045b5958409c9f6ccbc73c4f8
+        m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
+      - m_Id: 3d4a98c1bf9c0084b84b7107bfdc7803
+        m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
+      - m_Id: 6f064d973e68a7f4d8cc1ad3c41fc138
+        m_Value: '[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]'
+      - m_Id: 7427d4870fdf9bc4b9453213cf7fa1ea
+        m_Value: '{UnityEngine.AddressableAssets.Addressables.RuntimePath}/[BuildTarget]'
+      - m_Id: 2f4dea65b3b4c4cdc8c590ecbfde80a3
+        m_Value: staging
     m_ProfileEntryNames:
     - m_Id: e1e1d0eb700315441908c2b43c9044ba
       m_Name: BuildTarget
@@ -157,7 +173,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 09dbe75ad9688494f9192d3a1328b8c3, type: 2}
   - {fileID: 11400000, guid: 0eee883da59c00e40b02307cdeeb58b3, type: 2}
   - {fileID: 11400000, guid: dbb98544518de45499cc19052a7507af, type: 2}
-  m_ActiveProfileId: 54195157699242a44af723263d92a402
+  m_ActiveProfileId: 14a6b20452fdcd8478ef0189b47fd6a6
   m_HostingServicesManager:
     m_HostingServiceInfos: []
     m_Settings: {fileID: 11400000}
