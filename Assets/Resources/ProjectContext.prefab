@@ -169,7 +169,7 @@ MonoBehaviour:
     \"skin\":\n            {\n                \"ownership_id\": \"f991a839-84c6-444e-af1e-0a31aa1bcbc1\",\n               
     \"static_id\": \"874db321-38e4-4aa9-aedc-b36feb1e31b5\"\n            }\n       
     }\n    ]\n}\n"
-  jsonTestFragmentDelay: 0.2
+  jsonTestFragmentDelay: 0.25
   jsonCrateText: "{\n            \"type\": \"mech\",\n            \"ownership_id\":
     \"4d87aea5-945d-42f4-9d80-9c44420bdfde\",\n            \"static_id\": \"625cd381-7c66-4e2f-9f69-f81589105730\",\n           
     \"skin\": {\n                \"type\": \"skin\",\n                \"static_id\":

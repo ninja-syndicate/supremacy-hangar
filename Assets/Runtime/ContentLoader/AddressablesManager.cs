@@ -53,7 +53,6 @@ namespace SupremacyHangar.Runtime.ContentLoader
         private SiloSignalHandler _siloSignalHandler;
         private CrateSignalHandler _crateSignalHandler;
 
-
         private Transform prevTransform;
         private bool sameMechChassis = false;
 
@@ -64,7 +63,6 @@ namespace SupremacyHangar.Runtime.ContentLoader
             _siloSignalHandler = siloHandler;
             _crateSignalHandler = crateHandler;
         }
-
         private void OnEnable()
         {
             SubscribeToSignal();
@@ -185,7 +183,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
             if (myMech.skin == null && TargetSkin != null)
             {
                 var skinOperationHandler = TargetSkin.LoadAssetAsync(); 
-                StartCoroutine(loadingProgressContext.LoadingAssetProgress(skinOperationHandler, "Loading Skin"));
+                StartCoroutine(loadingProgressContext.LoadingAssetProgress(skinOperationHandler));
                 skinOperationHandler.Completed += (skin) =>
                 {
                     myMech.skin = skin.Result;
@@ -218,8 +216,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 callBack(myMech.mech);
             }
         }
-
-
+        
 #if UNITY_EDITOR
         public void QuickSpawn()
         {
@@ -232,7 +229,6 @@ namespace SupremacyHangar.Runtime.ContentLoader
             SpawnMech(prevTransform, true);
         }
 #endif
-
         public void SpawnMech(Transform spawnLocation, bool insideCrate = false, bool quickLoad = false)
         {
             prevTransform = spawnLocation;
