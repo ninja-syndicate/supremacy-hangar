@@ -19,6 +19,7 @@ namespace SupremacyHangar.Runtime
             ContentSignalInstaller.Install(Container);
             CrateSignalInstaller.Install(Container);
 			ProgressSignalInstaller.Install(Container);
+            MenuSignalInstaller.Install(Container);
 		}
     }
 }

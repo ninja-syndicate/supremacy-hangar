@@ -1,3 +1,4 @@
+using SupremacyHangar.Runtime.Silo;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,12 @@ namespace SupremacyHangar.Runtime.ContentLoader
     {
         public float PercentageComplete;
         public string Description;
+    }
+
+    public class AssetLoadedSignal { }
+    public class AssetLoadedWithSpawnSignal 
+    {
+        public Transform SpawnPoint;
     }
 
     public class ProgressSignalHandler
@@ -28,6 +35,14 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 progressAmounts.Add(key, message);
 
             AssetLoadingProgress();
+        }
+
+        public void FinishedLoading(GameObject res)
+        { 
+            if ( res && res.TryGetComponent(out SpawnPointLocation loc))
+                _signalBus.Fire(new AssetLoadedWithSpawnSignal() { SpawnPoint = loc.SpawnPoint });
+            else
+                _signalBus.Fire<AssetLoadedSignal>();
         }
 
         private void AssetLoadingProgress()
@@ -49,6 +64,8 @@ namespace SupremacyHangar.Runtime.ContentLoader
 
             Debug.Log(totalProgress);
             _signalBus.Fire(new AssetLoadingProgressSignal() { PercentageComplete = totalProgress, Description = currentlyLoading });
+
+            if (totalProgress == 1) progressAmounts.Clear();
         }
     }
 
@@ -58,6 +75,8 @@ namespace SupremacyHangar.Runtime.ContentLoader
         {
             Container.Bind<ProgressSignalHandler>().AsSingle().NonLazy();
             Container.DeclareSignal<AssetLoadingProgressSignal>().OptionalSubscriber().RunAsync();
+            Container.DeclareSignal<AssetLoadedSignal>().OptionalSubscriber().RunAsync();
+            Container.DeclareSignal<AssetLoadedWithSpawnSignal>().OptionalSubscriber().RunAsync();
         }
     }
 }

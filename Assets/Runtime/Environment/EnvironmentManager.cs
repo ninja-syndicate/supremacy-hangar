@@ -43,7 +43,7 @@ namespace SupremacyHangar.Runtime.Environment
 
         private EnvironmentPrefab interactedDoor = null;
 
-        private SiloPositioner _currentSilo;
+        private SiloSpawner _currentSilo;
         private EnvironmentPrefab newDoorEnvironmentPrefab;
         public int SiloOffset { get; private set; } = 0;
         public IReadOnlyList<SiloItem> SiloItems => _playerInventory?.Silos;
@@ -188,8 +188,8 @@ namespace SupremacyHangar.Runtime.Environment
             }
 
             _container.InjectGameObject(result);
-            result.SetActive(true);
             GameObject.FindGameObjectWithTag("Loading").SetActive(false);
+            result.SetActive(true);
         }
 
         private void DoorOpened()
@@ -290,7 +290,7 @@ namespace SupremacyHangar.Runtime.Environment
             operationsForNewDoor.Remove(doorHandler);
         }
 
-        public void SpawnSilo(SiloPositioner currentSilo)
+        public void SpawnSilo(SiloSpawner currentSilo)
         {
             _currentSilo = currentSilo;
             SiloExists = true;
@@ -308,11 +308,13 @@ namespace SupremacyHangar.Runtime.Environment
         {
             var newSilo = operationHandler.Result;
             _container.InjectGameObject(newSilo);
+            
             //Reposition door & set connection point
             newSilo.GetComponent<EnvironmentPrefab>().JoinTo(_currentSilo.ToConnectTo, nextRoomEnvironmentPrefabRef.Joins[_currentSilo.ToConnectTo]);
 
             newSilo.SetActive(true);
 
+            loadingProgressContext.ProgressSignalHandler.FinishedLoading(newSilo);
             if (loadedSilo != null)
                 UnloadAssetsAfterSiloClosed();
             

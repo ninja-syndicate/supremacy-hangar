@@ -184,12 +184,11 @@ namespace SupremacyHangar.Runtime.ContentLoader
         {
             if (myMech.skin == null && TargetSkin != null)
             {
-                TargetSkin.LoadAssetAsync<ScriptableObjects.Skin>().Completed += (skin) =>
                 var skinOperationHandler = TargetSkin.LoadAssetAsync(); 
                 StartCoroutine(loadingProgressContext.LoadingAssetProgress(skinOperationHandler, "Loading Skin"));
                 skinOperationHandler.Completed += (skin) =>
                 {
-                    myMech.skin = skin.Result as Skin;
+                    myMech.skin = skin.Result;
                     callBack(myMech.skin);
                 };
             }
@@ -257,12 +256,13 @@ namespace SupremacyHangar.Runtime.ContentLoader
                     TargetMech.InstantiateAsync(spawnLocation.position, spawnLocation.rotation, spawnLocation).Completed += (mech) =>
                     {
                         myMech.mech = mech.Result;
-                        SetLoadedSkin(myMech.mech, insideCrate);
+                        loadingProgressContext.ProgressSignalHandler.FinishedLoading(mech.Result);
+                        SetLoadedSkin(insideCrate);
                     };
                 });
         }
 
-        private void SetLoadedSkin(GameObject mech, bool insideCrate = false)
+        private void SetLoadedSkin(bool insideCrate = false)
         {
             LoadSkinReference(
                 (skin) =>
