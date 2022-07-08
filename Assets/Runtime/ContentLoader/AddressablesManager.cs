@@ -216,27 +216,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 callBack(myMech.mech);
             }
         }
-
-        private IEnumerator LoadingAsset()
-        {
-            do
-            {
-                _contentSignalHandler.AssetLoadProgress(mechOperationHandler.PercentComplete);
-                yield return null;
-            } while (!mechOperationHandler.IsDone);
-            _contentSignalHandler.AssetLoadProgress(1);
-        }
-
-        private IEnumerator LoadingSkin()
-        {
-            do
-            {
-                _contentSignalHandler.SkinLoadProgress(skinOperationHandler.PercentComplete);
-                yield return null;
-            } while (!mechOperationHandler.IsDone);
-            _contentSignalHandler.SkinLoadProgress(1);
-        }
-
+        
 #if UNITY_EDITOR
         public void QuickSpawn()
         {
