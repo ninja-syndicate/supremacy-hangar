@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 using Zenject;
 using SupremacyHangar.Runtime.Interaction;
 using Unity.Mathematics;
+using SupremacyHangar.Runtime.Actors.Player;
 
 namespace SupremacyHangar.Runtime
 {
@@ -21,6 +22,12 @@ namespace SupremacyHangar.Runtime
 		public float RotationSpeed = 1.0f;
 		[Tooltip("Acceleration and deceleration")]
 		public float SpeedChangeRate = 10.0f;
+
+		public float UpdateRotationSpeed
+        {
+			get { return RotationSpeed; }
+			set { RotationSpeed = value; }
+        }
 
 		[Space(10)]
 		[Tooltip("The height the player can jump")]
@@ -98,6 +105,10 @@ namespace SupremacyHangar.Runtime
 		public bool cursorInputForLook = true;
 #endif
 
+		public bool showSettings = false;
+		public bool showHelpMenu = false;
+		private MenuController menuController;
+
 		public void Awake()
 		{
 			// get a reference to our main camera
@@ -113,12 +124,24 @@ namespace SupremacyHangar.Runtime
 		{
 			_controller = GetComponent<CharacterController>();
 			_playerInput = GetComponent<PlayerInput>();
+			if(!TryGetComponent(out menuController))
+            {
+				Debug.LogError("Cannot find or set Menu Controller", this);
+				enabled = false;
+            }
 
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
 			
 			SetCursorState(cursorLocked);
+			
+			if (PlayerPrefs.GetInt("HelpShown", 0) == 0)
+			{
+				menuController.ToggleHelpMenu();
+				PlayerPrefs.SetInt("HelpShown", 1);
+				PlayerPrefs.Save();
+			}
 		}
 
 		public void OnEnable()
@@ -128,6 +151,9 @@ namespace SupremacyHangar.Runtime
 
 		public void OnDisable()
 		{
+#if UNITY_EDITOR
+			PlayerPrefs.DeleteAll();
+#endif
 			UnbindInputs();
 		}
 
@@ -182,6 +208,8 @@ namespace SupremacyHangar.Runtime
 			valid &= BindActionToFunction("Jump", OnJumpChange);
 			valid &= BindActionToFunction("Sprint", OnSprintChange);
 			valid &= BindActionToFunction("Interaction", OnInteractionChange);
+			valid &= BindActionToFunction("Settings", OnSettingsChange);
+			valid &= BindActionToFunction("Help", OnHelpChange);
 
 			enabled = valid;
 			return valid;
@@ -194,6 +222,8 @@ namespace SupremacyHangar.Runtime
 			UnbindFromFunction("Jump", OnJumpChange);
 			UnbindFromFunction("Sprint", OnSprintChange);
 			UnbindFromFunction("Interaction", OnInteractionChange);
+			UnbindFromFunction("Settings", OnSettingsChange);
+			UnbindFromFunction("Help", OnHelpChange);
 		}
 
 		private bool BindActionToFunction(string actionName, Action<InputAction.CallbackContext> callback)
@@ -248,8 +278,21 @@ namespace SupremacyHangar.Runtime
 			interactionPrompts = 0;
 		}
 
+		private void OnSettingsChange(InputAction.CallbackContext context)
+		{
+			if (context.phase == InputActionPhase.Canceled) return;
+			menuController.ToggelSettingsMenu();
+		}
+
+		private void OnHelpChange(InputAction.CallbackContext context)
+		{
+			if (context.phase == InputActionPhase.Canceled) return;
+			menuController.ToggleHelpMenu();
+		}		
+
         private void Update()
 		{
+			if (showSettings || showHelpMenu) return;
 			if (interactionPromptControllerSet)
 			{
 				bool showPrompt = OnInteractionTriggered != null;
@@ -263,6 +306,8 @@ namespace SupremacyHangar.Runtime
 
 		private void LateUpdate()
 		{
+			if (showSettings || showHelpMenu) return;
+
 			CameraRotation();
 		}
 		
@@ -420,7 +465,7 @@ namespace SupremacyHangar.Runtime
 
 		private void OnApplicationFocus(bool hasFocus)
 		{
-			SetCursorState(cursorLocked);
+				SetCursorState(cursorLocked);
 		}
 
 		private void SetCursorState(bool newState)

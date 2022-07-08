@@ -11,7 +11,7 @@ using SupremacyHangar.Runtime.Environment.Connections;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using SupremacyHangar.Runtime.ContentLoader.Types;
 using SupremacyHangar.Runtime.ContentLoader;
-using SupremacyData.Runtime;
+using System.Collections;
 
 namespace SupremacyHangar.Runtime.Environment
 {
@@ -29,6 +29,7 @@ namespace SupremacyHangar.Runtime.Environment
         private SiloSignalHandler _siloSignalHandler;
                 
         private SignalBus _bus;
+        private LoadingProgressContext loadingProgressContext = new();
 
         private EnvironmentConnectivity _connectivityGraph;
 
@@ -71,6 +72,7 @@ namespace SupremacyHangar.Runtime.Environment
         private void OnEnable()
         {
             SubscribeToSignal();
+            _container.Inject(loadingProgressContext);
         }
 
         private void OnDisable()
@@ -103,7 +105,10 @@ namespace SupremacyHangar.Runtime.Environment
             //Todo: run from signal instead
             AssetReferenceEnvironmentConnectivity connectivityGraph = _playerInventory.factionGraph;
 
-            connectivityGraph.LoadAssetAsync<EnvironmentConnectivity>().Completed += (obj) =>
+            var connectivityGraphOp = connectivityGraph.LoadAssetAsync<EnvironmentConnectivity>();
+
+            StartCoroutine(loadingProgressContext.LoadingAssetProgress(connectivityGraphOp, "Loading Faction Layout"));
+            connectivityGraphOp.Completed += (obj) =>
             {
                 _connectivityGraph = obj.Result;
                 SpawnInitialHallway();
@@ -116,7 +121,9 @@ namespace SupremacyHangar.Runtime.Environment
             //Spawn initial environment
             currentEnvironment.CurrentPrefabAsset = _connectivityGraph.GetInitialSection();
 
-            currentEnvironment.CurrentPrefabAsset.Reference.InstantiateAsync().Completed += DefaultRoomSpawn;
+            var hallwayOp = currentEnvironment.CurrentPrefabAsset.Reference.InstantiateAsync();
+            StartCoroutine(loadingProgressContext.LoadingAssetProgress(hallwayOp, "Loading Hallway"));
+            hallwayOp.Completed += DefaultRoomSpawn;
         }
 
         private void DefaultRoomSpawn(AsyncOperationHandle<GameObject> handle1)
@@ -132,13 +139,17 @@ namespace SupremacyHangar.Runtime.Environment
                 var partForJoin = currentEnvironment.CurrentPrefabAsset.MyJoinsByConnector[join];
                 var nodeForJoin = partForJoin.Destinations[0];
 
-                operationsForJoins.Add(_connectivityGraph.MyJoins[nodeForJoin].Reference.InstantiateAsync(), join);
+                var joinOp = _connectivityGraph.MyJoins[nodeForJoin].Reference.InstantiateAsync();
+                StartCoroutine(loadingProgressContext.LoadingAssetProgress(joinOp, "Loading Doors"));
+                operationsForJoins.Add(joinOp, join);
             }
 
             foreach (var operation in operationsForJoins.Keys)
                 operation.Completed += InitializeDefaultDoor;
 
-            _playerObject.InstantiateAsync().Completed += PlayerLoaded;
+            var playerOp = _playerObject.InstantiateAsync();
+            StartCoroutine(loadingProgressContext.LoadingAssetProgress(playerOp, "Loading Player"));
+            playerOp.Completed += PlayerLoaded;
             _container.InjectGameObject(currentEnvironment.CurrentGameObject);
         }
 
@@ -178,6 +189,7 @@ namespace SupremacyHangar.Runtime.Environment
 
             _container.InjectGameObject(result);
             result.SetActive(true);
+            GameObject.FindGameObjectWithTag("Loading").SetActive(false);
         }
 
         private void DoorOpened()
@@ -287,7 +299,9 @@ namespace SupremacyHangar.Runtime.Environment
 
             var partForJoin = currentEnvironment.CurrentPrefabAsset.MyJoinsByConnector[currentSilo.ToConnectTo];
             var nodeForJoin = partForJoin.Destinations[0];
-            _connectivityGraph.MyJoins[nodeForJoin].Reference.InstantiateAsync().Completed += InstantiateSilo;
+            var siloOperationHandle = _connectivityGraph.MyJoins[nodeForJoin].Reference.InstantiateAsync();
+            StartCoroutine(loadingProgressContext.LoadingAssetProgress(siloOperationHandle));
+            siloOperationHandle.Completed += InstantiateSilo;
         }
 
         private void InstantiateSilo(AsyncOperationHandle<GameObject> operationHandler)
@@ -358,7 +372,6 @@ namespace SupremacyHangar.Runtime.Environment
 
         public void UnloadSilo(bool waitOnWindow = true)
         {
-            _container.Unbind<BaseRecord>();
             if (_currentSilo && waitOnWindow)
             {
                 _siloSignalHandler.CloseSilo();

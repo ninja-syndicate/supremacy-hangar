@@ -3,6 +3,7 @@ using SupremacyHangar.Runtime.Environment;
 using Zenject;
 using SupremacyHangar.Runtime.Silo;
 using SupremacyHangar.Runtime.ContentLoader;
+using SupremacyHangar.Runtime.Actors.Player;
 
 
 namespace SupremacyHangar.Runtime
@@ -17,6 +18,7 @@ namespace SupremacyHangar.Runtime
             SiloSignalInstaller.Install(Container);
             ContentSignalInstaller.Install(Container);
             CrateSignalInstaller.Install(Container);
-        }
+			ProgressSignalInstaller.Install(Container);
+		}
     }
 }
