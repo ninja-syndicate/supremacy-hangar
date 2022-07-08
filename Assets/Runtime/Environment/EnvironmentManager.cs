@@ -12,6 +12,7 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 using SupremacyHangar.Runtime.ContentLoader.Types;
 using SupremacyHangar.Runtime.ContentLoader;
 using SupremacyData.Runtime;
+using UnityEngine.Serialization;
 
 namespace SupremacyHangar.Runtime.Environment
 {
@@ -53,8 +54,12 @@ namespace SupremacyHangar.Runtime.Environment
 
         public bool SiloExists { get; private set; } = false;
 
+        [FormerlySerializedAs("_playerObject")] [SerializeField]
+        private AssetReferenceGameObject instantiatablePlayerObject;
+
         [SerializeField]
-        private AssetReferenceGameObject _playerObject;
+        private GameObject vrPlayerObject;
+
 
         int doorCounter = 0;
         private Dictionary<AsyncOperationHandle<GameObject>, ConnectivityJoin> operationsForJoins = new Dictionary<AsyncOperationHandle<GameObject>, ConnectivityJoin>();
@@ -138,7 +143,17 @@ namespace SupremacyHangar.Runtime.Environment
             foreach (var operation in operationsForJoins.Keys)
                 operation.Completed += InitializeDefaultDoor;
 
-            _playerObject.InstantiateAsync().Completed += PlayerLoaded;
+            if (instantiatablePlayerObject.Asset != null)
+            {
+                instantiatablePlayerObject.InstantiateAsync().Completed += PlayerLoaded;
+            } else if (vrPlayerObject != null && nextRoomEnvironmentPrefabRef.SpawnPointValid)
+            {
+                var spawnPoint = nextRoomEnvironmentPrefabRef.SpawnPoint;
+                vrPlayerObject.transform.position = spawnPoint.position;
+                vrPlayerObject.transform.rotation = spawnPoint.rotation;
+            }
+
+            
             _container.InjectGameObject(currentEnvironment.CurrentGameObject);
         }
 
