@@ -186,7 +186,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 StartCoroutine(loadingProgressContext.LoadingAssetProgress(skinOperationHandler));
                 skinOperationHandler.Completed += (skin) =>
                 {
-                    myMech.skin = skin.Result as Skin;
+                    myMech.skin = skin.Result;
                     callBack(myMech.skin);
                 };
             }
@@ -272,12 +272,13 @@ namespace SupremacyHangar.Runtime.ContentLoader
                     TargetMech.InstantiateAsync(spawnLocation.position, spawnLocation.rotation, spawnLocation).Completed += (mech) =>
                     {
                         myMech.mech = mech.Result;
-                        SetLoadedSkin(myMech.mech, insideCrate);
+                        loadingProgressContext.ProgressSignalHandler.FinishedLoading(mech.Result);
+                        SetLoadedSkin(insideCrate);
                     };
                 });
         }
 
-        private void SetLoadedSkin(GameObject mech, bool insideCrate = false)
+        private void SetLoadedSkin(bool insideCrate = false)
         {
             LoadSkinReference(
                 (skin) =>

@@ -27,7 +27,10 @@ namespace SupremacyHangar.Runtime.Actors.Silo
             switch (newState)
             {
                 case SiloState.StateName.Loaded:
-                case SiloState.StateName.Loading:
+                case SiloState.StateName.LoadingSilo:
+                case SiloState.StateName.LoadingSiloContent:
+                case SiloState.StateName.EmptySiloLoaded:
+                case SiloState.StateName.LoadingCrateContent:
                     if (!interactionEnabled) return;
                     interactionEnabled = false;
                     if (!firstPersonControllerSet) return;

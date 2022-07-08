@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2194324556320003271}
   - component: {fileID: 6483035673739059314}
+  - component: {fileID: 3742903107328478526}
   m_Layer: 0
   m_Name: LootBox_Zaibatsu_External
   m_TagString: Untagged
@@ -80,6 +81,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 725631272134244943}
   spawnPoint: {fileID: 9099381127303746025}
+--- !u!114 &3742903107328478526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529005206211038845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d490038920c4a4146a9480255675c81e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnPoint: {fileID: 9099381127303746025}
 --- !u!1 &7204512912031322836
 GameObject:
   m_ObjectHideFlags: 0

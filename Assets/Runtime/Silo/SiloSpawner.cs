@@ -1,15 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using SupremacyHangar.Runtime.Environment;
 using Zenject;
 using SupremacyHangar.Runtime.Environment.Connections;
-using SupremacyData.Runtime;
 using TMPro;
+using SupremacyHangar.Runtime.Actors.Silo;
+using SupremacyHangar.Runtime.ContentLoader;
+using SupremacyHangar.Runtime.Types;
 
 namespace SupremacyHangar.Runtime.Silo
 {
-    public class SiloPositioner : MonoBehaviour
+    public class SiloSpawner : MonoBehaviour
     {
         private EnvironmentManager _environmentManager;
 
@@ -20,10 +20,7 @@ namespace SupremacyHangar.Runtime.Silo
 
         [SerializeField] private Collider siloDoorTrigger;
         [SerializeField] private Collider siloInteractionTrigger;
-
-        public bool ContainsCrate { get; set; } = false;
-        public bool canOpenCrate { get; set; } = false;
-        
+                
         public bool SiloSpawned = false;
 
         [SerializeField] private Animator myWindowAnim;
@@ -35,12 +32,34 @@ namespace SupremacyHangar.Runtime.Silo
         //ToDo link with progress bar text changer
         [SerializeField] private TMP_Text loadButtonText;
 
+        private SiloState siloState;
+
         [Inject]
-        public void Constuct(EnvironmentManager environmentManager, SignalBus bus)
+        public void Constuct(EnvironmentManager environmentManager, SignalBus bus, SiloState siloState)
         {
             _environmentManager = environmentManager;
             _bus = bus;
             SubscribeToSignal();
+            this.siloState = siloState;
+            this.siloState.OnStateChanged += OnSiloStateChanged;
+        }
+
+        private void OnSiloStateChanged(SiloState.StateName newState)
+        {
+            switch (newState)
+            {
+                case SiloState.StateName.LoadingSilo:
+                    PrepareSilo();
+                    siloInteractionTrigger.enabled = false;
+                    break;
+                case SiloState.StateName.LoadingCrateContent:
+                    siloInteractionTrigger.enabled = false;
+                    break;
+                case SiloState.StateName.LoadedWithCrate:
+                case SiloState.StateName.Loaded:
+                    siloInteractionTrigger.enabled = true;
+                    break;
+            }
         }
 
         private void OnEnable()
@@ -54,6 +73,7 @@ namespace SupremacyHangar.Runtime.Silo
             _bus.Unsubscribe<CloseSiloSignal>(CloseSilo);
             _bus.Unsubscribe<SiloUnloadedSignal>(SiloClosed);
             _bus.Unsubscribe<SiloFilledSignal>(OpenSilo);
+            _bus.Unsubscribe<AssetLoadedWithSpawnSignal>(NextSiloState);
             _subscribed = false;
         }
 
@@ -63,7 +83,19 @@ namespace SupremacyHangar.Runtime.Silo
             _bus.Subscribe<CloseSiloSignal>(CloseSilo);
             _bus.Subscribe<SiloUnloadedSignal>(SiloClosed);
             _bus.Subscribe<SiloFilledSignal>(OpenSilo);
+            _bus.Subscribe<AssetLoadedWithSpawnSignal>(NextSiloState);
             _subscribed = true;
+        }
+
+        private void NextSiloState(AssetLoadedWithSpawnSignal signal)
+        {
+            switch (siloState.CurrentState)
+            {
+                case SiloState.StateName.LoadingSilo:
+                    siloState.SpawnLocation = signal.SpawnPoint;
+                    siloState.NextState(SiloState.StateName.EmptySiloLoaded);
+                    break;
+            }
         }
 
         public void CloseSilo()
@@ -74,12 +106,19 @@ namespace SupremacyHangar.Runtime.Silo
             siloClosing = true;
             //Close window on silo unload
             myWindowAnim.SetBool("IsOpen", false);
+            
+            switch(siloState.CurrentState)
+            {
+                case SiloState.StateName.Loaded:
+                case SiloState.StateName.LoadedWithCrate:
+                    siloState.NextState(SiloState.StateName.NotLoaded);
+                    break;
+            }
         }
 
         private void SiloClosed()
         {
             siloClosing = false;
-            ContainsCrate = false;
             loadButtonText.text = "Pressurize";
 
             if (SiloSpawned)
@@ -92,7 +131,6 @@ namespace SupremacyHangar.Runtime.Silo
             if (SiloSpawned) return;
             
             SiloSpawned = true;
-            siloInteractionTrigger.enabled = false;
 
             //Clean-up existing silo (Only one silo at a time)
             _environmentManager.UnloadSilo();
@@ -112,16 +150,12 @@ namespace SupremacyHangar.Runtime.Silo
             //unlock doors
             siloDoorTrigger.enabled = true;
 
-            //unlock other silo Trigger
-            siloInteractionTrigger.enabled = true;
-
             //open window
             myWindowAnim.SetBool("IsOpen", true);
 
             //change console button value
-            if (ContainsCrate)
+            if (siloState.Contents is MysteryCrate)
             {
-                canOpenCrate = true;
                 loadButtonText.text = "Open";
             }
         }

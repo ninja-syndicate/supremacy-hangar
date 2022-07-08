@@ -10,6 +10,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
 {
     public class LoadingProgressContext
     {
+        public ProgressSignalHandler ProgressSignalHandler => progressSignalHandler;
         public static ProgressSignalHandler progressSignalHandler;
 
         [Inject]
