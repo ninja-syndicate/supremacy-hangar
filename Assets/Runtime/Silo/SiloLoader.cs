@@ -21,9 +21,9 @@ namespace SupremacyHangar.Runtime.Silo
         private SiloItem[] siloContents;
         
         private bool playerPresent;
-        private FirstPersonController playerController;
+        private IPlayerController playerController;
 
-        public override void OnPlayerEntered(GameObject go, FirstPersonController controller)
+        public override void OnPlayerEntered(GameObject go, IPlayerController controller)
         {
             playerPresent = true;
             playerController = controller;

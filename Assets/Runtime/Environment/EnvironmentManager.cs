@@ -143,7 +143,7 @@ namespace SupremacyHangar.Runtime.Environment
             foreach (var operation in operationsForJoins.Keys)
                 operation.Completed += InitializeDefaultDoor;
 
-            if (instantiatablePlayerObject.Asset != null)
+            if (instantiatablePlayerObject.RuntimeKeyIsValid())
             {
                 instantiatablePlayerObject.InstantiateAsync().Completed += PlayerLoaded;
             } else if (vrPlayerObject != null && nextRoomEnvironmentPrefabRef.SpawnPointValid)

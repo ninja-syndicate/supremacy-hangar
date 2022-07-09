@@ -15,7 +15,7 @@ namespace SupremacyHangar.Runtime.Actors.Doorway
         private bool animatorDoorState;
 
         private bool playerPresent;
-        private FirstPersonController playerController;
+        private IPlayerController playerController;
 
         public override void Awake()
         {
@@ -23,16 +23,14 @@ namespace SupremacyHangar.Runtime.Actors.Doorway
             SetupAnimator();
         }
         
-        public override void OnPlayerEntered(GameObject go, FirstPersonController controller)
+        public override void OnPlayerEntered(GameObject go, IPlayerController controller)
         {
             playerPresent = true;
             playerController = controller;
             playerController.OnInteractionTriggered += OnDoorInteraction;
-            if (automaticOpen)
-            {
-                animatorDoorState = true;
-                animator.SetBool(doorPropertyHash, true);
-            }
+            if (!automaticOpen) return;
+            animatorDoorState = true;
+            animator.SetBool(doorPropertyHash, true);
         }
 
         public void OnDoorInteraction()

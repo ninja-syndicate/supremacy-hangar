@@ -8,7 +8,7 @@ namespace SupremacyHangar.Runtime.Actors
     {
         [SerializeField] PlayerElevator playerElevator;
 
-        private FirstPersonController playerController;
+        private IPlayerController playerController;
 
         public override void OnPlayerExited()
         {
@@ -18,7 +18,7 @@ namespace SupremacyHangar.Runtime.Actors
             playerController = null;            
         }
 
-        public override void OnPlayerEntered(GameObject go, FirstPersonController controller)
+        public override void OnPlayerEntered(GameObject go, IPlayerController controller)
         {
             SetupElevatorInteraction();
             playerController = controller;

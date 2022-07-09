@@ -25,7 +25,7 @@ namespace SupremacyHangar.Runtime.Interaction
         }        
         
         public abstract void OnPlayerExited();
-        public abstract void OnPlayerEntered(GameObject go, FirstPersonController controller);
+        public abstract void OnPlayerEntered(GameObject go, IPlayerController controller);
         
         private void SetupInteractionZone()
         {

@@ -8,9 +8,9 @@ namespace SupremacyHangar.Runtime.Interaction
     {
         private bool currentInteraction;
         private GameObject currentPlayer;
-        private FirstPersonController currentPlayerController;
+        private IPlayerController currentPlayerController;
         
-        public event Action<GameObject, FirstPersonController> OnPlayerEntered;
+        public event Action<GameObject, IPlayerController> OnPlayerEntered;
         public event Action OnPlayerExited;
         
         private void OnTriggerEnter(Collider other)

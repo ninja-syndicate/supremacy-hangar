@@ -8,7 +8,7 @@ namespace SupremacyHangar.Runtime.Actors.Player
 	[RequireComponent(typeof(CharacterController))]
 	[RequireComponent(typeof(PlayerInput))]
 	[DefaultExecutionOrder(1)]
-	public class FirstPersonController : MonoBehaviour
+	public class FirstPersonController : MonoBehaviour, IPlayerController
 	{
 		[Header("Player")]
 		[Tooltip("Move speed of the character in m/s")]
@@ -55,7 +55,7 @@ namespace SupremacyHangar.Runtime.Actors.Player
 		
 		public event Action OnInteractionTriggered;
 		
-		public float3 PlatformVelocity = float3.zero;
+		public float3 PlatformVelocity { get; set; } = float3.zero;
 		
 		// cinemachine
 		private float _cinemachineTargetPitch;
