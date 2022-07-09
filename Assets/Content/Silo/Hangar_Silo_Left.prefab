@@ -11,13 +11,14 @@ GameObject:
   - component: {fileID: 821446330027626394}
   - component: {fileID: 6324144898081148458}
   - component: {fileID: 9013100066655504016}
+  - component: {fileID: 3078790519195988180}
   m_Layer: 0
   m_Name: Hangar_Silo_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &821446330027626394
 Transform:
   m_ObjectHideFlags: 0
@@ -73,6 +74,110 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mechSpawner: {fileID: 3377010337067339204}
+--- !u!114 &3078790519195988180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12822200296412448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38f6bf3d943ac7945842268c9ef1dca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractionManager: {fileID: 0}
+  m_Colliders:
+  - {fileID: 6047638348000461394}
+  - {fileID: 6789935050573703683}
+  - {fileID: 1009218531929390824}
+  - {fileID: 7322354462015536803}
+  - {fileID: 5120395861952148583}
+  - {fileID: 4650647649240664911}
+  - {fileID: 7640777013683476981}
+  - {fileID: 1423300160278584887}
+  - {fileID: 6263050256274056231}
+  - {fileID: 198506678116391606}
+  - {fileID: 2475043582301357110}
+  - {fileID: 5280813986158660156}
+  - {fileID: 2578241927965279595}
+  - {fileID: 4961638477022270230}
+  - {fileID: 9136578209886692751}
+  - {fileID: 8657056185256799370}
+  - {fileID: 7032363967413787364}
+  - {fileID: 2944553247056903742}
+  - {fileID: 1696492575319178413}
+  - {fileID: 1696492575319178413}
+  m_InteractionLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_InteractionLayers:
+    m_Bits: 1
+  m_SelectMode: 1
+  m_CustomReticle: {fileID: 0}
+  m_FirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnFirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnLastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnActivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_TeleportationProvider: {fileID: 0}
+  m_MatchOrientation: 0
+  m_TeleportTrigger: 0
+  m_Teleporting:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &843654189131952629
 GameObject:
   m_ObjectHideFlags: 0
