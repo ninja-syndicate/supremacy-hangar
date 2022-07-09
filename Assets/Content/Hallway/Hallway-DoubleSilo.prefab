@@ -661,6 +661,8 @@ MonoBehaviour:
   m_InteractionManager: {fileID: 0}
   m_Colliders:
   - {fileID: 3625036961961476385}
+  - {fileID: 3727239580083274709}
+  - {fileID: 4329580708615136541}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295

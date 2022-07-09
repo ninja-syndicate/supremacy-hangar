@@ -9,15 +9,13 @@ namespace SupremacyHangar.Runtime.Environment
     {
         private SignalBus _bus;
         private bool _subscribed;
-        
+
+        private bool _characterControllerValid;
         private CharacterController _characterController;
 
         private void Awake()
         {
-            if(TryGetComponent(out CharacterController controller))
-            {
-                _characterController = controller;
-            }
+            _characterControllerValid = TryGetComponent(out _characterController);
         }
 
         [Inject]
@@ -48,6 +46,7 @@ namespace SupremacyHangar.Runtime.Environment
 
         public void MoveToZero(RepositionObjectSignal signal)
         {
+            Debug.Log("Reposition");
             ToggleCharacterController();
             transform.position -= signal.Position;
 
@@ -56,8 +55,8 @@ namespace SupremacyHangar.Runtime.Environment
 
         private void ToggleCharacterController()
         {
-            if (_characterController)
-                _characterController.enabled = !_characterController.enabled;
+            if (!_characterControllerValid) return;
+            _characterController.enabled = !_characterController.enabled;
         }
     }
 }
