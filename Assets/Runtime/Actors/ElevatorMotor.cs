@@ -2,6 +2,7 @@ using SupremacyHangar.Runtime;
 using SupremacyHangar.Runtime.Actors;
 using System.Collections;
 using System.Collections.Generic;
+using SupremacyHangar.Runtime.Actors.Player;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityMath = Unity.Mathematics;

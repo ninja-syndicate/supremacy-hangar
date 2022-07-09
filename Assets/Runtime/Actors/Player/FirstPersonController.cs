@@ -1,11 +1,9 @@
-using UnityEngine;
 using System;
-using UnityEngine.InputSystem;
-using Zenject;
-using SupremacyHangar.Runtime.Interaction;
 using Unity.Mathematics;
+using UnityEngine;
+using UnityEngine.InputSystem;
 
-namespace SupremacyHangar.Runtime
+namespace SupremacyHangar.Runtime.Actors.Player
 {
 	[RequireComponent(typeof(CharacterController))]
 	[RequireComponent(typeof(PlayerInput))]

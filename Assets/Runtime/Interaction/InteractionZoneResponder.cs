@@ -1,3 +1,4 @@
+using SupremacyHangar.Runtime.Actors.Player;
 using UnityEngine;
 
 namespace SupremacyHangar.Runtime.Interaction
