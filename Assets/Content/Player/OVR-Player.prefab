@@ -593,7 +593,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: d712312c9210e2e42a66216cd00cfa81, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -624,7 +624,7 @@ SphereCollider:
   m_GameObject: {fileID: 1490646678039435032}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -766,6 +766,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 269844a24f6f468e8fa03456473baa17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  normalColor: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 0}
+  interactibleColor: {r: 1, g: 0.025157154, b: 0.025157154, a: 0}
+  controllerRenderers:
+  - {fileID: 1314247804874547017}
+  - {fileID: 2887216951134551210}
+  activationActions:
+  - m_UseReference: 1
+    m_Action:
+      m_Name: Element 0
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 919a336b-a11e-4110-ba95-58d2f787b231
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
+  - m_UseReference: 1
+    m_Action:
+      m_Name: Element 0
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 919a336b-a11e-4110-ba95-58d2f787b231
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
 --- !u!54 &6557180359889719209
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -856,7 +886,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: d712312c9210e2e42a66216cd00cfa81, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -887,7 +917,7 @@ SphereCollider:
   m_GameObject: {fileID: 3374716337698762557}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}

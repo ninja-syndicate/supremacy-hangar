@@ -15,7 +15,14 @@ namespace SupremacyHangar.Runtime.Interaction
         
         private void OnTriggerEnter(Collider other)
         {
-            if (!other.TryGetComponent(out currentPlayerController)) return;
+            if (!other.TryGetComponent(out currentPlayerController))
+            {
+                if (other.attachedRigidbody != null)
+                {
+                    if (!other.attachedRigidbody.TryGetComponent(out currentPlayerController)) return;
+                }
+            }
+            Debug.Log($"Current interactor is: {other.name}", other);
             currentPlayer = other.gameObject;
             currentInteraction = true;
             OnPlayerEntered?.Invoke(currentPlayer, currentPlayerController);
