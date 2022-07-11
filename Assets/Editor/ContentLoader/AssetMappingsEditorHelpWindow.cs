@@ -32,11 +32,15 @@ namespace SupremacyHangar
             skinAssetImportingHelp = "1) Skin asset must be addressable\n" +
                 "2) Skin asset must be named the same as in static Data\n" +
                 "3) For mech skins the folder must go under Assets/Content/Mechs\n" +
+                "  3.1) Mech skins must be stored in a folder with the name of the Mech it belongs to\n" +
+                "       e.g. Mech Skin - Annihilator - Gold will search Assets/Content/Mechs & all subdirectories\n" +
+                "            for the Annihilator folder and get the skin named Gold\n" +
                 "4) For Weapon Skins the folder must go under Assets/Content/Weapons\n" +
-                "5) The skin must be stored in a folder with the name of the Mech/Weapon it belongs to\n" +
-                "       e.g. Mech Skin - Annihilator - Gold will search Assets/Content/Mechs & all subdirectories for the Annihilator folder and get the skin named Gold\n" +
+                "  4.1) Weapon skins must be stored in a folder with the name of the Weapons type\n" +
+                "       e.g. Weapon Skin - ARCHON SPINSHOT MING-549 - Daison Avionics (type minigun)\n" +
+                "            will search Assets/Content/Weapons & all subdirectories for\n" +
+                "            the Minigun folder and get the skin named Daison Avionics\n" +
                 "6) If the folder or skin does not exist it will use the last set skin or none";
-
 
             logWidget.LogNormal("Purpose: Import missing keys and try to import assets. If key exists with no asset the importer WILL NOT try to set it.\n\n");
             logWidget.LogNormal("How to import keys\n");
