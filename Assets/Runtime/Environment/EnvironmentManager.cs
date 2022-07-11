@@ -158,7 +158,7 @@ namespace SupremacyHangar.Runtime.Environment
             //Disable door colliders
             if (doorCounter == 0)
                 newSectionEnvironmentPrefab.ToggleDoor();
-            else if (MaxSiloOffset <= 1)
+            else if (MaxSiloOffset <= 2)
                 newSectionEnvironmentPrefab.ToggleDoor();
 
             ++doorCounter;
