@@ -108,46 +108,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f95414623b6d10046a61dfd6eda58f19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonTestFragment: "{\n    \"faction\": \"880db344-e405-428d-84e5-6ebebab1fe6d\",\n   
-    \"silos\":\n    [\n        {\n            \"type\": \"mech\",\n            \"ownership_id\":
-    \"465fe68c-6487-4f78-92aa-218cf129e071\",\n            \"static_id\": \"625cd381-7c66-4e2f-9f69-f81589105730\",\n           
-    \"skin\": {\n                \"type\": \"skin\",\n                \"static_id\":
-    \"ff1b7d82-40b1-4d1a-b93a-f5da92ec43ed\"\n            }\n        },\n       
-    {\n            \"type\": \"mech\",\n            \"ownership_id\": \"4d87aea5-945d-42f4-9d80-9c44420bdfde\",\n           
-    \"static_id\": \"625cd381-7c66-4e2f-9f69-f81589105730\",\n            \"skin\":
-    {\n                \"type\": \"skin\",\n                \"static_id\": \"72ffdb5c-c003-4734-b1d1-07898f5bcb39\"\n           
-    }\n        },\n        {\n            \"type\": \"mystery_crate\",\n           
-    \"ownership_id\": \"96df238c-dcbd-4913-bda9-8d18b5343c76\",\n            \"static_id\":
-    \"9f9275eb-491a-47aa-b9d7-dd8185f179ca\",\n            \"can_open_on\": \"2022-07-14T00:00:00.0Z\"\n       
-    },\n        {\n            \"type\": \"mystery_crate\",\n            \"ownership_id\":
-    \"3beaeae1-0ce9-4d7b-befd-3ccaad332ead\",\n            \"static_id\": \"3ca1d928-51fa-4c9e-8a82-6ee5819b93d2\",\n           
-    \"can_open_on\": \"2022-07-14T00:00:00.0Z\"\n        },\n        {\n           
-    \"type\": \"mystery_crate\",\n            \"ownership_id\": \"96df238c-dcbd-4913-bda9-8d18b5343c76\",\n           
-    \"static_id\": \"c92c330a-76c6-4306-b25b-a8bd6512bec4\",\n            \"can_open_on\":
-    \"2022-07-14T00:00:00.0Z\"\n        },\n        {\n            \"type\": \"mystery_crate\",\n           
-    \"ownership_id\": \"3beaeae1-0ce9-4d7b-befd-3ccaad332ead\",\n            \"static_id\":
-    \"cfe9b5eb-46bc-4947-8866-df4a4e3bf485\",\n            \"can_open_on\": \"2022-07-14T00:00:00.0Z\"\n       
-    },\n        {\n            \"type\": \"mech\",\n            \"ownership_id\":
-    \"d10b80af-55fe-409b-82fd-41b352905471\",\n            \"static_id\": \"3dc5888b-f5ff-4d08-a520-26fd3681707f\",\n           
-    \"skin\":\n            {\n                \"type\": \"skin\",\n               
-    \"ownership_id\": \"adc73179-7b49-4d0d-ac37-7e4ab9e2d879\",\n               
-    \"static_id\": \"bb12fcb6-1aba-4744-a5c2-247ed860e106\"\n            },\n           
-    \"accessories\":\n            [\n                {\n                    \"type\":
-    \"weapon\",\n                    \"ownership_id\": \"d7ecc916-425c-477c-bc77-fc4502b0226a\",\n                   
-    \"static_id\": \"b9d58717-8018-44e0-a19b-46d4431ea583\",\n                   
-    \"skin\":\n                    {\n                        \"type\": \"skin\",\n                       
-    \"static_id\": \"61d2184b-b4fd-4623-80e2-78ddf8fa8ebf\"\n                   
-    }\n                },\n                {\n                    \"type\": \"weapon\",\n                   
-    \"ownership_id\": \"54598eeb-7907-4bd6-9bd1-0912037c7a2d\",\n                   
-    \"static_id\": \"d8aac97a-d1b6-408c-9196-73e4e745364e\",\n                   
-    \"skin\":\n                    {\n                        \"type\": \"skin\",\n                       
-    \"static_id\": \"8303fa1c-ddb8-446a-8e0e-4d31709565fc\"\n                   
-    }\n                },\n                {\n                    \"type\": \"power_core\",\n                   
-    \"ownership_id\": \"bcdf5b45-eaa8-4f8f-99b0-75c25b8a1d33\",\n                   
-    \"static_id\": \"62e197a4-f45e-4034-ac0a-3e625a6770d7\"\n                }\n           
-    ]\n        },\n        {\n            \"type\": \"weapon\",\n            \"ownership_id\":
-    \"70991dfd-33ee-4f2e-949e-39dfd2939d8b\",\n            \"static_id\": \"d61b6aa1-5ddb-42b9-b8af-1eeb5336134d\",\n           
-    \"skin\":\n            {\n                \"ownership_id\": \"f991a839-84c6-444e-af1e-0a31aa1bcbc1\",\n               
-    \"static_id\": \"874db321-38e4-4aa9-aedc-b36feb1e31b5\"\n            }\n       
-    }\n    ]\n}\n"
-  jsonTestFragmentDelay: 0.2
+  jsonTestFragment: "{\r\n    \"faction\": \"880db344-e405-428d-84e5-6ebebab1fe6d\",\r\n   
+    \"silos\":\r\n    [\r\n        {\r\n            \"type\": \"mech\",\r\n           
+    \"ownership_id\": \"465fe68c-6487-4f78-92aa-218cf129e071\",\r\n            \"static_id\":
+    \"625cd381-7c66-4e2f-9f69-f81589105730\",\r\n            \"skin\": {\r\n               
+    \"type\": \"skin\",\r\n                \"static_id\": \"c349065e-62bd-417d-a38c-e9af3626fe43\"\r\n           
+    }\r\n        },\r\n        {\r\n            \"type\": \"mech\",\r\n           
+    \"ownership_id\": \"4d87aea5-945d-42f4-9d80-9c44420bdfde\",\r\n            \"static_id\":
+    \"625cd381-7c66-4e2f-9f69-f81589105730\",\r\n            \"skin\": {\r\n               
+    \"type\": \"skin\",\r\n                \"static_id\": \"72ffdb5c-c003-4734-b1d1-07898f5bcb39\"\r\n           
+    }\r\n        }\r\n    ]\r\n}\r\n"
+  jsonTestFragmentDelay: 0.01
