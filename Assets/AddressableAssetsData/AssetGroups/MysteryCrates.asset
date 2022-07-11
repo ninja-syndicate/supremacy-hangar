@@ -37,6 +37,10 @@ MonoBehaviour:
     m_Address: Lootbox_Archon_External.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 6f256335596761241b6a807e8183ad85
+    m_Address: LootBox_RM_External.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
   m_SchemaSet:

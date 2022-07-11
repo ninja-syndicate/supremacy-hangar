@@ -43,9 +43,9 @@ namespace SupremacyHangar.Runtime.Silo
         public override void InstallBindings()
         {
             Container.Bind<CrateSignalHandler>().AsSingle().NonLazy();
-            Container.DeclareSignal<OpenCrateSignal>();
-            Container.DeclareSignal<FillCrateSignal>();
-            Container.DeclareSignal<CrateContentSignal>();
+            Container.DeclareSignal<OpenCrateSignal>().OptionalSubscriber();
+            Container.DeclareSignal<FillCrateSignal>().OptionalSubscriber();
+            Container.DeclareSignal<CrateContentSignal>().OptionalSubscriber();
         }
     }
 }

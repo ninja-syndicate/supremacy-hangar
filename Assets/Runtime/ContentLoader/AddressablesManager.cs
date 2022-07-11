@@ -38,9 +38,8 @@ namespace SupremacyHangar.Runtime.ContentLoader
         }
         
         private AssetReference previousMech;
-        private AssetReference previousCrate;
 
-        private LoadedAsset myMech { get; set; } = new LoadedAsset();
+        public LoadedAsset myMech { get; set; } = new LoadedAsset();
 
         [SerializeField] private AssetReferenceAssetMappings assetMappingsReference;
 
@@ -206,7 +205,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 StartCoroutine(loadingProgressContext.LoadingAssetProgress(mechOperationHandler, "Loading Mesh"));
                 mechOperationHandler.Completed += (mech) =>
                 {
-                    myMech.mech = mech.Result as GameObject;
+                    myMech.mech = mech.Result;
 
                     callBack(myMech.mech);
                 };
@@ -226,7 +225,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 return;
             }
 
-            SpawnMech(prevTransform, true);
+            SpawnMech(prevTransform, false, true);
         }
 #endif
         public void SpawnMech(Transform spawnLocation, bool insideCrate = false, bool quickLoad = false)
@@ -234,10 +233,8 @@ namespace SupremacyHangar.Runtime.ContentLoader
             prevTransform = spawnLocation;
 
             //When new mech is spawned remove previous unless inside crate
-            if (!insideCrate)
+            if (quickLoad)
                 UnloadMech(quickLoad);
-            else
-                previousCrate = previousMech;
 
             if (sameMechChassis)
             {
@@ -292,11 +289,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
             if (previousMech != null)
             {
                 if (!quickLoad || previousMech != TargetMech)
-                {
-                    if(previousCrate != null) previousCrate.ReleaseAsset();
-
                     previousMech.ReleaseAsset();
-                }
 #if UNITY_EDITOR
                 if (previousMech != TargetMech &&
                     myMech.mech != null)

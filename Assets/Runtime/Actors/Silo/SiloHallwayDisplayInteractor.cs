@@ -52,6 +52,7 @@ namespace SupremacyHangar.Runtime.Actors.Silo
             {
                 if (interactionEnabled) firstPersonController.DecrementInteractionPromptRequests();
                 firstPersonController.OnInteractionTriggered -= SendInteractionMessage;
+                firstPersonControllerSet = false;
             }
         }
 

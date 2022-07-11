@@ -93,7 +93,8 @@ namespace SupremacyHangar.Runtime.Silo
             {
                 case SiloState.StateName.LoadingSilo:
                     siloState.SpawnLocation = signal.SpawnPoint;
-                    siloState.NextState(SiloState.StateName.EmptySiloLoaded);
+                    if(signal.SpawnPoint != null)
+                        siloState.NextState(SiloState.StateName.EmptySiloLoaded);
                     break;
             }
         }

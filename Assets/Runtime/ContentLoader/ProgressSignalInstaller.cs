@@ -19,6 +19,11 @@ namespace SupremacyHangar.Runtime.ContentLoader
         public Transform SpawnPoint;
     }
 
+    public class ComposableLoadedSignal
+    {
+        public Transform[] SpawnPoints;
+    }
+
     public class ProgressSignalHandler
     {
         readonly SignalBus _signalBus;
@@ -41,8 +46,8 @@ namespace SupremacyHangar.Runtime.ContentLoader
         { 
             if ( res && res.TryGetComponent(out SpawnPointLocation loc))
                 _signalBus.Fire(new AssetLoadedWithSpawnSignal() { SpawnPoint = loc.SpawnPoint });
-            else
-                _signalBus.Fire<AssetLoadedSignal>();
+            
+            _signalBus.Fire<AssetLoadedSignal>();
         }
 
         private void AssetLoadingProgress()
@@ -53,6 +58,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
 
             foreach (var handle in progressAmounts)
             {
+                if (!handle.Key.IsValid()) continue;
                 progress += handle.Key.PercentComplete;
                 currentlyLoading = handle.Key.PercentComplete < 1 ? currentlyLoading = handle.Value : "";
             }
@@ -64,8 +70,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
 
             Debug.Log(totalProgress);
             _signalBus.Fire(new AssetLoadingProgressSignal() { PercentageComplete = totalProgress, Description = currentlyLoading });
-
-            if (totalProgress == 1) progressAmounts.Clear();
+            progressAmounts.Clear();
         }
     }
 
@@ -77,6 +82,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
             Container.DeclareSignal<AssetLoadingProgressSignal>().OptionalSubscriber().RunAsync();
             Container.DeclareSignal<AssetLoadedSignal>().OptionalSubscriber().RunAsync();
             Container.DeclareSignal<AssetLoadedWithSpawnSignal>().OptionalSubscriber().RunAsync();
+            Container.DeclareSignal<ComposableLoadedSignal>().OptionalSubscriber().RunAsync();
         }
     }
 }

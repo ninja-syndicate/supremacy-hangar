@@ -315,8 +315,7 @@ namespace SupremacyHangar.Runtime.Environment
             newSilo.SetActive(true);
 
             loadingProgressContext.ProgressSignalHandler.FinishedLoading(newSilo);
-            if (loadedSilo != null)
-                UnloadAssetsAfterSiloClosed();
+
             
             loadedSilo = newSilo;
         }
