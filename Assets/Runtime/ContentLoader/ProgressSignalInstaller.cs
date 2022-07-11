@@ -13,7 +13,11 @@ namespace SupremacyHangar.Runtime.ContentLoader
         public string Description;
     }
 
-    public class AssetLoadedSignal { }
+    public class AssetLoadedSignal 
+    {
+        public GameObject Asset;
+    }
+
     public class AssetLoadedWithSpawnSignal 
     {
         public Transform SpawnPoint;
@@ -21,7 +25,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
 
     public class ComposableLoadedSignal
     {
-        public Transform[] SpawnPoints;
+        public ComposableSockets SocketsLists;
     }
 
     public class ProgressSignalHandler
@@ -43,11 +47,13 @@ namespace SupremacyHangar.Runtime.ContentLoader
         }
 
         public void FinishedLoading(GameObject res)
-        { 
-            if ( res && res.TryGetComponent(out SpawnPointLocation loc))
+        {
+            if (res && res.TryGetComponent(out SpawnPointLocation loc))
                 _signalBus.Fire(new AssetLoadedWithSpawnSignal() { SpawnPoint = loc.SpawnPoint });
-            
-            _signalBus.Fire<AssetLoadedSignal>();
+            else if (res && res.TryGetComponent(out ComposableSockets sockets))
+                _signalBus.Fire(new ComposableLoadedSignal() { SocketsLists = sockets });
+
+            _signalBus.Fire(new AssetLoadedSignal() { Asset = res});
         }
 
         private void AssetLoadingProgress()

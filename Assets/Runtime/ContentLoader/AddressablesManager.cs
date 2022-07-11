@@ -157,6 +157,36 @@ namespace SupremacyHangar.Runtime.ContentLoader
                     {
                         Debug.LogError($"No Skin mapping found for {mech.Skin.StaticID}");
                     }
+
+                    if (mech.Accessories == null) break;
+                    foreach(var item in mech.Accessories)
+                    {
+                        switch(item)
+                        {
+                            case Weapon weapon:
+                                if (!mappings.WeaponModelMappingByGuid.TryGetValue(weapon.StaticID, out weapon.WeaponModelDetails))
+                                {
+                                    Debug.LogError($"No Weapon mapping found for {weapon.StaticID}");
+                                    break;
+                                }
+                                break;
+                            case PowerCore powerCore:
+                                if (!mappings.PowerCoreMappingByGuid.TryGetValue(powerCore.StaticID, out powerCore.PowerCoreDetails))
+                                {
+                                    Debug.LogError($"No Power Core mapping found for {powerCore.StaticID}");
+                                }
+                                break;
+                            case Utility utility:
+                                //if (!mappings.UtilityMappingByGuid.TryGetValue(utility.StaticID, out utility.UtilityDetails))
+                                //{
+                                //    Debug.LogError($"No Utility mapping found for {utility.StaticID}");
+                                //}
+                                break;
+                            default:
+                                Debug.LogError($"Unknown accessory {item}");
+                                break;
+                        }
+                    }
                     break;
                 case MysteryCrate crate:
                     if (!mappings.MysteryCrateMappingByGuid.TryGetValue(crate.StaticID, out crate.MysteryCrateDetails))

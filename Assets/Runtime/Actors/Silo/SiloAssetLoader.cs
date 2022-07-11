@@ -61,17 +61,17 @@ namespace SupremacyHangar.Runtime.Actors.Silo
             _subscribed = true;
         }
 
-        private void FinishedLoadingSiloAsset()
+        private void FinishedLoadingSiloAsset(AssetLoadedSignal signal)
         {
             switch (siloState.CurrentState)
             {
                 case SiloState.StateName.LoadingCrateContent:
                 case SiloState.StateName.LoadingSiloContent:
                     if(!loadedInstances.Contains(addressablesManager.myMech.mech))
-                        loadedInstances.Add(addressablesManager.myMech.mech);
+                        loadedInstances.Add(signal.Asset);
 
-                    if (addressablesManager.TargetSkin != null && !loadedReferences.Contains(addressablesManager.TargetSkin))
-                        loadedReferences.Add(addressablesManager.TargetSkin);
+                    //if (addressablesManager.TargetSkin != null && !loadedReferences.Contains(addressablesManager.TargetSkin))
+                        //loadedReferences.Add(addressablesManager.TargetSkin);
                     break;
             }
 
@@ -86,11 +86,27 @@ namespace SupremacyHangar.Runtime.Actors.Silo
 
         private void LoadComposable(ComposableLoadedSignal signal)
         {
-            foreach (Transform spawn in signal.SpawnPoints)
+            int accessoryIndex = 0;
+            var accessoryList = siloState.Contents as Mech;
+            //Load Weapons
+            foreach (Transform spawn in signal.SocketsLists.WeaponSockets)
             {
-                SetLoadContents(siloState.Contents);
+                SetLoadContents(accessoryList.Accessories[accessoryIndex]);
                 addressablesManager.SpawnMech(spawn);
+                accessoryIndex++;
             }
+
+            //Load Utilities
+            foreach (Transform spawn in signal.SocketsLists.UtilitySockets)
+            {
+                SetLoadContents(accessoryList.Accessories[accessoryIndex]);
+                addressablesManager.SpawnMech(spawn);
+                accessoryIndex++;
+            }
+
+            //Load Power Core
+            SetLoadContents(accessoryList.Accessories[accessoryIndex]);
+            addressablesManager.SpawnMech(signal.SocketsLists.PowerCoreSocket);
 
             NextSiloState();
         }
@@ -180,6 +196,19 @@ namespace SupremacyHangar.Runtime.Actors.Silo
                     addressablesManager.TargetMech = box.MysteryCrateDetails.MysteryCrateReference;
                     addressablesManager.TargetSkin = null;
                     break;
+                case Weapon weapon:
+                    addressablesManager.TargetMech = weapon.WeaponModelDetails.Reference;
+                    addressablesManager.TargetSkin = weapon.WeaponSkinDetails.Reference;
+                    loadedReferences.Add(weapon.WeaponSkinDetails.Reference);
+                    break;
+                case PowerCore powerCore:
+                    addressablesManager.TargetMech = powerCore.PowerCoreDetails.Reference;
+                    addressablesManager.TargetSkin = null;
+                    break;
+                case Utility utility:
+                    addressablesManager.TargetMech = null;
+                    addressablesManager.TargetSkin = null;
+                    break;
                 default:
                     Debug.LogWarning($"Unexpected type of {siloState.Contents.GetType()} - cowardly refusing to fill the silo", this);
                     break;
@@ -207,6 +236,7 @@ namespace SupremacyHangar.Runtime.Actors.Silo
             else
             {
                 addressablesManager.TargetSkin = mech.MechSkinDetails.SkinReference;
+                loadedReferences.Add(mech.MechSkinDetails.SkinReference);
             }
         }
     }

@@ -42,15 +42,24 @@ namespace SupremacyHangar.Runtime.Types
     public class Weapon : SiloItem
     {
         public Skin Skin;
+        public WeaponModelMapping WeaponModelDetails;
+        public WeaponSkinMapping WeaponSkinDetails;
     }    
 
     [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public class PowerCore : SiloItem
     {
+        public PowerCoreMapping PowerCoreDetails;
     }        
     
     [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public class Skin : SiloItem
     {        
+    }
+
+    [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
+    public class Utility : SiloItem
+    {
+        //public UtilityMapping UtilityDetails;
     }
 }
