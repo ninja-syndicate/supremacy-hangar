@@ -38,6 +38,7 @@ namespace SupremacyHangar.Runtime.Actors.Silo
                     break;
                 case SiloState.StateName.NotLoaded:
                 case SiloState.StateName.LoadedWithCrate:
+                    if (!siloState.CanOpenCrate && newState == SiloState.StateName.LoadedWithCrate) return;
                     interactionEnabled = true;
                     if (!firstPersonControllerSet) return;
                     firstPersonController.IncrementInteractionPromptRequests();

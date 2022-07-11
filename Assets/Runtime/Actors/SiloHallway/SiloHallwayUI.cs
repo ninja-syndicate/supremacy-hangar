@@ -2,6 +2,7 @@ using System;
 using SupremacyData.Runtime;
 using SupremacyHangar.Runtime.ContentLoader;
 using SupremacyHangar.Runtime.Environment;
+using SupremacyHangar.Runtime.Silo;
 using SupremacyHangar.Runtime.Types;
 using TMPro;
 using UnityEngine;
@@ -37,14 +38,18 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
         private float nextClockUpdate = -1;
         private DateTime counterValue;
 
+        private CrateSignalHandler _crateHandler;
+        private bool crateOpenSet = false;
+
         public void Awake()
         {
             UpdateFactionColor(startFactionColor);
         }
         
         [Inject]
-        public void SetDependencies(AddressablesManager addressablesManager, EnvironmentManager environmentManager)
+        public void SetDependencies(AddressablesManager addressablesManager, EnvironmentManager environmentManager, CrateSignalHandler crateSignalHandler)
         {
+            _crateHandler = crateSignalHandler;
             int mySiloNumber = environmentManager.SiloOffset + siloOffset;
 
             SiloItem myContents;
@@ -138,8 +143,16 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
 
         private void UpdateCounter()
         {
+            if (crateOpenSet) return;
             var now = DateTime.UtcNow;
             var diff = counterValue - now;
+            if (diff <= TimeSpan.Zero && !crateOpenSet)
+            {
+                _crateHandler.CanOpenCrate();
+                crateOpenSet = true;
+                siloContentsName1.text = TimeSpan.Zero.ToString("hh':'mm':'ss");
+                return;
+            }
             siloContentsName1.text = diff.ToString(diff.Days > 0 ? "d':'hh':'mm':'ss" : "hh':'mm':'ss");
             nextClockUpdate = Time.unscaledTime + clockUpdateDelay;
         }

@@ -13,6 +13,7 @@ namespace SupremacyHangar.Runtime.Silo
         public SiloItem CrateContents;
     }
 
+    public class CanOpenCrateSignal { }
     public class CrateSignalHandler
     {
         readonly SignalBus _signalBus;
@@ -36,6 +37,11 @@ namespace SupremacyHangar.Runtime.Silo
         {
             _signalBus.Fire<CrateContentSignal>();
         }
+
+        public void CanOpenCrate()
+        {
+            _signalBus.Fire<CanOpenCrateSignal>();
+        }
     }
 
     public class CrateSignalInstaller : Installer<CrateSignalInstaller>
@@ -46,6 +52,7 @@ namespace SupremacyHangar.Runtime.Silo
             Container.DeclareSignal<OpenCrateSignal>().OptionalSubscriber();
             Container.DeclareSignal<FillCrateSignal>().OptionalSubscriber();
             Container.DeclareSignal<CrateContentSignal>().OptionalSubscriber();
+            Container.DeclareSignal<CanOpenCrateSignal>().OptionalSubscriber();
         }
     }
 }

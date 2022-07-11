@@ -68,7 +68,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
             else
                 totalProgress = progress / progressAmounts.Count;
 
-            Debug.Log(totalProgress);
+            //Debug.Log(totalProgress);
             _signalBus.Fire(new AssetLoadingProgressSignal() { PercentageComplete = totalProgress, Description = currentlyLoading });
             progressAmounts.Clear();
         }

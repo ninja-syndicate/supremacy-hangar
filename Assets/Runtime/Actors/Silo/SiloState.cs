@@ -20,6 +20,7 @@ namespace SupremacyHangar.Runtime.Actors.Silo
             Loaded,
             LoadedWithCrate,
             LoadingCrateContent,
+            Unloading,
         }
 
         [SerializeField] private int siloOffset;
@@ -32,10 +33,43 @@ namespace SupremacyHangar.Runtime.Actors.Silo
 
         public Transform SpawnLocation { get; set; }
 
+        private SignalBus _bus;
+
+        public bool CanOpenCrate { get; private set; } = false;
+        private bool _subscribed;
+
         [Inject]
-        public void Construct(SiloItem[] hallwayContents)
+        public void Construct(SiloItem[] hallwayContents, SignalBus bus)
         {
             contents = hallwayContents[siloOffset];
+            _bus = bus;
+            SubscribeToSignal();
+        }
+
+
+        private void OnEnable()
+        {
+            SubscribeToSignal();
+        }
+
+        private void OnDisable()
+        {
+            if (!_subscribed) return;
+            _bus.Unsubscribe<CanOpenCrateSignal>(CrateCanOpen);
+            _subscribed = false;
+        }
+
+        private void SubscribeToSignal()
+        {
+            if (_bus == null || _subscribed) return;
+            _bus.Subscribe<CanOpenCrateSignal>(CrateCanOpen);
+            _subscribed = true;
+        }
+
+        private void CrateCanOpen()
+        {
+            CanOpenCrate = true;
+            OnStateChanged?.Invoke(CurrentState);
         }
 
         public void UserInteraction()
@@ -47,7 +81,8 @@ namespace SupremacyHangar.Runtime.Actors.Silo
                     nextState = StateName.LoadingSilo;
                     break;
                 case StateName.LoadedWithCrate:
-                    nextState = StateName.LoadingCrateContent;
+                    if(CanOpenCrate)
+                        nextState = StateName.LoadingCrateContent;
                     break;
                 default:
                     Debug.LogError($"Current state has no action {CurrentState}", this);

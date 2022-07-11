@@ -83,6 +83,7 @@ namespace SupremacyHangar.Runtime.Actors.Silo
             siloState.SpawnLocation = signal.SpawnPoint; 
             NextSiloState();
         }
+
         private void LoadComposable(ComposableLoadedSignal signal)
         {
             foreach (Transform spawn in signal.SpawnPoints)
@@ -130,9 +131,10 @@ namespace SupremacyHangar.Runtime.Actors.Silo
                     siloState.NextState(SiloState.StateName.LoadingSiloContent);
                     break;
                 case SiloState.StateName.LoadingCrateContent:
+#if UNITY_EDITOR
                     _crateSignalHandler.NeedCrateContent();
-#if UNITY_WEBGL
-                    //Plugins.WebGL.WebGLPluginJS.GetCrateContent(siloState.Contents.OwnershipID.ToString());
+#elif UNITY_WEBGL
+                    Plugins.WebGL.WebGLPluginJS.GetCrateContent(siloState.Contents.OwnershipID.ToString());
 #endif
                     break;
                 default:

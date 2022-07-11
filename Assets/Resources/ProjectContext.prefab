@@ -130,7 +130,7 @@ MonoBehaviour:
   jsonTestFragment: "{\n    \"faction\": \"880db344-e405-428d-84e5-6ebebab1fe6d\",\n   
     \"silos\":\n    [\n        {\n            \"type\": \"mystery_crate\",\n           
     \"ownership_id\": \"3beaeae1-0ce9-4d7b-befd-3ccaad332ead\",\n            \"static_id\":
-    \"3ca1d928-51fa-4c9e-8a82-6ee5819b93d2\",\n            \"can_open_on\": \"2022-07-14T00:00:00.0Z\"\n       
+    \"3ca1d928-51fa-4c9e-8a82-6ee5819b93d2\",\n            \"can_open_on\": \"2022-07-11T05:19:50.0Z\"\n       
     },\n        {\n            \"type\": \"mech\",\n            \"ownership_id\":
     \"465fe68c-6487-4f78-92aa-218cf129e071\",\n            \"static_id\": \"625cd381-7c66-4e2f-9f69-f81589105730\",\n           
     \"skin\": {\n                \"type\": \"skin\",\n                \"static_id\":
