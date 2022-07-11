@@ -15,7 +15,7 @@ namespace SupremacyHangar
         private float mySpeed;
 
         private bool playerPresent;
-        private FirstPersonController playerController;
+        private IPlayerController playerController;
         private int myNextStop;
         private UnityMath.float3 myCurrentPos;
 
@@ -42,7 +42,13 @@ namespace SupremacyHangar
 
         public void OnTriggerEnter(Collider other)
         {
-            if (!other.TryGetComponent(out playerController)) return;
+            if (!other.TryGetComponent(out playerController))
+            {
+                if (other.attachedRigidbody != null)
+                {
+                    if (!other.attachedRigidbody.TryGetComponent(out playerController)) return;
+                }
+            }
             playerPresent = true;
         }
 

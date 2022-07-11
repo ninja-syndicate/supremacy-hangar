@@ -21,7 +21,7 @@ namespace SupremacyHangar.Runtime.Actors.Player
         private readonly List<Material> controllerMaterials = new();
         
         private int interactableCount = 0;
-        private static readonly int shaderColor = Shader.PropertyToID("_Color");
+        private static readonly int shaderColor = Shader.PropertyToID("_BaseColor");
 
         public void Awake()
         {
@@ -53,6 +53,8 @@ namespace SupremacyHangar.Runtime.Actors.Player
 
         public void Update()
         {
+            if (!(math.lengthsq(PlatformVelocity) > 0)) return;
+
             transform.Translate(new Vector3(PlatformVelocity.x, PlatformVelocity.y, PlatformVelocity.z));
             PlatformVelocity = float3.zero;
         }
