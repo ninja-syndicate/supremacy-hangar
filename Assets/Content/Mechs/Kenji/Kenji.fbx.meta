@@ -1,38 +1,11 @@
 fileFormatVersion: 2
-guid: 66ed0e75ce96c714c805b3d416c6b650
+guid: 37b68ebaba940f142bfdc1678c1f6d03
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable:
-  - first:
-      74: -8377239320667559440
-    second: Object204|Object204.001|Take 001|BaseLayer
-  - first:
-      74: 5141082126243201844
-    second: Object204|Object204|Take 001|BaseLayer
-  - first:
-      74: 7592651256912913416
-    second: Object204|Object204|Take 001|BaseLayer.001
-  - first:
-      74: 943252192747001153
-    second: Armature.001|Armature.001|Take 001|BaseLayer
-  - first:
-      74: -1909875318661734501
-    second: Armature.001|Armature|Take 001|BaseLayer
-  - first:
-      74: -1591566625909754212
-    second: Armature.001|Armature|Take 001|BaseLayer.001
-  - first:
-      74: 6659815016070026850
-    second: Armature.001|Object204.001|Take 001|BaseLayer
-  - first:
-      74: 7642899286380306345
-    second: Armature.001|Object204|Take 001|BaseLayer
-  - first:
-      74: 8664863735489031211
-    second: Armature.001|Object204|Take 001|BaseLayer.001
+  internalIDToNameTable: []
   externalObjects: {}
   materials:
-    materialImportMode: 0
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -41,7 +14,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    removeConstantScaleCurves: 0
+    removeConstantScaleCurves: 1
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -62,7 +35,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.55
+    globalScale: 1.79
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -71,7 +44,7 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
-    nodeNameCollisionStrategy: 0
+    nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
@@ -115,7 +88,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.0055
+    globalScale: 0.0179
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
@@ -126,7 +99,7 @@ ModelImporter:
   humanoidOversampling: 1
   avatarSetup: 0
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
-  remapMaterialsIfMaterialImportModeIsNone: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

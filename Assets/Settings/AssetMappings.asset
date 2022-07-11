@@ -54,7 +54,7 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-  - containsError: 0
+  - containsError: 1
     dataMechModel: {fileID: -3017104320611050935, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
       type: 2}
     mechReference:
@@ -62,6 +62,54 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
+  - containsError: 1
+    dataMechModel: {fileID: 4956909745880066220, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    mechReference:
+      m_AssetGUID: 7a99f688e3fb8354ea2661c348113d6f
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechModel: {fileID: 476358322255940664, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    mechReference:
+      m_AssetGUID: f283334e4df8196419301819615897a4
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechModel: {fileID: 3160154348487789334, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    mechReference:
+      m_AssetGUID: b47831909c819eb4a939bb5163cb9e0d
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechModel: {fileID: -1725972078085913312, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    mechReference:
+      m_AssetGUID: 8ebfffc025b4b9e44b2233a854d70c24
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechModel: {fileID: 1673369590579329074, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    mechReference:
+      m_AssetGUID: 8ebfffc025b4b9e44b2233a854d70c24
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechModel: {fileID: 6516618555034326667, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    mechReference:
+      m_AssetGUID: 85dfe6b0b304173439a086e7c18b650a
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
   mechSkins:
   - containsError: 0
     dataMechSkin: {fileID: 1836859625293672212, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,

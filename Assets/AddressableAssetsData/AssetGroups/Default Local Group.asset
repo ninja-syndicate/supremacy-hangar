@@ -41,6 +41,26 @@ MonoBehaviour:
     m_Address: AssetMappings.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: f283334e4df8196419301819615897a4
+    m_Address: Annihilator.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b47831909c819eb4a939bb5163cb9e0d
+    m_Address: Kenji.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8ebfffc025b4b9e44b2233a854d70c24
+    m_Address: Shirokuma.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 85dfe6b0b304173439a086e7c18b650a
+    m_Address: Viking.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7a99f688e3fb8354ea2661c348113d6f
+    m_Address: War Enforcer.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
   m_SchemaSet:
