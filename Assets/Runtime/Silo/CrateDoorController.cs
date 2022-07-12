@@ -10,7 +10,6 @@ namespace SupremacyHangar.Runtime.Silo
         private bool _subscribed;
 
         [SerializeField] private Animator _animator;
-        [SerializeField] private Transform spawnPoint;
 
         [Inject]
         public void Contruct(SignalBus bus)

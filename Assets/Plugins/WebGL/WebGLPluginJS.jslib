@@ -10,6 +10,14 @@ mergeInto(LibraryManager.library, {
       } catch (e) {
         console.warn("Unable to dispatch");
       }
+   },
+   
+   RequestCrateContent: function (ownership_id) {
+      try {
+        window.dispatchReactUnityEvent("GetCrateContent");
+      } catch (e) {
+        console.warn("Unable to dispatch GetCrateContent");
+      }
    }
    
    GetCrateContent: function (ownership_id) {

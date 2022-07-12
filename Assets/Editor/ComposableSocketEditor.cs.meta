@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Editor/ComposableSocketEditor.cs.meta
 guid: 12db22ee8e422744a946f25a16791ff4
+========
+guid: ccaa1fe7def847a4eb11b0af2dff70fb
+>>>>>>>> develop:Assets/Runtime/Actors/Player/MenuController.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

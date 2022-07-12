@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Pyrotronics Loot Box
+  m_Name: Pyrotronics Mystery Crate
   m_Shader: {fileID: -6465566751694194690, guid: adce8c010a67d844cb119cdf3cab3252,
     type: 3}
   m_ValidKeywords:

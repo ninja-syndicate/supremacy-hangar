@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Warsui Loot Box
+  m_Name: Zaibatsu Mystery Crate
   m_Shader: {fileID: -6465566751694194690, guid: adce8c010a67d844cb119cdf3cab3252,
     type: 3}
   m_ValidKeywords:
@@ -43,19 +43,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Detail_Albedo_Transparency:
-        m_Texture: {fileID: 2800000, guid: ea6460eb75130e840b6d9eeeb677698e, type: 3}
+        m_Texture: {fileID: 2800000, guid: e887f5f02cf32e64ba11621bc529dfa1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Detail_Emission:
-        m_Texture: {fileID: 2800000, guid: b234b5c084ba68243b726e64f6e99b1e, type: 3}
+        m_Texture: {fileID: 2800000, guid: a145d466e0fccbf499b415c7d5b05193, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Detail_Metallic_Smoothness:
-        m_Texture: {fileID: 2800000, guid: c00978eaf5d3f95499fdb916e84dc618, type: 3}
+        m_Texture: {fileID: 2800000, guid: 91aa8a0a8d710fa4a86dc3291a6b76fa, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Detail_Normal:
-        m_Texture: {fileID: 2800000, guid: f547a55c4d4d5da438592e9188486394, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2dc91c9d2ecf90f4d80d507f158f2039, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -152,35 +152,35 @@ Material:
     - _Tiling_Emission_1: 0
     - _Tiling_Normal_Intensity: 1
     - _Vertex_Color_1_Base: 254
-    - _Vertex_Color_1_Metallic: 1
-    - _Vertex_Color_1_Smoothness: 0.4
+    - _Vertex_Color_1_Metallic: 0.693
+    - _Vertex_Color_1_Smoothness: 0.338
     - _Vertex_Color_2_Base: 104
     - _Vertex_Color_2_Metallic: 1
-    - _Vertex_Color_2_Smoothness: 0.237
+    - _Vertex_Color_2_Smoothness: 0.828
     - _Vertex_Color_3_Base: 21
     - _Vertex_Color_3_Metallic: 1
-    - _Vertex_Color_3_Smoothness: 0.873
+    - _Vertex_Color_3_Smoothness: 0.423
     - _Vertex_Color_4_Base: 0
     - _Vertex_Color_4_Metallic: 1
-    - _Vertex_Color_4_Smoothness: 0
+    - _Vertex_Color_4_Smoothness: 0.953
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Emission_Tint: {r: 1, g: 0.7001895, b: 0, a: 0}
+    - _Emission_Tint: {r: 0, g: 0.854568, b: 1, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Speed: {r: 1, g: 2, b: 0, a: 0}
     - _Tiling_Texture_Scale: {r: 1, g: 1, b: 0, a: 0}
     - _Vertex_Color_1_Base: {r: 1, g: 1, b: 1, a: 0}
-    - _Vertex_Color_1_Target: {r: 0.21778663, g: 0.2735849, b: 0.15873086, a: 0}
+    - _Vertex_Color_1_Target: {r: 1, g: 1, b: 1, a: 0}
     - _Vertex_Color_2_Base: {r: 0.4117647, g: 0.4117647, b: 0.4117647, a: 0}
-    - _Vertex_Color_2_Target: {r: 1, g: 0.6509804, b: 0, a: 0}
+    - _Vertex_Color_2_Target: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 0}
     - _Vertex_Color_3_Base: {r: 0.08627, g: 0.08627451, b: 0.08627451, a: 0}
-    - _Vertex_Color_3_Target: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 0}
+    - _Vertex_Color_3_Target: {r: 0.09433961, g: 0.09433961, b: 0.09433961, a: 0}
     - _Vertex_Color_4_Base: {r: 0, g: 0, b: 0, a: 0}
-    - _Vertex_Color_4_Target: {r: 0, g: 0, b: 0, a: 0}
+    - _Vertex_Color_4_Target: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &6687484499865638223
 MonoBehaviour:

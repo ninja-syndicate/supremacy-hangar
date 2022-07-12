@@ -225,26 +225,6 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 callBack(myMech.skin);
             }
         }
-
-        private void LoadMechReference(Action<GameObject> callBack)
-        {
-            if (myMech.mech == null)
-            {
-                previousMech = TargetMech;
-                var mechOperationHandler = TargetMech.LoadAssetAsync<GameObject>();
-                StartCoroutine(loadingProgressContext.LoadingAssetProgress(mechOperationHandler, "Loading Mesh"));
-                mechOperationHandler.Completed += (mech) =>
-                {
-                    myMech.mech = mech.Result;
-
-                    callBack(myMech.mech);
-                };
-            }
-            else
-            {//Mech already loaded
-                callBack(myMech.mech);
-            }
-        }
         
 #if UNITY_EDITOR
         public void QuickSpawn()
@@ -266,23 +246,22 @@ namespace SupremacyHangar.Runtime.ContentLoader
             if (quickLoad)
                 UnloadMech(quickLoad);
 
+            previousMech = TargetMech;
+
             if (sameMechChassis)
             {
                 SetLoadedSkin(myMech.mech);
                 return;
             }
 
-            //Load new Mech & Skin
-            LoadMechReference(
-                (result) =>
+            var mechOperationHandler = TargetMech.InstantiateAsync(spawnLocation.position, spawnLocation.rotation, spawnLocation);
+            StartCoroutine(loadingProgressContext.LoadingAssetProgress(mechOperationHandler, "Loading Mesh"));
+            mechOperationHandler.Completed += (mech) =>
                 {
-                    TargetMech.InstantiateAsync(spawnLocation.position, spawnLocation.rotation, spawnLocation).Completed += (mech) =>
-                    {
-                        myMech.mech = mech.Result;
-                        loadingProgressContext.ProgressSignalHandler.FinishedLoading(mech.Result);
-                        SetLoadedSkin(insideCrate);
-                    };
-                });
+                    myMech.mech = mech.Result;
+                    loadingProgressContext.ProgressSignalHandler.FinishedLoading(mech.Result);
+                    SetLoadedSkin(insideCrate);
+                };
         }
 
         private void SetLoadedSkin(bool insideCrate = false)

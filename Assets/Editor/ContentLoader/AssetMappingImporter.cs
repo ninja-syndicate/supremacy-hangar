@@ -92,7 +92,7 @@ namespace SupremacyHangar.Editor.ContentLoader
                             targetAssetGuid = AssetDatabase.FindAssets($"{targetName} t:EnvironmentConnectivity");
                             break;
                         case ListType.MechChassis:
-                            targetAssetGuid = AssetDatabase.FindAssets($"{targetName} t:GameObject");
+                            targetAssetGuid = AssetDatabase.FindAssets($"{targetName} t:Prefab");
                             break;
                         case ListType.MechSkin:
                             if (!Directory.Exists("Assets/Content/Mechs"))
@@ -106,10 +106,10 @@ namespace SupremacyHangar.Editor.ContentLoader
                                 targetAssetGuid = AssetDatabase.FindAssets($"{targetName} t:Skin", new[] { $"{mechSkinfolderPath}" });
                             break;
                         case ListType.MysteryCrate:
-                            targetAssetGuid = AssetDatabase.FindAssets($"{targetName} t:GameObject");
+                            targetAssetGuid = AssetDatabase.FindAssets($"{targetName} t:Prefab");
                             break;
                         case ListType.WeaponModel:
-                            targetAssetGuid = AssetDatabase.FindAssets($"{targetName} t:GameObject");
+                            targetAssetGuid = AssetDatabase.FindAssets($"{targetName} t:Prefab");
                             break;
                         case ListType.WeaponSkin:
                             if (!Directory.Exists("Assets/Content/Weapons"))
@@ -124,7 +124,7 @@ namespace SupremacyHangar.Editor.ContentLoader
                                 targetAssetGuid = AssetDatabase.FindAssets($"{targetName} t:Skin", new[] { $"{weaponSkinfolderPath}" });
                             break;
                         case ListType.PowerCore:
-                            targetAssetGuid = AssetDatabase.FindAssets($"{targetName} t:GameObject");
+                            targetAssetGuid = AssetDatabase.FindAssets($"{targetName} t:Prefab");
                             break;
                         default:
                             Debug.LogError($"Unknown type: {type}");

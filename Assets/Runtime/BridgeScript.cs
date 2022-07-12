@@ -5,6 +5,7 @@ using Zenject;
 using SupremacyHangar.Runtime.Types;
 using SupremacyHangar.Runtime.ContentLoader;
 using SupremacyHangar.Runtime.Silo;
+using SupremacyHangar.Runtime.Plugins.WebGL;
 
 /// <summary>
 /// Bridge used to communicate with a page
@@ -37,6 +38,7 @@ public class BridgeScript : MonoInstaller
     {
         //Might have to bind again after data is read
         Container.Bind<HangarData>().FromInstance(hangarData).AsSingle();
+        Container.Bind<BridgeScript>().FromInstance(this).AsSingle();
     }
 
     public void GetPlayerInventoryFromPage(string message)
@@ -52,9 +54,19 @@ public class BridgeScript : MonoInstaller
         _crateSignalHandler.FillCrate(crateContent);
     }
 
-#if UNITY_EDITOR
-    private void CrateContent()
+    public void RequestCrateContent(string ownership_id)
     {
+#if UNITY_EDITOR
+        SetCrateContent(ownership_id);
+#elif UNITY_WEBGL
+        WebGLPluginJS.RequestCrateContent(ownership_id);
+#endif
+    }
+
+#if UNITY_EDITOR
+    private void SetCrateContent(string ownership_id)
+    {
+        Debug.Log(ownership_id);
         GetCrateContentsFromPage(jsonCrateText);
     }
 
@@ -68,32 +80,6 @@ public class BridgeScript : MonoInstaller
                 GetPlayerInventoryFromPage(jsonTestFragment);
             });
         }
-    }
-
-    [Inject]
-    public void Contruct(SignalBus bus)
-    {
-        _bus = bus;
-        SubscribeToSignal();
-    }
-
-    private void OnEnable()
-    {
-        SubscribeToSignal();
-    }
-
-    private void OnDisable()
-    {
-        if (!_subscribed) return;
-        _bus.Unsubscribe<CrateContentSignal>(CrateContent);
-        _subscribed = false;
-    }
-
-    private void SubscribeToSignal()
-    {
-        if (_bus == null || _subscribed) return;
-        _bus.Subscribe<CrateContentSignal>(CrateContent);
-        _subscribed = true;
     }
 #endif
 }
