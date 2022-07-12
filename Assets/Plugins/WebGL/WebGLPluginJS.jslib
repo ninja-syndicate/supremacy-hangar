@@ -10,7 +10,7 @@ mergeInto(LibraryManager.library, {
       } catch (e) {
         console.warn("Unable to dispatch");
       }
-   }
+   },
    
    RequestCrateContent: function (ownership_id) {
       try {
