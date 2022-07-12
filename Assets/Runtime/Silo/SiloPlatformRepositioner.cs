@@ -11,6 +11,10 @@ namespace SupremacyHangar.Runtime.Silo
         public void Construct(SiloSignalHandler siloSignalHandler)
         {
             _siloSignalHandler = siloSignalHandler;
+        }
+
+        public void RepositionObject()
+        {
             _siloSignalHandler.RepositionPlatform(transform.position);
         }
     }

@@ -10,7 +10,8 @@ Material:
   m_Name: Archon Loot Box
   m_Shader: {fileID: -6465566751694194690, guid: adce8c010a67d844cb119cdf3cab3252,
     type: 3}
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _DETAILUV_UV1
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -123,10 +124,12 @@ Material:
     - _ClearCoatSmoothness: 0
     - _Cull: 2
     - _Cutoff: 0.5
+    - _DETAILUV: 0
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _Emission_Intensity: 5.55
+    - _Enable_Tiled_Emission: 0
     - _EnvironmentReflections: 1
     - _Global_Normal_Intensity: 0.7
     - _GlossMapScale: 0

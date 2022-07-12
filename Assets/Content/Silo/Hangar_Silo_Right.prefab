@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 821446330027626394}
   - component: {fileID: 6324144898081148458}
-  - component: {fileID: 9013100066655504016}
+  - component: {fileID: 4852988182526917470}
   m_Layer: 0
   m_Name: Hangar_Silo_Right
   m_TagString: Untagged
@@ -60,7 +60,7 @@ MonoBehaviour:
   - name: {fileID: 11400000, guid: 9c6adcde0dc67734cb2711fd493d1eee, type: 2}
     position: {fileID: 3924895564513439477}
   connectedTo: {fileID: 0}
---- !u!114 &9013100066655504016
+--- !u!114 &4852988182526917470
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -69,10 +69,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 12822200296412448}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f7d6ade9fa564547ba49c071b49ce0a, type: 3}
+  m_Script: {fileID: 11500000, guid: d490038920c4a4146a9480255675c81e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mechSpawner: {fileID: 3377010337067339204}
+  SpawnPoint: {fileID: 3377010337067339204}
 --- !u!1 &843654189131952629
 GameObject:
   m_ObjectHideFlags: 0
@@ -1215,6 +1215,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ad474b864f18e4c71ac486f0673da47d, type: 2}
+    - target: {fileID: -3457593110601049096, guid: ff01ddb75b74d43c793f9ef2e5f2114f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -3226828575720232259, guid: ff01ddb75b74d43c793f9ef2e5f2114f,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -1295,6 +1300,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 84fa88be7559a424fa74d96c194b49f7, type: 2}
+    - target: {fileID: 3514757243813064913, guid: ff01ddb75b74d43c793f9ef2e5f2114f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5653466961918335659, guid: ff01ddb75b74d43c793f9ef2e5f2114f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

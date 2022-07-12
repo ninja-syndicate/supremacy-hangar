@@ -7,8 +7,11 @@ namespace SupremacyHangar.Runtime.Silo
 {
     public class CloseSiloSignal { }
     public class SiloUnloadedSignal { }
+    public class UnloadSiloContentSignal { }
 
     public class SiloFilledSignal { }
+
+    public class UnlockOtherSilo { }
 
     public class PlatformRepositionSignal
     {
@@ -28,6 +31,10 @@ namespace SupremacyHangar.Runtime.Silo
         {
             _signalBus.Fire<CloseSiloSignal>();
         }
+        public void UnloadSiloContent()
+        {
+            _signalBus.Fire<UnloadSiloContentSignal>();
+        }
         public void SiloUnloaded()
         {
             _signalBus.Fire<SiloUnloadedSignal>();
@@ -36,6 +43,11 @@ namespace SupremacyHangar.Runtime.Silo
         public void SiloFilled()
         {
             _signalBus.Fire<SiloFilledSignal>();
+        }
+
+        public void UnlockOtherSilo()
+        {
+            _signalBus.Fire<UnlockOtherSilo>();
         }
         
         public void RepositionPlatform(Vector3 pos)
@@ -52,7 +64,9 @@ namespace SupremacyHangar.Runtime.Silo
             Container.DeclareSignal<CloseSiloSignal>();
             Container.DeclareSignal<SiloUnloadedSignal>();
             Container.DeclareSignal<SiloFilledSignal>();
+            Container.DeclareSignal<UnloadSiloContentSignal>();
             Container.DeclareSignal<PlatformRepositionSignal>();
+            Container.DeclareSignal<UnlockOtherSilo>();
         }
     }
 }

@@ -10,14 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 821446330027626394}
   - component: {fileID: 6324144898081148458}
-  - component: {fileID: 9013100066655504016}
+  - component: {fileID: 7723140846339494500}
   m_Layer: 0
   m_Name: Hangar_Silo_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &821446330027626394
 Transform:
   m_ObjectHideFlags: 0
@@ -60,7 +60,7 @@ MonoBehaviour:
   - name: {fileID: 11400000, guid: 4e9ae6ee017577449bbaef68f6882ef1, type: 2}
     position: {fileID: 3347217759813806030}
   connectedTo: {fileID: 0}
---- !u!114 &9013100066655504016
+--- !u!114 &7723140846339494500
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -69,10 +69,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 12822200296412448}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f7d6ade9fa564547ba49c071b49ce0a, type: 3}
+  m_Script: {fileID: 11500000, guid: d490038920c4a4146a9480255675c81e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mechSpawner: {fileID: 3377010337067339204}
+  SpawnPoint: {fileID: 3377010337067339204}
 --- !u!1 &843654189131952629
 GameObject:
   m_ObjectHideFlags: 0
