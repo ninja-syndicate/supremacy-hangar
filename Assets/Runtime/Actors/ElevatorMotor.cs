@@ -22,6 +22,8 @@ namespace SupremacyHangar
 
         private bool isPaused = false;
 
+        private AudioSource myAudioSource;
+
         [Inject]
         public void Construct(SignalBus bus)
         {
@@ -62,6 +64,11 @@ namespace SupremacyHangar
             myNextStop = newNextStop;
             myCurrentPos = newCurrentPos;
             mySpeed = newSpeed;
+
+            if (TryGetComponent(out myAudioSource)) return;
+
+            Debug.LogError("Cannot find and set audio source");
+            enabled = false;
         }
 
         public virtual void Update()
@@ -75,7 +82,8 @@ namespace SupremacyHangar
         {
             if (UnityMath.math.distancesq(myCurrentPos, myStops[myNextStop]) > Mathf.Epsilon) return;
             myNextStop++;
-            if (myNextStop >= myStops.Length) myNextStop = 0;
+            if (myNextStop >= myStops.Length) myNextStop = 0; 
+            myAudioSource.Play();
         }
 
         public void OnTriggerEnter(Collider other)

@@ -26,6 +26,9 @@ namespace SupremacyHangar.Runtime.Silo
         public bool SiloSpawned = false;
 
         [SerializeField] private Animator myWindowAnim;
+        [SerializeField] private AudioSource windowAudio;
+        [SerializeField] private AudioClip closeSoundClip;
+        [SerializeField] private AudioClip openSoundClip;
 
         private SignalBus _bus;
         private bool _subscribed;
@@ -126,6 +129,8 @@ namespace SupremacyHangar.Runtime.Silo
 
             //Close window on silo unload
             myWindowAnim.SetBool("IsOpen", false);
+            windowAudio.clip = closeSoundClip;
+            windowAudio.Play();
 
         }
 
@@ -177,6 +182,8 @@ namespace SupremacyHangar.Runtime.Silo
 
             //open window
             myWindowAnim.SetBool("IsOpen", true);
+            windowAudio.clip = openSoundClip;
+            windowAudio.Play();
 
             //change console button value
             ChangeButtonToOpen();

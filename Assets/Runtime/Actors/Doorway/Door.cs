@@ -12,7 +12,7 @@ namespace SupremacyHangar.Runtime.Actors.Doorway
 
         [SerializeField] private AudioClip closeSoundClip;
         [SerializeField] private AudioClip openSoundClip;
-        private AudioSource myAudioSource;
+        [SerializeField] private AudioSource myAudioSource;
 
         private int doorPropertyHash;
         private bool animatorDoorState;
@@ -24,9 +24,9 @@ namespace SupremacyHangar.Runtime.Actors.Doorway
         {
             base.Awake();
             SetupAnimator();            
-            if (TryGetComponent(out myAudioSource)) return;
+            if (myAudioSource) return;
 
-            Debug.LogError("Cannot find and set audio source");
+            Debug.LogError("Audio source is not set");
             enabled = false;
         }
         
