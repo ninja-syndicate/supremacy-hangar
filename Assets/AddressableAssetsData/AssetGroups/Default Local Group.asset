@@ -61,6 +61,14 @@ MonoBehaviour:
     m_Address: War Enforcer.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: d8411774d42ff5546a8a8481d21f2afa
+    m_Address: Assets/Content/Mechs/Kenji/Skins/NewZaibatsuSkin.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 089c85cd77bdb784396caf6aca303bf6
+    m_Address: Assets/Content/Mechs/Shirokuma/Skins/2501 - Tachikoma.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
   m_SchemaSet:

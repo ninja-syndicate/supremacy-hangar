@@ -487,6 +487,14 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
+  - containsError: 1
+    dataMechSkin: {fileID: -1229286182803026243, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: 089c85cd77bdb784396caf6aca303bf6
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
   mysteryCrates:
   - containsError: 0
     dataMysteryCrate: {fileID: 8767646594810958716, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
