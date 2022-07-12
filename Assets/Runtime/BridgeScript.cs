@@ -4,6 +4,8 @@ using System.Threading.Tasks;
 using Zenject;
 using SupremacyHangar.Runtime.Types;
 using SupremacyHangar.Runtime.ContentLoader;
+using SupremacyHangar.Runtime.Silo;
+using SupremacyHangar.Runtime.Plugins.WebGL;
 
 /// <summary>
 /// Bridge used to communicate with a page
@@ -11,32 +13,63 @@ using SupremacyHangar.Runtime.ContentLoader;
 public class BridgeScript : MonoInstaller
 {
     //TODO: this probably needs to be done better later.
-    private SupremacyGameObject inventoryData = new();
+    private HangarData hangarData = new();
 
     [Inject]
-    private ContentSignalHandler _contentSignalHandler;
+    private ContentSignalHandler contentSignalHandler;
+
+    [Inject]
+    private CrateSignalHandler _crateSignalHandler;
 
 #if UNITY_EDITOR
     [TextArea(3, 50)]
     [SerializeField] public string jsonTestFragment;
 
     [SerializeField] public float jsonTestFragmentDelay = 0.2f;
+
+    [TextArea(3, 50)]
+    [SerializeField] public string jsonCrateText;
+
+    private SignalBus _bus;
+    bool _subscribed = false;
 #endif
-    
+
     public override void InstallBindings()
     {
         //Might have to bind again after data is read
-        Container.Bind<SupremacyGameObject>().FromInstance(inventoryData).AsSingle();
+        Container.Bind<HangarData>().FromInstance(hangarData).AsSingle();
+        Container.Bind<BridgeScript>().FromInstance(this).AsSingle();
     }
 
     public void GetPlayerInventoryFromPage(string message)
     {
-        var newInventoryData = JsonConvert.DeserializeObject<SupremacyGameObject>(message, new SiloItemConterter());
-        inventoryData.CopyFrom(newInventoryData);
-        _contentSignalHandler.InventoryRecieved();
+        var newInventoryData = JsonConvert.DeserializeObject<HangarData>(message, new SiloItemConterter());
+        hangarData.CopyFrom(newInventoryData);
+        contentSignalHandler.InventoryRecieved();
+    }
+
+    public void GetCrateContentsFromPage(string message)
+    {
+        var crateContent = JsonConvert.DeserializeObject<SiloItem>(message, new SiloItemConterter());
+        _crateSignalHandler.FillCrate(crateContent);
+    }
+
+    public void RequestCrateContent(string ownership_id)
+    {
+#if UNITY_EDITOR
+        SetCrateContent(ownership_id);
+#elif UNITY_WEBGL
+        WebGLPluginJS.RequestCrateContent(ownership_id);
+#endif
     }
 
 #if UNITY_EDITOR
+    private void SetCrateContent(string ownership_id)
+    {
+        Debug.Log(ownership_id);
+        GetCrateContentsFromPage(jsonCrateText);
+    }
+
     public void SetPlayerInventoryFromFragment()
     {
         if (!string.IsNullOrWhiteSpace(jsonTestFragment))
@@ -48,5 +81,5 @@ public class BridgeScript : MonoInstaller
             });
         }
     }
-#endif        
+#endif
 }

@@ -34,6 +34,7 @@ namespace SupremacyHangar.Editor.Actors.SiloHallway
         
         private SerializedProperty startFactionColorProperty;
         private SerializedProperty siloOffsetProperty;
+        private SerializedProperty clockUpdateDelayProperty;
 
         private readonly Dictionary<SerializedObject, Settings> settingsMap = new ();
         private readonly  HashSet<SerializedObject> showTestingFunctions = new();
@@ -60,6 +61,7 @@ namespace SupremacyHangar.Editor.Actors.SiloHallway
             
             startFactionColorProperty = serializedObject.FindProperty("startFactionColor");
             siloOffsetProperty = serializedObject.FindProperty("siloOffset");
+            clockUpdateDelayProperty = serializedObject.FindProperty("clockUpdateDelay");
             
             if (!settingsMap.ContainsKey(serializedObject)) settingsMap.Add(serializedObject, new Settings());
         }
@@ -168,6 +170,7 @@ namespace SupremacyHangar.Editor.Actors.SiloHallway
             EditorGUI.BeginChangeCheck();
             EditorGUILayout.PropertyField(startFactionColorProperty);
             EditorGUILayout.PropertyField(siloOffsetProperty);
+            EditorGUILayout.PropertyField(clockUpdateDelayProperty);
             if (EditorGUI.EndChangeCheck()) serializedObject.ApplyModifiedProperties();
         }
 

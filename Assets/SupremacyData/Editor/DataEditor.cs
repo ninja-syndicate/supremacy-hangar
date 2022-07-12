@@ -12,9 +12,12 @@ namespace SupremacyData.Editor
         private SerializedProperty factionsProperty;
         private SerializedProperty battleAbilitiesProperty;
         private SerializedProperty gameAbilitiesProperty;
+        private SerializedProperty mysteryCratesProperty;
         private SerializedProperty mechModelsProperty;
         private SerializedProperty mechSkinsProperty;
-        private SerializedProperty mysteryCratesProperty;
+        private SerializedProperty weaponModelsProperty;
+        private SerializedProperty weaponSkinsProperty;
+        private SerializedProperty powerCoresProperty;
 
         private Runtime.Data targetData;
         private bool targetDataSet;
@@ -36,9 +39,12 @@ namespace SupremacyData.Editor
             factionsProperty = serializedObject.FindProperty("factions");
             battleAbilitiesProperty = serializedObject.FindProperty("battleAbilities");
             gameAbilitiesProperty = serializedObject.FindProperty("gameAbilities");
+            mysteryCratesProperty = serializedObject.FindProperty("mysteryCrates");
             mechModelsProperty = serializedObject.FindProperty("mechModels");
             mechSkinsProperty = serializedObject.FindProperty("mechSkins");
-            mysteryCratesProperty = serializedObject.FindProperty("mysteryCrates");
+            weaponModelsProperty = serializedObject.FindProperty("weaponModels");
+            weaponSkinsProperty = serializedObject.FindProperty("weaponSkins");
+            powerCoresProperty = serializedObject.FindProperty("powerCores");
         }
 
         public override void OnInspectorGUI()
@@ -67,14 +73,23 @@ namespace SupremacyData.Editor
             EditorGUILayout.PropertyField(gameAbilitiesProperty);
             if (GUILayout.Button("Delete Game Abilities not in above list")) DeleteUnused(targetData.gameAbilities);
 
+            EditorGUILayout.PropertyField(mysteryCratesProperty); 
+            if (GUILayout.Button("Delete Mystery Crates not in above list")) DeleteUnused(targetData.mysteryCrates);
+
             EditorGUILayout.PropertyField(mechModelsProperty);
             if (GUILayout.Button("Delete Mech Models not in above list")) DeleteUnused(targetData.mechModels);
 
             EditorGUILayout.PropertyField(mechSkinsProperty);
             if (GUILayout.Button("Delete Mech Skins not in above list")) DeleteUnused(targetData.mechSkins);
 
-            EditorGUILayout.PropertyField(mysteryCratesProperty); 
-            if (GUILayout.Button("Delete Mystery Crates not in above list")) DeleteUnused(targetData.mysteryCrates);
+            EditorGUILayout.PropertyField(weaponModelsProperty);
+            if (GUILayout.Button("Delete Weapon Models not in above list")) DeleteUnused(targetData.mechSkins);
+
+            EditorGUILayout.PropertyField(weaponSkinsProperty);
+            if (GUILayout.Button("Delete Weapon Skins not in above list")) DeleteUnused(targetData.mechSkins);
+
+            EditorGUILayout.PropertyField(powerCoresProperty);
+            if (GUILayout.Button("Delete Power Cores not in above list")) DeleteUnused(targetData.mechSkins);
 
             if (EditorGUI.EndChangeCheck()) serializedObject.ApplyModifiedProperties();
         }

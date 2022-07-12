@@ -17,30 +17,75 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1275297023709086929, guid: b90b9b7825ebb344a89a6d6f28cad701,
+        type: 3}
+      propertyPath: m_LightLayerMask
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2457674409254406825, guid: b90b9b7825ebb344a89a6d6f28cad701,
+        type: 3}
+      propertyPath: m_LightLayerMask
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4144555250112564829, guid: b90b9b7825ebb344a89a6d6f28cad701,
         type: 3}
       propertyPath: m_ColorTemperature
       value: 6300
+      objectReference: {fileID: 0}
+    - target: {fileID: 4144555250112564829, guid: b90b9b7825ebb344a89a6d6f28cad701,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5474233883375768620, guid: b90b9b7825ebb344a89a6d6f28cad701,
         type: 3}
       propertyPath: m_ColorTemperature
       value: 6300
       objectReference: {fileID: 0}
+    - target: {fileID: 5474233883375768620, guid: b90b9b7825ebb344a89a6d6f28cad701,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5498439900358953940, guid: b90b9b7825ebb344a89a6d6f28cad701,
         type: 3}
       propertyPath: m_ColorTemperature
       value: 6300
+      objectReference: {fileID: 0}
+    - target: {fileID: 5498439900358953940, guid: b90b9b7825ebb344a89a6d6f28cad701,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5771942958578127549, guid: b90b9b7825ebb344a89a6d6f28cad701,
         type: 3}
       propertyPath: m_ColorTemperature
       value: 6300
       objectReference: {fileID: 0}
+    - target: {fileID: 5771942958578127549, guid: b90b9b7825ebb344a89a6d6f28cad701,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5888223496949832912, guid: b90b9b7825ebb344a89a6d6f28cad701,
         type: 3}
       propertyPath: m_ColorTemperature
       value: 6300
+      objectReference: {fileID: 0}
+    - target: {fileID: 5888223496949832912, guid: b90b9b7825ebb344a89a6d6f28cad701,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6341190975265195978, guid: b90b9b7825ebb344a89a6d6f28cad701,
+        type: 3}
+      propertyPath: m_LightLayerMask
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6447533930499421614, guid: b90b9b7825ebb344a89a6d6f28cad701,
+        type: 3}
+      propertyPath: m_LightLayerMask
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7230826607214851981, guid: b90b9b7825ebb344a89a6d6f28cad701,
         type: 3}
@@ -97,5 +142,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7266524471223573597, guid: b90b9b7825ebb344a89a6d6f28cad701,
+        type: 3}
+      propertyPath: m_LightLayerMask
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8904554670348636613, guid: b90b9b7825ebb344a89a6d6f28cad701,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 2100000, guid: c500a06cbe7936a479555a38c5278c25, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b90b9b7825ebb344a89a6d6f28cad701, type: 3}

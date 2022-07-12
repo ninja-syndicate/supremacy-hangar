@@ -19,13 +19,15 @@ namespace SupremacyHangar.Runtime.Behaviour
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             if(!firstSpawn)
-                _siloSignalHandler.SiloUnloaded();
+                _siloSignalHandler.UnloadSiloContent();
         }
 
         // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
         override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             firstSpawn = false;
+
+            _siloSignalHandler.UnlockOtherSilo();
         }
     }
 }

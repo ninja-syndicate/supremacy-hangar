@@ -1,10 +1,9 @@
 using SupremacyHangar.Runtime;
-using SupremacyHangar.Runtime.Actors;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityMath = Unity.Mathematics;
+using Zenject;
+using SupremacyHangar.Runtime.Actors.Player;
+using System;
 
 namespace SupremacyHangar
 {
@@ -18,23 +17,56 @@ namespace SupremacyHangar
         private int myNextStop;
         private UnityMath.float3 myCurrentPos;
 
-        private AudioSource myAudioSource;
+        protected SignalBus _bus;
+        protected bool _subscribed;
+
+        private bool isPaused = false;
+
+        [Inject]
+        public void Construct(SignalBus bus)
+        {
+            _bus = bus;
+        }
+
+        public void OnEnable()
+        {
+            SubscribeToSignal();
+        }
+
+        public virtual void OnDisable()
+        {
+            if (!_subscribed) return;
+            _bus.Unsubscribe<ResumeGameSignal>(TogglePause);
+            _bus.Unsubscribe<PauseGameSignal>(TogglePause);
+
+            _subscribed = false;
+        }
+
+        private void TogglePause()
+        {
+            isPaused = !isPaused;
+        }
+
+        protected virtual void SubscribeToSignal()
+        {
+            if (_bus == null || _subscribed) return;
+            _bus.Subscribe<ResumeGameSignal>(TogglePause);
+            _bus.Subscribe<PauseGameSignal>(TogglePause);
+
+            _subscribed = true;
+        }
 
         public void InitializeMotor(Vector3[] newStops, int newNextStop, UnityMath.float3 newCurrentPos, float newSpeed)
-        {   
+        {
             myStops = newStops;
             myNextStop = newNextStop;
             myCurrentPos = newCurrentPos;
             mySpeed = newSpeed;
-
-            if (TryGetComponent(out myAudioSource)) return;
-
-            Debug.LogError("Cannot find and set audio source");
-            enabled = false;
         }
 
         public virtual void Update()
         {
+            if(isPaused) return;
             if (UnityMath.math.distancesq(myCurrentPos, myStops[myNextStop]) < Mathf.Epsilon) return;
             Move(Time.deltaTime);
         }
@@ -44,7 +76,6 @@ namespace SupremacyHangar
             if (UnityMath.math.distancesq(myCurrentPos, myStops[myNextStop]) > Mathf.Epsilon) return;
             myNextStop++;
             if (myNextStop >= myStops.Length) myNextStop = 0;
-            myAudioSource.Play();
         }
 
         public void OnTriggerEnter(Collider other)

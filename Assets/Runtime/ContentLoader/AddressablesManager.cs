@@ -4,6 +4,7 @@ using SupremacyHangar.Runtime.ScriptableObjects;
 using SupremacyHangar.Runtime.Silo;
 using SupremacyHangar.Runtime.Types;
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.AddressableAssets.ResourceLocators;
@@ -15,13 +16,15 @@ namespace SupremacyHangar.Runtime.ContentLoader
     public class AddressablesManager : MonoInstaller
     {
         [Inject]
-        private SupremacyGameObject _playerInventory;
+        private HangarData _playerInventory;
 
         [Inject]
         private ContentSignalHandler _contentSignalHandler;
+        
+        private LoadingProgressContext loadingProgressContext = new();
 
         public AssetReference TargetMech { get; set; }
-        public AssetReference TargetSkin { get; set; }
+        public AssetReferenceSkin TargetSkin { get; set; }
 
         public SupremacyData.Runtime.Faction CurrentFaction
         {
@@ -30,13 +33,13 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 if (_playerInventory == null) return null;
                 if (_playerInventory.faction == Guid.Empty) return null;
                 if (!mappingsLoaded) return null;
-                return mappings.FactionHallwayByGuid[_playerInventory.faction].DataFaction;
+                return mappings.FactionMappingByGuid[_playerInventory.faction].DataFaction;
             }
         }
         
         private AssetReference previousMech;
-        
-        private LoadedAsset myMech { get; set; } = new LoadedAsset();
+
+        public LoadedAsset myMech { get; set; } = new LoadedAsset();
 
         [SerializeField] private AssetReferenceAssetMappings assetMappingsReference;
 
@@ -46,17 +49,23 @@ namespace SupremacyHangar.Runtime.ContentLoader
         private SignalBus _bus;
         private bool _subscribed;
 
-        private SiloSignalHandler _signalHandler;
+        private SiloSignalHandler _siloSignalHandler;
+        private CrateSignalHandler _crateSignalHandler;
+
+        private Transform prevTransform;
+        private bool sameMechChassis = false;
 
         [Inject]
-        public void Construct(SignalBus bus, SiloSignalHandler siloHandler)
+        public void Construct(SignalBus bus, SiloSignalHandler siloHandler, CrateSignalHandler crateHandler)
         {
             _bus = bus;
-            _signalHandler = siloHandler;
+            _siloSignalHandler = siloHandler;
+            _crateSignalHandler = crateHandler;
         }
         private void OnEnable()
         {
             SubscribeToSignal();
+            Container.Inject(loadingProgressContext);
         }
 
         private void OnDisable()
@@ -97,6 +106,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
         private void AddressablesManager_Completed(AsyncOperationHandle<IResourceLocator> obj)
         {
             var mappingsOp = assetMappingsReference.LoadAssetAsync();
+            StartCoroutine(loadingProgressContext.LoadingAssetProgress(mappingsOp, "Loading Asset Map"));
             mappingsOp.Completed += LoadMappings;
         }
 
@@ -125,26 +135,41 @@ namespace SupremacyHangar.Runtime.ContentLoader
 
         private void SetPlayerInventory()
         {
-            _playerInventory.factionGraph = mappings.FactionHallwayByGuid[_playerInventory.faction].ConnectivityGraph;
+            _playerInventory.factionGraph = mappings.FactionMappingByGuid[_playerInventory.faction].ConnectivityGraph;
             foreach (var silo in _playerInventory.Silos)
             {
-                switch (silo)
-                {
-                    case Mech mech:
-                        mech.MechChassisDetails = mappings.MechChassisPrefabByGuid[mech.MechID];
-                        mech.MechSkinDetails = mappings.MechSkinAssetByGuid[mech.SkinID];
-                        break;
-                    case MysteryBox box:
-                        box.MysteryCrateDetails = mappings.MysteryCrateAssetByGuid[box.MysteryCrateID];
-                        break;
-                    default:
-                        Debug.LogError($"Unknown silo of type {silo}.");
-                        break;
-                }
+                MapSiloToAsset(silo);
             }
             _contentSignalHandler.InventoryLoaded();
         }
         
+        public void MapSiloToAsset(SiloItem silo)
+        {
+            switch (silo)
+            {
+                case Mech mech:
+                    if (!mappings.MechChassisMappingByGuid.TryGetValue(mech.StaticID, out mech.MechChassisDetails))
+                    {
+                        Debug.LogError($"No Chassis mapping found for {mech.StaticID}");
+                        break;
+                    }
+                    if (!mappings.MechSkinMappingByGuid.TryGetValue(mech.Skin.StaticID, out mech.MechSkinDetails))
+                    {
+                        Debug.LogError($"No Skin mapping found for {mech.Skin.StaticID}");
+                    }
+                    break;
+                case MysteryCrate crate:
+                    if (!mappings.MysteryCrateMappingByGuid.TryGetValue(crate.StaticID, out crate.MysteryCrateDetails))
+                    {
+                        Debug.LogError($"No Crate mapping found for {crate.StaticID}");
+                    }
+                    break;
+                default:
+                    Debug.LogError($"Unknown silo of type {silo}.");
+                    break;
+            }
+        }
+
         private bool ValidateMappings()
         {
             if (assetMappingsReference != null) return true;
@@ -152,11 +177,13 @@ namespace SupremacyHangar.Runtime.ContentLoader
             return false;
         }
 
-        private void LoadSkinReference(Action<Skin> callBack)
+        private void LoadSkinReference(Action<ScriptableObjects.Skin> callBack)
         {
             if (myMech.skin == null && TargetSkin != null)
             {
-                TargetSkin.LoadAssetAsync<Skin>().Completed += (skin) =>
+                var skinOperationHandler = TargetSkin.LoadAssetAsync(); 
+                StartCoroutine(loadingProgressContext.LoadingAssetProgress(skinOperationHandler));
+                skinOperationHandler.Completed += (skin) =>
                 {
                     myMech.skin = skin.Result;
                     callBack(myMech.skin);
@@ -174,7 +201,9 @@ namespace SupremacyHangar.Runtime.ContentLoader
             if (myMech.mech == null)
             {
                 previousMech = TargetMech;
-                TargetMech.LoadAssetAsync<GameObject>().Completed += (mech) =>
+                var mechOperationHandler = TargetMech.LoadAssetAsync<GameObject>();
+                StartCoroutine(loadingProgressContext.LoadingAssetProgress(mechOperationHandler, "Loading Mesh"));
+                mechOperationHandler.Completed += (mech) =>
                 {
                     myMech.mech = mech.Result;
 
@@ -186,36 +215,70 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 callBack(myMech.mech);
             }
         }
-
-        public void SpawnMech(Transform spawnLocation)
+        
+#if UNITY_EDITOR
+        public void QuickSpawn()
         {
-            //When mech out of view release addressables
-            UnloadMech();
+            if (!prevTransform)
+            {
+                Debug.LogError("No prior spawn set");
+                return;
+            }
+
+            SpawnMech(prevTransform, false, true);
+        }
+#endif
+        public void SpawnMech(Transform spawnLocation, bool insideCrate = false, bool quickLoad = false)
+        {
+            prevTransform = spawnLocation;
+
+            //When new mech is spawned remove previous unless inside crate
+            if (quickLoad)
+                UnloadMech(quickLoad);
+
+            if (sameMechChassis)
+            {
+                SetLoadedSkin(myMech.mech);
+                return;
+            }
 
             //Load new Mech & Skin
-            LoadMechReference(
-                (result) =>
-                {
+            //LoadMechReference(
+            //    (result) =>
+            //    {
                     TargetMech.InstantiateAsync(spawnLocation.position, spawnLocation.rotation, spawnLocation).Completed += (mech) =>
                     {
                         myMech.mech = mech.Result;
-                        LoadSkinReference(
-                            (skin) =>
-                            {
-                                MeshRenderer mechMesh = myMech.mech.GetComponentInChildren<MeshRenderer>();
-                                if(skin != null)
-                                    mechMesh.sharedMaterials = skin.mats;
-                                
-                                mechMesh.enabled = true;
-                                Container.InjectGameObject(myMech.mech);
-                                _signalHandler.SiloFilled();
-                            }
-                        );
+                        loadingProgressContext.ProgressSignalHandler.FinishedLoading(mech.Result);
+                        SetLoadedSkin(insideCrate);
                     };
-                });
+             //   });
         }
 
-        public void UnloadMech()
+        private void SetLoadedSkin(bool insideCrate = false)
+        {
+            LoadSkinReference(
+                (skin) =>
+                {
+                    MeshRenderer mechMesh = myMech.mech.GetComponentInChildren<MeshRenderer>();
+                    var mechRepostion = myMech.mech.GetComponentInChildren<SiloPlatformRepositioner>();
+                    if (skin != null)
+                        mechMesh.sharedMaterials = skin.mats;
+
+                    Container.InjectGameObject(myMech.mech);
+
+                    if (insideCrate)
+                        _crateSignalHandler.OpenCrate();
+                    else
+                    {
+                        mechRepostion.RepositionObject();
+                        _siloSignalHandler.SiloFilled();
+                    }
+                }
+            );
+        }
+
+        public void UnloadMech(bool quickLoad = false)
         {
             if (myMech.skin != null)
             {
@@ -223,11 +286,24 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 myMech.skin = null;
             }
 
-            if (previousMech != null &&
-                myMech.mech == null)
+            if (previousMech != null)
             {
-                previousMech.ReleaseAsset();
+                if (!quickLoad || previousMech != TargetMech)
+                    previousMech.ReleaseAsset();
+#if UNITY_EDITOR
+                if (previousMech != TargetMech &&
+                    myMech.mech != null)
+                {
+                    sameMechChassis = false;
+                    Destroy(myMech.mech);
+                    myMech.mech = null;
+                }
+
+                if (previousMech == TargetMech && myMech.mech)
+                    sameMechChassis = true;
+#endif
             }
+
         }
     }
 }
