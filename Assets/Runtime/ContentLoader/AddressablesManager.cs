@@ -169,6 +169,11 @@ namespace SupremacyHangar.Runtime.ContentLoader
                                     Debug.LogError($"No Weapon mapping found for {weapon.StaticID}");
                                     break;
                                 }
+                                if (!mappings.WeaponSkinMappingByGuid.TryGetValue(weapon.Skin.StaticID, out weapon.WeaponSkinDetails))
+                                {
+                                    Debug.LogError($"No Weapon mapping found for {weapon.Skin.StaticID}");
+                                    break;
+                                }
                                 break;
                             case PowerCore powerCore:
                                 if (!mappings.PowerCoreMappingByGuid.TryGetValue(powerCore.StaticID, out powerCore.PowerCoreDetails))
@@ -254,7 +259,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 return;
             }
 
-            var mechOperationHandler = TargetMech.InstantiateAsync(spawnLocation.position, spawnLocation.rotation, spawnLocation);
+            var mechOperationHandler = TargetMech.InstantiateAsync(spawnLocation.position, spawnLocation.localRotation, spawnLocation);
             StartCoroutine(loadingProgressContext.LoadingAssetProgress(mechOperationHandler, "Loading Mesh"));
             mechOperationHandler.Completed += (mech) =>
                 {
@@ -269,8 +274,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
             LoadSkinReference(
                 (skin) =>
                 {
-                    MeshRenderer mechMesh = myMech.mech.GetComponentInChildren<MeshRenderer>();
-                    var mechRepostion = myMech.mech.GetComponentInChildren<SiloPlatformRepositioner>();
+                    Renderer mechMesh = myMech.mech.GetComponentInChildren<Renderer>();
                     if (skin != null)
                         mechMesh.sharedMaterials = skin.mats;
 
@@ -280,7 +284,9 @@ namespace SupremacyHangar.Runtime.ContentLoader
                         _crateSignalHandler.OpenCrate();
                     else
                     {
-                        mechRepostion.RepositionObject();
+                        if(myMech.mech.TryGetComponent(out SiloPlatformRepositioner platformRepositioner))
+                            platformRepositioner.RepositionObject();
+
                         _siloSignalHandler.SiloFilled();
                     }
                 }

@@ -92,6 +92,7 @@ namespace SupremacyHangar.Runtime.Actors.Silo
 
         private void LoadComposable(ComposableLoadedSignal signal)
         {
+            if (siloState.CurrentState == SiloState.StateName.NotLoaded) return;
             int accessoryIndex = 0;
             var accessoryList = siloState.Contents as Mech;
             //Load Weapons
