@@ -260,7 +260,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
             LoadSkinReference(
                 (skin) =>
                 {
-                    MeshRenderer mechMesh = myMech.mech.GetComponentInChildren<MeshRenderer>();
+                    var mechMesh = myMech.mech.GetComponentInChildren<Renderer>();
                     var mechRepostion = myMech.mech.GetComponentInChildren<SiloPlatformRepositioner>();
                     if (skin != null)
                         mechMesh.sharedMaterials = skin.mats;

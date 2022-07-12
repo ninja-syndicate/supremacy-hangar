@@ -10,28 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: ConnectivityGraphs
+  m_Name: Boston Cybernetics - Mystery Crates
   m_EditorClassIdentifier: 
-  m_GroupName: ConnectivityGraphs
+  m_GroupName: Boston Cybernetics - Mystery Crates
   m_Data:
     m_SerializedData: []
-  m_GUID: 2859801d897ebb6458783742efa42c23
+  m_GUID: c312bfd2b5a79b041bdae899b8567e88
   m_SerializeEntries:
-  - m_GUID: 2952c0ae40dbb404ebd1d194fdc95eba
-    m_Address: Zaibatsu_Connectivity.asset
+  - m_GUID: 332fa22ebccb8564c8be3c0bfc8a4810
+    m_Address: LootBox_Boston_External.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: eeec7248b93f8954a88f500945031471
-    m_Address: BostonCybernetics_Connectivity.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: aa7b98383facf4ab189377921e364f49
-    m_Address: RedMountain_Connectivity.asset
+  - m_GUID: f23e285582382894fb3e7e4a4d8ccccf
+    m_Address: Lootbox_Archon_External.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 97e699372302de04b9ad1882324e6ffb, type: 2}
-    - {fileID: 11400000, guid: 9641b59a1ef0b1441963df780d73d5a9, type: 2}
+    - {fileID: 11400000, guid: a61f54718fbdad44995ac80a31d9c35b, type: 2}
+    - {fileID: 11400000, guid: bf8f6eeb678d5de47a17373d40339915, type: 2}

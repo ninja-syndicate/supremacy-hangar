@@ -159,6 +159,16 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -1314584013615251059, guid: b585b7ad7292145498e58e857bebc0be,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1314584013615251059, guid: b585b7ad7292145498e58e857bebc0be,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b585b7ad7292145498e58e857bebc0be,
         type: 3}
       propertyPath: m_Name

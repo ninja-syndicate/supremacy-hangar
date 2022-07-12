@@ -98,10 +98,10 @@ MonoBehaviour:
     dataMechModel: {fileID: 1673369590579329074, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
       type: 2}
     mechReference:
-      m_AssetGUID: 8ebfffc025b4b9e44b2233a854d70c24
+      m_AssetGUID: bf4c340c6029af34e92acbd4f4bfcaf1
       m_SubObjectName: 
       m_SubObjectType: 
-      m_EditorAssetChanged: 1
+      m_EditorAssetChanged: 0
   - containsError: 1
     dataMechModel: {fileID: 6516618555034326667, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
       type: 2}
