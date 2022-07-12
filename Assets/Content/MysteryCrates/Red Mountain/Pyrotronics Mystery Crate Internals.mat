@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Boston Loot Box
+  m_Name: Pyrotronics Mystery Crate Internals
   m_Shader: {fileID: -6465566751694194690, guid: adce8c010a67d844cb119cdf3cab3252,
     type: 3}
   m_ValidKeywords:
@@ -22,6 +22,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Alpha:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -43,19 +47,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Detail_Albedo_Transparency:
-        m_Texture: {fileID: 2800000, guid: 448bb804b73f5f24486d67220a2a7fc5, type: 3}
+        m_Texture: {fileID: 2800000, guid: f574ae20543d752499470a06a8963838, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Detail_Emission:
-        m_Texture: {fileID: 2800000, guid: 3af93a6c95c599b4398930e6f0ab6097, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7f1f8dd4a68acc34a991d6194cf765a0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Detail_Metallic_Smoothness:
-        m_Texture: {fileID: 2800000, guid: 94e5f886027f97240ab3a4d84b8fcf96, type: 3}
+        m_Texture: {fileID: 2800000, guid: 170be7547c987354092cbe0a4995091f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Detail_Normal:
-        m_Texture: {fileID: 2800000, guid: d1c11fc9336de4f4495609448b09b0a0, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2693674a31f9cf34a93112ad67289f76, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -87,7 +91,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Tiling_Albedo_Transparency:
-        m_Texture: {fileID: 2800000, guid: 4270fee6eb1fbdd459a9de0259376f35, type: 3}
+        m_Texture: {fileID: 2800000, guid: 27c32669a6bbf6141aeb993282b96304, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Tiling_Emission:
@@ -95,11 +99,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Tiling_Metallic_Smoothness:
-        m_Texture: {fileID: 2800000, guid: 21cc0634ab6ce4a4c9e8f0186e1c12d9, type: 3}
+        m_Texture: {fileID: 2800000, guid: c122a3b2cf15efc438543eeb3ad82c22, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Tiling_Normal:
-        m_Texture: {fileID: 2800000, guid: ba31baf2980fab74496377cb6655272e, type: 3}
+        m_Texture: {fileID: 2800000, guid: deef35dc82743a84c8e3f9b06c2498f9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -117,6 +121,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaClip: 0
+    - _Alpha_Clip_Threshold: 0
     - _Ambient_Occlusion_Multiplier: 1
     - _Blend: 0
     - _BumpScale: 1
@@ -128,7 +133,7 @@ Material:
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Emission_Intensity: 5.55
+    - _Emission_Intensity: 9.49
     - _Enable_Tiled_Emission: 0
     - _EnvironmentReflections: 1
     - _Global_Normal_Intensity: 1
@@ -152,35 +157,35 @@ Material:
     - _Tiling_Emission_1: 0
     - _Tiling_Normal_Intensity: 1
     - _Vertex_Color_1_Base: 254
-    - _Vertex_Color_1_Metallic: 1
-    - _Vertex_Color_1_Smoothness: 0.839
+    - _Vertex_Color_1_Metallic: 0.39
+    - _Vertex_Color_1_Smoothness: 0.832
     - _Vertex_Color_2_Base: 104
     - _Vertex_Color_2_Metallic: 1
-    - _Vertex_Color_2_Smoothness: 0.751
-    - _Vertex_Color_3_Base: 20
-    - _Vertex_Color_3_Metallic: 0.254
-    - _Vertex_Color_3_Smoothness: 0.882
+    - _Vertex_Color_2_Smoothness: 0.816
+    - _Vertex_Color_3_Base: 21
+    - _Vertex_Color_3_Metallic: 1
+    - _Vertex_Color_3_Smoothness: 0.671
     - _Vertex_Color_4_Base: 0
     - _Vertex_Color_4_Metallic: 1
-    - _Vertex_Color_4_Smoothness: 0.468
+    - _Vertex_Color_4_Smoothness: 0.953
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Emission_Tint: {r: 1, g: 0.79472464, b: 0.39999998, a: 0}
+    - _Emission_Tint: {r: 1, g: 0.91600776, b: 0.8352941, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Speed: {r: 1, g: 2, b: 0, a: 0}
     - _Tiling_Texture_Scale: {r: 1, g: 1, b: 0, a: 0}
     - _Vertex_Color_1_Base: {r: 1, g: 1, b: 1, a: 0}
-    - _Vertex_Color_1_Target: {r: 0.53640085, g: 0.6962564, b: 0.7735849, a: 0}
+    - _Vertex_Color_1_Target: {r: 0.68235296, g: 0.18431373, b: 0.13333334, a: 0}
     - _Vertex_Color_2_Base: {r: 0.4117647, g: 0.4117647, b: 0.4117647, a: 0}
-    - _Vertex_Color_2_Target: {r: 0.745283, g: 0.745283, b: 0.745283, a: 0}
+    - _Vertex_Color_2_Target: {r: 0.24705884, g: 0.22352943, b: 0.20784315, a: 0}
     - _Vertex_Color_3_Base: {r: 0.08627, g: 0.08627451, b: 0.08627451, a: 0}
-    - _Vertex_Color_3_Target: {r: 0.17875579, g: 0.2896478, b: 0.3679245, a: 0}
+    - _Vertex_Color_3_Target: {r: 0.427451, g: 0.4039216, b: 0.40000004, a: 0}
     - _Vertex_Color_4_Base: {r: 0, g: 0, b: 0, a: 0}
-    - _Vertex_Color_4_Target: {r: 1, g: 0.444982, b: 0, a: 0}
+    - _Vertex_Color_4_Target: {r: 0.67058825, g: 0.6784314, b: 0.69803923, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &6687484499865638223
 MonoBehaviour:
