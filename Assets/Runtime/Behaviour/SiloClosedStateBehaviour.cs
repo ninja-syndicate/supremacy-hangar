@@ -26,6 +26,8 @@ namespace SupremacyHangar.Runtime.Behaviour
         override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             firstSpawn = false;
+
+            _siloSignalHandler.UnlockOtherSilo();
         }
     }
 }

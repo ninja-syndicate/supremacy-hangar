@@ -15,6 +15,7 @@ namespace SupremacyHangar.Runtime.Actors.Silo
         private HashSet<GameObject> loadedInstances = new();
         private HashSet<AssetReference> loadedReferences = new();
 
+        private BridgeScript bridgeScript;
         private AddressablesManager addressablesManager;
         private SiloState siloState;
         private SignalBus _bus;
@@ -23,12 +24,19 @@ namespace SupremacyHangar.Runtime.Actors.Silo
         private SiloSignalHandler _siloSignalHandler;
 
         [Inject]
-        public void Construct(AddressablesManager addressablesManager, SiloState siloState, SignalBus bus, CrateSignalHandler crateSignalHandler, SiloSignalHandler siloSignalHandler)
+        public void Construct(AddressablesManager addressablesManager, SiloState siloState, BridgeScript bridgeScript)
         {
-            _bus = bus;
             this.addressablesManager = addressablesManager;
             this.siloState = siloState;
             this.siloState.OnStateChanged += OnSiloStateChanged;
+            this.bridgeScript = bridgeScript;
+        }
+
+        [Inject]
+        public void ConstructSignals(SignalBus bus, CrateSignalHandler crateSignalHandler, SiloSignalHandler siloSignalHandler)
+        {
+            _bus = bus;
+
             _crateSignalHandler = crateSignalHandler;
             _siloSignalHandler = siloSignalHandler;
             SubscribeToSignal();
@@ -131,11 +139,7 @@ namespace SupremacyHangar.Runtime.Actors.Silo
                     siloState.NextState(SiloState.StateName.LoadingSiloContent);
                     break;
                 case SiloState.StateName.LoadingCrateContent:
-#if UNITY_EDITOR
-                    _crateSignalHandler.NeedCrateContent();
-#elif UNITY_WEBGL
-                    Plugins.WebGL.WebGLPluginJS.GetCrateContent(siloState.Contents.OwnershipID.ToString());
-#endif
+                    bridgeScript.RequestCrateContent(siloState.Contents.OwnershipID.ToString());
                     break;
                 default:
                     break;
@@ -157,11 +161,11 @@ namespace SupremacyHangar.Runtime.Actors.Silo
 
         public void Unload()
         {
-            foreach(var instance in loadedInstances)
-                Addressables.ReleaseInstance(instance);
-
             foreach (var asset in loadedReferences)
                 asset.ReleaseAsset();
+
+            foreach (var instance in loadedInstances)
+                Addressables.ReleaseInstance(instance);
 
             loadedInstances.Clear();
             loadedReferences.Clear();

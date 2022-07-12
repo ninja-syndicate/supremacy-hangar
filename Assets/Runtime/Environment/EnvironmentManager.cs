@@ -63,6 +63,8 @@ namespace SupremacyHangar.Runtime.Environment
         private Dictionary<AsyncOperationHandle<GameObject>, EnvironmentSpawner> operationsForNewDoor = new Dictionary<AsyncOperationHandle<GameObject>, EnvironmentSpawner>();
         private bool _subscribed;
 
+        private GameObject loadedSilo;
+
         [Inject]
         public void Construct(SignalBus bus)
         {
@@ -316,7 +318,6 @@ namespace SupremacyHangar.Runtime.Environment
 
             loadingProgressContext.ProgressSignalHandler.FinishedLoading(newSilo);
 
-            
             loadedSilo = newSilo;
         }
 
@@ -369,8 +370,7 @@ namespace SupremacyHangar.Runtime.Environment
             return 0;
         }
 
-        private GameObject loadedSilo;
-
+        private bool waitingOnWindow = false;
         public void UnloadSilo(bool waitOnWindow = true)
         {
             if (_currentSilo && waitOnWindow)
@@ -384,7 +384,7 @@ namespace SupremacyHangar.Runtime.Environment
 
         public void UnloadAssets()
         {
-            DoorOpened();            
+            DoorOpened();
 
             if (newDoorEnvironmentPrefab)
             {
@@ -423,7 +423,7 @@ namespace SupremacyHangar.Runtime.Environment
 
         private void UnloadAssetsAfterSiloClosed()
         {
-            _currentSilo = null;
+            //_currentSilo = null;
             UnityEngine.AddressableAssets.Addressables.ReleaseInstance(loadedSilo);
         }
 

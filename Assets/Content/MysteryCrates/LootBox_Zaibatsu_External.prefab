@@ -80,7 +80,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 725631272134244943}
-  spawnPoint: {fileID: 9099381127303746025}
 --- !u!114 &3742903107328478526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,7 +118,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7204512912031322836}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 15.77, z: 0.31102395}
+  m_LocalPosition: {x: 0, y: 13.7, z: 0.31102395}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

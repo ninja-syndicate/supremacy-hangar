@@ -6,7 +6,6 @@ using Zenject;
 
 namespace SupremacyHangar.Runtime.Silo
 {
-    public class CrateContentSignal { }
     public class OpenCrateSignal { }
     public class FillCrateSignal 
     {
@@ -14,6 +13,7 @@ namespace SupremacyHangar.Runtime.Silo
     }
 
     public class CanOpenCrateSignal { }
+
     public class CrateSignalHandler
     {
         readonly SignalBus _signalBus;
@@ -33,11 +33,6 @@ namespace SupremacyHangar.Runtime.Silo
             _signalBus.Fire(new FillCrateSignal() { CrateContents = crateContent});
         }
 
-        public void NeedCrateContent()
-        {
-            _signalBus.Fire<CrateContentSignal>();
-        }
-
         public void CanOpenCrate()
         {
             _signalBus.Fire<CanOpenCrateSignal>();
@@ -51,7 +46,6 @@ namespace SupremacyHangar.Runtime.Silo
             Container.Bind<CrateSignalHandler>().AsSingle().NonLazy();
             Container.DeclareSignal<OpenCrateSignal>().OptionalSubscriber();
             Container.DeclareSignal<FillCrateSignal>().OptionalSubscriber();
-            Container.DeclareSignal<CrateContentSignal>().OptionalSubscriber();
             Container.DeclareSignal<CanOpenCrateSignal>().OptionalSubscriber();
         }
     }

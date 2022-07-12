@@ -36,6 +36,9 @@ namespace SupremacyHangar.Runtime.Silo
 
         private SiloState siloState;
 
+        private bool siloNeedsSpawning = false;
+        private bool loadingCrateContent = false;
+
         [Inject]
         public void Constuct(EnvironmentManager environmentManager, SignalBus bus, SiloState siloState)
         {
@@ -48,6 +51,7 @@ namespace SupremacyHangar.Runtime.Silo
 
         private void OnSiloStateChanged(SiloState.StateName newState)
         {
+            if (!otherSiloInteractionTrigger) return;
             switch (newState)
             {
                 case SiloState.StateName.LoadingSilo:
@@ -55,12 +59,15 @@ namespace SupremacyHangar.Runtime.Silo
                     otherSiloInteractionTrigger.enabled = false;
                     break;
                 case SiloState.StateName.LoadingCrateContent:
+                    loadingCrateContent = true;
                     otherSiloInteractionTrigger.enabled = false;
                     break;
                 case SiloState.StateName.LoadedWithCrate:
-                case SiloState.StateName.Loaded:
-                    otherSiloInteractionTrigger.enabled = true;
                     ChangeButtonToOpen();
+                    break;
+                case SiloState.StateName.Loaded:
+                    if(loadingCrateContent) otherSiloInteractionTrigger.enabled = true;
+                    loadingCrateContent = false;
                     break;
             }
         }
@@ -77,6 +84,7 @@ namespace SupremacyHangar.Runtime.Silo
             _bus.Unsubscribe<SiloUnloadedSignal>(SiloClosed);
             _bus.Unsubscribe<SiloFilledSignal>(OpenSilo);
             _bus.Unsubscribe<AssetLoadedWithSpawnSignal>(NextSiloState);
+            _bus.Unsubscribe<UnlockOtherSilo>(ToggleOtherSiloInteraction);
             _subscribed = false;
         }
 
@@ -87,7 +95,14 @@ namespace SupremacyHangar.Runtime.Silo
             _bus.Subscribe<SiloUnloadedSignal>(SiloClosed);
             _bus.Subscribe<SiloFilledSignal>(OpenSilo);
             _bus.Subscribe<AssetLoadedWithSpawnSignal>(NextSiloState);
+            _bus.Subscribe<UnlockOtherSilo>(ToggleOtherSiloInteraction);
             _subscribed = true;
+        }
+
+        private void ToggleOtherSiloInteraction()
+        {
+            if(SiloSpawned)
+                otherSiloInteractionTrigger.enabled = !otherSiloInteractionTrigger.enabled;
         }
 
         private void NextSiloState(AssetLoadedWithSpawnSignal signal)
@@ -108,7 +123,7 @@ namespace SupremacyHangar.Runtime.Silo
             siloDoorTrigger.enabled = false;
 
             siloClosing = true;
-            Debug.Log($"close {name}");
+
             //Close window on silo unload
             myWindowAnim.SetBool("IsOpen", false);
 
@@ -119,9 +134,11 @@ namespace SupremacyHangar.Runtime.Silo
             siloClosing = false;
             loadButtonText.text = "Pressurize";
 
-            Debug.Log($"closed {name}");
-            if (SiloSpawned)
+            if (siloNeedsSpawning)
+            {
                 SpawnSilo();
+                siloNeedsSpawning = false;
+            }
 
             switch (siloState.CurrentState)
             {
@@ -136,9 +153,10 @@ namespace SupremacyHangar.Runtime.Silo
         {
             //Prevent same silo spawning again
             if (SiloSpawned) return;
-            
+
             SiloSpawned = true;
-            Debug.Log($"prep {name}");
+            siloNeedsSpawning = true;
+
             //Clean-up existing silo (Only one silo at a time)
             _environmentManager.UnloadSilo(this);
             
@@ -147,7 +165,6 @@ namespace SupremacyHangar.Runtime.Silo
 
         private void SpawnSilo()
         {
-            Debug.Log($"spawn {name} silo {siloClosing} || {SiloSpawned}");
             //Spawn silo
             if (!siloClosing && SiloSpawned) _environmentManager.SpawnSilo(this);
         }
@@ -158,7 +175,6 @@ namespace SupremacyHangar.Runtime.Silo
             //unlock doors
             siloDoorTrigger.enabled = true;
 
-            Debug.Log($"open {name}");
             //open window
             myWindowAnim.SetBool("IsOpen", true);
 

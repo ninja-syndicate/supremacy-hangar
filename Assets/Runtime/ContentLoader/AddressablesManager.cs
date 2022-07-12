@@ -243,16 +243,16 @@ namespace SupremacyHangar.Runtime.ContentLoader
             }
 
             //Load new Mech & Skin
-            LoadMechReference(
-                (result) =>
-                {
+            //LoadMechReference(
+            //    (result) =>
+            //    {
                     TargetMech.InstantiateAsync(spawnLocation.position, spawnLocation.rotation, spawnLocation).Completed += (mech) =>
                     {
                         myMech.mech = mech.Result;
                         loadingProgressContext.ProgressSignalHandler.FinishedLoading(mech.Result);
                         SetLoadedSkin(insideCrate);
                     };
-                });
+             //   });
         }
 
         private void SetLoadedSkin(bool insideCrate = false)

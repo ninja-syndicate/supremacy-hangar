@@ -12,7 +12,7 @@ mergeInto(LibraryManager.library, {
       }
    }
    
-   GetCrateContent: function (ownership_id) {
+   RequestCrateContent: function (ownership_id) {
       try {
         window.dispatchReactUnityEvent("GetCrateContent");
       } catch (e) {
