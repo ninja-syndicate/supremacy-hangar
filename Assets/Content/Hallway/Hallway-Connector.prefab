@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2424807430162175449}
   - component: {fileID: 1835963907996916371}
   - component: {fileID: -2688548455563843632}
-  - component: {fileID: 1984714138037270705}
   m_Layer: 0
   m_Name: Hallway-Connector
   m_TagString: Untagged
@@ -67,13 +66,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c80beb9e63908c842bd67f991935f4a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!82 &1984714138037270705
+--- !u!1 &2286036935067855044
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6744870483577138024}
+  - component: {fileID: 6906616228683058090}
+  m_Layer: 0
+  m_Name: HallwayConnector_AudioSource
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6744870483577138024
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2286036935067855044}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3803765932998666343}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &6906616228683058090
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2175959993548932280}
+  m_GameObject: {fileID: 2286036935067855044}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -87,7 +118,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 3
+  MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -123,7 +154,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -334,6 +365,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3331272341804085594}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &3803765932998666343 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -7281548199225009859, guid: e56eef3e9fd436843bdaf0a026d339bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 3331272341804085594}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5429635427861834838 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7305681014754663692, guid: e56eef3e9fd436843bdaf0a026d339bc,
@@ -400,6 +437,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5947588481032695456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6541853597325676003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bbfa7ddb141479b8dcdffc72a9c69a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 6906616228683058090}
 --- !u!114 &6708068751377984615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -471,7 +521,7 @@ MonoBehaviour:
   myConnectors: {fileID: 1835963907996916371}
   to_Connect_to: {fileID: 11400000, guid: 9f006f5a32a5fc4488c4eb3bc8d7e589, type: 2}
   DoorAnim: {fileID: 4229028505539775523}
-  doorAudioSource: {fileID: 1984714138037270705}
+  doorAudioSource: {fileID: 0}
   closeSoundClip: {fileID: 8300000, guid: 5ceba0a4b8a46d24b9f6fa7e3eb3175d, type: 3}
   openSoundClip: {fileID: 8300000, guid: 2d02cc0c82f891344aa92c9dfde9e146, type: 3}
   Spawned: 0
@@ -552,7 +602,7 @@ MonoBehaviour:
   myConnectors: {fileID: 1835963907996916371}
   to_Connect_to: {fileID: 11400000, guid: e438fbcd3b20a9c4cb563501cd8d9963, type: 2}
   DoorAnim: {fileID: 4229028505539775523}
-  doorAudioSource: {fileID: 1984714138037270705}
+  doorAudioSource: {fileID: 0}
   closeSoundClip: {fileID: 8300000, guid: 5ceba0a4b8a46d24b9f6fa7e3eb3175d, type: 3}
   openSoundClip: {fileID: 8300000, guid: 2d02cc0c82f891344aa92c9dfde9e146, type: 3}
   Spawned: 0

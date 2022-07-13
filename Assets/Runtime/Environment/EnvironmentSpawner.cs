@@ -22,9 +22,6 @@ namespace SupremacyHangar.Runtime.Environment
         public ConnectivityJoin ToConnectTo => to_Connect_to;
 
         [SerializeField] private Animator DoorAnim;
-        [SerializeField] private AudioSource doorAudioSource;
-        [SerializeField] private AudioClip closeSoundClip;
-        [SerializeField] private AudioClip openSoundClip;
 
         public bool Entered { get; private set; } = false;
 
@@ -71,8 +68,6 @@ namespace SupremacyHangar.Runtime.Environment
             {
                 doorCollider.EnableDoorCollider();
                 DoorAnim.SetBool("IsOpen", false);
-                doorAudioSource.clip = closeSoundClip;
-                doorAudioSource.Play();
             }
             else return;
 
@@ -87,8 +82,6 @@ namespace SupremacyHangar.Runtime.Environment
         public void OpenDoor()
         {
             DoorAnim.SetBool("IsOpen", true);
-            doorAudioSource.clip = openSoundClip;
-            doorAudioSource.Play();
         }
 
         private void SetConnection()
