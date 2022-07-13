@@ -14,10 +14,28 @@
         {
             "type": "mech",
             "ownership_id": "4d87aea5-945d-42f4-9d80-9c44420bdfde",
+            "static_id": "3dc5888b-f5ff-4d08-a520-26fd3681707f",
+            "skin": {
+                "type": "skin",
+                "static_id": "3b527838-a2b7-4a93-876f-661862838b50"
+            }
+        },
+        {
+            "type": "mech",
+            "ownership_id": "465fe68c-6487-4f78-92aa-218cf129e071",
             "static_id": "625cd381-7c66-4e2f-9f69-f81589105730",
             "skin": {
                 "type": "skin",
-                "static_id": "72ffdb5c-c003-4734-b1d1-07898f5bcb39"
+                "static_id": "ff1b7d82-40b1-4d1a-b93a-f5da92ec43ed"
+            }
+        },
+        {
+            "type": "mech",
+            "ownership_id": "4d87aea5-945d-42f4-9d80-9c44420bdfde",
+            "static_id": "0639ebde-fbba-498b-88ac-f7122ead9c90",
+            "skin": {
+                "type": "skin",
+                "static_id": "48c90129-506f-4096-b82b-87954d354c95"
             }
         },
         {

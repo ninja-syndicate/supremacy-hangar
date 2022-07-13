@@ -17,28 +17,24 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: d5c1dbabceb0b7a45b50342efadbae58
   m_SerializeEntries:
-  - m_GUID: 9320372745f3f45e4971cba976134fb7
-    m_Address: Hallway-DoubleSilo
+  - m_GUID: 803e5cb4a07a7474ca807f6f5941b7be
+    m_Address: AssetMappings.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: aa7b98383facf4ab189377921e364f49
+    m_Address: RedMountain_Connectivity.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: eeec7248b93f8954a88f500945031471
+    m_Address: BostonCybernetics_Connectivity.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2952c0ae40dbb404ebd1d194fdc95eba
+    m_Address: Zaibatsu_Connectivity.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: bd6bede1b22c84322b7c26f35b80b908
-    m_Address: Hallway-Connector
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: b018ad848f4114e62bd27cd1b7cbe2b0
-    m_Address: Hangar_Silo_Left.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 9a955d9e8bbecf4449c699e011487558
-    m_Address: Hangar_Silo_Left.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: b90b9b7825ebb344a89a6d6f28cad701
-    m_Address: Hallway-SmallStraightJoin.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 803e5cb4a07a7474ca807f6f5941b7be
-    m_Address: AssetMappings.asset
+    m_Address: Hallway-Connector.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

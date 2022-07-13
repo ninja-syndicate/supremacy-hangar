@@ -275,6 +275,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 (skin) =>
                 {
                     Renderer mechMesh = myMech.mech.GetComponentInChildren<Renderer>();
+					
                     if (skin != null)
                         mechMesh.sharedMaterials = skin.mats;
 
