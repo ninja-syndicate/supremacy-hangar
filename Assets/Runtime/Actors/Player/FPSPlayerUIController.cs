@@ -1,11 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Zenject;
 
 namespace SupremacyHangar.Runtime.Actors.Player
 {
-    public class MenuController : MonoBehaviour
+	public class FPSPlayerUIController : MonoBehaviour
 	{
 		public enum VisibilityState
 		{
@@ -15,6 +15,7 @@ namespace SupremacyHangar.Runtime.Actors.Player
 			InteractionPrompt
 		} 
 		
+		[SerializeField] private PlayerInput playerInput;
 		[SerializeField] private GameObject settingsMenu;
 		[SerializeField] private GameObject helpMenu;
 		[SerializeField] private GameObject interactionPrompt;
@@ -25,14 +26,36 @@ namespace SupremacyHangar.Runtime.Actors.Player
         public void Awake()
         {
 	        SetupUIItems();
+	        SetupPlayerInput();
+        }
+
+        public void Start()
+        {
+	        DisplayHelp();
+        }
+
+        public void OnEnable()
+        {
+	        InputSystemHelpers.BindActionToFunction(playerInput, "Settings", OnSettingsChange);
+	        InputSystemHelpers.BindActionToFunction(playerInput, "Help", OnHelpChange);
+        }
+
+        public void OnDisable()
+        {
+	        InputSystemHelpers.UnbindFromFunction(playerInput, "Settings", OnSettingsChange);
+	        InputSystemHelpers.UnbindFromFunction(playerInput, "Help", OnHelpChange);
+	        
+#if UNITY_EDITOR
+	        PlayerPrefs.DeleteKey("HelpShown");
+#endif
         }
 
         [Inject]
 		public void Construct(MenuSignalHandler menuSignalHandler)
         {
 			_menuSignalHandler = menuSignalHandler;
-        }
-
+        } 
+		
 		public void SetState(VisibilityState newState)
 		{
 			if (state == newState) return;
@@ -48,6 +71,27 @@ namespace SupremacyHangar.Runtime.Actors.Player
 			state = newState;
 			SetVisibilityFor(state, true); 
 		}
+
+		private void DisplayHelp()
+		{
+			if (PlayerPrefs.GetInt("HelpShown", 0) != 0) return;
+
+			SetState(VisibilityState.HelpMenu);
+			PlayerPrefs.SetInt("HelpShown", 1);
+			PlayerPrefs.Save();
+		}		
+		
+		private void OnSettingsChange(InputAction.CallbackContext context)
+		{
+			if (context.phase == InputActionPhase.Canceled) return;
+			ToggleState(VisibilityState.SettingsMenu);
+		}
+
+		private void OnHelpChange(InputAction.CallbackContext context)
+		{
+			if (context.phase == InputActionPhase.Canceled) return;
+			ToggleState(VisibilityState.HelpMenu);
+		}	
 		
 		private void SetupUIItems()
 		{
@@ -81,6 +125,16 @@ namespace SupremacyHangar.Runtime.Actors.Player
 				interactionPrompt.SetActive(false);
 			}
 		}
+		
+		private void SetupPlayerInput()
+		{
+			if (playerInput != null) return;
+			if (TryGetComponent(out playerInput)) return;
+			
+			Debug.LogError("Player Input not present or set", this);
+			enabled = false;
+		}
+		
 
 		// ReSharper disable once ParameterHidesMember
 		private void SetVisibilityFor(VisibilityState state, bool value)

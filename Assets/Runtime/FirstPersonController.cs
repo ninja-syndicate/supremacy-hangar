@@ -86,7 +86,7 @@ namespace SupremacyHangar.Runtime
 
 		private const float _threshold = 0.01f;
 
-		[Inject] private SignalBus bus;
+		private SignalBus bus;
 		
 		private bool IsCurrentDeviceMouse => _playerInput.currentControlScheme == "KeyboardMouse";
 
@@ -109,7 +109,7 @@ namespace SupremacyHangar.Runtime
 #endif
 
 		[SerializeField] private bool paused = false;
-		private MenuController menuController;
+		private FPSPlayerUIController fpsPlayerUIController;
 
 		public void Awake()
 		{
@@ -121,12 +121,20 @@ namespace SupremacyHangar.Runtime
 			if (!ValidateAndSetupComponentReferences()) return;
 			interactionPromptControllerSet = interactionPromptController != null;
 		}
+
+		[Inject]
+		public void Inject(SignalBus aBus)
+		{
+			bus = aBus;
+			bus.Subscribe<ResumeGameSignal>(Resumed);
+			bus.Subscribe<PauseGameSignal>(Paused);
+		}
 		
 		private void Start()
 		{
 			_controller = GetComponent<CharacterController>();
 			_playerInput = GetComponent<PlayerInput>();
-			if(!TryGetComponent(out menuController))
+			if(!TryGetComponent(out fpsPlayerUIController))
             {
 				Debug.LogError("Cannot find or set Menu Controller", this);
 				enabled = false;
@@ -137,19 +145,6 @@ namespace SupremacyHangar.Runtime
 			_fallTimeoutDelta = FallTimeout;
 			
 			SetCursorState(cursorLocked);
-			
-			if (PlayerPrefs.GetInt("HelpShown", 0) == 0)
-			{
-				menuController.SetState(MenuController.VisibilityState.HelpMenu);
-				PlayerPrefs.SetInt("HelpShown", 1);
-				PlayerPrefs.Save();
-			}
-			
-			if (bus != null)
-			{
-				bus.Subscribe<ResumeGameSignal>(Resumed);
-				bus.Subscribe<PauseGameSignal>(Paused);
-			}			
 		}
 
 		public void OnEnable()
@@ -168,9 +163,6 @@ namespace SupremacyHangar.Runtime
 			bus.TryUnsubscribe<ResumeGameSignal>(Resumed);
 			bus.TryUnsubscribe<PauseGameSignal>(Paused);
 
-#if UNITY_EDITOR
-			PlayerPrefs.DeleteAll();
-#endif
 			UnbindInputs();
 		}
 
@@ -231,13 +223,11 @@ namespace SupremacyHangar.Runtime
 		private bool BindToInputs()
 		{
 			bool valid = true;
-			valid &= BindActionToFunction("Move", OnMovementChange);
-			valid &= BindActionToFunction("Look", OnTurnChange);
-			valid &= BindActionToFunction("Jump", OnJumpChange);
-			valid &= BindActionToFunction("Sprint", OnSprintChange);
-			valid &= BindActionToFunction("Interaction", OnInteractionChange);
-			valid &= BindActionToFunction("Settings", OnSettingsChange);
-			valid &= BindActionToFunction("Help", OnHelpChange);
+			valid &= InputSystemHelpers.BindActionToFunction(_playerInput, "Move", OnMovementChange);
+			valid &= InputSystemHelpers.BindActionToFunction(_playerInput,"Look", OnTurnChange);
+			valid &= InputSystemHelpers.BindActionToFunction(_playerInput,"Jump", OnJumpChange);
+			valid &= InputSystemHelpers.BindActionToFunction(_playerInput,"Sprint", OnSprintChange);
+			valid &= InputSystemHelpers.BindActionToFunction(_playerInput,"Interaction", OnInteractionChange);
 			
 			enabled = valid;
 			return valid;
@@ -245,35 +235,11 @@ namespace SupremacyHangar.Runtime
 
 		private void UnbindInputs()
 		{
-			UnbindFromFunction("Move", OnMovementChange);
-			UnbindFromFunction("Look", OnTurnChange);
-			UnbindFromFunction("Jump", OnJumpChange);
-			UnbindFromFunction("Sprint", OnSprintChange);
-			UnbindFromFunction("Interaction", OnInteractionChange);
-			UnbindFromFunction("Settings", OnSettingsChange);
-			UnbindFromFunction("Help", OnHelpChange);
-		}
-
-		private bool BindActionToFunction(string actionName, Action<InputAction.CallbackContext> callback)
-		{
-			var action = _playerInput.actions[actionName];
-			if (action == null)
-			{
-				Debug.LogError($"Action player input does not have a '{actionName}' action", this);
-				return false;
-			}
-
-			action.performed += callback;
-			action.canceled += callback;
-			return true;
-		}
-
-		private void UnbindFromFunction(string actionName, Action<InputAction.CallbackContext> callback)
-		{
-			var action = _playerInput.actions[actionName];
-			if (action == null) return;
-			action.performed -= callback;
-			action.canceled -= callback;
+			InputSystemHelpers.UnbindFromFunction(_playerInput, "Move", OnMovementChange);
+			InputSystemHelpers.UnbindFromFunction(_playerInput, "Look", OnTurnChange);
+			InputSystemHelpers.UnbindFromFunction(_playerInput, "Jump", OnJumpChange);
+			InputSystemHelpers.UnbindFromFunction(_playerInput, "Sprint", OnSprintChange);
+			InputSystemHelpers.UnbindFromFunction(_playerInput, "Interaction", OnInteractionChange);
 		}
 
 		public void OnMovementChange(InputAction.CallbackContext context)
@@ -305,18 +271,6 @@ namespace SupremacyHangar.Runtime
 			OnInteractionTriggered.Invoke();
 			interactionPrompts = 0;
 		}
-
-		private void OnSettingsChange(InputAction.CallbackContext context)
-		{
-			if (context.phase == InputActionPhase.Canceled) return;
-			menuController.ToggleState(MenuController.VisibilityState.SettingsMenu);
-		}
-
-		private void OnHelpChange(InputAction.CallbackContext context)
-		{
-			if (context.phase == InputActionPhase.Canceled) return;
-			menuController.ToggleState(MenuController.VisibilityState.HelpMenu);
-		}		
 
         private void Update()
 		{
