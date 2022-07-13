@@ -318,7 +318,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
                         _crateSignalHandler.OpenCrate();
                     else
                     {
-                        if (platformRepositioner && skinToMeshMap.Count == 0)
+                        if (platformRepositioner && skinToMeshMap.Count <= 1)
                             platformRepositioner.RepositionObject();
 
                         _siloSignalHandler.SiloFilled();
