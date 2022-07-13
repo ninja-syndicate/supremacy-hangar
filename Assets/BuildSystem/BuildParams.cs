@@ -125,6 +125,7 @@ namespace BuildSystem
                 case "local":
                     return AddressablesLocationType.Local;
                 case "dev":
+                case "develop":
                 case "development":
                     return AddressablesLocationType.Development;
                 case "staging":
