@@ -16,18 +16,27 @@ namespace SupremacyHangar
         private FirstPersonController playerController;
         private int myNextStop;
         private UnityMath.float3 myCurrentPos;
+        private bool elevatorStartReady;
+        private bool elevatorLoopReady;
+
+        [SerializeField] private AudioClip start;
+        [SerializeField] private AudioClip loop;
+        [SerializeField] private AudioClip end;
 
         protected SignalBus _bus;
         protected bool _subscribed;
 
         private bool isPaused = false;
 
-        private AudioSource myAudioSource;
+        [SerializeField] private AudioSource myAudioSource;
 
         [Inject]
         public void Construct(SignalBus bus)
         {
             _bus = bus;
+            //myAudioSource = GetComponent<myAudioSource>();
+            //elevatorLoopReady = false;
+            elevatorStartReady = false;
         }
 
         public void OnEnable()
@@ -76,14 +85,34 @@ namespace SupremacyHangar
             if(isPaused) return;
             if (UnityMath.math.distancesq(myCurrentPos, myStops[myNextStop]) < Mathf.Epsilon) return;
             Move(Time.deltaTime);
+
+            //Elevator starting to move but the Start sound isn't playing
+            if (elevatorStartReady)
+            {
+                myAudioSource.loop = false;
+                myAudioSource.clip = start;
+                myAudioSource.Play();
+                elevatorStartReady = false;
+            }
+            //Elevator now moving and start sound is playing. Is the start sound done? If so play the loop.
+            else if (myAudioSource.clip == start && !myAudioSource.isPlaying && !elevatorStartReady)
+            {
+                myAudioSource.loop = true;
+                myAudioSource.clip = loop;
+                myAudioSource.Play();
+            }
+            
         }
 
         public virtual void MoveToNextStop()
         {
             if (UnityMath.math.distancesq(myCurrentPos, myStops[myNextStop]) > Mathf.Epsilon) return;
             myNextStop++;
-            if (myNextStop >= myStops.Length) myNextStop = 0; 
-            myAudioSource.Play();
+            if (myNextStop >= myStops.Length) myNextStop = 0;
+
+            elevatorStartReady = true;
+            //elevatorLoopReady = false;
+            //Debug.Log("ELEVATOR START");
         }
 
         public void OnTriggerEnter(Collider other)
@@ -126,6 +155,12 @@ namespace SupremacyHangar
             if (playerPresent) playerController.PlatformVelocity = desiredPos - myCurrentPos;
             transform.localPosition = desiredPos;
             myCurrentPos = desiredPos;
+            //END LOOP AND PLAY ENDING SOUND
+            myAudioSource.Stop();
+            myAudioSource.loop = false;
+            myAudioSource.clip = end;
+            elevatorStartReady = false;
+            myAudioSource.Play();
         }
     }
 }

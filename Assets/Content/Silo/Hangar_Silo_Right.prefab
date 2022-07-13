@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &821446330027626394
 Transform:
   m_ObjectHideFlags: 0
@@ -1071,6 +1071,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b0ee1b7b6c3b1f4bb1612e1978e236d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  start: {fileID: 8300000, guid: 2624ccd15aced2c438dc4084b04f4cc1, type: 3}
+  loop: {fileID: 8300000, guid: 39497c971646eb148bdf534e767b7b4d, type: 3}
+  end: {fileID: 8300000, guid: b48e726a52263c445ae629f84d1f59eb, type: 3}
+  myAudioSource: {fileID: 1190309255820560732}
   stops:
   - {x: -16.97328, y: 1.498981, z: -26.52799}
   - {x: -16.97328, y: -17.54, z: -26.52799}
@@ -1190,7 +1194,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ecc5727bae1f59848944d8ea5802f6c8, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1288,6 +1292,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b0ee1b7b6c3b1f4bb1612e1978e236d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  start: {fileID: 8300000, guid: 2624ccd15aced2c438dc4084b04f4cc1, type: 3}
+  loop: {fileID: 8300000, guid: 39497c971646eb148bdf534e767b7b4d, type: 3}
+  end: {fileID: 8300000, guid: b48e726a52263c445ae629f84d1f59eb, type: 3}
+  myAudioSource: {fileID: 2628290279062865049}
   stops:
   - {x: 16.97299, y: 1.498981, z: -26.52799}
   - {x: 16.97299, y: -17.54, z: -26.52799}
@@ -3738,6 +3746,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a009b0596b9645b4b9324c6cb0b95f7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  start: {fileID: 0}
+  loop: {fileID: 0}
+  end: {fileID: 0}
+  myAudioSource: {fileID: 0}
   speed: 1
   filledTargetTransform: {fileID: 154532248941104398}
 --- !u!1 &9061144397545826037 stripped

@@ -22,7 +22,7 @@ namespace SupremacyHangar.Runtime.Actors
 
             audioSource.clip = clip;
             audioSource.Play();
-            Debug.Log("PLAYING SOUND");
+            //Debug.Log("PLAYING SOUND");
         }
         
         private void SetupAudioSource()

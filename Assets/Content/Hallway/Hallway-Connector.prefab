@@ -521,9 +521,6 @@ MonoBehaviour:
   myConnectors: {fileID: 1835963907996916371}
   to_Connect_to: {fileID: 11400000, guid: 9f006f5a32a5fc4488c4eb3bc8d7e589, type: 2}
   DoorAnim: {fileID: 4229028505539775523}
-  doorAudioSource: {fileID: 0}
-  closeSoundClip: {fileID: 8300000, guid: 5ceba0a4b8a46d24b9f6fa7e3eb3175d, type: 3}
-  openSoundClip: {fileID: 8300000, guid: 2d02cc0c82f891344aa92c9dfde9e146, type: 3}
   Spawned: 0
   increment: 1
   doorCollider: {fileID: 9190618577487945576}
@@ -602,9 +599,6 @@ MonoBehaviour:
   myConnectors: {fileID: 1835963907996916371}
   to_Connect_to: {fileID: 11400000, guid: e438fbcd3b20a9c4cb563501cd8d9963, type: 2}
   DoorAnim: {fileID: 4229028505539775523}
-  doorAudioSource: {fileID: 0}
-  closeSoundClip: {fileID: 8300000, guid: 5ceba0a4b8a46d24b9f6fa7e3eb3175d, type: 3}
-  openSoundClip: {fileID: 8300000, guid: 2d02cc0c82f891344aa92c9dfde9e146, type: 3}
   Spawned: 0
   increment: 0
   doorCollider: {fileID: 9190618577487945576}
