@@ -9,11 +9,7 @@ namespace SupremacyHangar.Runtime.Actors.Doorway
         [SerializeField] private string doorProperty = "IsOpen";
         [SerializeField] private bool automaticOpen;
         [SerializeField] private bool automaticClose;
-
-        [SerializeField] private AudioClip closeSoundClip;
-        [SerializeField] private AudioClip openSoundClip;
-        [SerializeField] private AudioSource myAudioSource;
-
+        
         private int doorPropertyHash;
         private bool animatorDoorState;
 
@@ -24,10 +20,6 @@ namespace SupremacyHangar.Runtime.Actors.Doorway
         {
             base.Awake();
             SetupAnimator();            
-            if (myAudioSource) return;
-
-            Debug.LogError("Audio source is not set");
-            enabled = false;
         }
         
         public override void OnPlayerEntered(GameObject go, FirstPersonController controller)
@@ -35,14 +27,10 @@ namespace SupremacyHangar.Runtime.Actors.Doorway
             playerPresent = true;
             playerController = controller;
             playerController.OnInteractionTriggered += OnDoorInteraction;
-            if (automaticOpen)
-            {
-                animatorDoorState = true;
-                animator.SetBool(doorPropertyHash, true);
-                myAudioSource.clip = openSoundClip;
-                myAudioSource.Play();
-                
-            }
+            if (!automaticOpen) return;
+
+            animatorDoorState = true;
+            animator.SetBool(doorPropertyHash, true);
         }
 
         public void OnDoorInteraction()
@@ -67,13 +55,10 @@ namespace SupremacyHangar.Runtime.Actors.Doorway
                 playerController = null;
             }
 
-            if (automaticClose)
-            {
-                animatorDoorState = false;
-                animator.SetBool(doorPropertyHash, false);
-                myAudioSource.clip = closeSoundClip;
-                myAudioSource.Play();
-            }
+            if (!automaticClose) return;
+
+            animatorDoorState = false;
+            animator.SetBool(doorPropertyHash, false);
         }
         
         private void SetupAnimator()
