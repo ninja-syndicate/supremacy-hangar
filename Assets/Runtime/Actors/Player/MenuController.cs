@@ -7,57 +7,24 @@ namespace SupremacyHangar.Runtime.Actors.Player
 {
     public class MenuController : MonoBehaviour
 	{
+		public enum VisibilityState
+		{
+			None,
+			SettingsMenu,
+			HelpMenu,
+			InteractionPrompt
+		} 
+		
 		[SerializeField] private GameObject settingsMenu;
 		[SerializeField] private GameObject helpMenu;
 		[SerializeField] private GameObject interactionPrompt;
 
-		private FirstPersonController playerController;
+		private VisibilityState state = VisibilityState.None;
+		
 		private MenuSignalHandler _menuSignalHandler;
         public void Awake()
         {
-	        SetupFirstPersonController();
 	        SetupUIItems();
-        }
-
-        private void SetupFirstPersonController()
-        {
-	        if (TryGetComponent(out playerController)) return;
-
-	        Debug.LogError("Could not find and set FirstPersonController", this);
-	        enabled = false;
-        }
-
-        private void SetupUIItems()
-        {
-	        if (settingsMenu == null)
-	        {
-		        Debug.LogError("Settings Menu not linked", this);
-		        enabled = false;
-	        }
-	        else
-	        {
-		        settingsMenu.SetActive(false);
-	        }
-
-	        if (helpMenu == null)
-	        {
-		        Debug.LogError("Help Menu not linked", this);
-		        enabled = false;
-	        }
-	        else
-	        {
-		        helpMenu.SetActive(false);
-	        }
-	        
-	        if (interactionPrompt == null)
-	        {
-		        Debug.LogError("Interaction Prompt not linked", this);
-		        enabled = false;
-	        }
-	        else
-	        {
-		        interactionPrompt.SetActive(false);
-	        }
         }
 
         [Inject]
@@ -66,54 +33,86 @@ namespace SupremacyHangar.Runtime.Actors.Player
 			_menuSignalHandler = menuSignalHandler;
         }
 
-		public void ToggleHelpMenu()
+		public void SetState(VisibilityState newState)
 		{
-			if (!playerController.showHelpMenu && !playerController.showSettings)
-			{
-				interactionPrompt.SetActive(false);
-
-				helpMenu.SetActive(true);
-				SetCursorState(false);
-				_menuSignalHandler.PauseGame();
-				playerController.showHelpMenu = true;
-			}
-			else if(!playerController.showSettings)
-			{
-				interactionPrompt.SetActive(true);
-
-				helpMenu.SetActive(false);
-				SetCursorState(true);
-				playerController.showHelpMenu = false;
-				_menuSignalHandler.ResumeGame();
-			}
+			if (state == newState) return;
+			SetVisibilityFor(state, false);
+			state = newState;
+			SetVisibilityFor(state, true); 
 		}
 
-		public void ToggelSettingsMenu()
+		public void ToggleState(VisibilityState newState)
 		{
-			if (!playerController.showSettings && !playerController.showHelpMenu)
+			if (state == newState) newState = VisibilityState.None;
+			SetVisibilityFor(state, false);
+			state = newState;
+			SetVisibilityFor(state, true); 
+		}
+		
+		private void SetupUIItems()
+		{
+			if (settingsMenu == null)
 			{
-				interactionPrompt.SetActive(false);
-
-				settingsMenu.SetActive(true);
-
-				_menuSignalHandler.PauseGame();
-				SetCursorState(false);
-				playerController.showSettings = true;
+				Debug.LogError("Settings Menu not linked", this);
+				enabled = false;
 			}
-			else if(!playerController.showHelpMenu)
+			else
 			{
-				interactionPrompt.SetActive(true);
-
 				settingsMenu.SetActive(false);
-				SetCursorState(true);
-				playerController.showSettings = false;
-				_menuSignalHandler.ResumeGame();
+			}
+
+			if (helpMenu == null)
+			{
+				Debug.LogError("Help Menu not linked", this);
+				enabled = false;
+			}
+			else
+			{
+				helpMenu.SetActive(false);
+			}
+
+			if (interactionPrompt == null)
+			{
+				Debug.LogError("Interaction Prompt not linked", this);
+				enabled = false;
+			}
+			else
+			{
+				interactionPrompt.SetActive(false);
 			}
 		}
 
-		private void SetCursorState(bool newState)
+		// ReSharper disable once ParameterHidesMember
+		private void SetVisibilityFor(VisibilityState state, bool value)
 		{
-			Cursor.lockState = newState ? CursorLockMode.Locked : CursorLockMode.None;
+			bool handlePause = false;
+			switch (state)
+			{
+				case VisibilityState.None:
+					break;
+				case VisibilityState.HelpMenu:
+					helpMenu.SetActive(value);
+					handlePause = true;
+					break;
+				case VisibilityState.InteractionPrompt:
+					interactionPrompt.SetActive(value);
+					break;
+				case VisibilityState.SettingsMenu:
+					settingsMenu.SetActive(value);
+					handlePause = true;
+					break;
+			}
+
+			if (handlePause && value)
+			{
+				_menuSignalHandler.PauseGame();
+				Cursor.lockState = CursorLockMode.None;
+			}
+			else if (handlePause) 
+			{
+				_menuSignalHandler.ResumeGame();
+				Cursor.lockState = CursorLockMode.Locked;
+			}
 		}
 	}
 }

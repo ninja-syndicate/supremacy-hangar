@@ -5,6 +5,7 @@ using Zenject;
 using SupremacyHangar.Runtime.Interaction;
 using Unity.Mathematics;
 using SupremacyHangar.Runtime.Actors.Player;
+using UnityEngine.InputSystem.Controls;
 
 namespace SupremacyHangar.Runtime
 {
@@ -138,7 +139,7 @@ namespace SupremacyHangar.Runtime
 			
 			if (PlayerPrefs.GetInt("HelpShown", 0) == 0)
 			{
-				menuController.ToggleHelpMenu();
+				menuController.SetState(MenuController.VisibilityState.HelpMenu);
 				PlayerPrefs.SetInt("HelpShown", 1);
 				PlayerPrefs.Save();
 			}
@@ -210,7 +211,7 @@ namespace SupremacyHangar.Runtime
 			valid &= BindActionToFunction("Interaction", OnInteractionChange);
 			valid &= BindActionToFunction("Settings", OnSettingsChange);
 			valid &= BindActionToFunction("Help", OnHelpChange);
-
+			
 			enabled = valid;
 			return valid;
 		}
@@ -271,6 +272,7 @@ namespace SupremacyHangar.Runtime
 
         private void OnInteractionChange(InputAction.CallbackContext context)
 		{
+			if (context.control is ButtonControl) menuController.SetState(MenuController.VisibilityState.None);
 			if (context.phase == InputActionPhase.Canceled) return;
 			if (OnInteractionTriggered == null) return;
 			
@@ -281,17 +283,18 @@ namespace SupremacyHangar.Runtime
 		private void OnSettingsChange(InputAction.CallbackContext context)
 		{
 			if (context.phase == InputActionPhase.Canceled) return;
-			menuController.ToggelSettingsMenu();
+			menuController.ToggleState(MenuController.VisibilityState.SettingsMenu);
 		}
 
 		private void OnHelpChange(InputAction.CallbackContext context)
 		{
 			if (context.phase == InputActionPhase.Canceled) return;
-			menuController.ToggleHelpMenu();
+			menuController.ToggleState(MenuController.VisibilityState.HelpMenu);
 		}		
 
         private void Update()
 		{
+			//TODO: Handle pause event
 			if (showSettings || showHelpMenu) return;
 			if (interactionPromptControllerSet)
 			{
