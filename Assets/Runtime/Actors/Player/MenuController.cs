@@ -13,12 +13,51 @@ namespace SupremacyHangar.Runtime.Actors.Player
 
 		private FirstPersonController playerController;
 		private MenuSignalHandler _menuSignalHandler;
-        public void Start()
+        public void Awake()
         {
-			if (TryGetComponent(out playerController)) return;
+	        SetupFirstPersonController();
+	        SetupUIItems();
+        }
 
-			Debug.LogError("Could not find and set FirstPersonController", this);
-			enabled = false;
+        private void SetupFirstPersonController()
+        {
+	        if (TryGetComponent(out playerController)) return;
+
+	        Debug.LogError("Could not find and set FirstPersonController", this);
+	        enabled = false;
+        }
+
+        private void SetupUIItems()
+        {
+	        if (settingsMenu == null)
+	        {
+		        Debug.LogError("Settings Menu not linked", this);
+		        enabled = false;
+	        }
+	        else
+	        {
+		        settingsMenu.SetActive(false);
+	        }
+
+	        if (helpMenu == null)
+	        {
+		        Debug.LogError("Help Menu not linked", this);
+		        enabled = false;
+	        }
+	        else
+	        {
+		        helpMenu.SetActive(false);
+	        }
+	        
+	        if (interactionPrompt == null)
+	        {
+		        Debug.LogError("Interaction Prompt not linked", this);
+		        enabled = false;
+	        }
+	        else
+	        {
+		        interactionPrompt.SetActive(false);
+	        }
         }
 
         [Inject]
