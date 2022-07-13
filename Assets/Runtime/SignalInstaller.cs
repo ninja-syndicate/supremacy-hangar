@@ -14,6 +14,8 @@ public class SignalInstaller : MonoInstaller
         InteractionSignalInstaller.Install(Container);
         SiloSignalInstaller.Install(Container);
         ContentSignalInstaller.Install(Container);
+		CrateSignalInstaller.Install(Container);
+		ProgressSignalInstaller.Install(Container);
         MenuSignalInstaller.Install(Container);
     }
 }

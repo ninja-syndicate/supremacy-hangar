@@ -18,6 +18,8 @@ namespace SupremacyHangar.Runtime.Types
         public Guid StaticID;
     }
 
+    public class EmptySilo : SiloItem { }
+
     [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public class MysteryCrate : SiloItem
     {        

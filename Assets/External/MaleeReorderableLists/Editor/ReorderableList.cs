@@ -639,7 +639,8 @@ namespace Malee.List {
 
 				drawHeaderCallback(titleRect, label);
 			}
-			else if (expandable) {
+
+			if (expandable) {
 
 				titleRect.xMin += 10;
 
@@ -1190,7 +1191,7 @@ namespace Malee.List {
 
 				pagination.page = page;
 
-				HandleUtility.Repaint();
+				//HandleUtility.Repaint();
 			}
 
 			Rect prevRect = new Rect(rect.xMin + 4f, rect.y, 17f, rect.height - 1);
@@ -1202,7 +1203,8 @@ namespace Malee.List {
 				Style.paginationHeader.Draw(rect, false, true, true, false);
 			}
 
-			pageInfoContent.text = string.Format(Style.PAGE_INFO_FORMAT, pagination.page + 1, pages);
+			var currentPage = pages > 0 ? pagination.page + 1 : 0;
+			pageInfoContent.text = string.Format(Style.PAGE_INFO_FORMAT, currentPage, pages);
 
 			Rect pageInfoRect = rect;
 			pageInfoRect.xMin = rect.xMax - Style.paginationText.CalcSize(pageInfoContent).x - 7;
