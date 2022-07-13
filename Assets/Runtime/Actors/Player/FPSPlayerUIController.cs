@@ -11,15 +11,14 @@ namespace SupremacyHangar.Runtime.Actors.Player
 		{
 			None,
 			SettingsMenu,
-			HelpMenu,
-			InteractionPrompt
+			HelpMenu
 		} 
 		
 		[SerializeField] private PlayerInput playerInput;
 		[SerializeField] private GameObject settingsMenu;
 		[SerializeField] private GameObject helpMenu;
 		[SerializeField] private GameObject interactionPrompt;
-
+		
 		private VisibilityState state = VisibilityState.None;
 		
 		private MenuSignalHandler _menuSignalHandler;
@@ -122,7 +121,7 @@ namespace SupremacyHangar.Runtime.Actors.Player
 			}
 			else
 			{
-				interactionPrompt.SetActive(false);
+				interactionPrompt.SetActive(true);
 			}
 		}
 		
@@ -143,13 +142,11 @@ namespace SupremacyHangar.Runtime.Actors.Player
 			switch (state)
 			{
 				case VisibilityState.None:
+					interactionPrompt.SetActive(value);
 					break;
 				case VisibilityState.HelpMenu:
 					helpMenu.SetActive(value);
 					handlePause = true;
-					break;
-				case VisibilityState.InteractionPrompt:
-					interactionPrompt.SetActive(value);
 					break;
 				case VisibilityState.SettingsMenu:
 					settingsMenu.SetActive(value);
