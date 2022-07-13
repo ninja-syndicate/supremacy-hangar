@@ -6,6 +6,9 @@ ModelImporter:
   - first:
       74: -1855173877956890123
     second: Closing
+  - first:
+      74: 9216419817454145247
+    second: Closing_v3
   externalObjects: {}
   materials:
     materialImportMode: 2
