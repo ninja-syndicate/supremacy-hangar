@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Red Mountain Loot Box
+  m_Name: Pyrotronics Mystery Crate
   m_Shader: {fileID: -6465566751694194690, guid: adce8c010a67d844cb119cdf3cab3252,
     type: 3}
   m_ValidKeywords:
@@ -43,19 +43,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Detail_Albedo_Transparency:
-        m_Texture: {fileID: 2800000, guid: 8415f8e4af3551344ad63cecf7c48f4e, type: 3}
+        m_Texture: {fileID: 2800000, guid: ff6772149170f904a9af869dc76070f6, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Detail_Emission:
-        m_Texture: {fileID: 2800000, guid: 20bfbbe1bfe79ad49af30976216a2e3e, type: 3}
+        m_Texture: {fileID: 2800000, guid: 26b151872946ca144aec25194468713d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Detail_Metallic_Smoothness:
-        m_Texture: {fileID: 2800000, guid: bf0655a798638ca41bc8dd7afb86ea4c, type: 3}
+        m_Texture: {fileID: 2800000, guid: e6f95ec974dc5b447a004ff093e2822a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Detail_Normal:
-        m_Texture: {fileID: 2800000, guid: ffa4d0b86be43c549a722eb0414c44f9, type: 3}
+        m_Texture: {fileID: 2800000, guid: 175d092f79b8cc049ac4bb5bde353508, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -152,8 +152,8 @@ Material:
     - _Tiling_Emission_1: 0
     - _Tiling_Normal_Intensity: 1
     - _Vertex_Color_1_Base: 254
-    - _Vertex_Color_1_Metallic: 0.919
-    - _Vertex_Color_1_Smoothness: 0.393
+    - _Vertex_Color_1_Metallic: 0.39
+    - _Vertex_Color_1_Smoothness: 0.832
     - _Vertex_Color_2_Base: 104
     - _Vertex_Color_2_Metallic: 1
     - _Vertex_Color_2_Smoothness: 0.816
@@ -174,13 +174,13 @@ Material:
     - _Speed: {r: 1, g: 2, b: 0, a: 0}
     - _Tiling_Texture_Scale: {r: 1, g: 1, b: 0, a: 0}
     - _Vertex_Color_1_Base: {r: 1, g: 1, b: 1, a: 0}
-    - _Vertex_Color_1_Target: {r: 1, g: 0.97603494, b: 0.8632076, a: 0}
+    - _Vertex_Color_1_Target: {r: 0.68235296, g: 0.18431373, b: 0.13333334, a: 0}
     - _Vertex_Color_2_Base: {r: 0.4117647, g: 0.4117647, b: 0.4117647, a: 0}
-    - _Vertex_Color_2_Target: {r: 0.6039216, g: 0.08235294, b: 0, a: 0}
+    - _Vertex_Color_2_Target: {r: 0.24705884, g: 0.22352943, b: 0.20784315, a: 0}
     - _Vertex_Color_3_Base: {r: 0.08627, g: 0.08627451, b: 0.08627451, a: 0}
-    - _Vertex_Color_3_Target: {r: 0.3679245, g: 0.3679245, b: 0.3679245, a: 0}
+    - _Vertex_Color_3_Target: {r: 0.427451, g: 0.4039216, b: 0.40000004, a: 0}
     - _Vertex_Color_4_Base: {r: 0, g: 0, b: 0, a: 0}
-    - _Vertex_Color_4_Target: {r: 0.24528301, g: 0.24528301, b: 0.24528301, a: 0}
+    - _Vertex_Color_4_Target: {r: 0.67058825, g: 0.6784314, b: 0.69803923, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &6687484499865638223
 MonoBehaviour:
