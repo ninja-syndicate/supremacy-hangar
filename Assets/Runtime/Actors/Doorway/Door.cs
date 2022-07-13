@@ -41,6 +41,7 @@ namespace SupremacyHangar.Runtime.Actors.Doorway
                 animator.SetBool(doorPropertyHash, true);
                 myAudioSource.clip = openSoundClip;
                 myAudioSource.Play();
+                
             }
         }
 
