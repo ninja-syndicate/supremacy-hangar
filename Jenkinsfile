@@ -9,18 +9,6 @@ pipeline {
   environment {
     deployEnv = mapBranchToDeployEnvironment()
     unityPath = "C:\\Program Files\\Unity\\Hub\\Editor\\2021.3.5f1\\Editor\\Unity.exe"
-    verison = """${bat(
-                  returnStdout: true,
-                  script: 'git describe --tags --always'
-              )}"""
-    shortHash = """${bat(
-                    returnStdout: true,
-                    script: 'git rev-parse --verify --short=8 HEAD'
-              )}"""
-    hash = """${bat(
-                returnStdout: true,
-                script: 'git rev-parse --verify HEAD'
-              )}"""
   }
   stages {
     stage('Build') {
@@ -64,9 +52,7 @@ pipeline {
             """
         script {
           if (env.BRANCH_NAME == 'develop') {
-              bat """
-                  rclone sync "${env.WORKSPACE}/Build-to-Deploy" "afiles:/var/www/html/supremacy-hangar/jenkins-test/build/${deployEnv}-${shortHash}/" --progress --verbose --multi-thread-streams 4
-                  """
+              bat "rclone sync \"${env.WORKSPACE}/Build-to-Deploy\" \"afiles:/var/www/html/supremacy-hangar/jenkins-test/build/${deployEnv}-${env.GIT_COMMIT.take(8)}/\" --progress --verbose --multi-thread-streams 4"
           } else {
               bat "rclone sync \"${env.WORKSPACE}/Build-to-Deploy\" \"afiles:/var/www/html/supremacy-hangar/jenkins-test/build/${deployEnv}/\" --progress --verbose --multi-thread-streams 4"
           }
