@@ -86,6 +86,8 @@ namespace SupremacyHangar.Runtime
 
 		private const float _threshold = 0.01f;
 
+		[Inject] private SignalBus bus;
+		
 		private bool IsCurrentDeviceMouse => _playerInput.currentControlScheme == "KeyboardMouse";
 
 		public bool jump = false;
@@ -106,8 +108,7 @@ namespace SupremacyHangar.Runtime
 		public bool cursorInputForLook = true;
 #endif
 
-		public bool showSettings = false;
-		public bool showHelpMenu = false;
+		[SerializeField] private bool paused = false;
 		private MenuController menuController;
 
 		public void Awake()
@@ -143,15 +144,30 @@ namespace SupremacyHangar.Runtime
 				PlayerPrefs.SetInt("HelpShown", 1);
 				PlayerPrefs.Save();
 			}
+			
+			if (bus != null)
+			{
+				bus.Subscribe<ResumeGameSignal>(Resumed);
+				bus.Subscribe<PauseGameSignal>(Paused);
+			}			
 		}
 
 		public void OnEnable()
 		{
-			if (!BindToInputs()) return; 
-		}
+			if (bus != null)
+			{
+				bus.Subscribe<ResumeGameSignal>(Resumed);
+				bus.Subscribe<PauseGameSignal>(Paused);
+			}
 
+			if (!BindToInputs()) return;
+		}
+		
 		public void OnDisable()
 		{
+			bus.TryUnsubscribe<ResumeGameSignal>(Resumed);
+			bus.TryUnsubscribe<PauseGameSignal>(Paused);
+
 #if UNITY_EDITOR
 			PlayerPrefs.DeleteAll();
 #endif
@@ -166,6 +182,17 @@ namespace SupremacyHangar.Runtime
 		public void IncrementInteractionPromptRequests()
 		{
 			interactionPrompts++;
+		}
+		
+				
+		private void Resumed(ResumeGameSignal obj)
+		{
+			paused = false;
+		}
+		
+		private void Paused(PauseGameSignal obj)
+		{
+			paused = true;
 		}
 
 		private bool ValidateAndSetupComponentReferences()
@@ -272,7 +299,6 @@ namespace SupremacyHangar.Runtime
 
         private void OnInteractionChange(InputAction.CallbackContext context)
 		{
-			if (context.control is ButtonControl) menuController.SetState(MenuController.VisibilityState.None);
 			if (context.phase == InputActionPhase.Canceled) return;
 			if (OnInteractionTriggered == null) return;
 			
@@ -295,7 +321,7 @@ namespace SupremacyHangar.Runtime
         private void Update()
 		{
 			//TODO: Handle pause event
-			if (showSettings || showHelpMenu) return;
+			if (paused) return;
 			if (interactionPromptControllerSet)
 			{
 				bool showPrompt = OnInteractionTriggered != null;
@@ -309,7 +335,7 @@ namespace SupremacyHangar.Runtime
 
 		private void LateUpdate()
 		{
-			if (showSettings || showHelpMenu) return;
+			if (paused) return;
 
 			CameraRotation();
 		}
