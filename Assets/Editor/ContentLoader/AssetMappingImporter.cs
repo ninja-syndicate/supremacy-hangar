@@ -118,7 +118,7 @@ namespace SupremacyHangar.Editor.ContentLoader
                                 directoryMissing = true;
                                 continue;
                             }
-                            var targetWeapon = dataKey as WeaponModel;
+                            var targetWeapon = dataKey as WeaponSkin;
                             string weaponSkinfolderPath = SearchSubDirs("Assets/Content/Weapons", targetWeapon.Type.ToString());
                             if (weaponSkinfolderPath != null)
                                 targetAssetGuid = AssetDatabase.FindAssets($"{targetName} t:Skin", new[] { $"{weaponSkinfolderPath}" });

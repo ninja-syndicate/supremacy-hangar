@@ -185,6 +185,7 @@ namespace SupremacyHangar.Runtime.Actors.Silo
             loadedInstances.Clear();
             loadedReferences.Clear();
             addressablesManager.myMech.skin = null;
+            addressablesManager.ResetSkinMapping();
             _siloSignalHandler.SiloUnloaded();
         }
 

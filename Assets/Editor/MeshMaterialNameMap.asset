@@ -47,7 +47,7 @@ MonoBehaviour:
     MaterialNames:
     - Head
     - LeftArm
-    - LeftLegFoot
+    - LeftLeg
     - RightLegUpper
     - RightLegFoot
     - Chest
@@ -75,9 +75,9 @@ MonoBehaviour:
     - FrontLeftLeg
     - FrontRightLeg
     - Head
+    - RightTurret
     - LeftTurret
     - MiddleLeftLeg
     - MiddleRightLeg
-    - RightTurret
     - Tanks
     - Torso

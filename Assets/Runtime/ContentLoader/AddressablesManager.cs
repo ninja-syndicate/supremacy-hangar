@@ -5,6 +5,7 @@ using SupremacyHangar.Runtime.Silo;
 using SupremacyHangar.Runtime.Types;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.AddressableAssets.ResourceLocators;
@@ -171,7 +172,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
                                 }
                                 if (!mappings.WeaponSkinMappingByGuid.TryGetValue(weapon.Skin.StaticID, out weapon.WeaponSkinDetails))
                                 {
-                                    Debug.LogError($"No Weapon mapping found for {weapon.Skin.StaticID}");
+                                    Debug.LogError($"No Weapon Skin mapping found for {weapon.Skin.StaticID}");
                                     break;
                                 }
                                 break;
@@ -212,12 +213,12 @@ namespace SupremacyHangar.Runtime.ContentLoader
             return false;
         }
 
-        private void LoadSkinReference(Action<ScriptableObjects.Skin> callBack)
+        private void LoadSkinReference(AssetReferenceSkin skinReference, Action<ScriptableObjects.Skin> callBack)
         {
-            if (myMech.skin == null && TargetSkin != null)
+            if (skinReference != null)
             {
-                var skinOperationHandler = TargetSkin.LoadAssetAsync(); 
-                StartCoroutine(loadingProgressContext.LoadingAssetProgress(skinOperationHandler));
+                var skinOperationHandler = skinReference.LoadAssetAsync(); 
+                StartCoroutine(loadingProgressContext.LoadingAssetProgress(skinOperationHandler, "Loading Skin"));
                 skinOperationHandler.Completed += (skin) =>
                 {
                     myMech.skin = skin.Result;
@@ -226,8 +227,8 @@ namespace SupremacyHangar.Runtime.ContentLoader
             }
             else
             {
-                //Skin alreasy loaded
-                callBack(myMech.skin);
+                //Skin already loaded
+                callBack(null);
             }
         }
         
@@ -243,6 +244,14 @@ namespace SupremacyHangar.Runtime.ContentLoader
             SpawnMech(prevTransform, false, true);
         }
 #endif
+        private Dictionary<AsyncOperationHandle, AssetReferenceSkin> skinToMeshMap = new();
+
+        public void ResetSkinMapping()
+        {
+            skinToMeshMap.Clear();
+        }
+
+        private Transform siloDirection;
         public void SpawnMech(Transform spawnLocation, bool insideCrate = false, bool quickLoad = false)
         {
             prevTransform = spawnLocation;
@@ -255,37 +264,61 @@ namespace SupremacyHangar.Runtime.ContentLoader
 
             if (sameMechChassis)
             {
-                SetLoadedSkin(myMech.mech);
+                SetLoadedSkin(myMech.mech, TargetSkin);
                 return;
             }
 
-            var mechOperationHandler = TargetMech.InstantiateAsync(spawnLocation.position, spawnLocation.localRotation, spawnLocation);
+            if (skinToMeshMap.Count == 0)
+                siloDirection = spawnLocation;
+
+            Quaternion newRotation = spawnLocation.localRotation;
+
+            if(siloDirection.forward.normalized.x > 0 && skinToMeshMap.Count != 0)
+                newRotation = new Quaternion(spawnLocation.localRotation.x, 180, spawnLocation.localRotation.z, spawnLocation.localRotation.w);
+
+            var mechOperationHandler = TargetMech.InstantiateAsync(spawnLocation.position, newRotation, spawnLocation);
             StartCoroutine(loadingProgressContext.LoadingAssetProgress(mechOperationHandler, "Loading Mesh"));
+            
+            if(TargetSkin != null)
+                skinToMeshMap.Add(mechOperationHandler, TargetSkin);
+
             mechOperationHandler.Completed += (mech) =>
                 {
                     myMech.mech = mech.Result;
-                    loadingProgressContext.ProgressSignalHandler.FinishedLoading(mech.Result);
-                    SetLoadedSkin(insideCrate);
+
+                    SetLoadedSkin(mech.Result, FindMeshSkin(mech.Result), insideCrate);
                 };
         }
 
-        private void SetLoadedSkin(bool insideCrate = false)
+        private AssetReferenceSkin FindMeshSkin(GameObject currentMeshObj)
         {
-            LoadSkinReference(
+            foreach(var item in skinToMeshMap)
+            {
+                var t = item.Key.Result as GameObject;
+                if (t == currentMeshObj)
+                    return item.Value;
+            }
+            return null;
+        }
+
+        private void SetLoadedSkin(GameObject result, AssetReferenceSkin skinReference, bool insideCrate = false)
+        {
+            LoadSkinReference(skinReference,
                 (skin) =>
                 {
-                    Renderer mechMesh = myMech.mech.GetComponentInChildren<Renderer>();
-					
+                    Renderer mechMesh = result.GetComponentInChildren<Renderer>();
+                    var platformRepositioner = result.GetComponentInChildren<SiloPlatformRepositioner>();
                     if (skin != null)
                         mechMesh.sharedMaterials = skin.mats;
 
-                    Container.InjectGameObject(myMech.mech);
+                    Container.InjectGameObject(result);
 
+                    loadingProgressContext.ProgressSignalHandler.FinishedLoading(result);
                     if (insideCrate)
                         _crateSignalHandler.OpenCrate();
                     else
                     {
-                        if(myMech.mech.TryGetComponent(out SiloPlatformRepositioner platformRepositioner))
+                        if (platformRepositioner && skinToMeshMap.Count == 0)
                             platformRepositioner.RepositionObject();
 
                         _siloSignalHandler.SiloFilled();

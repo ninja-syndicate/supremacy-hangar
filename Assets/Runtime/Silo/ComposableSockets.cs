@@ -6,8 +6,8 @@ namespace SupremacyHangar.Runtime.Silo
 {
     public class ComposableSockets : MonoBehaviour
     {
-        [SerializeField] public List<Transform> WeaponSockets;
-        [SerializeField] public List<Transform> UtilitySockets;
+        [SerializeField] public List<Transform> WeaponSockets = new();
+        [SerializeField] public List<Transform> UtilitySockets = new();
         [SerializeField] public Transform PowerCoreSocket;
     }
 }
