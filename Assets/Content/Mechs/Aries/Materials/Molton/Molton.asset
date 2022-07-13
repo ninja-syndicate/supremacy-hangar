@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691a633fee507c468fbb61f649f459a, type: 3}
+  m_Name: Molton
+  m_EditorClassIdentifier: 
+  mats:
+  - {fileID: 2100000, guid: 0e9c1b244909a194cbd06f2909252f74, type: 2}
+  - {fileID: 2100000, guid: b53c38710948fa74da3c95577d69f44a, type: 2}
+  - {fileID: 2100000, guid: 0a906dfc1b81da54ca4350aef611b4ac, type: 2}
+  - {fileID: 2100000, guid: 72fa5493cda7fcd458d6a181d3691cd1, type: 2}
+  - {fileID: 2100000, guid: caa4dfeea5d23214f853861c99d2e7f5, type: 2}
+  - {fileID: 2100000, guid: 7e4681f2b70824f4e9eebaa221199477, type: 2}
+  - {fileID: 2100000, guid: 31d9ced583c698a42b420fcbf30597c4, type: 2}
+  - {fileID: 2100000, guid: 4917f59b74da1884882a7927b9efa5a0, type: 2}
+  - {fileID: 2100000, guid: 844534740e77fd44fa0b9cd6cac2f709, type: 2}
+  - {fileID: 2100000, guid: e57d6084fc7c1ec4181ec2671308e9f5, type: 2}
