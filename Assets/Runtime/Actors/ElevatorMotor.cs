@@ -56,6 +56,15 @@ namespace SupremacyHangar
         private void TogglePause()
         {
             isPaused = !isPaused;
+            switch (isPaused)
+            {
+                case true when myAudioSource.clip == loop:
+                    myAudioSource.Pause();
+                    break;
+                case false when myAudioSource.clip == loop:
+                    myAudioSource.Play();
+                    break;
+            }
         }
 
         protected virtual void SubscribeToSignal()
