@@ -109,6 +109,10 @@ namespace SupremacyHangar.Runtime
 		public bool showHelpMenu = false;
 		private MenuController menuController;
 
+		//Footstep Stuff
+		[SerializeField] private AudioSource myAudioSource;
+        [SerializeField] private float FootstepRateRatio;
+
 		public void Awake()
 		{
 			// get a reference to our main camera
@@ -146,7 +150,8 @@ namespace SupremacyHangar.Runtime
 
 		public void OnEnable()
 		{
-			if (!BindToInputs()) return; 
+			if (!BindToInputs()) return;
+			Debug.Log("TEST");
 		}
 
 		public void OnDisable()
@@ -299,9 +304,12 @@ namespace SupremacyHangar.Runtime
 				showPrompt &= interactionPrompts > 0;
 				interactionPromptController.Set(showPrompt);
 			}
+
+			Debug.Log("Player Speed = " + _speed);
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
+			FootstepAudio();
 		}
 
 		private void LateUpdate()
@@ -340,6 +348,11 @@ namespace SupremacyHangar.Runtime
 				// rotate the player left and right
 				transform.Rotate(Vector3.up * _rotationVelocity);
 			}
+		}
+
+		private void FootstepAudio()
+		{ 
+			//asdf
 		}
 
 		private void Move()
