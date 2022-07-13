@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Threading.Tasks;
 using SupremacyData.Runtime;
 using SupremacyHangar.Runtime.ContentLoader;
 using SupremacyHangar.Runtime.Environment;
@@ -9,6 +7,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
+using MysteryCrate = SupremacyHangar.Runtime.Types.MysteryCrate;
 
 namespace SupremacyHangar.Runtime.Actors.SiloHallway
 {
@@ -30,11 +29,13 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
 
         [SerializeField] private Color startFactionColor;
         [SerializeField] private int siloOffset;
-        
+        [SerializeField] private float clockUpdateDelay = 0.25f;
+
         private Color currentFactionColor = Color.black;
 
-        private Coroutine counter = null;
-        private WaitForSeconds counterDelay = new (0.25f);
+        private bool enableCounter = false;
+        private float nextClockUpdate = -1;
+        private DateTime counterValue;
 
         public void Awake()
         {
@@ -63,10 +64,11 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
                     UpdateName1(mech);
                     UpdateName2(mech);
                     break;
-                case MysteryBox box:
+                case MysteryCrate box:
                     UpdateTypeString(box);
-                    UpdateName1(addressablesManager.CurrentFaction, box);
-                    counter = StartCoroutine(Countdown(box.CanOpenOn));
+                    UpdateName2(addressablesManager.CurrentFaction, box);
+                    enableCounter = true;
+                    counterValue = box.CanOpenOn;
                     break;
                default:
                    UpdateTypeString("Empty");
@@ -76,11 +78,10 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
             }
         }
 
-        public void OnDisable()
+        public void Update()
         {
-            if (counter == null) return;
-            StopCoroutine(counter);
-            counter = null;
+            if (enableCounter && nextClockUpdate <= Time.unscaledTime) UpdateCounter();
+
         }
 
         public void UpdateFactionColor(Color newColor)
@@ -110,7 +111,7 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
                 image.SetMaterialDirty();
             }
         }
-
+        
         public void UpdateFactionLogo(Sprite sprite)
         {
             if (factionLogo == null)
@@ -134,20 +135,28 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
         {
             siloContentsType.text = newString;
         }
-        
+
+        private void UpdateCounter()
+        {
+            var now = DateTime.UtcNow;
+            var diff = counterValue - now;
+            siloContentsName1.text = diff.ToString(diff.Days > 0 ? "d':'hh':'mm':'ss" : "hh':'mm':'ss");
+            nextClockUpdate = Time.unscaledTime + clockUpdateDelay;
+        }
+
         private void UpdateTypeString(Mech mech)
         {
             siloContentsType.text = "Mech";
         }
 
-        private void UpdateTypeString(MysteryBox box)
+        private void UpdateTypeString(MysteryCrate crate)
         {
-            switch (box.MysteryCrateDetails.DataMysteryCrate.Type)
+            switch (crate.MysteryCrateDetails.DataMysteryCrate.Type)
             {
-                case MysteryCrate.ModelType.Mech:
+                case SupremacyData.Runtime.MysteryCrate.ModelType.Mech:
                     siloContentsType.text = "War Machine Crate";
                     break;
-                case MysteryCrate.ModelType.Weapon:
+                case SupremacyData.Runtime.MysteryCrate.ModelType.Weapon:
                     siloContentsType.text = "Weapon Crate";
                     break;
                 default:
@@ -164,13 +173,18 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
 
         private void UpdateName1(Mech mech)
         {
+            if (mech.MechChassisDetails == null)
+            {
+                siloContentsName1.text = "Unable to load";
+                return;
+            }
             siloContentsName1.text = mech.MechChassisDetails.DataMechModel.HumanName;
         }
 
-        private void UpdateName1(Faction currentFaction, MysteryBox box)
+        private void UpdateName2(Faction currentFaction, MysteryCrate crate)
         {
-            var boxFaction = box.MysteryCrateDetails.DataMysteryCrate.Faction;
-            siloContentsName1.text = boxFaction == currentFaction ? "" : boxFaction.HumanName;
+            var boxFaction = crate.MysteryCrateDetails.DataMysteryCrate.Faction;
+            siloContentsName2.text = boxFaction == currentFaction ? "" : boxFaction.HumanName;
         }
         
         public void UpdateName2(string newString)
@@ -180,18 +194,12 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
         
         private void UpdateName2(Mech mech)
         {
-            siloContentsName2.text = mech.MechSkinDetails.DataMechSkin.HumanName;
-        }
-
-        private IEnumerator Countdown(DateTime boxOpeningTime)
-        {
-            while (true)
+            if (mech.MechSkinDetails == null)
             {
-                var now = DateTime.UtcNow;
-                var diff = boxOpeningTime - now;
-                siloContentsName2.text = diff.ToString(diff.Days > 0 ? "d':'hh':'mm':'ss" : "hh':'mm':'ss");
-                yield return counterDelay;
+                siloContentsName2.text = "Unable to load";
+                return;
             }
+            siloContentsName2.text = mech.MechSkinDetails.DataMechSkin.HumanName;
         }
     }
 }

@@ -169,6 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   to_Connect_to: {fileID: 11400000, guid: 9c6adcde0dc67734cb2711fd493d1eee, type: 2}
   siloDoorTrigger: {fileID: 4300428787990294002}
+  siloInteractionTrigger: {fileID: 62340275779691916}
   SiloSpawned: 0
   myWindowAnim: {fileID: 7151954685174816545}
 --- !u!65 &5916775535431724488
@@ -339,6 +340,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   to_Connect_to: {fileID: 11400000, guid: 4e9ae6ee017577449bbaef68f6882ef1, type: 2}
   siloDoorTrigger: {fileID: 9114435874995404672}
+  siloInteractionTrigger: {fileID: 5916775535431724488}
   SiloSpawned: 0
   myWindowAnim: {fileID: 3601512598374419860}
 --- !u!65 &62340275779691916

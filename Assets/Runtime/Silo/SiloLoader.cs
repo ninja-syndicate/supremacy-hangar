@@ -4,6 +4,7 @@ using SupremacyHangar.Runtime.Interaction;
 using SupremacyHangar.Runtime.Types;
 using UnityEngine;
 using Zenject;
+using MysteryCrate = SupremacyHangar.Runtime.Types.MysteryCrate;
 
 namespace SupremacyHangar.Runtime.Silo
 {
@@ -45,11 +46,9 @@ namespace SupremacyHangar.Runtime.Silo
             switch(myContent)
             {
                 case Mech mech:
-                    empty = false;
-                    addressablesManager.TargetMech = mech.MechChassisDetails.MechReference;
-                    addressablesManager.TargetSkin = mech.MechSkinDetails.SkinReference;
+                    empty = !PopulateWithMech(mech);
                     break;
-                case MysteryBox box:
+                case MysteryCrate box:
                     empty = false;
                     addressablesManager.TargetMech = box.MysteryCrateDetails.MysteryCrateReference;
                     addressablesManager.TargetSkin = null;
@@ -60,6 +59,32 @@ namespace SupremacyHangar.Runtime.Silo
             }
 
             if(!empty) spawner.PrepareSilo();
+        }
+
+        private bool PopulateWithMech(Mech mech)
+        {
+            bool populated = true;
+            if (mech.MechChassisDetails == null)
+            {
+                Debug.LogWarning($"Unmapped Mech ID {mech.StaticID} can't load silo", this);
+                populated = false;
+            }
+            else
+            {
+                addressablesManager.TargetMech = mech.MechChassisDetails.MechReference;
+            }
+
+            if (mech.MechSkinDetails == null)
+            {
+                Debug.LogWarning($"Unmapped Skin ID {mech.StaticID} can't load silo", this);
+                populated = false;
+            }
+            else
+            {
+                addressablesManager.TargetSkin = mech.MechSkinDetails.SkinReference;
+            }
+
+            return populated;
         }
     }
 }

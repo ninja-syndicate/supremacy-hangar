@@ -14,9 +14,12 @@ namespace SupremacyHangar.Editor.ContentLoader
     public class AssetMappingsEditor : UnityEditor.Editor
     {
         private ReorderableList factionList;
+        private ReorderableList mysteryCrateList;
         private ReorderableList mechChassisList;
         private ReorderableList mechSkinList;
-        private ReorderableList mysteryCrateList;
+        private ReorderableList weaponModelList;
+        private ReorderableList weaponSkinList;
+        private ReorderableList powerCoreList;
 
         private int selectedIndex;
         private UnityEditor.Editor _editor;
@@ -27,6 +30,9 @@ namespace SupremacyHangar.Editor.ContentLoader
             MechChassis,
             MechSkin,
             MysteryCrate,
+            WeaponModel,
+            WeaponSkin,
+            PowerCore,
         };
 
         class AssetMapItem
@@ -47,19 +53,25 @@ namespace SupremacyHangar.Editor.ContentLoader
             logDictionary.Clear();
             typeByList.Clear();
             
-            initTypeToNameMap();
+            InitTypeToNameMap();
             selectedIndex = -1;
 
             factionList = new ReorderableList(serializedObject.FindProperty("factions"));
             typeByList.Add(factionList, ListType.Faction);
+            mysteryCrateList = new ReorderableList(serializedObject.FindProperty("mysteryCrates"));
+            typeByList.Add(mysteryCrateList, ListType.MysteryCrate);
             mechChassisList = new ReorderableList(serializedObject.FindProperty("mechChassis"));
             typeByList.Add(mechChassisList, ListType.MechChassis);
             mechSkinList = new ReorderableList(serializedObject.FindProperty("mechSkins"));
             typeByList.Add(mechSkinList, ListType.MechSkin);
             mechSkinList.paginate = true;
             mechSkinList.pageSize = 10;
-            mysteryCrateList = new ReorderableList(serializedObject.FindProperty("mysteryCrates"));
-            typeByList.Add(mysteryCrateList, ListType.MysteryCrate);
+            weaponModelList = new ReorderableList(serializedObject.FindProperty("weaponModels"));
+            typeByList.Add(weaponModelList, ListType.WeaponModel);
+            weaponSkinList = new ReorderableList(serializedObject.FindProperty("weaponSkins"));
+            typeByList.Add(weaponSkinList, ListType.WeaponSkin);
+            powerCoreList = new ReorderableList(serializedObject.FindProperty("powerCores"));
+            typeByList.Add(powerCoreList, ListType.PowerCore);
 
             foreach (var listPair in typeByList)
             {
@@ -81,7 +93,7 @@ namespace SupremacyHangar.Editor.ContentLoader
             }
         }
 
-        private void initTypeToNameMap()
+        private void InitTypeToNameMap()
         {
             typeToNameMap.Clear();
             //String Order
@@ -91,9 +103,12 @@ namespace SupremacyHangar.Editor.ContentLoader
                 2 - asset reference property name
             */
             typeToNameMap.Add(ListType.Faction, new[] { "Factions", "dataFaction", "connectivityGraph" });
+            typeToNameMap.Add(ListType.MysteryCrate, new[] { "Mystery Crates", "dataMysteryCrate", "mysteryCrateReference" });
             typeToNameMap.Add(ListType.MechChassis, new[] { "Mech Chassis", "dataMechModel", "mechReference" });
             typeToNameMap.Add(ListType.MechSkin, new[] { "Mech Skins", "dataMechSkin", "skinReference" });
-            typeToNameMap.Add(ListType.MysteryCrate, new[] { "Mystery Crates", "dataMysteryCrate", "mysteryCrateReference" });
+            typeToNameMap.Add(ListType.WeaponModel, new[] { "Weapon Model", "data", "reference" });
+            typeToNameMap.Add(ListType.WeaponSkin, new[] { "Weapon Skin", "data", "reference" });
+            typeToNameMap.Add(ListType.PowerCore, new[] { "Power Core", "data", "reference" });
         }
 
         public override void OnInspectorGUI()
@@ -101,9 +116,12 @@ namespace SupremacyHangar.Editor.ContentLoader
             serializedObject.Update();
 
             factionList.DoLayoutList();
+            mysteryCrateList.DoLayoutList();
             mechChassisList.DoLayoutList();
             mechSkinList.DoLayoutList();
-            mysteryCrateList.DoLayoutList();
+            weaponModelList.DoLayoutList();
+            weaponSkinList.DoLayoutList();
+            powerCoreList.DoLayoutList();
 
             ElementSelectionDisplay();
             serializedObject.ApplyModifiedProperties();
@@ -128,7 +146,17 @@ namespace SupremacyHangar.Editor.ContentLoader
                     case "MysteryCrateMapping":
                         myType = ListType.MysteryCrate;
                         break;
+                    case "WeaponModelMapping":
+                        myType = ListType.WeaponModel;
+                        break;
+                    case "WeaponSkinMapping":
+                        myType = ListType.WeaponSkin;
+                        break;
+                    case "PowerCoreMapping":
+                        myType = ListType.PowerCore;
+                        break;
                     default:
+                        Debug.LogError($"Unknown type: {element.type}");
                         break;
                 } 
 
@@ -150,7 +178,6 @@ namespace SupremacyHangar.Editor.ContentLoader
                     string propertyPath = element.propertyPath;
                     var dataReference = element.FindPropertyRelative(typeToNameMap[myType][1]);
                     var assetReference = element.FindPropertyRelative(typeToNameMap[myType][2]);
-                    var objectRef = dataReference.objectReferenceValue;
 
                     if (!logDictionary.ContainsKey(propertyPath))
                     {
@@ -381,29 +408,28 @@ namespace SupremacyHangar.Editor.ContentLoader
 
         private AssetReferenceEnvironmentConnectivity GetFactionGraphAssetReferenceValue(SerializedProperty assetReference, ref string label)
         {
-            System.Type type = MyExtensionMethods.GetType(assetReference, referenceTypes.graph);
+            System.Type type = MyExtensionMethods.GetType(assetReference, ReferenceTypes.Graph);
             FieldInfo fieldInfo = MyExtensionMethods.GetFieldViaPath(type, assetReference.propertyPath);
             return assetReference.GetActualObjectForSerializedProperty<AssetReferenceEnvironmentConnectivity>(fieldInfo, ref label);
         }
         
         private AssetReference GetAssetReferenceValue(SerializedProperty assetReference, ref string label)
         {
-            System.Type type = MyExtensionMethods.GetType(assetReference, referenceTypes.graph);
+            System.Type type = MyExtensionMethods.GetType(assetReference, ReferenceTypes.Graph);
             FieldInfo fieldInfo = MyExtensionMethods.GetFieldViaPath(type, assetReference.propertyPath);
             return assetReference.GetActualObjectForSerializedProperty<AssetReference>(fieldInfo, ref label);
         }
 
         private AssetReferenceSkin GetSkinAssetReferenceValue(SerializedProperty assetReference, ref string label)
         {
-            System.Type type = MyExtensionMethods.GetType(assetReference, referenceTypes.graph);
+            System.Type type = MyExtensionMethods.GetType(assetReference, ReferenceTypes.Graph);
             FieldInfo fieldInfo = MyExtensionMethods.GetFieldViaPath(type, assetReference.propertyPath);
             return assetReference.GetActualObjectForSerializedProperty<AssetReferenceSkin>(fieldInfo, ref label);
         }
 
         private void AssetReferenceSelecter(SerializedProperty assetReference)
         {
-            if (currentListType == ListType.MechChassis || currentListType == ListType.MysteryCrate) return;
-
+            AssetReferenceSkin skinRef;
             switch (currentListType)
             {
                 case ListType.Faction:
@@ -412,16 +438,23 @@ namespace SupremacyHangar.Editor.ContentLoader
                     CreateCachedEditor(graphRef.editorAsset, null, ref _editor);
                     break;
                 case ListType.MechChassis:
-                    Debug.LogError($"You Should not see me {currentListType}");
-                    break;
+                    return;
                 case ListType.MechSkin:
-                    var skinRef = GetSkinAssetReferenceValue(assetReference, ref refLabel);
+                    skinRef = GetSkinAssetReferenceValue(assetReference, ref refLabel);
                     if (!skinRef.editorAsset) return;
                     CreateCachedEditor(skinRef.editorAsset, null, ref _editor);
                     break;
                 case ListType.MysteryCrate:
-                    Debug.LogError($"You Should not see me {currentListType}");
+                    return;
+                case ListType.WeaponModel:
+                    return;
+                case ListType.WeaponSkin:
+                    skinRef = GetSkinAssetReferenceValue(assetReference, ref refLabel);
+                    if (!skinRef.editorAsset) return;
+                    CreateCachedEditor(skinRef.editorAsset, null, ref _editor);
                     break;
+                case ListType.PowerCore:
+                    return;
                 default:
                     Debug.LogError($"Unknown listType {currentListType}");
                     break;
@@ -430,26 +463,26 @@ namespace SupremacyHangar.Editor.ContentLoader
         }
     }
 
-    public enum referenceTypes
+    public enum ReferenceTypes
     {
-        graph,
-        skin,
+        Graph,
+        Skin,
     }
 
     public static class MyExtensionMethods
     {
-        public static System.Type GetType(SerializedProperty property, referenceTypes type)
+        public static System.Type GetType(SerializedProperty property, ReferenceTypes type)
         {
             var parentType = property.serializedObject.targetObject as AssetMappings;
 
             switch (type)
             {
-                case referenceTypes.graph:
-                    foreach (var s in parentType.FactionHallwayByGuid.Values)
+                case ReferenceTypes.Graph:
+                    foreach (var s in parentType.FactionMappingByGuid.Values)
                         return s.GetType();
                     break;
-                case referenceTypes.skin:
-                    foreach (var s in parentType.MechSkinAssetByGuid.Values)
+                case ReferenceTypes.Skin:
+                    foreach (var s in parentType.MechSkinMappingByGuid.Values)
                         return s.GetType();
                     break;
                 default:
