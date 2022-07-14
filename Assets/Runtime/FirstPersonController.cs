@@ -119,14 +119,14 @@ namespace SupremacyHangar.Runtime
 		private float FootstepTimer;
 		private bool Stepped;
 		private bool isPaused = false;
-		protected SignalBus _bus;
-		protected bool _subscribed;
+		//protected SignalBus _bus;
+		//protected bool _subscribed;
 
-		[Inject]
+		/*[Inject]
 		public void Construct(SignalBus bus)
 		{
 			_bus = bus;
-		}
+		}*/
 
 		public void Awake()
 		{
@@ -172,32 +172,32 @@ namespace SupremacyHangar.Runtime
 		public void OnEnable()
 		{
 			if (!BindToInputs()) return;
-			SubscribeToSignal();
+			//SubscribeToSignal();
 		}
 
-		protected virtual void SubscribeToSignal()
+		/*protected virtual void SubscribeToSignal()
 		{
 			if (_bus == null || _subscribed) return;
 			_bus.Subscribe<ResumeGameSignal>(TogglePause);
 			_bus.Subscribe<PauseGameSignal>(TogglePause);
 
 			_subscribed = true;
-		}
+		}*/
 
 		public virtual void OnDisable()
 		{
-			if (!_subscribed) return;
+			/*if (!_subscribed) return;
 			_bus.Unsubscribe<ResumeGameSignal>(TogglePause);
 			_bus.Unsubscribe<PauseGameSignal>(TogglePause);
 
-			_subscribed = false;
+			_subscribed = false;*/
 #if UNITY_EDITOR
 			PlayerPrefs.DeleteAll();
 #endif
 			UnbindInputs();
 		}
 
-		private void TogglePause()
+		/*private void TogglePause()
 		{
 			isPaused = !isPaused;
 			switch (isPaused)
@@ -209,7 +209,7 @@ namespace SupremacyHangar.Runtime
 					myAudioSource.Play();
 					break;
 			}
-		}
+		}*/
 
 		public void DecrementInteractionPromptRequests()
 		{
@@ -358,7 +358,7 @@ namespace SupremacyHangar.Runtime
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
-			FootstepAudio();
+			
 		}
 
 		private void LateUpdate()
@@ -366,6 +366,11 @@ namespace SupremacyHangar.Runtime
 			if (showSettings || showHelpMenu) return;
 
 			CameraRotation();
+		}
+
+		private void FixedUpdate()
+		{
+			FootstepAudio();
 		}
 		
 		private void GroundedCheck()

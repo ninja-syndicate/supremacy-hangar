@@ -374,8 +374,8 @@ MonoBehaviour:
   SiloSpawned: 0
   myWindowAnim: {fileID: 3601512598374419860}
   windowAudio: {fileID: 3528175790219914227}
-  closeSoundClip: {fileID: 8300000, guid: 354e0a9f084317e41999175472933ddb, type: 3}
-  openSoundClip: {fileID: 8300000, guid: 903c3451c1ddf62449bcb44f19cbc642, type: 3}
+  closeSoundClip: {fileID: 8300000, guid: 19e22583a2e092342b01597d395f6b1d, type: 3}
+  openSoundClip: {fileID: 8300000, guid: a567f4991dfd9f249be779545f89d619, type: 3}
   loadButtonText: {fileID: 2330969162365799569}
 --- !u!1 &5332890838868166675
 GameObject:
@@ -1239,8 +1239,8 @@ MonoBehaviour:
   SiloSpawned: 0
   myWindowAnim: {fileID: 7151954685174816545}
   windowAudio: {fileID: 6540287177634516439}
-  closeSoundClip: {fileID: 8300000, guid: 354e0a9f084317e41999175472933ddb, type: 3}
-  openSoundClip: {fileID: 8300000, guid: 903c3451c1ddf62449bcb44f19cbc642, type: 3}
+  closeSoundClip: {fileID: 8300000, guid: 19e22583a2e092342b01597d395f6b1d, type: 3}
+  openSoundClip: {fileID: 8300000, guid: a567f4991dfd9f249be779545f89d619, type: 3}
   loadButtonText: {fileID: 5084819900365775767}
 --- !u!1 &7868195084216460669
 GameObject:

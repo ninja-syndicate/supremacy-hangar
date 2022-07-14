@@ -1552,7 +1552,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.52
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2442,7 +2442,7 @@ MonoBehaviour:
   showSettings: 0
   showHelpMenu: 0
   myAudioSource: {fileID: 1415004548465120403}
-  FootstepRateRatio: 0.11
+  FootstepRateRatio: 0.2
   RightFootClip: {fileID: 8300000, guid: ee9d6fa026e2aeb43a8230614f3beea5, type: 3}
   LeftFootClip: {fileID: 8300000, guid: 4275628d44672704e9254d8bdc8c5b04, type: 3}
 --- !u!114 &5224598663897651538
@@ -2472,7 +2472,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.67
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
