@@ -257,6 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 6465288494085082004}
   newMessage: Perssurizing
+  loadingScreen: 0
 --- !u!1 &1551350255
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,8 +509,15 @@ MonoBehaviour:
   siloContentsType: {fileID: 5723637578754220319}
   siloContentsName1: {fileID: 4472911683331499170}
   siloContentsName2: {fileID: 3000889080786872621}
-  loadButton: {fileID: 2187088310494769674}
+  interactionButton: {fileID: 2187088310494769674}
+  interactionButtonText: {fileID: 2389442065814661020}
+  startFactionColor: {r: 0, g: 0, b: 0, a: 0}
   siloOffset: 1
+  clockUpdateDelay: 0.25
+  loadRequestText: Pressurize
+  loadingText: Pressurizing
+  openRequestText: Open
+  openingText: Opening
 --- !u!1 &573485225157745262
 GameObject:
   m_ObjectHideFlags: 0
@@ -1769,7 +1777,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 16
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -2016,10 +2024,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 6954640d891224436b44d3e6aa459bb1, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 0
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -2253,7 +2261,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 16
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535

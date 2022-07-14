@@ -1,4 +1,7 @@
 using System;
+using SupremacyData.Runtime;
+using SupremacyHangar.Runtime.ContentLoader;
+using SupremacyHangar.Runtime.Environment;
 using SupremacyHangar.Runtime.Silo;
 using SupremacyHangar.Runtime.Types;
 using UnityEngine;
@@ -10,7 +13,9 @@ namespace SupremacyHangar.Runtime.Actors.Silo
     {
         public StateName CurrentState => state;
         public SiloItem Contents => contents;
-
+        
+        public Faction CurrentFaction { get; private set; }
+        
         public enum StateName
         {
             NotLoaded,
@@ -23,6 +28,8 @@ namespace SupremacyHangar.Runtime.Actors.Silo
             Unloading,
         }
 
+        public int SiloNumber { get; private set; }
+        
         [SerializeField] private int siloOffset;
         
         private SiloItem contents;
@@ -39,8 +46,12 @@ namespace SupremacyHangar.Runtime.Actors.Silo
         private bool _subscribed;
 
         [Inject]
-        public void Construct(SiloItem[] hallwayContents, SignalBus bus)
+        public void Construct(
+            EnvironmentManager environmentManager, AddressablesManager addressablesManager, 
+            SiloItem[] hallwayContents, SignalBus bus)
         {
+            SiloNumber = environmentManager.SiloOffset + siloOffset;
+            CurrentFaction = addressablesManager.CurrentFaction;
             contents = hallwayContents[siloOffset];
             _bus = bus;
             SubscribeToSignal();
