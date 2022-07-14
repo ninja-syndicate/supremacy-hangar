@@ -192,7 +192,6 @@ namespace SupremacyHangar.Runtime.Environment
             _container.InjectGameObject(result);
             GameObject.FindGameObjectWithTag("Loading").SetActive(false);
             result.SetActive(true);
-            GameObject.FindGameObjectWithTag("Loading").SetActive(false);
         }
 
         private void DoorOpened()
