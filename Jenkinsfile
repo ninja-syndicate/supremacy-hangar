@@ -48,13 +48,13 @@ pipeline {
             mkdir Build-to-Deploy
             xcopy /E ${env.WORKSPACE}\\Builds\\WebGL\\Build ${env.WORKSPACE}\\Build-to-Deploy
             xcopy /E /I ${env.WORKSPACE}\\Builds\\WebGL\\StreamingAssets ${env.WORKSPACE}\\Build-to-Deploy\\StreamingAssests
-            rclone sync "${env.WORKSPACE}/Build-to-Deploy" "afiles:/var/www/html/supremacy-hangar/jenkins-test/build/${deployEnv}/" --progress --verbose --multi-thread-streams 4
+            rclone sync "${env.WORKSPACE}/Build-to-Deploy" "afiles:/var/www/html/supremacy-hangar/build/${deployEnv}/" --progress --verbose --multi-thread-streams 4
             """
         script {
           if (env.BRANCH_NAME == 'develop') {
-              bat "rclone sync \"${env.WORKSPACE}/Build-to-Deploy\" \"afiles:/var/www/html/supremacy-hangar/jenkins-test/build/${deployEnv}-${env.GIT_COMMIT.take(8)}/\" --progress --verbose --multi-thread-streams 4"
+              bat "rclone sync \"${env.WORKSPACE}/Build-to-Deploy\" \"afiles:/var/www/html/supremacy-hangar/build/build-${env.GIT_COMMIT.take(7)}/\" --progress --verbose --multi-thread-streams 4"
           } else {
-              bat "rclone sync \"${env.WORKSPACE}/Build-to-Deploy\" \"afiles:/var/www/html/supremacy-hangar/jenkins-test/build/${deployEnv}/\" --progress --verbose --multi-thread-streams 4"
+              bat "rclone sync \"${env.WORKSPACE}/Build-to-Deploy\" \"afiles:/var/www/html/supremacy-hangar/build/${deployEnv}/\" --progress --verbose --multi-thread-streams 4"
           }
         }
       }
@@ -77,7 +77,7 @@ pipeline {
       steps {
         echo 'Deploy addressbales started'
         bat """
-            rclone sync "${env.WORKSPACE}/ServerData/" "afiles:/var/www/html/supremacy-hangar/jenkins-test/addressables/${deployEnv}/" --progress --verbose --multi-thread-streams 4
+            rclone sync "${env.WORKSPACE}/ServerData/" "afiles:/var/www/html/supremacy-hangar/addressables/${deployEnv}/" --progress --verbose --multi-thread-streams 4
             """
         }
         post {
