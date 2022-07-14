@@ -1,4 +1,7 @@
 using System;
+using SupremacyData.Runtime;
+using SupremacyHangar.Runtime.ContentLoader;
+using SupremacyHangar.Runtime.Environment;
 using SupremacyHangar.Runtime.Silo;
 using SupremacyHangar.Runtime.Types;
 using UnityEngine;
@@ -9,8 +12,10 @@ namespace SupremacyHangar.Runtime.Actors.Silo
     public class SiloState : MonoBehaviour
     {
         public StateName CurrentState => state;
-        //public SiloItem Contents => contents;
+        public SiloItem Contents => contents;
 
+        public Faction CurrentFaction { get; private set; }
+        
         public enum StateName
         {
             NotLoaded,
@@ -22,10 +27,11 @@ namespace SupremacyHangar.Runtime.Actors.Silo
             LoadingCrateContent,
             Unloading,
         }
+        public int SiloNumber { get; private set; }
 
         [SerializeField] private int siloOffset;
         
-        public SiloItem Contents;
+        private SiloItem contents;
         
         [SerializeField] private StateName state;
 
@@ -37,11 +43,16 @@ namespace SupremacyHangar.Runtime.Actors.Silo
 
         public bool CanOpenCrate { get; private set; } = false;
         private bool _subscribed;
-
+        private EnvironmentManager _envManager;
         [Inject]
-        public void Construct(SiloItem[] hallwayContents, SignalBus bus)
+        public void Construct(
+            EnvironmentManager environmentManager, AddressablesManager addressablesManager,
+            SiloItem[] hallwayContents, SignalBus bus)
         {
-            Contents = hallwayContents[siloOffset];
+            _envManager = environmentManager;
+            SiloNumber = environmentManager.SiloOffset + siloOffset;
+            CurrentFaction = addressablesManager.CurrentFaction;
+            contents = hallwayContents[siloOffset];
             _bus = bus;
             SubscribeToSignal();
         }
@@ -100,6 +111,19 @@ namespace SupremacyHangar.Runtime.Actors.Silo
         {
             state = nextState; 
             OnStateChanged?.Invoke(nextState);
+        }
+
+        public void ChangeSiloContentToCrate(SiloItem crateContent)
+        {
+            switch(crateContent)
+            {
+                case Mech:
+                case Weapon:
+                    contents = crateContent;
+                    _envManager.UpdatePlayerInventory(siloOffset, crateContent);
+                    break;
+
+            }
         }
     }
 }

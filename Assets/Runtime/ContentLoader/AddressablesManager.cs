@@ -1,10 +1,7 @@
 using SupremacyHangar.Runtime.ContentLoader.Types;
-using SupremacyHangar.Runtime.Environment;
-using SupremacyHangar.Runtime.ScriptableObjects;
 using SupremacyHangar.Runtime.Silo;
 using SupremacyHangar.Runtime.Types;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -37,8 +34,6 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 return mappings.FactionMappingByGuid[_playerInventory.faction].DataFaction;
             }
         }
-        
-        private AssetReference previousMech;
 
         public LoadedAsset myMech { get; set; } = new LoadedAsset();
 
@@ -53,9 +48,10 @@ namespace SupremacyHangar.Runtime.ContentLoader
         private SiloSignalHandler _siloSignalHandler;
         private CrateSignalHandler _crateSignalHandler;
 
+        //These are used in editor only
         private Transform prevTransform;
         private bool sameMechChassis = false;
-
+        private AssetReference previousMech;
         private bool crateOpened = false;
         private GameObject crateInstance;
 
@@ -288,10 +284,11 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 SetLoadedSkin(myMech.mech, TargetSkin, insideCrate);
                 return;
             }
-
+                        
             if (skinToMeshMap.Count == 0 && !insideCrate)
                 siloDirection = spawnLocation;
 
+            //Rotate items (primarily used for composables & in crate spawning)
             Transform newRotation = spawnLocation;
 
             if (skinToMeshMap.Count == 0 && insideCrate)
@@ -300,6 +297,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
             if(siloDirection.forward.normalized.x > 0 && skinToMeshMap.Count != 0)
                 newRotation.localRotation = new Quaternion(spawnLocation.localRotation.x, 180, spawnLocation.localRotation.z, spawnLocation.localRotation.w);
 
+            //Load and spawn mech
             var mechOperationHandler = TargetMech.InstantiateAsync(spawnLocation.position, newRotation.localRotation, spawnLocation);
             StartCoroutine(loadingProgressContext.LoadingAssetProgress(mechOperationHandler, "Loading Mesh"));
             

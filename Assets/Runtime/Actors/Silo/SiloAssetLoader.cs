@@ -21,7 +21,6 @@ namespace SupremacyHangar.Runtime.Actors.Silo
         private SiloState siloState;
         private SignalBus _bus;
         private bool _subscribed;
-        private CrateSignalHandler _crateSignalHandler;
         private SiloSignalHandler _siloSignalHandler;
 
         [Inject]
@@ -34,11 +33,10 @@ namespace SupremacyHangar.Runtime.Actors.Silo
         }
 
         [Inject]
-        public void ConstructSignals(SignalBus bus, CrateSignalHandler crateSignalHandler, SiloSignalHandler siloSignalHandler)
+        public void ConstructSignals(SignalBus bus, SiloSignalHandler siloSignalHandler)
         {
             _bus = bus;
 
-            _crateSignalHandler = crateSignalHandler;
             _siloSignalHandler = siloSignalHandler;
             SubscribeToSignal();
         }
@@ -173,8 +171,8 @@ namespace SupremacyHangar.Runtime.Actors.Silo
 
         public void LoadCrateContents(Transform spawnPoint, SiloItem crateContent)
         {
-            siloState.Contents = crateContent;
             addressablesManager.MapSiloToAsset(crateContent);
+            siloState.ChangeSiloContentToCrate(crateContent);
             SetLoadContents(crateContent);
             if(crateContent is Weapon)
                 addressablesManager.SpawnMech(spawnPoint, true, true);

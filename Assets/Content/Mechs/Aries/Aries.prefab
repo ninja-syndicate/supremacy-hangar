@@ -49,9 +49,7 @@ MonoBehaviour:
   WeaponSockets:
   - {fileID: 5058349120994194009}
   - {fileID: 932374633674303530}
-  UtilitySockets:
-  - {fileID: 0}
-  - {fileID: 0}
+  UtilitySockets: []
   PowerCoreSocket: {fileID: 7886805877627687180}
 --- !u!1 &1577564705813471672
 GameObject:
