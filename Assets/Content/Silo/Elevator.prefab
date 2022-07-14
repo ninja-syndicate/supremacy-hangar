@@ -63,15 +63,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactionZone: {fileID: 8066655568755774459}
-  stops:
-  - x: 16.97299
-    y: 1.498981
-    z: -26.52799
-  - x: 16.97299
-    y: -17.54
-    z: -26.52799
-  initialStop: 0
-  speed: 2
+  playerElevator: {fileID: 0}
 --- !u!114 &8066655568755774459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -996,22 +988,22 @@ PrefabInstance:
     - target: {fileID: 2264872706824299370, guid: 05d748458b5f54390ac0f6b916fb4b8c,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2264872706824299370, guid: 05d748458b5f54390ac0f6b916fb4b8c,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2264872706824299370, guid: 05d748458b5f54390ac0f6b916fb4b8c,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2264872706824299370, guid: 05d748458b5f54390ac0f6b916fb4b8c,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2264872706824299370, guid: 05d748458b5f54390ac0f6b916fb4b8c,
         type: 3}
@@ -1031,7 +1023,7 @@ PrefabInstance:
     - target: {fileID: 2264872706824299370, guid: 05d748458b5f54390ac0f6b916fb4b8c,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 2264872706824299370, guid: 05d748458b5f54390ac0f6b916fb4b8c,
         type: 3}
