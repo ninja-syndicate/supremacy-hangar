@@ -1,9 +1,8 @@
-using SupremacyHangar.Runtime.Interaction;
-using UnityMath = Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Serialization;
+using UnityMath = Unity.Mathematics;
 
-namespace SupremacyHangar.Runtime.Actors
+namespace SupremacyHangar.Runtime.Actors.Elevator
 {
     public class PlayerElevator : ElevatorMotor
     {

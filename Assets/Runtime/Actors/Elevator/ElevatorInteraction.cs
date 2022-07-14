@@ -1,7 +1,7 @@
 using SupremacyHangar.Runtime.Interaction;
 using UnityEngine;
 
-namespace SupremacyHangar.Runtime.Actors
+namespace SupremacyHangar.Runtime.Actors.Elevator
 {
     public class ElevatorInteraction : InteractionZoneResponder
     {

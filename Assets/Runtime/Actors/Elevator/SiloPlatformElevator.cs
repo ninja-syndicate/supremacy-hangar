@@ -1,15 +1,8 @@
-using SupremacyData.Runtime;
-using SupremacyHangar.Runtime.ContentLoader;
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using SupremacyHangar.Runtime.Silo;
 using UnityEngine;
 using UnityEngine.Serialization;
-using UnityMath = Unity.Mathematics;
-using Zenject;
-using SupremacyHangar.Runtime.Silo;
 
-namespace SupremacyHangar.Runtime.Actors
+namespace SupremacyHangar.Runtime.Actors.Elevator
 {        
     public class SiloPlatformElevator : ElevatorMotor
     {

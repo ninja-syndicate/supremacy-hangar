@@ -1,11 +1,9 @@
-using SupremacyHangar.Runtime;
-using UnityEngine;
-using UnityMath = Unity.Mathematics;
-using Zenject;
 using SupremacyHangar.Runtime.Actors.Player;
-using System;
+using UnityEngine;
+using Zenject;
+using UnityMath = Unity.Mathematics;
 
-namespace SupremacyHangar
+namespace SupremacyHangar.Runtime.Actors.Elevator
 {
     public class ElevatorMotor : MonoBehaviour
     {
