@@ -41,6 +41,10 @@ MonoBehaviour:
     m_Address: AssetMappings.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 6ea161a0ec18f4e5fa1d8578250d836b
+    m_Address: Assets/Content/Player/Player 14th July.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
   m_SchemaSet:
