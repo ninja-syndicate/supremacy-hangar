@@ -56,6 +56,9 @@ namespace SupremacyHangar.Runtime.ContentLoader
         private Transform prevTransform;
         private bool sameMechChassis = false;
 
+        private bool crateOpened = false;
+        private GameObject crateInstance;
+
         [Inject]
         public void Construct(SignalBus bus, SiloSignalHandler siloHandler, CrateSignalHandler crateHandler)
         {
@@ -143,7 +146,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
             }
             _contentSignalHandler.InventoryLoaded();
         }
-        
+
         public void MapSiloToAsset(SiloItem silo)
         {
             switch (silo)
@@ -200,6 +203,18 @@ namespace SupremacyHangar.Runtime.ContentLoader
                         Debug.LogError($"No Crate mapping found for {crate.StaticID}");
                     }
                     break;
+                case Weapon weapon:
+                    if (!mappings.WeaponModelMappingByGuid.TryGetValue(weapon.StaticID, out weapon.WeaponModelDetails))
+                    {
+                        Debug.LogError($"No Weapon mapping found for {weapon.StaticID}");
+                        break;
+                    }
+                    if (!mappings.WeaponSkinMappingByGuid.TryGetValue(weapon.Skin.StaticID, out weapon.WeaponSkinDetails))
+                    {
+                        Debug.LogError($"No Weapon Skin mapping found for {weapon.Skin.StaticID}");
+                        break;
+                    }
+                    break;
                 default:
                     Debug.LogError($"Unknown silo of type {silo}.");
                     break;
@@ -233,15 +248,18 @@ namespace SupremacyHangar.Runtime.ContentLoader
         }
         
 #if UNITY_EDITOR
-        public void QuickSpawn()
+        public void QuickSpawn(Transform newSpawn = null, bool isWeapon = false, bool inCrate = false)
         {
-            if (!prevTransform)
+            if (!prevTransform && !newSpawn)
             {
                 Debug.LogError("No prior spawn set");
                 return;
             }
 
-            SpawnMech(prevTransform, false, true);
+            if (newSpawn)
+                SpawnMech(newSpawn, inCrate, isWeapon, true);
+            else
+                SpawnMech(prevTransform, false, isWeapon, true);
         }
 #endif
         private Dictionary<AsyncOperationHandle, AssetReferenceSkin> skinToMeshMap = new();
@@ -252,31 +270,37 @@ namespace SupremacyHangar.Runtime.ContentLoader
         }
 
         private Transform siloDirection;
-        public void SpawnMech(Transform spawnLocation, bool insideCrate = false, bool quickLoad = false)
+        public void SpawnMech(Transform spawnLocation, bool insideCrate = false, bool isWeaponOnly = false, bool quickLoad = false)
         {
-            prevTransform = spawnLocation;
+            if(!insideCrate)
+                prevTransform = spawnLocation;
+
+            if (!siloDirection) skinToMeshMap.Clear();
 
             //When new mech is spawned remove previous unless inside crate
             if (quickLoad)
-                UnloadMech(quickLoad);
+                UnloadMech(quickLoad, insideCrate);
 
             previousMech = TargetMech;
 
             if (sameMechChassis)
             {
-                SetLoadedSkin(myMech.mech, TargetSkin);
+                SetLoadedSkin(myMech.mech, TargetSkin, insideCrate);
                 return;
             }
 
-            if (skinToMeshMap.Count == 0)
+            if (skinToMeshMap.Count == 0 && !insideCrate)
                 siloDirection = spawnLocation;
 
-            Quaternion newRotation = spawnLocation.localRotation;
+            Transform newRotation = spawnLocation;
+
+            if (skinToMeshMap.Count == 0 && insideCrate)
+                newRotation = siloDirection;
 
             if(siloDirection.forward.normalized.x > 0 && skinToMeshMap.Count != 0)
-                newRotation = new Quaternion(spawnLocation.localRotation.x, 180, spawnLocation.localRotation.z, spawnLocation.localRotation.w);
+                newRotation.localRotation = new Quaternion(spawnLocation.localRotation.x, 180, spawnLocation.localRotation.z, spawnLocation.localRotation.w);
 
-            var mechOperationHandler = TargetMech.InstantiateAsync(spawnLocation.position, newRotation, spawnLocation);
+            var mechOperationHandler = TargetMech.InstantiateAsync(spawnLocation.position, newRotation.localRotation, spawnLocation);
             StartCoroutine(loadingProgressContext.LoadingAssetProgress(mechOperationHandler, "Loading Mesh"));
             
             if(TargetSkin != null)
@@ -284,8 +308,17 @@ namespace SupremacyHangar.Runtime.ContentLoader
 
             mechOperationHandler.Completed += (mech) =>
                 {
+                    if (insideCrate)
+                        crateInstance = myMech.mech;
+
                     myMech.mech = mech.Result;
 
+                    if (isWeaponOnly && !insideCrate)
+                        mech.Result.transform.Rotate(Vector3.right, -90.0f);
+
+                    if (insideCrate && quickLoad)
+                        mech.Result.transform.Rotate(Vector3.up, -90f);
+                    
                     SetLoadedSkin(mech.Result, FindMeshSkin(mech.Result), insideCrate);
                 };
         }
@@ -314,6 +347,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
                     Container.InjectGameObject(result);
 
                     loadingProgressContext.ProgressSignalHandler.FinishedLoading(result);
+
                     if (insideCrate)
                         _crateSignalHandler.OpenCrate();
                     else
@@ -326,8 +360,8 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 }
             );
         }
-
-        public void UnloadMech(bool quickLoad = false)
+#if UNITY_EDITOR
+        public void UnloadMech(bool quickLoad = false, bool insideCrate = false)
         {
             if (myMech.skin != null)
             {
@@ -335,24 +369,29 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 myMech.skin = null;
             }
 
-            if (previousMech != null)
+            if (previousMech != null && (!insideCrate || crateOpened))
             {
                 if (!quickLoad || previousMech != TargetMech)
-                    previousMech.ReleaseAsset();
-#if UNITY_EDITOR
+                {
+                    if(!insideCrate && crateOpened)
+                        Addressables.ReleaseInstance(crateInstance);
+                    
+                    Addressables.ReleaseInstance(myMech.mech);
+                    skinToMeshMap.Clear();
+                }
+
                 if (previousMech != TargetMech &&
                     myMech.mech != null)
                 {
                     sameMechChassis = false;
-                    Destroy(myMech.mech);
-                    myMech.mech = null;
                 }
 
                 if (previousMech == TargetMech && myMech.mech)
                     sameMechChassis = true;
-#endif
-            }
 
+            }
+            crateOpened = insideCrate;
         }
+#endif
     }
 }

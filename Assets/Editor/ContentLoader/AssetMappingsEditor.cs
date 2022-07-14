@@ -21,17 +21,7 @@ namespace SupremacyHangar.Editor.ContentLoader
         private int selectedIndex;
         private UnityEditor.Editor _editor;
         private ReorderableList selectedList;
-        public enum ListType
-        {
-            Faction,
-            MechChassis,
-            MechSkin,
-            MysteryCrate,
-            WeaponModel,
-            WeaponSkin,
-            PowerCore,
-        };
-
+        
         class AssetMapItem
         {
             public bool ContainsError = false;

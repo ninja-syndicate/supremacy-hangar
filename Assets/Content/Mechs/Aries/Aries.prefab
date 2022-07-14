@@ -46,9 +46,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25566a42c016f69498fd0645e9deb5a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeaponSockets: []
-  UtilitySockets: []
-  PowerCoreSocket: {fileID: 0}
+  WeaponSockets:
+  - {fileID: 5058349120994194009}
+  - {fileID: 932374633674303530}
+  UtilitySockets:
+  - {fileID: 0}
+  - {fileID: 0}
+  PowerCoreSocket: {fileID: 7886805877627687180}
 --- !u!1 &1577564705813471672
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,9 +232,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20b19aeef55998e4baf06a0000093666, type: 3}
+--- !u!4 &932374633674303530 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1807306259960628406, guid: 20b19aeef55998e4baf06a0000093666,
+    type: 3}
+  m_PrefabInstance: {fileID: 1577564705826204828}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1328029454291405687 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 20b19aeef55998e4baf06a0000093666,
+    type: 3}
+  m_PrefabInstance: {fileID: 1577564705826204828}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5058349120994194009 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6041155607303708357, guid: 20b19aeef55998e4baf06a0000093666,
     type: 3}
   m_PrefabInstance: {fileID: 1577564705826204828}
   m_PrefabAsset: {fileID: 0}

@@ -9,6 +9,17 @@ using static SupremacyHangar.Editor.ContentLoader.AssetMappingsEditor;
 
 namespace SupremacyHangar.Editor.ContentLoader
 {
+    public enum ListType
+    {
+        Faction,
+        MechChassis,
+        MechSkin,
+        MysteryCrate,
+        WeaponModel,
+        WeaponSkin,
+        PowerCore,
+    };
+
     public class AssetMappingAssetGrabber
     {
         public Dictionary<ListType, string[]> TypeToNameMap => typeToNameMap;
@@ -28,7 +39,7 @@ namespace SupremacyHangar.Editor.ContentLoader
             typeToNameMap.Add(ListType.MechChassis, new[] { "Mech Chassis", "dataMechModel", "mechReference" });
             typeToNameMap.Add(ListType.MechSkin, new[] { "Mech Skins", "dataMechSkin", "skinReference" });
             typeToNameMap.Add(ListType.WeaponModel, new[] { "Weapon Model", "data", "reference" });
-            typeToNameMap.Add(ListType.WeaponSkin, new[] { "Weapon Skin", "data", "reference" });
+            typeToNameMap.Add(ListType.WeaponSkin, new[] { "Weapon Skins", "data", "reference" });
             typeToNameMap.Add(ListType.PowerCore, new[] { "Power Core", "data", "reference" });
             
         }

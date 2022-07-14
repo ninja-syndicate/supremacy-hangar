@@ -223,7 +223,7 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-  - containsError: 0
+  - containsError: 1
     dataMechSkin: {fileID: -6924407672097071136, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
       type: 2}
     skinReference:
@@ -231,7 +231,7 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-  - containsError: 0
+  - containsError: 1
     dataMechSkin: {fileID: -1383009038386425828, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
       type: 2}
     skinReference:
@@ -576,6 +576,62 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-  weaponModels: []
-  weaponSkins: []
-  powerCores: []
+  weaponModels:
+  - containsError: 0
+    data: {fileID: 8233469399879488929, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: bc7344ee3a65e6c458117e3279961efc
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+  - containsError: 0
+    data: {fileID: -2611201698177446533, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: a451efacf962cac43a044b9bfc43f1d6
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+  weaponSkins:
+  - containsError: 0
+    data: {fileID: 5065763395433890026, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: 350bc6144ef06a746b1f1329de284f6d
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+  - containsError: 0
+    data: {fileID: 9046335598487201427, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: 66f091c8137e97d48848907a871e2051
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+  - containsError: 1
+    data: {fileID: -6499977584199040569, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: 28aa3529758f0ee49a0e72cc144778c6
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+  - containsError: 1
+    data: {fileID: -554204102754640436, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: 7ce7c997eb50b1147a301881b4f3bfb7
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+  powerCores:
+  - containsError: 1
+    data: {fileID: -6047314430810352344, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: d2daba7dc509adc4e865b03bc53c363b
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+  - containsError: 1
+    data: {fileID: -7910296973919820155, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: d2daba7dc509adc4e865b03bc53c363b
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0

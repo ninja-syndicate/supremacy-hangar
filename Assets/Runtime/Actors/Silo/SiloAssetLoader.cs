@@ -95,6 +95,7 @@ namespace SupremacyHangar.Runtime.Actors.Silo
             if (siloState.CurrentState == SiloState.StateName.NotLoaded) return;
             int accessoryIndex = 0;
             var accessoryList = siloState.Contents as Mech;
+            if (accessoryList == null) return;
             //Load Weapons
             foreach (Transform spawn in signal.SocketsLists.WeaponSockets)
             {
@@ -164,14 +165,21 @@ namespace SupremacyHangar.Runtime.Actors.Silo
         public void LoadHangarContents(Transform spawnPoint)
         {
             SetLoadContents(siloState.Contents);
-            addressablesManager.SpawnMech(spawnPoint);
+            if(siloState.Contents is Weapon)
+                addressablesManager.SpawnMech(spawnPoint, false, true);
+            else
+                addressablesManager.SpawnMech(spawnPoint);
         }
 
         public void LoadCrateContents(Transform spawnPoint, SiloItem crateContent)
         {
+            siloState.Contents = crateContent;
             addressablesManager.MapSiloToAsset(crateContent);
             SetLoadContents(crateContent);
-            addressablesManager.SpawnMech(spawnPoint, true);
+            if(crateContent is Weapon)
+                addressablesManager.SpawnMech(spawnPoint, true, true);
+            else
+                addressablesManager.SpawnMech(spawnPoint, true);
         }
 
         public void Unload()

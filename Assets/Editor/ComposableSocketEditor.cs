@@ -43,11 +43,16 @@ namespace SupremacyHangar.Editor
             {
                 selfReference.WeaponSockets.Clear();
                 selfReference.UtilitySockets.Clear();
+                selfReference.PowerCoreSocket = null;
+                serializedObject.ApplyModifiedProperties();
+                serializedObject.Update();
 
                 ImportSockets(selfReference.transform);
 
                 selfReference.WeaponSockets = selfReference.WeaponSockets.OrderBy(go => go.name).ToList();
                 selfReference.UtilitySockets = selfReference.UtilitySockets.OrderBy(go => go.name).ToList();
+                serializedObject.ApplyModifiedProperties();
+                serializedObject.Update();
             }
         }
 
@@ -64,7 +69,10 @@ namespace SupremacyHangar.Editor
                 else if (child.name.Contains("utility", StringComparison.CurrentCultureIgnoreCase))
                     selfReference.UtilitySockets.Add(child);
                 else if (child.name.Contains("powercore", StringComparison.CurrentCultureIgnoreCase))
-                    selfReference.PowerCoreSocket = child;
+                    powerCoreSocket.objectReferenceValue = child;
+
+                serializedObject.ApplyModifiedProperties();
+                serializedObject.Update();
             }
         }
     }

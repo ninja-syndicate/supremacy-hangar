@@ -9,7 +9,7 @@ namespace SupremacyHangar.Runtime.Actors.Silo
     public class SiloState : MonoBehaviour
     {
         public StateName CurrentState => state;
-        public SiloItem Contents => contents;
+        //public SiloItem Contents => contents;
 
         public enum StateName
         {
@@ -25,7 +25,7 @@ namespace SupremacyHangar.Runtime.Actors.Silo
 
         [SerializeField] private int siloOffset;
         
-        private SiloItem contents;
+        public SiloItem Contents;
         
         [SerializeField] private StateName state;
 
@@ -41,7 +41,7 @@ namespace SupremacyHangar.Runtime.Actors.Silo
         [Inject]
         public void Construct(SiloItem[] hallwayContents, SignalBus bus)
         {
-            contents = hallwayContents[siloOffset];
+            Contents = hallwayContents[siloOffset];
             _bus = bus;
             SubscribeToSignal();
         }
