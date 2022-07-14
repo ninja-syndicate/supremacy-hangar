@@ -6,25 +6,28 @@ namespace SupremacyHangar.Runtime.Actors.Elevator
 {
     public class PlayerElevator : ElevatorMotor
     {
+        public Vector3[] Stops => stops;
+
         [SerializeField] protected Vector3[] stops;
         [SerializeField] private int initialStop;
-        [FormerlySerializedAs("velocity"), SerializeField] protected float speed;
 
         protected UnityMath.float3 currentPos;
 
         [SerializeField, Tooltip("Optional linked elevator control")] SiloPlatformElevator linkedElevator;
-
+        private bool linkedElevatorPresent;
+        
         public void Start()
         {
             currentPos = stops[initialStop];
             transform.localPosition = currentPos;
-            InitializeMotor(stops, initialStop, currentPos, speed);
+            InitializeMotor(stops, initialStop);
+            linkedElevatorPresent = linkedElevator != null;
         }
 
         public override void MoveToNextStop()
         {
             base.MoveToNextStop();
-            linkedElevator?.MoveToNextStop();
+            if (linkedElevatorPresent) linkedElevator.MoveToNextStop();
         }
     }
 }

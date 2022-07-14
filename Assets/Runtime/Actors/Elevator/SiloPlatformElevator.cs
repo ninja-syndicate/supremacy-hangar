@@ -8,9 +8,7 @@ namespace SupremacyHangar.Runtime.Actors.Elevator
     {
         private Vector3[] stops;
         private bool stopsReady = false;
-        [FormerlySerializedAs("velocity"), SerializeField] protected float speed;
 
-        private int nextStop = 0;
         private Vector3 currentPos;
 
         [SerializeField] private Transform filledTargetTransform;
@@ -33,7 +31,7 @@ namespace SupremacyHangar.Runtime.Actors.Elevator
             stops = new[] { currentPos, transform.localPosition };
             transform.localPosition = currentPos;
             stopsReady = true;
-            InitializeMotor(stops, nextStop, currentPos, speed);
+            InitializeMotor(stops, 0);
         }
 
         private Vector3 CalcPlatformHeight(Vector3 pos)
