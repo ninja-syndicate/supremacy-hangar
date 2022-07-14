@@ -4,12 +4,21 @@ using UnityEngine.UI;
 
 namespace SupremacyHangar.Runtime.Actors.Elevator
 {
+    [Serializable]
+    public class LevelIndicator
+    {
+        public bool Valid => Hilighted != null && Unhilighted != null;
+
+        public GameObject Hilighted;
+        public GameObject Unhilighted;
+    }
+    
     public class ElevatorUI : MonoBehaviour
     {
         //TODO: this needs to be changed to ElevatorMotor or something, so we could use it on any elevator
         [SerializeField] private PlayerElevator motor;
 
-        [SerializeField] private GameObject[] levelIndicators;
+        [SerializeField] private LevelIndicator[] levelIndicators;
         
         public void Awake()
         {
@@ -38,7 +47,8 @@ namespace SupremacyHangar.Runtime.Actors.Elevator
         {
             for (int index = 0; index < levelIndicators.Length; index++)
             {
-                levelIndicators[index].SetActive(index == motorCurrentStop);
+                levelIndicators[index].Hilighted.SetActive(index == motorCurrentStop);
+                levelIndicators[index].Unhilighted.SetActive(index != motorCurrentStop);
             }
         }
 
@@ -54,9 +64,18 @@ namespace SupremacyHangar.Runtime.Actors.Elevator
         {
             for (int index = 0; index < levelIndicators.Length; index++)
             {
-                if (levelIndicators[index] != null) continue;
-                Debug.LogError($"Level indicator at index {index} is null", this);
-                enabled = false;
+                if (levelIndicators[index] != null)
+                {
+                    if (levelIndicators[index].Valid) continue;
+
+                    Debug.LogError($"Level indicator at index {index} is not valid - check that it has everything assigned", this);
+                    enabled = false;
+                }
+                else
+                {
+                    Debug.LogError($"Level indicator at index {index} is null", this);
+                    enabled = false;
+                }
             }
 
             if (motor == null)

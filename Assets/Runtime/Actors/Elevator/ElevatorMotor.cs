@@ -85,6 +85,7 @@ namespace SupremacyHangar.Runtime.Actors.Elevator
             if (UnityMath.math.distancesq(myCurrentPos, myStops[myNextStop]) > Mathf.Epsilon) return;
             myNextStop++;
             CurrentStop = -1;
+            OnStopChanged?.Invoke(CurrentStop);
             if (myNextStop >= myStops.Length) myNextStop = 0;
         }
 
