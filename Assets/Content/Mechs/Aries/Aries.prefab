@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1577564704396694851}
+  - component: {fileID: 9177557939963682072}
   m_Layer: 0
   m_Name: Aries
   m_TagString: Untagged
@@ -33,6 +34,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9177557939963682072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577564704396694850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25566a42c016f69498fd0645e9deb5a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeaponSockets: []
+  UtilitySockets: []
+  PowerCoreSocket: {fileID: 0}
 --- !u!1 &1577564705813471672
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,7 +74,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1577564705813471672}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 13.22, z: 0}
+  m_LocalPosition: {x: 4.52, y: 11.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -77,6 +93,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd23f567e2f05fc418fc9ff34c5e714b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &7649610410782707796
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7886805877627687180}
+  m_Layer: 0
+  m_Name: PowerCore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7886805877627687180
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7649610410782707796}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0, y: 17.25, z: -3.91}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1328029454291405687}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1001 &1577564705826204828
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -159,6 +206,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -3116183519575270639, guid: 20b19aeef55998e4baf06a0000093666,
+        type: 3}
+      propertyPath: m_Name
+      value: Weapon_Socket_2
+      objectReference: {fileID: 0}
     - target: {fileID: -1314584013615251059, guid: 20b19aeef55998e4baf06a0000093666,
         type: 3}
       propertyPath: m_RenderingLayerMask
@@ -168,6 +220,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Aries
+      objectReference: {fileID: 0}
+    - target: {fileID: 4385093797212979910, guid: 20b19aeef55998e4baf06a0000093666,
+        type: 3}
+      propertyPath: m_Name
+      value: Weapon_Socket_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20b19aeef55998e4baf06a0000093666, type: 3}
