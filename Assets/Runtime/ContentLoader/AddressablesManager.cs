@@ -306,16 +306,13 @@ namespace SupremacyHangar.Runtime.ContentLoader
 
             mechOperationHandler.Completed += (mech) =>
                 {
-                    if (insideCrate)
+                    if (insideCrate && !crateInstance)
                         crateInstance = myMech.mech;
 
                     myMech.mech = mech.Result;
 
                     if (isWeaponOnly && !insideCrate)
                         mech.Result.transform.Rotate(Vector3.right, -90.0f);
-
-                    if (insideCrate && quickLoad)
-                        mech.Result.transform.Rotate(Vector3.up, -90f);
                     
                     SetLoadedSkin(mech.Result, FindMeshSkin(mech.Result), insideCrate);
                 };
