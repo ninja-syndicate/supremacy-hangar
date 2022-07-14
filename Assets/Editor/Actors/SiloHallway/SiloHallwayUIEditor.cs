@@ -31,6 +31,7 @@ namespace SupremacyHangar.Editor.Actors.SiloHallway
         private SerializedProperty siloContentsName1Property;
         private SerializedProperty siloContentsName2Property;
         private SerializedProperty interactionButtonProperty;
+        private SerializedProperty interactionButtonProgressProperty;
         private SerializedProperty interactionButtonTextProperty;
         
         private SerializedProperty startFactionColorProperty;
@@ -64,6 +65,7 @@ namespace SupremacyHangar.Editor.Actors.SiloHallway
             siloContentsName1Property = serializedObject.FindProperty("siloContentsName1");
             siloContentsName2Property = serializedObject.FindProperty("siloContentsName2");
             interactionButtonProperty = serializedObject.FindProperty("interactionButton");
+            interactionButtonProgressProperty = serializedObject.FindProperty("interactionButtonProgress");
             interactionButtonTextProperty = serializedObject.FindProperty("interactionButtonText");
             
             startFactionColorProperty = serializedObject.FindProperty("startFactionColor");
@@ -170,6 +172,7 @@ namespace SupremacyHangar.Editor.Actors.SiloHallway
             EditorGUILayout.PropertyField(siloContentsName1Property);
             EditorGUILayout.PropertyField(siloContentsName2Property);
             EditorGUILayout.PropertyField(interactionButtonProperty);
+            EditorGUILayout.PropertyField(interactionButtonProgressProperty);
             EditorGUILayout.PropertyField(interactionButtonTextProperty);
             EditorGUILayout.Separator();
             EditorGUILayout.PropertyField(loadRequestTextProperty);

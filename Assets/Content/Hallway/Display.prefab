@@ -422,7 +422,7 @@ GameObject:
   - component: {fileID: 399289632728842783}
   - component: {fileID: 4455658631973401602}
   m_Layer: 0
-  m_Name: Silo_Display
+  m_Name: Display
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -510,9 +510,9 @@ MonoBehaviour:
   siloContentsName1: {fileID: 4472911683331499170}
   siloContentsName2: {fileID: 3000889080786872621}
   interactionButton: {fileID: 2187088310494769674}
+  interactionButtonProgress: {fileID: 7453852293570113820}
   interactionButtonText: {fileID: 2389442065814661020}
   startFactionColor: {r: 0, g: 0, b: 0, a: 0}
-  siloOffset: 1
   clockUpdateDelay: 0.25
   loadRequestText: Pressurize
   loadingText: Pressurizing

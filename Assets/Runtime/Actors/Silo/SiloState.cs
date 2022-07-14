@@ -39,45 +39,20 @@ namespace SupremacyHangar.Runtime.Actors.Silo
         public event Action<StateName> OnStateChanged;
 
         public Transform SpawnLocation { get; set; }
-
-        private SignalBus _bus;
-
+        
         public bool CanOpenCrate { get; private set; } = false;
-        private bool _subscribed;
 
         [Inject]
         public void Construct(
             EnvironmentManager environmentManager, AddressablesManager addressablesManager, 
-            SiloItem[] hallwayContents, SignalBus bus)
+            SiloItem[] hallwayContents)
         {
             SiloNumber = environmentManager.SiloOffset + siloOffset;
             CurrentFaction = addressablesManager.CurrentFaction;
             contents = hallwayContents[siloOffset];
-            _bus = bus;
-            SubscribeToSignal();
         }
 
-
-        private void OnEnable()
-        {
-            SubscribeToSignal();
-        }
-
-        private void OnDisable()
-        {
-            if (!_subscribed) return;
-            _bus.Unsubscribe<CanOpenCrateSignal>(CrateCanOpen);
-            _subscribed = false;
-        }
-
-        private void SubscribeToSignal()
-        {
-            if (_bus == null || _subscribed) return;
-            _bus.Subscribe<CanOpenCrateSignal>(CrateCanOpen);
-            _subscribed = true;
-        }
-
-        private void CrateCanOpen()
+        public void CrateCanOpen()
         {
             CanOpenCrate = true;
             OnStateChanged?.Invoke(CurrentState);
