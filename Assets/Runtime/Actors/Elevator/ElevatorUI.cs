@@ -1,6 +1,9 @@
 using System;
+using SupremacyHangar.Runtime.Actors.Silo;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace SupremacyHangar.Runtime.Actors.Elevator
 {
@@ -19,11 +22,19 @@ namespace SupremacyHangar.Runtime.Actors.Elevator
         [SerializeField] private PlayerElevator motor;
 
         [SerializeField] private LevelIndicator[] levelIndicators;
+
+        [SerializeField] private TMP_Text siloNumber;
         
         public void Awake()
         {
             SetupMotor();
             SetupLevelIndicators();
+        }
+
+        [Inject]
+        public void Inject(SiloState siloState)
+        {
+            siloNumber.text = (siloState.SiloNumber + 1).ToString();
         }
 
         public void OnEnable()

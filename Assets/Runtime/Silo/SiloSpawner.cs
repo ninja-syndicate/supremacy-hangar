@@ -30,15 +30,18 @@ namespace SupremacyHangar.Runtime.Silo
         private SignalBus _bus;
         private bool _subscribed;
         private bool siloClosing = false;
-        
+
+        private DiContainer container;
         private SiloState siloState;
 
         private bool siloNeedsSpawning = false;
         private bool loadingCrateContent = false;
 
         [Inject]
-        public void Constuct(EnvironmentManager environmentManager, SignalBus bus, SiloState siloState)
+        public void Constuct(
+            EnvironmentManager environmentManager, SignalBus bus, SiloState siloState, DiContainer container)
         {
+            this.container = container;
             _environmentManager = environmentManager;
             _bus = bus;
             SubscribeToSignal();
@@ -170,6 +173,11 @@ namespace SupremacyHangar.Runtime.Silo
 
             //open window
             myWindowAnim.SetBool("IsOpen", true);
+        }
+
+        public void InjectGameObject(GameObject newSilo)
+        {
+            container.InjectGameObject(newSilo);
         }
     }
 }

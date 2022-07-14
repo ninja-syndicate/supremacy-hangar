@@ -2371,7 +2371,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &6270561616174330099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2390,6 +2390,7 @@ MonoBehaviour:
     Unhilighted: {fileID: 7894036588472362881}
   - Hilighted: {fileID: 6150875312739794332}
     Unhilighted: {fileID: 6368331765352399292}
+  siloNumber: {fileID: 6866233445253156531}
 --- !u!1 &8836409185337160556
 GameObject:
   m_ObjectHideFlags: 0
