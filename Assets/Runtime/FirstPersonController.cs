@@ -13,6 +13,7 @@ namespace SupremacyHangar.Runtime
 	[DefaultExecutionOrder(1)]
 	public class FirstPersonController : MonoBehaviour
 	{
+		//CharacterController cc;
 		[Header("Player")]
 		[Tooltip("Move speed of the character in m/s")]
 		public float MoveSpeed = 4.0f;
@@ -112,6 +113,20 @@ namespace SupremacyHangar.Runtime
 		//Footstep Stuff
 		[SerializeField] private AudioSource myAudioSource;
         [SerializeField] private float FootstepRateRatio;
+		[SerializeField] private AudioClip RightFootClip;
+		[SerializeField] private AudioClip LeftFootClip;
+		private bool RightFoot;
+		private float FootstepTimer;
+		private bool Stepped;
+		private bool isPaused = false;
+		protected SignalBus _bus;
+		protected bool _subscribed;
+
+		[Inject]
+		public void Construct(SignalBus bus)
+		{
+			_bus = bus;
+		}
 
 		public void Awake()
 		{
@@ -122,6 +137,8 @@ namespace SupremacyHangar.Runtime
 			}
 			if (!ValidateAndSetupComponentReferences()) return;
 			interactionPromptControllerSet = interactionPromptController != null;
+
+
 		}
 		
 		private void Start()
@@ -146,20 +163,52 @@ namespace SupremacyHangar.Runtime
 				PlayerPrefs.SetInt("HelpShown", 1);
 				PlayerPrefs.Save();
 			}
+
+			RightFoot = false;
+			FootstepTimer = 30f;
+			Stepped = false;
 		}
 
 		public void OnEnable()
 		{
 			if (!BindToInputs()) return;
-			Debug.Log("TEST");
+			SubscribeToSignal();
 		}
 
-		public void OnDisable()
+		protected virtual void SubscribeToSignal()
 		{
+			if (_bus == null || _subscribed) return;
+			_bus.Subscribe<ResumeGameSignal>(TogglePause);
+			_bus.Subscribe<PauseGameSignal>(TogglePause);
+
+			_subscribed = true;
+		}
+
+		public virtual void OnDisable()
+		{
+			if (!_subscribed) return;
+			_bus.Unsubscribe<ResumeGameSignal>(TogglePause);
+			_bus.Unsubscribe<PauseGameSignal>(TogglePause);
+
+			_subscribed = false;
 #if UNITY_EDITOR
 			PlayerPrefs.DeleteAll();
 #endif
 			UnbindInputs();
+		}
+
+		private void TogglePause()
+		{
+			isPaused = !isPaused;
+			switch (isPaused)
+			{
+				case true when myAudioSource.isPlaying == true:
+					myAudioSource.Pause();
+					break;
+				case false when myAudioSource.isPlaying == false:
+					myAudioSource.Play();
+					break;
+			}
 		}
 
 		public void DecrementInteractionPromptRequests()
@@ -305,7 +354,7 @@ namespace SupremacyHangar.Runtime
 				interactionPromptController.Set(showPrompt);
 			}
 
-			Debug.Log("Player Speed = " + _speed);
+			//Debug.Log("Player Speed = " + _speed);
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
@@ -351,8 +400,37 @@ namespace SupremacyHangar.Runtime
 		}
 
 		private void FootstepAudio()
-		{ 
-			//asdf
+		{
+			//If homie is on the ground and hes moving
+			if (Grounded && _speed > 0.0f && FootstepTimer > 0f)
+			{
+				FootstepTimer = (FootstepTimer - (FootstepRateRatio * _speed));
+
+				if (FootstepTimer < 30f && !Stepped)
+				{
+					myAudioSource.Stop();
+					if (RightFoot)
+					{
+						myAudioSource.clip = RightFootClip;
+						RightFoot = false;
+					}
+					else
+					{
+						myAudioSource.clip = LeftFootClip;
+						RightFoot = true;
+					}
+					myAudioSource.pitch = UnityEngine.Random.Range(0.95f, 1.05f);
+					myAudioSource.Play();
+					Stepped = true;
+				}
+			}
+			else if (!Grounded || _speed == 0.0f || FootstepTimer <= 0f)
+			{
+				FootstepTimer = 30f;
+				Stepped = false;
+				//myAudioSource.Stop();
+			}
+			//Debug.Log("Stepped = " + Stepped);
 		}
 
 		private void Move()
