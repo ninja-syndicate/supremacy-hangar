@@ -3085,9 +3085,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccaa1fe7def847a4eb11b0af2dff70fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInput: {fileID: 0}
   settingsMenu: {fileID: 420112127967614265}
   helpMenu: {fileID: 93349569924251565}
-  interactionPrompt: {fileID: 8984806766784220333}
+  interactionPrompt: {fileID: 2953654435194850926}
 --- !u!1 &5955572307812626277
 GameObject:
   m_ObjectHideFlags: 0
