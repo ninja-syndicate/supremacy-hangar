@@ -47,7 +47,7 @@ pipeline {
         bat """
             mkdir Build-to-Deploy
             xcopy /E ${env.WORKSPACE}\\Builds\\WebGL\\Build ${env.WORKSPACE}\\Build-to-Deploy
-            xcopy /E /I ${env.WORKSPACE}\\Builds\\WebGL\\StreamingAssets ${env.WORKSPACE}\\Build-to-Deploy\\StreamingAssests
+            xcopy /E /I ${env.WORKSPACE}\\Builds\\WebGL\\StreamingAssets ${env.WORKSPACE}\\Build-to-Deploy\\StreamingAssets
             rclone sync "${env.WORKSPACE}/Build-to-Deploy" "afiles:/var/www/html/supremacy-hangar/build/${deployEnv}/" --progress --verbose --multi-thread-streams 4
             """
         script {
