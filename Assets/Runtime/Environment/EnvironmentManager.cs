@@ -309,7 +309,7 @@ namespace SupremacyHangar.Runtime.Environment
         private void InstantiateSilo(AsyncOperationHandle<GameObject> operationHandler)
         {
             var newSilo = operationHandler.Result;
-            _container.InjectGameObject(newSilo);
+            _currentSilo.InjectGameObject(newSilo);
             
             //Reposition door & set connection point
             newSilo.GetComponent<EnvironmentPrefab>().JoinTo(_currentSilo.ToConnectTo, nextRoomEnvironmentPrefabRef.Joins[_currentSilo.ToConnectTo]);
