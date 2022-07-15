@@ -43,13 +43,13 @@ pipeline {
           echo 'Build stage successful.'
           slackSend channel: '#test-notifications',
             color: 'good', 
-            message: "*${currentBuild.currentResult}:* Build ${env.BUILD_NUMBER} has *succeded* :innocent: (<${env.BUILD_URL}|Open>)"
+            message: "*${currentBuild.currentResult}:* *supremacy-hangar* build ${env.BUILD_NUMBER} has *succeded* :innocent:. More info: <${env.BUILD_URL}|supremacy-hangar-build>"
         }
         failure {
           echo 'Build stage unsuccessful.'
           slackSend channel: '#test-notifications',
           color: 'danger', 
-          message: "*${currentBuild.currentResult}:* Build ${env.BUILD_NUMBER} has *failed* :astonished: (<${env.BUILD_URL}|Open>)"
+          message: "*${currentBuild.currentResult}:* *supremacy-hangar* build ${env.BUILD_NUMBER} has *failed* :astonished:. More info: <${env.BUILD_URL}|supremacy-hangar-build>"
         }
       }
     } 
@@ -58,9 +58,8 @@ pipeline {
         echo 'Deploy build started'
         bat """
             mkdir Build-to-Deploy
-            xcopy /E ${env.WORKSPACE}\\Builds\\WebGL\\Build ${env.WORKSPACE}\\Build-to-Deploy
-            xcopy /E /I ${env.WORKSPACE}\\Builds\\WebGL\\StreamingAssets ${env.WORKSPACE}\\Build-to-Deploy\\StreamingAssets
-            rclone sync "${env.WORKSPACE}/Build-to-Deploy" "afiles:/var/www/html/supremacy-hangar/build/${deployEnv}/" --progress --verbose --multi-thread-streams 4
+            xcopy /E /Y ${env.WORKSPACE}\\Builds\\WebGL\\Build ${env.WORKSPACE}\\Build-to-Deploy
+            xcopy /E /I /Y ${env.WORKSPACE}\\Builds\\WebGL\\StreamingAssets ${env.WORKSPACE}\\Build-to-Deploy\\StreamingAssets
             """
         script {
           if (env.BRANCH_NAME == 'develop') {
@@ -75,13 +74,13 @@ pipeline {
               echo 'Deploy build stage successful.'
               slackSend channel: '#test-notifications',
               color: 'good', 
-              message: "*${currentBuild.currentResult}:* Deploy build has *succeded* :innocent: (<${env.BUILD_URL}|Open>)"
+              message: "*${currentBuild.currentResult}:* *supremacy-hangar* build deploy has *succeded* :innocent:. More info: <${env.BUILD_URL}|supremacy-hangar-deploy>"
           }
           failure {
               echo 'Deploy build stage successful.'
               slackSend channel: '#test-notifications',
                 color: 'danger', 
-                message: "*${currentBuild.currentResult}:* Deploy build has *failed* :astonished: (<${env.BUILD_URL}|Open>)"
+                message: "*${currentBuild.currentResult}:* *supremacy-hangar* build deploy has *failed* :astonished:. More info: <${env.BUILD_URL}|supremacy-hangar-deploy>"
           }
       }
     }
@@ -101,13 +100,13 @@ pipeline {
               echo 'Deploy addressables stage successful.'
               slackSend channel: '#test-notifications',
                 color: 'good', 
-                message: "*${currentBuild.currentResult}:* Deploy addressables has *succeded* :innocent: (<${env.BUILD_URL}|Open>)"
+                message: "*${currentBuild.currentResult}:* *supremacy-hangar* addressables deploy has *succeded* :innocent:. More info: <${env.BUILD_URL}|supremacy-hangar-deploy>"
           }
           failure {
               echo 'Deploy addressables stage successful.'
               slackSend channel: '#test-notifications',
                 color: 'danger', 
-                message: "*${currentBuild.currentResult}:* Deploy addressables has *failed* :astonished: (<${env.BUILD_URL}|Open>)"
+                message: "*${currentBuild.currentResult}:* *supremacy-hangar* addressables deploy has *failed* :astonished:. More info: <${env.BUILD_URL}|supremacy-hangar-deploy>"
           }
         }
     } 
