@@ -43,13 +43,13 @@ pipeline {
           echo 'Build stage successful.'
           slackSend channel: '#test-notifications',
             color: 'good', 
-            message: "*${currentBuild.currentResult}:* *supremacy-hangar* build ${env.BUILD_NUMBER} has *succeded* :innocent:. More info: <${env.BUILD_URL}|supremacy-hangar-build>"
+            message: "*${currentBuild.currentResult}:* *supremacy-hangar* build has *succeded* :innocent:. Job name: *${env.JOB_NAME}*. Build no: *${env.BUILD_NUMBER}*. More info: <${env.BUILD_URL}|supremacy-hangar-build>"
         }
         failure {
           echo 'Build stage unsuccessful.'
           slackSend channel: '#test-notifications',
           color: 'danger', 
-          message: "*${currentBuild.currentResult}:* *supremacy-hangar* build ${env.BUILD_NUMBER} has *failed* :astonished:. More info: <${env.BUILD_URL}|supremacy-hangar-build>"
+          message: "*${currentBuild.currentResult}:* *supremacy-hangar* build has *failed* :astonished:. Job name: *${env.JOB_NAME}*. Build no: *${env.BUILD_NUMBER}*. More info: <${env.BUILD_URL}|supremacy-hangar-build>"
         }
       }
     } 
