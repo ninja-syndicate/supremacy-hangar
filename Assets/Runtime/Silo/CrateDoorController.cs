@@ -3,6 +3,8 @@ using Zenject;
 
 namespace SupremacyHangar.Runtime.Silo
 {
+    //TODO: Refactor this
+    [RequireComponent(typeof(AudioSource))]
     public class CrateDoorController : MonoBehaviour
     {
         private SignalBus _bus;
@@ -10,12 +12,16 @@ namespace SupremacyHangar.Runtime.Silo
         private bool _subscribed;
 
         [SerializeField] private Animator _animator;
+        private AudioSource myAudioSource;
+        [SerializeField] private AudioClip OpenCrateClip;
+        [SerializeField] private AudioClip CloseCrateClip;
 
         [Inject]
         public void Contruct(SignalBus bus)
         {
             _bus = bus;
             SubscribeToSignal();
+            myAudioSource = gameObject.GetComponent(typeof(AudioSource)) as AudioSource;
         }
 
         private void OnEnable()
@@ -40,6 +46,8 @@ namespace SupremacyHangar.Runtime.Silo
         private void OpenCrate()
         {
             _animator.SetBool("open", true);
+            myAudioSource.clip = OpenCrateClip;
+            myAudioSource.Play();
         }
     }
 }
