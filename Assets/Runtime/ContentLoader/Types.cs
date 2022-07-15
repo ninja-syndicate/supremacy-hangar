@@ -1,12 +1,18 @@
 using SupremacyHangar.Runtime.Environment;
 using SupremacyHangar.Runtime.ScriptableObjects;
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
 namespace SupremacyHangar.Runtime.ContentLoader.Types
 {
+    
+    [Serializable]
+    public class AssetReferenceAssetMappings : AssetReferenceT<AssetMappings>
+    {
+        public AssetReferenceAssetMappings(string guid) : base(guid) { }
+    }
+    
     [Serializable]
     public class AssetReferenceSkin : AssetReferenceT<Skin>
     {

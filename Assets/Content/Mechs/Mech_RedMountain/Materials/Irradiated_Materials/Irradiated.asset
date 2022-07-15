@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: Irradiated
   m_EditorClassIdentifier: 
   mats:
-  - {fileID: 2100000, guid: e83ef4012e7da884b8fadb2e4163fe30, type: 2}
   - {fileID: 2100000, guid: 6fa2f284440c64a4cb6e6d0f78efdd1d, type: 2}
-  - {fileID: 2100000, guid: ce10020d0fdfedc49a408bc2bc61a4a5, type: 2}
-  - {fileID: 2100000, guid: 3d2b58c0d8d8e2b4898cade13533d92c, type: 2}
+  - {fileID: 2100000, guid: e761de7f277f2094eb99505745ba2185, type: 2}
+  - {fileID: 2100000, guid: b926cb8297f7f4b498b5edfa6dde496a, type: 2}
+  - {fileID: 2100000, guid: 1187a921fbb5b4849afb28c77b1190cf, type: 2}
+  - {fileID: 2100000, guid: 7b07b106f213a3b42a7ec04f3f9ec3e4, type: 2}
+  - {fileID: 2100000, guid: f475defb118fa10468be5bf3069aa56f, type: 2}
   - {fileID: 2100000, guid: dde122088b7d9864aad7601d0e87d674, type: 2}
   - {fileID: 2100000, guid: bc391ca7ee66e5a4db25c4a7c7ea06e2, type: 2}
-  - {fileID: 2100000, guid: 7b07b106f213a3b42a7ec04f3f9ec3e4, type: 2}
-  - {fileID: 2100000, guid: b926cb8297f7f4b498b5edfa6dde496a, type: 2}
-  - {fileID: 2100000, guid: 06cae3708c3f9e24ea3fc7afc79065d4, type: 2}
   - {fileID: 2100000, guid: 07b49f22c415d8841be026eadd0ba8cd, type: 2}
-  - {fileID: 2100000, guid: f475defb118fa10468be5bf3069aa56f, type: 2}
-  - {fileID: 2100000, guid: 1187a921fbb5b4849afb28c77b1190cf, type: 2}
+  - {fileID: 2100000, guid: 06cae3708c3f9e24ea3fc7afc79065d4, type: 2}
+  - {fileID: 2100000, guid: ce10020d0fdfedc49a408bc2bc61a4a5, type: 2}
   - {fileID: 2100000, guid: d77e4e2ce2a84324b9627f04f8c874bc, type: 2}
-  - {fileID: 2100000, guid: e761de7f277f2094eb99505745ba2185, type: 2}
+  - {fileID: 2100000, guid: e83ef4012e7da884b8fadb2e4163fe30, type: 2}
+  - {fileID: 2100000, guid: 3d2b58c0d8d8e2b4898cade13533d92c, type: 2}

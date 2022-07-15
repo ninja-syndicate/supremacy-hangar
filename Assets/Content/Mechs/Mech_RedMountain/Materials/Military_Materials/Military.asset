@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: Military
   m_EditorClassIdentifier: 
   mats:
-  - {fileID: 2100000, guid: a1a9669b8b0329e4aa8c1dfd97731968, type: 2}
   - {fileID: 2100000, guid: c913f5c89572ea3439f2e2ed9c24126f, type: 2}
-  - {fileID: 2100000, guid: 69b61b805d7765f41b83c625542e74de, type: 2}
-  - {fileID: 2100000, guid: 36f11efb66c6d8943a41f785eb8359f1, type: 2}
+  - {fileID: 2100000, guid: af5cccca17021e4419bd517b074e6c42, type: 2}
+  - {fileID: 2100000, guid: 8ab8675a23843a743ac8733d7f7870be, type: 2}
+  - {fileID: 2100000, guid: 147c4e678c5b78849bc189df3ad5360d, type: 2}
+  - {fileID: 2100000, guid: 8a674317355224b4a8485083d26434b9, type: 2}
+  - {fileID: 2100000, guid: 0bf8cb9877c0e8e43b181b75561eac8a, type: 2}
   - {fileID: 2100000, guid: 3c322c0bcd6e7e64d8141ec67439fe23, type: 2}
   - {fileID: 2100000, guid: 1f34e3cc89a51a54e91ddd308e3b5bd2, type: 2}
-  - {fileID: 2100000, guid: 8a674317355224b4a8485083d26434b9, type: 2}
-  - {fileID: 2100000, guid: 8ab8675a23843a743ac8733d7f7870be, type: 2}
-  - {fileID: 2100000, guid: 52d3e8dad81115a4190c76020961cb40, type: 2}
   - {fileID: 2100000, guid: 0d07998220caee643ba88183aa47b096, type: 2}
-  - {fileID: 2100000, guid: 0bf8cb9877c0e8e43b181b75561eac8a, type: 2}
-  - {fileID: 2100000, guid: 147c4e678c5b78849bc189df3ad5360d, type: 2}
+  - {fileID: 2100000, guid: 52d3e8dad81115a4190c76020961cb40, type: 2}
+  - {fileID: 2100000, guid: 69b61b805d7765f41b83c625542e74de, type: 2}
   - {fileID: 2100000, guid: c2e66012aedbd1544bb6375349a27b6e, type: 2}
-  - {fileID: 2100000, guid: af5cccca17021e4419bd517b074e6c42, type: 2}
+  - {fileID: 2100000, guid: a1a9669b8b0329e4aa8c1dfd97731968, type: 2}
+  - {fileID: 2100000, guid: 36f11efb66c6d8943a41f785eb8359f1, type: 2}

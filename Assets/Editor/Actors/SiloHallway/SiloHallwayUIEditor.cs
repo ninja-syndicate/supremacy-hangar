@@ -30,15 +30,23 @@ namespace SupremacyHangar.Editor.Actors.SiloHallway
         private SerializedProperty siloContentsTypeProperty;
         private SerializedProperty siloContentsName1Property;
         private SerializedProperty siloContentsName2Property;
-        private SerializedProperty loadButtonProperty;
+        private SerializedProperty interactionButtonProperty;
+        private SerializedProperty interactionButtonProgressProperty;
+        private SerializedProperty interactionButtonTextProperty;
         
         private SerializedProperty startFactionColorProperty;
-        private SerializedProperty siloOffsetProperty;
+        private SerializedProperty clockUpdateDelayProperty;
 
+        private SerializedProperty loadRequestTextProperty;
+        private SerializedProperty loadingTextProperty;
+        private SerializedProperty openRequestTextProperty;
+        private SerializedProperty openingTextProperty;        
+        
         private readonly Dictionary<SerializedObject, Settings> settingsMap = new ();
         private readonly  HashSet<SerializedObject> showTestingFunctions = new();
         private readonly  HashSet<SerializedObject> showLinkedUIElements = new();
         private readonly  HashSet<SerializedObject> showRuntimeElements = new();
+
         private SiloHallwayUI targetObject;
 
         private void OnEnable()
@@ -56,11 +64,18 @@ namespace SupremacyHangar.Editor.Actors.SiloHallway
             siloContentsTypeProperty = serializedObject.FindProperty("siloContentsType");
             siloContentsName1Property = serializedObject.FindProperty("siloContentsName1");
             siloContentsName2Property = serializedObject.FindProperty("siloContentsName2");
-            loadButtonProperty = serializedObject.FindProperty("loadButton");
+            interactionButtonProperty = serializedObject.FindProperty("interactionButton");
+            interactionButtonProgressProperty = serializedObject.FindProperty("interactionButtonProgress");
+            interactionButtonTextProperty = serializedObject.FindProperty("interactionButtonText");
             
             startFactionColorProperty = serializedObject.FindProperty("startFactionColor");
-            siloOffsetProperty = serializedObject.FindProperty("siloOffset");
+            clockUpdateDelayProperty = serializedObject.FindProperty("clockUpdateDelay");
             
+            loadRequestTextProperty = serializedObject.FindProperty("loadRequestText");
+            loadingTextProperty = serializedObject.FindProperty("loadingText");
+            openRequestTextProperty = serializedObject.FindProperty("openRequestText");
+            openingTextProperty = serializedObject.FindProperty("openingText");
+
             if (!settingsMap.ContainsKey(serializedObject)) settingsMap.Add(serializedObject, new Settings());
         }
 
@@ -150,13 +165,22 @@ namespace SupremacyHangar.Editor.Actors.SiloHallway
             EditorGUILayout.PropertyField(factionColorTextProperty);
             EditorGUILayout.PropertyField(darkerFactionColorMultiplierProperty);
             EditorGUILayout.PropertyField(darkerFactionColorImagesProperty);
-
+            EditorGUILayout.Separator();
             EditorGUILayout.PropertyField(factionLogoProperty);
             EditorGUILayout.PropertyField(siloNumberProperty);
             EditorGUILayout.PropertyField(siloContentsTypeProperty);
             EditorGUILayout.PropertyField(siloContentsName1Property);
             EditorGUILayout.PropertyField(siloContentsName2Property);
-            EditorGUILayout.PropertyField(loadButtonProperty);
+            EditorGUILayout.PropertyField(interactionButtonProperty);
+            EditorGUILayout.PropertyField(interactionButtonProgressProperty);
+            EditorGUILayout.PropertyField(interactionButtonTextProperty);
+            EditorGUILayout.Separator();
+            EditorGUILayout.PropertyField(loadRequestTextProperty);
+            EditorGUILayout.PropertyField(loadingTextProperty);
+            EditorGUILayout.PropertyField(openRequestTextProperty);
+            EditorGUILayout.PropertyField(openingTextProperty);
+
+            
             if (EditorGUI.EndChangeCheck()) serializedObject.ApplyModifiedProperties();
             
             EditorGUI.indentLevel--;
@@ -167,7 +191,7 @@ namespace SupremacyHangar.Editor.Actors.SiloHallway
             if (!ShowElements("Linked Runtime Elements", showRuntimeElements)) return;       
             EditorGUI.BeginChangeCheck();
             EditorGUILayout.PropertyField(startFactionColorProperty);
-            EditorGUILayout.PropertyField(siloOffsetProperty);
+            EditorGUILayout.PropertyField(clockUpdateDelayProperty);
             if (EditorGUI.EndChangeCheck()) serializedObject.ApplyModifiedProperties();
         }
 

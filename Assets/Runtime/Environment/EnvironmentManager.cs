@@ -11,6 +11,7 @@ using SupremacyHangar.Runtime.Environment.Connections;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using SupremacyHangar.Runtime.ContentLoader.Types;
 using SupremacyHangar.Runtime.ContentLoader;
+using System.Collections;
 
 namespace SupremacyHangar.Runtime.Environment
 {
@@ -22,12 +23,13 @@ namespace SupremacyHangar.Runtime.Environment
         private RepositionSignalHandler _repositionSignalHandler;
 
         [Inject]
-        private SupremacyGameObject _playerInventory;
+        private HangarData _playerInventory;
 
         [Inject]
         private SiloSignalHandler _siloSignalHandler;
                 
         private SignalBus _bus;
+        private LoadingProgressContext loadingProgressContext = new();
 
         private EnvironmentConnectivity _connectivityGraph;
 
@@ -41,7 +43,7 @@ namespace SupremacyHangar.Runtime.Environment
 
         private EnvironmentPrefab interactedDoor = null;
 
-        private SiloPositioner _currentSilo;
+        private SiloSpawner _currentSilo;
         private EnvironmentPrefab newDoorEnvironmentPrefab;
         public int SiloOffset { get; private set; } = 0;
         public IReadOnlyList<SiloItem> SiloItems => _playerInventory?.Silos;
@@ -61,6 +63,8 @@ namespace SupremacyHangar.Runtime.Environment
         private Dictionary<AsyncOperationHandle<GameObject>, EnvironmentSpawner> operationsForNewDoor = new Dictionary<AsyncOperationHandle<GameObject>, EnvironmentSpawner>();
         private bool _subscribed;
 
+        private GameObject loadedSilo;
+
         [Inject]
         public void Construct(SignalBus bus)
         {
@@ -70,6 +74,7 @@ namespace SupremacyHangar.Runtime.Environment
         private void OnEnable()
         {
             SubscribeToSignal();
+            _container.Inject(loadingProgressContext);
         }
 
         private void OnDisable()
@@ -102,11 +107,15 @@ namespace SupremacyHangar.Runtime.Environment
             //Todo: run from signal instead
             AssetReferenceEnvironmentConnectivity connectivityGraph = _playerInventory.factionGraph;
 
-            connectivityGraph.LoadAssetAsync<EnvironmentConnectivity>().Completed += (obj) =>
+            var connectivityGraphOp = connectivityGraph.LoadAssetAsync<EnvironmentConnectivity>();
+
+            StartCoroutine(loadingProgressContext.LoadingAssetProgress(connectivityGraphOp, "Loading Faction Layout"));
+            connectivityGraphOp.Completed += (obj) =>
             {
                 _connectivityGraph = obj.Result;
                 SpawnInitialHallway();
             };
+
 		}
 
         private void SpawnInitialHallway()
@@ -114,7 +123,9 @@ namespace SupremacyHangar.Runtime.Environment
             //Spawn initial environment
             currentEnvironment.CurrentPrefabAsset = _connectivityGraph.GetInitialSection();
 
-            currentEnvironment.CurrentPrefabAsset.Reference.InstantiateAsync().Completed += DefaultRoomSpawn;
+            var hallwayOp = currentEnvironment.CurrentPrefabAsset.Reference.InstantiateAsync();
+            StartCoroutine(loadingProgressContext.LoadingAssetProgress(hallwayOp, "Loading Hallway"));
+            hallwayOp.Completed += DefaultRoomSpawn;
         }
 
         private void DefaultRoomSpawn(AsyncOperationHandle<GameObject> handle1)
@@ -130,13 +141,17 @@ namespace SupremacyHangar.Runtime.Environment
                 var partForJoin = currentEnvironment.CurrentPrefabAsset.MyJoinsByConnector[join];
                 var nodeForJoin = partForJoin.Destinations[0];
 
-                operationsForJoins.Add(_connectivityGraph.MyJoins[nodeForJoin].Reference.InstantiateAsync(), join);
+                var joinOp = _connectivityGraph.MyJoins[nodeForJoin].Reference.InstantiateAsync();
+                StartCoroutine(loadingProgressContext.LoadingAssetProgress(joinOp, "Loading Doors"));
+                operationsForJoins.Add(joinOp, join);
             }
 
             foreach (var operation in operationsForJoins.Keys)
                 operation.Completed += InitializeDefaultDoor;
 
-            _playerObject.InstantiateAsync().Completed += PlayerLoaded;
+            var playerOp = _playerObject.InstantiateAsync();
+            StartCoroutine(loadingProgressContext.LoadingAssetProgress(playerOp, "Loading Player"));
+            playerOp.Completed += PlayerLoaded;
             _container.InjectGameObject(currentEnvironment.CurrentGameObject);
         }
 
@@ -156,7 +171,7 @@ namespace SupremacyHangar.Runtime.Environment
             //Disable door colliders
             if (doorCounter == 0)
                 newSectionEnvironmentPrefab.ToggleDoor();
-            else if (MaxSiloOffset <= 1)
+            else if (MaxSiloOffset <= 2)
                 newSectionEnvironmentPrefab.ToggleDoor();
 
             ++doorCounter;
@@ -175,6 +190,7 @@ namespace SupremacyHangar.Runtime.Environment
             }
 
             _container.InjectGameObject(result);
+            GameObject.FindGameObjectWithTag("Loading").SetActive(false);
             result.SetActive(true);
         }
 
@@ -276,7 +292,7 @@ namespace SupremacyHangar.Runtime.Environment
             operationsForNewDoor.Remove(doorHandler);
         }
 
-        public void SpawnSilo(SiloPositioner currentSilo)
+        public void SpawnSilo(SiloSpawner currentSilo)
         {
             _currentSilo = currentSilo;
             SiloExists = true;
@@ -285,21 +301,23 @@ namespace SupremacyHangar.Runtime.Environment
 
             var partForJoin = currentEnvironment.CurrentPrefabAsset.MyJoinsByConnector[currentSilo.ToConnectTo];
             var nodeForJoin = partForJoin.Destinations[0];
-            _connectivityGraph.MyJoins[nodeForJoin].Reference.InstantiateAsync().Completed += InstantiateSilo;
+            var siloOperationHandle = _connectivityGraph.MyJoins[nodeForJoin].Reference.InstantiateAsync();
+            StartCoroutine(loadingProgressContext.LoadingAssetProgress(siloOperationHandle));
+            siloOperationHandle.Completed += InstantiateSilo;
         }
 
         private void InstantiateSilo(AsyncOperationHandle<GameObject> operationHandler)
         {
             var newSilo = operationHandler.Result;
-            _container.InjectGameObject(newSilo);
+            _currentSilo.InjectGameObject(newSilo);
+            
             //Reposition door & set connection point
             newSilo.GetComponent<EnvironmentPrefab>().JoinTo(_currentSilo.ToConnectTo, nextRoomEnvironmentPrefabRef.Joins[_currentSilo.ToConnectTo]);
 
             newSilo.SetActive(true);
 
-            if (loadedSilo != null)
-                UnloadAssetsAfterSiloClosed();
-            
+            loadingProgressContext.ProgressSignalHandler.FinishedLoading(newSilo);
+
             loadedSilo = newSilo;
         }
 
@@ -328,10 +346,10 @@ namespace SupremacyHangar.Runtime.Environment
         {
             //ToDo try remove the creation of new SiloItems
             if (MaxSiloOffset == 0)
-                return new SiloItem[] { new(), new() };
+                return new SiloItem[] { new EmptySilo(), new EmptySilo() };
 
             if (SiloOffset + 1 >= MaxSiloOffset)
-                return new[] { _playerInventory.Silos[SiloOffset], new() };
+                return new[] { _playerInventory.Silos[SiloOffset], new EmptySilo() };
 
             return new[] { _playerInventory.Silos[SiloOffset], _playerInventory.Silos[SiloOffset + 1] };
         }
@@ -352,8 +370,7 @@ namespace SupremacyHangar.Runtime.Environment
             return 0;
         }
 
-        private GameObject loadedSilo;
-
+        private bool waitingOnWindow = false;
         public void UnloadSilo(bool waitOnWindow = true)
         {
             if (_currentSilo && waitOnWindow)
@@ -367,11 +384,11 @@ namespace SupremacyHangar.Runtime.Environment
 
         public void UnloadAssets()
         {
-            DoorOpened();            
+            DoorOpened();
 
             if (newDoorEnvironmentPrefab)
             {
-                if (newDoorEnvironmentPrefab.connectedTo.name.StartsWith("Hallway-SmallStraightJoin") && SiloOffset > 0 && SiloOffset < MaxSiloOffset)
+                if (SiloOffset > 0 && SiloOffset < MaxSiloOffset - 2)
                     newDoorEnvironmentPrefab.ToggleDoor();
                 else if (newDoorEnvironmentPrefab.connectedTo.name.StartsWith("Hallway-SmallStraightJoin"))
                     newDoorEnvironmentPrefab.ToggleDoor();
@@ -406,7 +423,7 @@ namespace SupremacyHangar.Runtime.Environment
 
         private void UnloadAssetsAfterSiloClosed()
         {
-            _currentSilo = null;
+            //_currentSilo = null;
             UnityEngine.AddressableAssets.Addressables.ReleaseInstance(loadedSilo);
         }
 

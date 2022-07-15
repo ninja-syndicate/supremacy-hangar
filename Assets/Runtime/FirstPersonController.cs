@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 using Zenject;
 using SupremacyHangar.Runtime.Interaction;
 using Unity.Mathematics;
+using SupremacyHangar.Runtime.Actors.Player;
+using UnityEngine.InputSystem.Controls;
 
 namespace SupremacyHangar.Runtime
 {
@@ -21,6 +23,12 @@ namespace SupremacyHangar.Runtime
 		public float RotationSpeed = 1.0f;
 		[Tooltip("Acceleration and deceleration")]
 		public float SpeedChangeRate = 10.0f;
+
+		public float UpdateRotationSpeed
+        {
+			get { return RotationSpeed; }
+			set { RotationSpeed = value; }
+        }
 
 		[Space(10)]
 		[Tooltip("The height the player can jump")]
@@ -78,6 +86,8 @@ namespace SupremacyHangar.Runtime
 
 		private const float _threshold = 0.01f;
 
+		private SignalBus bus;
+		
 		private bool IsCurrentDeviceMouse => _playerInput.currentControlScheme == "KeyboardMouse";
 
 		public bool jump = false;
@@ -98,6 +108,9 @@ namespace SupremacyHangar.Runtime
 		public bool cursorInputForLook = true;
 #endif
 
+		[SerializeField] private bool paused = false;
+		private FPSPlayerUIController fpsPlayerUIController;
+
 		public void Awake()
 		{
 			// get a reference to our main camera
@@ -108,11 +121,24 @@ namespace SupremacyHangar.Runtime
 			if (!ValidateAndSetupComponentReferences()) return;
 			interactionPromptControllerSet = interactionPromptController != null;
 		}
+
+		[Inject]
+		public void Inject(SignalBus aBus)
+		{
+			bus = aBus;
+			bus.Subscribe<ResumeGameSignal>(Resumed);
+			bus.Subscribe<PauseGameSignal>(Paused);
+		}
 		
 		private void Start()
 		{
 			_controller = GetComponent<CharacterController>();
 			_playerInput = GetComponent<PlayerInput>();
+			if(!TryGetComponent(out fpsPlayerUIController))
+            {
+				Debug.LogError("Cannot find or set Menu Controller", this);
+				enabled = false;
+            }
 
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
@@ -123,11 +149,20 @@ namespace SupremacyHangar.Runtime
 
 		public void OnEnable()
 		{
-			if (!BindToInputs()) return; 
-		}
+			if (bus != null)
+			{
+				bus.Subscribe<ResumeGameSignal>(Resumed);
+				bus.Subscribe<PauseGameSignal>(Paused);
+			}
 
+			if (!BindToInputs()) return;
+		}
+		
 		public void OnDisable()
 		{
+			bus.TryUnsubscribe<ResumeGameSignal>(Resumed);
+			bus.TryUnsubscribe<PauseGameSignal>(Paused);
+
 			UnbindInputs();
 		}
 
@@ -139,6 +174,17 @@ namespace SupremacyHangar.Runtime
 		public void IncrementInteractionPromptRequests()
 		{
 			interactionPrompts++;
+		}
+		
+				
+		private void Resumed(ResumeGameSignal obj)
+		{
+			paused = false;
+		}
+		
+		private void Paused(PauseGameSignal obj)
+		{
+			paused = true;
 		}
 
 		private bool ValidateAndSetupComponentReferences()
@@ -177,45 +223,23 @@ namespace SupremacyHangar.Runtime
 		private bool BindToInputs()
 		{
 			bool valid = true;
-			valid &= BindActionToFunction("Move", OnMovementChange);
-			valid &= BindActionToFunction("Look", OnTurnChange);
-			valid &= BindActionToFunction("Jump", OnJumpChange);
-			valid &= BindActionToFunction("Sprint", OnSprintChange);
-			valid &= BindActionToFunction("Interaction", OnInteractionChange);
-
+			valid &= InputSystemHelpers.BindActionToFunction(_playerInput, "Move", OnMovementChange);
+			valid &= InputSystemHelpers.BindActionToFunction(_playerInput,"Look", OnTurnChange);
+			valid &= InputSystemHelpers.BindActionToFunction(_playerInput,"Jump", OnJumpChange);
+			valid &= InputSystemHelpers.BindActionToFunction(_playerInput,"Sprint", OnSprintChange);
+			valid &= InputSystemHelpers.BindActionToFunction(_playerInput,"Interaction", OnInteractionChange);
+			
 			enabled = valid;
 			return valid;
 		}
 
 		private void UnbindInputs()
 		{
-			UnbindFromFunction("Move", OnMovementChange);
-			UnbindFromFunction("Look", OnTurnChange);
-			UnbindFromFunction("Jump", OnJumpChange);
-			UnbindFromFunction("Sprint", OnSprintChange);
-			UnbindFromFunction("Interaction", OnInteractionChange);
-		}
-
-		private bool BindActionToFunction(string actionName, Action<InputAction.CallbackContext> callback)
-		{
-			var action = _playerInput.actions[actionName];
-			if (action == null)
-			{
-				Debug.LogError($"Action player input does not have a '{actionName}' action", this);
-				return false;
-			}
-
-			action.performed += callback;
-			action.canceled += callback;
-			return true;
-		}
-
-		private void UnbindFromFunction(string actionName, Action<InputAction.CallbackContext> callback)
-		{
-			var action = _playerInput.actions[actionName];
-			if (action == null) return;
-			action.performed -= callback;
-			action.canceled -= callback;
+			InputSystemHelpers.UnbindFromFunction(_playerInput, "Move", OnMovementChange);
+			InputSystemHelpers.UnbindFromFunction(_playerInput, "Look", OnTurnChange);
+			InputSystemHelpers.UnbindFromFunction(_playerInput, "Jump", OnJumpChange);
+			InputSystemHelpers.UnbindFromFunction(_playerInput, "Sprint", OnSprintChange);
+			InputSystemHelpers.UnbindFromFunction(_playerInput, "Interaction", OnInteractionChange);
 		}
 
 		public void OnMovementChange(InputAction.CallbackContext context)
@@ -250,6 +274,8 @@ namespace SupremacyHangar.Runtime
 
         private void Update()
 		{
+			//TODO: Handle pause event
+			if (paused) return;
 			if (interactionPromptControllerSet)
 			{
 				bool showPrompt = OnInteractionTriggered != null;
@@ -263,6 +289,8 @@ namespace SupremacyHangar.Runtime
 
 		private void LateUpdate()
 		{
+			if (paused) return;
+
 			CameraRotation();
 		}
 		
@@ -420,7 +448,7 @@ namespace SupremacyHangar.Runtime
 
 		private void OnApplicationFocus(bool hasFocus)
 		{
-			SetCursorState(cursorLocked);
+				SetCursorState(cursorLocked);
 		}
 
 		private void SetCursorState(bool newState)
