@@ -1,11 +1,12 @@
 using System;
 using SupremacyData.Runtime;
+using SupremacyHangar.Runtime.Actors.Silo;
 using SupremacyHangar.Runtime.ContentLoader;
-using SupremacyHangar.Runtime.Environment;
 using SupremacyHangar.Runtime.Silo;
 using SupremacyHangar.Runtime.Types;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Zenject;
 using MysteryCrate = SupremacyHangar.Runtime.Types.MysteryCrate;
@@ -26,19 +27,27 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
         [SerializeField] private TMP_Text siloContentsType;
         [SerializeField] private TMP_Text siloContentsName1;
         [SerializeField] private TMP_Text siloContentsName2;
-        [SerializeField] private Button loadButton;
-
+        [FormerlySerializedAs("loadButton"),SerializeField] private Button interactionButton;
+        [SerializeField] private Image interactionButtonProgress;
+        [SerializeField] private TMP_Text interactionButtonText;
+        
         [SerializeField] private Color startFactionColor;
-        [SerializeField] private int siloOffset;
         [SerializeField] private float clockUpdateDelay = 0.25f;
 
+        [SerializeField] private string loadRequestText;
+        [SerializeField] private string loadingText;
+        [SerializeField] private string openRequestText;
+        [SerializeField] private string openingText;
+
         private Color currentFactionColor = Color.black;
+
+        private SiloState siloState;
+        private SignalBus bus;
 
         private bool enableCounter = false;
         private float nextClockUpdate = -1;
         private DateTime counterValue;
 
-        private CrateSignalHandler _crateHandler;
         private bool crateOpenSet = false;
 
         public void Awake()
@@ -47,22 +56,15 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
         }
         
         [Inject]
-        public void SetDependencies(AddressablesManager addressablesManager, EnvironmentManager environmentManager, CrateSignalHandler crateSignalHandler)
+        public void Inject(SiloState siloState, SignalBus bus)
         {
-            _crateHandler = crateSignalHandler;
-            int mySiloNumber = environmentManager.SiloOffset + siloOffset;
+            this.siloState = siloState;
+            siloNumber.text = (siloState.SiloNumber + 1).ToString();
 
-            SiloItem myContents;
-            if (mySiloNumber < environmentManager.SiloItems.Count)
-            {
-                myContents = environmentManager.SiloItems[mySiloNumber];
-            }
-            else
-            {
-                myContents = new SiloItem();
-            }
-            siloNumber.text = (mySiloNumber + 1).ToString();
-            switch (myContents)
+            this.bus = bus;
+            bus.Subscribe<AssetLoadingProgressSignal>(ProgressUpdated);
+
+            switch (siloState.Contents)
             {
                 case Mech mech:
                     UpdateTypeString(mech);
@@ -71,7 +73,7 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
                     break;
                 case MysteryCrate box:
                     UpdateTypeString(box);
-                    UpdateName2(addressablesManager.CurrentFaction, box);
+                    UpdateName2(siloState.CurrentFaction, box);
                     enableCounter = true;
                     counterValue = box.CanOpenOn;
                     break;
@@ -81,12 +83,72 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
                    UpdateName2("");
                    break;
             }
+            
+            SiloStateChanged(siloState.CurrentState);
+            siloState.OnStateChanged += SiloStateChanged;
+        }
+
+        public void OnEnable()
+        {
+            if (bus == null) return;
+            bus.Subscribe<AssetLoadingProgressSignal>(ProgressUpdated);
+        }
+
+        public void OnDisable()
+        {
+            if (bus == null) return;
+            bus.TryUnsubscribe<AssetLoadingProgressSignal>(ProgressUpdated);
+        }
+
+        private void ProgressUpdated(AssetLoadingProgressSignal signal)
+        {
+            switch (siloState.CurrentState)
+            {
+                case SiloState.StateName.NotLoaded:
+                case SiloState.StateName.Unloading:
+                case SiloState.StateName.Loaded:
+                case SiloState.StateName.LoadedWithCrate:
+                    return;
+            }
+
+            interactionButtonProgress.fillAmount = signal.PercentageComplete;
+        }
+
+        private void SiloStateChanged(SiloState.StateName newState)
+        {
+            //Update the action button
+            switch (newState)
+            {
+                case SiloState.StateName.NotLoaded:
+                case SiloState.StateName.Unloading:
+                    interactionButton.gameObject.SetActive(true);
+                    interactionButtonProgress.fillAmount = 1;
+                    interactionButtonText.text = loadRequestText;
+                    break;
+                case SiloState.StateName.LoadingSilo:
+                    interactionButton.gameObject.SetActive(true);
+                    interactionButtonProgress.fillAmount = 0;
+                    interactionButtonText.text = loadingText;
+                    break;
+                case SiloState.StateName.Loaded:
+                    interactionButton.gameObject.SetActive(false);
+                    break;
+                case SiloState.StateName.LoadedWithCrate:
+                    interactionButton.gameObject.SetActive(true);
+                    interactionButtonProgress.fillAmount = 1;
+                    interactionButtonText.text = openRequestText;
+                    break;
+                case SiloState.StateName.LoadingCrateContent:
+                    interactionButton.gameObject.SetActive(true);
+                    interactionButtonProgress.fillAmount = 0;
+                    interactionButtonText.text = openingText;
+                    break;
+            }
         }
 
         public void Update()
         {
             if (enableCounter && nextClockUpdate <= Time.unscaledTime) UpdateCounter();
-
         }
 
         public void UpdateFactionColor(Color newColor)
@@ -148,7 +210,7 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
             var diff = counterValue - now;
             if (diff <= TimeSpan.Zero && !crateOpenSet)
             {
-                _crateHandler.CanOpenCrate();
+                siloState.CrateCanOpen();
                 crateOpenSet = true;
                 siloContentsName1.text = TimeSpan.Zero.ToString("hh':'mm':'ss");
                 return;

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="17e62512-22c8-4f31-8acb-0fb2061f9f51" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Fonts/NostromoRegular-Black SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Fonts/NostromoRegular-Black SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Fonts/NostromoRegular-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Fonts/NostromoRegular-Bold SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Silo/Elevator.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Silo/Elevator.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Silo/Elevator.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Silo/Elevator.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Silo/Hangar_Silo_Left.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Silo/Hangar_Silo_Left.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Silo/Hangar_Silo_Right.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Silo/Hangar_Silo_Right.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Silo/MechSilo_Left.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Silo/MechSilo_Left.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Silo/MechSilo_Right.fbx" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Silo/MechSilo_Right.fbx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Runtime/Environment/EnvironmentManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Runtime/Environment/EnvironmentManager.cs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JSON File" />
+      </list>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/10cd1797aab44ffa84f234c1998893ad157800/74/bd579409/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/10cd1797aab44ffa84f234c1998893ad157800/96/5d2e749e/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/10cd1797aab44ffa84f234c1998893ad157800/9a/e7d22542/Behaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/10/a84072fa/Action`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/89/0df62575/IReadOnlyCollection`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/70362bf225b34b3cb66e81712c4fa62319600/42/256095fe/CollisionFlags.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/70362bf225b34b3cb66e81712c4fa62319600/b1/680051a2/CharacterController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/73aec3f4342e41c48454378e5e0395dd157800/46/ae5813bc/ScriptableObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/73aec3f4342e41c48454378e5e0395dd157800/48/3dcf2afb/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/73aec3f4342e41c48454378e5e0395dd157800/7b/4474b05b/SceneManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/73aec3f4342e41c48454378e5e0395dd157800/98/81220896/Color.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/73aec3f4342e41c48454378e5e0395dd157800/aa/6671b915/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/73aec3f4342e41c48454378e5e0395dd157800/e0/2fcb854e/Rect.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/761d51964b57406d8c03717bf38d1664811000/07/f6ec2120/EditorUtility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/761d51964b57406d8c03717bf38d1664811000/0e/7fc09dc9/EditorGUIUtility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/761d51964b57406d8c03717bf38d1664811000/3f/9d7f8cbd/EditorWindow.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/761d51964b57406d8c03717bf38d1664811000/5c/613ee954/SerializedProperty.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/761d51964b57406d8c03717bf38d1664811000/7d/e2f99988/ReorderableList.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/761d51964b57406d8c03717bf38d1664811000/80/eb8a5db6/PropertyDrawer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/761d51964b57406d8c03717bf38d1664811000/83/82f88dcd/EditorGUILayout.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/761d51964b57406d8c03717bf38d1664811000/c9/0f694a6c/Editor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/761d51964b57406d8c03717bf38d1664811000/d2/063d9e05/SerializedObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/761d51964b57406d8c03717bf38d1664811000/fc/971886d2/AssetDatabase.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7cc99213649d4203b828190126853cd324c00/d1/275d2ec8/StateMachineBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/880832f2c4e2458090401bbb74a86b24a8a00/d9/2321f752/JsonConvert.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/972f5a0e03754a31b1ee8795e93cc54629200/51/47f1fba7/GUILayout.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9c7d732c647e4d79aa3a0c363bd7f01777800/dc/5ea88ee3/PropertyField.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9f593302af9b4cf58a8766185f69583e6200/3a/9495a28e/Canvas.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b9ae9c0f70544f9eb681dc1ed8082b141a000/1c/30271e84/CharacterController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/de80aed0bd3646409e8bfb15c101f005e2000/cb/16ec6061/File.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/de80aed0bd3646409e8bfb15c101f005e2000/d3/5ee7613d/StreamReader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/dee951564dcc41fe9c719aa3ed06590412b200/a1/daf518a8/ScriptableObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/dee951564dcc41fe9c719aa3ed06590412b200/c2/2e81af20/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f5b293c74049457cabc28437c5a763925a00/8b/e138aaf4/NoReflectionBakingAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f5b293c74049457cabc28437c5a763925a00/f8/fb65d3a6/InjectAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/9384495d2a482ac7341d67ca84e16d267d16c62458a9d67a92b119199a9/System.Threading.Tasks.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/lordmortis/Ninja/supremacy-hangar/Assets/Editor/ContentLoader/AssetLoaderWindow.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/lordmortis/Ninja/supremacy-hangar/Assets/Editor/ContentLoader/AssetMappingAssetGrabber.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/lordmortis/Ninja/supremacy-hangar/Assets/Editor/ContentLoader/AssetMappingImporter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/lordmortis/Ninja/supremacy-hangar/Assets/Editor/ContentLoader/AssetMappingsEditor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Runtime/Actors/Elevator/ElevatorUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/lordmortis/Ninja/supremacy-hangar/Assets/Runtime/Actors/ElevatorMotor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/lordmortis/Ninja/supremacy-hangar/Assets/Runtime/Actors/Silo/SiloAssetLoader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/lordmortis/Ninja/supremacy-hangar/Assets/Runtime/Actors/Silo/SiloState.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/lordmortis/Ninja/supremacy-hangar/Assets/Runtime/ContentLoader/AddressablesManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Runtime/ContentLoader/AddressablesManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/lordmortis/Ninja/supremacy-hangar/Assets/Runtime/ContentLoader/ProgressSignalInstaller.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Runtime/Environment/EnvironmentManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Runtime/Environment/EnvironmentPrefab.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Runtime/Environment/EnvironmentSpawner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/lordmortis/Ninja/supremacy-hangar/Assets/Runtime/FirstPersonController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Runtime/FirstPersonController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Runtime/ScriptableObjects/Skin.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Users/lordmortis/Ninja/supremacy-hangar/Assets/Runtime/Types/SiloItem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/lordmortis/Ninja/supremacy-hangar/Assets/Settings/AssetMappings.asset" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.addressables@1.19.19/Tests/Editor/DocExampleCode/BatchBuild.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.burst@1.6.5/Tests/Runtime/Shared/050-TestStructs.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.mathematics@1.2.6/Unity.Mathematics/math.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TMP_Text.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.textmeshpro@3.0.6/Scripts/Runtime/TextMeshPro.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="29joZSRLuAR8BjLhaST9eElFw0h" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.27727273&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;rider.run.widget.enabled.cache&quot;: &quot;false&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
+    <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="/Applications/Unity/Hub/Editor/2021.3.5f1/Unity.app/Contents/MacOS/Unity" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath $PROJECT_DIR$ -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="17e62512-22c8-4f31-8acb-0fb2061f9f51" name="Changes" comment="" />
+      <created>1653635912462</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1653635912462</updated>
+      <workItem from="1653635919984" duration="31941000" />
+      <workItem from="1654506155775" duration="3874000" />
+      <workItem from="1654573958029" duration="1244000" />
+      <workItem from="1654674118963" duration="27539000" />
+      <workItem from="1654915879077" duration="30067000" />
+      <workItem from="1655088922197" duration="896000" />
+      <workItem from="1655089843402" duration="400000" />
+      <workItem from="1655090360097" duration="70047000" />
+      <workItem from="1655618411526" duration="12140000" />
+      <workItem from="1655693752977" duration="29291000" />
+      <workItem from="1655951822642" duration="8329000" />
+      <workItem from="1656051702721" duration="28966000" />
+      <workItem from="1656560820122" duration="44567000" />
+      <workItem from="1657497747610" duration="2000" />
+      <workItem from="1657684400521" duration="22732000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>

@@ -31,17 +31,17 @@ namespace SupremacyHangar.Runtime.Silo
         private bool _subscribed;
         private bool siloClosing = false;
 
-        //ToDo link with progress bar text changer
-        [SerializeField] private TMP_Text loadButtonText;
-
+        private DiContainer container;
         private SiloState siloState;
 
         private bool siloNeedsSpawning = false;
         private bool loadingCrateContent = false;
 
         [Inject]
-        public void Constuct(EnvironmentManager environmentManager, SignalBus bus, SiloState siloState)
+        public void Constuct(
+            EnvironmentManager environmentManager, SignalBus bus, SiloState siloState, DiContainer container)
         {
+            this.container = container;
             _environmentManager = environmentManager;
             _bus = bus;
             SubscribeToSignal();
@@ -61,9 +61,6 @@ namespace SupremacyHangar.Runtime.Silo
                 case SiloState.StateName.LoadingCrateContent:
                     loadingCrateContent = true;
                     otherSiloInteractionTrigger.enabled = false;
-                    break;
-                case SiloState.StateName.LoadedWithCrate:
-                    ChangeButtonToOpen();
                     break;
                 case SiloState.StateName.Loaded:
                     if(loadingCrateContent) otherSiloInteractionTrigger.enabled = true;
@@ -132,8 +129,7 @@ namespace SupremacyHangar.Runtime.Silo
         private void SiloClosed()
         {
             siloClosing = false;
-            loadButtonText.text = "Pressurize";
-
+            
             if (siloNeedsSpawning)
             {
                 SpawnSilo();
@@ -177,15 +173,11 @@ namespace SupremacyHangar.Runtime.Silo
 
             //open window
             myWindowAnim.SetBool("IsOpen", true);
-
-            //change console button value
-            ChangeButtonToOpen();
         }
 
-        private void ChangeButtonToOpen()
+        public void InjectGameObject(GameObject newSilo)
         {
-            if (siloState.Contents is MysteryCrate && siloState.CanOpenCrate)
-                loadButtonText.text = "Open";
+            container.InjectGameObject(newSilo);
         }
     }
 }

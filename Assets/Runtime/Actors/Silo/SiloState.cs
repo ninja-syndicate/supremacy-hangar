@@ -13,7 +13,7 @@ namespace SupremacyHangar.Runtime.Actors.Silo
     {
         public StateName CurrentState => state;
         public SiloItem Contents => contents;
-
+        
         public Faction CurrentFaction { get; private set; }
         
         public enum StateName
@@ -42,42 +42,18 @@ namespace SupremacyHangar.Runtime.Actors.Silo
         private SignalBus _bus;
 
         public bool CanOpenCrate { get; private set; } = false;
-        private bool _subscribed;
-        private EnvironmentManager _envManager;
+        private EnvironmentManager environmentManager;
+
         [Inject]
-        public void Construct(
-            EnvironmentManager environmentManager, AddressablesManager addressablesManager,
-            SiloItem[] hallwayContents, SignalBus bus)
+        public void Inject(SiloItem[] hallwayContents, EnvironmentManager environmentManager, AddressablesManager addressablesManager)
         {
-            _envManager = environmentManager;
+            this.environmentManager = environmentManager;
             SiloNumber = environmentManager.SiloOffset + siloOffset;
             CurrentFaction = addressablesManager.CurrentFaction;
             contents = hallwayContents[siloOffset];
-            _bus = bus;
-            SubscribeToSignal();
         }
 
-
-        private void OnEnable()
-        {
-            SubscribeToSignal();
-        }
-
-        private void OnDisable()
-        {
-            if (!_subscribed) return;
-            _bus.Unsubscribe<CanOpenCrateSignal>(CrateCanOpen);
-            _subscribed = false;
-        }
-
-        private void SubscribeToSignal()
-        {
-            if (_bus == null || _subscribed) return;
-            _bus.Subscribe<CanOpenCrateSignal>(CrateCanOpen);
-            _subscribed = true;
-        }
-
-        private void CrateCanOpen()
+        public void CrateCanOpen()
         {
             CanOpenCrate = true;
             OnStateChanged?.Invoke(CurrentState);
@@ -120,7 +96,7 @@ namespace SupremacyHangar.Runtime.Actors.Silo
                 case Mech:
                 case Weapon:
                     contents = crateContent;
-                    _envManager.UpdatePlayerInventory(siloOffset, crateContent);
+                    environmentManager.UpdatePlayerInventory(siloOffset, crateContent);
                     break;
 
             }
