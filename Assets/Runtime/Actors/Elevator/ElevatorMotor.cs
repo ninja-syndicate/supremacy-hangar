@@ -66,6 +66,7 @@ namespace SupremacyHangar.Runtime.Actors.Elevator
             myCurrentPos = newStops[initialStop];
             CurrentStop = initialStop;
             myNextStop = CurrentStop;
+            OnStopChanged?.Invoke(CurrentStop);
         }
 
         public virtual void Update()

@@ -42,12 +42,7 @@ namespace SupremacyHangar.Runtime.Actors.Elevator
             if (motor == null) return;
             motor.OnStopChanged += SetIndicator;
         }
-
-        public void Start()
-        {
-            SetIndicator(motor.CurrentStop);
-        }
-
+        
         public void OnDisable()
         {
             if (motor == null) return;
