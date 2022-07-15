@@ -3,7 +3,7 @@ pipeline {
   agent {
     node {
       label 'windows-agent-01'
-      customWorkspace "D:\\jenkins-workspace\\supremacy-hangar"
+      customWorkspace "D:\\jenkins-workspace\\supremacy-hangar-${env.Branch}"
     }
   }
   environment {
