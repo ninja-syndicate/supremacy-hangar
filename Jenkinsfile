@@ -16,15 +16,27 @@ pipeline {
         echo 'Sending notification to Slack.'
         slackSend channel: '#test-notifications', 
           color: '#4A90E2',
-          message: "Started ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
+          message: "Started *supremacy-hangar* build. Job name: *${env.JOB_NAME}*. Build no: *${env.BUILD_NUMBER}*. More info: <${env.BUILD_URL}|supremacy-hangar-build>"
 
-        echo 'Prewarm started'
-        bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile prewarm_log.txt -executeMethod BuildSystem.CLI.PreWarm -addressablesLocation ${deployEnv}"
-        echo 'Prewarm completed'
+        script {
+          if (env.BRANCH_NAME == 'develop') {
+              echo 'Prewarm started'
+              bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile prewarm_log.txt -executeMethod BuildSystem.CLI.PreWarm -addressablesLocation staging"
+              echo 'Prewarm completed'
 
-        echo 'Build started'
-        bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile builds_log.txt -executeMethod BuildSystem.CLI.BuildWebGL -addressablesLocation ${deployEnv}"
-        echo 'Build completed'
+              echo 'Build started'
+              bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile builds_log.txt -executeMethod BuildSystem.CLI.BuildWebGL -addressablesLocation staging"
+              echo 'Build completed'
+          } else {
+              echo 'Prewarm started'
+              bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile prewarm_log.txt -executeMethod BuildSystem.CLI.PreWarm -addressablesLocation ${deployEnv}"
+              echo 'Prewarm completed'
+
+              echo 'Build started'
+              bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile builds_log.txt -executeMethod BuildSystem.CLI.BuildWebGL -addressablesLocation ${deployEnv}"
+              echo 'Build completed'
+          }
+        }
       }
       post {
         success {
@@ -101,5 +113,3 @@ pipeline {
     } 
   }
 }
-
-
