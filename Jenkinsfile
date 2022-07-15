@@ -3,7 +3,7 @@ pipeline {
   agent {
     node {
       label 'windows-agent-01'
-      customWorkspace "D:\\jenkins-workspace\\supremacy-hangar"
+      customWorkspace "D:\\jenkins-workspace\\supremacy-hangar-${env.BRANCH_NAME}"
     }
   }
   environment {
@@ -15,7 +15,7 @@ pipeline {
       steps {
         echo 'Sending notification to Slack.'
         slackSend channel: '#test-notifications', 
-          color: '#4A90E2',
+          color: '#10A90E2',
           message: "Started *supremacy-hangar* build. Job name: *${env.JOB_NAME}*. Build no: *${env.BUILD_NUMBER}*. More info: <${env.BUILD_URL}|supremacy-hangar-build>"
 
         script {
@@ -63,9 +63,9 @@ pipeline {
             """
         script {
           if (env.BRANCH_NAME == 'develop') {
-              bat "rclone sync \"${env.WORKSPACE}/Build-to-Deploy\" \"afiles:/var/www/html/supremacy-hangar/build/staging/\" --progress --verbose --multi-thread-streams 4"
+              bat "rclone sync \"${env.WORKSPACE}/Build-to-Deploy\" \"afiles:/var/www/html/supremacy-hangar/build/staging/\" --progress --verbose --multi-thread-streams 10"
           } else {
-              bat "rclone sync \"${env.WORKSPACE}/Build-to-Deploy\" \"afiles:/var/www/html/supremacy-hangar/build/${deployEnv}/\" --progress --verbose --multi-thread-streams 4"
+              bat "rclone sync \"${env.WORKSPACE}/Build-to-Deploy\" \"afiles:/var/www/html/supremacy-hangar/build/${deployEnv}/\" --progress --verbose --multi-thread-streams 10"
           }
         }
       }
@@ -89,9 +89,9 @@ pipeline {
         echo 'Deploy addressbales started'
          script {
           if (env.BRANCH_NAME == 'develop') {
-              bat "rclone sync \"${env.WORKSPACE}/ServerData/\" \"afiles:/var/www/html/supremacy-hangar/addressables/staging/\" --progress --verbose --multi-thread-streams 4"
+              bat "rclone sync \"${env.WORKSPACE}/ServerData/\" \"afiles:/var/www/html/supremacy-hangar/addressables/staging/\" --progress --verbose --multi-thread-streams 10"
           } else {
-              bat "rclone sync \"${env.WORKSPACE}/ServerData/\" \"afiles:/var/www/html/supremacy-hangar/addressables/${deployEnv}/\" --progress --verbose --multi-thread-streams 4"
+              bat "rclone sync \"${env.WORKSPACE}/ServerData/\" \"afiles:/var/www/html/supremacy-hangar/addressables/${deployEnv}/\" --progress --verbose --multi-thread-streams 10"
           }
         }
         }
