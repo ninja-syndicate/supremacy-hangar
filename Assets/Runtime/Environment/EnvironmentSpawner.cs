@@ -21,8 +21,7 @@ namespace SupremacyHangar.Runtime.Environment
 
         public ConnectivityJoin ToConnectTo => to_Connect_to;
 
-        [SerializeField]
-        private Animator DoorAnim;
+        [SerializeField] private Animator DoorAnim;
 
         public bool Entered { get; private set; } = false;
 
