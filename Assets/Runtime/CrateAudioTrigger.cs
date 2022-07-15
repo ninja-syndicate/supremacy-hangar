@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SupremacyHangar
+namespace SupremacyHangar.Runtime.Silo
 {
     public class CrateAudioTrigger : MonoBehaviour
     {
@@ -17,6 +17,14 @@ namespace SupremacyHangar
             myAudioSource = gameObject.GetComponent(typeof(AudioSource)) as AudioSource;
             CrateAnimator = gameObject.GetComponent(typeof(Animator)) as Animator;
         }
+
+
+        public void PlayOpenCrateSound()
+        {
+            myAudioSource.clip = OpenCrateClip;
+            myAudioSource.Play();
+        }
+
 
         // Update is called once per frame
         void Update()
