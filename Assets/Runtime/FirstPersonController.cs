@@ -103,11 +103,9 @@ namespace SupremacyHangar.Runtime
 		[Header("Movement Settings")]
 		public bool analogMovement;
 
-#if !UNITY_IOS || !UNITY_ANDROID
 		[Header("Mouse Cursor Settings")]
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
-#endif
 
 		[SerializeField] private bool paused = false;
 		private FPSPlayerUIController fpsPlayerUIController;
@@ -512,7 +510,7 @@ namespace SupremacyHangar.Runtime
 			Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z), GroundedRadius);
 		}
 
-#if !UNITY_IOS || !UNITY_ANDROID
+#if !UNITY_IOS && !UNITY_ANDROID
 
 		private void OnApplicationFocus(bool hasFocus)
 		{

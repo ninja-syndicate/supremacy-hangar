@@ -21,7 +21,6 @@ public class BridgeScript : MonoInstaller
     [Inject]
     private CrateSignalHandler _crateSignalHandler;
 
-#if UNITY_EDITOR
     [TextArea(3, 50)]
     [SerializeField] public string jsonTestFragment;
 
@@ -32,7 +31,6 @@ public class BridgeScript : MonoInstaller
 
     private SignalBus _bus;
     bool _subscribed = false;
-#endif
 
     public override void InstallBindings()
     {
@@ -56,14 +54,14 @@ public class BridgeScript : MonoInstaller
 
     public void RequestCrateContent(string ownership_id)
     {
-#if UNITY_EDITOR
+#if !UNITY_WEBGL || UNITY_EDITOR
         SetCrateContent(ownership_id);
-#elif UNITY_WEBGL
+#else
         WebGLPluginJS.RequestCrateContent(ownership_id);
 #endif
     }
 
-#if UNITY_EDITOR
+#if !UNITY_WEBGL || UNITY_EDITOR
     private void SetCrateContent(string ownership_id)
     {
         Debug.Log(ownership_id);
