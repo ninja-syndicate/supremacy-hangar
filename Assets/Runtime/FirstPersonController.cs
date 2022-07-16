@@ -119,14 +119,6 @@ namespace SupremacyHangar.Runtime
 		private float FootstepTimer;
 		private bool Stepped;
 		private bool isPaused = false;
-		//protected SignalBus _bus;
-		//protected bool _subscribed;
-
-		/*[Inject]
-		public void Construct(SignalBus bus)
-		{
-			_bus = bus;
-		}*/
 
 		public void Awake()
 		{
@@ -137,8 +129,6 @@ namespace SupremacyHangar.Runtime
 			}
 			if (!ValidateAndSetupComponentReferences()) return;
 			interactionPromptControllerSet = interactionPromptController != null;
-
-
 		}
 
 		[Inject]
@@ -162,9 +152,9 @@ namespace SupremacyHangar.Runtime
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
-			
+#if !UNITY_IOS && !UNITY_ANDROID			
 			SetCursorState(cursorLocked);
-
+#endif
 			RightFoot = false;
 			FootstepTimer = 30f;
 			Stepped = false;
