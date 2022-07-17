@@ -1,7 +1,11 @@
 {
     "name": "BakeryEditorAssembly",
     "references": [
-        "BakeryRuntimeAssembly"
+        "BakeryRuntimeAssembly",
+        "UnityEditor.UI",
+        "UnityEngine.UI",
+        "UnityEditor.TestRunner",
+        "UnityEngine.TestRunner"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [
