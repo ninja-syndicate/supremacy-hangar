@@ -16,13 +16,13 @@ namespace SupremacyHangar.Runtime.Actors.Elevator
         public override void OnDisable()
         {
             base.OnDisable();
-            _bus.Unsubscribe<PlatformRepositionSignal>(SetupPlatform);
+            _bus.TryUnsubscribe<PlatformRepositionSignal>(SetupPlatform);
         }
 
         protected override void SubscribeToSignal()
         {
             base.SubscribeToSignal();
-            _bus.Subscribe<PlatformRepositionSignal>(SetupPlatform);
+            if (_bus != null) _bus.Subscribe<PlatformRepositionSignal>(SetupPlatform);
         }
 
         private void SetupPlatform(PlatformRepositionSignal signal)
