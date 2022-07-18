@@ -20,6 +20,7 @@ namespace SupremacyHangar.Runtime.Actors.Elevator
 
         public override void OnPlayerExited()
         {
+            elevator.OnStopChanged -= PlayerInsideInteraction;
             if (!playerPresent) return;
             playerPresent = false;
             playerController.OnInteractionTriggered -= OnButtonInteraction;
@@ -29,8 +30,16 @@ namespace SupremacyHangar.Runtime.Actors.Elevator
 
         public override void OnPlayerEntered(GameObject go, FirstPersonController controller)
         {
+            elevator.OnStopChanged += PlayerInsideInteraction;
             playerPresent = true;
             playerController = controller;
+            PlayerInsideInteraction(elevator.CurrentStop);
+        }
+
+        private void PlayerInsideInteraction(int newStop)
+        {
+            if (stopNumber == elevator.CurrentStop || elevator.CurrentStop == -1) return;
+
             playerController.IncrementInteractionPromptRequests();
             playerController.OnInteractionTriggered += OnButtonInteraction;
         }
