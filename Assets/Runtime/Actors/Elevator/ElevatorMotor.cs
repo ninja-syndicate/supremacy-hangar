@@ -50,7 +50,8 @@ namespace SupremacyHangar.Runtime.Actors.Elevator
         public void Inject(SignalBus bus)
         {
             _bus = bus;
-            elevatorStartReady = false;
+            elevatorStartReady = false; 
+            SubscribeToSignal();
         }
 
         public void OnEnable()
