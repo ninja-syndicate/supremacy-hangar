@@ -14,9 +14,9 @@ mergeInto(LibraryManager.library, {
    
    RequestCrateContent: function (ownership_id) {
       try {
-        window.dispatchReactUnityEvent("GetCrateContent");
+        window.dispatchReactUnityEvent("RequestCrateContent");
       } catch (e) {
-        console.warn("Unable to dispatch GetCrateContent");
+        console.warn("Unable to dispatch RequestCrateContent");
       }
    }
 });
