@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: UniversalRenderPipelineGlobalSettings
   m_EditorClassIdentifier: 
   k_AssetVersion: 2
-  lightLayerName0: Light Layer default
-  lightLayerName1: Mechs
-  lightLayerName2: Hallways
-  lightLayerName3: SiloJoiner
-  lightLayerName4: Light Layer 4
-  lightLayerName5: Light Layer 5
-  lightLayerName6: Light Layer 6
+  lightLayerName0: Baked Lighting Only
+  lightLayerName1: Mech Dynamic
+  lightLayerName2: Doors
+  lightLayerName3: Unused
+  lightLayerName4: Unused
+  lightLayerName5: Unused
+  lightLayerName6: Unused
   lightLayerName7: Light Layer 7
   m_StripDebugVariants: 1
   m_StripUnusedPostProcessingVariants: 1

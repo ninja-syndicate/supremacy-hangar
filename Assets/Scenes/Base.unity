@@ -362,7 +362,7 @@ LightingSettings:
   serializedVersion: 4
   m_GIWorkflowMode: 1
   m_EnableBakedLightmaps: 1
-  m_EnableRealtimeLightmaps: 1
+  m_EnableRealtimeLightmaps: 0
   m_RealtimeEnvironmentLighting: 1
   m_BounceScale: 1
   m_AlbedoBoost: 1
@@ -660,6 +660,545 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1304253367
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1304253369}
+  - component: {fileID: 1304253368}
+  m_Layer: 0
+  m_Name: '!ftraceLightmaps'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1304253368
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304253367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7fa80e7116296f4eb4f49ec1544ee22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderSettingsBounces: 5
+  renderSettingsGISamples: 16
+  renderSettingsGIBackFaceWeight: 0
+  renderSettingsTileSize: 512
+  renderSettingsPriority: 2
+  renderSettingsTexelsPerUnit: 40
+  renderSettingsForceRefresh: 1
+  renderSettingsForceRebuildGeometry: 1
+  renderSettingsPerformRendering: 1
+  renderSettingsUserRenderMode: 0
+  renderSettingsDistanceShadowmask: 0
+  renderSettingsSettingsMode: 1
+  renderSettingsFixSeams: 1
+  renderSettingsDenoise: 1
+  renderSettingsDenoise2x: 0
+  renderSettingsEncode: 1
+  renderSettingsEncodeMode: 0
+  renderSettingsOverwriteWarning: 0
+  renderSettingsAutoAtlas: 1
+  renderSettingsUnwrapUVs: 1
+  renderSettingsForceDisableUnwrapUVs: 0
+  renderSettingsMaxAutoResolution: 4096
+  renderSettingsMinAutoResolution: 16
+  renderSettingsUnloadScenes: 1
+  renderSettingsAdjustSamples: 1
+  renderSettingsGILODMode: 2
+  renderSettingsGILODModeEnabled: 0
+  renderSettingsCheckOverlaps: 0
+  renderSettingsSkipOutOfBoundsUVs: 1
+  renderSettingsHackEmissiveBoost: 1
+  renderSettingsHackIndirectBoost: 1
+  renderSettingsTempPath: 
+  renderSettingsOutPath: BakeryLightmaps
+  renderSettingsUseScenePath: 0
+  renderSettingsHackAOIntensity: 0
+  renderSettingsHackAOSamples: 16
+  renderSettingsHackAORadius: 1
+  renderSettingsShowAOSettings: 0
+  renderSettingsShowTasks: 1
+  renderSettingsShowTasks2: 0
+  renderSettingsShowPaths: 1
+  renderSettingsShowNet: 1
+  renderSettingsOcclusionProbes: 0
+  renderSettingsTexelsPerMap: 0
+  renderSettingsTexelsColor: 1
+  renderSettingsTexelsMask: 1
+  renderSettingsTexelsDir: 1
+  renderSettingsShowDirWarning: 1
+  renderSettingsRenderDirMode: 4
+  renderSettingsShowCheckerSettings: 0
+  renderSettingsSamplesWarning: 1
+  renderSettingsPrefabWarning: 1
+  renderSettingsSplitByScene: 0
+  renderSettingsUVPaddingMax: 0
+  renderSettingsPostPacking: 1
+  renderSettingsHoleFilling: 0
+  renderSettingsBeepOnFinish: 0
+  renderSettingsExportTerrainAsHeightmap: 0
+  renderSettingsRTXMode: 1
+  renderSettingsLightProbeMode: 1
+  renderSettingsClientMode: 0
+  renderSettingsServerAddress: 127.0.0.1
+  renderSettingsUnwrapper: 0
+  renderSettingsDenoiserType: 6
+  renderSettingsExportTerrainTrees: 0
+  renderSettingsShowPerf: 1
+  renderSettingsSampleDiv: 1
+  renderSettingsAtlasPacker: 0
+  renderSettingsBatchPoints: 1
+  renderSettingsCompressVolumes: 0
+  renderSettingsSector: {fileID: 0}
+  renderSettingsRTPVExport: 1
+  renderSettingsRTPVSceneView: 0
+  renderSettingsRTPVWidth: 640
+  renderSettingsRTPVHeight: 360
+  lastBakeTime: 17
+  enlightenWarningShown: 0
+  enlightenWarningShown2: 0
+  lightUIDs: 88ac4c90e443a524136ead99b82398f9a7f9449a38c267c1a27c3338eeab8b31
+  lights:
+  - tform:
+      e00: 2.7
+      e01: 0
+      e02: 0
+      e03: 15.061813
+      e10: 0
+      e11: -0.0000000107288365
+      e12: 1.0000001
+      e13: 3.8857756
+      e20: 0
+      e21: -0.09000001
+      e22: -0.00000011920929
+      e23: -2.5520597
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    color: {r: 1, g: 1, b: 1, a: 1}
+    intensity: 10
+    range: 100
+    radius: 0
+    samples: 256
+    samples2: 16
+    bitmask: 0
+    bakeToIndirect: 1
+    selfShadow: 1
+    realisticFalloff: 0
+    projMode: 0
+    cookie: {fileID: 0}
+    angle: 30
+  - tform:
+      e00: 2.7
+      e01: 0
+      e02: 0
+      e03: 15.061813
+      e10: 0
+      e11: -0.0000000107288365
+      e12: 1.0000001
+      e13: 3.8857756
+      e20: 0
+      e21: -0.09000001
+      e22: -0.00000011920929
+      e23: 2.5689406
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    color: {r: 1, g: 1, b: 1, a: 1}
+    intensity: 10
+    range: 100
+    radius: 0
+    samples: 256
+    samples2: 16
+    bitmask: 0
+    bakeToIndirect: 1
+    selfShadow: 1
+    realisticFalloff: 0
+    projMode: 0
+    cookie: {fileID: 0}
+    angle: 30
+  - tform:
+      e00: 2.7
+      e01: 0
+      e02: 0
+      e03: 5.0718136
+      e10: 0
+      e11: -0.0000000107288365
+      e12: 1.0000001
+      e13: 3.8857756
+      e20: 0
+      e21: -0.09000001
+      e22: -0.00000011920929
+      e23: -2.5520597
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    color: {r: 1, g: 1, b: 1, a: 1}
+    intensity: 10
+    range: 100
+    radius: 0
+    samples: 256
+    samples2: 16
+    bitmask: 0
+    bakeToIndirect: 1
+    selfShadow: 1
+    realisticFalloff: 0
+    projMode: 0
+    cookie: {fileID: 0}
+    angle: 30
+  - tform:
+      e00: 2.7
+      e01: 0
+      e02: 0
+      e03: 5.0718136
+      e10: 0
+      e11: -0.0000000107288365
+      e12: 1.0000001
+      e13: 3.8857756
+      e20: 0
+      e21: -0.09000001
+      e22: -0.00000011920929
+      e23: 2.5689406
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    color: {r: 1, g: 1, b: 1, a: 1}
+    intensity: 10
+    range: 100
+    radius: 0
+    samples: 256
+    samples2: 16
+    bitmask: 0
+    bakeToIndirect: 1
+    selfShadow: 1
+    realisticFalloff: 0
+    projMode: 0
+    cookie: {fileID: 0}
+    angle: 30
+  - tform:
+      e00: 2.7
+      e01: 0
+      e02: 0
+      e03: -15.0981865
+      e10: 0
+      e11: -0.0000000107288365
+      e12: 1.0000001
+      e13: 3.8857756
+      e20: 0
+      e21: -0.09000001
+      e22: -0.00000011920929
+      e23: -2.5520597
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    color: {r: 1, g: 1, b: 1, a: 1}
+    intensity: 10
+    range: 100
+    radius: 0
+    samples: 256
+    samples2: 16
+    bitmask: 0
+    bakeToIndirect: 1
+    selfShadow: 1
+    realisticFalloff: 0
+    projMode: 0
+    cookie: {fileID: 0}
+    angle: 30
+  - tform:
+      e00: 2.7
+      e01: 0
+      e02: 0
+      e03: -15.0981865
+      e10: 0
+      e11: -0.000000010728836
+      e12: 1.0000001
+      e13: 3.885776
+      e20: 0
+      e21: -0.09
+      e22: -0.00000011920929
+      e23: 2.5689416
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    color: {r: 1, g: 1, b: 1, a: 1}
+    intensity: 10
+    range: 100
+    radius: 0
+    samples: 256
+    samples2: 16
+    bitmask: 0
+    bakeToIndirect: 1
+    selfShadow: 1
+    realisticFalloff: 0
+    projMode: 0
+    cookie: {fileID: 0}
+    angle: 30
+  - tform:
+      e00: 2.7
+      e01: 0
+      e02: 0
+      e03: -4.9781876
+      e10: 0
+      e11: -0.0000000107288365
+      e12: 1.0000001
+      e13: 3.8857756
+      e20: 0
+      e21: -0.09000001
+      e22: -0.00000011920929
+      e23: -2.5520597
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    color: {r: 1, g: 1, b: 1, a: 1}
+    intensity: 10
+    range: 100
+    radius: 0
+    samples: 256
+    samples2: 16
+    bitmask: 0
+    bakeToIndirect: 1
+    selfShadow: 1
+    realisticFalloff: 0
+    projMode: 0
+    cookie: {fileID: 0}
+    angle: 30
+  - tform:
+      e00: 2.7
+      e01: 0
+      e02: 0
+      e03: -4.9781876
+      e10: 0
+      e11: -0.0000000107288365
+      e12: 1.0000001
+      e13: 3.8857756
+      e20: 0
+      e21: -0.09000001
+      e22: -0.00000011920929
+      e23: 2.5689406
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    color: {r: 1, g: 1, b: 1, a: 1}
+    intensity: 10
+    range: 100
+    radius: 0
+    samples: 256
+    samples2: 16
+    bitmask: 0
+    bakeToIndirect: 1
+    selfShadow: 1
+    realisticFalloff: 0
+    projMode: 0
+    cookie: {fileID: 0}
+    angle: 30
+  implicitGroups: []
+  implicitGroupedObjects: []
+  bounds:
+  - m_Center: {x: -0.0000019073486, y: 2.3089406, z: 0}
+    m_Extent: {x: 19.222696, y: 2.551745, z: 4.418061}
+  hasEmissive: 01
+  uvBuffOffsets: 
+  uvBuffLengths: 
+  uvSrcBuff: []
+  uvDestBuff: []
+  lmrIndicesOffsets: 
+  lmrIndicesLengths: 
+  lmrIndicesBuff: 
+  lmGroupLODResFlags: 
+  lmGroupMinLOD: 
+  lmGroupLODMatrix: 
+  serverGetFileList: []
+  lightmapHasColor: 01
+  lightmapHasMask: 00
+  lightmapHasDir: 00
+  lightmapHasRNM: 01
+  modifiedAssetPathList: []
+  modifiedAssets: []
+  maps:
+  - {fileID: 2800000, guid: f97f78883641d25498ea8f5cff5b5653, type: 3}
+  masks: []
+  dirMaps: []
+  rnmMaps0:
+  - {fileID: 2800000, guid: 7d6fb21ca7087f74fadd7fe25995ec02, type: 3}
+  rnmMaps1:
+  - {fileID: 2800000, guid: 0a897bd9ab5f60b4cb56a285e17a9cdb, type: 3}
+  rnmMaps2:
+  - {fileID: 2800000, guid: 33fe47010b130fd4c8f0098e6c67b8b0, type: 3}
+  mapsMode: 03000000
+  bakedRenderers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  bakedIDs: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff000000000000000000000000000000000000000000000000000000000000000000000000
+  bakedScaleOffset:
+  - {x: 1, y: 1, z: 0, w: 0}
+  - {x: 1, y: 1, z: 0, w: 0}
+  - {x: 1, y: 1, z: 0, w: 0}
+  - {x: 1, y: 1, z: 0, w: 0}
+  - {x: 1, y: 1, z: 0, w: 0}
+  - {x: 1, y: 1, z: 0, w: 0}
+  - {x: 1, y: 1, z: 0, w: 0}
+  - {x: 1, y: 1, z: 0, w: 0}
+  - {x: 1, y: 1, z: 0, w: 0}
+  - {x: 1, y: 1, z: 0, w: 0}
+  - {x: 1, y: 1, z: 0, w: 0}
+  - {x: 1, y: 1, z: 0, w: 0}
+  - {x: 1, y: 1, z: 0, w: 0}
+  - {x: 1, y: 1, z: 0, w: 0}
+  - {x: 1, y: 1, z: 0, w: 0}
+  - {x: 1, y: 1, z: 0, w: 0}
+  - {x: 1, y: 1, z: 0, w: 0}
+  bakedVertexOffset: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+  bakedVertexColorMesh:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  nonBakedRenderers: []
+  bakedLights: []
+  bakedLightChannels: 
+  bakedRenderersTerrain: []
+  bakedIDsTerrain: 
+  bakedScaleOffsetTerrain: []
+  assetList: []
+  uvOverlapAssetList: 
+  idremap: 00000000
+  usesRealtimeGI: 0
+  emptyDirectionTex: {fileID: 0}
+  anyVolumes: 0
+  compressedVolumes: 0
+  sectors:
+  - name: $G
+    maps:
+    - {fileID: 2800000, guid: 4a05f0184d21dd94c85adfbd459be710, type: 3}
+    masks: []
+    dirMaps: []
+    rnmMaps0:
+    - {fileID: 2800000, guid: 34a544b92d2bc9b46a32968bbc86033a, type: 3}
+    rnmMaps1:
+    - {fileID: 2800000, guid: 3653db7e6e86a274d9c7e5fa7dd5dee6, type: 3}
+    rnmMaps2:
+    - {fileID: 2800000, guid: 1dc4aa75ecb02024dbe52594096946c6, type: 3}
+    mapsMode: 03000000
+    bakedRenderers:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    bakedRenderersTerrain: []
+    bakedIDs: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff000000000000000000000000000000000000000000000000000000000000000000000000
+    bakedIDsTerrain: 
+    bakedScaleOffset:
+    - {x: 1, y: 1, z: 0, w: 0}
+    - {x: 1, y: 1, z: 0, w: 0}
+    - {x: 1, y: 1, z: 0, w: 0}
+    - {x: 1, y: 1, z: 0, w: 0}
+    - {x: 1, y: 1, z: 0, w: 0}
+    - {x: 1, y: 1, z: 0, w: 0}
+    - {x: 1, y: 1, z: 0, w: 0}
+    - {x: 1, y: 1, z: 0, w: 0}
+    - {x: 1, y: 1, z: 0, w: 0}
+    - {x: 1, y: 1, z: 0, w: 0}
+    - {x: 1, y: 1, z: 0, w: 0}
+    - {x: 1, y: 1, z: 0, w: 0}
+    - {x: 1, y: 1, z: 0, w: 0}
+    - {x: 1, y: 1, z: 0, w: 0}
+    - {x: 1, y: 1, z: 0, w: 0}
+    - {x: 1, y: 1, z: 0, w: 0}
+    - {x: 1, y: 1, z: 0, w: 0}
+    bakedScaleOffsetTerrain: []
+    bakedVertexColorMesh:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    nonBakedRenderers: []
+--- !u!4 &1304253369
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304253367}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2033829488
 GameObject:
