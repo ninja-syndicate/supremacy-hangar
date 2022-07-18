@@ -20,21 +20,43 @@ namespace SupremacyHangar.Runtime.Actors.Elevator
         private FirstPersonController playerController;
         private int myNextStop;
         private UnityMath.float3 myCurrentPos;
+        private bool elevatorStartReady;
+        private bool elevatorLoopReady;
+
+        [SerializeField] private AudioClip start;
+        [SerializeField] private AudioClip loop;
+        [SerializeField] private AudioClip end;
 
         protected SignalBus _bus;
         protected bool _subscribed;
 
         private bool isPaused = false;
 
+        [SerializeField] private AudioSource myAudioSource;
+
+        public void Awake()
+        {
+            SetupAudio();
+        }
+
+        private void SetupAudio()
+        {
+            if (myAudioSource != null) return;
+            if (TryGetComponent(out myAudioSource)) return;
+            Debug.LogError("Audio Source is null", this);
+        }
+
         [Inject]
         public void Inject(SignalBus bus)
         {
             _bus = bus;
+            elevatorStartReady = false;
         }
 
         public void OnEnable()
         {
             SubscribeToSignal();
+            Debug.Log("PLAYING");
         }
 
         public virtual void OnDisable()
@@ -44,11 +66,21 @@ namespace SupremacyHangar.Runtime.Actors.Elevator
             _bus.Unsubscribe<PauseGameSignal>(TogglePause);
 
             _subscribed = false;
+            Debug.Log("PAUSED");
         }
 
         private void TogglePause()
         {
             isPaused = !isPaused;
+            switch (isPaused)
+            {
+                case true when myAudioSource.clip == loop:
+                    myAudioSource.Pause();
+                    break;
+                case false when myAudioSource.clip == loop:
+                    myAudioSource.Play();
+                    break;
+            }
         }
 
         protected virtual void SubscribeToSignal()
@@ -67,6 +99,11 @@ namespace SupremacyHangar.Runtime.Actors.Elevator
             CurrentStop = initialStop;
             myNextStop = CurrentStop;
             OnStopChanged?.Invoke(CurrentStop);
+
+            if (TryGetComponent(out myAudioSource)) return;
+
+            Debug.LogError("Cannot find and set audio source");
+            enabled = false;
         }
 
         public virtual void Update()
@@ -74,9 +111,32 @@ namespace SupremacyHangar.Runtime.Actors.Elevator
             if(isPaused) return;
             if (CurrentStop != -1) return;
             Move(Time.deltaTime);
+
+            //Elevator starting to move but the Start sound isn't playing
+            if (elevatorStartReady)
+            {
+                myAudioSource.loop = false;
+                myAudioSource.clip = start;
+                myAudioSource.Play();
+                elevatorStartReady = false;
+            }
+            //Elevator now moving and start sound is playing. Is the start sound done? If so play the loop.
+            else if (myAudioSource.clip == start && !myAudioSource.isPlaying && !elevatorStartReady)
+            {
+                myAudioSource.loop = true;
+                myAudioSource.clip = loop;
+                myAudioSource.Play();
+            }
+            
             if (UnityMath.math.distancesq(myCurrentPos, myStops[myNextStop]) < Mathf.Epsilon)
             {
+                //TODO: refactor into a elevator stopping func.
                 CurrentStop = myNextStop;
+                myAudioSource.Stop();
+                myAudioSource.loop = false;
+                myAudioSource.clip = end;
+                elevatorStartReady = false;
+                myAudioSource.Play();
                 OnStopChanged?.Invoke(myNextStop);
             }
         }
@@ -88,6 +148,8 @@ namespace SupremacyHangar.Runtime.Actors.Elevator
             CurrentStop = -1;
             OnStopChanged?.Invoke(CurrentStop);
             if (myNextStop >= myStops.Length) myNextStop = 0;
+
+            elevatorStartReady = true;
         }
 
         public void OnTriggerEnter(Collider other)

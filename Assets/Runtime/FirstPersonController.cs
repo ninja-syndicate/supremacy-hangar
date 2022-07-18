@@ -14,6 +14,7 @@ namespace SupremacyHangar.Runtime
 	[DefaultExecutionOrder(1)]
 	public class FirstPersonController : MonoBehaviour
 	{
+		//CharacterController cc;
 		[Header("Player")]
 		[Tooltip("Move speed of the character in m/s")]
 		public float MoveSpeed = 4.0f;
@@ -111,6 +112,24 @@ namespace SupremacyHangar.Runtime
 		[SerializeField] private bool paused = false;
 		private FPSPlayerUIController fpsPlayerUIController;
 
+		//Footstep Stuff
+		[SerializeField] private AudioSource myAudioSource;
+        [SerializeField] private float FootstepRateRatio;
+		[SerializeField] private AudioClip RightFootClip;
+		[SerializeField] private AudioClip LeftFootClip;
+		private bool RightFoot;
+		private float FootstepTimer;
+		private bool Stepped;
+		private bool isPaused = false;
+		//protected SignalBus _bus;
+		//protected bool _subscribed;
+
+		/*[Inject]
+		public void Construct(SignalBus bus)
+		{
+			_bus = bus;
+		}*/
+
 		public void Awake()
 		{
 			// get a reference to our main camera
@@ -120,6 +139,8 @@ namespace SupremacyHangar.Runtime
 			}
 			if (!ValidateAndSetupComponentReferences()) return;
 			interactionPromptControllerSet = interactionPromptController != null;
+
+
 		}
 
 		[Inject]
@@ -145,6 +166,10 @@ namespace SupremacyHangar.Runtime
 			_fallTimeoutDelta = FallTimeout;
 			
 			SetCursorState(cursorLocked);
+
+			RightFoot = false;
+			FootstepTimer = 30f;
+			Stepped = false;
 		}
 
 		public void OnEnable()
@@ -164,6 +189,7 @@ namespace SupremacyHangar.Runtime
 			bus.TryUnsubscribe<PauseGameSignal>(Paused);
 
 			UnbindInputs();
+			//SubscribeToSignal();
 		}
 
 		public void DecrementInteractionPromptRequests()
@@ -282,9 +308,12 @@ namespace SupremacyHangar.Runtime
 				showPrompt &= interactionPrompts > 0;
 				interactionPromptController.Set(showPrompt);
 			}
+
+			//Debug.Log("Player Speed = " + _speed);
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
+			
 		}
 
 		private void LateUpdate()
@@ -292,6 +321,11 @@ namespace SupremacyHangar.Runtime
 			if (paused) return;
 
 			CameraRotation();
+		}
+
+		private void FixedUpdate()
+		{
+			FootstepAudio();
 		}
 		
 		private void GroundedCheck()
@@ -323,6 +357,40 @@ namespace SupremacyHangar.Runtime
 				// rotate the player left and right
 				transform.Rotate(Vector3.up * _rotationVelocity);
 			}
+		}
+
+		private void FootstepAudio()
+		{
+			//If homie is on the ground and hes moving
+			if (Grounded && _speed > 0.0f && FootstepTimer > 0f)
+			{
+				FootstepTimer = (FootstepTimer - (FootstepRateRatio * _speed));
+
+				if (FootstepTimer < 30f && !Stepped)
+				{
+					myAudioSource.Stop();
+					if (RightFoot)
+					{
+						myAudioSource.clip = RightFootClip;
+						RightFoot = false;
+					}
+					else
+					{
+						myAudioSource.clip = LeftFootClip;
+						RightFoot = true;
+					}
+					myAudioSource.pitch = UnityEngine.Random.Range(0.95f, 1.05f);
+					myAudioSource.Play();
+					Stepped = true;
+				}
+			}
+			else if (!Grounded || _speed == 0.0f || FootstepTimer <= 0f)
+			{
+				FootstepTimer = 30f;
+				Stepped = false;
+				//myAudioSource.Stop();
+			}
+			//Debug.Log("Stepped = " + Stepped);
 		}
 
 		private void Move()

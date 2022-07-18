@@ -136,14 +136,16 @@ Material:
     m_Ints: []
     m_Floats:
     - _Emission_Intentity: 1
+    - _Emissive_Color_1_Intensity: 1
+    - _Emissive_Color_2_Intensity: 0.6
     - _Normal_Blend_Intesity: 0.5
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
     - _Detail_Scale: {r: 0, g: 0, b: 0, a: 0}
     - _Emission_Tint: {r: 1, g: 0.013207494, b: 0.013207494, a: 1}
-    - _Emissive_Color_1: {r: 1, g: 1, b: 1, a: 1}
-    - _Emissive_Color_2: {r: 1, g: 0, b: 0, a: 0}
+    - _Emissive_Color_1: {r: 3.5648696, g: 3.5648696, b: 3.5648696, a: 1}
+    - _Emissive_Color_2: {r: 1, g: 1, b: 1, a: 0}
     - _Tile_Scale_1: {r: 1, g: 1, b: 0, a: 0}
     - _Tile_Scale_2: {r: 10, g: 10, b: 0, a: 0}
     - _Tile_Scale_3: {r: 1, g: 1, b: 0, a: 0}
