@@ -11,6 +11,8 @@ namespace SupremacyHangar.Runtime.Actors.Elevator
 
         private FirstPersonController playerController;
         private bool playerPresent;
+        private bool playerSubscribed;
+        private bool buttonInteractible;
 
         public override void Awake()
         {
@@ -20,35 +22,46 @@ namespace SupremacyHangar.Runtime.Actors.Elevator
 
         public override void OnPlayerExited()
         {
-            elevator.OnStopChanged -= PlayerInsideInteraction;
             if (!playerPresent) return;
             playerPresent = false;
-            playerController.OnInteractionTriggered -= OnButtonInteraction;
-            playerController.DecrementInteractionPromptRequests();
+            UpdateState();
             playerController = null;
         }
 
         public override void OnPlayerEntered(GameObject go, FirstPersonController controller)
         {
-            elevator.OnStopChanged += PlayerInsideInteraction;
             playerPresent = true;
             playerController = controller;
-            PlayerInsideInteraction(elevator.CurrentStop);
-        }
-
-        private void PlayerInsideInteraction(int newStop)
-        {
-            if (stopNumber == elevator.CurrentStop || elevator.CurrentStop == -1) return;
-
-            playerController.IncrementInteractionPromptRequests();
-            playerController.OnInteractionTriggered += OnButtonInteraction;
+            UpdateState();
         }
 
         private void OnButtonInteraction()
         {
+            //TODO: Handle elevators with more than 2 stops better.
             elevator.MoveToNextStop();
         }
-        
+
+        private void OnStopChanged(int stopIndex)
+        {
+            buttonInteractible = stopIndex > -1 && stopIndex != stopNumber;
+            UpdateState();
+        }
+
+        private void UpdateState()
+        {
+            if (buttonInteractible && playerPresent)
+            {
+                playerController.OnInteractionTriggered += OnButtonInteraction;
+                playerController.IncrementInteractionPromptRequests();
+                playerSubscribed = true;
+            } else if (playerSubscribed)
+            {
+                playerController.OnInteractionTriggered -= OnButtonInteraction;
+                playerController.DecrementInteractionPromptRequests();
+                playerSubscribed = false;
+            }
+        }
+
         private void SetupElevator()
         {
             if (stopNumber < 0)
@@ -69,6 +82,10 @@ namespace SupremacyHangar.Runtime.Actors.Elevator
                 Debug.LogError("Stop number can't be larger than linked elevator stops", this);
                 enabled = false;
             }
-        }        
+
+            if (!enabled) return;
+            OnStopChanged(elevator.CurrentStop);
+            elevator.OnStopChanged += OnStopChanged;
+        }
     }
 }

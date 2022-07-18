@@ -145,7 +145,7 @@ namespace SupremacyHangar.Runtime
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
-#if !UNITY_IOS && !UNITY_ANDROID			
+#if UNITY_EDITOR || (!UNITY_IOS && !UNITY_ANDROID)
 			SetCursorState(cursorLocked);
 #endif
 			RightFoot = false;
@@ -492,8 +492,8 @@ namespace SupremacyHangar.Runtime
 			Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z), GroundedRadius);
 		}
 
-#if !UNITY_IOS && !UNITY_ANDROID
-
+#if UNITY_EDITOR || (!UNITY_IOS && !UNITY_ANDROID)
+		
 		private void OnApplicationFocus(bool hasFocus)
 		{
 				SetCursorState(cursorLocked);
