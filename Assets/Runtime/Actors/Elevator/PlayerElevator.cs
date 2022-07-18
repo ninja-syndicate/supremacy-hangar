@@ -26,8 +26,15 @@ namespace SupremacyHangar.Runtime.Actors.Elevator
 
         public override void MoveToNextStop()
         {
+            if (linkedElevatorPresent) MoveLinkedElevator();
             base.MoveToNextStop();
-            if (linkedElevatorPresent) linkedElevator.MoveToNextStop();
+
+        }
+
+        private void MoveLinkedElevator()
+        {
+            if(linkedElevator.CurrentStop != CurrentStop)
+                linkedElevator.MoveToNextStop();
         }
     }
 }

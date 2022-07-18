@@ -372,7 +372,6 @@ namespace SupremacyHangar.Runtime.Environment
             return 0;
         }
 
-        private bool waitingOnWindow = false;
         public void UnloadSilo(bool waitOnWindow = true)
         {
             if (_currentSilo && waitOnWindow)

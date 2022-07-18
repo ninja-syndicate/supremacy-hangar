@@ -32,11 +32,11 @@ Transform:
   m_Children:
   - {fileID: 5006680350748062776}
   - {fileID: 577184586198762405}
-  - {fileID: 3814300285578380275}
-  - {fileID: 7099838579371752951}
-  - {fileID: 881882687362581041}
   - {fileID: 5729649358311599432}
   - {fileID: 693040276314625849}
+  - {fileID: 881882687362581041}
+  - {fileID: 3814300285578380275}
+  - {fileID: 7099838579371752951}
   - {fileID: 5089773110454540802}
   - {fileID: 1446487045389917614}
   - {fileID: 6151493789985887231}
@@ -1298,7 +1298,7 @@ PrefabInstance:
     - target: {fileID: 2956319089623626410, guid: 0b9693414688743f3bf6d740908fc985,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2956319089623626410, guid: 0b9693414688743f3bf6d740908fc985,
         type: 3}
@@ -1354,11 +1354,11 @@ PrefabInstance:
         type: 3}
       propertyPath: elevator
       value: 
-      objectReference: {fileID: 4857977889230195804}
+      objectReference: {fileID: 5139874730301558216}
     - target: {fileID: 6070883206238149933, guid: 0b9693414688743f3bf6d740908fc985,
         type: 3}
       propertyPath: m_Name
-      value: Elevator Call Button Left Top
+      value: Elevator Call Button Right Top
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b9693414688743f3bf6d740908fc985, type: 3}
@@ -1378,7 +1378,7 @@ PrefabInstance:
     - target: {fileID: 2956319089623626410, guid: 0b9693414688743f3bf6d740908fc985,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2956319089623626410, guid: 0b9693414688743f3bf6d740908fc985,
         type: 3}
@@ -1434,7 +1434,7 @@ PrefabInstance:
         type: 3}
       propertyPath: elevator
       value: 
-      objectReference: {fileID: 5139874730301558216}
+      objectReference: {fileID: 4857977889230195804}
     - target: {fileID: 4024747469723021879, guid: 0b9693414688743f3bf6d740908fc985,
         type: 3}
       propertyPath: stopNumber
@@ -1443,7 +1443,7 @@ PrefabInstance:
     - target: {fileID: 6070883206238149933, guid: 0b9693414688743f3bf6d740908fc985,
         type: 3}
       propertyPath: m_Name
-      value: Elevator Call Button Right Bottom
+      value: Elevator Call Button Left Bottom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b9693414688743f3bf6d740908fc985, type: 3}
@@ -3713,7 +3713,7 @@ PrefabInstance:
     - target: {fileID: 2956319089623626410, guid: 0b9693414688743f3bf6d740908fc985,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2956319089623626410, guid: 0b9693414688743f3bf6d740908fc985,
         type: 3}
@@ -3769,7 +3769,7 @@ PrefabInstance:
         type: 3}
       propertyPath: elevator
       value: 
-      objectReference: {fileID: 4857977889230195804}
+      objectReference: {fileID: 5139874730301558216}
     - target: {fileID: 4024747469723021879, guid: 0b9693414688743f3bf6d740908fc985,
         type: 3}
       propertyPath: stopNumber
@@ -3778,7 +3778,7 @@ PrefabInstance:
     - target: {fileID: 6070883206238149933, guid: 0b9693414688743f3bf6d740908fc985,
         type: 3}
       propertyPath: m_Name
-      value: Elevator Call Button Left Bottom
+      value: Elevator Call Button Right Bottom
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b9693414688743f3bf6d740908fc985, type: 3}
@@ -3916,7 +3916,7 @@ PrefabInstance:
     - target: {fileID: 2956319089623626410, guid: 0b9693414688743f3bf6d740908fc985,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2956319089623626410, guid: 0b9693414688743f3bf6d740908fc985,
         type: 3}
@@ -3972,11 +3972,11 @@ PrefabInstance:
         type: 3}
       propertyPath: elevator
       value: 
-      objectReference: {fileID: 5139874730301558216}
+      objectReference: {fileID: 4857977889230195804}
     - target: {fileID: 6070883206238149933, guid: 0b9693414688743f3bf6d740908fc985,
         type: 3}
       propertyPath: m_Name
-      value: Elevator Call Button Right Top
+      value: Elevator Call Button Left Top
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b9693414688743f3bf6d740908fc985, type: 3}
