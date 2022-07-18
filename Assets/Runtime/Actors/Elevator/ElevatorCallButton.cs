@@ -46,7 +46,6 @@ namespace SupremacyHangar.Runtime.Actors.Elevator
 
         private void OnButtonInteraction()
         {
-            //TODO: make this good.
             elevator.MoveToNextStop();
         }
         

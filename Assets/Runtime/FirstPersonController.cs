@@ -108,7 +108,6 @@ namespace SupremacyHangar.Runtime
 		public bool cursorInputForLook = true;
 
 		[SerializeField] private bool paused = false;
-		private FPSPlayerUIController fpsPlayerUIController;
 
 		//Footstep Stuff
 		[SerializeField] private AudioSource myAudioSource;
@@ -118,7 +117,6 @@ namespace SupremacyHangar.Runtime
 		private bool RightFoot;
 		private float FootstepTimer;
 		private bool Stepped;
-		private bool isPaused = false;
 
 		public void Awake()
 		{
@@ -143,11 +141,6 @@ namespace SupremacyHangar.Runtime
 		{
 			_controller = GetComponent<CharacterController>();
 			_playerInput = GetComponent<PlayerInput>();
-			if(!TryGetComponent(out fpsPlayerUIController))
-            {
-				Debug.LogError("Cannot find or set Menu Controller", this);
-				enabled = false;
-            }
 
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
@@ -177,7 +170,6 @@ namespace SupremacyHangar.Runtime
 			bus.TryUnsubscribe<PauseGameSignal>(Paused);
 
 			UnbindInputs();
-			//SubscribeToSignal();
 		}
 
 		public void DecrementInteractionPromptRequests()
