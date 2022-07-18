@@ -185,7 +185,7 @@ namespace SupremacyHangar.Runtime.Actors.Silo
                     addressablesManager.TargetSkin = null;
                     break;
                 default:
-                    Debug.LogWarning($"Unexpected type of {siloState.Contents.GetType()} - cowardly refusing to fill the silo", this);
+                    Debug.LogError($"Unexpected type of {siloState.Contents.GetType()} - cowardly refusing to fill the silo", this);
                     break;
             }
         }
@@ -195,7 +195,7 @@ namespace SupremacyHangar.Runtime.Actors.Silo
             //bool populated = true;
             if (mech.MechChassisDetails == null)
             {
-                Debug.LogWarning($"Unmapped Mech ID {mech.StaticID} can't load silo", this);
+                Debug.LogError($"Unmapped Mech ID {mech.StaticID} can't load silo", this);
                 //populated = false;
             }
             else
@@ -205,7 +205,7 @@ namespace SupremacyHangar.Runtime.Actors.Silo
 
             if (mech.MechSkinDetails == null)
             {
-                Debug.LogWarning($"Unmapped Skin ID {mech.StaticID} can't load silo", this);
+                Debug.LogError($"Unmapped Skin ID {mech.StaticID} can't load silo", this);
                 //populated = false;
             }
             else
