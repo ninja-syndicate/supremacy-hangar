@@ -98,7 +98,7 @@ namespace SupremacyHangar.Editor.ContentLoader
                    typeof(Transform),
                    true) as Transform;
 
-            inCrate = spawnPoint != null; //EditorGUILayout.Toggle("Spawn inside Crate", inCrate);
+            inCrate = spawnPoint != null;
 
             if (GUILayout.Button("Refresh"))
             {
@@ -106,6 +106,7 @@ namespace SupremacyHangar.Editor.ContentLoader
                 mapOptions.Clear();
                 optionsSet = false;
                 myAddressablesManager = GameObject.FindObjectOfType<AddressablesManager>();
+                spawnPoint = null;
             }
         }
 

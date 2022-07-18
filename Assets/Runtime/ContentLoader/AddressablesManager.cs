@@ -294,9 +294,6 @@ namespace SupremacyHangar.Runtime.ContentLoader
             if (skinToMeshMap.Count == 0 && insideCrate)
                 newRotation = siloDirection;
 
-            if(siloDirection.forward.normalized.x > 0 && skinToMeshMap.Count != 0)
-                newRotation.localRotation = new Quaternion(spawnLocation.localRotation.x, 180, spawnLocation.localRotation.z, spawnLocation.localRotation.w);
-
             //Load and spawn mech
             var mechOperationHandler = TargetMech.InstantiateAsync(spawnLocation.position, newRotation.localRotation, spawnLocation);
             StartCoroutine(loadingProgressContext.LoadingAssetProgress(mechOperationHandler, "Loading Mesh"));
@@ -310,6 +307,9 @@ namespace SupremacyHangar.Runtime.ContentLoader
                         crateInstance = myMech.mech;
 
                     myMech.mech = mech.Result;
+
+                    if (siloDirection.localRotation.y > 0 && skinToMeshMap.Count > 1)
+                        mech.Result.transform.Rotate(Vector3.up, 180);
 
                     if (isWeaponOnly && !insideCrate)
                         mech.Result.transform.Rotate(Vector3.right, 90.0f);
