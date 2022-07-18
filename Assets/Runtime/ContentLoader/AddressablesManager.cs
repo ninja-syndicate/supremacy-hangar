@@ -126,9 +126,9 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 return;
             } 
             
-#if UNITY_EDITOR
+#if !UNITY_WEBGL || UNITY_EDITOR
             bridge.SetPlayerInventoryFromFragment();
-#elif UNITY_WEBGL
+#else
             Plugins.WebGL.WebGLPluginJS.SiloReady();
 #endif
         }

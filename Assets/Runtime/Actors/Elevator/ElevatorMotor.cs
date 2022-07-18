@@ -50,14 +50,13 @@ namespace SupremacyHangar.Runtime.Actors.Elevator
         public void Inject(SignalBus bus)
         {
             _bus = bus;
-            elevatorStartReady = false; 
+            elevatorStartReady = false;
             SubscribeToSignal();
         }
 
         public void OnEnable()
         {
             SubscribeToSignal();
-            Debug.Log("PLAYING");
         }
 
         public virtual void OnDisable()
@@ -67,7 +66,6 @@ namespace SupremacyHangar.Runtime.Actors.Elevator
             _bus.Unsubscribe<PauseGameSignal>(TogglePause);
 
             _subscribed = false;
-            Debug.Log("PAUSED");
         }
 
         private void TogglePause()
