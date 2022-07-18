@@ -166,6 +166,9 @@
         },
         {
             "m_Id": "9fce91c1eace457f9e52edea655200c0"
+        },
+        {
+            "m_Id": "3505dab783734fb283b36f2be0245627"
         }
     ],
     "m_StickyNoteDatas": [],
@@ -1319,17 +1322,17 @@
     "m_Type": "UnityEditor.ShaderGraph.AddNode",
     "m_ObjectId": "18f110436bc1496abd3fee940dcd6608",
     "m_Group": {
-        "m_Id": ""
+        "m_Id": "3505dab783734fb283b36f2be0245627"
     },
     "m_Name": "Add",
     "m_DrawState": {
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 920.0,
-            "y": 92.66664123535156,
-            "width": 131.3333740234375,
-            "height": 120.0
+            "x": 926.6666870117188,
+            "y": 163.99993896484376,
+            "width": 131.33331298828126,
+            "height": 120.00003051757813
         }
     },
     "m_Slots": [
@@ -1701,6 +1704,17 @@
     "m_TextureArray": {
         "m_SerializedTexture": "{\"textureArray\":{\"instanceID\":0}}",
         "m_Guid": ""
+    }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.GroupData",
+    "m_ObjectId": "3505dab783734fb283b36f2be0245627",
+    "m_Title": "Lightmap SH Specular",
+    "m_Position": {
+        "x": 200.9960174560547,
+        "y": -21.624069213867189
     }
 }
 
@@ -2373,17 +2387,17 @@
     "m_Type": "UnityEditor.ShaderGraph.AddNode",
     "m_ObjectId": "585c9882c3be4abd9223d0707f30ca47",
     "m_Group": {
-        "m_Id": ""
+        "m_Id": "3505dab783734fb283b36f2be0245627"
     },
     "m_Name": "Add",
     "m_DrawState": {
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 735.3333740234375,
-            "y": 68.00001525878906,
-            "width": 131.3333740234375,
-            "height": 119.99998474121094
+            "x": 731.3333129882813,
+            "y": 131.99996948242188,
+            "width": 131.33331298828126,
+            "height": 119.99993896484375
         }
     },
     "m_Slots": [
@@ -2439,17 +2453,17 @@
     "m_Type": "UnityEditor.ShaderGraph.MultiplyNode",
     "m_ObjectId": "5cd95f5faeff4f94b0205d92b3d7060d",
     "m_Group": {
-        "m_Id": ""
+        "m_Id": "3505dab783734fb283b36f2be0245627"
     },
     "m_Name": "Multiply",
     "m_DrawState": {
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 525.3333129882813,
-            "y": -27.333345413208009,
+            "x": 521.3333129882813,
+            "y": 36.66665267944336,
             "width": 131.3333740234375,
-            "height": 119.99999237060547
+            "height": 119.99992370605469
         }
     },
     "m_Slots": [
@@ -5240,17 +5254,17 @@
     "m_Type": "UnityEditor.ShaderGraph.SubGraphNode",
     "m_ObjectId": "e4391ccc0323477484fc1d18a8ff018f",
     "m_Group": {
-        "m_Id": ""
+        "m_Id": "3505dab783734fb283b36f2be0245627"
     },
     "m_Name": "BakerySHSpecVectorNormal",
     "m_DrawState": {
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 229.99998474121095,
-            "y": 68.00000762939453,
-            "width": 226.0000457763672,
-            "height": 167.99996948242188
+            "x": 226.00001525878907,
+            "y": 131.99996948242188,
+            "width": 226.00001525878907,
+            "height": 168.00003051757813
         }
     },
     "m_Slots": [
