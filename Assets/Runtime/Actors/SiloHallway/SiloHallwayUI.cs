@@ -27,10 +27,10 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
         [SerializeField] private TMP_Text siloContentsType;
         [SerializeField] private TMP_Text siloContentsName1;
         [SerializeField] private TMP_Text siloContentsName2;
-        [FormerlySerializedAs("loadButton"),SerializeField] private Button interactionButton;
+        [FormerlySerializedAs("loadButton"), SerializeField] private Button interactionButton;
         [SerializeField] private Image interactionButtonProgress;
         [SerializeField] private TMP_Text interactionButtonText;
-        
+
         [SerializeField] private Color startFactionColor;
         [SerializeField] private float clockUpdateDelay = 0.25f;
 
@@ -56,7 +56,7 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
         {
             UpdateFactionColor(startFactionColor);
         }
-        
+
         [Inject]
         public void Inject(SiloState siloState, SignalBus bus)
         {
@@ -88,6 +88,16 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
                     enableCounter = true;
                     counterValue = box.CanOpenOn;
                     break;
+                case Weapon weapon:
+                    UpdateTypeString("Weapon");
+                    UpdateName1(weapon);
+                    UpdateName2(weapon);
+                    break;
+                //case Utility utility:
+                //UpdateTypeString(utility.UtilityModelDetails.Data.Type.ToString());
+                //UpdateName1(utility);
+                //UpdateName2(utility);
+                //break;
                 default:
                     UpdateTypeString("Empty");
                     UpdateName1("");
@@ -140,7 +150,7 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
                     interactionButtonText.text = loadingText;
                     break;
                 case SiloState.StateName.Loaded:
-                    interactionButton.gameObject.SetActive(false); 
+                    interactionButton.gameObject.SetActive(false);
                     PopulateDisplay();
                     break;
                 case SiloState.StateName.LoadedWithCrate:
@@ -188,7 +198,7 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
                 image.SetMaterialDirty();
             }
         }
-        
+
         public void UpdateFactionLogo(Sprite sprite)
         {
             if (factionLogo == null)
@@ -207,7 +217,7 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
         {
             siloNumber.text = newInt.ToString();
         }
-        
+
         public void UpdateTypeString(string newString)
         {
             siloContentsType.text = newString;
@@ -249,8 +259,8 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
                     Debug.LogError("Unknown crate type!");
                     break;
             }
-        }        
-        
+        }
+
         public void UpdateName1(string newString)
         {
             siloContentsName1.text = newString;
@@ -266,17 +276,57 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
             siloContentsName1.text = mech.MechChassisDetails.DataMechModel.HumanName;
         }
 
+        //private void UpdateName1(Utility utility)
+        //{
+        //    if (utility.UtilityModelDetails == null)
+        //    {
+        //        siloContentsName1.text = "Unable to load";
+        //        return;
+        //    }
+        //    siloContentsName1.text = utility.UtilityModelDetails.Data.HumanName;
+        //}
+
+        private void UpdateName1(Weapon weapon)
+        {
+            if (weapon.WeaponModelDetails == null)
+            {
+                siloContentsName1.text = "Unable to load";
+                return;
+            }
+            siloContentsName1.text = weapon.WeaponModelDetails.Data.HumanName;
+        }
+
         private void UpdateName2(Faction currentFaction, MysteryCrate crate)
         {
             var boxFaction = crate.MysteryCrateDetails.DataMysteryCrate.Faction;
             siloContentsName2.text = boxFaction == currentFaction ? "" : boxFaction.HumanName;
         }
-        
+
         public void UpdateName2(string newString)
         {
             siloContentsName2.text = newString;
-        }     
-        
+        }
+
+        private void UpdateName2(Weapon weapon)
+        {
+            if (weapon.WeaponSkinDetails == null)
+            {
+                siloContentsName2.text = "Unable to load";
+                return;
+            }
+            siloContentsName2.text = weapon.WeaponSkinDetails.Data.HumanName;
+        }
+
+        //private void UpdateName2(Utility utility)
+        //{
+        //    if (utility.UtilitySkinDetails == null)
+        //    {
+        //        siloContentsName2.text = "Unable to load";
+        //        return;
+        //    }
+        //    siloContentsName2.text = utility.UtilitySkinDetails.Data.HumanName;
+        //}
+
         private void UpdateName2(Mech mech)
         {
             if (mech.MechSkinDetails == null)

@@ -312,7 +312,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
                         mech.Result.transform.Rotate(Vector3.up, 180);
 
                     if (isWeaponOnly && !insideCrate)
-                        mech.Result.transform.Rotate(Vector3.right, 90.0f);
+                        mech.Result.transform.Rotate(Vector3.right, -90.0f);
                     
                     SetLoadedSkin(mech.Result, FindMeshSkin(mech.Result), insideCrate);
                 };
