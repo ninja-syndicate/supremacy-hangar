@@ -4,6 +4,7 @@ using UnityEngine;
 using SupremacyHangar.Runtime.ContentLoader.Types;
 using Malee.List;
 using SupremacyData.Editor;
+using UnityEngine.AddressableAssets;
 
 namespace SupremacyHangar.Editor.ContentLoader
 {
@@ -17,6 +18,8 @@ namespace SupremacyHangar.Editor.ContentLoader
         private ReorderableList weaponModelList;
         private ReorderableList weaponSkinList;
         private ReorderableList powerCoreList;
+        private ReorderableList utilityModelsList;
+        private ReorderableList utilitySkinsList;
 
         private int selectedIndex;
         private UnityEditor.Editor _editor;
@@ -36,6 +39,11 @@ namespace SupremacyHangar.Editor.ContentLoader
         private AssetMappingImporter assetImporter = new();
 
         private string refLabel = null;
+        private bool dupeKeyFound = false;
+        private bool dupeValueFound = false;
+        private bool keyIsEmpty = false;
+        private bool valueIsEmpty = false;
+
         private void OnEnable()
         {
             logDictionary.Clear();
@@ -63,7 +71,11 @@ namespace SupremacyHangar.Editor.ContentLoader
             weaponSkinList.pageSize = 10;
             powerCoreList = new ReorderableList(serializedObject.FindProperty("powerCores"));
             typeByList.Add(powerCoreList, ListType.PowerCore);
-
+            utilityModelsList = new ReorderableList(serializedObject.FindProperty("utilityModels"));
+            typeByList.Add(utilityModelsList, ListType.UtilityModel);
+            utilitySkinsList = new ReorderableList(serializedObject.FindProperty("utilitySkins"));
+            typeByList.Add(utilitySkinsList, ListType.UtilitySkin);
+             
             foreach (var listPair in typeByList)
             {
                 DrawListElements(listPair.Key, listPair.Value);
@@ -96,8 +108,6 @@ namespace SupremacyHangar.Editor.ContentLoader
             }
         }
 
-        
-
         public override void OnInspectorGUI()
         {
             serializedObject.Update();
@@ -114,6 +124,8 @@ namespace SupremacyHangar.Editor.ContentLoader
             weaponModelList.DoLayoutList();
             weaponSkinList.DoLayoutList();
             powerCoreList.DoLayoutList();
+            utilityModelsList.DoLayoutList();
+            utilitySkinsList.DoLayoutList();
 
             ElementSelectionDisplay();
             serializedObject.ApplyModifiedProperties();
@@ -137,6 +149,10 @@ namespace SupremacyHangar.Editor.ContentLoader
                     return ListType.WeaponSkin;
                 case "PowerCoreMapping":
                     return ListType.PowerCore;
+                case "UtilityModelMapping":
+                    return ListType.UtilityModel;
+                case "UtilitySkinMapping":
+                    return ListType.UtilitySkin;
                 default:
                     Debug.LogError($"Unknown type: {type}");
                     return ListType.Faction;
@@ -173,10 +189,10 @@ namespace SupremacyHangar.Editor.ContentLoader
                     logDictionary.Add(propertyPath, new AssetMapItem());
                 }
 
-                bool dupeKeyFound = false;
-                bool dupeValueFound = false;
-                bool keyIsEmpty = false;
-                bool valueIsEmpty = false;
+                dupeKeyFound = false;
+                dupeValueFound = false;
+                keyIsEmpty = false;
+                valueIsEmpty = false;
 
                 if (dataReference == null)
                 {
@@ -234,23 +250,8 @@ namespace SupremacyHangar.Editor.ContentLoader
 
                             var factionGraph = assetGrabber.GetFactionGraphAssetReferenceValue(assetReference, ref refLabel); 
                             var otherFactionGraph = assetGrabber.GetFactionGraphAssetReferenceValue(otherAssetReference, ref refLabel);
-                            if (factionGraph == null || !factionGraph.editorAsset)
-                            {
-                                if (!valueIsEmpty)
-                                {
-                                    logDictionary[propertyPath].Log.LogError($"{assetReference.displayName} is empty");
-                                }
-                                valueIsEmpty = true;
-                                continue;
-                            }
-                            if (factionGraph.editorAsset.Equals(otherFactionGraph.editorAsset)) 
-                            {
-                                list.GetItem(x).FindPropertyRelative("containsError").boolValue = true;
-                                if(!dupeValueFound)
-                                    logDictionary[propertyPath].Log.LogError($"Dublicate Value: {factionGraph.editorAsset.name}");
 
-                                dupeValueFound = true;
-                            }
+                            ValidateMapping(assetReference, factionGraph, otherFactionGraph, propertyPath);
                             break; 
                         case ListType.MechSkin:
                             if (!dupeValueFound && !dupeKeyFound && !keyIsEmpty && !valueIsEmpty)
@@ -259,24 +260,7 @@ namespace SupremacyHangar.Editor.ContentLoader
                             var skin = assetGrabber.GetSkinAssetReferenceValue(assetReference, ref refLabel);
                             var otherSkin = assetGrabber.GetSkinAssetReferenceValue(otherAssetReference, ref refLabel);
 
-                            if (skin == null || !skin.editorAsset)
-                            {
-                                if (!valueIsEmpty)
-                                {
-                                    logDictionary[propertyPath].Log.LogError($"{assetReference.displayName} is empty");
-                                }
-                                valueIsEmpty = true;
-                                continue;
-                            }
-                            if (skin.editorAsset.Equals(otherSkin.editorAsset))
-                            {
-                                list.GetItem(x).FindPropertyRelative("containsError").boolValue = true;
-
-                                if (!dupeValueFound)
-                                    logDictionary[propertyPath].Log.LogError($"Dublicate Value: {skin.editorAsset.name}");
-                                    
-                                dupeValueFound = true;
-                            }
+                            ValidateMapping(assetReference, skin, otherSkin, propertyPath);
                             break;
                         case ListType.MechChassis:
 
@@ -285,24 +269,8 @@ namespace SupremacyHangar.Editor.ContentLoader
 
                             var mechChassis = assetGrabber.GetAssetReferenceValue(assetReference, ref refLabel);
                             var otherMechChassis = assetGrabber.GetAssetReferenceValue(otherAssetReference, ref refLabel);
-                            if (mechChassis == null || !mechChassis.editorAsset)
-                            {
-                                if (!valueIsEmpty)
-                                {
-                                    logDictionary[propertyPath].Log.LogError($"{assetReference.displayName} is empty");
-                                }
-                                valueIsEmpty = true;
-                                continue;
-                            }
-                            if (mechChassis.editorAsset.Equals(otherMechChassis.editorAsset))
-                            {
-                                list.GetItem(x).FindPropertyRelative("containsError").boolValue = true;
 
-                                if (!dupeValueFound)
-                                    logDictionary[propertyPath].Log.LogError($"Dublicate Value: {mechChassis.editorAsset.name}");
-
-                                dupeValueFound = true;
-                            }
+                            ValidateMapping(assetReference, mechChassis, otherMechChassis, propertyPath);
                             break;
                         case ListType.MysteryCrate:
                                 
@@ -311,22 +279,8 @@ namespace SupremacyHangar.Editor.ContentLoader
 
                             var mysteryCrate = assetGrabber.GetAssetReferenceValue(assetReference, ref refLabel);
                             var otherMysteryCrate = assetGrabber.GetAssetReferenceValue(otherAssetReference, ref refLabel);
-                            if (mysteryCrate == null || !mysteryCrate.editorAsset)
-                            {
-                                if (!valueIsEmpty)
-                                {
-                                    logDictionary[propertyPath].Log.LogError($"{assetReference.displayName} is empty");
-                                }
-                                valueIsEmpty = true;
-                                continue;
-                            }
-                            if (mysteryCrate.editorAsset.Equals(otherMysteryCrate.editorAsset))
-                            {
-                                if (!dupeValueFound)
-                                    logDictionary[propertyPath].Log.LogError($"Dublicate Value: {mysteryCrate.editorAsset.name}");
 
-                                dupeValueFound = true;
-                            }
+                            ValidateMapping(assetReference, mysteryCrate, otherMysteryCrate, propertyPath);
                             break;
                         case ListType.WeaponModel:
                             if (!dupeValueFound && !dupeKeyFound && !keyIsEmpty && !valueIsEmpty)
@@ -334,22 +288,8 @@ namespace SupremacyHangar.Editor.ContentLoader
 
                             var weaponAsset = assetGrabber.GetAssetReferenceValue(assetReference, ref refLabel);
                             var otherWeaponAsset = assetGrabber.GetAssetReferenceValue(otherAssetReference, ref refLabel);
-                            if (weaponAsset == null || !weaponAsset.editorAsset)
-                            {
-                                if (!valueIsEmpty)
-                                {
-                                    logDictionary[propertyPath].Log.LogError($"{assetReference.displayName} is empty");
-                                }
-                                valueIsEmpty = true;
-                                continue;
-                            }
-                            if (weaponAsset.editorAsset.Equals(otherWeaponAsset.editorAsset))
-                            {
-                                if (!dupeValueFound)
-                                    logDictionary[propertyPath].Log.LogError($"Dublicate Value: {weaponAsset.editorAsset.name}");
 
-                                dupeValueFound = true;
-                            }
+                            ValidateMapping(assetReference, weaponAsset, otherWeaponAsset, propertyPath);
                             break;
                         case ListType.WeaponSkin:
                             if (!dupeValueFound && !dupeKeyFound && !keyIsEmpty && !valueIsEmpty)
@@ -357,22 +297,8 @@ namespace SupremacyHangar.Editor.ContentLoader
 
                             var weaponSkin = assetGrabber.GetAssetReferenceValue(assetReference, ref refLabel);
                             var otherWeaponSkin = assetGrabber.GetAssetReferenceValue(otherAssetReference, ref refLabel);
-                            if (weaponSkin == null || !weaponSkin.editorAsset)
-                            {
-                                if (!valueIsEmpty)
-                                {
-                                    logDictionary[propertyPath].Log.LogError($"{assetReference.displayName} is empty");
-                                }
-                                valueIsEmpty = true;
-                                continue;
-                            }
-                            if (weaponSkin.editorAsset.Equals(otherWeaponSkin.editorAsset))
-                            {
-                                if (!dupeValueFound)
-                                    logDictionary[propertyPath].Log.LogError($"Dublicate Value: {weaponSkin.editorAsset.name}");
 
-                                dupeValueFound = true;
-                            }
+                            ValidateMapping(assetReference, weaponSkin, otherWeaponSkin, propertyPath);
                             break;
                         case ListType.PowerCore:
                             if (!dupeValueFound && !dupeKeyFound && !keyIsEmpty && !valueIsEmpty)
@@ -380,22 +306,26 @@ namespace SupremacyHangar.Editor.ContentLoader
 
                             var powerCore = assetGrabber.GetAssetReferenceValue(assetReference, ref refLabel);
                             var otherPowerCore = assetGrabber.GetAssetReferenceValue(otherAssetReference, ref refLabel);
-                            if (powerCore == null || !powerCore.editorAsset)
-                            {
-                                if (!valueIsEmpty)
-                                {
-                                    logDictionary[propertyPath].Log.LogError($"{assetReference.displayName} is empty");
-                                }
-                                valueIsEmpty = true;
-                                continue;
-                            }
-                            if (powerCore.editorAsset.Equals(otherPowerCore.editorAsset))
-                            {
-                                if (!dupeValueFound)
-                                    logDictionary[propertyPath].Log.LogError($"Dublicate Value: {powerCore.editorAsset.name}");
 
-                                dupeValueFound = true;
-                            }
+                            ValidateMapping(assetReference, powerCore, otherPowerCore, propertyPath);
+                            break;
+                        case ListType.UtilityModel:
+                            if (!dupeValueFound && !dupeKeyFound && !keyIsEmpty && !valueIsEmpty)
+                                logDictionary[propertyPath].Log.Reset();
+
+                            var utilityAsset = assetGrabber.GetAssetReferenceValue(assetReference, ref refLabel);
+                            var otherUtilityAsset = assetGrabber.GetAssetReferenceValue(otherAssetReference, ref refLabel);
+
+                            ValidateMapping(assetReference, utilityAsset, otherUtilityAsset, propertyPath);
+                            break;
+                        case ListType.UtilitySkin:
+                            if (!dupeValueFound && !dupeKeyFound && !keyIsEmpty && !valueIsEmpty)
+                                logDictionary[propertyPath].Log.Reset();
+
+                            var utilitySkin = assetGrabber.GetAssetReferenceValue(assetReference, ref refLabel);
+                            var otherUtilitySkin = assetGrabber.GetAssetReferenceValue(otherAssetReference, ref refLabel);
+
+                            ValidateMapping(assetReference, utilitySkin, otherUtilitySkin, propertyPath);
                             break;
                         default:
                             Debug.LogError($"Unknown list type {type}");
@@ -421,6 +351,27 @@ namespace SupremacyHangar.Editor.ContentLoader
                 }
                 else EditorGUI.PropertyField(rect, element, label, true);
             }; 
+        }
+
+        private void ValidateMapping(SerializedProperty assetProperty, AssetReference assetReference, AssetReference otherAssetReference, string propertyPath)
+        {
+
+            if (assetReference == null || !assetReference.editorAsset)
+            {
+                if (!valueIsEmpty)
+                {
+                    logDictionary[propertyPath].Log.LogError($"{assetProperty.displayName} is empty");
+                }
+                valueIsEmpty = true;
+                return;
+            }
+            if (assetReference.editorAsset.Equals(otherAssetReference.editorAsset))
+            {
+                if (!dupeValueFound)
+                    logDictionary[propertyPath].Log.LogError($"Dublicate Value: {assetReference.editorAsset.name}");
+
+                dupeValueFound = true;
+            }
         }
 
         public void ElementSelectionDisplay()
@@ -468,7 +419,6 @@ namespace SupremacyHangar.Editor.ContentLoader
 
         private void AssetReferenceSelecter(SerializedProperty assetReference)
         {
-            AssetReferenceSkin skinRef;
             switch (currentListType)
             {
                 case ListType.Faction:
@@ -479,21 +429,22 @@ namespace SupremacyHangar.Editor.ContentLoader
                 case ListType.MechChassis:
                     return;
                 case ListType.MechSkin:
-                    skinRef = assetGrabber.GetSkinAssetReferenceValue(assetReference, ref refLabel);
-                    if (!skinRef.editorAsset) return;
-                    CreateCachedEditor(skinRef.editorAsset, null, ref _editor);
+                    DisplaySelectedSkinAset(assetReference);
                     break;
                 case ListType.MysteryCrate:
                     return;
                 case ListType.WeaponModel:
                     return;
                 case ListType.WeaponSkin:
-                    skinRef = assetGrabber.GetSkinAssetReferenceValue(assetReference, ref refLabel);
-                    if (!skinRef.editorAsset) return;
-                    CreateCachedEditor(skinRef.editorAsset, null, ref _editor);
+                    DisplaySelectedSkinAset(assetReference);
                     break;
                 case ListType.PowerCore:
                     return;
+                case ListType.UtilityModel:
+                    return;
+                case ListType.UtilitySkin:
+                    DisplaySelectedSkinAset(assetReference);
+                    break;
                 default:
                     Debug.LogError($"Unknown listType {currentListType}");
                     break;
@@ -501,5 +452,11 @@ namespace SupremacyHangar.Editor.ContentLoader
             _editor.OnInspectorGUI();
         }
 
+        private void DisplaySelectedSkinAset(SerializedProperty assetReference)
+        {
+            AssetReferenceSkin skinRef = assetGrabber.GetSkinAssetReferenceValue(assetReference, ref refLabel);
+            if (!skinRef.editorAsset) return;
+            CreateCachedEditor(skinRef.editorAsset, null, ref _editor);
+        }
     }
 }

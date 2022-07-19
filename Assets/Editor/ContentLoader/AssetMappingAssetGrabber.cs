@@ -18,6 +18,8 @@ namespace SupremacyHangar.Editor.ContentLoader
         WeaponModel,
         WeaponSkin,
         PowerCore,
+        UtilityModel,
+        UtilitySkin,
     };
 
     public class AssetMappingAssetGrabber
@@ -41,8 +43,10 @@ namespace SupremacyHangar.Editor.ContentLoader
             typeToNameMap.Add(ListType.WeaponModel, new[] { "Weapon Model", "data", "reference" });
             typeToNameMap.Add(ListType.WeaponSkin, new[] { "Weapon Skins", "data", "reference" });
             typeToNameMap.Add(ListType.PowerCore, new[] { "Power Core", "data", "reference" });
-            
+            typeToNameMap.Add(ListType.UtilityModel, new[] { "Utility Models", "data", "reference" });
+            typeToNameMap.Add(ListType.UtilitySkin, new[] { "Utility Skins", "data", "reference" });            
         }
+
         public AssetReferenceEnvironmentConnectivity GetFactionGraphAssetReferenceValue(SerializedProperty assetReference, ref string label)
         {
             System.Type type = MyExtensionMethods.GetType(assetReference, ReferenceTypes.Graph);

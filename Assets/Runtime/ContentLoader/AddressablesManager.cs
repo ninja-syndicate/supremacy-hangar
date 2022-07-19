@@ -164,16 +164,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
                         switch(item)
                         {
                             case Weapon weapon:
-                                if (!mappings.WeaponModelMappingByGuid.TryGetValue(weapon.StaticID, out weapon.WeaponModelDetails))
-                                {
-                                    Debug.LogError($"No Weapon mapping found for {weapon.StaticID}");
-                                    break;
-                                }
-                                if (!mappings.WeaponSkinMappingByGuid.TryGetValue(weapon.Skin.StaticID, out weapon.WeaponSkinDetails))
-                                {
-                                    Debug.LogError($"No Weapon Skin mapping found for {weapon.Skin.StaticID}");
-                                    break;
-                                }
+                                PopulateWeaponItem(weapon);
                                 break;
                             case PowerCore powerCore:
                                 if (!mappings.PowerCoreMappingByGuid.TryGetValue(powerCore.StaticID, out powerCore.PowerCoreDetails))
@@ -182,10 +173,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
                                 }
                                 break;
                             case Utility utility:
-                                //if (!mappings.UtilityMappingByGuid.TryGetValue(utility.StaticID, out utility.UtilityDetails))
-                                //{
-                                //    Debug.LogError($"No Utility mapping found for {utility.StaticID}");
-                                //}
+                                PopulateUtilityItem(utility);
                                 break;
                             default:
                                 Debug.LogError($"Unknown accessory {item}");
@@ -200,20 +188,38 @@ namespace SupremacyHangar.Runtime.ContentLoader
                     }
                     break;
                 case Weapon weapon:
-                    if (!mappings.WeaponModelMappingByGuid.TryGetValue(weapon.StaticID, out weapon.WeaponModelDetails))
-                    {
-                        Debug.LogError($"No Weapon mapping found for {weapon.StaticID}");
-                        break;
-                    }
-                    if (!mappings.WeaponSkinMappingByGuid.TryGetValue(weapon.Skin.StaticID, out weapon.WeaponSkinDetails))
-                    {
-                        Debug.LogError($"No Weapon Skin mapping found for {weapon.Skin.StaticID}");
-                        break;
-                    }
+                    PopulateWeaponItem(weapon);
+                    break;
+                case Utility utility:
+                    PopulateUtilityItem(utility);
                     break;
                 default:
                     Debug.LogError($"Unknown silo of type {silo}.");
                     break;
+            }
+        }
+
+        private void PopulateUtilityItem(Utility utility)
+        {
+            if (!mappings.UtilityModelMappingByGuid.TryGetValue(utility.StaticID, out utility.UtilityModelDetails))
+            {
+                Debug.LogError($"No Utilty mapping found for {utility.StaticID}");
+            }
+            if (!mappings.UtilitySkinMappingByGuid.TryGetValue(utility.StaticID, out utility.UtilitySkinDetails))
+            {
+                Debug.LogError($"No Utilty Skin mapping found for {utility.Skin.StaticID}");
+            }
+        }
+
+        private void PopulateWeaponItem(Weapon weapon)
+        {
+            if (!mappings.WeaponModelMappingByGuid.TryGetValue(weapon.StaticID, out weapon.WeaponModelDetails))
+            {
+                Debug.LogError($"No Weapon mapping found for {weapon.StaticID}");
+            }
+            if (!mappings.WeaponSkinMappingByGuid.TryGetValue(weapon.Skin.StaticID, out weapon.WeaponSkinDetails))
+            {
+                Debug.LogError($"No Weapon Skin mapping found for {weapon.Skin.StaticID}");
             }
         }
 

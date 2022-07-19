@@ -16,6 +16,8 @@ namespace SupremacyHangar.Runtime.ContentLoader
         
         public IReadOnlyDictionary<Guid, WeaponSkinMapping> WeaponSkinMappingByGuid { get; private set; }
         public IReadOnlyDictionary<Guid, PowerCoreMapping> PowerCoreMappingByGuid { get; private set; }
+        public IReadOnlyDictionary<Guid, UtilityModelMapping> UtilityModelMappingByGuid { get; private set; }
+        public IReadOnlyDictionary<Guid, UtilitySkinMapping> UtilitySkinMappingByGuid { get; private set; }
 
         public List<FactionMapping> Factions => factions;
         public List<MechChassisMapping> MechChassis => mechChassis;
@@ -24,6 +26,8 @@ namespace SupremacyHangar.Runtime.ContentLoader
         public List<WeaponModelMapping> WeaponModels => weaponModels;
         public List<WeaponSkinMapping> WeaponSkins => weaponSkins;
         public List<PowerCoreMapping> PowerCores => powerCores;
+        public List<UtilityModelMapping> UtilityModels => utilityModels;
+        public List<UtilitySkinMapping> UtilitySkins => utilitySkins;
 
         [SerializeField] private List<FactionMapping> factions;
         [SerializeField] private List<MechChassisMapping> mechChassis;
@@ -32,6 +36,8 @@ namespace SupremacyHangar.Runtime.ContentLoader
         [SerializeField] private List<WeaponModelMapping> weaponModels;
         [SerializeField] private List<WeaponSkinMapping> weaponSkins;
         [SerializeField] private List<PowerCoreMapping> powerCores;
+        [SerializeField] private List<UtilityModelMapping> utilityModels;
+        [SerializeField] private List<UtilitySkinMapping> utilitySkins;
 
         //For some unity-lifecycle related reason, we can't do this as part of deserialization, which is why it's in enable.
         //Hopefully this is early enough for consumers of this data...
@@ -64,6 +70,14 @@ namespace SupremacyHangar.Runtime.ContentLoader
             var powerCoresByGuid = new Dictionary<Guid, PowerCoreMapping>();
             PopulateDictionary(powerCoresByGuid, powerCores, "powerCores", GetRecord);
             PowerCoreMappingByGuid = powerCoresByGuid;
+
+            var utilityModelsByGuid = new Dictionary<Guid, UtilityModelMapping>();
+            PopulateDictionary(utilityModelsByGuid, utilityModels, "utilityModels", GetRecord);
+            UtilityModelMappingByGuid = utilityModelsByGuid;
+
+            var utilitySkinsByGuid = new Dictionary<Guid, UtilitySkinMapping>();
+            PopulateDictionary(utilitySkinsByGuid, utilitySkins, "utilitySkins", GetRecord);
+            UtilitySkinMappingByGuid = utilitySkinsByGuid;
         }
 
         private SupremacyData.Runtime.Faction GetFactionMapping(FactionMapping arg) => arg.DataFaction;

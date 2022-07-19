@@ -78,4 +78,10 @@ namespace SupremacyHangar.Runtime.ContentLoader
 
     [Serializable]
     public class PowerCoreMapping : MappingWithError<SupremacyData.Runtime.PowerCore, AssetReference> { }
+
+    [Serializable]
+    public class UtilityModelMapping : MappingWithError<SupremacyData.Runtime.UtilityModel, AssetReference> { }
+    
+    [Serializable]
+    public class UtilitySkinMapping : MappingWithError<SupremacyData.Runtime.UtilitySkin, AssetReferenceSkin> { }
 }

@@ -60,6 +60,8 @@ namespace SupremacyHangar.Runtime.Types
     [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public class Utility : SiloItem
     {
-        //public UtilityMapping UtilityDetails;
+        public Skin Skin;
+        public UtilityModelMapping UtilityModelDetails;
+        public UtilitySkinMapping UtilitySkinDetails;
     }
 }

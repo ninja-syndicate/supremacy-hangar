@@ -26,6 +26,8 @@ namespace SupremacyData.Editor
         private Importers.WeaponModels weaponModelsImporter;
         private Importers.WeaponSkins weaponSkinsImporter;
         private Importers.PowerCores powerCoresImporter;
+        private Importers.UtilityModels utilityModelsImporter;
+        private Importers.UtilitySkins utilitySkinsImporter;
 
         [MenuItem("Supremacy/Data/Importer")]
         public static void Spawn()
@@ -93,6 +95,8 @@ namespace SupremacyData.Editor
             weaponModelsImporter = new Importers.WeaponModels(logWidget, directory);
             weaponSkinsImporter = new Importers.WeaponSkins(logWidget, directory);
             powerCoresImporter = new Importers.PowerCores(logWidget, directory);
+            utilityModelsImporter = new Importers.UtilityModels(logWidget, directory);
+            utilitySkinsImporter = new Importers.UtilitySkins(logWidget, directory);
 
             bool valid = true;
             valid &= factionsImporter.ValidateFile();
@@ -105,6 +109,8 @@ namespace SupremacyData.Editor
             valid &= weaponModelsImporter.ValidateFile();
             valid &= weaponSkinsImporter.ValidateFile();
             valid &= powerCoresImporter.ValidateFile();
+            valid &= utilityModelsImporter.ValidateFile();
+            valid &= utilitySkinsImporter.ValidateFile();
 
             if (!valid) return;
             importDirectory = directory;
@@ -135,6 +141,8 @@ namespace SupremacyData.Editor
                 weaponModelsImporter ??= new Importers.WeaponModels(logWidget, importDirectory);
                 weaponSkinsImporter ??= new Importers.WeaponSkins(logWidget, importDirectory);
                 powerCoresImporter ??= new Importers.PowerCores(logWidget, importDirectory);
+                utilityModelsImporter ??= new Importers.UtilityModels(logWidget, importDirectory);
+                utilitySkinsImporter ??= new Importers.UtilitySkins(logWidget, importDirectory);
 
                 logWidget.LogNormal("Updating factions");
                 Repaint();
@@ -166,6 +174,12 @@ namespace SupremacyData.Editor
                 logWidget.LogNormal("Updating power cores");
                 Repaint();
                 await powerCoresImporter.Update(myData);
+                logWidget.LogNormal("Updating utility models");
+                Repaint();
+                await utilityModelsImporter.Update(myData);
+                logWidget.LogNormal("Updating utility skin");
+                Repaint();
+                await utilitySkinsImporter.Update(myData);
                 logWidget.LogNormal("Import completed");
             }
             catch (Exception e)

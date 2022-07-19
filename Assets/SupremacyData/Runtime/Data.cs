@@ -19,6 +19,8 @@ namespace SupremacyData.Runtime
         public IReadOnlyCollection<WeaponModel> WeaponModels { get; private set; }
         public IReadOnlyCollection<WeaponSkin> WeaponSkins { get; private set; }
         public IReadOnlyCollection<PowerCore> PowerCores { get; private set; }
+        public IReadOnlyCollection<UtilityModel> UtilityModels { get; private set; }
+        public IReadOnlyCollection<UtilitySkin> UtilitySkins { get; private set; }
 
         [SerializeField] internal List<BattleAbility> battleAbilities = new();
         [SerializeField] internal List<Brand> brands = new();
@@ -30,6 +32,8 @@ namespace SupremacyData.Runtime
         [SerializeField] internal List<WeaponModel> weaponModels = new();
         [SerializeField] internal List<WeaponSkin> weaponSkins = new();
         [SerializeField] internal List<PowerCore> powerCores = new();
+        [SerializeField] internal List<UtilityModel> utilityModels = new();
+        [SerializeField] internal List<UtilitySkin> utilitySkins = new();
 
         public void OnBeforeSerialize() { }
 
@@ -45,6 +49,8 @@ namespace SupremacyData.Runtime
             if (weaponModels != null) WeaponModels = weaponModels.AsReadOnly();
             if (weaponSkins != null) WeaponSkins = weaponSkins.AsReadOnly();
             if (powerCores != null) PowerCores = powerCores.AsReadOnly();
+            if (utilityModels != null) UtilityModels = utilityModels.AsReadOnly();
+            if (utilitySkins != null) UtilitySkins = utilitySkins.AsReadOnly();
         }
     }
     

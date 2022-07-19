@@ -128,6 +128,21 @@ namespace SupremacyHangar.Editor.ContentLoader
                         case ListType.PowerCore:
                             targetAssetGuid = AssetDatabase.FindAssets($"{targetName} t:Prefab");
                             break;
+                        case ListType.UtilityModel:
+                            targetAssetGuid = AssetDatabase.FindAssets($"{targetName} t:Prefab");
+                            break;
+                        case ListType.UtilitySkin:
+                            if (!Directory.Exists("Assets/Content/Utilities"))
+                            {
+                                Debug.LogError("Directory does NOT exist: Assets/Content/Utilities. NO Skins set");
+                                directoryMissing = true;
+                                continue;
+                            }
+                            var targetUtility = dataKey as UtilitySkin;
+                            string utilitySkinfolderPath = SearchSubDirs("Assets/Content/Utilities", targetUtility.Type.ToString());
+                            if (utilitySkinfolderPath != null)
+                                targetAssetGuid = AssetDatabase.FindAssets($"{targetName} t:Skin", new[] { $"{utilitySkinfolderPath}" });
+                            break;
                         default:
                             Debug.LogError($"Unknown type: {type}");
                             break;
@@ -166,6 +181,8 @@ namespace SupremacyHangar.Editor.ContentLoader
             }
 
             if (key.paginate) key.SetPage(firstNewItemIndex / key.pageSize);
+
+            if (firstNewItemIndex == -1) Debug.LogWarning($"No data to import for type {type}");
         }
 
         private string[] AssetFinder(string dirPath, string brandName, string folderName, string assetName)
@@ -226,6 +243,10 @@ namespace SupremacyHangar.Editor.ContentLoader
                     return staticData.WeaponSkins;
                 case ListType.PowerCore:
                     return staticData.PowerCores;
+                case ListType.UtilityModel:
+                    return staticData.UtilityModels;
+                case ListType.UtilitySkin:
+                    return staticData.UtilitySkins;
                 default:
                     Debug.LogError($"Unknown type: {type}");
                     return null;
