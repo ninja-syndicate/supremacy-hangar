@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc3af5b02c1b4636a834f16cb5a7265d, type: 3}
   m_Name: Silo
   m_EditorClassIdentifier: 
+  clip: {fileID: 8300000, guid: f401b74b4e087bd46b3a77225e1bccd5, type: 3}
