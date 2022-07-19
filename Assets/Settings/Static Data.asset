@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SL-750 ELIMINATOR - Shinobi
+  m_Name: Weapon Skin - SL-750 ELIMINATOR - Shadows Steal Away
   m_EditorClassIdentifier: 
-  humanName: Shinobi
+  humanName: Shadows Steal Away
   idBytes: 20c652b2c6206544a68382956d41fec1
   weaponModel: {fileID: 6316703149202657120}
   type: 0
@@ -26,12 +26,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - M66 VORTEX - Cassowary
+  m_Name: Weapon Skin - M66 VORTEX - Martian Mess Maker
   m_EditorClassIdentifier: 
-  humanName: Cassowary
+  humanName: Martian Mess Maker
   idBytes: fd10cb7458f97544abbfb026fc820785
   weaponModel: {fileID: -3367421832996240343}
   type: 2
+--- !u!114 &-8969489901947655803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
+  m_Name: Weapon Skin - SL-900 SAMURAI - X3 Kuro
+  m_EditorClassIdentifier: 
+  humanName: X3 Kuro
+  idBytes: 537885e2a42f8d42a484e5ee8c8e0a67
+  weaponModel: {fileID: -5199482857958006238}
+  type: 9
 --- !u!114 &-8967596655158232529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,9 +58,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - G88 RAVAGER - Military
+  m_Name: Weapon Skin - G88 RAVAGER - High Caliber
   m_EditorClassIdentifier: 
-  humanName: Military
+  humanName: High Caliber
   idBytes: 5b70bafb5a774d459307f558e677acc9
   weaponModel: {fileID: 5540472648961433852}
   type: 8
@@ -58,9 +74,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - P80 PANTHER - Martian Marine Core
+  m_Name: Weapon Skin - P80 PANTHER - Shark Skin
   m_EditorClassIdentifier: 
-  humanName: Martian Marine Core
+  humanName: Shark Skin
   idBytes: c10355558630cf42a96701e40b521897
   weaponModel: {fileID: 8748492759957013983}
   type: 12
@@ -74,12 +90,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - P80 PANTHER - Military
+  m_Name: Weapon Skin - P80 PANTHER - High Caliber
   m_EditorClassIdentifier: 
-  humanName: Military
+  humanName: High Caliber
   idBytes: dd0320e6aa69414c8a9701d7f806015a
   weaponModel: {fileID: 8748492759957013983}
   type: 12
+--- !u!114 &-8905923720052204668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - ANNIHILATOR - Daison Sleek
+  m_EditorClassIdentifier: 
+  humanName: Daison Sleek
+  idBytes: 93cec4c1f204de4cb8f5283544e9a32a
+  mechModel: {fileID: 476358322255940664}
 --- !u!114 &-8858896915645137584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,9 +121,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - KENJI - 2501 - Tachikoma
+  m_Name: Mech Skin - KENJI - Two Five Zero One
   m_EditorClassIdentifier: 
-  humanName: 2501 - Tachikoma
+  humanName: Two Five Zero One
   idBytes: 3878523bb7a2934a876f661862838b50
   mechModel: {fileID: 3160154348487789334}
 --- !u!114 &-8788729751349142146
@@ -105,9 +136,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: "Weapon Skin - SL-750 ELIMINATOR - Sonn\u014D j\u014Di"
+  m_Name: Weapon Skin - SL-750 ELIMINATOR - Rebellion
   m_EditorClassIdentifier: 
-  humanName: "Sonn\u014D j\u014Di"
+  humanName: Rebellion
   idBytes: 7a1df57f53878c45953a8b382fc98e51
   weaponModel: {fileID: 6316703149202657120}
   type: 0
@@ -121,9 +152,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON PATROL CNO-950 - Daison Avionics
+  m_Name: Weapon Skin - ARCHON PATROL CNO-950 - Spot Yellow
   m_EditorClassIdentifier: 
-  humanName: Daison Avionics
+  humanName: Spot Yellow
   idBytes: 0484381a1188b8478c67f5c21fb2cbed
   weaponModel: {fileID: -3450499781407857172}
   type: 6
@@ -137,9 +168,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - A35 HOMEWRECKER - UMC
+  m_Name: Weapon Skin - A35 HOMEWRECKER - Pilbara Dust
   m_EditorClassIdentifier: 
-  humanName: UMC
+  humanName: Pilbara Dust
   idBytes: 6409fc8a7315db4aaeff2185d71c939d
   weaponModel: {fileID: -2611201698177446533}
   type: 7
@@ -153,9 +184,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON SPINSHOT MNG-549 - Nerf Gun
+  m_Name: Weapon Skin - ARCHON SPINSHOT MNG-549 - Less-Than-Lethal
   m_EditorClassIdentifier: 
-  humanName: Nerf Gun
+  humanName: Less-Than-Lethal
   idBytes: ff1cc596bbc2ae49a1868477fd850d84
   weaponModel: {fileID: 1412570943573224075}
   type: 1
@@ -185,9 +216,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON STORMLINE PLG-351 - Hive
+  m_Name: Weapon Skin - ARCHON STORMLINE PLG-351 - Telling the Bees
   m_EditorClassIdentifier: 
-  humanName: Hive
+  humanName: Telling the Bees
   idBytes: 4e3a5b2092e10c43b83f7182c5e5aea8
   weaponModel: {fileID: 3099439295613235472}
   type: 12
@@ -201,9 +232,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON HEAVY BFG-800 - Nerf Gun
+  m_Name: Weapon Skin - ARCHON HEAVY BFG-800 - Less-Than-Lethal
   m_EditorClassIdentifier: 
-  humanName: Nerf Gun
+  humanName: Less-Than-Lethal
   idBytes: 76e7501ae9326148b2f4d4417a36fa9d
   weaponModel: {fileID: 8233469399879488929}
   type: 3
@@ -217,9 +248,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - CSN-1000 ENDURO - Logogram - Arrival
+  m_Name: Weapon Skin - CSN-1000 ENDURO - Cephalopod Ripple
   m_EditorClassIdentifier: 
-  humanName: Logogram - Arrival
+  humanName: Cephalopod Ripple
   idBytes: cce0fe3fbdb244409f0fda79cc720acc
   weaponModel: {fileID: -7847625005851001617}
   type: 6
@@ -233,11 +264,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SS-1500 VULCAN - Gold
+  m_Name: Weapon Skin - SS-1500 VULCAN - Mine God
   m_EditorClassIdentifier: 
-  humanName: Gold
+  humanName: Mine God
   idBytes: 4db59265d49e2b4ea3684a84d5bf3987
   weaponModel: {fileID: -6386277866023102011}
+  type: 2
+--- !u!114 &-8449511329616263990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
+  m_Name: Weapon Skin - M66 VORTEX - Martian Soil
+  m_EditorClassIdentifier: 
+  humanName: Martian Soil
+  idBytes: 436c1fd107576141aea177d5dab23bff
+  weaponModel: {fileID: -3367421832996240343}
   type: 2
 --- !u!114 &-8382435476247354139
 MonoBehaviour:
@@ -249,9 +296,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON SPINSHOT MNG-549 - BC
+  m_Name: Weapon Skin - ARCHON SPINSHOT MNG-549 - Archon Gunmetal
   m_EditorClassIdentifier: 
-  humanName: BC
+  humanName: Archon Gunmetal
   idBytes: 28a6b4f6e578d1479f75c95d70b3472e
   weaponModel: {fileID: 1412570943573224075}
   type: 1
@@ -265,9 +312,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON STORMLINE PLG-351 - Gold
+  m_Name: Weapon Skin - ARCHON STORMLINE PLG-351 - Bullion
   m_EditorClassIdentifier: 
-  humanName: Gold
+  humanName: Bullion
   idBytes: a220d54a33e0a14cba650ebbc3513697
   weaponModel: {fileID: 3099439295613235472}
   type: 12
@@ -281,9 +328,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SG-850 FURORE - Logogram - Arrival
+  m_Name: Weapon Skin - SG-850 FURORE - Cephalopod Ripple
   m_EditorClassIdentifier: 
-  humanName: Logogram - Arrival
+  humanName: Cephalopod Ripple
   idBytes: 0e58405ce64c4542bc1da82e3c6f6d00
   weaponModel: {fileID: -1611039285179004634}
   type: 8
@@ -297,9 +344,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON SPINSHOT MNG-549 - Paladin
+  m_Name: Weapon Skin - ARCHON SPINSHOT MNG-549 - Code of Chivalry
   m_EditorClassIdentifier: 
-  humanName: Paladin
+  humanName: Code of Chivalry
   idBytes: ef6d03f579a9034d89de0281be618d57
   weaponModel: {fileID: 1412570943573224075}
   type: 1
@@ -313,9 +360,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - F75 HELLFIRE - Cassowary
+  m_Name: Weapon Skin - F75 HELLFIRE - Martian Mess Maker
   m_EditorClassIdentifier: 
-  humanName: Cassowary
+  humanName: Martian Mess Maker
   idBytes: 53ac7c58af820444b8b77541797a8b9b
   weaponModel: {fileID: 4708123554264425782}
   type: 4
@@ -329,9 +376,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - K45 PULVERIZER - Molten
+  m_Name: Weapon Skin - K45 PULVERIZER - Promethean Gold
   m_EditorClassIdentifier: 
-  humanName: Molten
+  humanName: Promethean Gold
   idBytes: f15c129d2351c84ba598b3d0bc3890be
   weaponModel: {fileID: -239671157619968879}
   type: 5
@@ -345,9 +392,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON DEATH RUSH MCN-777 - Celtic Knot
+  m_Name: Weapon Skin - ARCHON DEATH RUSH MCN-777 - Unbroken Knot
   m_EditorClassIdentifier: 
-  humanName: Celtic Knot
+  humanName: Unbroken Knot
   idBytes: 3f2145981d7d8d4c8729df7acebf506d
   weaponModel: {fileID: 5267091823301389682}
   type: 8
@@ -376,9 +423,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SL-750 ELIMINATOR - Zaibatsu
+  m_Name: Weapon Skin - SL-750 ELIMINATOR - Verdant Warsui
   m_EditorClassIdentifier: 
-  humanName: Zaibatsu
+  humanName: Verdant Warsui
   idBytes: b27abd3745e056428928e7759d61e62c
   weaponModel: {fileID: 6316703149202657120}
   type: 0
@@ -392,9 +439,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SF-950 BUSHWHACKER - 2501 - Tachikoma
+  m_Name: Weapon Skin - SF-950 BUSHWHACKER - Two Five Zero One
   m_EditorClassIdentifier: 
-  humanName: 2501 - Tachikoma
+  humanName: Two Five Zero One
   idBytes: 6b70ec8da3e2bb47919bbcd06c4c67bf
   weaponModel: {fileID: 5150888983226521986}
   type: 5
@@ -408,9 +455,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON AMBUSHER GLR-108 - Hive
+  m_Name: Weapon Skin - ARCHON AMBUSHER GLR-108 - Telling the Bees
   m_EditorClassIdentifier: 
-  humanName: Hive
+  humanName: Telling the Bees
   idBytes: 41b25a80317f7346b4cd5cb26d4f440c
   weaponModel: {fileID: -4650837851044850197}
   type: 7
@@ -455,9 +502,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON HEAVY BFG-800 - Gold
+  m_Name: Weapon Skin - ARCHON HEAVY BFG-800 - Bullion
   m_EditorClassIdentifier: 
-  humanName: Gold
+  humanName: Bullion
   idBytes: 10f42b8fda3c9e45ad145e1271faf926
   weaponModel: {fileID: 8233469399879488929}
   type: 3
@@ -471,9 +518,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SP-750 AVENGER - Shinobi
+  m_Name: Weapon Skin - SP-750 AVENGER - Shadows Steal Away
   m_EditorClassIdentifier: 
-  humanName: Shinobi
+  humanName: Shadows Steal Away
   idBytes: 9020be3d4f063044bcdf12d017689181
   weaponModel: {fileID: -7833083708942397272}
   type: 12
@@ -487,9 +534,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - C22 CULVERIN - Martian Marine Core
+  m_Name: Weapon Skin - C22 CULVERIN - Shark Skin
   m_EditorClassIdentifier: 
-  humanName: Martian Marine Core
+  humanName: Shark Skin
   idBytes: 81017fef6ff322469993746ac90d50b7
   weaponModel: {fileID: 1630718212910043828}
   type: 6
@@ -503,9 +550,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - WAR ENFORCER - Gold
+  m_Name: Mech Skin - WAR ENFORCER - Bullion
   m_EditorClassIdentifier: 
-  humanName: Gold
+  humanName: Bullion
   idBytes: 802587203f71af488a08b4f0b5e0887e
   mechModel: {fileID: 4956909745880066220}
 --- !u!114 &-8025664511339609467
@@ -529,6 +576,22 @@ MonoBehaviour:
   imageURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/ability-nuke.jpg
   description: The show-stopper. A tactical nuke at your fingertips.
   level: 1
+--- !u!114 &-7993569693000998955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
+  m_Name: Weapon Skin - C22 CULVERIN - Martian Soil
+  m_EditorClassIdentifier: 
+  humanName: Martian Soil
+  idBytes: 0ef3163eefa99c40807b76f4dc556732
+  weaponModel: {fileID: 1630718212910043828}
+  type: 6
 --- !u!114 &-7966263771665425602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -539,9 +602,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON NEO LSG-636 - Space Marine
+  m_Name: Weapon Skin - ARCHON NEO LSG-636 - Praetor Grunge
   m_EditorClassIdentifier: 
-  humanName: Space Marine
+  humanName: Praetor Grunge
   idBytes: 607e46cb0573a14b94a683229936bfaa
   weaponModel: {fileID: 6824993537946338243}
   type: 9
@@ -555,9 +618,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON REACH MLR-909 - Rexeon Guard
+  m_Name: Weapon Skin - ARCHON REACH MLR-909 - Thin Blue Line
   m_EditorClassIdentifier: 
-  humanName: Rexeon Guard
+  humanName: Thin Blue Line
   idBytes: ea6bf779eeef46408f79e0b3cd29bd4e
   weaponModel: {fileID: 8035159187031431144}
   type: 2
@@ -571,9 +634,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON STORMLINE PLG-351 - Celtic Knot
+  m_Name: Weapon Skin - ARCHON STORMLINE PLG-351 - Unbroken Knot
   m_EditorClassIdentifier: 
-  humanName: Celtic Knot
+  humanName: Unbroken Knot
   idBytes: 455010ea90cc914194f1303d548fe7fb
   weaponModel: {fileID: 3099439295613235472}
   type: 12
@@ -601,9 +664,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SP-750 AVENGER - XHANCR
+  m_Name: Weapon Skin - SP-750 AVENGER - Nullifier
   m_EditorClassIdentifier: 
-  humanName: XHANCR
+  humanName: Nullifier
   idBytes: c8a70911b403584692cabd1c540b805f
   weaponModel: {fileID: -7833083708942397272}
   type: 12
@@ -651,9 +714,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON RUPTURE FSK-745 - BC
+  m_Name: Weapon Skin - ARCHON RUPTURE FSK-745 - Archon Gunmetal
   m_EditorClassIdentifier: 
-  humanName: BC
+  humanName: Archon Gunmetal
   idBytes: 2c9c0da42f81f945a059f52dc7980982
   weaponModel: {fileID: 665102745398348511}
   type: 5
@@ -682,9 +745,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON AMBUSHER GLR-108 - Space Marine
+  m_Name: Weapon Skin - ARCHON AMBUSHER GLR-108 - Praetor Grunge
   m_EditorClassIdentifier: 
-  humanName: Space Marine
+  humanName: Praetor Grunge
   idBytes: 383c38d14720cc46b53094e47d197cf1
   weaponModel: {fileID: -4650837851044850197}
   type: 7
@@ -698,12 +761,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SL-750 ELIMINATOR - XHANCR
+  m_Name: Weapon Skin - SL-750 ELIMINATOR - Nullifier
   m_EditorClassIdentifier: 
-  humanName: XHANCR
+  humanName: Nullifier
   idBytes: 21d48966b1a3684ba438562879aa9c01
   weaponModel: {fileID: 6316703149202657120}
   type: 0
+--- !u!114 &-7711117744315228736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
+  m_Name: Weapon Skin - SP-750 AVENGER - X3 Kuro
+  m_EditorClassIdentifier: 
+  humanName: X3 Kuro
+  idBytes: a46ae23be6e77f4a9d2eb0a9f04329f6
+  weaponModel: {fileID: -7833083708942397272}
+  type: 12
 --- !u!114 &-7698416560003450698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -714,9 +793,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON PATROL CNO-950 - Gold
+  m_Name: Weapon Skin - ARCHON PATROL CNO-950 - Bullion
   m_EditorClassIdentifier: 
-  humanName: Gold
+  humanName: Bullion
   idBytes: a77b42e0a4a4fc46820c22d2f693d8eb
   weaponModel: {fileID: -3450499781407857172}
   type: 6
@@ -730,11 +809,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - ARIES - Molten
+  m_Name: Mech Skin - ARIES - Promethean Gold
   m_EditorClassIdentifier: 
-  humanName: Molten
+  humanName: Promethean Gold
   idBytes: 0ac8fcaa16d7d84fb1efcf7ef27b8fb8
   mechModel: {fileID: 1673369590579329074}
+--- !u!114 &-7604539363846214730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
+  m_Name: Weapon Skin - ARCHON AMBUSHER GLR-108 - Daison Sleek
+  m_EditorClassIdentifier: 
+  humanName: Daison Sleek
+  idBytes: b1352627998804499912ebb14e0237a0
+  weaponModel: {fileID: -4650837851044850197}
+  type: 7
 --- !u!114 &-7597011446872062067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -761,9 +856,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - L51 BRUTALIZER - Hazard
+  m_Name: Weapon Skin - L51 BRUTALIZER - Barricade Stripes
   m_EditorClassIdentifier: 
-  humanName: Hazard
+  humanName: Barricade Stripes
   idBytes: ed8eb7b17173d94aa3ea6ef86d61e278
   weaponModel: {fileID: 3488667549969693786}
   type: 9
@@ -814,9 +909,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SF-950 BUSHWHACKER - Purple and White
+  m_Name: Weapon Skin - SF-950 BUSHWHACKER - Violet Ice
   m_EditorClassIdentifier: 
-  humanName: Purple and White
+  humanName: Violet Ice
   idBytes: 137eade051f9034687d63107c16b8fef
   weaponModel: {fileID: 5150888983226521986}
   type: 5
@@ -830,9 +925,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON NEO LSG-636 - Gold
+  m_Name: Weapon Skin - ARCHON NEO LSG-636 - Bullion
   m_EditorClassIdentifier: 
-  humanName: Gold
+  humanName: Bullion
   idBytes: 0f902bfe565ee54cbf6c31b498eb26af
   weaponModel: {fileID: 6824993537946338243}
   type: 9
@@ -846,9 +941,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SP-750 AVENGER - Purple and White
+  m_Name: Weapon Skin - SP-750 AVENGER - Violet Ice
   m_EditorClassIdentifier: 
-  humanName: Purple and White
+  humanName: Violet Ice
   idBytes: 72daebca1475da4596b49f0dc15e808a
   weaponModel: {fileID: -7833083708942397272}
   type: 12
@@ -862,9 +957,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - C22 CULVERIN - Molten
+  m_Name: Weapon Skin - C22 CULVERIN - Promethean Gold
   m_EditorClassIdentifier: 
-  humanName: Molten
+  humanName: Promethean Gold
   idBytes: d0d89f149b4516459056f8ffd9779d60
   weaponModel: {fileID: 1630718212910043828}
   type: 6
@@ -894,9 +989,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - M17 SCORPION - Cassowary
+  m_Name: Weapon Skin - M17 SCORPION - Martian Mess Maker
   m_EditorClassIdentifier: 
-  humanName: Cassowary
+  humanName: Martian Mess Maker
   idBytes: 4fdb53f0c9ca4544aa60f75e691f4fe6
   weaponModel: {fileID: 7171280555693468062}
   type: 1
@@ -910,9 +1005,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SG-850 FURORE - Shinobi
+  m_Name: Weapon Skin - SG-850 FURORE - Shadows Steal Away
   m_EditorClassIdentifier: 
-  humanName: Shinobi
+  humanName: Shadows Steal Away
   idBytes: 1cfa0383b8dd6a448e0e4d31709565fc
   weaponModel: {fileID: -1611039285179004634}
   type: 8
@@ -926,9 +1021,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - CSN-1000 ENDURO - Neko
+  m_Name: Weapon Skin - CSN-1000 ENDURO - Catastrophe
   m_EditorClassIdentifier: 
-  humanName: Neko
+  humanName: Catastrophe
   idBytes: b45a8ab3e1838341ba81c2834d4a6815
   weaponModel: {fileID: -7847625005851001617}
   type: 6
@@ -948,6 +1043,21 @@ MonoBehaviour:
   idBytes: c121fe35085e614ab31fefd7db659e00
   cooldown: 20
   description: Rain fury on the arena with a targeted airstrike.
+--- !u!114 &-7161897708993411963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - WAR ENFORCER - Daison Sleek
+  m_EditorClassIdentifier: 
+  humanName: Daison Sleek
+  idBytes: 128344b2ea3592458466077e2138898e
+  mechModel: {fileID: 4956909745880066220}
 --- !u!114 &-7083467838897228900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -973,9 +1083,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON REACH MLR-909 - Paladin
+  m_Name: Weapon Skin - ARCHON REACH MLR-909 - Code of Chivalry
   m_EditorClassIdentifier: 
-  humanName: Paladin
+  humanName: Code of Chivalry
   idBytes: 30e1701705d0a84c846dc3a4286ea55b
   weaponModel: {fileID: 8035159187031431144}
   type: 2
@@ -1005,9 +1115,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON RUPTURE FSK-745 - Raptor
+  m_Name: Weapon Skin - ARCHON RUPTURE FSK-745 - Sea Hawk
   m_EditorClassIdentifier: 
-  humanName: Raptor
+  humanName: Sea Hawk
   idBytes: d5aa7d86e31ce04a93e26f9d0f465435
   weaponModel: {fileID: 665102745398348511}
   type: 5
@@ -1068,9 +1178,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON REACH MLR-909 - Raptor
+  m_Name: Weapon Skin - ARCHON REACH MLR-909 - Sea Hawk
   m_EditorClassIdentifier: 
-  humanName: Raptor
+  humanName: Sea Hawk
   idBytes: 64c0381eff08ac4ba2808325bab4762f
   weaponModel: {fileID: 8035159187031431144}
   type: 2
@@ -1084,9 +1194,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - M17 SCORPION - Heavy Metal
+  m_Name: Weapon Skin - M17 SCORPION - Osmium Scream
   m_EditorClassIdentifier: 
-  humanName: Heavy Metal
+  humanName: Osmium Scream
   idBytes: 06719b88667ab2418d151e2960f2620b
   weaponModel: {fileID: 7171280555693468062}
   type: 1
@@ -1100,9 +1210,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - L51 BRUTALIZER - Molten
+  m_Name: Weapon Skin - L51 BRUTALIZER - Promethean Gold
   m_EditorClassIdentifier: 
-  humanName: Molten
+  humanName: Promethean Gold
   idBytes: ac933b9cc5e1c945bc72ad49ec57c3a9
   weaponModel: {fileID: 3488667549969693786}
   type: 9
@@ -1116,9 +1226,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SG-850 FURORE - Neko
+  m_Name: Weapon Skin - SG-850 FURORE - Catastrophe
   m_EditorClassIdentifier: 
-  humanName: Neko
+  humanName: Catastrophe
   idBytes: ed489b8aef48da4488a15f8e7988505d
   weaponModel: {fileID: -1611039285179004634}
   type: 8
@@ -1147,9 +1257,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - A35 HOMEWRECKER - Cassowary
+  m_Name: Weapon Skin - A35 HOMEWRECKER - Martian Mess Maker
   m_EditorClassIdentifier: 
-  humanName: Cassowary
+  humanName: Martian Mess Maker
   idBytes: 3f31e83ddf87184bb286fcc5dff81fd5
   weaponModel: {fileID: -2611201698177446533}
   type: 7
@@ -1243,12 +1353,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SF-950 BUSHWHACKER - Neko
+  m_Name: Weapon Skin - SF-950 BUSHWHACKER - Catastrophe
   m_EditorClassIdentifier: 
-  humanName: Neko
+  humanName: Catastrophe
   idBytes: 40d2cc3b7803134da23eb263be784178
   weaponModel: {fileID: 5150888983226521986}
   type: 5
+--- !u!114 &-6236368397672133508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - SHIROKUMA - X3 Kuro
+  m_EditorClassIdentifier: 
+  humanName: X3 Kuro
+  idBytes: 61a1d3312b53dc4e8aae8a2d33a0ee43
+  mechModel: {fileID: -1725972078085913312}
 --- !u!114 &-6235256079972794011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1296,9 +1421,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SL-750 ELIMINATOR - Purple and White
+  m_Name: Weapon Skin - SL-750 ELIMINATOR - Violet Ice
   m_EditorClassIdentifier: 
-  humanName: Purple and White
+  humanName: Violet Ice
   idBytes: 782ef3179b72ad4da644eb7781f8616b
   weaponModel: {fileID: 6316703149202657120}
   type: 0
@@ -1323,6 +1448,22 @@ MonoBehaviour:
   imageURL: https://afiles.ninja-cdn.com/supremacy-stream-site/assets/img/ability-dogs.jpg
   description: Boston Cybernetic unique ability. Release the hounds!
   level: 1
+--- !u!114 &-6136887446612006879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
+  m_Name: Weapon Skin - SF-950 BUSHWHACKER - X3 Kuro
+  m_EditorClassIdentifier: 
+  humanName: X3 Kuro
+  idBytes: c83b60bda65f3c4c95b0178ae1ddfb83
+  weaponModel: {fileID: 5150888983226521986}
+  type: 5
 --- !u!114 &-6104889772416837408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1333,9 +1474,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - SHIROKUMA - XHANCR
+  m_Name: Mech Skin - SHIROKUMA - Nullifier
   m_EditorClassIdentifier: 
-  humanName: XHANCR
+  humanName: Nullifier
   idBytes: 91b835bd78be254c8be41d32aacfccf0
   mechModel: {fileID: -1725972078085913312}
 --- !u!114 &-6098545380965289356
@@ -1348,9 +1489,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - A35 HOMEWRECKER - Gold
+  m_Name: Weapon Skin - A35 HOMEWRECKER - Sovereign Hill
   m_EditorClassIdentifier: 
-  humanName: Gold
+  humanName: Sovereign Hill
   idBytes: 2dff726e234a4541b8d98decbc9967b2
   weaponModel: {fileID: -2611201698177446533}
   type: 7
@@ -1381,9 +1522,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SS-1500 VULCAN - Purple and White
+  m_Name: Weapon Skin - SS-1500 VULCAN - Violet Ice
   m_EditorClassIdentifier: 
-  humanName: Purple and White
+  humanName: Violet Ice
   idBytes: 5e9e46c5563af94694cc2b04e4e263fb
   weaponModel: {fileID: -6386277866023102011}
   type: 2
@@ -1411,9 +1552,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - C22 CULVERIN - Military
+  m_Name: Weapon Skin - C22 CULVERIN - High Caliber
   m_EditorClassIdentifier: 
-  humanName: Military
+  humanName: High Caliber
   idBytes: 462e194df6ec14459ab1e67d71003513
   weaponModel: {fileID: 1630718212910043828}
   type: 6
@@ -1427,9 +1568,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SP-750 AVENGER - Neko
+  m_Name: Weapon Skin - SP-750 AVENGER - Catastrophe
   m_EditorClassIdentifier: 
-  humanName: Neko
+  humanName: Catastrophe
   idBytes: fb9b7c18e8d2f94aac5a9f8e86ee24ed
   weaponModel: {fileID: -7833083708942397272}
   type: 12
@@ -1443,9 +1584,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON AMBUSHER GLR-108 - Raptor
+  m_Name: Weapon Skin - ARCHON AMBUSHER GLR-108 - Sea Hawk
   m_EditorClassIdentifier: 
-  humanName: Raptor
+  humanName: Sea Hawk
   idBytes: 2980035b84660b418438d0da29f929cb
   weaponModel: {fileID: -4650837851044850197}
   type: 7
@@ -1459,9 +1600,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - L51 BRUTALIZER - Military
+  m_Name: Weapon Skin - L51 BRUTALIZER - High Caliber
   m_EditorClassIdentifier: 
-  humanName: Military
+  humanName: High Caliber
   idBytes: a8cf9955169af747aa5e1581c362df8b
   weaponModel: {fileID: 3488667549969693786}
   type: 9
@@ -1490,9 +1631,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SM-1400 BRUTE FORCE - Gold
+  m_Name: Weapon Skin - SM-1400 BRUTE FORCE - Mine God
   m_EditorClassIdentifier: 
-  humanName: Gold
+  humanName: Mine God
   idBytes: 64a6c77db19bba49ab3ded7a300bacfe
   weaponModel: {fileID: -475069486376503615}
   type: 1
@@ -1506,9 +1647,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SS-1500 VULCAN - Shinobi
+  m_Name: Weapon Skin - SS-1500 VULCAN - Shadows Steal Away
   m_EditorClassIdentifier: 
-  humanName: Shinobi
+  humanName: Shadows Steal Away
   idBytes: 0e20e186af044b4a8a990844a69d2fa4
   weaponModel: {fileID: -6386277866023102011}
   type: 2
@@ -1522,9 +1663,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - CSN-1000 ENDURO - Shinobi
+  m_Name: Weapon Skin - CSN-1000 ENDURO - Shadows Steal Away
   m_EditorClassIdentifier: 
-  humanName: Shinobi
+  humanName: Shadows Steal Away
   idBytes: 175af6d41c99e941ac6e9c28375660bc
   weaponModel: {fileID: -7847625005851001617}
   type: 6
@@ -1538,12 +1679,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - M17 SCORPION - Military
+  m_Name: Weapon Skin - C22 CULVERIN - Pilbara Dust
   m_EditorClassIdentifier: 
-  humanName: Military
+  humanName: Pilbara Dust
   idBytes: 7da3fa11335cee4384acf01ba8ef8875
-  weaponModel: {fileID: 7171280555693468062}
-  type: 1
+  weaponModel: {fileID: 1630718212910043828}
+  type: 6
 --- !u!114 &-5710227070954120521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1554,9 +1695,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SM-1400 BRUTE FORCE - Zaibatsu
+  m_Name: Weapon Skin - SM-1400 BRUTE FORCE - Verdant Warsui
   m_EditorClassIdentifier: 
-  humanName: Zaibatsu
+  humanName: Verdant Warsui
   idBytes: a466fb0081c0cc46aa620bcc05f416e4
   weaponModel: {fileID: -475069486376503615}
   type: 1
@@ -1585,9 +1726,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SF-950 BUSHWHACKER - XHANCR
+  m_Name: Weapon Skin - SF-950 BUSHWHACKER - Nullifier
   m_EditorClassIdentifier: 
-  humanName: XHANCR
+  humanName: Nullifier
   idBytes: c0e48bceb3c7174db3db641c2a7faffa
   weaponModel: {fileID: 5150888983226521986}
   type: 5
@@ -1601,9 +1742,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SL-750 ELIMINATOR - Gold
+  m_Name: Weapon Skin - SL-750 ELIMINATOR - Mine God
   m_EditorClassIdentifier: 
-  humanName: Gold
+  humanName: Mine God
   idBytes: e70b7013fd26734e9c64d3649a5a1f3a
   weaponModel: {fileID: 6316703149202657120}
   type: 0
@@ -1617,9 +1758,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - M17 SCORPION - Hazard
+  m_Name: Weapon Skin - M17 SCORPION - Barricade Stripes
   m_EditorClassIdentifier: 
-  humanName: Hazard
+  humanName: Barricade Stripes
   idBytes: 776f88e9d91eed4a8f5aabd3e6275464
   weaponModel: {fileID: 7171280555693468062}
   type: 1
@@ -1633,9 +1774,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON SPINSHOT MNG-549 - Cybernetics
+  m_Name: Weapon Skin - ARCHON SPINSHOT MNG-549 - Ready To Quench
   m_EditorClassIdentifier: 
-  humanName: Cybernetics
+  humanName: Ready To Quench
   idBytes: 5ad4a5d2a3ecc0498c66bda97626cd2d
   weaponModel: {fileID: 1412570943573224075}
   type: 1
@@ -1649,12 +1790,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON AMBUSHER GLR-108 - Cybernetics
+  m_Name: Weapon Skin - ARCHON AMBUSHER GLR-108 - Ready To Quench
   m_EditorClassIdentifier: 
-  humanName: Cybernetics
+  humanName: Ready To Quench
   idBytes: 989576e69eb68b44abeb20222208bb34
   weaponModel: {fileID: -4650837851044850197}
   type: 7
+--- !u!114 &-5514179942026806196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
+  m_Name: Weapon Skin - ARCHON SPINSHOT MNG-549 - Daison Sleek
+  m_EditorClassIdentifier: 
+  humanName: Daison Sleek
+  idBytes: cc76703fc00c2a4da79f2462d2e02c20
+  weaponModel: {fileID: 1412570943573224075}
+  type: 1
 --- !u!114 &-5497809810664126531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1681,9 +1838,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - K45 PULVERIZER - Cassowary
+  m_Name: Weapon Skin - K45 PULVERIZER - Martian Mess Maker
   m_EditorClassIdentifier: 
-  humanName: Cassowary
+  humanName: Martian Mess Maker
   idBytes: 86d392b9aab6144f9bd137cff98bd98b
   weaponModel: {fileID: -239671157619968879}
   type: 5
@@ -1697,9 +1854,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - M17 SCORPION - UMC
+  m_Name: Weapon Skin - M17 SCORPION - Pilbara Dust
   m_EditorClassIdentifier: 
-  humanName: UMC
+  humanName: Pilbara Dust
   idBytes: f45e89195189d24e85a9ef02d1c1efa0
   weaponModel: {fileID: 7171280555693468062}
   type: 1
@@ -1713,9 +1870,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - ARIES - Gold
+  m_Name: Mech Skin - ARIES - Sovereign Hill
   m_EditorClassIdentifier: 
-  humanName: Gold
+  humanName: Sovereign Hill
   idBytes: 51fc82d7e0a52e4b81d95124269f5f0a
   mechModel: {fileID: 1673369590579329074}
 --- !u!114 &-5395847656453124535
@@ -1728,9 +1885,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SG-850 FURORE - X3W
+  m_Name: Weapon Skin - SG-850 FURORE - Heavy White
   m_EditorClassIdentifier: 
-  humanName: X3W
+  humanName: Heavy White
   idBytes: 4cb92ae510f75749ab4bcdfd61b0a8e5
   weaponModel: {fileID: -1611039285179004634}
   type: 8
@@ -1744,9 +1901,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - L51 BRUTALIZER - Mining
+  m_Name: Weapon Skin - L51 BRUTALIZER - Fly In Fly Out
   m_EditorClassIdentifier: 
-  humanName: Mining
+  humanName: Fly In Fly Out
   idBytes: cf929b9b7dd04f46941ee934d9dc6997
   weaponModel: {fileID: 3488667549969693786}
   type: 9
@@ -1776,9 +1933,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON DEATH RUSH MCN-777 - Space Marine
+  m_Name: Weapon Skin - ARCHON DEATH RUSH MCN-777 - Praetor Grunge
   m_EditorClassIdentifier: 
-  humanName: Space Marine
+  humanName: Praetor Grunge
   idBytes: bc9d347897816c47b84d5d261034928e
   weaponModel: {fileID: 5267091823301389682}
   type: 8
@@ -1792,9 +1949,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SG-850 FURORE - XHANCR
+  m_Name: Weapon Skin - SG-850 FURORE - Nullifier
   m_EditorClassIdentifier: 
-  humanName: XHANCR
+  humanName: Nullifier
   idBytes: ea42dced4e29ba408927e28d5fd896bb
   weaponModel: {fileID: -1611039285179004634}
   type: 8
@@ -1808,9 +1965,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SM-1400 BRUTE FORCE - Neko
+  m_Name: Weapon Skin - SM-1400 BRUTE FORCE - Catastrophe
   m_EditorClassIdentifier: 
-  humanName: Neko
+  humanName: Catastrophe
   idBytes: a84b948c7abfb346831f641017430608
   weaponModel: {fileID: -475069486376503615}
   type: 1
@@ -1824,9 +1981,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SM-1400 BRUTE FORCE - Purple and White
+  m_Name: Weapon Skin - SM-1400 BRUTE FORCE - Violet Ice
   m_EditorClassIdentifier: 
-  humanName: Purple and White
+  humanName: Violet Ice
   idBytes: b44eacabe5959943947f54612024aefb
   weaponModel: {fileID: -475069486376503615}
   type: 1
@@ -1840,9 +1997,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - M66 VORTEX - Martian Marine Core
+  m_Name: Weapon Skin - M66 VORTEX - Shark Skin
   m_EditorClassIdentifier: 
-  humanName: Martian Marine Core
+  humanName: Shark Skin
   idBytes: 6d92919434c2bb4eb96ee7a8e50791fb
   weaponModel: {fileID: -3367421832996240343}
   type: 2
@@ -1873,9 +2030,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - M66 VORTEX - RM
+  m_Name: Weapon Skin - M66 VORTEX - Pyro Crimson
   m_EditorClassIdentifier: 
-  humanName: RM
+  humanName: Pyro Crimson
   idBytes: b137b3053bcecf4fa3d2b94aa76628a9
   weaponModel: {fileID: -3367421832996240343}
   type: 2
@@ -1889,9 +2046,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON PATROL CNO-950 - BC
+  m_Name: Weapon Skin - ARCHON PATROL CNO-950 - Archon Gunmetal
   m_EditorClassIdentifier: 
-  humanName: BC
+  humanName: Archon Gunmetal
   idBytes: 88bf4598b2f9074cac6254accc1d4bc4
   weaponModel: {fileID: -3450499781407857172}
   type: 6
@@ -1905,9 +2062,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON DEATH RUSH MCN-777 - Gold
+  m_Name: Weapon Skin - ARCHON DEATH RUSH MCN-777 - Bullion
   m_EditorClassIdentifier: 
-  humanName: Gold
+  humanName: Bullion
   idBytes: 828f5d7db027f24eb44e7476027a0371
   weaponModel: {fileID: 5267091823301389682}
   type: 8
@@ -1938,9 +2095,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON RUPTURE FSK-745 - Celtic Knot
+  m_Name: Weapon Skin - ARCHON RUPTURE FSK-745 - Unbroken Knot
   m_EditorClassIdentifier: 
-  humanName: Celtic Knot
+  humanName: Unbroken Knot
   idBytes: e5f9ccea47cb5b43bbf79660deec5db0
   weaponModel: {fileID: 665102745398348511}
   type: 5
@@ -1954,9 +2111,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ST-1250 VERSYS - Neko
+  m_Name: Weapon Skin - ST-1250 VERSYS - Catastrophe
   m_EditorClassIdentifier: 
-  humanName: Neko
+  humanName: Catastrophe
   idBytes: 0145b807e367dc4292e1e333f4504ae9
   weaponModel: {fileID: 4857310000300198231}
   type: 7
@@ -2007,9 +2164,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON AMBUSHER GLR-108 - BC
+  m_Name: Weapon Skin - ARCHON AMBUSHER GLR-108 - Archon Gunmetal
   m_EditorClassIdentifier: 
-  humanName: BC
+  humanName: Archon Gunmetal
   idBytes: 3f36cc7745ac4545af4a3c9dfb704789
   weaponModel: {fileID: -4650837851044850197}
   type: 7
@@ -2039,9 +2196,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON SPINSHOT MNG-549 - Daison Avionics
+  m_Name: Weapon Skin - ARCHON SPINSHOT MNG-549 - Spot Yellow
   m_EditorClassIdentifier: 
-  humanName: Daison Avionics
+  humanName: Spot Yellow
   idBytes: 0c7811fbf7c6a843a5fe62e77add9e9d
   weaponModel: {fileID: 1412570943573224075}
   type: 1
@@ -2055,9 +2212,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON NEO LSG-636 - BC
+  m_Name: Weapon Skin - ARCHON NEO LSG-636 - Archon Gunmetal
   m_EditorClassIdentifier: 
-  humanName: BC
+  humanName: Archon Gunmetal
   idBytes: c4ba2c2f408cef43ba9cd91f91cd355a
   weaponModel: {fileID: 6824993537946338243}
   type: 9
@@ -2087,9 +2244,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ST-1250 VERSYS - Gold
+  m_Name: Weapon Skin - ST-1250 VERSYS - Mine God
   m_EditorClassIdentifier: 
-  humanName: Gold
+  humanName: Mine God
   idBytes: 25070909fda7ea499a5c6203344de741
   weaponModel: {fileID: 4857310000300198231}
   type: 7
@@ -2136,9 +2293,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON NEO LSG-636 - Nerf Gun
+  m_Name: Weapon Skin - ARCHON NEO LSG-636 - Less-Than-Lethal
   m_EditorClassIdentifier: 
-  humanName: Nerf Gun
+  humanName: Less-Than-Lethal
   idBytes: d85b3ff620751a40b362dea2c44b830f
   weaponModel: {fileID: 6824993537946338243}
   type: 9
@@ -2152,9 +2309,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON PATROL CNO-950 - Rexeon Guard
+  m_Name: Weapon Skin - ARCHON PATROL CNO-950 - Thin Blue Line
   m_EditorClassIdentifier: 
-  humanName: Rexeon Guard
+  humanName: Thin Blue Line
   idBytes: ac7d8f85538bca4796e5d5ed2ce4e4d7
   weaponModel: {fileID: -3450499781407857172}
   type: 6
@@ -2168,9 +2325,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON DEATH RUSH MCN-777 - Raptor
+  m_Name: Weapon Skin - ARCHON DEATH RUSH MCN-777 - Sea Hawk
   m_EditorClassIdentifier: 
-  humanName: Raptor
+  humanName: Sea Hawk
   idBytes: 8fe83f58e0662a4496bee2877fd251ca
   weaponModel: {fileID: 5267091823301389682}
   type: 8
@@ -2204,6 +2361,22 @@ MonoBehaviour:
   humanName: Evo
   idBytes: 32b9317ec5c1bb4297e2b71666e2aea2
   mechModel: {fileID: -6094031022545233519}
+--- !u!114 &-4488704996061060604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
+  m_Name: Weapon Skin - M17 SCORPION - Martian Soil
+  m_EditorClassIdentifier: 
+  humanName: Martian Soil
+  idBytes: 5e371afbe64c1f4eb906629198584c00
+  weaponModel: {fileID: 7171280555693468062}
+  type: 1
 --- !u!114 &-4404582217796110862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2291,9 +2464,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - F75 HELLFIRE - Molten
+  m_Name: Weapon Skin - F75 HELLFIRE - Promethean Gold
   m_EditorClassIdentifier: 
-  humanName: Molten
+  humanName: Promethean Gold
   idBytes: 20982501d4ac1a48941306aede2c4926
   weaponModel: {fileID: 4708123554264425782}
   type: 4
@@ -2307,9 +2480,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - SHIROKUMA - Gold
+  m_Name: Mech Skin - SHIROKUMA - Mine God
   m_EditorClassIdentifier: 
-  humanName: Gold
+  humanName: Mine God
   idBytes: 2b97e0e2b072a04c842e858b9cf4896d
   mechModel: {fileID: -1725972078085913312}
 --- !u!114 &-4124479688830079913
@@ -2327,6 +2500,21 @@ MonoBehaviour:
   humanName: Slava Ukraini
   idBytes: a26070374dec014eb5f9a93657ad409f
   mechModel: {fileID: 8413216818550338364}
+--- !u!114 &-4072615887264142828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - ARIES - Martian Soil
+  m_EditorClassIdentifier: 
+  humanName: Martian Soil
+  idBytes: 94f9e7240cbdfe4bb8360202d4fb0528
+  mechModel: {fileID: 1673369590579329074}
 --- !u!114 &-4031328997290975095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2337,9 +2525,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SL-900 SAMURAI - X3W
+  m_Name: Weapon Skin - SL-900 SAMURAI - Heavy White
   m_EditorClassIdentifier: 
-  humanName: X3W
+  humanName: Heavy White
   idBytes: 1910cedc7e86a548ad48fcaa1980efc9
   weaponModel: {fileID: -5199482857958006238}
   type: 9
@@ -2399,9 +2587,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - M66 VORTEX - Molten
+  m_Name: Weapon Skin - M66 VORTEX - Promethean Gold
   m_EditorClassIdentifier: 
-  humanName: Molten
+  humanName: Promethean Gold
   idBytes: 10ab45f03bf01d4b890b9a1a3e973371
   weaponModel: {fileID: -3367421832996240343}
   type: 2
@@ -2415,9 +2603,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON HEAVY BFG-800 - Raptor
+  m_Name: Weapon Skin - ARCHON HEAVY BFG-800 - Sea Hawk
   m_EditorClassIdentifier: 
-  humanName: Raptor
+  humanName: Sea Hawk
   idBytes: 935028664dfbcc4ba7b915b5c1fdb821
   weaponModel: {fileID: 8233469399879488929}
   type: 3
@@ -2431,9 +2619,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - K45 PULVERIZER - Martian Marine Core
+  m_Name: Weapon Skin - K45 PULVERIZER - Shark Skin
   m_EditorClassIdentifier: 
-  humanName: Martian Marine Core
+  humanName: Shark Skin
   idBytes: 5fff7d4fe6a6214db638f025b203ea9d
   weaponModel: {fileID: -239671157619968879}
   type: 5
@@ -2447,12 +2635,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON REACH MLR-909 - Daison Avionics
+  m_Name: Weapon Skin - ARCHON REACH MLR-909 - Spot Yellow
   m_EditorClassIdentifier: 
-  humanName: Daison Avionics
+  humanName: Spot Yellow
   idBytes: f9b96e6e47a5cf4886815166e22785fd
   weaponModel: {fileID: 8035159187031431144}
   type: 2
+--- !u!114 &-3828601368611584229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
+  m_Name: Weapon Skin - SM-1400 BRUTE FORCE - X3 Kuro
+  m_EditorClassIdentifier: 
+  humanName: X3 Kuro
+  idBytes: c758ff6500ec954681cc8c04c167e6e6
+  weaponModel: {fileID: -475069486376503615}
+  type: 1
 --- !u!114 &-3787395548014470444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2463,9 +2667,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SL-750 ELIMINATOR - X3W
+  m_Name: Weapon Skin - SL-750 ELIMINATOR - Heavy White
   m_EditorClassIdentifier: 
-  humanName: X3W
+  humanName: Heavy White
   idBytes: 507b04274e8c3c4583f4a42f7e7bc601
   weaponModel: {fileID: 6316703149202657120}
   type: 0
@@ -2479,9 +2683,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SL-900 SAMURAI - Purple and White
+  m_Name: Weapon Skin - SL-900 SAMURAI - Violet Ice
   m_EditorClassIdentifier: 
-  humanName: Purple and White
+  humanName: Violet Ice
   idBytes: c2f5c07ac7c9e1489bc05ec9682e17ba
   weaponModel: {fileID: -5199482857958006238}
   type: 9
@@ -2495,9 +2699,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SL-900 SAMURAI - XHANCR
+  m_Name: Weapon Skin - SL-900 SAMURAI - Nullifier
   m_EditorClassIdentifier: 
-  humanName: XHANCR
+  humanName: Nullifier
   idBytes: c0c6a1c59bba09459c2637faad6a6986
   weaponModel: {fileID: -5199482857958006238}
   type: 9
@@ -2511,12 +2715,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON PATROL CNO-950 - Celtic Knot
+  m_Name: Weapon Skin - ARCHON PATROL CNO-950 - Unbroken Knot
   m_EditorClassIdentifier: 
-  humanName: Celtic Knot
+  humanName: Unbroken Knot
   idBytes: 4daf7a896c2ac84a882f65b531c42d63
   weaponModel: {fileID: -3450499781407857172}
   type: 6
+--- !u!114 &-3493363838611320897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
+  m_Name: Weapon Skin - L51 BRUTALIZER - Martian Soil
+  m_EditorClassIdentifier: 
+  humanName: Martian Soil
+  idBytes: b5f020a486328847a71a9782b54f6008
+  weaponModel: {fileID: 3488667549969693786}
+  type: 9
 --- !u!114 &-3450499781407857172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2544,12 +2764,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON RUPTURE FSK-745 - Nerf Gun
+  m_Name: Weapon Skin - ARCHON RUPTURE FSK-745 - Less-Than-Lethal
   m_EditorClassIdentifier: 
-  humanName: Nerf Gun
+  humanName: Less-Than-Lethal
   idBytes: f30cf87d24756a40ad184e32688c6f6c
   weaponModel: {fileID: 665102745398348511}
   type: 5
+--- !u!114 &-3387284757847686837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
+  m_Name: Weapon Skin - ST-1250 VERSYS - X3 Kuro
+  m_EditorClassIdentifier: 
+  humanName: X3 Kuro
+  idBytes: eca7b28e0a45f949a695b977c383eab9
+  weaponModel: {fileID: 4857310000300198231}
+  type: 7
 --- !u!114 &-3384730846461041760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2560,9 +2796,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SL-900 SAMURAI - Zaibatsu
+  m_Name: Weapon Skin - SL-900 SAMURAI - Verdant Warsui
   m_EditorClassIdentifier: 
-  humanName: Zaibatsu
+  humanName: Verdant Warsui
   idBytes: 92256e7059a9b741bdd721e60c3651fb
   weaponModel: {fileID: -5199482857958006238}
   type: 9
@@ -2593,9 +2829,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON NEO LSG-636 - Rexeon Guard
+  m_Name: Weapon Skin - ARCHON NEO LSG-636 - Thin Blue Line
   m_EditorClassIdentifier: 
-  humanName: Rexeon Guard
+  humanName: Thin Blue Line
   idBytes: 6dd6395016a5d74e8f92cb4715a23285
   weaponModel: {fileID: 6824993537946338243}
   type: 9
@@ -2630,9 +2866,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - P80 PANTHER - Heavy Metal
+  m_Name: Weapon Skin - P80 PANTHER - Osmium Scream
   m_EditorClassIdentifier: 
-  humanName: Heavy Metal
+  humanName: Osmium Scream
   idBytes: 94b7449802b85846b7783c1300998ef1
   weaponModel: {fileID: 8748492759957013983}
   type: 12
@@ -2646,9 +2882,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - CSN-1000 ENDURO - Purple and White
+  m_Name: Weapon Skin - CSN-1000 ENDURO - Violet Ice
   m_EditorClassIdentifier: 
-  humanName: Purple and White
+  humanName: Violet Ice
   idBytes: 0c5d3ab4e2fb674d830f7b650e031676
   weaponModel: {fileID: -7847625005851001617}
   type: 6
@@ -2662,9 +2898,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - G88 RAVAGER - UMC
+  m_Name: Weapon Skin - G88 RAVAGER - Pilbara Dust
   m_EditorClassIdentifier: 
-  humanName: UMC
+  humanName: Pilbara Dust
   idBytes: 9214535fbc824e43ab88a1a88e002771
   weaponModel: {fileID: 5540472648961433852}
   type: 8
@@ -2711,9 +2947,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - G88 RAVAGER - RM
+  m_Name: Weapon Skin - G88 RAVAGER - Pyro Crimson
   m_EditorClassIdentifier: 
-  humanName: RM
+  humanName: Pyro Crimson
   idBytes: 1fd0fdff145b2a438f7e6f86d557be8f
   weaponModel: {fileID: 5540472648961433852}
   type: 8
@@ -2727,9 +2963,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ST-1250 VERSYS - Shinobi
+  m_Name: Weapon Skin - ST-1250 VERSYS - Shadows Steal Away
   m_EditorClassIdentifier: 
-  humanName: Shinobi
+  humanName: Shadows Steal Away
   idBytes: 4f7cf553b5e8c745b1c60ccce0e52ba1
   weaponModel: {fileID: 4857310000300198231}
   type: 7
@@ -2743,9 +2979,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - M17 SCORPION - Martian Marine Core
+  m_Name: Weapon Skin - M17 SCORPION - Shark Skin
   m_EditorClassIdentifier: 
-  humanName: Martian Marine Core
+  humanName: Shark Skin
   idBytes: 4d89e1067238cd49a4cf0c42ee4cedf0
   weaponModel: {fileID: 7171280555693468062}
   type: 1
@@ -2759,9 +2995,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON REACH MLR-909 - BC
+  m_Name: Weapon Skin - ARCHON REACH MLR-909 - Archon Gunmetal
   m_EditorClassIdentifier: 
-  humanName: BC
+  humanName: Archon Gunmetal
   idBytes: ca6019561fbb4943ad1e33484be8dec0
   weaponModel: {fileID: 8035159187031431144}
   type: 2
@@ -2790,9 +3026,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON RUPTURE FSK-745 - Gold
+  m_Name: Weapon Skin - ARCHON RUPTURE FSK-745 - Bullion
   m_EditorClassIdentifier: 
-  humanName: Gold
+  humanName: Bullion
   idBytes: 88612497cd095848bbbb49967c55cd38
   weaponModel: {fileID: 665102745398348511}
   type: 5
@@ -2806,9 +3042,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON RUPTURE FSK-745 - Paladin
+  m_Name: Weapon Skin - ARCHON RUPTURE FSK-745 - Code of Chivalry
   m_EditorClassIdentifier: 
-  humanName: Paladin
+  humanName: Code of Chivalry
   idBytes: 40aea4c0fa6d6f4892b3c377d07a7be6
   weaponModel: {fileID: 665102745398348511}
   type: 5
@@ -2828,6 +3064,37 @@ MonoBehaviour:
   idBytes: 9abca66b684b4940934c1b2235402fa3
   weaponModel: {fileID: -1611039285179004634}
   type: 8
+--- !u!114 &-2818909447839860714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
+  m_Name: Weapon Skin - ARCHON HEAVY BFG-800 - Daison Sleek
+  m_EditorClassIdentifier: 
+  humanName: Daison Sleek
+  idBytes: f2842a7677fc2245b4410d204274aa1c
+  weaponModel: {fileID: 8233469399879488929}
+  type: 3
+--- !u!114 &-2713530427784900445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - KENJI - X3 Kuro
+  m_EditorClassIdentifier: 
+  humanName: X3 Kuro
+  idBytes: 9f55d00d63ac4d42b714af32af65ef72
+  mechModel: {fileID: 3160154348487789334}
 --- !u!114 &-2611201698177446533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2845,6 +3112,22 @@ MonoBehaviour:
   brand: {fileID: 8873573352097235306}
   defaultSkin: {fileID: 0}
   type: 7
+--- !u!114 &-2583357996996529978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
+  m_Name: Weapon Skin - G88 RAVAGER - Martian Soil
+  m_EditorClassIdentifier: 
+  humanName: Martian Soil
+  idBytes: 123bf30d2cae29459a8e00d5da04eb53
+  weaponModel: {fileID: 5540472648961433852}
+  type: 8
 --- !u!114 &-2581447765447694742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2855,9 +3138,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON RUPTURE FSK-745 - Rexeon Guard
+  m_Name: Weapon Skin - ARCHON RUPTURE FSK-745 - Thin Blue Line
   m_EditorClassIdentifier: 
-  humanName: Rexeon Guard
+  humanName: Thin Blue Line
   idBytes: 6bbfe922dae7514583fd8c1583eebdf7
   weaponModel: {fileID: 665102745398348511}
   type: 5
@@ -2871,9 +3154,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON PATROL CNO-950 - Nerf Gun
+  m_Name: Weapon Skin - ARCHON PATROL CNO-950 - Less-Than-Lethal
   m_EditorClassIdentifier: 
-  humanName: Nerf Gun
+  humanName: Less-Than-Lethal
   idBytes: 4a0beb6cfb73074c949f9ee3c67cec70
   weaponModel: {fileID: -3450499781407857172}
   type: 6
@@ -2887,9 +3170,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - A35 HOMEWRECKER - Martian Marine Core
+  m_Name: Weapon Skin - A35 HOMEWRECKER - Shark Skin
   m_EditorClassIdentifier: 
-  humanName: Martian Marine Core
+  humanName: Shark Skin
   idBytes: fb8d4a6bdd77ab45b2c3bfcf01f54ce0
   weaponModel: {fileID: -2611201698177446533}
   type: 7
@@ -2903,9 +3186,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - A35 HOMEWRECKER - Hazard
+  m_Name: Weapon Skin - A35 HOMEWRECKER - Barricade Stripes
   m_EditorClassIdentifier: 
-  humanName: Hazard
+  humanName: Barricade Stripes
   idBytes: 63c967aa4d9a0d4dbd01d8075eaac56a
   weaponModel: {fileID: -2611201698177446533}
   type: 7
@@ -2919,9 +3202,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SL-900 SAMURAI - 2501 - Tachikoma
+  m_Name: Weapon Skin - SL-900 SAMURAI - Two Five Zero One
   m_EditorClassIdentifier: 
-  humanName: 2501 - Tachikoma
+  humanName: Two Five Zero One
   idBytes: ba7df40d6abdcd49951f9bb773e085b9
   weaponModel: {fileID: -5199482857958006238}
   type: 9
@@ -2965,9 +3248,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SL-900 SAMURAI - Neko
+  m_Name: Weapon Skin - SL-900 SAMURAI - Catastrophe
   m_EditorClassIdentifier: 
-  humanName: Neko
+  humanName: Catastrophe
   idBytes: beb03df8a547d649bd270315e3b0fd48
   weaponModel: {fileID: -5199482857958006238}
   type: 9
@@ -2998,9 +3281,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - ARIES - UMC
+  m_Name: Mech Skin - ARIES - Pilbara Dust
   m_EditorClassIdentifier: 
-  humanName: UMC
+  humanName: Pilbara Dust
   idBytes: 8ab1394dfd459044a26b1ac4ef97426b
   mechModel: {fileID: 1673369590579329074}
 --- !u!114 &-1911531304688186280
@@ -3013,9 +3296,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON STORMLINE PLG-351 - BC
+  m_Name: Weapon Skin - ARCHON STORMLINE PLG-351 - Archon Gunmetal
   m_EditorClassIdentifier: 
-  humanName: BC
+  humanName: Archon Gunmetal
   idBytes: 3142ee6bd3850d4b91d3dba759d8fb4f
   weaponModel: {fileID: 3099439295613235472}
   type: 12
@@ -3029,9 +3312,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SF-950 BUSHWHACKER - Gold
+  m_Name: Weapon Skin - SF-950 BUSHWHACKER - Mine God
   m_EditorClassIdentifier: 
-  humanName: Gold
+  humanName: Mine God
   idBytes: 09cee353846abb47bb312e8cfd966cb7
   weaponModel: {fileID: 5150888983226521986}
   type: 5
@@ -3045,9 +3328,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SP-750 AVENGER - 2501 - Tachikoma
+  m_Name: Weapon Skin - SP-750 AVENGER - Two Five Zero One
   m_EditorClassIdentifier: 
-  humanName: 2501 - Tachikoma
+  humanName: Two Five Zero One
   idBytes: 9f355a2a594162488ca616aa51f30e3d
   weaponModel: {fileID: -7833083708942397272}
   type: 12
@@ -3094,9 +3377,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - G88 RAVAGER - Molten
+  m_Name: Weapon Skin - G88 RAVAGER - Promethean Gold
   m_EditorClassIdentifier: 
-  humanName: Molten
+  humanName: Promethean Gold
   idBytes: f42d01c1f2f8044e8fe0021f0d0cdc4f
   weaponModel: {fileID: 5540472648961433852}
   type: 8
@@ -3148,9 +3431,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - WAR ENFORCER - Paladin
+  m_Name: Mech Skin - WAR ENFORCER - Code of Chivalry
   m_EditorClassIdentifier: 
-  humanName: Paladin
+  humanName: Code of Chivalry
   idBytes: 8fa9225a92d00e44a57d3b13cefe3194
   mechModel: {fileID: 4956909745880066220}
 --- !u!114 &-1627162466335020366
@@ -3163,9 +3446,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: "Weapon Skin - SP-750 AVENGER - Sonn\u014D j\u014Di"
+  m_Name: Weapon Skin - SP-750 AVENGER - Rebellion
   m_EditorClassIdentifier: 
-  humanName: "Sonn\u014D j\u014Di"
+  humanName: Rebellion
   idBytes: 3c85cfc58a756941ba05866548b86a59
   weaponModel: {fileID: -7833083708942397272}
   type: 12
@@ -3196,9 +3479,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: "Weapon Skin - ST-1250 VERSYS - Sonn\u014D j\u014Di"
+  m_Name: Weapon Skin - ST-1250 VERSYS - Rebellion
   m_EditorClassIdentifier: 
-  humanName: "Sonn\u014D j\u014Di"
+  humanName: Rebellion
   idBytes: 11db3a699d2b2149ba0493eb7aa744e3
   weaponModel: {fileID: 4857310000300198231}
   type: 7
@@ -3212,9 +3495,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SF-950 BUSHWHACKER - Shinobi
+  m_Name: Weapon Skin - SF-950 BUSHWHACKER - Shadows Steal Away
   m_EditorClassIdentifier: 
-  humanName: Shinobi
+  humanName: Shadows Steal Away
   idBytes: 4b18d261fdb4234680e278ddf8fa8ebf
   weaponModel: {fileID: 5150888983226521986}
   type: 5
@@ -3228,9 +3511,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - P80 PANTHER - UMC
+  m_Name: Weapon Skin - P80 PANTHER - Pilbara Dust
   m_EditorClassIdentifier: 
-  humanName: UMC
+  humanName: Pilbara Dust
   idBytes: 2cb8616bd9b58945830357f418b0bb9d
   weaponModel: {fileID: 8748492759957013983}
   type: 12
@@ -3260,9 +3543,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - F75 HELLFIRE - Mining
+  m_Name: Weapon Skin - F75 HELLFIRE - Fly In Fly Out
   m_EditorClassIdentifier: 
-  humanName: Mining
+  humanName: Fly In Fly Out
   idBytes: 44b40c74e168f04bbdfdf5b0883bcdf4
   weaponModel: {fileID: 4708123554264425782}
   type: 4
@@ -3312,9 +3595,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON NEO LSG-636 - Raptor
+  m_Name: Weapon Skin - ARCHON NEO LSG-636 - Sea Hawk
   m_EditorClassIdentifier: 
-  humanName: Raptor
+  humanName: Sea Hawk
   idBytes: f70db8be4413f741934e56272a1d2217
   weaponModel: {fileID: 6824993537946338243}
   type: 9
@@ -3328,9 +3611,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SG-850 FURORE - 2501 - Tachikoma
+  m_Name: Weapon Skin - SG-850 FURORE - Two Five Zero One
   m_EditorClassIdentifier: 
-  humanName: 2501 - Tachikoma
+  humanName: Two Five Zero One
   idBytes: c42685e5b6a7084995503e1034cd93a6
   weaponModel: {fileID: -1611039285179004634}
   type: 8
@@ -3344,9 +3627,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - M66 VORTEX - Heavy Metal
+  m_Name: Weapon Skin - M66 VORTEX - Osmium Scream
   m_EditorClassIdentifier: 
-  humanName: Heavy Metal
+  humanName: Osmium Scream
   idBytes: d75d7fb23a390a4ea9d107520227ffa6
   weaponModel: {fileID: -3367421832996240343}
   type: 2
@@ -3360,9 +3643,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON DEATH RUSH MCN-777 - Hive
+  m_Name: Weapon Skin - ARCHON DEATH RUSH MCN-777 - Telling the Bees
   m_EditorClassIdentifier: 
-  humanName: Hive
+  humanName: Telling the Bees
   idBytes: 403fc62f701c7741b0c3fc59ac1a25a4
   weaponModel: {fileID: 5267091823301389682}
   type: 8
@@ -3393,9 +3676,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - ANNIHILATOR - Daison Avionics
+  m_Name: Mech Skin - ANNIHILATOR - Spot Yellow
   m_EditorClassIdentifier: 
-  humanName: Daison Avionics
+  humanName: Spot Yellow
   idBytes: bc32a0d87a767a42a2041387579d3421
   mechModel: {fileID: 476358322255940664}
 --- !u!114 &-1229286182803026243
@@ -3408,11 +3691,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - SHIROKUMA - 2501 - Tachikoma
+  m_Name: Mech Skin - SHIROKUMA - Two Five Zero One
   m_EditorClassIdentifier: 
-  humanName: 2501 - Tachikoma
+  humanName: Two Five Zero One
   idBytes: 2901c9486f509640b82b87954d354c95
   mechModel: {fileID: -1725972078085913312}
+--- !u!114 &-1217957451326165614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
+  m_Name: Weapon Skin - ARCHON STORMLINE PLG-351 - Daison Sleek
+  m_EditorClassIdentifier: 
+  humanName: Daison Sleek
+  idBytes: 2bc3d053f76635468a23dab98d60348b
+  weaponModel: {fileID: 3099439295613235472}
+  type: 12
 --- !u!114 &-1211851141217113043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3428,6 +3727,22 @@ MonoBehaviour:
   humanName: Zaibatsu Heavy Industries
   idBytes: 873c202b8cade24caf17e079835fdbcb
   faction: {fileID: 1148844585822575097}
+--- !u!114 &-1211377263921011221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
+  m_Name: Weapon Skin - ARCHON RUPTURE FSK-745 - Daison Sleek
+  m_EditorClassIdentifier: 
+  humanName: Daison Sleek
+  idBytes: efd3ff4b37631b488daa4f519b82374e
+  weaponModel: {fileID: 665102745398348511}
+  type: 5
 --- !u!114 &-1204516104349669972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3438,12 +3753,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON SPINSHOT MNG-549 - Hive
+  m_Name: Weapon Skin - ARCHON SPINSHOT MNG-549 - Telling the Bees
   m_EditorClassIdentifier: 
-  humanName: Hive
+  humanName: Telling the Bees
   idBytes: 6b5d0b5c00132747af159c68c377554f
   weaponModel: {fileID: 1412570943573224075}
   type: 1
+--- !u!114 &-1187243674843708468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
+  m_Name: Weapon Skin - ARCHON REACH MLR-909 - Daison Sleek
+  m_EditorClassIdentifier: 
+  humanName: Daison Sleek
+  idBytes: 73b9c5e9d8b8e94ea47d92a601c69126
+  weaponModel: {fileID: 8035159187031431144}
+  type: 2
 --- !u!114 &-1181146860845150426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3454,9 +3785,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: "Weapon Skin - CSN-1000 ENDURO - Sonn\u014D j\u014Di"
+  m_Name: Weapon Skin - CSN-1000 ENDURO - Rebellion
   m_EditorClassIdentifier: 
-  humanName: "Sonn\u014D j\u014Di"
+  humanName: Rebellion
   idBytes: 8196899845baa64fa8c100f279531f1d
   weaponModel: {fileID: -7847625005851001617}
   type: 6
@@ -3485,9 +3816,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON AMBUSHER GLR-108 - Paladin
+  m_Name: Weapon Skin - ARCHON AMBUSHER GLR-108 - Code of Chivalry
   m_EditorClassIdentifier: 
-  humanName: Paladin
+  humanName: Code of Chivalry
   idBytes: c61bc938f64bc84ab63163a8c059da76
   weaponModel: {fileID: -4650837851044850197}
   type: 7
@@ -3501,9 +3832,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - CSN-1000 ENDURO - Gold
+  m_Name: Weapon Skin - CSN-1000 ENDURO - Mine God
   m_EditorClassIdentifier: 
-  humanName: Gold
+  humanName: Mine God
   idBytes: dcf79c9d10e24c40b1e9922b4e849514
   weaponModel: {fileID: -7847625005851001617}
   type: 6
@@ -3517,9 +3848,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON NEO LSG-636 - Celtic Knot
+  m_Name: Weapon Skin - ARCHON NEO LSG-636 - Unbroken Knot
   m_EditorClassIdentifier: 
-  humanName: Celtic Knot
+  humanName: Unbroken Knot
   idBytes: 862d1d995916a247861cac6250fb7752
   weaponModel: {fileID: 6824993537946338243}
   type: 9
@@ -3533,9 +3864,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON NEO LSG-636 - Hive
+  m_Name: Weapon Skin - ARCHON NEO LSG-636 - Telling the Bees
   m_EditorClassIdentifier: 
-  humanName: Hive
+  humanName: Telling the Bees
   idBytes: e9843c0404de3f4692149c750d64bcf3
   weaponModel: {fileID: 6824993537946338243}
   type: 9
@@ -3549,9 +3880,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - ANNIHILATOR - Raptor
+  m_Name: Mech Skin - ANNIHILATOR - Sea Hawk
   m_EditorClassIdentifier: 
-  humanName: Raptor
+  humanName: Sea Hawk
   idBytes: ec3ae2c13f866345a31c7d2a72806ac7
   mechModel: {fileID: 476358322255940664}
 --- !u!114 &-944554299085245513
@@ -3564,9 +3895,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON SPINSHOT MNG-549 - Celtic Knot
+  m_Name: Weapon Skin - ARCHON SPINSHOT MNG-549 - Unbroken Knot
   m_EditorClassIdentifier: 
-  humanName: Celtic Knot
+  humanName: Unbroken Knot
   idBytes: 903e6903e4ecf240bb2235dc32ed02ea
   weaponModel: {fileID: 1412570943573224075}
   type: 1
@@ -3611,9 +3942,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON REACH MLR-909 - Gold
+  m_Name: Weapon Skin - ARCHON REACH MLR-909 - Bullion
   m_EditorClassIdentifier: 
-  humanName: Gold
+  humanName: Bullion
   idBytes: 1593e4d8f862f4479a8c92e9ea4ebfa9
   weaponModel: {fileID: 8035159187031431144}
   type: 2
@@ -3627,9 +3958,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON AMBUSHER GLR-108 - Daison Avionics
+  m_Name: Weapon Skin - ARCHON AMBUSHER GLR-108 - Spot Yellow
   m_EditorClassIdentifier: 
-  humanName: Daison Avionics
+  humanName: Spot Yellow
   idBytes: e8b2ec0983373946ae5d8e584d346f48
   weaponModel: {fileID: -4650837851044850197}
   type: 7
@@ -3664,9 +3995,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ST-1250 VERSYS - Zaibatsu
+  m_Name: Weapon Skin - ST-1250 VERSYS - Verdant Warsui
   m_EditorClassIdentifier: 
-  humanName: Zaibatsu
+  humanName: Verdant Warsui
   idBytes: 0399de8f8e571d40a9e27cca9f11a9bf
   weaponModel: {fileID: 4857310000300198231}
   type: 7
@@ -3680,9 +4011,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - SHIROKUMA - X3W
+  m_Name: Mech Skin - SHIROKUMA - Heavy White
   m_EditorClassIdentifier: 
-  humanName: X3W
+  humanName: Heavy White
   idBytes: 08d65624ad60e44ea1eb50de615ddad4
   mechModel: {fileID: -1725972078085913312}
 --- !u!114 &-556503133433299801
@@ -3710,9 +4041,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - A35 HOMEWRECKER - Damascus
+  m_Name: Weapon Skin - A35 HOMEWRECKER - Watered Steel
   m_EditorClassIdentifier: 
-  humanName: Damascus
+  humanName: Watered Steel
   idBytes: 923c03e2210f0949b581807fd90dc683
   weaponModel: {fileID: -2611201698177446533}
   type: 7
@@ -3743,9 +4074,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SM-1400 BRUTE FORCE - X3W
+  m_Name: Weapon Skin - SM-1400 BRUTE FORCE - Heavy White
   m_EditorClassIdentifier: 
-  humanName: X3W
+  humanName: Heavy White
   idBytes: 5720ab3d9d352b42a0b3b9714096fc00
   weaponModel: {fileID: -475069486376503615}
   type: 1
@@ -3812,9 +4143,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - C22 CULVERIN - Heavy Metal
+  m_Name: Weapon Skin - C22 CULVERIN - Osmium Scream
   m_EditorClassIdentifier: 
-  humanName: Heavy Metal
+  humanName: Osmium Scream
   idBytes: fdde9351c540134b83c203199677a0fb
   weaponModel: {fileID: 1630718212910043828}
   type: 6
@@ -3828,9 +4159,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SM-1400 BRUTE FORCE - 2501 - Tachikoma
+  m_Name: Weapon Skin - SM-1400 BRUTE FORCE - Two Five Zero One
   m_EditorClassIdentifier: 
-  humanName: 2501 - Tachikoma
+  humanName: Two Five Zero One
   idBytes: b9db9dc457ee094299567d605717f19f
   weaponModel: {fileID: -475069486376503615}
   type: 1
@@ -3844,9 +4175,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - M17 SCORPION - Damascus
+  m_Name: Weapon Skin - M17 SCORPION - Watered Steel
   m_EditorClassIdentifier: 
-  humanName: Damascus
+  humanName: Watered Steel
   idBytes: 47e4cec8df30664ca7797ed61098d768
   weaponModel: {fileID: 7171280555693468062}
   type: 1
@@ -3893,9 +4224,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SS-1500 VULCAN - XHANCR
+  m_Name: Weapon Skin - SS-1500 VULCAN - Nullifier
   m_EditorClassIdentifier: 
-  humanName: XHANCR
+  humanName: Nullifier
   idBytes: 6839ccc5e1253e44af7fcb78f7754222
   weaponModel: {fileID: -6386277866023102011}
   type: 2
@@ -3909,9 +4240,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - ARIES - Military
+  m_Name: Mech Skin - ARIES - High Caliber
   m_EditorClassIdentifier: 
-  humanName: Military
+  humanName: High Caliber
   idBytes: d77dc42a8444694ca7d2aedbc539f504
   mechModel: {fileID: 1673369590579329074}
 --- !u!114 &-70477060570799230
@@ -3924,12 +4255,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON HEAVY BFG-800 - Rexeon Guard
+  m_Name: Weapon Skin - ARCHON HEAVY BFG-800 - Thin Blue Line
   m_EditorClassIdentifier: 
-  humanName: Rexeon Guard
+  humanName: Thin Blue Line
   idBytes: b52610d61c94a44f9b083ddfbdf1d131
   weaponModel: {fileID: 8233469399879488929}
   type: 3
+--- !u!114 &-36407030789673051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
+  m_Name: Weapon Skin - F75 HELLFIRE - Martian Soil
+  m_EditorClassIdentifier: 
+  humanName: Martian Soil
+  idBytes: 57a894c158b5444384aa3f37d87a537d
+  weaponModel: {fileID: 4708123554264425782}
+  type: 4
 --- !u!114 &-29336366202837120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3940,9 +4287,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - M66 VORTEX - Military
+  m_Name: Weapon Skin - M66 VORTEX - High Caliber
   m_EditorClassIdentifier: 
-  humanName: Military
+  humanName: High Caliber
   idBytes: cbb86efa2208a2428b4cedc0147cf18d
   weaponModel: {fileID: -3367421832996240343}
   type: 2
@@ -3956,9 +4303,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SS-1500 VULCAN - X3W
+  m_Name: Weapon Skin - SS-1500 VULCAN - Heavy White
   m_EditorClassIdentifier: 
-  humanName: X3W
+  humanName: Heavy White
   idBytes: 3bdf3e46ed72894b9f8b3068b2769d3c
   weaponModel: {fileID: -6386277866023102011}
   type: 2
@@ -3972,9 +4319,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON STORMLINE PLG-351 - Paladin
+  m_Name: Weapon Skin - ARCHON STORMLINE PLG-351 - Code of Chivalry
   m_EditorClassIdentifier: 
-  humanName: Paladin
+  humanName: Code of Chivalry
   idBytes: 6d325f3acbe6814e84aa10633e07cff7
   weaponModel: {fileID: 3099439295613235472}
   type: 12
@@ -4124,6 +4471,12 @@ MonoBehaviour:
   - {fileID: 9118838159809701463}
   - {fileID: 2964072342554003602}
   - {fileID: 4136689497073312528}
+  - {fileID: -7161897708993411963}
+  - {fileID: -8905923720052204668}
+  - {fileID: -2713530427784900445}
+  - {fileID: -6236368397672133508}
+  - {fileID: -4072615887264142828}
+  - {fileID: 2551745838054332873}
   weaponModels:
   - {fileID: 7171280555693468062}
   - {fileID: 8748492759957013983}
@@ -4489,6 +4842,33 @@ MonoBehaviour:
   - {fileID: -8252784651875621743}
   - {fileID: 6054694414151608029}
   - {fileID: 7739481087928756641}
+  - {fileID: -5514179942026806196}
+  - {fileID: -1217957451326165614}
+  - {fileID: -1211377263921011221}
+  - {fileID: 8163109765778745727}
+  - {fileID: -1187243674843708468}
+  - {fileID: 9209385449616921276}
+  - {fileID: 8414534766906610248}
+  - {fileID: -7604539363846214730}
+  - {fileID: -2818909447839860714}
+  - {fileID: -3828601368611584229}
+  - {fileID: -7711117744315228736}
+  - {fileID: -6136887446612006879}
+  - {fileID: 1406457839397400635}
+  - {fileID: 5771775103891773139}
+  - {fileID: -8969489901947655803}
+  - {fileID: 3524511166978670636}
+  - {fileID: -3387284757847686837}
+  - {fileID: 2546262627221961079}
+  - {fileID: -4488704996061060604}
+  - {fileID: 7401540925944651577}
+  - {fileID: 776144974812166746}
+  - {fileID: -2583357996996529978}
+  - {fileID: -8449511329616263990}
+  - {fileID: -3493363838611320897}
+  - {fileID: -7993569693000998955}
+  - {fileID: 2033182961318682623}
+  - {fileID: -36407030789673051}
   powerCores:
   - {fileID: -6047314430810352344}
   - {fileID: -7910296973919820155}
@@ -4502,9 +4882,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - C22 CULVERIN - Hazard
+  m_Name: Weapon Skin - C22 CULVERIN - Barricade Stripes
   m_EditorClassIdentifier: 
-  humanName: Hazard
+  humanName: Barricade Stripes
   idBytes: 8703fe1cf333804d843e1998eb498875
   weaponModel: {fileID: 1630718212910043828}
   type: 6
@@ -4518,9 +4898,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - A35 HOMEWRECKER - RM
+  m_Name: Weapon Skin - A35 HOMEWRECKER - Pyro Crimson
   m_EditorClassIdentifier: 
-  humanName: RM
+  humanName: Pyro Crimson
   idBytes: 9d974c24de87f74aa3a7196a3d4c815a
   weaponModel: {fileID: -2611201698177446533}
   type: 7
@@ -4556,9 +4936,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ST-1250 VERSYS - Logogram - Arrival
+  m_Name: Weapon Skin - ST-1250 VERSYS - Cephalopod Ripple
   m_EditorClassIdentifier: 
-  humanName: Logogram - Arrival
+  humanName: Cephalopod Ripple
   idBytes: 31c4c47ece1bb042b1a2bfe4447f3ef8
   weaponModel: {fileID: 4857310000300198231}
   type: 7
@@ -4572,9 +4952,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - KENJI - Shinobi
+  m_Name: Mech Skin - KENJI - Shadows Steal Away
   m_EditorClassIdentifier: 
-  humanName: Shinobi
+  humanName: Shadows Steal Away
   idBytes: b6fc12bbba1a4447a5c2247ed860e106
   mechModel: {fileID: 3160154348487789334}
 --- !u!114 &177903661712796279
@@ -4587,9 +4967,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - CSN-1000 ENDURO - 2501 - Tachikoma
+  m_Name: Weapon Skin - CSN-1000 ENDURO - Two Five Zero One
   m_EditorClassIdentifier: 
-  humanName: 2501 - Tachikoma
+  humanName: Two Five Zero One
   idBytes: 8cfe7083a86fdf48a56e0b716955b80f
   weaponModel: {fileID: -7847625005851001617}
   type: 6
@@ -4603,9 +4983,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON HEAVY BFG-800 - Paladin
+  m_Name: Weapon Skin - ARCHON HEAVY BFG-800 - Code of Chivalry
   m_EditorClassIdentifier: 
-  humanName: Paladin
+  humanName: Code of Chivalry
   idBytes: 8e9ac3d3fa859f49b346d3aa459bcd13
   weaponModel: {fileID: 8233469399879488929}
   type: 3
@@ -4619,9 +4999,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON PATROL CNO-950 - Cybernetics
+  m_Name: Weapon Skin - ARCHON PATROL CNO-950 - Ready To Quench
   m_EditorClassIdentifier: 
-  humanName: Cybernetics
+  humanName: Ready To Quench
   idBytes: 025493c41d4b1f40996e77876a97761c
   weaponModel: {fileID: -3450499781407857172}
   type: 6
@@ -4652,9 +5032,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - VIKING - Military
+  m_Name: Mech Skin - VIKING - High Caliber
   m_EditorClassIdentifier: 
-  humanName: Military
+  humanName: High Caliber
   idBytes: 5f6646d763a87d45a38dae8b6008fb80
   mechModel: {fileID: 6516618555034326667}
 --- !u!114 &596715195408463631
@@ -4667,9 +5047,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - ARIES - Mining
+  m_Name: Mech Skin - ARIES - Fly In Fly Out
   m_EditorClassIdentifier: 
-  humanName: Mining
+  humanName: Fly In Fly Out
   idBytes: 7e4652c8bd5e644599554e542cd628f2
   mechModel: {fileID: 1673369590579329074}
 --- !u!114 &665102745398348511
@@ -4699,9 +5079,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - K45 PULVERIZER - RM
+  m_Name: Weapon Skin - K45 PULVERIZER - Pyro Crimson
   m_EditorClassIdentifier: 
-  humanName: RM
+  humanName: Pyro Crimson
   idBytes: 3696366ec35a174290740b1350d1ec6d
   weaponModel: {fileID: -239671157619968879}
   type: 5
@@ -4720,6 +5100,22 @@ MonoBehaviour:
   humanName: Nautical
   idBytes: d27a1412b27ca04f810a02870a839fc6
   mechModel: {fileID: -6094031022545233519}
+--- !u!114 &776144974812166746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
+  m_Name: Weapon Skin - K45 PULVERIZER - Martian Soil
+  m_EditorClassIdentifier: 
+  humanName: Martian Soil
+  idBytes: 3991d7fdaa83574683badb0e296c9ee0
+  weaponModel: {fileID: -239671157619968879}
+  type: 5
 --- !u!114 &804412582113391668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4730,9 +5126,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON HEAVY BFG-800 - Hive
+  m_Name: Weapon Skin - ARCHON HEAVY BFG-800 - Telling the Bees
   m_EditorClassIdentifier: 
-  humanName: Hive
+  humanName: Telling the Bees
   idBytes: a9a1f9f75d1b0742a90b89811ed58351
   weaponModel: {fileID: 8233469399879488929}
   type: 3
@@ -4746,9 +5142,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - M17 SCORPION - Molten
+  m_Name: Weapon Skin - M17 SCORPION - Promethean Gold
   m_EditorClassIdentifier: 
-  humanName: Molten
+  humanName: Promethean Gold
   idBytes: d6bcaa23409eb044a0f1b2cece19a54c
   weaponModel: {fileID: 7171280555693468062}
   type: 1
@@ -4762,9 +5158,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - P80 PANTHER - Molten
+  m_Name: Weapon Skin - P80 PANTHER - Promethean Gold
   m_EditorClassIdentifier: 
-  humanName: Molten
+  humanName: Promethean Gold
   idBytes: 93258572b5848348b3ab1496de44e7be
   weaponModel: {fileID: 8748492759957013983}
   type: 12
@@ -4778,9 +5174,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - K45 PULVERIZER - Heavy Metal
+  m_Name: Weapon Skin - K45 PULVERIZER - Osmium Scream
   m_EditorClassIdentifier: 
-  humanName: Heavy Metal
+  humanName: Osmium Scream
   idBytes: 697c7274a455cc4ea90a03eacfab7581
   weaponModel: {fileID: -239671157619968879}
   type: 5
@@ -4825,9 +5221,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON HEAVY BFG-800 - Cybernetics
+  m_Name: Weapon Skin - ARCHON HEAVY BFG-800 - Ready To Quench
   m_EditorClassIdentifier: 
-  humanName: Cybernetics
+  humanName: Ready To Quench
   idBytes: fa9114a9d04bb1498afffe35d1a3c20f
   weaponModel: {fileID: 8233469399879488929}
   type: 3
@@ -4857,9 +5253,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SM-1400 BRUTE FORCE - Logogram - Arrival
+  m_Name: Weapon Skin - SM-1400 BRUTE FORCE - Cephalopod Ripple
   m_EditorClassIdentifier: 
-  humanName: Logogram - Arrival
+  humanName: Cephalopod Ripple
   idBytes: 9908998ca335b34eb71079186b735fa4
   weaponModel: {fileID: -475069486376503615}
   type: 1
@@ -4888,9 +5284,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - A35 HOMEWRECKER - Mining
+  m_Name: Weapon Skin - A35 HOMEWRECKER - Fly In Fly Out
   m_EditorClassIdentifier: 
-  humanName: Mining
+  humanName: Fly In Fly Out
   idBytes: 2d2076f97a34bb49b669091705d1cb99
   weaponModel: {fileID: -2611201698177446533}
   type: 7
@@ -4940,9 +5336,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SF-950 BUSHWHACKER - X3W
+  m_Name: Weapon Skin - SF-950 BUSHWHACKER - Heavy White
   m_EditorClassIdentifier: 
-  humanName: X3W
+  humanName: Heavy White
   idBytes: 4ee23845ef65a24da47a30b675ffc714
   weaponModel: {fileID: 5150888983226521986}
   type: 5
@@ -4956,9 +5352,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - C22 CULVERIN - RM
+  m_Name: Weapon Skin - C22 CULVERIN - Pyro Crimson
   m_EditorClassIdentifier: 
-  humanName: RM
+  humanName: Pyro Crimson
   idBytes: e97d896e33f3154aaeda86c6eecc8a4e
   weaponModel: {fileID: 1630718212910043828}
   type: 6
@@ -4972,9 +5368,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - P80 PANTHER - Hazard
+  m_Name: Weapon Skin - P80 PANTHER - Barricade Stripes
   m_EditorClassIdentifier: 
-  humanName: Hazard
+  humanName: Barricade Stripes
   idBytes: d4b478a03d2ee44986d2d2b6a839534a
   weaponModel: {fileID: 8748492759957013983}
   type: 12
@@ -5004,11 +5400,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON DEATH RUSH MCN-777 - Paladin
+  m_Name: Weapon Skin - ARCHON DEATH RUSH MCN-777 - Code of Chivalry
   m_EditorClassIdentifier: 
-  humanName: Paladin
+  humanName: Code of Chivalry
   idBytes: dd569158fc471b4da74564d719993368
   weaponModel: {fileID: 5267091823301389682}
+  type: 8
+--- !u!114 &1406457839397400635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
+  m_Name: Weapon Skin - SG-850 FURORE - X3 Kuro
+  m_EditorClassIdentifier: 
+  humanName: X3 Kuro
+  idBytes: 7e48c28916d83a469c6ee57bd53a17ce
+  weaponModel: {fileID: -1611039285179004634}
   type: 8
 --- !u!114 &1412570943573224075
 MonoBehaviour:
@@ -5037,9 +5449,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON STORMLINE PLG-351 - Nerf Gun
+  m_Name: Weapon Skin - ARCHON STORMLINE PLG-351 - Less-Than-Lethal
   m_EditorClassIdentifier: 
-  humanName: Nerf Gun
+  humanName: Less-Than-Lethal
   idBytes: b85161cd2abba846a965a74c22578f9c
   weaponModel: {fileID: 3099439295613235472}
   type: 12
@@ -5053,9 +5465,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON STORMLINE PLG-351 - Daison Avionics
+  m_Name: Weapon Skin - ARCHON STORMLINE PLG-351 - Spot Yellow
   m_EditorClassIdentifier: 
-  humanName: Daison Avionics
+  humanName: Spot Yellow
   idBytes: 85d9092b5b080e44a0d1752b1f5e0a2b
   weaponModel: {fileID: 3099439295613235472}
   type: 12
@@ -5069,9 +5481,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - KENJI - X3W
+  m_Name: Mech Skin - KENJI - Heavy White
   m_EditorClassIdentifier: 
-  humanName: X3W
+  humanName: Heavy White
   idBytes: 4cb23d2446c9784dbfe5dfd6a1f0529a
   mechModel: {fileID: 3160154348487789334}
 --- !u!114 &1568961450022400984
@@ -5084,9 +5496,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - M66 VORTEX - Mining
+  m_Name: Weapon Skin - M66 VORTEX - Fly In Fly Out
   m_EditorClassIdentifier: 
-  humanName: Mining
+  humanName: Fly In Fly Out
   idBytes: 87c6421bb8575246a4b0d3abda6f473a
   weaponModel: {fileID: -3367421832996240343}
   type: 2
@@ -5100,9 +5512,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - F75 HELLFIRE - Military
+  m_Name: Weapon Skin - F75 HELLFIRE - High Caliber
   m_EditorClassIdentifier: 
-  humanName: Military
+  humanName: High Caliber
   idBytes: 89c5803bed9e8240baade7c8f237fa27
   weaponModel: {fileID: 4708123554264425782}
   type: 4
@@ -5150,9 +5562,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - WAR ENFORCER - Rexeon Guard
+  m_Name: Mech Skin - WAR ENFORCER - Thin Blue Line
   m_EditorClassIdentifier: 
-  humanName: Rexeon Guard
+  humanName: Thin Blue Line
   idBytes: ef032abe9d12ba49ba719f7f10286905
   mechModel: {fileID: 4956909745880066220}
 --- !u!114 &1787272210231710992
@@ -5165,9 +5577,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - M66 VORTEX - Damascus
+  m_Name: Weapon Skin - M66 VORTEX - Watered Steel
   m_EditorClassIdentifier: 
-  humanName: Damascus
+  humanName: Watered Steel
   idBytes: 86eed72a9f0caf439f4bb6c75ff8de73
   weaponModel: {fileID: -3367421832996240343}
   type: 2
@@ -5181,9 +5593,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SM-1400 BRUTE FORCE - Shinobi
+  m_Name: Weapon Skin - SM-1400 BRUTE FORCE - Shadows Steal Away
   m_EditorClassIdentifier: 
-  humanName: Shinobi
+  humanName: Shadows Steal Away
   idBytes: 7ca1b31e57d1b14ba6dc7cd3fe7ab7b9
   weaponModel: {fileID: -475069486376503615}
   type: 1
@@ -5212,9 +5624,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON STORMLINE PLG-351 - Rexeon Guard
+  m_Name: Weapon Skin - ARCHON STORMLINE PLG-351 - Thin Blue Line
   m_EditorClassIdentifier: 
-  humanName: Rexeon Guard
+  humanName: Thin Blue Line
   idBytes: 78a277dfaf0dad46843379e3efd63fff
   weaponModel: {fileID: 3099439295613235472}
   type: 12
@@ -5228,9 +5640,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - P80 PANTHER - RM
+  m_Name: Weapon Skin - P80 PANTHER - Pyro Crimson
   m_EditorClassIdentifier: 
-  humanName: RM
+  humanName: Pyro Crimson
   idBytes: c1d25d8e2eb5cd488539aed12feae5d8
   weaponModel: {fileID: 8748492759957013983}
   type: 12
@@ -5244,9 +5656,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SL-750 ELIMINATOR - BOTW
+  m_Name: Weapon Skin - SL-750 ELIMINATOR - Calm Before the Storm
   m_EditorClassIdentifier: 
-  humanName: BOTW
+  humanName: Calm Before the Storm
   idBytes: e7f613bac366fd4096e44f2b6db312f3
   weaponModel: {fileID: 6316703149202657120}
   type: 0
@@ -5260,9 +5672,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON NEO LSG-636 - Cybernetics
+  m_Name: Weapon Skin - ARCHON NEO LSG-636 - Ready To Quench
   m_EditorClassIdentifier: 
-  humanName: Cybernetics
+  humanName: Ready To Quench
   idBytes: 5ad5cec0c71cf74287499f616dd59f56
   weaponModel: {fileID: 6824993537946338243}
   type: 9
@@ -5276,12 +5688,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON REACH MLR-909 - Hive
+  m_Name: Weapon Skin - ARCHON REACH MLR-909 - Telling the Bees
   m_EditorClassIdentifier: 
-  humanName: Hive
+  humanName: Telling the Bees
   idBytes: 027dc01c3cc2f44aa57034478bea8185
   weaponModel: {fileID: 8035159187031431144}
   type: 2
+--- !u!114 &2033182961318682623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
+  m_Name: Weapon Skin - A35 HOMEWRECKER - Martian Soil
+  m_EditorClassIdentifier: 
+  humanName: Martian Soil
+  idBytes: a95c1edd183fdf4b827bce3f90842374
+  weaponModel: {fileID: -2611201698177446533}
+  type: 7
 --- !u!114 &2036295150616032536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5307,9 +5735,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON SPINSHOT MNG-549 - Rexeon Guard
+  m_Name: Weapon Skin - ARCHON SPINSHOT MNG-549 - Thin Blue Line
   m_EditorClassIdentifier: 
-  humanName: Rexeon Guard
+  humanName: Thin Blue Line
   idBytes: a7caec2181faab4a837ef17ce627b399
   weaponModel: {fileID: 1412570943573224075}
   type: 1
@@ -5323,9 +5751,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - CSN-1000 ENDURO - XHANCR
+  m_Name: Weapon Skin - CSN-1000 ENDURO - Nullifier
   m_EditorClassIdentifier: 
-  humanName: XHANCR
+  humanName: Nullifier
   idBytes: 294cfb2b1c5ef84498670deedea59142
   weaponModel: {fileID: -7847625005851001617}
   type: 6
@@ -5355,9 +5783,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON PATROL CNO-950 - Paladin
+  m_Name: Weapon Skin - ARCHON PATROL CNO-950 - Code of Chivalry
   m_EditorClassIdentifier: 
-  humanName: Paladin
+  humanName: Code of Chivalry
   idBytes: 3f79c1af3fdad242a45fb8524c92d420
   weaponModel: {fileID: -3450499781407857172}
   type: 6
@@ -5386,9 +5814,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - K45 PULVERIZER - Gold
+  m_Name: Weapon Skin - K45 PULVERIZER - Sovereign Hill
   m_EditorClassIdentifier: 
-  humanName: Gold
+  humanName: Sovereign Hill
   idBytes: 24b99dbd89a2394084bf2b9a9e236327
   weaponModel: {fileID: -239671157619968879}
   type: 5
@@ -5402,9 +5830,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SP-750 AVENGER - Zaibatsu
+  m_Name: Weapon Skin - SP-750 AVENGER - Verdant Warsui
   m_EditorClassIdentifier: 
-  humanName: Zaibatsu
+  humanName: Verdant Warsui
   idBytes: ae3be09a2cd29d418968cbb138d47754
   weaponModel: {fileID: -7833083708942397272}
   type: 12
@@ -5433,9 +5861,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - G88 RAVAGER - Heavy Metal
+  m_Name: Weapon Skin - G88 RAVAGER - Osmium Scream
   m_EditorClassIdentifier: 
-  humanName: Heavy Metal
+  humanName: Osmium Scream
   idBytes: 1c55a11e6ab6e946b3ceda0fb22c5bc5
   weaponModel: {fileID: 5540472648961433852}
   type: 8
@@ -5449,12 +5877,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - M66 VORTEX - Gold
+  m_Name: Weapon Skin - M66 VORTEX - Sovereign Hill
   m_EditorClassIdentifier: 
-  humanName: Gold
+  humanName: Sovereign Hill
   idBytes: 083108345d550d49b4df8dc3ee63c749
   weaponModel: {fileID: -3367421832996240343}
   type: 2
+--- !u!114 &2546262627221961079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
+  m_Name: Weapon Skin - SL-750 ELIMINATOR - X3 Kuro
+  m_EditorClassIdentifier: 
+  humanName: X3 Kuro
+  idBytes: 15fd2fb37663a3448b31472b70e7df3f
+  weaponModel: {fileID: 6316703149202657120}
+  type: 0
 --- !u!114 &2546998203335053403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5465,12 +5909,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SF-950 BUSHWHACKER - Logogram - Arrival
+  m_Name: Weapon Skin - SF-950 BUSHWHACKER - Cephalopod Ripple
   m_EditorClassIdentifier: 
-  humanName: Logogram - Arrival
+  humanName: Cephalopod Ripple
   idBytes: f5f0cfec4d78874ea29db5a110b3af04
   weaponModel: {fileID: 5150888983226521986}
   type: 5
+--- !u!114 &2551745838054332873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
+  m_Name: Mech Skin - VIKING - Martian Soil
+  m_EditorClassIdentifier: 
+  humanName: Martian Soil
+  idBytes: 35b45b96f7a9de46962b4a8ead528085
+  mechModel: {fileID: 6516618555034326667}
 --- !u!114 &2627411129161432107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5502,9 +5961,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON RUPTURE FSK-745 - Space Marine
+  m_Name: Weapon Skin - ARCHON RUPTURE FSK-745 - Praetor Grunge
   m_EditorClassIdentifier: 
-  humanName: Space Marine
+  humanName: Praetor Grunge
   idBytes: db2237aed8f50b4181b1afcf601bd171
   weaponModel: {fileID: 665102745398348511}
   type: 5
@@ -5518,9 +5977,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON RUPTURE FSK-745 - Hive
+  m_Name: Weapon Skin - ARCHON RUPTURE FSK-745 - Telling the Bees
   m_EditorClassIdentifier: 
-  humanName: Hive
+  humanName: Telling the Bees
   idBytes: e9955cf8f1359d4e8a6a56b86af8344d
   weaponModel: {fileID: 665102745398348511}
   type: 5
@@ -5550,9 +6009,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - L51 BRUTALIZER - Heavy Metal
+  m_Name: Weapon Skin - L51 BRUTALIZER - Osmium Scream
   m_EditorClassIdentifier: 
-  humanName: Heavy Metal
+  humanName: Osmium Scream
   idBytes: 0280087f50524744a8f1d39c3ca2ce0d
   weaponModel: {fileID: 3488667549969693786}
   type: 9
@@ -5566,9 +6025,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - ANNIHILATOR - Gold
+  m_Name: Mech Skin - ANNIHILATOR - Bullion
   m_EditorClassIdentifier: 
-  humanName: Gold
+  humanName: Bullion
   idBytes: 666dad4a2a9a3c4f9f140980842294c8
   mechModel: {fileID: 476358322255940664}
 --- !u!114 &2857363325058942571
@@ -5581,9 +6040,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SS-1500 VULCAN - Zaibatsu
+  m_Name: Weapon Skin - SS-1500 VULCAN - Verdant Warsui
   m_EditorClassIdentifier: 
-  humanName: Zaibatsu
+  humanName: Verdant Warsui
   idBytes: 21b34d87e438a94aaedcb36feb1e31b5
   weaponModel: {fileID: -6386277866023102011}
   type: 2
@@ -5597,9 +6056,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - WAR ENFORCER - Daison Avionics
+  m_Name: Mech Skin - WAR ENFORCER - Spot Yellow
   m_EditorClassIdentifier: 
-  humanName: Daison Avionics
+  humanName: Spot Yellow
   idBytes: b4a09d7f0a5639488a40216427e74d74
   mechModel: {fileID: 4956909745880066220}
 --- !u!114 &2886573480136998708
@@ -5627,9 +6086,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - L51 BRUTALIZER - Damascus
+  m_Name: Weapon Skin - L51 BRUTALIZER - Watered Steel
   m_EditorClassIdentifier: 
-  humanName: Damascus
+  humanName: Watered Steel
   idBytes: 81f31c83bf16d94ab41868b24ef19fe7
   weaponModel: {fileID: 3488667549969693786}
   type: 9
@@ -5643,9 +6102,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - G88 RAVAGER - Gold
+  m_Name: Weapon Skin - G88 RAVAGER - Sovereign Hill
   m_EditorClassIdentifier: 
-  humanName: Gold
+  humanName: Sovereign Hill
   idBytes: 02281953e457ba4f80d7d5f0785b30b0
   weaponModel: {fileID: 5540472648961433852}
   type: 8
@@ -5675,9 +6134,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - VIKING - Molten
+  m_Name: Mech Skin - VIKING - Promethean Gold
   m_EditorClassIdentifier: 
-  humanName: Molten
+  humanName: Promethean Gold
   idBytes: fe727328b641b247acc583774345d4a5
   mechModel: {fileID: 6516618555034326667}
 --- !u!114 &2969399739952767232
@@ -5705,9 +6164,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON AMBUSHER GLR-108 - Rexeon Guard
+  m_Name: Weapon Skin - ARCHON AMBUSHER GLR-108 - Thin Blue Line
   m_EditorClassIdentifier: 
-  humanName: Rexeon Guard
+  humanName: Thin Blue Line
   idBytes: 9fead65496c863448defccc958f925c4
   weaponModel: {fileID: -4650837851044850197}
   type: 7
@@ -5738,9 +6197,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - P80 PANTHER - Mining
+  m_Name: Weapon Skin - P80 PANTHER - Fly In Fly Out
   m_EditorClassIdentifier: 
-  humanName: Mining
+  humanName: Fly In Fly Out
   idBytes: 84b01d971aef2d4796cbc28a15264d0d
   weaponModel: {fileID: 8748492759957013983}
   type: 12
@@ -5771,9 +6230,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON DEATH RUSH MCN-777 - Rexeon Guard
+  m_Name: Weapon Skin - ARCHON DEATH RUSH MCN-777 - Thin Blue Line
   m_EditorClassIdentifier: 
-  humanName: Rexeon Guard
+  humanName: Thin Blue Line
   idBytes: b89dc1ac3eea5941bdd5397a95fb0662
   weaponModel: {fileID: 5267091823301389682}
   type: 8
@@ -5787,9 +6246,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON DEATH RUSH MCN-777 - Cybernetics
+  m_Name: Weapon Skin - ARCHON DEATH RUSH MCN-777 - Ready To Quench
   m_EditorClassIdentifier: 
-  humanName: Cybernetics
+  humanName: Ready To Quench
   idBytes: 579a934d63edbf47a941d654faf3b343
   weaponModel: {fileID: 5267091823301389682}
   type: 8
@@ -5819,9 +6278,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SG-850 FURORE - Zaibatsu
+  m_Name: Weapon Skin - SG-850 FURORE - Verdant Warsui
   m_EditorClassIdentifier: 
-  humanName: Zaibatsu
+  humanName: Verdant Warsui
   idBytes: 7e9602b36caaec4a90ef7c09a9db0e6b
   weaponModel: {fileID: -1611039285179004634}
   type: 8
@@ -5835,9 +6294,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - SHIROKUMA - Shinobi
+  m_Name: Mech Skin - SHIROKUMA - Shadows Steal Away
   m_EditorClassIdentifier: 
-  humanName: Shinobi
+  humanName: Shadows Steal Away
   idBytes: 3374356a71b02541811020ace307f4ea
   mechModel: {fileID: -1725972078085913312}
 --- !u!114 &3488667549969693786
@@ -5857,6 +6316,22 @@ MonoBehaviour:
   brand: {fileID: 8873573352097235306}
   defaultSkin: {fileID: 0}
   type: 9
+--- !u!114 &3524511166978670636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
+  m_Name: Weapon Skin - CSN-1000 ENDURO - X3 Kuro
+  m_EditorClassIdentifier: 
+  humanName: X3 Kuro
+  idBytes: c327ec8ba221aa49815ee839c889627a
+  weaponModel: {fileID: -7847625005851001617}
+  type: 6
 --- !u!114 &3556041455267428020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5888,9 +6363,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - C22 CULVERIN - Mining
+  m_Name: Weapon Skin - C22 CULVERIN - Fly In Fly Out
   m_EditorClassIdentifier: 
-  humanName: Mining
+  humanName: Fly In Fly Out
   idBytes: d276d226910c7447a10ec4e358644ca3
   weaponModel: {fileID: 1630718212910043828}
   type: 6
@@ -5904,9 +6379,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON STORMLINE PLG-351 - Space Marine
+  m_Name: Weapon Skin - ARCHON STORMLINE PLG-351 - Praetor Grunge
   m_EditorClassIdentifier: 
-  humanName: Space Marine
+  humanName: Praetor Grunge
   idBytes: 20cf6ee3e540c04aba52757bf3372619
   weaponModel: {fileID: 3099439295613235472}
   type: 12
@@ -5920,9 +6395,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SS-1500 VULCAN - Logogram - Arrival
+  m_Name: Weapon Skin - SS-1500 VULCAN - Cephalopod Ripple
   m_EditorClassIdentifier: 
-  humanName: Logogram - Arrival
+  humanName: Cephalopod Ripple
   idBytes: 3d20039346147a4a83caf33f6b556534
   weaponModel: {fileID: -6386277866023102011}
   type: 2
@@ -5951,9 +6426,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - KENJI - XHANCR
+  m_Name: Mech Skin - KENJI - Nullifier
   m_EditorClassIdentifier: 
-  humanName: XHANCR
+  humanName: Nullifier
   idBytes: 99e0be26a685cf49ba2df2d2f2ff42dc
   mechModel: {fileID: 3160154348487789334}
 --- !u!114 &3851902770405613654
@@ -5966,9 +6441,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SS-1500 VULCAN - 2501 - Tachikoma
+  m_Name: Weapon Skin - SS-1500 VULCAN - Two Five Zero One
   m_EditorClassIdentifier: 
-  humanName: 2501 - Tachikoma
+  humanName: Two Five Zero One
   idBytes: 74973b4b5c6d8548b494637473a7ba89
   weaponModel: {fileID: -6386277866023102011}
   type: 2
@@ -5982,9 +6457,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON STORMLINE PLG-351 - Raptor
+  m_Name: Weapon Skin - ARCHON STORMLINE PLG-351 - Sea Hawk
   m_EditorClassIdentifier: 
-  humanName: Raptor
+  humanName: Sea Hawk
   idBytes: b130ecc40133f64bad94a91c306df5ca
   weaponModel: {fileID: 3099439295613235472}
   type: 12
@@ -5998,9 +6473,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - VIKING - Gold
+  m_Name: Mech Skin - VIKING - Sovereign Hill
   m_EditorClassIdentifier: 
-  humanName: Gold
+  humanName: Sovereign Hill
   idBytes: d4b42a37d935654f968a7d506eef3d54
   mechModel: {fileID: 6516618555034326667}
 --- !u!114 &4225484421305642880
@@ -6013,9 +6488,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - M17 SCORPION - Mining
+  m_Name: Weapon Skin - M17 SCORPION - Fly In Fly Out
   m_EditorClassIdentifier: 
-  humanName: Mining
+  humanName: Fly In Fly Out
   idBytes: 13588aabcd53f94096db65f3ee3f977d
   weaponModel: {fileID: 7171280555693468062}
   type: 1
@@ -6029,9 +6504,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - K45 PULVERIZER - Damascus
+  m_Name: Weapon Skin - K45 PULVERIZER - Watered Steel
   m_EditorClassIdentifier: 
-  humanName: Damascus
+  humanName: Watered Steel
   idBytes: 2cb58efeb1c4c440a6e1df31aa56c7f3
   weaponModel: {fileID: -239671157619968879}
   type: 5
@@ -6060,9 +6535,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: "Weapon Skin - SL-900 SAMURAI - Sonn\u014D j\u014Di"
+  m_Name: Weapon Skin - SL-900 SAMURAI - Rebellion
   m_EditorClassIdentifier: 
-  humanName: "Sonn\u014D j\u014Di"
+  humanName: Rebellion
   idBytes: 66bc61179951be46a4e806c6d3e8566f
   weaponModel: {fileID: -5199482857958006238}
   type: 9
@@ -6076,9 +6551,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - F75 HELLFIRE - Gold
+  m_Name: Weapon Skin - F75 HELLFIRE - Sovereign Hill
   m_EditorClassIdentifier: 
-  humanName: Gold
+  humanName: Sovereign Hill
   idBytes: 4c07f3fb16e59d45af5608149ff20615
   weaponModel: {fileID: 4708123554264425782}
   type: 4
@@ -6108,9 +6583,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - L51 BRUTALIZER - Cassowary
+  m_Name: Weapon Skin - L51 BRUTALIZER - Martian Mess Maker
   m_EditorClassIdentifier: 
-  humanName: Cassowary
+  humanName: Martian Mess Maker
   idBytes: 16a946e7dabc0f489f892071b818c5df
   weaponModel: {fileID: 3488667549969693786}
   type: 9
@@ -6140,9 +6615,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON REACH MLR-909 - Cybernetics
+  m_Name: Weapon Skin - ARCHON REACH MLR-909 - Ready To Quench
   m_EditorClassIdentifier: 
-  humanName: Cybernetics
+  humanName: Ready To Quench
   idBytes: ffd9ac861ff53b43b58bce947d0e66e9
   weaponModel: {fileID: 8035159187031431144}
   type: 2
@@ -6171,9 +6646,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON REACH MLR-909 - Space Marine
+  m_Name: Weapon Skin - ARCHON REACH MLR-909 - Praetor Grunge
   m_EditorClassIdentifier: 
-  humanName: Space Marine
+  humanName: Praetor Grunge
   idBytes: 87002d77095483438c2498d8f55e35bc
   weaponModel: {fileID: 8035159187031431144}
   type: 2
@@ -6187,9 +6662,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ST-1250 VERSYS - XHANCR
+  m_Name: Weapon Skin - ST-1250 VERSYS - Nullifier
   m_EditorClassIdentifier: 
-  humanName: XHANCR
+  humanName: Nullifier
   idBytes: 4b7f4ab79b463342951ecadea4376cd2
   weaponModel: {fileID: 4857310000300198231}
   type: 7
@@ -6203,9 +6678,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON PATROL CNO-950 - Raptor
+  m_Name: Weapon Skin - ARCHON PATROL CNO-950 - Sea Hawk
   m_EditorClassIdentifier: 
-  humanName: Raptor
+  humanName: Sea Hawk
   idBytes: 945ab8715db34a468e370eed8f2e4c22
   weaponModel: {fileID: -3450499781407857172}
   type: 6
@@ -6252,9 +6727,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - L51 BRUTALIZER - UMC
+  m_Name: Weapon Skin - L51 BRUTALIZER - Pilbara Dust
   m_EditorClassIdentifier: 
-  humanName: UMC
+  humanName: Pilbara Dust
   idBytes: 6e6958fa10e4b740a48c16be320f9211
   weaponModel: {fileID: 3488667549969693786}
   type: 9
@@ -6284,9 +6759,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - K45 PULVERIZER - UMC
+  m_Name: Weapon Skin - K45 PULVERIZER - Pilbara Dust
   m_EditorClassIdentifier: 
-  humanName: UMC
+  humanName: Pilbara Dust
   idBytes: 941cb50de795a34f8f099ba9f60c2964
   weaponModel: {fileID: -239671157619968879}
   type: 5
@@ -6364,9 +6839,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - VIKING - Mining
+  m_Name: Mech Skin - VIKING - Fly In Fly Out
   m_EditorClassIdentifier: 
-  humanName: Mining
+  humanName: Fly In Fly Out
   idBytes: 1543431e207acb4cb1aac180afde0778
   mechModel: {fileID: 6516618555034326667}
 --- !u!114 &5000113984925139395
@@ -6379,9 +6854,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON NEO LSG-636 - Paladin
+  m_Name: Weapon Skin - ARCHON NEO LSG-636 - Code of Chivalry
   m_EditorClassIdentifier: 
-  humanName: Paladin
+  humanName: Code of Chivalry
   idBytes: dc466b6c1a02a04b9d061b41e2524da4
   weaponModel: {fileID: 6824993537946338243}
   type: 9
@@ -6410,9 +6885,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - M66 VORTEX - Hazard
+  m_Name: Weapon Skin - M66 VORTEX - Barricade Stripes
   m_EditorClassIdentifier: 
-  humanName: Hazard
+  humanName: Barricade Stripes
   idBytes: 2407744091d89f46b74e54e8b5685a19
   weaponModel: {fileID: -3367421832996240343}
   type: 2
@@ -6426,9 +6901,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - ANNIHILATOR - Rexeon Guard
+  m_Name: Mech Skin - ANNIHILATOR - Thin Blue Line
   m_EditorClassIdentifier: 
-  humanName: Rexeon Guard
+  humanName: Thin Blue Line
   idBytes: 3dc9f5d8b54fb34aa44a2ffc298a53f7
   mechModel: {fileID: 476358322255940664}
 --- !u!114 &5065763395433890026
@@ -6441,9 +6916,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON HEAVY BFG-800 - BC
+  m_Name: Weapon Skin - ARCHON HEAVY BFG-800 - Archon Gunmetal
   m_EditorClassIdentifier: 
-  humanName: BC
+  humanName: Archon Gunmetal
   idBytes: 8acb202e0ab4644bb21c16fa94a9392e
   weaponModel: {fileID: 8233469399879488929}
   type: 3
@@ -6457,9 +6932,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - G88 RAVAGER - Damascus
+  m_Name: Weapon Skin - G88 RAVAGER - Watered Steel
   m_EditorClassIdentifier: 
-  humanName: Damascus
+  humanName: Watered Steel
   idBytes: 47429a595ea9444188d078b590e536f9
   weaponModel: {fileID: 5540472648961433852}
   type: 8
@@ -6473,9 +6948,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - A35 HOMEWRECKER - Heavy Metal
+  m_Name: Weapon Skin - A35 HOMEWRECKER - Osmium Scream
   m_EditorClassIdentifier: 
-  humanName: Heavy Metal
+  humanName: Osmium Scream
   idBytes: cf1c2ff5ba59d4469ed07ff39558d00b
   weaponModel: {fileID: -2611201698177446533}
   type: 7
@@ -6489,9 +6964,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - M17 SCORPION - Gold
+  m_Name: Weapon Skin - M17 SCORPION - Sovereign Hill
   m_EditorClassIdentifier: 
-  humanName: Gold
+  humanName: Sovereign Hill
   idBytes: 3d2809c6bd82044a8e80450ec5c64a56
   weaponModel: {fileID: 7171280555693468062}
   type: 1
@@ -6576,9 +7051,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: "Weapon Skin - SM-1400 BRUTE FORCE - Sonn\u014D j\u014Di"
+  m_Name: Weapon Skin - SM-1400 BRUTE FORCE - Rebellion
   m_EditorClassIdentifier: 
-  humanName: "Sonn\u014D j\u014Di"
+  humanName: Rebellion
   idBytes: 0f89293036534b46ba0ed701eb20a360
   weaponModel: {fileID: -475069486376503615}
   type: 1
@@ -6592,9 +7067,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - ANNIHILATOR - Paladin
+  m_Name: Mech Skin - ANNIHILATOR - Code of Chivalry
   m_EditorClassIdentifier: 
-  humanName: Paladin
+  humanName: Code of Chivalry
   idBytes: 2d8efee91c03204d89284b32113108d2
   mechModel: {fileID: 476358322255940664}
 --- !u!114 &5378131298482310477
@@ -6607,9 +7082,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SG-850 FURORE - Gold
+  m_Name: Weapon Skin - SG-850 FURORE - Mine God
   m_EditorClassIdentifier: 
-  humanName: Gold
+  humanName: Mine God
   idBytes: 23123e8d27356b40b310aaa9bbd0c939
   weaponModel: {fileID: -1611039285179004634}
   type: 8
@@ -6638,9 +7113,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - WAR ENFORCER - Hive
+  m_Name: Mech Skin - WAR ENFORCER - Telling the Bees
   m_EditorClassIdentifier: 
-  humanName: Hive
+  humanName: Telling the Bees
   idBytes: 5f664fad622f934e90654c6d7af5163d
   mechModel: {fileID: 4956909745880066220}
 --- !u!114 &5456401531889924526
@@ -6653,9 +7128,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SP-750 AVENGER - X3W
+  m_Name: Weapon Skin - SP-750 AVENGER - Heavy White
   m_EditorClassIdentifier: 
-  humanName: X3W
+  humanName: Heavy White
   idBytes: 0a50d1a479e857408b19bbd1594a7c5f
   weaponModel: {fileID: -7833083708942397272}
   type: 12
@@ -6669,9 +7144,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON HEAVY BFG-800 - Doom
+  m_Name: Weapon Skin - ARCHON HEAVY BFG-800 - Lord of Hell
   m_EditorClassIdentifier: 
-  humanName: Doom
+  humanName: Lord of Hell
   idBytes: 18a4a9a2255ed84d8765aa90efcdf707
   weaponModel: {fileID: 8233469399879488929}
   type: 3
@@ -6702,9 +7177,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: "Weapon Skin - SS-1500 VULCAN - Sonn\u014D j\u014Di"
+  m_Name: Weapon Skin - SS-1500 VULCAN - Rebellion
   m_EditorClassIdentifier: 
-  humanName: "Sonn\u014D j\u014Di"
+  humanName: Rebellion
   idBytes: de55429f4b9dfd4f9ad3bcfc16175497
   weaponModel: {fileID: -6386277866023102011}
   type: 2
@@ -6751,9 +7226,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SL-900 SAMURAI - Gold
+  m_Name: Weapon Skin - SL-900 SAMURAI - Mine God
   m_EditorClassIdentifier: 
-  humanName: Gold
+  humanName: Mine God
   idBytes: 8838f31bfdcef442b89b3253a2b53e56
   weaponModel: {fileID: -5199482857958006238}
   type: 9
@@ -6767,9 +7242,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - A35 HOMEWRECKER - Molten
+  m_Name: Weapon Skin - A35 HOMEWRECKER - Promethean Gold
   m_EditorClassIdentifier: 
-  humanName: Molten
+  humanName: Promethean Gold
   idBytes: cf5a38c0f2731f44b6ade1f622f4dd53
   weaponModel: {fileID: -2611201698177446533}
   type: 7
@@ -6783,9 +7258,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - G88 RAVAGER - Martian Marine Core
+  m_Name: Weapon Skin - G88 RAVAGER - Shark Skin
   m_EditorClassIdentifier: 
-  humanName: Martian Marine Core
+  humanName: Shark Skin
   idBytes: 68360e72ce2b7046a0e97838e2929c89
   weaponModel: {fileID: 5540472648961433852}
   type: 8
@@ -6804,6 +7279,22 @@ MonoBehaviour:
   humanName: Warsui
   idBytes: 0b233b95ef914949b831165b2b9f2ba8
   faction: {fileID: 1148844585822575097}
+--- !u!114 &5771775103891773139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
+  m_Name: Weapon Skin - SS-1500 VULCAN - X3 Kuro
+  m_EditorClassIdentifier: 
+  humanName: X3 Kuro
+  idBytes: 83e74a90446b374dac95dcf7fa7370a6
+  weaponModel: {fileID: -6386277866023102011}
+  type: 2
 --- !u!114 &5786616772943612325
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6829,9 +7320,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON REACH MLR-909 - Nerf Gun
+  m_Name: Weapon Skin - ARCHON REACH MLR-909 - Less-Than-Lethal
   m_EditorClassIdentifier: 
-  humanName: Nerf Gun
+  humanName: Less-Than-Lethal
   idBytes: cf79447a6f199241af6bbf2792e23fc5
   weaponModel: {fileID: 8035159187031431144}
   type: 2
@@ -6845,9 +7336,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON NEO LSG-636 - Daison Avionics
+  m_Name: Weapon Skin - ARCHON NEO LSG-636 - Spot Yellow
   m_EditorClassIdentifier: 
-  humanName: Daison Avionics
+  humanName: Spot Yellow
   idBytes: e28539dc89763243936c7cd0e5a9f10c
   weaponModel: {fileID: 6824993537946338243}
   type: 9
@@ -6861,9 +7352,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - CSN-1000 ENDURO - Zaibatsu
+  m_Name: Weapon Skin - CSN-1000 ENDURO - Verdant Warsui
   m_EditorClassIdentifier: 
-  humanName: Zaibatsu
+  humanName: Verdant Warsui
   idBytes: 18aa372d05441d499dece5a2defa6a89
   weaponModel: {fileID: -7847625005851001617}
   type: 6
@@ -6877,9 +7368,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ST-1250 VERSYS - 2501 - Tachikoma
+  m_Name: Weapon Skin - ST-1250 VERSYS - Two Five Zero One
   m_EditorClassIdentifier: 
-  humanName: 2501 - Tachikoma
+  humanName: Two Five Zero One
   idBytes: ae2ff5ca8e43d242b61636d74f375134
   weaponModel: {fileID: 4857310000300198231}
   type: 7
@@ -6893,9 +7384,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON AMBUSHER GLR-108 - Gold
+  m_Name: Weapon Skin - ARCHON AMBUSHER GLR-108 - Bullion
   m_EditorClassIdentifier: 
-  humanName: Gold
+  humanName: Bullion
   idBytes: c0898115c69a2343800871ff210e2287
   weaponModel: {fileID: -4650837851044850197}
   type: 7
@@ -6924,9 +7415,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - ANNIHILATOR - Hive
+  m_Name: Mech Skin - ANNIHILATOR - Telling the Bees
   m_EditorClassIdentifier: 
-  humanName: Hive
+  humanName: Telling the Bees
   idBytes: f362fefe9a51f34cacf606c89572c839
   mechModel: {fileID: 476358322255940664}
 --- !u!114 &6054694414151608029
@@ -6939,9 +7430,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - F75 HELLFIRE - Damascus
+  m_Name: Weapon Skin - F75 HELLFIRE - Watered Steel
   m_EditorClassIdentifier: 
-  humanName: Damascus
+  humanName: Watered Steel
   idBytes: d68278c4ccdec142afbc5113ca42a9fc
   weaponModel: {fileID: 4708123554264425782}
   type: 4
@@ -6955,9 +7446,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SP-750 AVENGER - Logogram - Arrival
+  m_Name: Weapon Skin - SP-750 AVENGER - Cephalopod Ripple
   m_EditorClassIdentifier: 
-  humanName: Logogram - Arrival
+  humanName: Cephalopod Ripple
   idBytes: 8fbeb2e8e804ee48a4cdabe78fb717ca
   weaponModel: {fileID: -7833083708942397272}
   type: 12
@@ -6971,9 +7462,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SL-900 SAMURAI - Logogram - Arrival
+  m_Name: Weapon Skin - SL-900 SAMURAI - Cephalopod Ripple
   m_EditorClassIdentifier: 
-  humanName: Logogram - Arrival
+  humanName: Cephalopod Ripple
   idBytes: 7470af7acc8a9445a1ef0d3b3252ebfa
   weaponModel: {fileID: -5199482857958006238}
   type: 9
@@ -6987,9 +7478,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - C22 CULVERIN - Gold
+  m_Name: Weapon Skin - C22 CULVERIN - Sovereign Hill
   m_EditorClassIdentifier: 
-  humanName: Gold
+  humanName: Sovereign Hill
   idBytes: eb6bc50cbbb5474a92bc3a386ba0b9f1
   weaponModel: {fileID: 1630718212910043828}
   type: 6
@@ -7036,9 +7527,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - M66 VORTEX - UMC
+  m_Name: Weapon Skin - M66 VORTEX - Pilbara Dust
   m_EditorClassIdentifier: 
-  humanName: UMC
+  humanName: Pilbara Dust
   idBytes: b18e52517adda441a72ae9490266407b
   weaponModel: {fileID: -3367421832996240343}
   type: 2
@@ -7073,9 +7564,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - K45 PULVERIZER - Military
+  m_Name: Weapon Skin - K45 PULVERIZER - High Caliber
   m_EditorClassIdentifier: 
-  humanName: Military
+  humanName: High Caliber
   idBytes: 40c4e23ff6aa1f4291940991dd5120cd
   weaponModel: {fileID: -239671157619968879}
   type: 5
@@ -7089,9 +7580,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON SPINSHOT MNG-549 - Raptor
+  m_Name: Weapon Skin - ARCHON SPINSHOT MNG-549 - Sea Hawk
   m_EditorClassIdentifier: 
-  humanName: Raptor
+  humanName: Sea Hawk
   idBytes: 7cc2209cede06a40ad020ab05ba10364
   weaponModel: {fileID: 1412570943573224075}
   type: 1
@@ -7122,9 +7613,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - KENJI - Gold
+  m_Name: Mech Skin - KENJI - Mine God
   m_EditorClassIdentifier: 
-  humanName: Gold
+  humanName: Mine God
   idBytes: 2632b908155a774f820dfe9ef02ccfcc
   mechModel: {fileID: 3160154348487789334}
 --- !u!114 &6571780553829771226
@@ -7153,9 +7644,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - G88 RAVAGER - Mining
+  m_Name: Weapon Skin - G88 RAVAGER - Fly In Fly Out
   m_EditorClassIdentifier: 
-  humanName: Mining
+  humanName: Fly In Fly Out
   idBytes: 9598dc5d9f43ad48a0cfa5b841322c8e
   weaponModel: {fileID: 5540472648961433852}
   type: 8
@@ -7216,9 +7707,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON DEATH RUSH MCN-777 - BC
+  m_Name: Weapon Skin - ARCHON DEATH RUSH MCN-777 - Archon Gunmetal
   m_EditorClassIdentifier: 
-  humanName: BC
+  humanName: Archon Gunmetal
   idBytes: c46dc22207210b4aab9bc8da99e9abfb
   weaponModel: {fileID: 5267091823301389682}
   type: 8
@@ -7232,9 +7723,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - VIKING - UMC
+  m_Name: Mech Skin - VIKING - Pilbara Dust
   m_EditorClassIdentifier: 
-  humanName: UMC
+  humanName: Pilbara Dust
   idBytes: a391a1fcc241c845b1214ec78d1b8696
   mechModel: {fileID: 6516618555034326667}
 --- !u!114 &6824993537946338243
@@ -7264,9 +7755,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: "Weapon Skin - SG-850 FURORE - Sonn\u014D j\u014Di"
+  m_Name: Weapon Skin - SG-850 FURORE - Rebellion
   m_EditorClassIdentifier: 
-  humanName: "Sonn\u014D j\u014Di"
+  humanName: Rebellion
   idBytes: 226a765c58705644abe697dcc189fd34
   weaponModel: {fileID: -1611039285179004634}
   type: 8
@@ -7280,9 +7771,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - L51 BRUTALIZER - RM
+  m_Name: Weapon Skin - L51 BRUTALIZER - Pyro Crimson
   m_EditorClassIdentifier: 
-  humanName: RM
+  humanName: Pyro Crimson
   idBytes: 72dfa8c66c898f45b6798162396ab2e0
   weaponModel: {fileID: 3488667549969693786}
   type: 9
@@ -7296,9 +7787,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SP-750 AVENGER - Gold
+  m_Name: Weapon Skin - SP-750 AVENGER - Mine God
   m_EditorClassIdentifier: 
-  humanName: Gold
+  humanName: Mine God
   idBytes: 5de2d0a5faed234f8d3ae9d16e227048
   weaponModel: {fileID: -7833083708942397272}
   type: 12
@@ -7312,9 +7803,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - F75 HELLFIRE - Martian Marine Core
+  m_Name: Weapon Skin - F75 HELLFIRE - Shark Skin
   m_EditorClassIdentifier: 
-  humanName: Martian Marine Core
+  humanName: Shark Skin
   idBytes: 317f360de2b3534b960d5200fe53bb22
   weaponModel: {fileID: 4708123554264425782}
   type: 4
@@ -7328,9 +7819,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SL-750 ELIMINATOR - Logogram - Arrival
+  m_Name: Weapon Skin - SL-750 ELIMINATOR - Cephalopod Ripple
   m_EditorClassIdentifier: 
-  humanName: Logogram - Arrival
+  humanName: Cephalopod Ripple
   idBytes: 30c3e2c74172ae46bb8b8fbe45295905
   weaponModel: {fileID: 6316703149202657120}
   type: 0
@@ -7344,9 +7835,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SG-850 FURORE - Purple and White
+  m_Name: Weapon Skin - SG-850 FURORE - Violet Ice
   m_EditorClassIdentifier: 
-  humanName: Purple and White
+  humanName: Violet Ice
   idBytes: a8a5157520184447a83c5c143d9b7e63
   weaponModel: {fileID: -1611039285179004634}
   type: 8
@@ -7360,9 +7851,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - M17 SCORPION - RM
+  m_Name: Weapon Skin - M17 SCORPION - Pyro Crimson
   m_EditorClassIdentifier: 
-  humanName: RM
+  humanName: Pyro Crimson
   idBytes: e942a84f61925341a695142c57155248
   weaponModel: {fileID: 7171280555693468062}
   type: 1
@@ -7376,9 +7867,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SF-950 BUSHWHACKER - Zaibatsu
+  m_Name: Weapon Skin - SF-950 BUSHWHACKER - Verdant Warsui
   m_EditorClassIdentifier: 
-  humanName: Zaibatsu
+  humanName: Verdant Warsui
   idBytes: 4461246ea744a04c95a70e5a43f2566b
   weaponModel: {fileID: 5150888983226521986}
   type: 5
@@ -7392,9 +7883,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON PATROL CNO-950 - Hive
+  m_Name: Weapon Skin - ARCHON PATROL CNO-950 - Telling the Bees
   m_EditorClassIdentifier: 
-  humanName: Hive
+  humanName: Telling the Bees
   idBytes: 2648b4656ad66a45850b348686bba714
   weaponModel: {fileID: -3450499781407857172}
   type: 6
@@ -7408,9 +7899,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ST-1250 VERSYS - Purple and White
+  m_Name: Weapon Skin - ST-1250 VERSYS - Violet Ice
   m_EditorClassIdentifier: 
-  humanName: Purple and White
+  humanName: Violet Ice
   idBytes: d7e0db10a451684f9a6295af6637a979
   weaponModel: {fileID: 4857310000300198231}
   type: 7
@@ -7441,9 +7932,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON STORMLINE PLG-351 - Cybernetics
+  m_Name: Weapon Skin - ARCHON STORMLINE PLG-351 - Ready To Quench
   m_EditorClassIdentifier: 
-  humanName: Cybernetics
+  humanName: Ready To Quench
   idBytes: 6074bc980b2f9b47befede663cc3a8f0
   weaponModel: {fileID: 3099439295613235472}
   type: 12
@@ -7457,9 +7948,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON AMBUSHER GLR-108 - Celtic Knot
+  m_Name: Weapon Skin - ARCHON AMBUSHER GLR-108 - Unbroken Knot
   m_EditorClassIdentifier: 
-  humanName: Celtic Knot
+  humanName: Unbroken Knot
   idBytes: b90bed72ca8a46479637fe1a661483e6
   weaponModel: {fileID: -4650837851044850197}
   type: 7
@@ -7473,11 +7964,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - ARIES - Heavy Metal
+  m_Name: Mech Skin - ARIES - Osmium Scream
   m_EditorClassIdentifier: 
-  humanName: Heavy Metal
+  humanName: Osmium Scream
   idBytes: f166b958c661224296387f9f618e8f7b
   mechModel: {fileID: 1673369590579329074}
+--- !u!114 &7401540925944651577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
+  m_Name: Weapon Skin - P80 PANTHER - Martian Soil
+  m_EditorClassIdentifier: 
+  humanName: Martian Soil
+  idBytes: 4858c4987e67084ab890b23ba09040fb
+  weaponModel: {fileID: 8748492759957013983}
+  type: 12
 --- !u!114 &7517653842385605677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7488,9 +7995,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - C22 CULVERIN - Cassowary
+  m_Name: Weapon Skin - C22 CULVERIN - Martian Mess Maker
   m_EditorClassIdentifier: 
-  humanName: Cassowary
+  humanName: Martian Mess Maker
   idBytes: 5a890f59c96ba446933b08c8f4ec6ffc
   weaponModel: {fileID: 1630718212910043828}
   type: 6
@@ -7504,9 +8011,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - G88 RAVAGER - Hazard
+  m_Name: Weapon Skin - G88 RAVAGER - Barricade Stripes
   m_EditorClassIdentifier: 
-  humanName: Hazard
+  humanName: Barricade Stripes
   idBytes: 23e9cdcd0e43244b991656b48150bbed
   weaponModel: {fileID: 5540472648961433852}
   type: 8
@@ -7535,9 +8042,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - P80 PANTHER - Cassowary
+  m_Name: Weapon Skin - P80 PANTHER - Martian Mess Maker
   m_EditorClassIdentifier: 
-  humanName: Cassowary
+  humanName: Martian Mess Maker
   idBytes: 57036b3f44f60c43a7df5489537c046d
   weaponModel: {fileID: 8748492759957013983}
   type: 12
@@ -7551,9 +8058,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - P80 PANTHER - Gold
+  m_Name: Weapon Skin - P80 PANTHER - Sovereign Hill
   m_EditorClassIdentifier: 
-  humanName: Gold
+  humanName: Sovereign Hill
   idBytes: 0aa64281b4ec994f9a349936478370e4
   weaponModel: {fileID: 8748492759957013983}
   type: 12
@@ -7583,9 +8090,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - CSN-1000 ENDURO - X3W
+  m_Name: Weapon Skin - CSN-1000 ENDURO - Heavy White
   m_EditorClassIdentifier: 
-  humanName: X3W
+  humanName: Heavy White
   idBytes: 4a702bc1da0291479d675c75a2213c5a
   weaponModel: {fileID: -7847625005851001617}
   type: 6
@@ -7629,9 +8136,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - P80 PANTHER - Damascus
+  m_Name: Weapon Skin - P80 PANTHER - Watered Steel
   m_EditorClassIdentifier: 
-  humanName: Damascus
+  humanName: Watered Steel
   idBytes: 53446e3c0fdaaa4cb71c3069c294a4ad
   weaponModel: {fileID: 8748492759957013983}
   type: 12
@@ -7661,9 +8168,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - F75 HELLFIRE - RM
+  m_Name: Weapon Skin - F75 HELLFIRE - Pyro Crimson
   m_EditorClassIdentifier: 
-  humanName: RM
+  humanName: Pyro Crimson
   idBytes: 2bb554f6eaebdf4eabc9b9431d7c299b
   weaponModel: {fileID: 4708123554264425782}
   type: 4
@@ -7677,9 +8184,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - C22 CULVERIN - Damascus
+  m_Name: Weapon Skin - C22 CULVERIN - Watered Steel
   m_EditorClassIdentifier: 
-  humanName: Damascus
+  humanName: Watered Steel
   idBytes: 29acd4c20415514d883b4299f89db8cd
   weaponModel: {fileID: 1630718212910043828}
   type: 6
@@ -7693,9 +8200,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - L51 BRUTALIZER - Gold
+  m_Name: Weapon Skin - L51 BRUTALIZER - Sovereign Hill
   m_EditorClassIdentifier: 
-  humanName: Gold
+  humanName: Sovereign Hill
   idBytes: 5cded3c6b6ee86468a8af4ee69a6d86e
   weaponModel: {fileID: 3488667549969693786}
   type: 9
@@ -7726,9 +8233,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - A35 HOMEWRECKER - Military
+  m_Name: Weapon Skin - A35 HOMEWRECKER - High Caliber
   m_EditorClassIdentifier: 
-  humanName: Military
+  humanName: High Caliber
   idBytes: 173afefd10ecb64ca094e7bd828f5e76
   weaponModel: {fileID: -2611201698177446533}
   type: 7
@@ -7742,9 +8249,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ST-1250 VERSYS - X3W
+  m_Name: Weapon Skin - ST-1250 VERSYS - Heavy White
   m_EditorClassIdentifier: 
-  humanName: X3W
+  humanName: Heavy White
   idBytes: 704ba253db229347bc038a988782df19
   weaponModel: {fileID: 4857310000300198231}
   type: 7
@@ -7758,12 +8265,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON SPINSHOT MNG-549 - Gold
+  m_Name: Weapon Skin - ARCHON SPINSHOT MNG-549 - Bullion
   m_EditorClassIdentifier: 
-  humanName: Gold
+  humanName: Bullion
   idBytes: 86f5ebf1e17c5e4eb6ba113e96c4accd
   weaponModel: {fileID: 1412570943573224075}
   type: 1
+--- !u!114 &8163109765778745727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
+  m_Name: Weapon Skin - ARCHON DEATH RUSH MCN-777 - Daison Sleek
+  m_EditorClassIdentifier: 
+  humanName: Daison Sleek
+  idBytes: 0e1203d038fd9c4daf4aeb54637e4bf5
+  weaponModel: {fileID: 5267091823301389682}
+  type: 8
 --- !u!114 &8233469399879488929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7806,9 +8329,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SL-900 SAMURAI - Shinobi
+  m_Name: Weapon Skin - SL-900 SAMURAI - Shadows Steal Away
   m_EditorClassIdentifier: 
-  humanName: Shinobi
+  humanName: Shadows Steal Away
   idBytes: e67f62f6ef10374b8304defffef98e6e
   weaponModel: {fileID: -5199482857958006238}
   type: 9
@@ -7822,9 +8345,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON HEAVY BFG-800 - Space Marine
+  m_Name: Weapon Skin - ARCHON HEAVY BFG-800 - Praetor Grunge
   m_EditorClassIdentifier: 
-  humanName: Space Marine
+  humanName: Praetor Grunge
   idBytes: 9c3e9eb5d377634abe63c4598e43eec1
   weaponModel: {fileID: 8233469399879488929}
   type: 3
@@ -7838,9 +8361,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON DEATH RUSH MCN-777 - Nerf Gun
+  m_Name: Weapon Skin - ARCHON DEATH RUSH MCN-777 - Less-Than-Lethal
   m_EditorClassIdentifier: 
-  humanName: Nerf Gun
+  humanName: Less-Than-Lethal
   idBytes: b6fde792ee1ea04b8d65c58e81972578
   weaponModel: {fileID: 5267091823301389682}
   type: 8
@@ -7854,9 +8377,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - K45 PULVERIZER - Mining
+  m_Name: Weapon Skin - K45 PULVERIZER - Fly In Fly Out
   m_EditorClassIdentifier: 
-  humanName: Mining
+  humanName: Fly In Fly Out
   idBytes: 80e07578376f9d429c6cef0c97c6408a
   weaponModel: {fileID: -239671157619968879}
   type: 5
@@ -7870,9 +8393,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - F75 HELLFIRE - Hazard
+  m_Name: Weapon Skin - F75 HELLFIRE - Barricade Stripes
   m_EditorClassIdentifier: 
-  humanName: Hazard
+  humanName: Barricade Stripes
   idBytes: 40c1c80573a07c4f96a6297ae99c86a9
   weaponModel: {fileID: 4708123554264425782}
   type: 4
@@ -7908,6 +8431,22 @@ MonoBehaviour:
   brand: {fileID: 0}
   type: 0
   defaultSkin: {fileID: 0}
+--- !u!114 &8414534766906610248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
+  m_Name: Weapon Skin - ARCHON PATROL CNO-950 - Daison Sleek
+  m_EditorClassIdentifier: 
+  humanName: Daison Sleek
+  idBytes: 13ecb55468646547a97c7063d0fda2f3
+  weaponModel: {fileID: -3450499781407857172}
+  type: 6
 --- !u!114 &8468978116416490250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7918,9 +8457,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON HEAVY BFG-800 - Daison Avionics
+  m_Name: Weapon Skin - ARCHON HEAVY BFG-800 - Spot Yellow
   m_EditorClassIdentifier: 
-  humanName: Daison Avionics
+  humanName: Spot Yellow
   idBytes: 3a003c393dd2824fa93bfbaa8a9d9dfe
   weaponModel: {fileID: 8233469399879488929}
   type: 3
@@ -7934,9 +8473,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON PATROL CNO-950 - Space Marine
+  m_Name: Weapon Skin - ARCHON PATROL CNO-950 - Praetor Grunge
   m_EditorClassIdentifier: 
-  humanName: Space Marine
+  humanName: Praetor Grunge
   idBytes: ba1996d797f8c549ab400e879e9accaf
   weaponModel: {fileID: -3450499781407857172}
   type: 6
@@ -7965,9 +8504,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SL-750 ELIMINATOR - 2501 - Tachikoma
+  m_Name: Weapon Skin - SL-750 ELIMINATOR - Two Five Zero One
   m_EditorClassIdentifier: 
-  humanName: 2501 - Tachikoma
+  humanName: Two Five Zero One
   idBytes: a4376463ba8b924f99014cf9837e1cb3
   weaponModel: {fileID: 6316703149202657120}
   type: 0
@@ -7981,9 +8520,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - F75 HELLFIRE - UMC
+  m_Name: Weapon Skin - F75 HELLFIRE - Pilbara Dust
   m_EditorClassIdentifier: 
-  humanName: UMC
+  humanName: Pilbara Dust
   idBytes: 448b3fa949e133498f5a4053c386580e
   weaponModel: {fileID: 4708123554264425782}
   type: 4
@@ -8012,9 +8551,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON RUPTURE FSK-745 - Daison Avionics
+  m_Name: Weapon Skin - ARCHON RUPTURE FSK-745 - Spot Yellow
   m_EditorClassIdentifier: 
-  humanName: Daison Avionics
+  humanName: Spot Yellow
   idBytes: a45f23bf21dfe645ac6dc6981ea1c699
   weaponModel: {fileID: 665102745398348511}
   type: 5
@@ -8028,9 +8567,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SL-750 ELIMINATOR - Neko
+  m_Name: Weapon Skin - SL-750 ELIMINATOR - Catastrophe
   m_EditorClassIdentifier: 
-  humanName: Neko
+  humanName: Catastrophe
   idBytes: e38e0df98cacf24685e89f522ce9b552
   weaponModel: {fileID: 6316703149202657120}
   type: 0
@@ -8044,9 +8583,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - K45 PULVERIZER - Hazard
+  m_Name: Weapon Skin - K45 PULVERIZER - Barricade Stripes
   m_EditorClassIdentifier: 
-  humanName: Hazard
+  humanName: Barricade Stripes
   idBytes: 1fdabc9b1e7ca74e8de7fa507bb0b39f
   weaponModel: {fileID: -239671157619968879}
   type: 5
@@ -8109,9 +8648,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON DEATH RUSH MCN-777 - Daison Avionics
+  m_Name: Weapon Skin - ARCHON DEATH RUSH MCN-777 - Spot Yellow
   m_EditorClassIdentifier: 
-  humanName: Daison Avionics
+  humanName: Spot Yellow
   idBytes: d6f3e18d1fc4cb429c7cf1eb895030e3
   weaponModel: {fileID: 5267091823301389682}
   type: 8
@@ -8125,9 +8664,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON AMBUSHER GLR-108 - Nerf Gun
+  m_Name: Weapon Skin - ARCHON AMBUSHER GLR-108 - Less-Than-Lethal
   m_EditorClassIdentifier: 
-  humanName: Nerf Gun
+  humanName: Less-Than-Lethal
   idBytes: 4c40698a36842c4cb70b5bead79a76cb
   weaponModel: {fileID: -4650837851044850197}
   type: 7
@@ -8156,9 +8695,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SS-1500 VULCAN - Neko
+  m_Name: Weapon Skin - SS-1500 VULCAN - Catastrophe
   m_EditorClassIdentifier: 
-  humanName: Neko
+  humanName: Catastrophe
   idBytes: 247dcf61dc12934988c3037fc199da58
   weaponModel: {fileID: -6386277866023102011}
   type: 2
@@ -8172,9 +8711,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON RUPTURE FSK-745 - Cybernetics
+  m_Name: Weapon Skin - ARCHON RUPTURE FSK-745 - Ready To Quench
   m_EditorClassIdentifier: 
-  humanName: Cybernetics
+  humanName: Ready To Quench
   idBytes: 147f0e4e37b24f4898bc993ccbc3e887
   weaponModel: {fileID: 665102745398348511}
   type: 5
@@ -8209,9 +8748,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON REACH MLR-909 - Celtic Knot
+  m_Name: Weapon Skin - ARCHON REACH MLR-909 - Unbroken Knot
   m_EditorClassIdentifier: 
-  humanName: Celtic Knot
+  humanName: Unbroken Knot
   idBytes: c34c580dc193844d9549e302e27249bb
   weaponModel: {fileID: 8035159187031431144}
   type: 2
@@ -8225,9 +8764,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON SPINSHOT MNG-549 - Space Marine
+  m_Name: Weapon Skin - ARCHON SPINSHOT MNG-549 - Praetor Grunge
   m_EditorClassIdentifier: 
-  humanName: Space Marine
+  humanName: Praetor Grunge
   idBytes: a6b8a378d6f47d49b62187893950fd2b
   weaponModel: {fileID: 1412570943573224075}
   type: 1
@@ -8241,9 +8780,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - SM-1400 BRUTE FORCE - XHANCR
+  m_Name: Weapon Skin - SM-1400 BRUTE FORCE - Nullifier
   m_EditorClassIdentifier: 
-  humanName: XHANCR
+  humanName: Nullifier
   idBytes: 16bd43f6dfe61c4aa2d6283717843973
   weaponModel: {fileID: -475069486376503615}
   type: 1
@@ -8257,9 +8796,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - ARCHON HEAVY BFG-800 - Celtic Knot
+  m_Name: Weapon Skin - ARCHON HEAVY BFG-800 - Unbroken Knot
   m_EditorClassIdentifier: 
-  humanName: Celtic Knot
+  humanName: Unbroken Knot
   idBytes: 884394a6f11c424bb53258e20307e75b
   weaponModel: {fileID: 8233469399879488929}
   type: 3
@@ -8273,9 +8812,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - F75 HELLFIRE - Heavy Metal
+  m_Name: Weapon Skin - F75 HELLFIRE - Osmium Scream
   m_EditorClassIdentifier: 
-  humanName: Heavy Metal
+  humanName: Osmium Scream
   idBytes: 4b091ac55e3e434bbb57af0f82b38666
   weaponModel: {fileID: 4708123554264425782}
   type: 4
@@ -8326,9 +8865,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: "Weapon Skin - SF-950 BUSHWHACKER - Sonn\u014D j\u014Di"
+  m_Name: Weapon Skin - SF-950 BUSHWHACKER - Rebellion
   m_EditorClassIdentifier: 
-  humanName: "Sonn\u014D j\u014Di"
+  humanName: Rebellion
   idBytes: 432e91d4c1629148a2f54cd1d0d0f6b3
   weaponModel: {fileID: 5150888983226521986}
   type: 5
@@ -8342,9 +8881,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - WAR ENFORCER - Raptor
+  m_Name: Mech Skin - WAR ENFORCER - Sea Hawk
   m_EditorClassIdentifier: 
-  humanName: Raptor
+  humanName: Sea Hawk
   idBytes: ead4a800d11fc145a0f41b117d28d0e1
   mechModel: {fileID: 4956909745880066220}
 --- !u!114 &9118838159809701463
@@ -8357,9 +8896,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09a74bd4118b46f68e2f903fa5828e49, type: 3}
-  m_Name: Mech Skin - VIKING - Heavy Metal
+  m_Name: Mech Skin - VIKING - Osmium Scream
   m_EditorClassIdentifier: 
-  humanName: Heavy Metal
+  humanName: Osmium Scream
   idBytes: e6f970f17fa92745a588fbf332f7e687
   mechModel: {fileID: 6516618555034326667}
 --- !u!114 &9133112000684462475
@@ -8402,9 +8941,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - G88 RAVAGER - Cassowary
+  m_Name: Weapon Skin - G88 RAVAGER - Martian Mess Maker
   m_EditorClassIdentifier: 
-  humanName: Cassowary
+  humanName: Martian Mess Maker
   idBytes: 5d9c7f2b1410084fafddfdd8433e0dc3
   weaponModel: {fileID: 5540472648961433852}
   type: 8
@@ -8418,9 +8957,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
-  m_Name: Weapon Skin - L51 BRUTALIZER - Martian Marine Core
+  m_Name: Weapon Skin - L51 BRUTALIZER - Shark Skin
   m_EditorClassIdentifier: 
-  humanName: Martian Marine Core
+  humanName: Shark Skin
   idBytes: ed7045e412aaa246af26a16d8692059b
   weaponModel: {fileID: 3488667549969693786}
+  type: 9
+--- !u!114 &9209385449616921276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e812c393b54b5ea5261f4a4f589e52, type: 3}
+  m_Name: Weapon Skin - ARCHON NEO LSG-636 - Daison Sleek
+  m_EditorClassIdentifier: 
+  humanName: Daison Sleek
+  idBytes: 6c51b8a9e49bc84e9e8b0ce155362ba6
+  weaponModel: {fileID: 6824993537946338243}
   type: 9

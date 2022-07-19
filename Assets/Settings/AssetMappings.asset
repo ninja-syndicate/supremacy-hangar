@@ -175,7 +175,7 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-  - containsError: 0
+  - containsError: 1
     dataMechSkin: {fileID: -6924407672097071136, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
       type: 2}
     skinReference:
@@ -183,7 +183,7 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-  - containsError: 0
+  - containsError: 1
     dataMechSkin: {fileID: -1383009038386425828, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
       type: 2}
     skinReference:
