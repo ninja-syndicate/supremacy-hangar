@@ -79,9 +79,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  start: {fileID: 8300000, guid: 2624ccd15aced2c438dc4084b04f4cc1, type: 3}
-  loop: {fileID: 8300000, guid: 39497c971646eb148bdf534e767b7b4d, type: 3}
-  end: {fileID: 8300000, guid: b48e726a52263c445ae629f84d1f59eb, type: 3}
+  start: {fileID: 8300000, guid: 2915551545dad8941902c36670abc88b, type: 3}
+  loop: {fileID: 8300000, guid: aae535b4d5dadc84a9ff21cd37de0fdf, type: 3}
+  end: {fileID: 8300000, guid: ebd88f3a24acab14aaabbe45c4ad71be, type: 3}
   myAudioSource: {fileID: 6103409504894073598}
   filledTargetTransform: {fileID: 0}
 --- !u!82 &6103409504894073598
@@ -97,16 +97,16 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.7
-  m_Pitch: 0.7
+  m_Volume: 0.925
+  m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  DopplerLevel: 0
+  MinDistance: 23.18
+  MaxDistance: 31.69
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -141,7 +141,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

@@ -63,9 +63,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  start: {fileID: 8300000, guid: 2624ccd15aced2c438dc4084b04f4cc1, type: 3}
-  loop: {fileID: 8300000, guid: 39497c971646eb148bdf534e767b7b4d, type: 3}
-  end: {fileID: 8300000, guid: b48e726a52263c445ae629f84d1f59eb, type: 3}
+  start: {fileID: 8300000, guid: 8f26e61aa90577e4e917bbbe1ad4cb76, type: 3}
+  loop: {fileID: 8300000, guid: adc25d64d2a041944bccfd97e0e4e4b5, type: 3}
+  end: {fileID: 8300000, guid: 482589f37522fb94480d448e948014a9, type: 3}
   myAudioSource: {fileID: 1841272802482853332}
   stops: []
   initialStop: 0
@@ -109,7 +109,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.7
+  m_Volume: 0.589
   m_Pitch: 1
   Loop: 0
   Mute: 0
