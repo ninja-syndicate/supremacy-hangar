@@ -14,8 +14,8 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Sending notification to Slack.'
-        slackSend channel: '#test-notifications', 
-          color: '#10A90E2',
+        slackSend channel: '#ops-deployments', 
+          color: '#4A90E2',
           message: "Started *supremacy-hangar* build. Job name: *${env.JOB_NAME}*. Build no: *${env.BUILD_NUMBER}*. More info: <${env.BUILD_URL}|supremacy-hangar-build>"
 
         script {
@@ -41,15 +41,15 @@ pipeline {
       post {
         success {
           echo 'Build stage successful.'
-          slackSend channel: '#test-notifications',
+          slackSend channel: '#ops-deployments',
             color: 'good', 
-            message: "*${currentBuild.currentResult}:* *supremacy-hangar* build has *succeded* :innocent:. Job name: *${env.JOB_NAME}*. Build no: *${env.BUILD_NUMBER}*. More info: <${env.BUILD_URL}|supremacy-hangar-build>"
+            message: ":white_check_mark: *supremacy-hangar* build has *succeded*. Job name: *${env.JOB_NAME}*. Build no: *${env.BUILD_NUMBER}*. More info: <${env.BUILD_URL}|supremacy-hangar-build>"
         }
         failure {
           echo 'Build stage unsuccessful.'
-          slackSend channel: '#test-notifications',
+          slackSend channel: '#ops-deployments',
           color: 'danger', 
-          message: "*${currentBuild.currentResult}:* *supremacy-hangar* build has *failed* :astonished:. Job name: *${env.JOB_NAME}*. Build no: *${env.BUILD_NUMBER}*. More info: <${env.BUILD_URL}|supremacy-hangar-build>"
+          message: ":x: *supremacy-hangar* build has *failed*. Job name: *${env.JOB_NAME}*. Build no: *${env.BUILD_NUMBER}*. More info: <${env.BUILD_URL}|supremacy-hangar-build>"
         }
       }
     } 
@@ -72,15 +72,15 @@ pipeline {
       post {
           success {
               echo 'Deploy build stage successful.'
-              slackSend channel: '#test-notifications',
+              slackSend channel: '#ops-deployments',
               color: 'good', 
-              message: "*${currentBuild.currentResult}:* *supremacy-hangar* build deploy has *succeded* :innocent:. More info: <${env.BUILD_URL}|supremacy-hangar-deploy>"
+              message: ":white_check_mark: *supremacy-hangar* build deploy has *succeded*. Job name: *${env.JOB_NAME}*. Build no: *${env.BUILD_NUMBER}*. More info: <${env.BUILD_URL}|supremacy-hangar-deploy>"
           }
           failure {
               echo 'Deploy build stage successful.'
-              slackSend channel: '#test-notifications',
+              slackSend channel: '#ops-deployments',
                 color: 'danger', 
-                message: "*${currentBuild.currentResult}:* *supremacy-hangar* build deploy has *failed* :astonished:. More info: <${env.BUILD_URL}|supremacy-hangar-deploy>"
+                message: ":x: *supremacy-hangar* build deploy has *failed*. Job name: *${env.JOB_NAME}*. Build no: *${env.BUILD_NUMBER}*. More info: <${env.BUILD_URL}|supremacy-hangar-deploy>"
           }
       }
     }
@@ -98,15 +98,15 @@ pipeline {
         post {
           success {
               echo 'Deploy addressables stage successful.'
-              slackSend channel: '#test-notifications',
+              slackSend channel: '#ops-deployments',
                 color: 'good', 
-                message: "*${currentBuild.currentResult}:* *supremacy-hangar* addressables deploy has *succeded* :innocent:. More info: <${env.BUILD_URL}|supremacy-hangar-deploy>"
+                message: ":white_check_mark: *supremacy-hangar* addressables deploy has *succeded*. Job name: *${env.JOB_NAME}*. Build no: *${env.BUILD_NUMBER}*. More info: <${env.BUILD_URL}|supremacy-hangar-deploy>"
           }
           failure {
               echo 'Deploy addressables stage successful.'
-              slackSend channel: '#test-notifications',
+              slackSend channel: '#ops-deployments',
                 color: 'danger', 
-                message: "*${currentBuild.currentResult}:* *supremacy-hangar* addressables deploy has *failed* :astonished:. More info: <${env.BUILD_URL}|supremacy-hangar-deploy>"
+                message: ":x: *supremacy-hangar* addressables deploy has *failed*. Job name: *${env.JOB_NAME}*. Build no: *${env.BUILD_NUMBER}*. More info: <${env.BUILD_URL}|supremacy-hangar-deploy>"
           }
         }
     } 
