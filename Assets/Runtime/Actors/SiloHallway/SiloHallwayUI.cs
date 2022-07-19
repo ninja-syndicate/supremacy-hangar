@@ -48,7 +48,9 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
         private float nextClockUpdate = -1;
         private DateTime counterValue;
 
-        private bool crateOpenSet = false;
+        private bool crateOpenSet;
+
+        private bool subscribed;
 
         public void Awake()
         {
@@ -62,6 +64,7 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
             siloNumber.text = (siloState.SiloNumber + 1).ToString();
 
             this.bus = bus;
+            subscribed = true;
             bus.Subscribe<AssetLoadingProgressSignal>(ProgressUpdated);
 
             PopulateDisplay();
@@ -95,8 +98,9 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
 
         public void OnEnable()
         {
-            if (bus == null) return;
+            if (bus == null || subscribed) return;
             bus.Subscribe<AssetLoadingProgressSignal>(ProgressUpdated);
+            subscribed = true;
         }
 
         public void OnDisable()
