@@ -109,7 +109,10 @@ namespace SupremacyHangar.Editor.ContentLoader
                             targetAssetGuid = AssetDatabase.FindAssets($"{targetName} t:Prefab");
                             break;
                         case ListType.WeaponModel:
-                            targetAssetGuid = AssetDatabase.FindAssets($"{targetName} t:Prefab");
+                            var targetWeaponModel = dataKey as WeaponModel;
+                            string modelBrandName = targetWeaponModel.Brand?.HumanName;
+                            targetName = targetWeaponModel.Type.ToString();
+                            targetAssetGuid = AssetFinder("Assets/Content/Weapons", modelBrandName, targetName, targetName);
                             break;
                         case ListType.WeaponSkin:
                             if (!Directory.Exists("Assets/Content/Weapons"))
@@ -118,10 +121,9 @@ namespace SupremacyHangar.Editor.ContentLoader
                                 directoryMissing = true;
                                 continue;
                             }
-                            var targetWeapon = dataKey as WeaponSkin;
-                            string weaponSkinfolderPath = SearchSubDirs("Assets/Content/Weapons", targetWeapon.Type.ToString());
-                            if (weaponSkinfolderPath != null)
-                                targetAssetGuid = AssetDatabase.FindAssets($"{targetName} t:Skin", new[] { $"{weaponSkinfolderPath}" });
+                            var targetWeapon = dataKey as WeaponSkin; 
+                            string skinBrandName = targetWeapon.WeaponModel.Brand?.HumanName;
+                            targetAssetGuid = AssetFinder("Assets/Content/Weapons", skinBrandName, targetWeapon.Type.ToString(), targetWeapon.Type.ToString());
                             break;
                         case ListType.PowerCore:
                             targetAssetGuid = AssetDatabase.FindAssets($"{targetName} t:Prefab");
@@ -131,7 +133,7 @@ namespace SupremacyHangar.Editor.ContentLoader
                             break;
                     }
 
-                    if (targetAssetGuid.Length > 0 && targetAssetGuid[0] != null)
+                    if (targetAssetGuid != null && targetAssetGuid.Length > 0 && targetAssetGuid[0] != null)
                     {
                         switch (type)
                         {
@@ -164,6 +166,30 @@ namespace SupremacyHangar.Editor.ContentLoader
             }
 
             if (key.paginate) key.SetPage(firstNewItemIndex / key.pageSize);
+        }
+
+        private string[] AssetFinder(string dirPath, string brandName, string folderName, string assetName)
+        {
+            if (brandName != null)
+            {
+                string weaponModelFolder = SearchSubDirs(dirPath, brandName);
+
+                if (weaponModelFolder != null)
+                {
+                    string weaponfolderPath = SearchSubDirs(weaponModelFolder, folderName);
+
+                    if (weaponfolderPath != null)
+                        return AssetDatabase.FindAssets($"{assetName} t:Prefab", new[] { $"{weaponfolderPath}" });
+                    else
+                    {
+                        Debug.LogError($"Weapon type folder NOT found: {dirPath}/{brandName}/{assetName}. No Asset Set");
+                        return null;
+                    }
+                }
+
+                Debug.LogError($"Brand folder NOT found: {dirPath}/{brandName}. No Asset Set");
+            }
+            return null;
         }
 
         private string SearchSubDirs(string dir, string targetFolder)
