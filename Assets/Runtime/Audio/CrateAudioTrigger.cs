@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SupremacyHangar.Runtime.Silo
+namespace SupremacyHangar.Runtime.Audio
 {
     public class CrateAudioTrigger : MonoBehaviour
     {

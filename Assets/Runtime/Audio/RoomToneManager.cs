@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
-namespace SupremacyHangar
+namespace SupremacyHangar.Runtime.Audio
 {
     public class RoomToneManager : MonoBehaviour
     {
