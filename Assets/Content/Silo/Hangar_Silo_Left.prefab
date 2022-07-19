@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 821446330027626394}
   - component: {fileID: 6324144898081148458}
   - component: {fileID: 7723140846339494500}
+  - component: {fileID: 932424546495164700}
   m_Layer: 0
   m_Name: Hangar_Silo_Left
   m_TagString: Untagged
@@ -74,6 +75,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnPoint: {fileID: 875791368958960670}
+--- !u!114 &932424546495164700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12822200296412448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe0bf6aaf3296c468f419e7421cf03c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newClip: {fileID: 8300000, guid: f401b74b4e087bd46b3a77225e1bccd5, type: 3}
 --- !u!1 &843654189131952629
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,6 +885,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Elevator Right
       objectReference: {fileID: 0}
+    - target: {fileID: 1841272802482853332, guid: 729215ee3505540e2bde466d223ab637,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.45
+      objectReference: {fileID: 0}
     - target: {fileID: 4074103181461067162, guid: 729215ee3505540e2bde466d223ab637,
         type: 3}
       propertyPath: stops.Array.data[0].x
@@ -1034,6 +1053,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Elevator Left
+      objectReference: {fileID: 0}
+    - target: {fileID: 1841272802482853332, guid: 729215ee3505540e2bde466d223ab637,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 4074103181461067162, guid: 729215ee3505540e2bde466d223ab637,
         type: 3}

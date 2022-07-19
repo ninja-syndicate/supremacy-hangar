@@ -117,7 +117,6 @@ namespace SupremacyHangar.Runtime
 		private bool RightFoot;
 		private float FootstepTimer;
 		private bool Stepped;
-
 		public void Awake()
 		{
 			// get a reference to our main camera
@@ -127,6 +126,8 @@ namespace SupremacyHangar.Runtime
 			}
 			if (!ValidateAndSetupComponentReferences()) return;
 			interactionPromptControllerSet = interactionPromptController != null;
+
+			AudioListener.pause = false;
 		}
 
 		[Inject]
@@ -161,6 +162,7 @@ namespace SupremacyHangar.Runtime
 				bus.Subscribe<PauseGameSignal>(Paused);
 			}
 
+
 			if (!BindToInputs()) return;
 		}
 		
@@ -186,11 +188,13 @@ namespace SupremacyHangar.Runtime
 		private void Resumed(ResumeGameSignal obj)
 		{
 			paused = false;
+			AudioListener.pause = false;
 		}
 		
 		private void Paused(PauseGameSignal obj)
 		{
 			paused = true;
+			AudioListener.pause = true;
 		}
 
 		private bool ValidateAndSetupComponentReferences()

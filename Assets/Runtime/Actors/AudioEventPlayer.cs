@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 namespace SupremacyHangar.Runtime.Actors
 {
     public class AudioEventPlayer : MonoBehaviour
     {
         [SerializeField] private AudioSource audioSource;
+        [SerializeField] private AudioMixerGroup audioMixer;
         private bool audioSourceSet;
         
         public void Awake()
@@ -36,6 +38,8 @@ namespace SupremacyHangar.Runtime.Actors
                     return;
                 }
             }
+
+            audioSource.outputAudioMixerGroup = audioMixer;
 
             audioSourceSet = true;
         }          
