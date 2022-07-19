@@ -115,7 +115,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DrawOrder: 0
     - _DstBlend: 0
-    - _EmissiveAmount: 0.04
+    - _EmissiveAmount: 0.12
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
