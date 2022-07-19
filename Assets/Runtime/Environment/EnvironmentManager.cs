@@ -378,6 +378,7 @@ namespace SupremacyHangar.Runtime.Environment
             {
                 _siloSignalHandler.CloseSilo();
                 _currentSilo.SiloSpawned = false;
+                _currentSilo = null;
             }
             else if (!waitOnWindow && loadedSilo)
                 UnloadAssetsAfterSiloClosed();
@@ -424,7 +425,6 @@ namespace SupremacyHangar.Runtime.Environment
 
         private void UnloadAssetsAfterSiloClosed()
         {
-            //_currentSilo = null;
             UnityEngine.AddressableAssets.Addressables.ReleaseInstance(loadedSilo);
         }
 

@@ -64,6 +64,14 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
             this.bus = bus;
             bus.Subscribe<AssetLoadingProgressSignal>(ProgressUpdated);
 
+            PopulateDisplay();
+
+            SiloStateChanged(siloState.CurrentState);
+            siloState.OnStateChanged += SiloStateChanged;
+        }
+
+        private void PopulateDisplay()
+        {
             switch (siloState.Contents)
             {
                 case Mech mech:
@@ -77,15 +85,12 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
                     enableCounter = true;
                     counterValue = box.CanOpenOn;
                     break;
-               default:
-                   UpdateTypeString("Empty");
-                   UpdateName1("");
-                   UpdateName2("");
-                   break;
+                default:
+                    UpdateTypeString("Empty");
+                    UpdateName1("");
+                    UpdateName2("");
+                    break;
             }
-            
-            SiloStateChanged(siloState.CurrentState);
-            siloState.OnStateChanged += SiloStateChanged;
         }
 
         public void OnEnable()
@@ -131,7 +136,8 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
                     interactionButtonText.text = loadingText;
                     break;
                 case SiloState.StateName.Loaded:
-                    interactionButton.gameObject.SetActive(false);
+                    interactionButton.gameObject.SetActive(false); 
+                    PopulateDisplay();
                     break;
                 case SiloState.StateName.LoadedWithCrate:
                     interactionButton.gameObject.SetActive(true);
