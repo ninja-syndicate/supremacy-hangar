@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Archon Miltech - Weapon - BFG
+  m_EditorClassIdentifier: 
+  m_GroupName: New Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 39a8688449f1bd840b7ea2c43a186701
+  m_SerializeEntries:
+  - m_GUID: bc7344ee3a65e6c458117e3279961efc
+    m_Address: Archon Miltech/BFG.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 79f8e978f454ac34c97af229dd7c10a3, type: 2}
+    - {fileID: 11400000, guid: ec6f490e99abf5049885ad7c411f9f3d, type: 2}

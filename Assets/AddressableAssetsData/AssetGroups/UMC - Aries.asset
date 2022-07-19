@@ -18,7 +18,7 @@ MonoBehaviour:
   m_GUID: eef4e252679a11e40a42a09bc6ee448a
   m_SerializeEntries:
   - m_GUID: bf4c340c6029af34e92acbd4f4bfcaf1
-    m_Address: Mech - Aries.prefab
+    m_Address: Aries.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

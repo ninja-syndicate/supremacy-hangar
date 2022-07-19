@@ -578,19 +578,236 @@ MonoBehaviour:
       m_EditorAssetChanged: 0
   weaponModels:
   - containsError: 0
+    data: {fileID: 7171280555693468062, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: 47f3ca35e1cdc99498676a311091f5b1
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 0
+    data: {fileID: 8748492759957013983, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: 179bc6ade4c746d4c9da575f64b9cb81
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 0
+    data: {fileID: -239671157619968879, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: 9b5fc7a3fe03baf45ba990a5ad976bfa
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 0
+    data: {fileID: 5540472648961433852, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: ae1cfa1d253472245ace09020364853a
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 0
+    data: {fileID: -3367421832996240343, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: 4f58a4433dbc3a54d86c808ecf74f013
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 0
+    data: {fileID: 3488667549969693786, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: 84d35d42104708b4db9972189420feb7
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 0
+    data: {fileID: 1630718212910043828, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: b19b93b9f042a9543a0852c636d79b43
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 0
+    data: {fileID: -2611201698177446533, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: 2890ac013e2285c45a6c6dc8c6b68be0
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 0
+    data: {fileID: 4708123554264425782, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: 55864d51dbe05e8489b2d66235800b5f
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 0
+    data: {fileID: 1412570943573224075, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: f2f8e8bfb92c38f448c0e5b607d4a71a
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 0
+    data: {fileID: 3099439295613235472, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: 408a2743837f5c84499a05b6690b4d41
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 0
+    data: {fileID: 665102745398348511, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: 288e1ad91b875a3459cae80d37a41bd4
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 0
+    data: {fileID: 5267091823301389682, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: d5a0039806876eb4a800994047924c84
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 0
+    data: {fileID: 8035159187031431144, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: 94417628d4d1cdd4981cb38d666371b7
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 0
+    data: {fileID: 6824993537946338243, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: f1be6fbfb8534144988f44719ace20df
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 0
+    data: {fileID: -3450499781407857172, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: da9b40a09785e80499318f680756a157
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 0
+    data: {fileID: -4650837851044850197, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: 65e6558ff3ac14542a1d5c4a3d5c9338
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 0
     data: {fileID: 8233469399879488929, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
     reference:
       m_AssetGUID: bc7344ee3a65e6c458117e3279961efc
       m_SubObjectName: 
       m_SubObjectType: 
-      m_EditorAssetChanged: 0
+      m_EditorAssetChanged: 1
   - containsError: 0
-    data: {fileID: -2611201698177446533, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    data: {fileID: -475069486376503615, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
     reference:
       m_AssetGUID: a451efacf962cac43a044b9bfc43f1d6
       m_SubObjectName: 
       m_SubObjectType: 
-      m_EditorAssetChanged: 0
+      m_EditorAssetChanged: 1
+  - containsError: 0
+    data: {fileID: -7833083708942397272, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: 280fa5334662c8c43a34538815b13a89
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 0
+    data: {fileID: 5150888983226521986, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: b7baf662314dfad448f84434bf6fabdc
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 0
+    data: {fileID: -1611039285179004634, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: 9afb89adbbf56df498374416a13c478c
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 0
+    data: {fileID: -6386277866023102011, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: 9d1480ac5e02f294f87ad07c8bb9f4ce
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 0
+    data: {fileID: -5199482857958006238, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: 5c831e6f8cd3a8743bd56220d3dffbfe
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 0
+    data: {fileID: -7847625005851001617, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: 4ec45236eedfea34f97d883fe19cd22b
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 0
+    data: {fileID: 4857310000300198231, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: ced35bbbe921a054896515eda8c0f001
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 0
+    data: {fileID: 6316703149202657120, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: 141ff2e1fc082df439a060f98eedf6ae
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 0
+    data: {fileID: -550142265457271199, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: 141ff2e1fc082df439a060f98eedf6ae
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 0
+    data: {fileID: -4907119830884499388, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: 141ff2e1fc082df439a060f98eedf6ae
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 0
+    data: {fileID: -4298890167281150644, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: 141ff2e1fc082df439a060f98eedf6ae
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 0
+    data: {fileID: -2223087200800533975, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: 141ff2e1fc082df439a060f98eedf6ae
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 0
+    data: {fileID: 5488789111230038225, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: 141ff2e1fc082df439a060f98eedf6ae
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 0
+    data: {fileID: -1273631357190281382, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
+    reference:
+      m_AssetGUID: 141ff2e1fc082df439a060f98eedf6ae
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
   weaponSkins:
   - containsError: 0
     data: {fileID: 5065763395433890026, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}

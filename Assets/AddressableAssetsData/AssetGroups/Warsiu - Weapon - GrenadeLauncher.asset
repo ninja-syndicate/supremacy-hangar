@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Warsiu - Weapon - GrenadeLauncher
+  m_EditorClassIdentifier: 
+  m_GroupName: Warsiu - Weapon - GrenadeLauncher
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 9eec957fc6c55d24782ab5e40638e564
+  m_SerializeEntries:
+  - m_GUID: ced35bbbe921a054896515eda8c0f001
+    m_Address: Warsui/GrenadeLauncher.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 74f7143fa2607d54c83a5b1323ed57bb, type: 2}
+    - {fileID: 11400000, guid: c32d2e1a03ae1c14a8d72fd4c02e65de, type: 2}

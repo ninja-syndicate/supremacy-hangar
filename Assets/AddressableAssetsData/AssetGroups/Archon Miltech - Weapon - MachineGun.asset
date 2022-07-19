@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Archon Miltech - Weapon - MachineGun
+  m_EditorClassIdentifier: 
+  m_GroupName: New Group7
+  m_Data:
+    m_SerializedData: []
+  m_GUID: d028bac0212dbf0408b4115d4d726d79
+  m_SerializeEntries:
+  - m_GUID: d5a0039806876eb4a800994047924c84
+    m_Address: Archon Miltech/MachineGun.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: b0ab40f1e08626b47b03d9bf5017487b, type: 2}
+    - {fileID: 11400000, guid: 8133652c6d3f3ef4a8ff386fdd998b1f, type: 2}
