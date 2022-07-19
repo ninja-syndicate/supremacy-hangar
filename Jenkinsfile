@@ -17,7 +17,6 @@ pipeline {
         slackSend channel: '#ops-deployments', 
           color: '#4A90E2',
           message: ":arrow_upper_right: *supremacy-hangar* build has *started*. Job name: *${env.JOB_NAME}*. Build no: *${env.BUILD_NUMBER}*. More info: <${env.BUILD_URL}|supremacy-hangar-build>"
-
         script {
           if (env.BRANCH_NAME == 'develop') {
               echo 'Prewarm started'
