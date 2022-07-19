@@ -16,11 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: b5e9f84759c7b734c9123bd1d7d63a2d
-  m_SerializeEntries:
-  - m_GUID: 7a99f688e3fb8354ea2661c348113d6f
-    m_Address: Mech - War Enforcer.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
   m_SchemaSet:
