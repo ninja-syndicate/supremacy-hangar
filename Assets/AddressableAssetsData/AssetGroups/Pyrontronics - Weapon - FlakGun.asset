@@ -16,11 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 8e8008fa7d35b7f41a5ec823e3a4317d
-  m_SerializeEntries:
-  - m_GUID: 9b5fc7a3fe03baf45ba990a5ad976bfa
-    m_Address: Pyrotronics/FlakGun.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
   m_SchemaSet:
