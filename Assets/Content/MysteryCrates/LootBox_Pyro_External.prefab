@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 9204725431603856}
   - component: {fileID: 2174717275478758057}
   - component: {fileID: 8531992754805495430}
+  - component: {fileID: 4342403341118387374}
   m_Layer: 0
   m_Name: LootBox_Pyro_External
   m_TagString: Untagged
@@ -205,6 +206,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &4342403341118387374
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5735325635755820770}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 21.1, y: 15.09, z: 21.91}
+  m_Center: {x: 0, y: 7.4, z: 0}
 --- !u!1 &7456238410436540780
 GameObject:
   m_ObjectHideFlags: 0

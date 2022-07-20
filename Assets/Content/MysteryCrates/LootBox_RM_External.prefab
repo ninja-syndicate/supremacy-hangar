@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 2196340726661981285}
   - component: {fileID: 6058140090421835568}
   - component: {fileID: 5481072699500616205}
+  - component: {fileID: 4927234436494183326}
   m_Layer: 0
   m_Name: LootBox_RM_External
   m_TagString: Untagged
@@ -192,6 +193,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &4927234436494183326
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7554776949719250077}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 42.18, y: 29.7, z: 43.5}
+  m_Center: {x: 0, y: 14.9, z: 0}
 --- !u!1 &8680401395655079794
 GameObject:
   m_ObjectHideFlags: 0
