@@ -205,11 +205,11 @@ namespace SupremacyHangar.Runtime.ContentLoader
                         Debug.LogError($"No Weapon mapping found for {weapon.StaticID}");
                         break;
                     }
-                    if (!mappings.WeaponSkinMappingByGuid.TryGetValue(weapon.Skin.StaticID, out weapon.WeaponSkinDetails))
-                    {
-                        Debug.LogError($"No Weapon Skin mapping found for {weapon.Skin.StaticID}");
-                        break;
-                    }
+                    //if (!mappings.WeaponSkinMappingByGuid.TryGetValue(weapon.Skin.StaticID, out weapon.WeaponSkinDetails))
+                    //{
+                    //    Debug.LogError($"No Weapon Skin mapping found for {weapon.Skin.StaticID}");
+                    //    break;
+                    //}
                     break;
                 default:
                     Debug.LogError($"Unknown silo of type {silo}.");

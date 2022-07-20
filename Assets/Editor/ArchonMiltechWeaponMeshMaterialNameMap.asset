@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ef88128b2778a4b8dc7c8405edbc44, type: 3}
+  m_Name: ArchonMiltechWeaponMeshMaterialNameMap
+  m_EditorClassIdentifier: 
+  MaterialNameMap:
+  - Mesh: {fileID: 8347601449702216776, guid: bc7344ee3a65e6c458117e3279961efc, type: 3}
+    MaterialNames: []
+  - Mesh: {fileID: 8347601449702216776, guid: da9b40a09785e80499318f680756a157, type: 3}
+    MaterialNames: []
+  - Mesh: {fileID: 8347601449702216776, guid: 288e1ad91b875a3459cae80d37a41bd4, type: 3}
+    MaterialNames: []
+  - Mesh: {fileID: 8347601449702216776, guid: 65e6558ff3ac14542a1d5c4a3d5c9338, type: 3}
+    MaterialNames: []
+  - Mesh: {fileID: 8347601449702216776, guid: f1be6fbfb8534144988f44719ace20df, type: 3}
+    MaterialNames: []
+  - Mesh: {fileID: 8347601449702216776, guid: d5a0039806876eb4a800994047924c84, type: 3}
+    MaterialNames: []
+  - Mesh: {fileID: 8347601449702216776, guid: f2f8e8bfb92c38f448c0e5b607d4a71a, type: 3}
+    MaterialNames: []
+  - Mesh: {fileID: 8347601449702216776, guid: 94417628d4d1cdd4981cb38d666371b7, type: 3}
+    MaterialNames: []
+  - Mesh: {fileID: 8347601449702216776, guid: 408a2743837f5c84499a05b6690b4d41, type: 3}
+    MaterialNames: []
