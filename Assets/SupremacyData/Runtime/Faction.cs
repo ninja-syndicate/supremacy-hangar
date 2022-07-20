@@ -5,8 +5,8 @@ namespace SupremacyData.Runtime
     public class Faction : BaseRecord
     {
         public string Description => description;
-        public string LogoURL => humanName;
-        public string BackgroundURL => humanName;
+        public string LogoURL => logoURL;
+        public string BackgroundURL => backgroundURL;
         public Color PrimaryColor => primaryColor;
         public Color SecondaryColor => secondaryColor;
         public Color BackgroundColor => backgroundColor;
