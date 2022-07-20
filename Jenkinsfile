@@ -20,19 +20,19 @@ pipeline {
         script {
           if (env.BRANCH_NAME == 'develop') {
               echo 'Prewarm started'
-              bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile prewarm_log.txt -executeMethod BuildSystem.CLI.PreWarm -addressablesLocation staging"
+              bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile - prewarm_log.txt -executeMethod BuildSystem.CLI.PreWarm -addressablesLocation staging"
               echo 'Prewarm completed'
 
               echo 'Build started'
-              bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile builds_log.txt -executeMethod BuildSystem.CLI.BuildWebGL -addressablesLocation staging"
+              bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile - builds_log.txt -executeMethod BuildSystem.CLI.BuildWebGL -addressablesLocation staging"
               echo 'Build completed'
           } else {
               echo 'Prewarm started'
-              bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile prewarm_log.txt -executeMethod BuildSystem.CLI.PreWarm -addressablesLocation ${deployEnv}"
+              bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile - prewarm_log.txt -executeMethod BuildSystem.CLI.PreWarm -addressablesLocation ${deployEnv}"
               echo 'Prewarm completed'
 
               echo 'Build started'
-              bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile builds_log.txt -executeMethod BuildSystem.CLI.BuildWebGL -addressablesLocation ${deployEnv}"
+              bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile - builds_log.txt -executeMethod BuildSystem.CLI.BuildWebGL -addressablesLocation ${deployEnv}"
               echo 'Build completed'
           }
         }
@@ -42,7 +42,7 @@ pipeline {
           echo 'Build stage successful.'
           slackSend channel: '#ops-deployments',
             color: 'good', 
-            message: ":white_check_mark: *supremacy-hangar* build has *succeded*. Job name: *${env.JOB_NAME}*. Build no: *${env.BUILD_NUMBER}*. More info: <${env.BUILD_URL}|supremacy-hangar-build>"
+            message: ":white_check_mark: *supremacy-hangar* build has *succeeded*. Job name: *${env.JOB_NAME}*. Build no: *${env.BUILD_NUMBER}*. More info: <${env.BUILD_URL}|supremacy-hangar-build>"
         }
         failure {
           echo 'Build stage unsuccessful.'
@@ -73,7 +73,7 @@ pipeline {
               echo 'Deploy build stage successful.'
               slackSend channel: '#ops-deployments',
               color: 'good', 
-              message: ":white_check_mark: *supremacy-hangar* build deploy has *succeded*. Job name: *${env.JOB_NAME}*. Build no: *${env.BUILD_NUMBER}*. More info: <${env.BUILD_URL}|supremacy-hangar-deploy>"
+              message: ":white_check_mark: *supremacy-hangar* build deploy has *succeeded*. Job name: *${env.JOB_NAME}*. Build no: *${env.BUILD_NUMBER}*. More info: <${env.BUILD_URL}|supremacy-hangar-deploy>"
           }
           failure {
               echo 'Deploy build stage successful.'
@@ -99,7 +99,7 @@ pipeline {
               echo 'Deploy addressables stage successful.'
               slackSend channel: '#ops-deployments',
                 color: 'good', 
-                message: ":white_check_mark: *supremacy-hangar* addressables deploy has *succeded*. Job name: *${env.JOB_NAME}*. Build no: *${env.BUILD_NUMBER}*. More info: <${env.BUILD_URL}|supremacy-hangar-deploy>"
+                message: ":white_check_mark: *supremacy-hangar* addressables deploy has *succeeded*. Job name: *${env.JOB_NAME}*. Build no: *${env.BUILD_NUMBER}*. More info: <${env.BUILD_URL}|supremacy-hangar-deploy>"
           }
           failure {
               echo 'Deploy addressables stage successful.'
