@@ -8,9 +8,11 @@ namespace SupremacyData.Runtime
         {
             ShieldGenerator,
             Accelorator,
+            Interceptor,
+            DroneLauncher,
         }
         
-        private Brand Brand => brand;
+        public Brand Brand => brand;
         public ModelType Type => type;
 
         public UtilitySkin DefaultSkin => defaultSkin;

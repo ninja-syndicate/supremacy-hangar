@@ -93,11 +93,11 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
                     UpdateName1(weapon);
                     UpdateName2(weapon);
                     break;
-                //case Utility utility:
-                //UpdateTypeString(utility.UtilityModelDetails.Data.Type.ToString());
-                //UpdateName1(utility);
-                //UpdateName2(utility);
-                //break;
+                case Utility utility:
+                    UpdateTypeString(utility.UtilityModelDetails.Data.Type.ToString());
+                    UpdateName1(utility);
+                    UpdateName2(utility);
+                    break;
                 default:
                     UpdateTypeString("Empty");
                     UpdateName1("");
@@ -276,15 +276,15 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
             siloContentsName1.text = mech.MechChassisDetails.DataMechModel.HumanName;
         }
 
-        //private void UpdateName1(Utility utility)
-        //{
-        //    if (utility.UtilityModelDetails == null)
-        //    {
-        //        siloContentsName1.text = "Unable to load";
-        //        return;
-        //    }
-        //    siloContentsName1.text = utility.UtilityModelDetails.Data.HumanName;
-        //}
+        private void UpdateName1(Utility utility)
+        {
+            if (utility.UtilityModelDetails == null)
+            {
+                siloContentsName1.text = "Unable to load";
+                return;
+            }
+            siloContentsName1.text = utility.UtilityModelDetails.Data.HumanName;
+        }
 
         private void UpdateName1(Weapon weapon)
         {
@@ -317,15 +317,15 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
             siloContentsName2.text = weapon.WeaponSkinDetails.Data.HumanName;
         }
 
-        //private void UpdateName2(Utility utility)
-        //{
-        //    if (utility.UtilitySkinDetails == null)
-        //    {
-        //        siloContentsName2.text = "Unable to load";
-        //        return;
-        //    }
-        //    siloContentsName2.text = utility.UtilitySkinDetails.Data.HumanName;
-        //}
+        private void UpdateName2(Utility utility)
+        {
+            if (utility.UtilitySkinDetails == null)
+            {
+                siloContentsName2.text = "Unable to load";
+                return;
+            }
+            siloContentsName2.text = utility.UtilitySkinDetails.Data.HumanName;
+        }
 
         private void UpdateName2(Mech mech)
         {

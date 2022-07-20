@@ -109,10 +109,16 @@ namespace SupremacyHangar.Editor.ContentLoader
                             targetAssetGuid = AssetDatabase.FindAssets($"{targetName} t:Prefab");
                             break;
                         case ListType.WeaponModel:
+                            if (!Directory.Exists("Assets/Content/Weapons"))
+                            {
+                                Debug.LogError("Directory does NOT exist: Assets/Content/Weapons. NO model set");
+                                directoryMissing = true;
+                                continue;
+                            }
                             var targetWeaponModel = dataKey as WeaponModel;
-                            string modelBrandName = targetWeaponModel.Brand?.HumanName;
+                            string weaponModelBrandName = targetWeaponModel.Brand?.HumanName;
                             targetName = targetWeaponModel.Type.ToString();
-                            targetAssetGuid = AssetFinder("Assets/Content/Weapons", modelBrandName, targetName, targetName);
+                            targetAssetGuid = AssetFinder("Assets/Content/Weapons", weaponModelBrandName, targetName, targetName);
                             break;
                         case ListType.WeaponSkin:
                             if (!Directory.Exists("Assets/Content/Weapons"))
@@ -122,14 +128,23 @@ namespace SupremacyHangar.Editor.ContentLoader
                                 continue;
                             }
                             var targetWeapon = dataKey as WeaponSkin; 
-                            string skinBrandName = targetWeapon.WeaponModel.Brand?.HumanName;
-                            targetAssetGuid = AssetFinder("Assets/Content/Weapons", skinBrandName, targetWeapon.Type.ToString(), targetWeapon.Type.ToString());
+                            string weaponSkinBrandName = targetWeapon.WeaponModel.Brand?.HumanName;
+                            targetAssetGuid = AssetFinder("Assets/Content/Weapons", weaponSkinBrandName, targetWeapon.Type.ToString(), targetName);
                             break;
                         case ListType.PowerCore:
                             targetAssetGuid = AssetDatabase.FindAssets($"{targetName} t:Prefab");
                             break;
                         case ListType.UtilityModel:
-                            targetAssetGuid = AssetDatabase.FindAssets($"{targetName} t:Prefab");
+                            if (!Directory.Exists("Assets/Content/Utilities"))
+                            {
+                                Debug.LogError("Directory does NOT exist: Assets/Content/Utilities. NO model set");
+                                directoryMissing = true;
+                                continue;
+                            }
+                            var targetUtilityModel = dataKey as UtilityModel;
+                            string utilityModelBrandName = targetUtilityModel.Brand?.HumanName;
+                            targetName = targetUtilityModel.Type.ToString();
+                            targetAssetGuid = AssetFinder("Assets/Content/Utilities", utilityModelBrandName, targetName, targetName);
                             break;
                         case ListType.UtilitySkin:
                             if (!Directory.Exists("Assets/Content/Utilities"))
@@ -139,9 +154,8 @@ namespace SupremacyHangar.Editor.ContentLoader
                                 continue;
                             }
                             var targetUtility = dataKey as UtilitySkin;
-                            string utilitySkinfolderPath = SearchSubDirs("Assets/Content/Utilities", targetUtility.Type.ToString());
-                            if (utilitySkinfolderPath != null)
-                                targetAssetGuid = AssetDatabase.FindAssets($"{targetName} t:Skin", new[] { $"{utilitySkinfolderPath}" });
+                            string utilitySkinBrandName = targetUtility.UtilityModel.Brand?.HumanName;
+                            targetAssetGuid = AssetFinder("Assets/Content/Utilities", utilitySkinBrandName, targetUtility.Type.ToString(), targetName);
                             break;
                         default:
                             Debug.LogError($"Unknown type: {type}");

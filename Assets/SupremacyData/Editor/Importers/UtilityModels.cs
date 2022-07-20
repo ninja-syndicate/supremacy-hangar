@@ -73,6 +73,12 @@ namespace SupremacyData.Editor.Importers
                 case "accelorator":
                     type = Runtime.UtilityModel.ModelType.Accelorator;
                     return true;
+                case "interceptor":
+                    type = Runtime.UtilityModel.ModelType.Interceptor;
+                    return true;
+                case "drone launcher":
+                    type = Runtime.UtilityModel.ModelType.DroneLauncher;
+                    return true;
                 default:
                     return false;
             }
