@@ -26,13 +26,21 @@ pipeline {
               echo 'Build started'
               bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile builds_log.txt -executeMethod BuildSystem.CLI.BuildWebGL -addressablesLocation staging"
               echo 'Build completed'
-          } else {
+          } else if (env.BRANCH_NAME == 'main') {
               echo 'Prewarm started'
               bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile prewarm_log.txt -executeMethod BuildSystem.CLI.PreWarm -addressablesLocation ${deployEnv}"
               echo 'Prewarm completed'
 
               echo 'Build started'
               bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile builds_log.txt -executeMethod BuildSystem.CLI.BuildWebGL -addressablesLocation ${deployEnv}"
+              echo 'Build completed'
+          } else {
+              echo 'Prewarm started'
+              bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile - prewarm_log.txt -executeMethod BuildSystem.CLI.PreWarm -addressablesLocation develop"
+              echo 'Prewarm completed'
+
+              echo 'Build started'
+              bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile - builds_log.txt -executeMethod BuildSystem.CLI.BuildWebGL -addressablesLocation develop"
               echo 'Build completed'
           }
         }
@@ -63,8 +71,10 @@ pipeline {
         script {
           if (env.BRANCH_NAME == 'develop') {
               bat "rclone sync \"${env.WORKSPACE}/Build-to-Deploy\" \"afiles:/var/www/html/supremacy-hangar/build/staging/\" --progress --verbose --multi-thread-streams 10"
-          } else {
+          } else if (env.BRANCH_NAME == 'main'){
               bat "rclone sync \"${env.WORKSPACE}/Build-to-Deploy\" \"afiles:/var/www/html/supremacy-hangar/build/${deployEnv}/\" --progress --verbose --multi-thread-streams 10"
+          } else {
+              bat "rclone sync \"${env.WORKSPACE}/Build-to-Deploy\" \"afiles:/var/www/html/supremacy-hangar/build/build-${env.GIT_COMMIT.take(7)}/\" --progress --verbose --multi-thread-streams 10"
           }
         }
       }
@@ -89,8 +99,10 @@ pipeline {
          script {
           if (env.BRANCH_NAME == 'develop') {
               bat "rclone sync \"${env.WORKSPACE}/ServerData/\" \"afiles:/var/www/html/supremacy-hangar/addressables/staging/\" --progress --verbose --multi-thread-streams 10"
-          } else {
+          } else if (env.BRANCH_NAME == 'main') {
               bat "rclone sync \"${env.WORKSPACE}/ServerData/\" \"afiles:/var/www/html/supremacy-hangar/addressables/${deployEnv}/\" --progress --verbose --multi-thread-streams 10"
+          } else {
+              bat "rclone sync \"${env.WORKSPACE}/ServerData/\" \"afiles:/var/www/html/supremacy-hangar/addressables/build-${env.GIT_COMMIT.take(7)}/\" --progress --verbose --multi-thread-streams 10"
           }
         }
         }
