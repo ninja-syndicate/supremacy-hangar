@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
   m_Name: Archon Miltech - Weapon - MissileLauncher
   m_EditorClassIdentifier: 
-  m_GroupName: New Group3
+  m_GroupName: Archon Miltech - Weapon - MissileLauncher
   m_Data:
     m_SerializedData: []
   m_GUID: d0f2f62c6eb55d44da44b0bf7c8bb244
   m_SerializeEntries:
   - m_GUID: 94417628d4d1cdd4981cb38d666371b7
-    m_Address: Archon Miltech/Missile Launcher.prefab
+    m_Address: Archon Miltech/MissileLauncher.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

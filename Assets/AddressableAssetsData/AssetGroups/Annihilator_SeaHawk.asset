@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
   m_Name: Annihilator_SeaHawk
   m_EditorClassIdentifier: 
-  m_GroupName: Annihilator_SeaHawk1
+  m_GroupName: Annihilator_SeaHawk
   m_Data:
     m_SerializedData: []
   m_GUID: 352ffc17a0e4ed54c802485cda453f2e
