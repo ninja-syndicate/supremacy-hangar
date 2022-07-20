@@ -4,9 +4,12 @@ using SupremacyHangar.Runtime.Silo;
 using SupremacyHangar.Runtime.Types;
 using System;
 using System.Collections.Generic;
+using SupremacyData.Runtime;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using Zenject;
+using MysteryCrate = SupremacyHangar.Runtime.Types.MysteryCrate;
+using PowerCore = SupremacyHangar.Runtime.Types.PowerCore;
 
 namespace SupremacyHangar.Runtime.Actors.Silo
 {
@@ -91,29 +94,70 @@ namespace SupremacyHangar.Runtime.Actors.Silo
         private void LoadComposable(ComposableLoadedSignal signal)
         {
             if (siloState.CurrentState == SiloState.StateName.NotLoaded) return;
-            int accessoryIndex = 0;
-            var accessoryList = siloState.Contents as Mech;
-            if (accessoryList == null) return;
+            if (siloState.Contents is not Mech mech)
+            {
+                Debug.LogError("Mech was null!");
+                return;
+            }
+
+            if (mech.Accessories == null || mech.Accessories.Length == 0) return;
+            var accessoryList = mech.Accessories;
+            
+            //TODO: this should probably be done after parsing. 
+            Queue<Weapon> weaponAccessories = new ();
+            Queue<Utility> utilityAccessories = new ();
+            Queue<PowerCore> powerCoreAccessories = new ();
+
+            foreach (var accessory in accessoryList)
+            {
+                switch (accessory)
+                {
+                    case Weapon weapon:
+                        weaponAccessories.Enqueue(weapon);
+                        break;
+                    case Utility utility:
+                        utilityAccessories.Enqueue(utility);
+                        break;
+                    case PowerCore powerCore:
+                        powerCoreAccessories.Enqueue(powerCore);
+                        break;
+                    default:
+                        Debug.Log($"Unknown accessory! {accessory}");
+                        break;
+                }
+            }
+            
             //Load Weapons
             foreach (Transform spawn in signal.SocketsLists.WeaponSockets)
             {
-                SetLoadContents(accessoryList.Accessories[accessoryIndex]);
+                if (!weaponAccessories.TryDequeue(out var weapon)) continue;
+                SetLoadContents(weapon);
                 addressablesManager.SpawnMech(spawn);
-                accessoryIndex++;
             }
+            
+            if (weaponAccessories.Count > 0) Debug.LogError("More weapons in payload than slots!");
 
             //Load Utilities
             foreach (Transform spawn in signal.SocketsLists.UtilitySockets)
             {
-                SetLoadContents(accessoryList.Accessories[accessoryIndex]);
+                if (!utilityAccessories.TryDequeue(out var utility)) continue;
+                SetLoadContents(utility);
                 addressablesManager.SpawnMech(spawn);
-                accessoryIndex++;
             }
 
-            //Load Power Core
-            SetLoadContents(accessoryList.Accessories[accessoryIndex]);
+            if (utilityAccessories.Count > 0) Debug.LogError("More utilities in payload than slots!");
+
+            if (!powerCoreAccessories.TryDequeue(out var aPowerCore))
+            {
+                Debug.LogError("No powercore in payload!");
+                return;
+            }
+            
+            SetLoadContents(aPowerCore);
             addressablesManager.SpawnMech(signal.SocketsLists.PowerCoreSocket);
 
+            if (powerCoreAccessories.Count > 0) Debug.LogError("More PowerCores in payload than slots!");
+            
             NextSiloState();
         }
 
@@ -207,9 +251,16 @@ namespace SupremacyHangar.Runtime.Actors.Silo
                     addressablesManager.TargetSkin = null;
                     break;
                 case Weapon weapon:
-                    addressablesManager.TargetMech = weapon.WeaponModelDetails.Reference;
-                    addressablesManager.TargetSkin = weapon.WeaponSkinDetails.Reference;
-                    loadedReferences.Add(weapon.WeaponSkinDetails.Reference);
+                    addressablesManager.TargetMech = weapon.WeaponModelDetails?.Reference;
+                    addressablesManager.TargetSkin = weapon.WeaponSkinDetails?.Reference;
+                    if (weapon.WeaponSkinDetails == null)
+                    {
+                        Debug.LogError("Weapon Model Skin has no reference so not loading.");
+                    }
+                    else
+                    {
+                        loadedReferences.Add(weapon.WeaponSkinDetails.Reference);
+                    }
                     break;
                 case PowerCore powerCore:
                     addressablesManager.TargetMech = powerCore.PowerCoreDetails.Reference;
