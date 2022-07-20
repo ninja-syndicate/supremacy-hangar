@@ -13,21 +13,31 @@ MonoBehaviour:
   m_Name: PyrotronicWeaponMaterialNameMap
   m_EditorClassIdentifier: 
   MaterialNameMap:
-  - Mesh: {fileID: 0}
-    MaterialNames: []
-  - Mesh: {fileID: 0}
-    MaterialNames: []
-  - Mesh: {fileID: 0}
-    MaterialNames: []
-  - Mesh: {fileID: 0}
-    MaterialNames: []
-  - Mesh: {fileID: 0}
-    MaterialNames: []
-  - Mesh: {fileID: 0}
-    MaterialNames: []
-  - Mesh: {fileID: 0}
-    MaterialNames: []
-  - Mesh: {fileID: 0}
-    MaterialNames: []
-  - Mesh: {fileID: 0}
-    MaterialNames: []
+  - Mesh: {fileID: 8347601449702216776, guid: b19b93b9f042a9543a0852c636d79b43, type: 3}
+    MaterialNames:
+    - Pyro_Cannon
+  - Mesh: {fileID: 8347601449702216776, guid: ffd618df015190a45bba63fe80964c50, type: 3}
+    MaterialNames:
+    - Pyro_Shotgun
+  - Mesh: {fileID: 8347601449702216776, guid: 55864d51dbe05e8489b2d66235800b5f, type: 3}
+    MaterialNames:
+    - PFT_Flamethrower
+  - Mesh: {fileID: 8347601449702216776, guid: 2890ac013e2285c45a6c6dc8c6b68be0, type: 3}
+    MaterialNames:
+    - Pyro_GrenadeLauncher
+  - Mesh: {fileID: 8347601449702216776, guid: 84d35d42104708b4db9972189420feb7, type: 3}
+    MaterialNames:
+    - Pyro_LaserBeam
+  - Mesh: {fileID: 8347601449702216776, guid: ae1cfa1d253472245ace09020364853a, type: 3}
+    MaterialNames:
+    - Pyro_MachineGun
+  - Mesh: {fileID: 8347601449702216776, guid: 47f3ca35e1cdc99498676a311091f5b1, type: 3}
+    MaterialNames:
+    - Pyro_Minigun
+    - Pyro_Minigun
+  - Mesh: {fileID: 8347601449702216776, guid: 4f58a4433dbc3a54d86c808ecf74f013, type: 3}
+    MaterialNames:
+    - Pyro_RocketLauncher
+  - Mesh: {fileID: 8347601449702216776, guid: 179bc6ade4c746d4c9da575f64b9cb81, type: 3}
+    MaterialNames:
+    - Pyro_PlasmaRifle

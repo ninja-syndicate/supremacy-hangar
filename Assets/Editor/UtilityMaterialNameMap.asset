@@ -13,21 +13,22 @@ MonoBehaviour:
   m_Name: UtilityMaterialNameMap
   m_EditorClassIdentifier: 
   MaterialNameMap:
-  - Mesh: {fileID: 0}
-    MaterialNames: []
-  - Mesh: {fileID: 0}
-    MaterialNames: []
-  - Mesh: {fileID: 0}
-    MaterialNames: []
-  - Mesh: {fileID: 0}
-    MaterialNames: []
-  - Mesh: {fileID: 0}
-    MaterialNames: []
-  - Mesh: {fileID: 0}
-    MaterialNames: []
-  - Mesh: {fileID: 0}
-    MaterialNames: []
-  - Mesh: {fileID: 0}
-    MaterialNames: []
-  - Mesh: {fileID: 0}
-    MaterialNames: []
+  - Mesh: {fileID: 8347601449702216776, guid: 3049628da37993c4180da1cbbc968f49, type: 3}
+    MaterialNames:
+    - AcceleratorMat
+  - Mesh: {fileID: 8347601449702216776, guid: 5774137ec1675b847953ed1dac9edf19, type: 3}
+    MaterialNames:
+    - Miltech_ShieldGen
+  - Mesh: {fileID: 8347601449702216776, guid: 462681a196eda824c9a3475daef1b015, type: 3}
+    MaterialNames:
+    - Pyro_AntiMissile
+  - Mesh: {fileID: 8347601449702216776, guid: 3802f6b18927b864d87031e040f701d9, type: 3}
+    MaterialNames:
+    - Pyro_ShieldGenerator
+  - Mesh: {fileID: 8347601449702216776, guid: 07d9b07d448841446ba024800a3db056, type: 3}
+    MaterialNames:
+    - DroneLauncher
+    - DroneLauncher
+  - Mesh: {fileID: 8347601449702216776, guid: f5d6a9603cc77544680524e8213bc783, type: 3}
+    MaterialNames:
+    - Warsui_ShieldGenerator

@@ -14,20 +14,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaterialNameMap:
   - Mesh: {fileID: 8347601449702216776, guid: bc7344ee3a65e6c458117e3279961efc, type: 3}
-    MaterialNames: []
+    MaterialNames:
+    - AM_BFG
+    - AM_BFG_Tubes
   - Mesh: {fileID: 8347601449702216776, guid: da9b40a09785e80499318f680756a157, type: 3}
-    MaterialNames: []
+    MaterialNames:
+    - AM_Cannon
   - Mesh: {fileID: 8347601449702216776, guid: 288e1ad91b875a3459cae80d37a41bd4, type: 3}
-    MaterialNames: []
+    MaterialNames:
+    - AM_Shotgun
   - Mesh: {fileID: 8347601449702216776, guid: 65e6558ff3ac14542a1d5c4a3d5c9338, type: 3}
-    MaterialNames: []
+    MaterialNames:
+    - AM_Granade_Launcher
   - Mesh: {fileID: 8347601449702216776, guid: f1be6fbfb8534144988f44719ace20df, type: 3}
-    MaterialNames: []
+    MaterialNames:
+    - AM_Laser
   - Mesh: {fileID: 8347601449702216776, guid: d5a0039806876eb4a800994047924c84, type: 3}
-    MaterialNames: []
+    MaterialNames:
+    - AM_MachineGun
   - Mesh: {fileID: 8347601449702216776, guid: f2f8e8bfb92c38f448c0e5b607d4a71a, type: 3}
-    MaterialNames: []
+    MaterialNames:
+    - AM_Minigun
+    - AM_Minigun
   - Mesh: {fileID: 8347601449702216776, guid: 94417628d4d1cdd4981cb38d666371b7, type: 3}
-    MaterialNames: []
+    MaterialNames:
+    - AM_Missile_Launcher
   - Mesh: {fileID: 8347601449702216776, guid: 408a2743837f5c84499a05b6690b4d41, type: 3}
-    MaterialNames: []
+    MaterialNames:
+    - AM_Plasma_Rifle
