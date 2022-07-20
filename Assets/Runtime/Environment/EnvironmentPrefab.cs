@@ -39,6 +39,18 @@ namespace SupremacyHangar.Runtime.Environment
                 c.enabled = !c.enabled;
         }
 
+        public void OpenDoor()
+        {
+            foreach (Collider c in ColliderList)
+                c.enabled = true;
+        }
+
+        public void CloseDoor()
+        {
+            foreach (Collider c in ColliderList)
+                c.enabled = false;
+        }
+
         public void OnBeforeSerialize() {}
 
         public void OnAfterDeserialize()

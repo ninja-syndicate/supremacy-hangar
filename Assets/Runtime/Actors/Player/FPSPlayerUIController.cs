@@ -11,13 +11,15 @@ namespace SupremacyHangar.Runtime.Actors.Player
 		{
 			None,
 			SettingsMenu,
-			HelpMenu
+			HelpMenu,
+			TeleportMenu
 		} 
 		
 		[SerializeField] private PlayerInput playerInput;
 		[SerializeField] private GameObject settingsMenu;
 		[SerializeField] private GameObject helpMenu;
 		[SerializeField] private GameObject interactionPrompt;
+		[SerializeField] private GameObject teleportMenu;
 		
 		private VisibilityState state = VisibilityState.None;
 		
@@ -37,12 +39,14 @@ namespace SupremacyHangar.Runtime.Actors.Player
         {
 	        InputSystemHelpers.BindActionToFunction(playerInput, "Settings", OnSettingsChange);
 	        InputSystemHelpers.BindActionToFunction(playerInput, "Help", OnHelpChange);
+	        InputSystemHelpers.BindActionToFunction(playerInput, "Teleport", OnTeleport);
         }
 
         public void OnDisable()
         {
 	        InputSystemHelpers.UnbindFromFunction(playerInput, "Settings", OnSettingsChange);
 	        InputSystemHelpers.UnbindFromFunction(playerInput, "Help", OnHelpChange);
+	        InputSystemHelpers.UnbindFromFunction(playerInput, "Teleport", OnTeleport);
 	        
 #if UNITY_EDITOR
 	        PlayerPrefs.DeleteKey("HelpShown");
@@ -91,7 +95,13 @@ namespace SupremacyHangar.Runtime.Actors.Player
 			if (context.phase == InputActionPhase.Canceled) return;
 			ToggleState(VisibilityState.HelpMenu);
 		}	
-		
+
+		private void OnTeleport(InputAction.CallbackContext context)
+        {
+			if (context.phase == InputActionPhase.Canceled) return;
+			ToggleState(VisibilityState.TeleportMenu);
+		}
+
 		private void SetupUIItems()
 		{
 			if (settingsMenu == null)
@@ -150,6 +160,10 @@ namespace SupremacyHangar.Runtime.Actors.Player
 					break;
 				case VisibilityState.SettingsMenu:
 					settingsMenu.SetActive(value);
+					handlePause = true;
+					break;
+				case VisibilityState.TeleportMenu:
+					teleportMenu.SetActive(value);
 					handlePause = true;
 					break;
 			}

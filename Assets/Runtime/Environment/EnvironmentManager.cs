@@ -19,6 +19,8 @@ namespace SupremacyHangar.Runtime.Environment
         [Inject]
         private RepositionSignalHandler _repositionSignalHandler;
 
+        public HangarData PlayerInventory => _playerInventory;
+
         [Inject]
         private HangarData _playerInventory;
 
@@ -41,7 +43,7 @@ namespace SupremacyHangar.Runtime.Environment
         private EnvironmentPrefab interactedDoor = null;
 
         private SiloSpawner _currentSilo;
-        private EnvironmentPrefab newDoorEnvironmentPrefab;
+        public EnvironmentPrefab newDoorEnvironmentPrefab;
         public int SiloOffset { get; private set; } = 0;
         public IReadOnlyList<SiloItem> SiloItems => _playerInventory?.Silos;
 
@@ -156,10 +158,10 @@ namespace SupremacyHangar.Runtime.Environment
         {
             var join = operationsForJoins[handle2];
             var newConnector = handle2.Result;
-            var newSectionEnvironmentPrefab = newConnector.GetComponent<EnvironmentPrefab>();
-            newSectionEnvironmentPrefab.connectedTo = currentEnvironment.CurrentGameObject;
+            newDoorEnvironmentPrefab = newConnector.GetComponent<EnvironmentPrefab>();
+            newDoorEnvironmentPrefab.connectedTo = currentEnvironment.CurrentGameObject;
 
-            newSectionEnvironmentPrefab.JoinTo(join, nextRoomEnvironmentPrefabRef.Joins[join]);
+            newDoorEnvironmentPrefab.JoinTo(join, nextRoomEnvironmentPrefabRef.Joins[join]);
 
             _container.InjectGameObject(newConnector);
 
@@ -167,9 +169,9 @@ namespace SupremacyHangar.Runtime.Environment
 
             //Disable door colliders
             if (doorCounter == 0)
-                newSectionEnvironmentPrefab.ToggleDoor();
+                newDoorEnvironmentPrefab.ToggleDoor();
             else if (MaxSiloOffset <= 2)
-                newSectionEnvironmentPrefab.ToggleDoor();
+                newDoorEnvironmentPrefab.ToggleDoor();
 
             ++doorCounter;
             loadedObjects.Add(newConnector);
@@ -328,6 +330,59 @@ namespace SupremacyHangar.Runtime.Environment
             forward = direction;
         }
 
+        public void TeleportPlayer(int newOffset, Animator teleportControl)
+        {
+            UnloadSilo();
+            SiloOffset = newOffset *2;
+            ReBindSiloInfo();
+
+            //Spawn new Section for re-injection
+            currentEnvironment.CurrentGameObject.SetActive(false);
+            var temp = GameObject.Instantiate(currentEnvironment.CurrentGameObject);
+            _container.InjectGameObject(temp);
+            loadedObjects[loadedObjects.IndexOf(currentEnvironment.CurrentGameObject)] = temp;
+            Addressables.ReleaseInstance(currentEnvironment.CurrentGameObject);
+            GameObject.Destroy(currentEnvironment.CurrentGameObject);
+            currentEnvironment.CurrentGameObject = temp;
+            currentEnvironment.CurrentGameObject.SetActive(true);
+
+            //Open/Close doors & reset connections
+            foreach(var obj in loadedObjects)
+            {
+                if (obj.TryGetComponent(out EnvironmentPrefab environmentPrefab))
+                {
+                    environmentPrefab.connectedTo = currentEnvironment.CurrentGameObject;
+                    if (SiloOffset > 0)
+                        environmentPrefab.OpenDoor();
+
+                    if (forward)
+                    {
+                        if (SiloOffset <= 1)
+                        {
+                            environmentPrefab.ToggleDoor();
+                            newDoorEnvironmentPrefab.OpenDoor();
+                        }
+                        else if (SiloOffset >= MaxSiloOffset - 2)
+                            newDoorEnvironmentPrefab.ToggleDoor();
+                    }
+                    else
+                    {
+                        if (SiloOffset >= MaxSiloOffset - 2)
+                        {
+                            newDoorEnvironmentPrefab.ToggleDoor();
+                        }
+                        else if (SiloOffset <= 1)
+                        {
+                            environmentPrefab.OpenDoor();
+                            newDoorEnvironmentPrefab.CloseDoor();
+                        }
+                    }
+                }
+            }
+
+            teleportControl.SetBool("IsLoading", false);
+        }
+
         private void ChangeSiloOffset()
         {
             if (interactedDoor.wasConnected == false)
@@ -402,6 +457,7 @@ namespace SupremacyHangar.Runtime.Environment
                 {
                     loadedObjects.Remove(obj);
                     UnityEngine.AddressableAssets.Addressables.ReleaseInstance(obj);
+                    GameObject.Destroy(obj);
                 }
                 objectsToUnload.Clear();
                 newlyLoadedObjects.Clear();
