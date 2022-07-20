@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
   m_Name: Archon Miltech - Weapon - Minigun
   m_EditorClassIdentifier: 
-  m_GroupName: New Group4
+  m_GroupName: Archon Miltech - Weapon - Minigun
   m_Data:
     m_SerializedData: []
   m_GUID: 676a11c8cf4d83346968383e66c07a8b

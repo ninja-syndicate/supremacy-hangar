@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ef88128b2778a4b8dc7c8405edbc44, type: 3}
+  m_Name: WarsuiWeaponMaterialNameMap
+  m_EditorClassIdentifier: 
+  MaterialNameMap:
+  - Mesh: {fileID: 8347601449702216776, guid: 4ec45236eedfea34f97d883fe19cd22b, type: 3}
+    MaterialNames:
+    - Warsui_Cannon
+  - Mesh: {fileID: 8347601449702216776, guid: b7baf662314dfad448f84434bf6fabdc, type: 3}
+    MaterialNames:
+    - Warsui_FlakGun
+    - Warsui_FlakGun
+  - Mesh: {fileID: 8347601449702216776, guid: ced35bbbe921a054896515eda8c0f001, type: 3}
+    MaterialNames:
+    - Warsui_GrenadeLauncher
+    - Warsui_GrenadeLauncher
+  - Mesh: {fileID: 8347601449702216776, guid: 5c831e6f8cd3a8743bd56220d3dffbfe, type: 3}
+    MaterialNames:
+    - Warsui_LaserBeam
+  - Mesh: {fileID: 8347601449702216776, guid: 141ff2e1fc082df439a060f98eedf6ae, type: 3}
+    MaterialNames:
+    - Warsui_LightningGun
+  - Mesh: {fileID: 8347601449702216776, guid: 9afb89adbbf56df498374416a13c478c, type: 3}
+    MaterialNames:
+    - Warsui_MachineGun
+  - Mesh: {fileID: 4018739737868933945, guid: a451efacf962cac43a044b9bfc43f1d6, type: 3}
+    MaterialNames:
+    - Warsui_Minigun
+  - Mesh: {fileID: 8347601449702216776, guid: 9d1480ac5e02f294f87ad07c8bb9f4ce, type: 3}
+    MaterialNames:
+    - Warsui_Missile_Launcher
+  - Mesh: {fileID: 8347601449702216776, guid: 280fa5334662c8c43a34538815b13a89, type: 3}
+    MaterialNames:
+    - Warsui_Plasmagun

@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 80ef88128b2778a4b8dc7c8405edbc44, type: 3}
-  m_Name: MeshMaterialNameMap
+  m_Name: MechMeshMaterialNameMap
   m_EditorClassIdentifier: 
   MaterialNameMap:
-  - Mesh: {fileID: 919132149155446097, guid: 66ed0e75ce96c714c805b3d416c6b650, type: 3}
+  - Mesh: {fileID: 1055575722897578874, guid: be1f8bf55bb63424a864f296f20b400e, type: 3}
     MaterialNames:
     - Chest,Body
     - Leg
     - Eye,default
     - Arm,Hand
-  - Mesh: {fileID: 919132149155446097, guid: 155b17b4734de84408f3803563758629, type: 3}
+  - Mesh: {fileID: 2079678189560677077, guid: 0dfee75fecab7bd4c9096bd09d42a47e, type: 3}
     MaterialNames:
     - Chest
     - Upper_Arms
@@ -35,7 +35,7 @@ MonoBehaviour:
     - Screen
     - Back
     - Head
-  - Mesh: {fileID: 919132149155446097, guid: ae0de8a69b73a7c40be2faa401fc9d15, type: 3}
+  - Mesh: {fileID: 6181639234335415630, guid: 06f1ce1dddd608a49aea4d983e6a8b0d, type: 3}
     MaterialNames:
     - pmech2_low
     - Green_Light

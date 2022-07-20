@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
   m_Name: Archon Miltech - Weapon - PlasmaRifle
   m_EditorClassIdentifier: 
-  m_GroupName: New Group1
+  m_GroupName: Archon Miltech - Weapon - PlasmaRifle
   m_Data:
     m_SerializedData: []
   m_GUID: a6180a3b5252d6c489be022f72658f6e
   m_SerializeEntries:
   - m_GUID: 408a2743837f5c84499a05b6690b4d41
-    m_Address: Archon Miltech/Plasma Rifle.prefab
+    m_Address: Archon Miltech/PlasmaRifle.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

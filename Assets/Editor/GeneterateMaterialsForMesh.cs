@@ -22,11 +22,14 @@ namespace SupremacyHangar.Editor
 
         List<string> materialNames = new();
 
-        private LogWidget logWidget = new();
-        private Vector2 scrollPosition;
+        protected LogWidget logWidget = new();
+        protected Vector2 scrollPosition;
 
-        private string meshName = "";
-        private string activePath = "";
+        protected string meshName = "";
+        protected string activePath = "";
+
+        protected MeshMaterialNames materialNameMap;
+        protected GameObject SelectedMesh;
 
         [MenuItem("Assets/Supremacy/GenerateMaterialsForMesh", true)]
         public static bool SpawnValidate()
@@ -60,12 +63,10 @@ namespace SupremacyHangar.Editor
             EditorGUILayout.EndScrollView();
         }
         
-        private MeshMaterialNames materialNameMap;
-        private GameObject SelectedMesh;
         void OnEnable()
         {
             shader = Shader.Find("Supremacy/MechShader");
-            materialNameMap = AssetDatabase.LoadAssetAtPath("Assets/Editor/MeshMaterialNameMap.asset", typeof(MeshMaterialNames)) as MeshMaterialNames;
+            materialNameMap = AssetDatabase.LoadAssetAtPath("Assets/Editor/MechMeshMaterialNameMap.asset", typeof(MeshMaterialNames)) as MeshMaterialNames;
             SelectedMesh = Selection.activeObject as GameObject;
             activePath = AssetDatabase.GetAssetPath(Selection.activeObject);
             meshName = activePath.Substring(activePath.LastIndexOf('/') + 1);
@@ -75,12 +76,20 @@ namespace SupremacyHangar.Editor
         private void RenderImportDirectoryFields()
         {
             string label = String.IsNullOrWhiteSpace(importDirectory) ? "Select Material Directory" : $"{importDirectory}";
-            if (GUILayout.Button(label)) SelectMatieralDirectory();
+            if (GUILayout.Button(label))
+            {
+                logWidget.Reset();
+                SelectMatieralDirectory();
+            }
 
-            if (GUILayout.Button("Use Local Materials")) SelectMatieralDirectory(true);
+            if (GUILayout.Button("Use Local Materials"))
+            {
+                logWidget.Reset();
+                SelectMatieralDirectory(true);
+            }
         }
 
-        private void RenderSelectionFields()
+        protected void RenderSelectionFields()
         {
             shader = EditorGUILayout.ObjectField(
                    "Select Shader",
@@ -108,14 +117,13 @@ namespace SupremacyHangar.Editor
             return directory;
         }
 
-        private void SelectMatieralDirectory(bool useDefaultDir = false)
+        public void SelectMatieralDirectory(bool useDefaultDir = false)
         {
             if(!materialNameMap)
             {
                 logWidget.LogError("Need to specify Material Name Map!!");
                 return;
             }
-            logWidget.Reset();
 
             AssetDatabase.StartAssetEditing();
             materialNames = (from item in materialNameMap.MaterialNameMap

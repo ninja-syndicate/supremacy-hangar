@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
   m_Name: Aries_Molton
   m_EditorClassIdentifier: 
-  m_GroupName: Aries_Molton6
+  m_GroupName: Aries_Molton
   m_Data:
     m_SerializedData: []
   m_GUID: 83ed015bc5a3a8044bc23705fe6aeef3

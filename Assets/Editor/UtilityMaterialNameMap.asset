@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ef88128b2778a4b8dc7c8405edbc44, type: 3}
+  m_Name: UtilityMaterialNameMap
+  m_EditorClassIdentifier: 
+  MaterialNameMap:
+  - Mesh: {fileID: 8347601449702216776, guid: 3049628da37993c4180da1cbbc968f49, type: 3}
+    MaterialNames:
+    - AcceleratorMat
+  - Mesh: {fileID: 8347601449702216776, guid: 5774137ec1675b847953ed1dac9edf19, type: 3}
+    MaterialNames:
+    - Miltech_ShieldGen
+  - Mesh: {fileID: 8347601449702216776, guid: 462681a196eda824c9a3475daef1b015, type: 3}
+    MaterialNames:
+    - Pyro_AntiMissile
+  - Mesh: {fileID: 8347601449702216776, guid: 3802f6b18927b864d87031e040f701d9, type: 3}
+    MaterialNames:
+    - Pyro_ShieldGenerator
+  - Mesh: {fileID: 8347601449702216776, guid: 07d9b07d448841446ba024800a3db056, type: 3}
+    MaterialNames:
+    - DroneLauncher
+    - DroneLauncher
+  - Mesh: {fileID: 8347601449702216776, guid: f5d6a9603cc77544680524e8213bc783, type: 3}
+    MaterialNames:
+    - Warsui_ShieldGenerator
