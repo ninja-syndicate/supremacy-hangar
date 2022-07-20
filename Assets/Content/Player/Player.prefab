@@ -1859,7 +1859,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -5760789404900575309, guid: 6030a6e528f25fb4c889c453e8368ada,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 175eba77f7051b5479bb49d101f16815, type: 3}
+  m_audioClip: {fileID: 8300000, guid: acf621c9210cbf84e9f393c50f5a5373, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -3095,12 +3095,13 @@ AudioSource:
   m_GameObject: {fileID: 5915706968395474378}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -8279999813208836015, guid: 6030a6e528f25fb4c889c453e8368ada,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -3333,8 +3334,8 @@ MonoBehaviour:
   paused: 0
   myAudioSource: {fileID: 9005093756849755182}
   FootstepRateRatio: 0.15
-  RightFootClip: {fileID: 8300000, guid: ee9d6fa026e2aeb43a8230614f3beea5, type: 3}
-  LeftFootClip: {fileID: 8300000, guid: 4275628d44672704e9254d8bdc8c5b04, type: 3}
+  RightFootClip: {fileID: 8300000, guid: 58f0327cadf6ce34c81871fb0b585485, type: 3}
+  LeftFootClip: {fileID: 8300000, guid: 1e606ff4ff4974b4ab21e0f7b99c96dd, type: 3}
 --- !u!114 &5224598663897651538
 MonoBehaviour:
   m_ObjectHideFlags: 0

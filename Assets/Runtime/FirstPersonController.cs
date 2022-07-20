@@ -363,7 +363,7 @@ namespace SupremacyHangar.Runtime
 						myAudioSource.clip = LeftFootClip;
 						RightFoot = true;
 					}
-					myAudioSource.pitch = UnityEngine.Random.Range(0.95f, 1.05f);
+					myAudioSource.pitch = UnityEngine.Random.Range(0.9f, 1.1f);
 					myAudioSource.Play();
 					Stepped = true;
 				}
