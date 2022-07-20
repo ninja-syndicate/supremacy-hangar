@@ -16,23 +16,23 @@ pipeline {
         echo 'Sending notification to Slack.'
         slackSend channel: '#ops-deployments', 
           color: '#4A90E2',
-          message: ":arrow_upper_right: *supremacy-hangar* build has *started*. Job name: *${env.JOB_NAME}*. Build no: *${env.BUILD_NUMBER}*. More info: <${env.BUILD_URL}|supremacy-hangar-build>"
+          message: ":arrow_upper_right: *supremacy-hangar* build has *started*. Commit: *${env.GIT_COMMIT.take(7)}*. Job name: *${env.JOB_NAME}*. Build no: *${env.BUILD_NUMBER}*. More info: <${env.BUILD_URL}|supremacy-hangar-build>"
         script {
           if (env.BRANCH_NAME == 'develop') {
               echo 'Prewarm started'
-              bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile - prewarm_log.txt -executeMethod BuildSystem.CLI.PreWarm -addressablesLocation staging"
+              bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile prewarm_log.txt -executeMethod BuildSystem.CLI.PreWarm -addressablesLocation staging"
               echo 'Prewarm completed'
 
               echo 'Build started'
-              bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile - builds_log.txt -executeMethod BuildSystem.CLI.BuildWebGL -addressablesLocation staging"
+              bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile builds_log.txt -executeMethod BuildSystem.CLI.BuildWebGL -addressablesLocation staging"
               echo 'Build completed'
           } else {
               echo 'Prewarm started'
-              bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile - prewarm_log.txt -executeMethod BuildSystem.CLI.PreWarm -addressablesLocation ${deployEnv}"
+              bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile prewarm_log.txt -executeMethod BuildSystem.CLI.PreWarm -addressablesLocation ${deployEnv}"
               echo 'Prewarm completed'
 
               echo 'Build started'
-              bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile - builds_log.txt -executeMethod BuildSystem.CLI.BuildWebGL -addressablesLocation ${deployEnv}"
+              bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile builds_log.txt -executeMethod BuildSystem.CLI.BuildWebGL -addressablesLocation ${deployEnv}"
               echo 'Build completed'
           }
         }
@@ -42,13 +42,13 @@ pipeline {
           echo 'Build stage successful.'
           slackSend channel: '#ops-deployments',
             color: 'good', 
-            message: ":white_check_mark: *supremacy-hangar* build has *succeeded*. Job name: *${env.JOB_NAME}*. Build no: *${env.BUILD_NUMBER}*. More info: <${env.BUILD_URL}|supremacy-hangar-build>"
+            message: ":white_check_mark: *supremacy-hangar* build has *succeeded*. Commit: *${env.GIT_COMMIT.take(7)}*. Job name: *${env.JOB_NAME}*. Build no: *${env.BUILD_NUMBER}*. More info: <${env.BUILD_URL}|supremacy-hangar-build>"
         }
         failure {
           echo 'Build stage unsuccessful.'
           slackSend channel: '#ops-deployments',
           color: 'danger', 
-          message: ":x: *supremacy-hangar* build has *failed*. Job name: *${env.JOB_NAME}*. Build no: *${env.BUILD_NUMBER}*. More info: <${env.BUILD_URL}|supremacy-hangar-build>"
+          message: ":x: *supremacy-hangar* build has *failed*. Commit: *${env.GIT_COMMIT.take(7)}*. Job name: *${env.JOB_NAME}*. Build no: *${env.BUILD_NUMBER}*. More info: <${env.BUILD_URL}|supremacy-hangar-build>"
         }
       }
     } 
@@ -73,13 +73,13 @@ pipeline {
               echo 'Deploy build stage successful.'
               slackSend channel: '#ops-deployments',
               color: 'good', 
-              message: ":white_check_mark: *supremacy-hangar* build deploy has *succeeded*. Job name: *${env.JOB_NAME}*. Build no: *${env.BUILD_NUMBER}*. More info: <${env.BUILD_URL}|supremacy-hangar-deploy>"
+              message: ":white_check_mark: *supremacy-hangar* build deploy has *succeeded*. Commit: *${env.GIT_COMMIT.take(7)}*. Job name: *${env.JOB_NAME}*. Build no: *${env.BUILD_NUMBER}*. More info: <${env.BUILD_URL}|supremacy-hangar-deploy>"
           }
           failure {
               echo 'Deploy build stage successful.'
               slackSend channel: '#ops-deployments',
                 color: 'danger', 
-                message: ":x: *supremacy-hangar* build deploy has *failed*. Job name: *${env.JOB_NAME}*. Build no: *${env.BUILD_NUMBER}*. More info: <${env.BUILD_URL}|supremacy-hangar-deploy>"
+                message: ":x: *supremacy-hangar* build deploy has *failed*. Commit: *${env.GIT_COMMIT.take(7)}*. Job name: *${env.JOB_NAME}*. Build no: *${env.BUILD_NUMBER}*. More info: <${env.BUILD_URL}|supremacy-hangar-deploy>"
           }
       }
     }
@@ -99,15 +99,15 @@ pipeline {
               echo 'Deploy addressables stage successful.'
               slackSend channel: '#ops-deployments',
                 color: 'good', 
-                message: ":white_check_mark: *supremacy-hangar* addressables deploy has *succeeded*. Job name: *${env.JOB_NAME}*. Build no: *${env.BUILD_NUMBER}*. More info: <${env.BUILD_URL}|supremacy-hangar-deploy>"
+                message: ":white_check_mark: *supremacy-hangar* addressables deploy has *succeeded*. Commit: *${env.GIT_COMMIT.take(7)}*. Job name: *${env.JOB_NAME}*. Build no: *${env.BUILD_NUMBER}*. More info: <${env.BUILD_URL}|supremacy-hangar-deploy>"
           }
           failure {
               echo 'Deploy addressables stage successful.'
               slackSend channel: '#ops-deployments',
                 color: 'danger', 
-                message: ":x: *supremacy-hangar* addressables deploy has *failed*. Job name: *${env.JOB_NAME}*. Build no: *${env.BUILD_NUMBER}*. More info: <${env.BUILD_URL}|supremacy-hangar-deploy>"
+                message: ":x: *supremacy-hangar* addressables deploy has *failed*. Commit: *${env.GIT_COMMIT.take(7)}*. Job name: *${env.JOB_NAME}*. Build no: *${env.BUILD_NUMBER}*. More info: <${env.BUILD_URL}|supremacy-hangar-deploy>"
           }
         }
-    } 
+    }  
   }
 }
