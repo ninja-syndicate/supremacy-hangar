@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Archon Miltech-LaserBeam-LaserBeam - ThinBlueLine
   m_Data:
     m_SerializedData: []
-  m_GUID: fd1f8c9861cd7ba44a001e20424e4638
+  m_GUID: 72bb5face044f3d43b416dc7fd725a36
   m_SerializeEntries:
   - m_GUID: 532ac58e6c24bb04bb0b8bc67e2cebf6
     m_Address: LaserBeam - ThinBlueLine

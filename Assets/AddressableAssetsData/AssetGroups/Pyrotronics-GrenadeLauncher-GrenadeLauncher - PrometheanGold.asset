@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Pyrotronics-GrenadeLauncher-GrenadeLauncher - PrometheanGold
   m_Data:
     m_SerializedData: []
-  m_GUID: 7e96e3558a2fcbe44ab2380dbb69e32a
+  m_GUID: aeafa6fab1af60448bf15a3fe5683c66
   m_SerializeEntries:
   - m_GUID: cc785f5f2cae82a43807e6d3f5e336d2
     m_Address: GrenadeLauncher - PrometheanGold

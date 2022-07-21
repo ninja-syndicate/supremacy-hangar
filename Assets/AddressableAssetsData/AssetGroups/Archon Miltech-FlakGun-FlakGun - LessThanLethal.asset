@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Archon Miltech-FlakGun-FlakGun - LessThanLethal
   m_Data:
     m_SerializedData: []
-  m_GUID: 13296ec1df0b7204d8c72c41f0599b69
+  m_GUID: 21e545b5a47f07148b51d7c9b8d75478
   m_SerializeEntries:
   - m_GUID: fb18eb30f0969ab4db6544010f923163
     m_Address: FlakGun - LessThanLethal

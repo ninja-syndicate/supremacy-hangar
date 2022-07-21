@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-GrenadeLauncher-GrenadeLauncher - Nullifier
   m_Data:
     m_SerializedData: []
-  m_GUID: e7e47e62c9dbc804490fcf27852e085a
+  m_GUID: d6a6c538f7686af47944154769e00dd5
   m_SerializeEntries:
   - m_GUID: 16024968ae2061043827e84482cd230a
     m_Address: GrenadeLauncher - Nullifier

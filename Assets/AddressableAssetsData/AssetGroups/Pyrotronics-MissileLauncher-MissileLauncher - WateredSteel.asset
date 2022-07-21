@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Pyrotronics-MissileLauncher-MissileLauncher - WateredSteel
   m_Data:
     m_SerializedData: []
-  m_GUID: c98cd35f6aaa56940a401692d228ce64
+  m_GUID: 7387d9e2b5abac642869de628ec03c84
   m_SerializeEntries:
   - m_GUID: f5f12120133fa5d46bf6e844d8432122
     m_Address: MissileLauncher - WateredSteel

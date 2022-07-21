@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Archon Miltech-BFG-BFG - ArchonGunmetal
   m_Data:
     m_SerializedData: []
-  m_GUID: fa7a2051ec51ada4aa65e67070af1975
+  m_GUID: 7de933bedd5d53e49a6615c59441eeb7
   m_SerializeEntries:
   - m_GUID: 265eb2abbc1e04046864e811175fc847
     m_Address: BFG - ArchonGunmetal

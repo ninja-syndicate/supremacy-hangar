@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-MissileLauncher-MissileLauncher - SynthPunk
   m_Data:
     m_SerializedData: []
-  m_GUID: a606bb728e274434989ad04852c9f1c0
+  m_GUID: 437bf143d3692f54c81cf951083ecc93
   m_SerializeEntries:
   - m_GUID: 4c28cfad0a4ad714ebb0849c50855dd6
     m_Address: MissileLauncher - SynthPunk

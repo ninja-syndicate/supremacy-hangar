@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Archon Miltech-MachineGun-MachineGun - ReadyToQuench
   m_Data:
     m_SerializedData: []
-  m_GUID: 24d0f87e54d288f46bf461c34649cb6f
+  m_GUID: e0baaefaa07048f45a9d16fbfd89266e
   m_SerializeEntries:
   - m_GUID: 9a82d6252e9491b458ee0213bddd91bb
     m_Address: MachineGun - ReadyToQuench

@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-LaserBeam-LaserBeam - CephalopodRipple
   m_Data:
     m_SerializedData: []
-  m_GUID: 05871fbdf01ecb442aec2bb974193023
+  m_GUID: 0d0fbbfa8c548b04da636f07bcc8e816
   m_SerializeEntries:
   - m_GUID: 209dfe9c69a94cd46802a879310969f9
     m_Address: LaserBeam - CephalopodRipple

@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Archon Miltech-Cannon-Cannon - LessThanLethal
   m_Data:
     m_SerializedData: []
-  m_GUID: 60805fa4396045a4a8b17a31c7a5ad74
+  m_GUID: cad44df92e54b4447b2298e87770ed17
   m_SerializeEntries:
   - m_GUID: 2597afdb1779b1e4b8d9265e2d68297e
     m_Address: Cannon - LessThanLethal

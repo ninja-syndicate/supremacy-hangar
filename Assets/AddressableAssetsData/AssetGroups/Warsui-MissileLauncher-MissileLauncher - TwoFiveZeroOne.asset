@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-MissileLauncher-MissileLauncher - TwoFiveZeroOne
   m_Data:
     m_SerializedData: []
-  m_GUID: 0d4e2579a4acb1c45b6f178db12e4a7d
+  m_GUID: 63c3436eeac610848a9008c6355304b5
   m_SerializeEntries:
   - m_GUID: 131c45a30ffca1b4bae100b87b8bb073
     m_Address: MissileLauncher - TwoFiveZeroOne

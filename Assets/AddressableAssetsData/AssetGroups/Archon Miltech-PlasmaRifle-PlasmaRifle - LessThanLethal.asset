@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Archon Miltech-PlasmaRifle-PlasmaRifle - LessThanLethal
   m_Data:
     m_SerializedData: []
-  m_GUID: e77f704c995492646b37092f32efe4b8
+  m_GUID: 464c76255ed932d46b46ee63813de6bb
   m_SerializeEntries:
   - m_GUID: 0a944675439ef4943b18fbf102535cb5
     m_Address: PlasmaRifle - LessThanLethal

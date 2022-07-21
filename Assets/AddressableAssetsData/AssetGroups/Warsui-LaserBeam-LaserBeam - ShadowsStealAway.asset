@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-LaserBeam-LaserBeam - ShadowsStealAway
   m_Data:
     m_SerializedData: []
-  m_GUID: 74febe8cc102e5b4b8afe951561239b9
+  m_GUID: c305d47800788e440a269863b8c2d954
   m_SerializeEntries:
   - m_GUID: b823d2d769438fe45916a2af416bdb5a
     m_Address: LaserBeam - ShadowsStealAway

@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Archon Miltech-MissileLauncher-MissileLauncher - TellingTheBees
   m_Data:
     m_SerializedData: []
-  m_GUID: b9c2784180e526a4da7c64142db5e23e
+  m_GUID: fe0d57ce7a57062428804ef29dd6c7f4
   m_SerializeEntries:
   - m_GUID: 2a96ba44a9769a94f8ca13b59265a7a8
     m_Address: MissileLauncher - TellingTheBees

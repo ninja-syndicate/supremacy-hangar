@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Archon Miltech-MachineGun-MachineGun - LessThanLethal
   m_Data:
     m_SerializedData: []
-  m_GUID: 5205b8a1f235d634db14d31a26f84b1f
+  m_GUID: 2b69ec27e761ab648ae55219f551768b
   m_SerializeEntries:
   - m_GUID: 7141a854b60825d42aec2a0732fc86c1
     m_Address: MachineGun - LessThanLethal

@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-MissileLauncher-MissileLauncher - HeavyWhite
   m_Data:
     m_SerializedData: []
-  m_GUID: bb92d623f743b6a418a87d29bc141cb0
+  m_GUID: e56d691360622b348b5d9f1ac2c00615
   m_SerializeEntries:
   - m_GUID: 3814cbdfbeb63dd42953b09e123bc6c0
     m_Address: MissileLauncher - HeavyWhite

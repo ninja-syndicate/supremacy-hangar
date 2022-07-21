@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Pyrotronics-LaserBeam-LaserBeam - HighCaliber
   m_Data:
     m_SerializedData: []
-  m_GUID: d3b9690786d578d4abac7ccc9e739530
+  m_GUID: 333986b32fa41d444aa70c9e579f84b2
   m_SerializeEntries:
   - m_GUID: dccecef0ffb6ef242837ac0c07c24bcb
     m_Address: LaserBeam - HighCaliber

@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Pyrotronics-LaserBeam-LaserBeam - WateredSteel
   m_Data:
     m_SerializedData: []
-  m_GUID: 30fad0cc93702ea46975e7c1e0732130
+  m_GUID: 51c1869e967f70846b2b455847f23310
   m_SerializeEntries:
   - m_GUID: 63c5774a9f4b833408982fa11269fdbf
     m_Address: LaserBeam - WateredSteel

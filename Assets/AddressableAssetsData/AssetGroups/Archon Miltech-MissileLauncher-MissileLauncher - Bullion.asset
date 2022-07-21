@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Archon Miltech-MissileLauncher-MissileLauncher - Bullion
   m_Data:
     m_SerializedData: []
-  m_GUID: 2fb43b8b54ec8d24b8fcae5b364b1bda
+  m_GUID: 316e99c62e7123e409d45d323d0335a9
   m_SerializeEntries:
   - m_GUID: af5466bdb12fe9c459021f0a28c78f6f
     m_Address: MissileLauncher - Bullion

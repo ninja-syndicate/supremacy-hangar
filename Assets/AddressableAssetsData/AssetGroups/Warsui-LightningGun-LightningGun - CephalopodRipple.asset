@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-LightningGun-LightningGun - CephalopodRipple
   m_Data:
     m_SerializedData: []
-  m_GUID: 6527ee11d52413c41a93c4562a0b8195
+  m_GUID: 5e663c23a33ae364b92a09376259bd8c
   m_SerializeEntries:
   - m_GUID: 1ae6ec55f33c3c249976f4dcd4444396
     m_Address: LightningGun - CephalopodRipple

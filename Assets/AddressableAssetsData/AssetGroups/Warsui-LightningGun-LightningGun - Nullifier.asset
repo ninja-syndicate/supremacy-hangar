@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-LightningGun-LightningGun - Nullifier
   m_Data:
     m_SerializedData: []
-  m_GUID: a2b1b6821e435154ca61343c08268a6a
+  m_GUID: 882999e36a9d92e4eb1015229750cc7c
   m_SerializeEntries:
   - m_GUID: d064af10af9ab9446a92b2a1c281fe96
     m_Address: LightningGun - Nullifier

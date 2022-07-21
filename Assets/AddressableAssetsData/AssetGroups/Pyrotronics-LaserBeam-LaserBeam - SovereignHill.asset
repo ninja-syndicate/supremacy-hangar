@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Pyrotronics-LaserBeam-LaserBeam - SovereignHill
   m_Data:
     m_SerializedData: []
-  m_GUID: 407e8571af65c1043afebfd854e149b4
+  m_GUID: 098b0da431e9c3c4fbfc2889524dd295
   m_SerializeEntries:
   - m_GUID: 8e084660a0dd9104383b1ac68375b2a7
     m_Address: LaserBeam - SovereignHill

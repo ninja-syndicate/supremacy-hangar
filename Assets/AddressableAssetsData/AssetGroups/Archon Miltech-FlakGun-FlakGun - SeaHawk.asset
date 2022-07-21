@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Archon Miltech-FlakGun-FlakGun - SeaHawk
   m_Data:
     m_SerializedData: []
-  m_GUID: 75c7f3e6c4fed544f9dd0503564d0b87
+  m_GUID: 8ee9923e799272e43ba557a7773be157
   m_SerializeEntries:
   - m_GUID: 83dfacd7071f18448aff5b48ac4f082e
     m_Address: FlakGun - SeaHawk

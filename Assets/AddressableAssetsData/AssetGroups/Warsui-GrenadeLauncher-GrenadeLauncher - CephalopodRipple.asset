@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-GrenadeLauncher-GrenadeLauncher - CephalopodRipple
   m_Data:
     m_SerializedData: []
-  m_GUID: 87db29783fd95c745989d0fdcfd47857
+  m_GUID: b8fb67172d067984d9d31f02e4afa1fe
   m_SerializeEntries:
   - m_GUID: 24a9ec7177eacd24da51f428bff93c22
     m_Address: GrenadeLauncher - CephalopodRipple

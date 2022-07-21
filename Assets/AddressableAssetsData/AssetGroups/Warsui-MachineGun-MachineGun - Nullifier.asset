@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-MachineGun-MachineGun - Nullifier
   m_Data:
     m_SerializedData: []
-  m_GUID: d073aeb475f98dc4298367bcbb7aafe8
+  m_GUID: 15bf3e7a7d22e024bbc19b24b87b0eca
   m_SerializeEntries:
   - m_GUID: 6fa3026b7ebdf134c927edb3edb5a7f1
     m_Address: MachineGun - Nullifier

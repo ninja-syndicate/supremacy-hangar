@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-GrenadeLauncher-GrenadeLauncher - SynthPunk
   m_Data:
     m_SerializedData: []
-  m_GUID: 55b540b9116a9744eb4d7419f3157801
+  m_GUID: 57e6dcc1b2fdb7342bff1b7df7312294
   m_SerializeEntries:
   - m_GUID: a718ca4305bb6af4299dcaba6ffd016a
     m_Address: GrenadeLauncher - SynthPunk

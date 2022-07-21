@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-LightningGun-LightningGun - HeavyWhite
   m_Data:
     m_SerializedData: []
-  m_GUID: f580e16120df8ff43ba2e743f21cfdb2
+  m_GUID: c035dfddd04155245a176b2ea28059d7
   m_SerializeEntries:
   - m_GUID: a1b7d036e3d88b24badd1cb5fbdabf69
     m_Address: LightningGun - HeavyWhite

@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Pyrotronics-MissileLauncher-MissileLauncher - SharkSkin
   m_Data:
     m_SerializedData: []
-  m_GUID: cc98016143d479e4dbd440befc6a6995
+  m_GUID: 1cf228e99d658084eba1f140a145d000
   m_SerializeEntries:
   - m_GUID: 90695c6ae384a784d900b1cc212c0eeb
     m_Address: MissileLauncher - SharkSkin

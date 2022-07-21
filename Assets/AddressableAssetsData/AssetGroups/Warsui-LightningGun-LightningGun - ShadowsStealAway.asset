@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-LightningGun-LightningGun - ShadowsStealAway
   m_Data:
     m_SerializedData: []
-  m_GUID: b0cbac6dc000ddd41a976363e59c76b9
+  m_GUID: 03ef9c7ece35b994caa1a0a4e2c7111b
   m_SerializeEntries:
   - m_GUID: b02780bf1cb7ec44ba90479591e2e777
     m_Address: LightningGun - ShadowsStealAway

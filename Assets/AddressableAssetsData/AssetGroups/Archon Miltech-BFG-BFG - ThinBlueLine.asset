@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Archon Miltech-BFG-BFG - ThinBlueLine
   m_Data:
     m_SerializedData: []
-  m_GUID: 24b04fa4aebc41342bc43b96087c83ce
+  m_GUID: b04bad9e205256a49a411ede0ec20477
   m_SerializeEntries:
   - m_GUID: 3cd105461d072ca409c112920fe6b0d5
     m_Address: BFG - ThinBlueLine

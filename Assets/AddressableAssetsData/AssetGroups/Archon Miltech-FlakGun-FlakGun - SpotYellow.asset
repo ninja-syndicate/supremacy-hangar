@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Archon Miltech-FlakGun-FlakGun - SpotYellow
   m_Data:
     m_SerializedData: []
-  m_GUID: 02fb98c4aa32e5942ad1fdcef7787d7b
+  m_GUID: c0d9b92ad3e68c84aa4ba4115dbe390d
   m_SerializeEntries:
   - m_GUID: 51bf2f3845dbd06428d2f216728f0a1d
     m_Address: FlakGun - SpotYellow

@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Pyrotronics-LaserBeam-LaserBeam - PilbaraDust
   m_Data:
     m_SerializedData: []
-  m_GUID: f30d24bd1ddf1754c8fad3e1d4c70739
+  m_GUID: 4c46e4537090d804c88160f6d4469658
   m_SerializeEntries:
   - m_GUID: 0ece14534b625884a88c0892f7d55483
     m_Address: LaserBeam - PilbaraDust

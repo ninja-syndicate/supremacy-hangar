@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Archon Miltech-GrenadeLauncher-GrenadeLauncher - SpotYellow
   m_Data:
     m_SerializedData: []
-  m_GUID: a491a385836b67d4e8925c07e0858cec
+  m_GUID: c402b984a569bfa4ba28267cc277e223
   m_SerializeEntries:
   - m_GUID: eb200d640b9ba8c4191e820bb0d23254
     m_Address: GrenadeLauncher - SpotYellow

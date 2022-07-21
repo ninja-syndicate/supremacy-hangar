@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Archon Miltech-MissileLauncher-MissileLauncher - ReadyToQuench
   m_Data:
     m_SerializedData: []
-  m_GUID: 0079f525ce0ce2243b31788590156915
+  m_GUID: ded9278adfc45d246a5b5f79ee89e0f1
   m_SerializeEntries:
   - m_GUID: 61996b8005b40b64698f293d4f08e063
     m_Address: MissileLauncher - ReadyToQuench

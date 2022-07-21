@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-LaserBeam-LaserBeam - SynthPunk
   m_Data:
     m_SerializedData: []
-  m_GUID: 5565ecea037699e41bb16e582b444ab9
+  m_GUID: 7bc4747866a570944afccd27a23fcd60
   m_SerializeEntries:
   - m_GUID: e4a5a350b094cbc439e256a462685ff7
     m_Address: LaserBeam - SynthPunk

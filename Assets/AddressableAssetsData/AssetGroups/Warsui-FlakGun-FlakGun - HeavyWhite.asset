@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-FlakGun-FlakGun - HeavyWhite
   m_Data:
     m_SerializedData: []
-  m_GUID: e896fb88204ee2a439adc66446104573
+  m_GUID: 3c99f5a3334fc9c4f86db5b541f0f510
   m_SerializeEntries:
   - m_GUID: 388e29d17e45eec45b6d1a0321237fae
     m_Address: FlakGun - HeavyWhite

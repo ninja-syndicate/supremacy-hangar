@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Pyrotronics-Cannon-Cannon - BarricadeStripes
   m_Data:
     m_SerializedData: []
-  m_GUID: c6f4e3e8798567843a6f92e8a1c2d53a
+  m_GUID: 44adebd2ac9abc2448f5b1be1bcb1434
   m_SerializeEntries:
   - m_GUID: 1b442d29f8f529545a008908ec53c150
     m_Address: Cannon - BarricadeStripes

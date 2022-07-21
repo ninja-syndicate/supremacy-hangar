@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Archon Miltech-LaserBeam-LaserBeam - LessThanLethal
   m_Data:
     m_SerializedData: []
-  m_GUID: e6c108f7bb5ca59499566b587793e35f
+  m_GUID: 8708554877ad18b4aac85174c419caf4
   m_SerializeEntries:
   - m_GUID: 6ce665a726b60784fba0c05971673a24
     m_Address: LaserBeam - LessThanLethal

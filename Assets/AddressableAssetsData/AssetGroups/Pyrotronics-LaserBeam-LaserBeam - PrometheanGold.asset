@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Pyrotronics-LaserBeam-LaserBeam - PrometheanGold
   m_Data:
     m_SerializedData: []
-  m_GUID: 3e1a0c9e2a07c66459a76906d0197456
+  m_GUID: e4e577f4f14b03b478f6b294c8a0df96
   m_SerializeEntries:
   - m_GUID: 42458939c169e7340a6e9baa1df45534
     m_Address: LaserBeam - PrometheanGold

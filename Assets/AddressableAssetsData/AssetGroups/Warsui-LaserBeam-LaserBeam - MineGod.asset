@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-LaserBeam-LaserBeam - MineGod
   m_Data:
     m_SerializedData: []
-  m_GUID: 72a20042674274340bf86d818a77e0cd
+  m_GUID: abeba29a8d272ef4e87a960bdb87add9
   m_SerializeEntries:
   - m_GUID: e84ed66030331984ca0ec9bd60b78b31
     m_Address: LaserBeam - MineGod

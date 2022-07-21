@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Archon Miltech-MissileLauncher-MissileLauncher - PraetorGrunge
   m_Data:
     m_SerializedData: []
-  m_GUID: 36f934244b442a74f89a18439627f751
+  m_GUID: 378b1852bbd004049bb9209e824b5d71
   m_SerializeEntries:
   - m_GUID: 112706edb3c92c54ea688710bb5d62d8
     m_Address: MissileLauncher - PraetorGrunge

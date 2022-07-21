@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Archon Miltech-LaserBeam-LaserBeam - ArchonGunmetal
   m_Data:
     m_SerializedData: []
-  m_GUID: 7cbf3915454529a439c051a3d7cc8680
+  m_GUID: 4484f678334bc2f41b4f2765523e9768
   m_SerializeEntries:
   - m_GUID: 87f1dc3e716f13a45bba7f201c812366
     m_Address: LaserBeam - ArchonGunmetal

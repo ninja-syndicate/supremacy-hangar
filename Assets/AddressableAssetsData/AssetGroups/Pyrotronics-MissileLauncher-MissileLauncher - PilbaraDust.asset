@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Pyrotronics-MissileLauncher-MissileLauncher - PilbaraDust
   m_Data:
     m_SerializedData: []
-  m_GUID: de3dc8b62bb6fac478c14205acf4c8c0
+  m_GUID: 5a8af201d7c3aa3469257ba740068adf
   m_SerializeEntries:
   - m_GUID: 43ff707494d4ac042a3f5b85719443ef
     m_Address: MissileLauncher - PilbaraDust

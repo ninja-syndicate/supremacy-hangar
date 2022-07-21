@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-GrenadeLauncher-GrenadeLauncher - HeavyWhite
   m_Data:
     m_SerializedData: []
-  m_GUID: ba42985b84457154c8a062c8c7ef5daa
+  m_GUID: addbb9852c687b543ad228f77d647546
   m_SerializeEntries:
   - m_GUID: 375b5608676a6cb4185b1b222597c230
     m_Address: GrenadeLauncher - HeavyWhite

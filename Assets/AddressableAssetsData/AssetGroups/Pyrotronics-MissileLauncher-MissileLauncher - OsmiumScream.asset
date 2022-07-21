@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Pyrotronics-MissileLauncher-MissileLauncher - OsmiumScream
   m_Data:
     m_SerializedData: []
-  m_GUID: ba7234d71555e124eb979ffc3ca85ba7
+  m_GUID: 740155a802130e24d905f78f187bb88e
   m_SerializeEntries:
   - m_GUID: 03bf7d373d6f07d42ac9c50ebf3cc34a
     m_Address: MissileLauncher - OsmiumScream

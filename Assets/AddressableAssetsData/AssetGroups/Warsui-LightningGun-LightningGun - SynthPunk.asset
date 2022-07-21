@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-LightningGun-LightningGun - SynthPunk
   m_Data:
     m_SerializedData: []
-  m_GUID: 31481c3523bd7c54da696bb18fb15cd8
+  m_GUID: 864c1e0ae65a952448e7e0f145c78776
   m_SerializeEntries:
   - m_GUID: 8ce4bddd7bbb846428dd11246e15d80e
     m_Address: LightningGun - SynthPunk

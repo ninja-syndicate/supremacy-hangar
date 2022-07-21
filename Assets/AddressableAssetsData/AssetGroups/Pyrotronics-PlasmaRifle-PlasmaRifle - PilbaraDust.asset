@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Pyrotronics-PlasmaRifle-PlasmaRifle - PilbaraDust
   m_Data:
     m_SerializedData: []
-  m_GUID: 85b31d43ca1dd5b40a942bc6229a8b57
+  m_GUID: eb5a9100f93bc624495dbd2af5adeda8
   m_SerializeEntries:
   - m_GUID: b6c4093064f11ba4fb7d7c03fd263568
     m_Address: PlasmaRifle - PilbaraDust

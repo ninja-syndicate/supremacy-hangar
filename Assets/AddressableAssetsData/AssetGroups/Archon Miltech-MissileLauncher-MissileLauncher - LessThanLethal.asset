@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Archon Miltech-MissileLauncher-MissileLauncher - LessThanLethal
   m_Data:
     m_SerializedData: []
-  m_GUID: 09d302a9c090a4f44896bd000a910985
+  m_GUID: cc943e32ba784e348aa303c4af23238b
   m_SerializeEntries:
   - m_GUID: 798b993d0ed87934ba8ac8017c4bf807
     m_Address: MissileLauncher - LessThanLethal
