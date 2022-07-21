@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-2896195052775389780
+--- !u!114 &-1149182665092278673
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Base
+  m_Name: Legs
   m_Shader: {fileID: -6465566751694194690, guid: 6e321fdac3365444bbb1429cfbd45873,
     type: 3}
   m_ValidKeywords: []
@@ -35,19 +35,19 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 03bc3a156fcb76049b40e2bf8e9296df, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3dd3d4eade48d2143a7cfac91c58651f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: e7ba746932bec264aa603b556abdaa0b, type: 3}
+        m_Texture: {fileID: 2800000, guid: ea90fc32aa9eb4c4f90d0f9a0d0cdf8f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 97d1e8a938fddbf46b0b9abe917e100c, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8e775dca8a0c9ce4b849e53a0a611492, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: 7cc1c01c1b0253e41a8810ad03225782, type: 3}
+        m_Texture: {fileID: 2800000, guid: a698d7f18e1a91347a20c4c34e800994, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:

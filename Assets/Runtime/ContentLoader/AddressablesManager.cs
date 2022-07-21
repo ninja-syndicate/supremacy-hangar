@@ -281,11 +281,11 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 prevTransform = spawnLocation;
 
             if (!siloDirection) skinToMeshMap.Clear();
-
+#if UNITY_EDITOR
             //When new mech is spawned remove previous unless inside crate
             if (quickLoad)
                 UnloadMech(quickLoad, insideCrate);
-
+#endif
             previousMech = TargetMech;
 
             if (sameMechChassis)

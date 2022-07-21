@@ -507,10 +507,10 @@ MonoBehaviour:
     dataMechSkin: {fileID: 6044281424002516637, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
       type: 2}
     skinReference:
-      m_AssetGUID: 09d10c17a7b0a7540831a4b12b6b204a
+      m_AssetGUID: 4d4379f0f8dd4994c939cb6a93e1e6e6
       m_SubObjectName: 
       m_SubObjectType: 
-      m_EditorAssetChanged: 1
+      m_EditorAssetChanged: 0
   - containsError: 1
     dataMechSkin: {fileID: 2855803916473553528, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
       type: 2}

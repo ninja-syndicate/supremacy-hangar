@@ -17,10 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 9e60eeaefe8396d4fb09930816579be6
   m_SerializeEntries:
-  - m_GUID: 09d10c17a7b0a7540831a4b12b6b204a
-    m_Address: Annihilator - TellingTheBees
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 4d4379f0f8dd4994c939cb6a93e1e6e6
     m_Address: Annihilator - TellingTheBees
     m_ReadOnly: 0
