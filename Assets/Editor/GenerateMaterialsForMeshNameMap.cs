@@ -59,8 +59,8 @@ namespace SupremacyHangar.Editor
                 activePath = AssetDatabase.GetAssetPath(SelectedMesh);
                 meshName = String.Join('/', activePath.Split('/').Skip(3));
                 meshName = meshName.Substring(0, meshName.IndexOf('.'));
+                logWidget.LogNormal($"\n--------New Mesh ({SelectedMesh.name})--------\n");
                 SelectMatieralDirectory(true);
-                logWidget.LogNormal("\n--------New Mesh--------\n");
             }
 
             AssetDatabase.StopAssetEditing();

@@ -16,7 +16,7 @@ MonoBehaviour:
   - Mesh: {fileID: 8347601449702216776, guid: bc7344ee3a65e6c458117e3279961efc, type: 3}
     MaterialNames:
     - AM_BFG
-    - AM_BFG_Tubes
+    - AM_BFG
   - Mesh: {fileID: 8347601449702216776, guid: da9b40a09785e80499318f680756a157, type: 3}
     MaterialNames:
     - AM_Cannon
@@ -25,7 +25,7 @@ MonoBehaviour:
     - AM_Shotgun
   - Mesh: {fileID: 8347601449702216776, guid: 65e6558ff3ac14542a1d5c4a3d5c9338, type: 3}
     MaterialNames:
-    - AM_Granade_Launcher
+    - AM_GranadeLauncher
   - Mesh: {fileID: 8347601449702216776, guid: f1be6fbfb8534144988f44719ace20df, type: 3}
     MaterialNames:
     - AM_Laser

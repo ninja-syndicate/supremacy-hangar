@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Warsui-GrenadeLauncher-GrenadeLauncher_X3Kuro
+  m_EditorClassIdentifier: 
+  m_GroupName: Warsui-GrenadeLauncher-GrenadeLauncher_X3Kuro
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 12fd511b73a47f0419dbf9e7fae61559
+  m_SerializeEntries:
+  - m_GUID: 52d6fba46e4a3d8488b92e817e685f93
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 24a9ec7177eacd24da51f428bff93c22
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 375b5608676a6cb4185b1b222597c230
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8459d0dcd78322f4f82d7a51bf5a78bf
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 16024968ae2061043827e84482cd230a
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 465a2a319e801274292c0ca3dbc38a9a
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4f8c1ef891053ae419725fa604ed575a
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a718ca4305bb6af4299dcaba6ffd016a
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 33ac540a7382d2648a33c6ad8161606d
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fecd5ca552706c04fa2cef1e79f939c4
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e2526b0ad1c0b394bb871bc84ab7ef84
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: acd201f9500758e448f4a1a3c366490b
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas: []

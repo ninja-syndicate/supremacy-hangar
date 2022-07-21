@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Pyrotronics-GrenadeLauncher-GrenadeLauncher_WateredSteel
+  m_EditorClassIdentifier: 
+  m_GroupName: Pyrotronics-GrenadeLauncher-GrenadeLauncher_WateredSteel
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 74c84ae63a02a764fbec0541b3e9f996
+  m_SerializeEntries:
+  - m_GUID: 5507373d58232064d9b71ab8a1c56e07
+    m_Address: WateredSteel.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 78f451677e4212b409cf917fce5097e0
+    m_Address: WateredSteel.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b2ce92687019c704ea42fbea872219f3
+    m_Address: WateredSteel.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6912596937bd5904bb2d08d887eb84a2
+    m_Address: WateredSteel.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6c03474d905413542b81fa728ed70034
+    m_Address: WateredSteel.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 358351fee43cfe741bdcbfcb05ea4a29
+    m_Address: WateredSteel.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 626eeb9bd0e99ca4c86ae42663c78538
+    m_Address: WateredSteel.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: eef813d4260f4a643af872fd012f18d5
+    m_Address: WateredSteel.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: cc785f5f2cae82a43807e6d3f5e336d2
+    m_Address: WateredSteel.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5b532322dfe672e4c8e529a035799a67
+    m_Address: WateredSteel.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c79f589f062f11349952a71f870298cd
+    m_Address: WateredSteel.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3e178a3356bf2364ebbdae185e9a0471
+    m_Address: WateredSteel.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas: []
