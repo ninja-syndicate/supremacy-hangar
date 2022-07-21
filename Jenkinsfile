@@ -11,6 +11,14 @@ pipeline {
     unityPath = "C:\\Program Files\\Unity\\Hub\\Editor\\2021.3.5f1\\Editor\\Unity.exe"
   }
   stages {
+    stage('Init') {
+            agent { label 'master' }
+            steps {
+                script {
+                    cancelPreviousBuilds()
+                }
+            }  
+    }    
     stage('Build') {
       steps {
         echo 'Sending notification to Slack.'
@@ -20,19 +28,19 @@ pipeline {
         script {
           if (env.BRANCH_NAME == 'develop') {
               echo 'Prewarm started'
-              bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile prewarm_log.txt -executeMethod BuildSystem.CLI.PreWarm -addressablesLocation staging"
+              bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile - prewarm_log.txt -executeMethod BuildSystem.CLI.PreWarm -addressablesLocation staging"
               echo 'Prewarm completed'
 
               echo 'Build started'
-              bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile builds_log.txt -executeMethod BuildSystem.CLI.BuildWebGL -addressablesLocation staging"
+              bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile - builds_log.txt -executeMethod BuildSystem.CLI.BuildWebGL -addressablesLocation staging"
               echo 'Build completed'
           } else if (env.BRANCH_NAME == 'main') {
               echo 'Prewarm started'
-              bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile prewarm_log.txt -executeMethod BuildSystem.CLI.PreWarm -addressablesLocation ${deployEnv}"
+              bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile - prewarm_log.txt -executeMethod BuildSystem.CLI.PreWarm -addressablesLocation ${deployEnv}"
               echo 'Prewarm completed'
 
               echo 'Build started'
-              bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile builds_log.txt -executeMethod BuildSystem.CLI.BuildWebGL -addressablesLocation ${deployEnv}"
+              bat "\"${unityPath}\" -batchmode -quit -buildTarget WebGL -projectPath ${env.WORKSPACE} -logFile - builds_log.txt -executeMethod BuildSystem.CLI.BuildWebGL -addressablesLocation ${deployEnv}"
               echo 'Build completed'
           } else {
               echo 'Prewarm started'
