@@ -40,7 +40,7 @@ namespace SupremacyHangar.Editor.ContentLoader
 
             var settings = AddressableAssetSettingsDefaultObject.Settings;
             int firstNewItemIndex = -1;
-            foreach (var dataKey in GetStatisDataList(type, staticData))
+            foreach (var dataKey in GetStaticDataList(type, staticData))
             {
                 bool matchFound = false;
                 for (int i = 0; i < key.Length; i++)
@@ -69,7 +69,7 @@ namespace SupremacyHangar.Editor.ContentLoader
                     //single object name only
                     if (type == ListType.WeaponSkin || type == ListType.MechSkin)
                     {
-                        targetTypeName = targetTypeName.Split("- ")[1];
+                        targetTypeName = targetTypeName.Split("-")[1].Trim();
                         targetTypeName = @"" + targetTypeName;
                         targetName = targetName.Substring(targetName.LastIndexOf('-') + 2);
                     }
@@ -99,7 +99,10 @@ namespace SupremacyHangar.Editor.ContentLoader
                             }
                             string mechSkinfolderPath = SearchSubDirs("Assets/Content/Mechs", targetTypeName);
                             if (mechSkinfolderPath != null)
+                            {
+                                Debug.Log($"Searching in '{mechSkinfolderPath}' for skin '{targetName}'");
                                 targetAssetGuid = AssetDatabase.FindAssets($"{targetName} t:Skin", new[] { $"{mechSkinfolderPath}" });
+                            }
                             break;
                         case ListType.MysteryCrate:
                             targetAssetGuid = AssetDatabase.FindAssets($"{targetName} t:Prefab");
@@ -194,7 +197,8 @@ namespace SupremacyHangar.Editor.ContentLoader
 
             foreach (string subdirectory in subdirectoryEntries)
             {
-                if (subdirectory.EndsWith(targetFolder, StringComparison.CurrentCultureIgnoreCase))
+                var parts = subdirectory.Split(Path.DirectorySeparatorChar);
+                if (String.Equals(parts[^1], targetFolder, StringComparison.InvariantCultureIgnoreCase))
                     return subdirectory;
 
                 var result = SearchSubDirs(subdirectory, targetFolder);
@@ -204,7 +208,7 @@ namespace SupremacyHangar.Editor.ContentLoader
             return null;
         }
 
-        private IEnumerable<BaseRecord> GetStatisDataList(ListType type, Data staticData)
+        private IEnumerable<BaseRecord> GetStaticDataList(ListType type, Data staticData)
         {
             switch (type)
             {
