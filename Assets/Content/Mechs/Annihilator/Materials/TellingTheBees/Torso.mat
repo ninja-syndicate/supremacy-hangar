@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Torso
+  m_Shader: {fileID: -6465566751694194690, guid: d928b251588da404689dad2997fcc08b,
+    type: 3}
+  m_ValidKeywords:
+  - _IS_MECH
+  - _USE_MESH_UVS
+  m_InvalidKeywords: []
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AORM:
+        m_Texture: {fileID: 2800000, guid: 7367f4bfcba59934bacb5515adca7548, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BaseColour:
+        m_Texture: {fileID: 2800000, guid: 3b80159705766e84993799883bd9d2db, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BaseMap:
+        m_Texture: {fileID: 2800000, guid: 001c55057ba9dae4e8d801ceb3c9bfa5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 30153d49ea4aaa84b92b77e39179c61f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 2800000, guid: 98043faf7eef9e74684407995c6b861c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Emissive:
+        m_Texture: {fileID: 2800000, guid: 10b527526eac9af4b9615265676b37d8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Mask:
+        m_Texture: {fileID: 2800000, guid: 190c996275352614ca4fbf820f1d7338, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Normal:
+        m_Texture: {fileID: 2800000, guid: 0b6fcf0ed3ccac04c9a6deac998e3316, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 2800000, guid: 4867ee3196f723249978a69e12d7f8df, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Blend_Strength: 0.1
+    - _Emissive_Intensity: 1
+    - _Hex_UV_Scale: 47.29
+    - _IS_MECH: 1
+    - _Metallic_Intensity: 0.5
+    - _QueueControl: 0
+    - _QueueOffset: 0
+    - _Roughness_Intensity: 0.5
+    - _Snake_Count: 3
+    - _Snake_Emissive_Strength: 1
+    - _Snake_Threshold: 0.1
+    - _Snake_Time_Scale: 0.2
+    - _USE_MESH_UVS: 1
+    m_Colors:
+    - _Border_Colour: {r: 0.25520796, g: 0.18432397, b: 0.09171497, a: 1}
+    - _Fill_Colour: {r: 0, g: 0, b: 0, a: 0}
+    - _Snake_Colour: {r: 1, g: 0.534762, b: 0.041666977, a: 1}
+    - _Snake_UV_Offset: {r: 0, g: 0.14, b: 0, a: 0}
+    - _Snake_UV_Scale: {r: 48, g: 48, b: 0, a: 0}
+  m_BuildTextureStacks: []
+--- !u!114 &984924744611464553
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
