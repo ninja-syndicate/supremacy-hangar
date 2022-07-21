@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec0b4dd729a12d046982652f834580a2, type: 3}
-  m_Name: Hallway-DoubleSilo BC-LM Group
+  m_Name: Hallway-SmallStraightJoin-LM Group
   m_EditorClassIdentifier: 
   resolution: 1024
   bitmask: -1
@@ -40,4 +40,4 @@ MonoBehaviour:
   overridePath: 
   fixPos3D: 0
   voxelSize: {x: 1, y: 1, z: 1}
-  passedFilter: 4
+  passedFilter: 2

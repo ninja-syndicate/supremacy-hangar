@@ -196,6 +196,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zai_Decals
       objectReference: {fileID: 0}
+    - target: {fileID: 2194691305433740981, guid: d8e6b5f482e3f2048a331478773ea432,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -77
+      objectReference: {fileID: 0}
     - target: {fileID: 4304466905404873273, guid: d8e6b5f482e3f2048a331478773ea432,
         type: 3}
       propertyPath: m_IsActive
