@@ -48,6 +48,9 @@ namespace SupremacyHangar.Runtime.ContentLoader
         private SiloSignalHandler _siloSignalHandler;
         private CrateSignalHandler _crateSignalHandler;
 
+        private bool isComposable = false;
+        private bool isInsideCrate = false;
+
         //These are used in editor only
         private Transform prevTransform;
         private bool sameMechChassis = false;
@@ -268,7 +271,13 @@ namespace SupremacyHangar.Runtime.ContentLoader
         private Transform siloDirection;
         public void SpawnMech(Transform spawnLocation, bool insideCrate = false, bool isWeaponOnly = false, bool quickLoad = false)
         {
-            if(!insideCrate)
+            if (TargetMech == null)
+            {
+                Debug.LogError("Cannot load NULL Object");
+                return;
+            }
+
+            if (!insideCrate)
                 prevTransform = spawnLocation;
 
             if (!siloDirection) skinToMeshMap.Clear();
@@ -292,15 +301,11 @@ namespace SupremacyHangar.Runtime.ContentLoader
             Vector3 spawnPosition = spawnLocation.position;
             Quaternion spawnRotation = Quaternion.LookRotation(spawnLocation.forward, spawnLocation.up);
 
-            /*            if (skinToMeshMap.Count == 0 && insideCrate)
-                newRotation = siloDirection;*/
-
             //Load and spawn mech
             var mechOperationHandler = TargetMech.InstantiateAsync(spawnPosition, spawnRotation, spawnLocation);
             StartCoroutine(loadingProgressContext.LoadingAssetProgress(mechOperationHandler, "Loading Mesh"));
             
-            if(TargetSkin != null)
-                skinToMeshMap.Add(mechOperationHandler, TargetSkin);
+            skinToMeshMap.Add(mechOperationHandler, TargetSkin);
 
             mechOperationHandler.Completed += (mech) =>
                 {
@@ -337,6 +342,13 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 {
                     Renderer mechMesh = result.GetComponentInChildren<Renderer>();
                     var platformRepositioner = result.GetComponentInChildren<SiloPlatformRepositioner>();
+
+                    if (!isComposable)
+                        isComposable = result.GetComponent<ComposableSockets>();
+
+                    if (!isInsideCrate)
+                        isInsideCrate = insideCrate;
+
                     if (skin != null)
                         mechMesh.sharedMaterials = skin.mats;
 
@@ -344,18 +356,48 @@ namespace SupremacyHangar.Runtime.ContentLoader
 
                     loadingProgressContext.ProgressSignalHandler.FinishedLoading(result);
 
-                    if (insideCrate)
-                        _crateSignalHandler.OpenCrate();
+                    if (isInsideCrate)
+                    {
+                        if (!WaitingOnComposable())
+                        {
+                            isInsideCrate = false;
+                            _crateSignalHandler.OpenCrate();
+                        }
+                    }
                     else
                     {
                         if (platformRepositioner && skinToMeshMap.Count <= 1)
                             platformRepositioner.RepositionObject();
 
-                        _siloSignalHandler.SiloFilled();
+                        if (isComposable)
+                        {
+                            if (!WaitingOnComposable())
+                                _siloSignalHandler.SiloFilled();
+                        }
+                        else
+                        {
+                            _siloSignalHandler.SiloFilled();
+                        }
                     }
                 }
             );
         }
+
+        private bool WaitingOnComposable()
+        {
+            float total = 0;
+            foreach (var loader in skinToMeshMap)
+            {
+                total += loader.Key.PercentComplete;
+            }
+            if (total >= skinToMeshMap.Count && skinToMeshMap.Count > 1)
+            {
+                isComposable = false;
+                return false;
+            }
+            return true;
+        }
+
 #if UNITY_EDITOR
         public void UnloadMech(bool quickLoad = false, bool insideCrate = false)
         {
