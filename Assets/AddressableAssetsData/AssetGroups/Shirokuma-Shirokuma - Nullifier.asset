@@ -16,11 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 721b737404100524fa6468a1af8e593f
-  m_SerializeEntries:
-  - m_GUID: b2496652d614ff64a8ebae11fbed8cd3
-    m_Address: Shirokuma - Nullifier
-    m_ReadOnly: 0
-    m_SerializedLabels: []
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
   m_SchemaSet:

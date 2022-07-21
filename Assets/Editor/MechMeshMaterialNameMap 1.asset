@@ -66,5 +66,5 @@ MonoBehaviour:
     - LowerDetails
     - MidCore
     - MidDetails
-    - LegLeft
-    - LegRight
+    - LegFrontLeft
+    - LegFrontRight

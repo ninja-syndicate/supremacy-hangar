@@ -16,11 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 8d67fc88858c1ae429839593a4b3970f
-  m_SerializeEntries:
-  - m_GUID: 14586857d3cef794bb8c5b3c3a7e03c8
-    m_Address: Shirokuma - ShadowStealAway
-    m_ReadOnly: 0
-    m_SerializedLabels: []
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
   m_SchemaSet:

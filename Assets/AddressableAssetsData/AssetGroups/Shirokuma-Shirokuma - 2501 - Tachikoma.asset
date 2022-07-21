@@ -16,11 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 1f644f8c2aa0cf143af30d09ec6f2a5a
-  m_SerializeEntries:
-  - m_GUID: 86f11956c3ec61843bf0a01d76f079c0
-    m_Address: Shirokuma - 2501 - Tachikoma
-    m_ReadOnly: 0
-    m_SerializedLabels: []
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
   m_SchemaSet:

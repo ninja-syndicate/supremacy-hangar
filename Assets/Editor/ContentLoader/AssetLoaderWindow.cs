@@ -75,7 +75,7 @@ namespace SupremacyHangar.Editor.ContentLoader
             RenderNavigationSection();
             RenderSearchFields();
 
-            if (mapOptions.Count > 0) RenderSelectedInformation(searchResults.Count > 0 ? mapOptions[searchResults[searchIndex]] : mapOptions[index]);
+            if (mapOptions.Count > 0) RenderSelectedInformation(searchResults.Count > 0 ? mapOptions[searchIndex] : mapOptions[index]);
 
             scrollPosition = EditorGUILayout.BeginScrollView(scrollPosition);
             
@@ -186,7 +186,7 @@ namespace SupremacyHangar.Editor.ContentLoader
             int counter = 0;
             foreach (var item in mapOptions)
             {
-                if ((searchValue == "" && counter == index) || (searchResults.Count > 0 && searchResults[searchIndex] == counter)) GUI.backgroundColor = selectedColour;
+                if ((searchValue == "" && counter == index) || (searchResults.Count > 0 && searchIndex == counter)) GUI.backgroundColor = selectedColour;
 
                 counter++;
                 if (searchValue != "" && !item.name.Contains(searchValue, StringComparison.InvariantCultureIgnoreCase)) 
@@ -221,7 +221,7 @@ namespace SupremacyHangar.Editor.ContentLoader
             switch(item.type)
             {
                 case ListType.MechSkin:
-                    targetIndex = searchResults.Count > 0 ? searchResults[searchIndex] : index;
+                    targetIndex = searchResults.Count > 0 ? searchIndex : index;
                     break;
                 case ListType.MysteryCrate:
                     targetIndex = crateCount - (mapOptions.Count - weaponCount - index);
@@ -322,7 +322,7 @@ namespace SupremacyHangar.Editor.ContentLoader
                 SetAndSpawnAsset();
             }
 
-            var t = searchResults.Count > 0 ? searchResults[searchIndex] : index;
+            var t = searchResults.Count > 0 ? searchResults.IndexOf(searchIndex) : index;
             GUILayout.Label($"Current index: {t}");
 
             if (GUILayout.Button("Spawn Current", GUILayout.Height(20), GUILayout.Width(100)))
@@ -335,20 +335,23 @@ namespace SupremacyHangar.Editor.ContentLoader
 
         private int SearchResultIndex(int targetIndex)
         {
-            return searchResults[searchResults.IndexOf(targetIndex)];
+            if(targetIndex > searchResults.Count)
+                return searchResults[searchResults.IndexOf(targetIndex)];
+
+            return searchResults[targetIndex];
         }
 
         private void SetAndSpawnAsset()
         {
             if(!myAddressablesManager)
             {
-                var targetName = searchResults.Count > 0 ? mapOptions[searchResults[searchIndex]].name : mapOptions[index].name;
+                var targetName = searchResults.Count > 0 ? mapOptions[searchIndex].name : mapOptions[index].name;
                 Debug.LogWarning($"Cannot spawn mech outside Play Mode {targetName}");
                 return;
             }
 
-            myAddressablesManager.TargetMech = searchResults.Count > 0 ? mapOptions[searchResults[searchIndex]].mech : mapOptions[index].mech;
-            myAddressablesManager.TargetSkin = searchResults.Count > 0 ? mapOptions[searchResults[searchIndex]].skin : mapOptions[index].skin;
+            myAddressablesManager.TargetMech = searchResults.Count > 0 ? mapOptions[searchIndex].mech : mapOptions[index].mech;
+            myAddressablesManager.TargetSkin = searchResults.Count > 0 ? mapOptions[searchIndex].skin : mapOptions[index].skin;
 
             if(mapOptions[index].data is WeaponSkin)
                 myAddressablesManager.QuickSpawn(spawnPoint, true, inCrate);

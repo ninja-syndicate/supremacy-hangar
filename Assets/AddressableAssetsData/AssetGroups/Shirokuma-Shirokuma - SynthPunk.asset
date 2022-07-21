@@ -16,15 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 4b9db3945bb5496478bde0e94aaf3691
-  m_SerializeEntries:
-  - m_GUID: e47589da33f3c1446bd9fe5bf18cfe9b
-    m_Address: Shirokuma - SynthPunk
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 83f11b4385ac169498e351a6351f473d
-    m_Address: Shirokuma - SynthPunk
-    m_ReadOnly: 0
-    m_SerializedLabels: []
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
   m_SchemaSet:
