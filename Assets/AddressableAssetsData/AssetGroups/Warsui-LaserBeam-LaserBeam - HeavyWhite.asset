@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-LaserBeam-LaserBeam - HeavyWhite
   m_Data:
     m_SerializedData: []
-  m_GUID: a1bbfae46a5723344815bf8b551333da
+  m_GUID: 869f7202f5bec9a469b49d97f6ecad54
   m_SerializeEntries:
   - m_GUID: 8964eedd779c3884088920bc8b59e203
     m_Address: LaserBeam - HeavyWhite

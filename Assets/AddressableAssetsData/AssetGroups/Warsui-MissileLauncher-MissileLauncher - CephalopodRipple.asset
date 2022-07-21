@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-MissileLauncher-MissileLauncher - CephalopodRipple
   m_Data:
     m_SerializedData: []
-  m_GUID: 959dc9a49a39e694182f9d7eaf072ea8
+  m_GUID: 31111ca4765a33c4bb2867e09efa3af7
   m_SerializeEntries:
   - m_GUID: 5bb4fe79dbd72004f92199b3e1126b3a
     m_Address: MissileLauncher - CephalopodRipple

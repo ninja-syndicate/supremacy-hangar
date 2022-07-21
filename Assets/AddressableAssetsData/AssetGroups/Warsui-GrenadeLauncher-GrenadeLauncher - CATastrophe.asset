@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-GrenadeLauncher-GrenadeLauncher - CATastrophe
   m_Data:
     m_SerializedData: []
-  m_GUID: d53c1024940f03641862d397f1a531bd
+  m_GUID: eadd4ccd719b6684d9540d123c177215
   m_SerializeEntries:
   - m_GUID: 52d6fba46e4a3d8488b92e817e685f93
     m_Address: GrenadeLauncher - CATastrophe

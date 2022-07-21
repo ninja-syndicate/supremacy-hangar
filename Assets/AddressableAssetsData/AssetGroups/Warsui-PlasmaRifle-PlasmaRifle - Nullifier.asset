@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-PlasmaRifle-PlasmaRifle - Nullifier
   m_Data:
     m_SerializedData: []
-  m_GUID: 5e14a7d90854c4344ba4d17164d7199c
+  m_GUID: 20cb1155ef9dc3445955e36d01058731
   m_SerializeEntries:
   - m_GUID: d2af70c8bcf31314ea49b585a842a310
     m_Address: PlasmaRifle - Nullifier

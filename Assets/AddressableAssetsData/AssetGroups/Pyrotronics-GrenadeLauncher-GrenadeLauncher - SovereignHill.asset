@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Pyrotronics-GrenadeLauncher-GrenadeLauncher - SovereignHill
   m_Data:
     m_SerializedData: []
-  m_GUID: 045eaec97c59ae744abaa64b674aa528
+  m_GUID: 60e80054dbf948940a8b9df6efccc6b4
   m_SerializeEntries:
   - m_GUID: c79f589f062f11349952a71f870298cd
     m_Address: GrenadeLauncher - SovereignHill

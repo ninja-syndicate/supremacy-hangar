@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Pyrotronics-FlakGun-FlakGun - SharkSkin
   m_Data:
     m_SerializedData: []
-  m_GUID: 2600a287813d24f46a79a972aead700b
+  m_GUID: bc746899fc757c54590ec322bb9166c7
   m_SerializeEntries:
   - m_GUID: ec1e514524b98e44eb4b84f660660d53
     m_Address: FlakGun - SharkSkin

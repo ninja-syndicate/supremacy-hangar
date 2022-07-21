@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Pyrotronics-FlakGun-FlakGun - PrometheanGold
   m_Data:
     m_SerializedData: []
-  m_GUID: 1a542b3d1ba04cd4eaea407b4a2c7eec
+  m_GUID: 50bee79f90cbf7b479f58ba15fad371f
   m_SerializeEntries:
   - m_GUID: b2e6aeb16203aba4980b25745caed79a
     m_Address: FlakGun - PrometheanGold

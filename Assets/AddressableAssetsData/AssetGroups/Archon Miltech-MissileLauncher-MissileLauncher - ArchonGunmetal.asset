@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Archon Miltech-MissileLauncher-MissileLauncher - ArchonGunmetal
   m_Data:
     m_SerializedData: []
-  m_GUID: 41f5e824d3c4fe14db879b7d3964ea8e
+  m_GUID: 741e80d7364b3724b93099bad4f4b93c
   m_SerializeEntries:
   - m_GUID: 31906d799a9cbb342b6fd62c103281f5
     m_Address: MissileLauncher - ArchonGunmetal

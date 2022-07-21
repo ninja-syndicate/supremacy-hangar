@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Archon Miltech-PlasmaRifle-PlasmaRifle - ArchonGunmetal
   m_Data:
     m_SerializedData: []
-  m_GUID: 730c0f636f9804741823cb0d0258ece9
+  m_GUID: e28e090312560b54f996d2fcf5884eb1
   m_SerializeEntries:
   - m_GUID: eff3cd9190d986e469177e1e5efaf3d1
     m_Address: PlasmaRifle - ArchonGunmetal

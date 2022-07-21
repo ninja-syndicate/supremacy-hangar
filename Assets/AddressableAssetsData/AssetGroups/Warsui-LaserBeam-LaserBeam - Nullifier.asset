@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-LaserBeam-LaserBeam - Nullifier
   m_Data:
     m_SerializedData: []
-  m_GUID: f73217c95d42c154f966ec85b6bf4cb2
+  m_GUID: f0b7c26e6a7f0114a9eed384466253ef
   m_SerializeEntries:
   - m_GUID: e78cc69b7a66d2c47ba1eb589945648e
     m_Address: LaserBeam - Nullifier

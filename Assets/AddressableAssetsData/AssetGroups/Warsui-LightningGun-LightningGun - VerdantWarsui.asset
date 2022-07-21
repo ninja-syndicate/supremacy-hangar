@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-LightningGun-LightningGun - VerdantWarsui
   m_Data:
     m_SerializedData: []
-  m_GUID: 72e86fb7f7ea46443ace7d5e9df718fd
+  m_GUID: c66c207ada6a70346b485c0c0615017c
   m_SerializeEntries:
   - m_GUID: 35a4073958f27424b95e12c914e11338
     m_Address: LightningGun - VerdantWarsui

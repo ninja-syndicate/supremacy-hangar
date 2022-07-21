@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: LordOfHell
   m_EditorClassIdentifier: 
   mats:
-  - {fileID: 2100000, guid: 2a3335e70d4b32b4ba09bfaba75865d6, type: 2}
-  - {fileID: 2100000, guid: 2a3335e70d4b32b4ba09bfaba75865d6, type: 2}
+  - {fileID: 2100000, guid: fb42854abe5d92f47a3e4ce74a841665, type: 2}
+  - {fileID: 2100000, guid: fb42854abe5d92f47a3e4ce74a841665, type: 2}

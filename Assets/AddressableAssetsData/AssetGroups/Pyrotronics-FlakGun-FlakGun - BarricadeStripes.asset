@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Pyrotronics-FlakGun-FlakGun - BarricadeStripes
   m_Data:
     m_SerializedData: []
-  m_GUID: b7cc84d79a3ff7e449da39c098c85a47
+  m_GUID: e43388a04660fb34fbe413959d03f3fb
   m_SerializeEntries:
   - m_GUID: 6f3b92c048a43854da65ac46eee54b9b
     m_Address: FlakGun - BarricadeStripes

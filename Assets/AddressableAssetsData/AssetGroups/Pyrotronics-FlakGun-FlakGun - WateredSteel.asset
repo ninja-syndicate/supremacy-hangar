@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Pyrotronics-FlakGun-FlakGun - WateredSteel
   m_Data:
     m_SerializedData: []
-  m_GUID: fb563ce0ef55e22419d5b4525c2bd059
+  m_GUID: bde6ff146dc830340affea3b2794d664
   m_SerializeEntries:
   - m_GUID: a838b25a521622548903115f17f19a16
     m_Address: FlakGun - WateredSteel

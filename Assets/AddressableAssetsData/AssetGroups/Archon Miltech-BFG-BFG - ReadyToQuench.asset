@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Archon Miltech-BFG-BFG - ReadyToQuench
   m_Data:
     m_SerializedData: []
-  m_GUID: b88cfeee79dc37a4b9de98004d51d024
+  m_GUID: 6ce81cc125aa9974a902f587c1560d9e
   m_SerializeEntries:
   - m_GUID: 66f091c8137e97d48848907a871e2051
     m_Address: BFG - ReadyToQuench

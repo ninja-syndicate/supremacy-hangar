@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Pyrotronics-LaserBeam-LaserBeam - BarricadeStripes
   m_Data:
     m_SerializedData: []
-  m_GUID: 97d5c3cf4331ccd47ab593c29aaffb33
+  m_GUID: fefe43c7a2a20f24fa3c38f339db95e5
   m_SerializeEntries:
   - m_GUID: 8ca3d0006edf2ee46b2b506e15b87f65
     m_Address: LaserBeam - BarricadeStripes

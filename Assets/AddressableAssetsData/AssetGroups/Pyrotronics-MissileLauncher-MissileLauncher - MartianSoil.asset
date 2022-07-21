@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Pyrotronics-MissileLauncher-MissileLauncher - MartianSoil
   m_Data:
     m_SerializedData: []
-  m_GUID: ef5f4f2a29741b5429dbc62af7eb4fe9
+  m_GUID: 8e2457d1c4d40174497d230547e2cddc
   m_SerializeEntries:
   - m_GUID: 5723062c7e369b4498021d4cbadb4b50
     m_Address: MissileLauncher - MartianSoil

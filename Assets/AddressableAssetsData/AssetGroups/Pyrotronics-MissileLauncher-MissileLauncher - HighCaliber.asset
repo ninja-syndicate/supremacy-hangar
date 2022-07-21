@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Pyrotronics-MissileLauncher-MissileLauncher - HighCaliber
   m_Data:
     m_SerializedData: []
-  m_GUID: 1196922d21553ee45a89d5c1f8497e11
+  m_GUID: 4089b0f03e0df5041afb040a94f291e6
   m_SerializeEntries:
   - m_GUID: e93f717bc87cf554290d7aa070c76784
     m_Address: MissileLauncher - HighCaliber

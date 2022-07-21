@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Archon Miltech-GrenadeLauncher-GrenadeLauncher - SeaHawk
   m_Data:
     m_SerializedData: []
-  m_GUID: 841680826f4b8bc4792dcc9bd5e03bb1
+  m_GUID: 3b9c05a00ba98b145aaa01396a424ad2
   m_SerializeEntries:
   - m_GUID: e8f03fbab00f76940acccbfa03a12a6e
     m_Address: GrenadeLauncher - SeaHawk

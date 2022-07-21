@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Pyrotronics-MissileLauncher-MissileLauncher - BarricadeStripes
   m_Data:
     m_SerializedData: []
-  m_GUID: e9e55728ac2ce8947a8e4e4c7bde18f0
+  m_GUID: 8b762d50c5110c84d9f539c76c34fd18
   m_SerializeEntries:
   - m_GUID: d977db45fc2b8c84f992403670398bd1
     m_Address: MissileLauncher - BarricadeStripes

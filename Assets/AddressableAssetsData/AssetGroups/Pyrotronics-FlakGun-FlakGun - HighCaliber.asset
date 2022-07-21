@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Pyrotronics-FlakGun-FlakGun - HighCaliber
   m_Data:
     m_SerializedData: []
-  m_GUID: 37fc9ec2747a23a49911eeea11aa11be
+  m_GUID: 6a641e5a001b2e748887af2721d0e81d
   m_SerializeEntries:
   - m_GUID: 861d9de7ad124be4b936ce41e0a897c3
     m_Address: FlakGun - HighCaliber

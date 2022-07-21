@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Pyrotronics-LaserBeam-LaserBeam - MartianMessMaker
   m_Data:
     m_SerializedData: []
-  m_GUID: 436f2c502a8429e4487928e6a20b3fe9
+  m_GUID: 60bd7baa03302e841a36c57027ab99f3
   m_SerializeEntries:
   - m_GUID: 1a372e374e7d9174b9e5e602c55f93c7
     m_Address: LaserBeam - MartianMessMaker

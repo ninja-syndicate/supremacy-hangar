@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Pyrotronics-LaserBeam-LaserBeam - MartianSoil
   m_Data:
     m_SerializedData: []
-  m_GUID: 8acbc25a8822e5f4792e2f68b802003a
+  m_GUID: 50b4b108258bfd148875d8dbd01b752b
   m_SerializeEntries:
   - m_GUID: 52746b0f6871f7144b653d4d8a688d4d
     m_Address: LaserBeam - MartianSoil

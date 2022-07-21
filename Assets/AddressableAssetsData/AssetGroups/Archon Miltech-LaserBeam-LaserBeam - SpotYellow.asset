@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Archon Miltech-LaserBeam-LaserBeam - SpotYellow
   m_Data:
     m_SerializedData: []
-  m_GUID: 6c09326b5bacb6d42bd851bf1e180403
+  m_GUID: 9c5792e40eb321e4c892e18ccff21509
   m_SerializeEntries:
   - m_GUID: 2d0a92690ab480d4d87add5da8ab7133
     m_Address: LaserBeam - SpotYellow

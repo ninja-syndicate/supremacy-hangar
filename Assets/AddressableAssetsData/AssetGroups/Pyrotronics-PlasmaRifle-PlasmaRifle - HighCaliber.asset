@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Pyrotronics-PlasmaRifle-PlasmaRifle - HighCaliber
   m_Data:
     m_SerializedData: []
-  m_GUID: ed8d612025120074c84e16d50c034535
+  m_GUID: 1b04b088f5e937d4984facfb598319ab
   m_SerializeEntries:
   - m_GUID: 09a23d574e4d83247845711fbf48592b
     m_Address: PlasmaRifle - HighCaliber

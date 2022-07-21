@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Archon Miltech-LaserBeam-LaserBeam - ReadyToQuench
   m_Data:
     m_SerializedData: []
-  m_GUID: e2472b09ec67c51438d6edba5f9677a5
+  m_GUID: 116d2649b23c9c64783ede5ef72e0aa8
   m_SerializeEntries:
   - m_GUID: 6e85202d840ceb844bb823f3f206b28c
     m_Address: LaserBeam - ReadyToQuench

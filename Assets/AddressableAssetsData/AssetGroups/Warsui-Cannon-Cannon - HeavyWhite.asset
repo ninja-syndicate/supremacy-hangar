@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-Cannon-Cannon - HeavyWhite
   m_Data:
     m_SerializedData: []
-  m_GUID: cfdfc0a5b2c741a448b2ea1b370b7bde
+  m_GUID: 6d289d93abc49b84ba43084a008f3c23
   m_SerializeEntries:
   - m_GUID: 54af8c0ea0cafde46ac4a91ef139cc5a
     m_Address: Cannon - HeavyWhite

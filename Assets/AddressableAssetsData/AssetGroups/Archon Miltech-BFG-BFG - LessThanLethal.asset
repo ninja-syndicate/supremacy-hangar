@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Archon Miltech-BFG-BFG - LessThanLethal
   m_Data:
     m_SerializedData: []
-  m_GUID: 6adb2468ab53e4a4ca4fa9f5f6e925c9
+  m_GUID: e7e17141c303af64f8d9d0112887c34f
   m_SerializeEntries:
   - m_GUID: f81ce259589e95d4389adb3b3563b742
     m_Address: BFG - LessThanLethal

@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Pyrotronics-LaserBeam-LaserBeam - FlyInFlyOut
   m_Data:
     m_SerializedData: []
-  m_GUID: 19e603de46299a64197a1229579734c8
+  m_GUID: 8d75af00836e5c84bbfd5f7cc101258b
   m_SerializeEntries:
   - m_GUID: 61389f24763857949940e9d0df287dc3
     m_Address: LaserBeam - FlyInFlyOut

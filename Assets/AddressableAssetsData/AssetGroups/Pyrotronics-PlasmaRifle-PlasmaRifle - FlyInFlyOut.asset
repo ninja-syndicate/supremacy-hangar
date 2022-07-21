@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Pyrotronics-PlasmaRifle-PlasmaRifle - FlyInFlyOut
   m_Data:
     m_SerializedData: []
-  m_GUID: 1dbc784fe184cf54ebcbda6a670b5ad9
+  m_GUID: 9c5dc8447a8df2346886e1d72d765d89
   m_SerializeEntries:
   - m_GUID: 95e9d783a8b0f2e4fa3da1c9bdf655ef
     m_Address: PlasmaRifle - FlyInFlyOut

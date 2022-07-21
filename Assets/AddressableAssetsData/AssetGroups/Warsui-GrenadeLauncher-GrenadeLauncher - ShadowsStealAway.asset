@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-GrenadeLauncher-GrenadeLauncher - ShadowsStealAway
   m_Data:
     m_SerializedData: []
-  m_GUID: 912120781162592468ca8a2696c20cc6
+  m_GUID: 9dec8c7709d992a44beb94f47b44ce47
   m_SerializeEntries:
   - m_GUID: 4f8c1ef891053ae419725fa604ed575a
     m_Address: GrenadeLauncher - ShadowsStealAway

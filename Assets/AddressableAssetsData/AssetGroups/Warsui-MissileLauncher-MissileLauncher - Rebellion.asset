@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-MissileLauncher-MissileLauncher - Rebellion
   m_Data:
     m_SerializedData: []
-  m_GUID: 7009fcc0574238948bfcf0cda757f6a4
+  m_GUID: dcb2074a9ec916a4cb9c394c76dd16f5
   m_SerializeEntries:
   - m_GUID: bc3d678821857d44da69c06b8adb8536
     m_Address: MissileLauncher - Rebellion

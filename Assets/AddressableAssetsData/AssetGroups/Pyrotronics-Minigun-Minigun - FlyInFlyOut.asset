@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Pyrotronics-Minigun-Minigun - FlyInFlyOut
   m_Data:
     m_SerializedData: []
-  m_GUID: 647ff67b6eaf0c14c91844ee3a5da381
+  m_GUID: d27828cf74363be4492b4344f61cce08
   m_SerializeEntries:
   - m_GUID: b92f2d21d809ff54f849c8ca2f7bbec0
     m_Address: Minigun - FlyInFlyOut

@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-LightningGun-LightningGun - CalmBeforeTheStorm
   m_Data:
     m_SerializedData: []
-  m_GUID: 55df6c86156a3254da94ab2472ac4b2a
+  m_GUID: 812b58b18b4f8f846a9f1a8c364f245e
   m_SerializeEntries:
   - m_GUID: 40f5375e2e3d6484291609023d742bf5
     m_Address: LightningGun - CalmBeforeTheStorm

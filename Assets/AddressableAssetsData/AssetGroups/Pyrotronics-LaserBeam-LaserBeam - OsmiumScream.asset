@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Pyrotronics-LaserBeam-LaserBeam - OsmiumScream
   m_Data:
     m_SerializedData: []
-  m_GUID: 44e935a0473bf2e489ccac6a17f16760
+  m_GUID: a3e992d1509c5e34c8b9cff08230f7a3
   m_SerializeEntries:
   - m_GUID: fed2398143f236146beb7f5e217baa99
     m_Address: LaserBeam - OsmiumScream

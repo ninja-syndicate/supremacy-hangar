@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-MissileLauncher-MissileLauncher - VerdantWarsui
   m_Data:
     m_SerializedData: []
-  m_GUID: 1f46a447228aa0342a853cc012ca2c53
+  m_GUID: 91d03e754dbc60641bb4e08a4faebfc4
   m_SerializeEntries:
   - m_GUID: 863cc405ab844ac46bb1135861e5581b
     m_Address: MissileLauncher - VerdantWarsui

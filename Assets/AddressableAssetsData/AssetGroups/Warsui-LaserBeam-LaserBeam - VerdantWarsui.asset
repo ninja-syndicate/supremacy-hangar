@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-LaserBeam-LaserBeam - VerdantWarsui
   m_Data:
     m_SerializedData: []
-  m_GUID: cbda390670a2173438b0e323d22fba3a
+  m_GUID: 9f406b124dd0d5e4f9f18b29be68e593
   m_SerializeEntries:
   - m_GUID: ca67da4e533b3e04fbdbacb0f3ea855d
     m_Address: LaserBeam - VerdantWarsui

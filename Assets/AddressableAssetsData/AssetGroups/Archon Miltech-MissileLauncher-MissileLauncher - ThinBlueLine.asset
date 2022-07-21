@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Archon Miltech-MissileLauncher-MissileLauncher - ThinBlueLine
   m_Data:
     m_SerializedData: []
-  m_GUID: 8d2664edd847e724093828af1b8e33ee
+  m_GUID: 25169c05b1f1d4a4baea803eeae2d08e
   m_SerializeEntries:
   - m_GUID: c251f1b3aade6b04aba46795fc5da2eb
     m_Address: MissileLauncher - ThinBlueLine

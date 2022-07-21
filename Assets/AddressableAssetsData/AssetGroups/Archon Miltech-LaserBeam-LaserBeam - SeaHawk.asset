@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Archon Miltech-LaserBeam-LaserBeam - SeaHawk
   m_Data:
     m_SerializedData: []
-  m_GUID: e67c0a1a82f7abb47a257e8269e7f044
+  m_GUID: 0706f876cbdfefb4781e67dff701eaa8
   m_SerializeEntries:
   - m_GUID: 3ef5defb883f9a94ea7714726f9ceec6
     m_Address: LaserBeam - SeaHawk

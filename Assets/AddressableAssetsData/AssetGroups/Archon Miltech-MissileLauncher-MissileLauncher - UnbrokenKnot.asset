@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Archon Miltech-MissileLauncher-MissileLauncher - UnbrokenKnot
   m_Data:
     m_SerializedData: []
-  m_GUID: ee77823d07665f4459dc2dfc0c1096a2
+  m_GUID: c89fcc883e78f5643919a137809d8a60
   m_SerializeEntries:
   - m_GUID: 304e1db950d37764bbb41ffb2db88613
     m_Address: MissileLauncher - UnbrokenKnot

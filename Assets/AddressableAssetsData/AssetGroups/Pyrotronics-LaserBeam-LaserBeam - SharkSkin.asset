@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Pyrotronics-LaserBeam-LaserBeam - SharkSkin
   m_Data:
     m_SerializedData: []
-  m_GUID: 6f8793cafbb6f6040b35c15a00b6b375
+  m_GUID: bd6fd365ebe3d404d802c1f7109ec130
   m_SerializeEntries:
   - m_GUID: ce8f98a12c7e6614f9edbfc68fcc18da
     m_Address: LaserBeam - SharkSkin

@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Pyrotronics-MachineGun-MachineGun - FlyInFlyOut
   m_Data:
     m_SerializedData: []
-  m_GUID: 47d51f65146ebcd469ac47bd69c36527
+  m_GUID: adb68f271c904aa41b89c4a522b0b0ef
   m_SerializeEntries:
   - m_GUID: 753dac105aee0554098a6bd5d924cb42
     m_Address: MachineGun - FlyInFlyOut

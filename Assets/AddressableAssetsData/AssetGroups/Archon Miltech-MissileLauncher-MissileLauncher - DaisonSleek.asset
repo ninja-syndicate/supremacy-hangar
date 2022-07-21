@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Archon Miltech-MissileLauncher-MissileLauncher - DaisonSleek
   m_Data:
     m_SerializedData: []
-  m_GUID: 8afc887d0819da343ab28b5c2cbe61cd
+  m_GUID: bed54bffbcd61c645a71ea9e43549324
   m_SerializeEntries:
   - m_GUID: 42601a56cf3e77e4c8e1eb441ba782d6
     m_Address: MissileLauncher - DaisonSleek

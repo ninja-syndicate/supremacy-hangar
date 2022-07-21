@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Pyrotronics-Cannon-Cannon - HighCaliber
   m_Data:
     m_SerializedData: []
-  m_GUID: bf568241148efdb48adfadc9a9c14856
+  m_GUID: e0eddb3a1895f09439a6ca688641e220
   m_SerializeEntries:
   - m_GUID: 55498f6fef4adda45b0bf897dc76547c
     m_Address: Cannon - HighCaliber

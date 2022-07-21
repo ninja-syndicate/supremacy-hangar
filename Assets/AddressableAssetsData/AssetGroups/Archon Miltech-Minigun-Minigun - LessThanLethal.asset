@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Archon Miltech-Minigun-Minigun - LessThanLethal
   m_Data:
     m_SerializedData: []
-  m_GUID: 2b7fca48276f7b143b98550166d9d726
+  m_GUID: b139f12e176347a419cdd9e241c66280
   m_SerializeEntries:
   - m_GUID: 353b6fa9ee14654428b256ef943ddbe6
     m_Address: Minigun - LessThanLethal

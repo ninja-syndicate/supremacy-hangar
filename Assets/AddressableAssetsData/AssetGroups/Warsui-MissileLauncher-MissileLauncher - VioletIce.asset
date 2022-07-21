@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-MissileLauncher-MissileLauncher - VioletIce
   m_Data:
     m_SerializedData: []
-  m_GUID: bf281b53972902d4787df65bfd11e952
+  m_GUID: 5c19f320f817df446881cfc31e907ccb
   m_SerializeEntries:
   - m_GUID: eec10e7861f95c84296d83b3013a81bd
     m_Address: MissileLauncher - VioletIce

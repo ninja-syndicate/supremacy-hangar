@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-MissileLauncher-MissileLauncher - MineGod
   m_Data:
     m_SerializedData: []
-  m_GUID: d18866511c162e64a9f2f691d4dd7cfd
+  m_GUID: 25db3cabff36b264589690b5df2f4e61
   m_SerializeEntries:
   - m_GUID: 4b58f087ae2562b4699d0a2e85157343
     m_Address: MissileLauncher - MineGod

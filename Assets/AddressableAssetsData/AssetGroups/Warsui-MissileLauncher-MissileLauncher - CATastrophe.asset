@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-MissileLauncher-MissileLauncher - CATastrophe
   m_Data:
     m_SerializedData: []
-  m_GUID: 7eeb8320e1fbd1d438ba2e3f01735738
+  m_GUID: 9b076d463af1e384a81fa18fde77cecf
   m_SerializeEntries:
   - m_GUID: 8dee97622b01b194892853797823d093
     m_Address: MissileLauncher - CATastrophe

@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-GrenadeLauncher-GrenadeLauncher - VerdantWarsui
   m_Data:
     m_SerializedData: []
-  m_GUID: 29a18beeb7fc9a34f81c30aca54919ff
+  m_GUID: dbeeefd64c1d88e498c612cbbbe46cfd
   m_SerializeEntries:
   - m_GUID: fecd5ca552706c04fa2cef1e79f939c4
     m_Address: GrenadeLauncher - VerdantWarsui

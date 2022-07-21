@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-LaserBeam-LaserBeam - TwoFiveZeroOne
   m_Data:
     m_SerializedData: []
-  m_GUID: 013d484704d3ba945879316fa0a45f16
+  m_GUID: 25aa4e36ad672ba499dd4170f44badc9
   m_SerializeEntries:
   - m_GUID: 9af18c2117132ad4cb05c66ca9006ab5
     m_Address: LaserBeam - TwoFiveZeroOne

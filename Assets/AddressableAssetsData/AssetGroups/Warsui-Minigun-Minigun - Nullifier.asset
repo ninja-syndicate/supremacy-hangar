@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-Minigun-Minigun - Nullifier
   m_Data:
     m_SerializedData: []
-  m_GUID: e9271187dcecb6440a1db831654e1717
+  m_GUID: c0bacadab000f42488c567dbf8d3328b
   m_SerializeEntries:
   - m_GUID: e79beddf5a0b581459fe04dc343f8d67
     m_Address: Minigun - Nullifier

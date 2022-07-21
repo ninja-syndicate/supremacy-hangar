@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Warsui-MachineGun-MachineGun - MineGod
   m_Data:
     m_SerializedData: []
-  m_GUID: a82f19172b5bfb348b5d5fc533afa77b
+  m_GUID: 50a75ec0b88ce8847bd86e8f4d9ed7d6
   m_SerializeEntries:
   - m_GUID: ad8a2e2264cc60141a0fd6209b1836f9
     m_Address: MachineGun - MineGod

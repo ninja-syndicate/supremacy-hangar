@@ -15,7 +15,7 @@ MonoBehaviour:
   m_GroupName: Archon Miltech-FlakGun-FlakGun - ArchonGunmetal
   m_Data:
     m_SerializedData: []
-  m_GUID: 373f6a2db1e470a4aa6d643b2bd24d9c
+  m_GUID: f23223523d155e541a9fbe37055d6254
   m_SerializeEntries:
   - m_GUID: 5809d375608255d4cb526233d3fd36c6
     m_Address: FlakGun - ArchonGunmetal
