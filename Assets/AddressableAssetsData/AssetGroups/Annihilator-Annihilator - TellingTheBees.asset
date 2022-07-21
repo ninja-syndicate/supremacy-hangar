@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Annihilator-Annihilator - TellingTheBees
+  m_EditorClassIdentifier: 
+  m_GroupName: Annihilator-Annihilator - TellingTheBees
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 9e60eeaefe8396d4fb09930816579be6
+  m_SerializeEntries:
+  - m_GUID: 09d10c17a7b0a7540831a4b12b6b204a
+    m_Address: Annihilator - TellingTheBees
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4d4379f0f8dd4994c939cb6a93e1e6e6
+    m_Address: Annihilator - TellingTheBees
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: c304779c5d3286f408c308447ae805cc, type: 2}
+    - {fileID: 11400000, guid: bdc71d3f8906fad46b8f689c76360e54, type: 2}

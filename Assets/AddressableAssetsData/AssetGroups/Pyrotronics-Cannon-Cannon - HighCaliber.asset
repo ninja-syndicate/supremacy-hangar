@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Pyrotronics-Cannon-Cannon - HighCaliber
+  m_EditorClassIdentifier: 
+  m_GroupName: Pyrotronics-Cannon-Cannon - HighCaliber
+  m_Data:
+    m_SerializedData: []
+  m_GUID: bf568241148efdb48adfadc9a9c14856
+  m_SerializeEntries:
+  - m_GUID: 55498f6fef4adda45b0bf897dc76547c
+    m_Address: Cannon - HighCaliber
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 1b5cbb8fe73d9c44aaabbf4500c4b314, type: 2}
+    - {fileID: 11400000, guid: 59a89eb8aaea6d7428399e27576e5603, type: 2}

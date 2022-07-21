@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Kenji-Kenji - HeavyWhite
+  m_EditorClassIdentifier: 
+  m_GroupName: Kenji-Kenji - HeavyWhite
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 4e67f5d57c61b364ba687bf3eea32f9e
+  m_SerializeEntries:
+  - m_GUID: 38c9a6c49339e6441b64acbf1d159e47
+    m_Address: Kenji - HeavyWhite
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 078408a4d53533b4d8c8aae0fa3218eb, type: 2}
+    - {fileID: 11400000, guid: 317bab37c6ce9e84aa305e968e8c382d, type: 2}

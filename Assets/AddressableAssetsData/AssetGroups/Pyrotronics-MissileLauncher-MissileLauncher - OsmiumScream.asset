@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Pyrotronics-MissileLauncher-MissileLauncher - OsmiumScream
+  m_EditorClassIdentifier: 
+  m_GroupName: Pyrotronics-MissileLauncher-MissileLauncher - OsmiumScream
+  m_Data:
+    m_SerializedData: []
+  m_GUID: ba7234d71555e124eb979ffc3ca85ba7
+  m_SerializeEntries:
+  - m_GUID: 03bf7d373d6f07d42ac9c50ebf3cc34a
+    m_Address: MissileLauncher - OsmiumScream
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: bb717301a8bcb6148b422b6178aa7621, type: 2}
+    - {fileID: 11400000, guid: 9849e8aa9715cad45a9b66c54adfd0ea, type: 2}

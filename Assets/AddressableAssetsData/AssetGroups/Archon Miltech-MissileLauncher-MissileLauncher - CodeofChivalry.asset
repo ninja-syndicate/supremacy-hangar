@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Archon Miltech-MissileLauncher-MissileLauncher - CodeofChivalry
+  m_EditorClassIdentifier: 
+  m_GroupName: Archon Miltech-MissileLauncher-MissileLauncher - CodeofChivalry
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 9b406f5bd1e85f94c862bc1b48f287be
+  m_SerializeEntries:
+  - m_GUID: 11ebe75036b9fee4fbf1d8754b7159f0
+    m_Address: MissileLauncher - CodeofChivalry
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 55203dca53511884db3703621b478cb7, type: 2}
+    - {fileID: 11400000, guid: be9be2085bf17404fb95c1833c927431, type: 2}

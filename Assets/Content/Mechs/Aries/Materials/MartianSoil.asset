@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691a633fee507c468fbb61f649f459a, type: 3}
+  m_Name: MartianSoil
+  m_EditorClassIdentifier: 
+  mats:
+  - {fileID: 2100000, guid: d62e25d6238a9324299c0e9a640e22be, type: 2}
+  - {fileID: 2100000, guid: e18afb30cb8dbef44a543701a96e65d4, type: 2}
+  - {fileID: 2100000, guid: 57a94a56c6b969b4d99cc93f93fc27c6, type: 2}
+  - {fileID: 2100000, guid: 331b42f87512a3e41ae209ba0d2a9fdc, type: 2}
+  - {fileID: 2100000, guid: d8fb05d4d61bcda4eaf5b115d8c95e4a, type: 2}
+  - {fileID: 2100000, guid: b66605cf006ff574189fb3aa554a9a36, type: 2}
+  - {fileID: 2100000, guid: fa61a9fd6e79aff4b9d74d4cd6a13867, type: 2}
+  - {fileID: 2100000, guid: 8f7b0d62af6e30c4895a5014d806c7b8, type: 2}
+  - {fileID: 2100000, guid: 74a030ef47b052e4199bf536a0eb36a6, type: 2}
+  - {fileID: 2100000, guid: 6f70bbc3a107bf84bb7ad6daea4fe7e6, type: 2}

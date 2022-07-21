@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Archon Miltech-FlakGun-FlakGun - DaisonSleek
+  m_EditorClassIdentifier: 
+  m_GroupName: Archon Miltech-FlakGun-FlakGun - DaisonSleek
+  m_Data:
+    m_SerializedData: []
+  m_GUID: be3ea91178c57f749a69599cc68db1b7
+  m_SerializeEntries:
+  - m_GUID: c578c7eb81ed0c349aa6769666bb6f72
+    m_Address: FlakGun - DaisonSleek
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: c9637548a9eac4f418e4913b7758c03a, type: 2}
+    - {fileID: 11400000, guid: a0a11ce0817ebed4d8d6633b1bc56101, type: 2}

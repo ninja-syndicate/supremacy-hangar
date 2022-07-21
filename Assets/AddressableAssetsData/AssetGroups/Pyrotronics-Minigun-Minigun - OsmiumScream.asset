@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Pyrotronics-Minigun-Minigun - OsmiumScream
+  m_EditorClassIdentifier: 
+  m_GroupName: Pyrotronics-Minigun-Minigun - OsmiumScream
+  m_Data:
+    m_SerializedData: []
+  m_GUID: aa8761a52145e0c4ab75f238201a1d96
+  m_SerializeEntries:
+  - m_GUID: 298e242ea9837e345bf8a1b586cbebf8
+    m_Address: Minigun - OsmiumScream
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: fa37ca66a52d7e44ea094561266d92e1, type: 2}
+    - {fileID: 11400000, guid: 43c661b5b4afb6f42b55e1437860b7db, type: 2}

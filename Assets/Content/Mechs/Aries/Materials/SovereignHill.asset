@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691a633fee507c468fbb61f649f459a, type: 3}
+  m_Name: SovereignHill
+  m_EditorClassIdentifier: 
+  mats:
+  - {fileID: 2100000, guid: a28a1ff4a6310d941b78d4ad9fcbae45, type: 2}
+  - {fileID: 2100000, guid: f19845741ed0ebf4fb56f7ad18d72ab8, type: 2}
+  - {fileID: 2100000, guid: c9cdcda6806303f469181f343f102d9b, type: 2}
+  - {fileID: 2100000, guid: b96f095c29cd72e4a959c26ae3eacb66, type: 2}
+  - {fileID: 2100000, guid: 5e1953ac07797e445a1d626d450945bc, type: 2}
+  - {fileID: 2100000, guid: 9fa0ce42773db954ba66d4b40ec4b872, type: 2}
+  - {fileID: 2100000, guid: af7df01b4cf12564ba39b6c5f7ebfb75, type: 2}
+  - {fileID: 2100000, guid: aee6365bab865394fa79f6d0b8674108, type: 2}
+  - {fileID: 2100000, guid: 0d9a06cab1190ea47a56ace01eda7f64, type: 2}
+  - {fileID: 2100000, guid: 858839f95185e4648a1d9c098bec6b8b, type: 2}

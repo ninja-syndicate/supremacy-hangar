@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Pyrotronics-MissileLauncher-MissileLauncher - MartianSoil
+  m_EditorClassIdentifier: 
+  m_GroupName: Pyrotronics-MissileLauncher-MissileLauncher - MartianSoil
+  m_Data:
+    m_SerializedData: []
+  m_GUID: ef5f4f2a29741b5429dbc62af7eb4fe9
+  m_SerializeEntries:
+  - m_GUID: 5723062c7e369b4498021d4cbadb4b50
+    m_Address: MissileLauncher - MartianSoil
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 94872880fbcd800448fad149d6793975, type: 2}
+    - {fileID: 11400000, guid: 41e57e84eef33ae468ea8f0fa4b92271, type: 2}

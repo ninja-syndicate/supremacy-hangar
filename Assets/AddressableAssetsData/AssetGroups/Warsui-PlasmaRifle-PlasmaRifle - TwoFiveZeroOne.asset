@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Warsui-PlasmaRifle-PlasmaRifle - TwoFiveZeroOne
+  m_EditorClassIdentifier: 
+  m_GroupName: Warsui-PlasmaRifle-PlasmaRifle - TwoFiveZeroOne
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 24ee8db3af6195f479dfb6b56b646111
+  m_SerializeEntries:
+  - m_GUID: 0f8da9c4db5718f469b2659aab7361e7
+    m_Address: PlasmaRifle - TwoFiveZeroOne
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: cf7af72e0af24684f99e4f6f03d28416, type: 2}
+    - {fileID: 11400000, guid: 0ad6406b6c5f8754f9e6e6086b143dd6, type: 2}

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Archon Miltech-LaserBeam-LaserBeam - SpotYellow
+  m_EditorClassIdentifier: 
+  m_GroupName: Archon Miltech-LaserBeam-LaserBeam - SpotYellow
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 6c09326b5bacb6d42bd851bf1e180403
+  m_SerializeEntries:
+  - m_GUID: 2d0a92690ab480d4d87add5da8ab7133
+    m_Address: LaserBeam - SpotYellow
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 1a373fef393d9e04f91c11cbda4c39db, type: 2}
+    - {fileID: 11400000, guid: 05787cb857a37c144a6a000077d31924, type: 2}

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Archon Miltech-MachineGun-MachineGun - UnbrokenKnot
+  m_EditorClassIdentifier: 
+  m_GroupName: Archon Miltech-MachineGun-MachineGun - UnbrokenKnot
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 1a1a6638e02e08844b1764512d38334b
+  m_SerializeEntries:
+  - m_GUID: e47ec0884b51db34980d195ed559ce15
+    m_Address: MachineGun - UnbrokenKnot
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: d52f4e4e46fd5214daaa952de94610bf, type: 2}
+    - {fileID: 11400000, guid: e72c7182a7fd9a04f8ef58f3832180e4, type: 2}

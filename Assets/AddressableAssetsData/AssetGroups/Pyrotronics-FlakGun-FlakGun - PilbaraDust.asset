@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Pyrotronics-FlakGun-FlakGun - PilbaraDust
+  m_EditorClassIdentifier: 
+  m_GroupName: Pyrotronics-FlakGun-FlakGun - PilbaraDust
+  m_Data:
+    m_SerializedData: []
+  m_GUID: b1b47318b474cc04d8d999714db986df
+  m_SerializeEntries:
+  - m_GUID: 544a214a1fad89d438a84112b8f4a836
+    m_Address: FlakGun - PilbaraDust
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 43024f0bfb2ef9c41b0498e9ee4e8945, type: 2}
+    - {fileID: 11400000, guid: d6b5d9f1e473ca34cbf67f3d3fdd2f7b, type: 2}

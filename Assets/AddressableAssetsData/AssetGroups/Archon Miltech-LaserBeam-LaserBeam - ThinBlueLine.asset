@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Archon Miltech-LaserBeam-LaserBeam - ThinBlueLine
+  m_EditorClassIdentifier: 
+  m_GroupName: Archon Miltech-LaserBeam-LaserBeam - ThinBlueLine
+  m_Data:
+    m_SerializedData: []
+  m_GUID: fd1f8c9861cd7ba44a001e20424e4638
+  m_SerializeEntries:
+  - m_GUID: 532ac58e6c24bb04bb0b8bc67e2cebf6
+    m_Address: LaserBeam - ThinBlueLine
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 0a6813a5120b0f1478cf20374f96223f, type: 2}
+    - {fileID: 11400000, guid: 6edd85680db1b7c4cacb57045b50f3cf, type: 2}

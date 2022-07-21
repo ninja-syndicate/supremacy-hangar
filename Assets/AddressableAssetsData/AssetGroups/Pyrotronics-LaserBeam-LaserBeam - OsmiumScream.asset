@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Pyrotronics-LaserBeam-LaserBeam - OsmiumScream
+  m_EditorClassIdentifier: 
+  m_GroupName: Pyrotronics-LaserBeam-LaserBeam - OsmiumScream
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 44e935a0473bf2e489ccac6a17f16760
+  m_SerializeEntries:
+  - m_GUID: fed2398143f236146beb7f5e217baa99
+    m_Address: LaserBeam - OsmiumScream
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: db3759e930c493743a2cedfd5d6607f9, type: 2}
+    - {fileID: 11400000, guid: daa0678b53b18934b8de6606b92e560c, type: 2}

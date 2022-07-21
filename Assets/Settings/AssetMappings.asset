@@ -479,54 +479,6 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
-  - containsError: 1
-    dataMechSkin: {fileID: -8858896915645137584, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
-      type: 2}
-    skinReference:
-      m_AssetGUID: d8411774d42ff5546a8a8481d21f2afa
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-  - containsError: 1
-    dataMechSkin: {fileID: -1229286182803026243, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
-      type: 2}
-    skinReference:
-      m_AssetGUID: 089c85cd77bdb784396caf6aca303bf6
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-  - containsError: 1
-    dataMechSkin: {fileID: 2857798538833399472, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
-      type: 2}
-    skinReference:
-      m_AssetGUID: d07df8a3d03984245afdf77b6198a0a8
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-  - containsError: 1
-    dataMechSkin: {fileID: 4971138635870204722, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
-      type: 2}
-    skinReference:
-      m_AssetGUID: 2c87b3fa1128def4dad4cc213a62691d
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-  - containsError: 1
-    dataMechSkin: {fileID: -7686926382663101909, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
-      type: 2}
-    skinReference:
-      m_AssetGUID: f97956dd05961294085e0f26d9b69add
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-  - containsError: 1
-    dataMechSkin: {fileID: -1270492474737854837, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
-      type: 2}
-    skinReference:
-      m_AssetGUID: 0688ffdc104632f448615b4de76a278f
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
   mysteryCrates:
   - containsError: 0
     dataMysteryCrate: {fileID: 8767646594810958716, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,

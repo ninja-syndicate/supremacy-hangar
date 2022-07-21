@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Viking-Viking - PrometheanGold
+  m_EditorClassIdentifier: 
+  m_GroupName: Viking-Viking - PrometheanGold
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 30cdf35266b89384ebd1b850f56a9020
+  m_SerializeEntries:
+  - m_GUID: 4fddf1ac824588c44a42f239a37a33e9
+    m_Address: Viking - PrometheanGold
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f94f5cd43fd93e641bb91ae5aa6e89a3
+    m_Address: Viking - PrometheanGold
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 122a3f577c0794d4bb0fa3e2b132f3f4, type: 2}
+    - {fileID: 11400000, guid: 82bf9df8341e34540b80c88286b92481, type: 2}

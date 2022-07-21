@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Pyrotronics-FlakGun-FlakGun - MartianSoil
+  m_EditorClassIdentifier: 
+  m_GroupName: Pyrotronics-FlakGun-FlakGun - MartianSoil
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 9008315d2da53a449806725b66dc89da
+  m_SerializeEntries:
+  - m_GUID: dc90e3c755e8e4248b0b1373bff3a3d2
+    m_Address: FlakGun - MartianSoil
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 49292d27504ebed42b5748f009429e8e, type: 2}
+    - {fileID: 11400000, guid: ec51c8ed00eac794c8ab6229a220e23c, type: 2}

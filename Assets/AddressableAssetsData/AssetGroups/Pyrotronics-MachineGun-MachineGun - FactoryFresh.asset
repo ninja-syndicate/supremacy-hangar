@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Pyrotronics-MachineGun-MachineGun - FactoryFresh
+  m_EditorClassIdentifier: 
+  m_GroupName: Pyrotronics-MachineGun-MachineGun - FactoryFresh
+  m_Data:
+    m_SerializedData: []
+  m_GUID: a20b4f70b210557478bd59e6bd7c827c
+  m_SerializeEntries:
+  - m_GUID: fd681f29b7109774d9e6e2e01143e1fe
+    m_Address: MachineGun - FactoryFresh
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: f95274f035e41f3479fe8a966ef7687c, type: 2}
+    - {fileID: 11400000, guid: 110ec50a473173543b7bb91c28e18c08, type: 2}

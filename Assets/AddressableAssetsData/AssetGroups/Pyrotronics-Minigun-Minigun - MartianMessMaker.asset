@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Pyrotronics-Minigun-Minigun - MartianMessMaker
+  m_EditorClassIdentifier: 
+  m_GroupName: Pyrotronics-Minigun-Minigun - MartianMessMaker
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 9d7d3e63930200344a02d6b635ec9f77
+  m_SerializeEntries:
+  - m_GUID: 2b92396ac796331489289dd778053831
+    m_Address: Minigun - MartianMessMaker
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 20d09857a7d670c4db7838b61027b5f4, type: 2}
+    - {fileID: 11400000, guid: c9ddd329557325c4ca4e39c3a7d70a0a, type: 2}

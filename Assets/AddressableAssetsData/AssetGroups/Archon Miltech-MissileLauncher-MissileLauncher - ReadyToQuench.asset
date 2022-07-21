@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Archon Miltech-MissileLauncher-MissileLauncher - ReadyToQuench
+  m_EditorClassIdentifier: 
+  m_GroupName: Archon Miltech-MissileLauncher-MissileLauncher - ReadyToQuench
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 0079f525ce0ce2243b31788590156915
+  m_SerializeEntries:
+  - m_GUID: 61996b8005b40b64698f293d4f08e063
+    m_Address: MissileLauncher - ReadyToQuench
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: b6091d12c6cc8554ca177ff402d2242b, type: 2}
+    - {fileID: 11400000, guid: 5e5a3da5366ec314aaaa9d78795b80f5, type: 2}

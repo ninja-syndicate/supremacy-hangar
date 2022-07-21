@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Warsui-LaserBeam-LaserBeam - Nullifier
+  m_EditorClassIdentifier: 
+  m_GroupName: Warsui-LaserBeam-LaserBeam - Nullifier
+  m_Data:
+    m_SerializedData: []
+  m_GUID: f73217c95d42c154f966ec85b6bf4cb2
+  m_SerializeEntries:
+  - m_GUID: e78cc69b7a66d2c47ba1eb589945648e
+    m_Address: LaserBeam - Nullifier
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 4803024a24614924d9c8208127dced37, type: 2}
+    - {fileID: 11400000, guid: 5f765db56bd0882428c6b604406607fc, type: 2}

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Archon Miltech-MachineGun-MachineGun - SpotYellow
+  m_EditorClassIdentifier: 
+  m_GroupName: Archon Miltech-MachineGun-MachineGun - SpotYellow
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 6d63c40a43855ff42ac6e0da6ff5aa6d
+  m_SerializeEntries:
+  - m_GUID: d42783c9daf0e1e48aaf103d2c40f67a
+    m_Address: MachineGun - SpotYellow
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 88c8a03f539994d478b0fb81003718f8, type: 2}
+    - {fileID: 11400000, guid: 4976c6c0927bbad4e89d583250487287, type: 2}

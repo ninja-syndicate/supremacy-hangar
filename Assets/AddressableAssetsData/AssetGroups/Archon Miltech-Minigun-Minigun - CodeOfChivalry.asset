@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Archon Miltech-Minigun-Minigun - CodeOfChivalry
+  m_EditorClassIdentifier: 
+  m_GroupName: Archon Miltech-Minigun-Minigun - CodeOfChivalry
+  m_Data:
+    m_SerializedData: []
+  m_GUID: b5996663b5bc7754d8c512db51748492
+  m_SerializeEntries:
+  - m_GUID: 18ac2e6ee9438b8448dd7800f0f46d63
+    m_Address: Minigun - CodeOfChivalry
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: b17eb1bcc87beb1499a7e427071be0b3, type: 2}
+    - {fileID: 11400000, guid: 5fabae3f2934fd149bfe71a0487005e4, type: 2}

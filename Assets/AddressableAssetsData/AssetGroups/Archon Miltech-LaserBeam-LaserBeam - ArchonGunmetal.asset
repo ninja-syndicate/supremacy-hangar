@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Archon Miltech-LaserBeam-LaserBeam - ArchonGunmetal
+  m_EditorClassIdentifier: 
+  m_GroupName: Archon Miltech-LaserBeam-LaserBeam - ArchonGunmetal
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 7cbf3915454529a439c051a3d7cc8680
+  m_SerializeEntries:
+  - m_GUID: 87f1dc3e716f13a45bba7f201c812366
+    m_Address: LaserBeam - ArchonGunmetal
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: a1e4714be5bca16429f37e25988b52e5, type: 2}
+    - {fileID: 11400000, guid: a148d0e43a78f0c4bb4c36153edc28fe, type: 2}
