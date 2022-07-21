@@ -479,6 +479,342 @@ MonoBehaviour:
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
+  - containsError: 1
+    dataMechSkin: {fileID: -1270492474737854837, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: 192e7c966d60e014ba8dbb731e46f208
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: 5040184048739624796, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: 099ebbae489a8de41818f89c5e7fc8d8
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: 5354940050194600984, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: efbf3905cef2dda4bb5c04625cac0953
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: 6044281424002516637, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: 09d10c17a7b0a7540831a4b12b6b204a
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: 2855803916473553528, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: ec836e5357564444280f77c466aa5470
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: 3844941103935888829, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: b816a28fd23c596468f796d20131b38c
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: 1523045613867893565, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: 38c9a6c49339e6441b64acbf1d159e47
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: -8858896915645137584, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: d8411774d42ff5546a8a8481d21f2afa
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: 160280251802464107, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: 60c0d2beeae9438428c04a53e1d81ca2
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: 6605502053376273359, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: a1fa3582d00dfd544a3a28f4952b194b
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: 6538104121505508670, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: 5198f45b088fe1147a2a552cf8d72694
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: -6104889772416837408, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: b2496652d614ff64a8ebae11fbed8cd3
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: -579540894893135221, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: b87c564dd2a1fd54bb3a7845dd64cf9d
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: 9116285095145712906, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: f6d76dc7d47bdb140b43f4549ae81599
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: 2857798538833399472, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: 8fa8769f51d8ab948b495c0401b6ef21
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: 1725952824656310493, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: 00dfcc9320955aa4f9e96ccf533a63a1
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: -1637903879074925390, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: 591064e5e20611e4ea5d2b1a805230c9
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: 5412410140952576088, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: f7ed35078765e3047838533b4bd62325
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: -8067338306772624333, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: 305798deca9e9c04ca215f80c3529a47
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: -944750198157493418, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: 0688ffdc104632f448615b4de76a278f
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: -1229286182803026243, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: 86f11956c3ec61843bf0a01d76f079c0
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: 3480265324592184728, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: 14586857d3cef794bb8c5b3c3a7e03c8
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: -4404582217796110862, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: e47589da33f3c1446bd9fe5bf18cfe9b
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: -4143991506952125527, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: a3b31fd320f04c8449937ffbe2b2fafb
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: -70662558367696744, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: 56b7ec089d49f4943aba2ac3e2719f30
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: -2160408432840934716, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: ec24116d73ac5490e83ef048b7765ca5
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: 596715195408463631, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: 3868defbbfcff734692a37682afcd7eb
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: 7327846113703545636, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: 11d26fe19190a34428da8d848ace6049
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: -7686926382663101909, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: fa2d6672819689e4fad00696a4398a9e
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: -5416780157565602162, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: e67f0e98a5c29354aa01a1507151cd7f
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: 574172811707424854, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: 7670db5f16134aa44a95e509d65cc4ff
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: 6821546469140460865, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: 8bb654431d00b0c419da8a09332ca672
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: 4971138635870204722, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: 4084f3ec9ce37ad439431c2e400340fe
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: 9118838159809701463, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: da7a490fd3a2705469d3060b46ca28ac
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: 2964072342554003602, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: 4fddf1ac824588c44a42f239a37a33e9
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: 4136689497073312528, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: f174d1e92dd26454aaa2c4ed940cdb66
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: -7161897708993411963, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: dc71c39ce4bdb48419c877bf6833a14c
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: -8905923720052204668, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: 96f5d7e06f7a5c149b047cdf75edc0d1
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: -2713530427784900445, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: 7a2116f75b8da81428deb1bc9125f20e
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: -6236368397672133508, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: 0f22ac523def5ea4da9db73c8b727514
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: -4072615887264142828, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: 5b022245703f5494a9b0a61367bab147
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
+  - containsError: 1
+    dataMechSkin: {fileID: 2551745838054332873, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
+      type: 2}
+    skinReference:
+      m_AssetGUID: 033385ef5e875a64b8d89f013c117ef6
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 1
   mysteryCrates:
   - containsError: 0
     dataMysteryCrate: {fileID: 8767646594810958716, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,

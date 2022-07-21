@@ -204,7 +204,12 @@ namespace SupremacyHangar.Editor
                     {
                         var assetTexPath = String.Join('/', texName.FullName.Split('\\').Skip(3));
                         var tex = AssetDatabase.LoadAssetAtPath(assetTexPath, typeof(Texture2D)) as Texture2D;
-
+                        if (tex == null)
+                        {
+                            Debug.LogError($"Could not load texture: {assetTexPath}");
+                            continue;
+                        }
+                        
                         if (tex.name.EndsWith("BaseColor"))
                             mat.SetTexture("_BaseMap", tex);
                         else if (tex.name.EndsWith("Emissive"))
