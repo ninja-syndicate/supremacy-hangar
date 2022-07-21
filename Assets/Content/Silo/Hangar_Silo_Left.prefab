@@ -3677,22 +3677,22 @@ PrefabInstance:
     - target: {fileID: 502131707286467970, guid: b6e20cad73d09484e81ad6552f55d500,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 502131707286467970, guid: b6e20cad73d09484e81ad6552f55d500,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 502131707286467970, guid: b6e20cad73d09484e81ad6552f55d500,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 502131707286467970, guid: b6e20cad73d09484e81ad6552f55d500,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 502131707286467970, guid: b6e20cad73d09484e81ad6552f55d500,
         type: 3}
@@ -3702,7 +3702,7 @@ PrefabInstance:
     - target: {fileID: 502131707286467970, guid: b6e20cad73d09484e81ad6552f55d500,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 502131707286467970, guid: b6e20cad73d09484e81ad6552f55d500,
         type: 3}
@@ -3719,16 +3719,6 @@ PrefabInstance:
       propertyPath: filledTargetTransform
       value: 
       objectReference: {fileID: 1446487045389917614}
-    - target: {fileID: 6885720973119750755, guid: b6e20cad73d09484e81ad6552f55d500,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 6885720973119750755, guid: b6e20cad73d09484e81ad6552f55d500,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7071068
-      objectReference: {fileID: 0}
     - target: {fileID: 6885720973119750755, guid: b6e20cad73d09484e81ad6552f55d500,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y

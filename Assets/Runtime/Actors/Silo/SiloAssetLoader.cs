@@ -126,7 +126,7 @@ namespace SupremacyHangar.Runtime.Actors.Silo
                         break;
                 }
             }
-            
+
             //Load Weapons
             foreach (Transform spawn in signal.SocketsLists.WeaponSockets)
             {
