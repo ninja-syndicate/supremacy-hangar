@@ -47,19 +47,19 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Detail_Albedo_Transparency:
-        m_Texture: {fileID: 2800000, guid: c57c3a2e7f99c5941b98de1d9c57362b, type: 3}
+        m_Texture: {fileID: 2800000, guid: b86d73f9375ab8346be2e2048eacf041, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Detail_Emission:
-        m_Texture: {fileID: 2800000, guid: 1ac9275ef6d134d4abb7bc15019c2208, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5919cad76a4dfbd4eba6e082ef8157cf, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Detail_Metallic_Smoothness:
-        m_Texture: {fileID: 2800000, guid: 8eededc2a382f7d4592689976e9bc0ff, type: 3}
+        m_Texture: {fileID: 2800000, guid: b5ee4898837c7f04e80b5b206959e00a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Detail_Normal:
-        m_Texture: {fileID: 2800000, guid: 766876a31af41a942b753e3be5f7769a, type: 3}
+        m_Texture: {fileID: 2800000, guid: 1ddce590928174c40a7837eb56a3dfe3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
