@@ -57,7 +57,7 @@ Material:
     - _Roughness_Intensity: 0.5
     m_Colors: []
   m_BuildTextureStacks: []
---- !u!114 &8970000193080879206
+--- !u!114 &2504897507852419618
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

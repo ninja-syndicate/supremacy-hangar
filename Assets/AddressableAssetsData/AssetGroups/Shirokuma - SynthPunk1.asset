@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Shirokuma - SynthPunk1
+  m_EditorClassIdentifier: 
+  m_GroupName: Shirokuma - SynthPunk1
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 7a201e5d6a85e0c4a8a97bc81600250b
+  m_SerializeEntries:
+  - m_GUID: e47589da33f3c1446bd9fe5bf18cfe9b
+    m_Address: Shirokuma - SynthPunk
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 83f11b4385ac169498e351a6351f473d
+    m_Address: Shirokuma - SynthPunk
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 8962f403d04f3bc408026a020b860eea, type: 2}
+    - {fileID: 11400000, guid: 3c6653f4ab8c6dd41a11007f49846607, type: 2}
