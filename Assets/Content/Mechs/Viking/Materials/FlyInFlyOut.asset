@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FlyInFlyOut
   m_EditorClassIdentifier: 
   mats:
-  - {fileID: 2100000, guid: c277d6074cd430146b1277cca8fde702, type: 2}
   - {fileID: 2100000, guid: f6da7cbdd940c7a41a40f0d25aa486f8, type: 2}
+  - {fileID: 2100000, guid: c277d6074cd430146b1277cca8fde702, type: 2}
   - {fileID: 2100000, guid: 922db6cee4ae1414fb4af8edb0d2ba9e, type: 2}
   - {fileID: 2100000, guid: 2721a2d6993e90f45b19ca4003f26e8e, type: 2}

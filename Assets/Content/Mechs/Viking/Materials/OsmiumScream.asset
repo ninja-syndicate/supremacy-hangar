@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: OsmiumScream
   m_EditorClassIdentifier: 
   mats:
-  - {fileID: 2100000, guid: 81b89cff90dd6cd49aba3871adac7fcb, type: 2}
   - {fileID: 2100000, guid: 872a3e4c37031644aaed35f9e8b1028d, type: 2}
+  - {fileID: 2100000, guid: 81b89cff90dd6cd49aba3871adac7fcb, type: 2}
   - {fileID: 2100000, guid: 4ae98fd32ec54a6419a711bea3df88cc, type: 2}
   - {fileID: 2100000, guid: 0399abc07db4c1a46b918aea53a1c136, type: 2}
