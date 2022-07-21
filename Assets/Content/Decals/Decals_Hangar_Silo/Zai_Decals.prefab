@@ -197,6 +197,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Decal Projector (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4306887690906533965, guid: 529641181e468564ebb8e29e94740055,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4306887690906533967, guid: 529641181e468564ebb8e29e94740055,
         type: 3}
       propertyPath: m_Size.x
