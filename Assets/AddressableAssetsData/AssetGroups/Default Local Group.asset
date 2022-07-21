@@ -37,22 +37,6 @@ MonoBehaviour:
     m_Address: Hallway-Connector.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 350bc6144ef06a746b1f1329de284f6d
-    m_Address: Assets/Content/Weapons/Materials/TellingTheBees/TellingTheBees.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 66f091c8137e97d48848907a871e2051
-    m_Address: Assets/Content/Weapons/Materials/ReadyToQuench/ReadyToQuench.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 7ce7c997eb50b1147a301881b4f3bfb7
-    m_Address: Assets/Content/Weapons/Minigun/Materials/Rebellion/Rebelion.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 28aa3529758f0ee49a0e72cc144778c6
-    m_Address: Assets/Content/Weapons/Minigun/Materials/MineGod/MineGold.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
   m_SchemaSet:

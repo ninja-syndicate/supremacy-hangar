@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Warsui-Cannon-Cannon_X3Kuro
+  m_EditorClassIdentifier: 
+  m_GroupName: Warsui-Cannon-Cannon_X3Kuro
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 61ebcd6dc21bbeb4687f523e562469bd
+  m_SerializeEntries:
+  - m_GUID: 46f4df885eec2364d91614ce276bb7a3
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b167fd5be8b346145baeb612d3a1b63e
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 54af8c0ea0cafde46ac4a91ef139cc5a
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9a60f24480b95f447af86d1566613479
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a1eabd6d79bcac34ab9349414a31da8a
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9679a7d9895770d4d8da7c82ef4002d5
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 310832eacc6098c42aee2edca1d7e78d
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 03dad1db6fdf7084f92950e0d7523df0
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9f7463df4203bdd46a8bacb1487924fd
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e347d177d1cbd8b4cbbe18ddc87d6fc8
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: aea70c783f6c1234fa97645db45d280e
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d10a295da591d1b4389bfc93811b4203
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas: []

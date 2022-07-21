@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Archon Miltech-MissileLauncher-MissileLauncher_UnbrokenKnot
+  m_EditorClassIdentifier: 
+  m_GroupName: Archon Miltech-MissileLauncher-MissileLauncher_UnbrokenKnot
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 62690f9db38018f4d83122e9fdcc3a67
+  m_SerializeEntries:
+  - m_GUID: 31906d799a9cbb342b6fd62c103281f5
+    m_Address: UnbrokenKnot.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: af5466bdb12fe9c459021f0a28c78f6f
+    m_Address: UnbrokenKnot.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 11ebe75036b9fee4fbf1d8754b7159f0
+    m_Address: UnbrokenKnot.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 42601a56cf3e77e4c8e1eb441ba782d6
+    m_Address: UnbrokenKnot.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 798b993d0ed87934ba8ac8017c4bf807
+    m_Address: UnbrokenKnot.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 112706edb3c92c54ea688710bb5d62d8
+    m_Address: UnbrokenKnot.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 61996b8005b40b64698f293d4f08e063
+    m_Address: UnbrokenKnot.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 59545b1dba13c1546b2be6208b8aecfd
+    m_Address: UnbrokenKnot.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3d4da248290390a4d8f6cda6c3f32d82
+    m_Address: UnbrokenKnot.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2a96ba44a9769a94f8ca13b59265a7a8
+    m_Address: UnbrokenKnot.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c251f1b3aade6b04aba46795fc5da2eb
+    m_Address: UnbrokenKnot.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 304e1db950d37764bbb41ffb2db88613
+    m_Address: UnbrokenKnot.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas: []

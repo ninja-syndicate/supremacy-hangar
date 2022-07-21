@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Warsui-Minigun-Minigun_X3Kuro
+  m_EditorClassIdentifier: 
+  m_GroupName: Warsui-Minigun-Minigun_X3Kuro
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 9ab2000a3d7cb08439dfb1acc1970811
+  m_SerializeEntries:
+  - m_GUID: e1e1c3d4a278b424a9c4578eb05183da
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b4dbf17037aeda4438718c917a5dab28
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a630e33a37e4d6d489e1c4e4ed5c453c
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 28aa3529758f0ee49a0e72cc144778c6
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 06def808d44bcd44eb09af236f7a173d
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e79beddf5a0b581459fe04dc343f8d67
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7ce7c997eb50b1147a301881b4f3bfb7
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6a20a5cef49a55e4f8ce1492897e5e66
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4d94081880f764043973747b4a8e3c98
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 300c1e20c57d9a747af1f48406d42799
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c3dd45f6e75dc19458fcf923412c8bdf
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6d81d7101b90d454aae23c175ae0a6df
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2fe0350ef44c65a4588de2f8f304da96
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 81a30976aab4eaa499c99df95605d90e
+    m_Address: X3Kuro.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas: []
