@@ -39,8 +39,8 @@ namespace SupremacyData.Editor
                 case Runtime.WeaponModel.ModelType.Flamethrower:
                     EditorGUILayout.SelectableLabel("Flamethrower Type");
                     break;
-                case Runtime.WeaponModel.ModelType.Flak:
-                    EditorGUILayout.SelectableLabel("Flak Type");
+                case Runtime.WeaponModel.ModelType.FlakGun:
+                    EditorGUILayout.SelectableLabel("Flak Gun Type");
                     break;
                 case Runtime.WeaponModel.ModelType.Cannon:
                     EditorGUILayout.SelectableLabel("Cannon Type");
