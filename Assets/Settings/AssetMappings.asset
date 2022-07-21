@@ -58,7 +58,7 @@ MonoBehaviour:
     dataMechModel: {fileID: -3017104320611050935, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b,
       type: 2}
     mechReference:
-      m_AssetGUID: 06f1ce1dddd608a49aea4d983e6a8b0d
+      m_AssetGUID: 29ecc999451e44b74a9b38d71063e405
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
