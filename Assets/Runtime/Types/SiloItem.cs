@@ -22,7 +22,8 @@ namespace SupremacyHangar.Runtime.Types
 
     [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public class MysteryCrate : SiloItem
-    {        
+    {
+        public bool Openable => DateTime.UtcNow >= CanOpenOn;
         public DateTime CanOpenOn;
 
         public MysteryCrateMapping MysteryCrateDetails;

@@ -3,6 +3,116 @@
     "silos":
     [
         {
+            "type": "mystery_crate",
+            "ownership_id": "96df238c-dcbd-4913-bda9-8d18b5343c76",
+            "static_id": "9f9275eb-491a-47aa-b9d7-dd8185f179ca",
+            "can_open_on": "2022-07-14T00:00:00.0Z"
+        },
+        {
+            "type": "mystery_crate",
+            "ownership_id": "3beaeae1-0ce9-4d7b-befd-3ccaad332ead",
+            "static_id": "3ca1d928-51fa-4c9e-8a82-6ee5819b93d2",
+            "can_open_on": "2022-07-14T00:00:00.0Z"
+        },
+        {
+            "type": "mech",
+            "ownership_id": "d10b80af-55fe-409b-82fd-41b352905471",
+            "static_id": "3dc5888b-f5ff-4d08-a520-26fd3681707f",
+            "skin":
+            {
+                "type": "skin",
+                "ownership_id": "adc73179-7b49-4d0d-ac37-7e4ab9e2d879",
+                "static_id": "3b527838-a2b7-4a93-876f-661862838b50"
+            },
+            "accessories":
+            [
+                {
+                    "type": "weapon",
+                    "ownership_id": "d7ecc916-425c-477c-bc77-fc4502b0226a",
+                    "static_id": "29b3e2f7-9e1b-4bed-9b26-edcd9d978b1e",
+                    "skin":
+                    {
+                        "type": "skin",
+                        "static_id": "61d2184b-b4fd-4623-80e2-78ddf8fa8ebf"
+                    }
+                },
+                {
+                    "type": "weapon",
+                    "ownership_id": "54598eeb-7907-4bd6-9bd1-0912037c7a2d",
+                    "static_id": "38a8d642-a449-4fc3-a1d4-4a6e3ac01c4e",
+                    "skin":
+                    {
+                        "type": "skin",
+                        "static_id": "8303fa1c-ddb8-446a-8e0e-4d31709565fc"
+                    }
+                },
+                {
+                    "type": "power_core",
+                    "ownership_id": "bcdf5b45-eaa8-4f8f-99b0-75c25b8a1d33",
+                    "static_id": "62e197a4-f45e-4034-ac0a-3e625a6770d7"
+                }
+            ]
+        },
+        {
+            "type": "mech",
+            "ownership_id": "d10b80af-55fe-409b-82fd-41b352905471",
+            "static_id": "0639ebde-fbba-498b-88ac-f7122ead9c90",
+            "skin":
+            {
+                "type": "skin",
+                "ownership_id": "adc73179-7b49-4d0d-ac37-7e4ab9e2d879",
+                "static_id": "48c90129-506f-4096-b82b-87954d354c95"
+            },
+            "accessories":
+            [
+                {
+                    "type": "weapon",
+                    "ownership_id": "54598eeb-7907-4bd6-9bd1-0912037c7a2d",
+                    "static_id": "29b3e2f7-9e1b-4bed-9b26-edcd9d978b1e",
+                    "skin":
+                    {
+                        "type": "skin",
+                        "static_id": "e58526c4-a7b6-4908-9550-3e1034cd93a6"
+                    }
+                },
+                {
+                    "type": "weapon",
+                    "ownership_id": "d7ecc916-425c-477c-bc77-fc4502b0226a",
+                    "static_id": "38a8d642-a449-4fc3-a1d4-4a6e3ac01c4e",
+                    "skin":
+                    {
+                        "type": "skin",
+                        "static_id": "b38a5ab4-83e1-4183-ba81-c2834d4a6815"
+                    }
+                },
+                {
+                    "type": "weapon",
+                    "ownership_id": "d7ecc916-425c-477c-bc77-fc4502b0226a",
+                    "static_id": "189424f3-11cb-4026-8a8b-6567a24108e0",
+                    "skin":
+                    {
+                        "type": "skin",
+                        "static_id": "1bf33888-cefd-42f4-b89b-3253a2b53e56"
+                    }
+                },
+                {
+                    "type": "weapon",
+                    "ownership_id": "54598eeb-7907-4bd6-9bd1-0912037c7a2d",
+                    "static_id": "52c0d775-ac19-4bef-ad4b-3280cc524d68",
+                    "skin":
+                    {
+                        "type": "skin",
+                        "static_id": "abac4eb4-95e5-4399-947f-54612024aefb"
+                    }
+                },
+                {
+                    "type": "power_core",
+                    "ownership_id": "bcdf5b45-eaa8-4f8f-99b0-75c25b8a1d33",
+                    "static_id": "62e197a4-f45e-4034-ac0a-3e625a6770d7"
+                }
+            ]
+        },
+        {
             "type": "mech",
             "ownership_id": "465fe68c-6487-4f78-92aa-218cf129e071",
             "static_id": "625cd381-7c66-4e2f-9f69-f81589105730",
@@ -41,18 +151,6 @@
         {
             "type": "mystery_crate",
             "ownership_id": "96df238c-dcbd-4913-bda9-8d18b5343c76",
-            "static_id": "9f9275eb-491a-47aa-b9d7-dd8185f179ca",
-            "can_open_on": "2022-07-14T00:00:00.0Z"
-        },
-        {
-            "type": "mystery_crate",
-            "ownership_id": "3beaeae1-0ce9-4d7b-befd-3ccaad332ead",
-            "static_id": "3ca1d928-51fa-4c9e-8a82-6ee5819b93d2",
-            "can_open_on": "2022-07-14T00:00:00.0Z"
-        },
-        {
-            "type": "mystery_crate",
-            "ownership_id": "96df238c-dcbd-4913-bda9-8d18b5343c76",
             "static_id": "c92c330a-76c6-4306-b25b-a8bd6512bec4",
             "can_open_on": "2022-07-14T00:00:00.0Z"
         },
@@ -61,45 +159,6 @@
             "ownership_id": "3beaeae1-0ce9-4d7b-befd-3ccaad332ead",
             "static_id": "cfe9b5eb-46bc-4947-8866-df4a4e3bf485",
             "can_open_on": "2022-07-14T00:00:00.0Z"
-        },
-        {
-            "type": "mech",
-            "ownership_id": "d10b80af-55fe-409b-82fd-41b352905471",
-            "static_id": "3dc5888b-f5ff-4d08-a520-26fd3681707f",
-            "skin":
-            {
-                "type": "skin",
-                "ownership_id": "adc73179-7b49-4d0d-ac37-7e4ab9e2d879",
-                "static_id": "bb12fcb6-1aba-4744-a5c2-247ed860e106"
-            },
-            "accessories":
-            [
-                {
-                    "type": "weapon",
-                    "ownership_id": "d7ecc916-425c-477c-bc77-fc4502b0226a",
-                    "static_id": "b9d58717-8018-44e0-a19b-46d4431ea583",
-                    "skin":
-                    {
-                        "type": "skin",
-                        "static_id": "61d2184b-b4fd-4623-80e2-78ddf8fa8ebf"
-                    }
-                },
-                {
-                    "type": "weapon",
-                    "ownership_id": "54598eeb-7907-4bd6-9bd1-0912037c7a2d",
-                    "static_id": "d8aac97a-d1b6-408c-9196-73e4e745364e",
-                    "skin":
-                    {
-                        "type": "skin",
-                        "static_id": "8303fa1c-ddb8-446a-8e0e-4d31709565fc"
-                    }
-                },
-                {
-                    "type": "power_core",
-                    "ownership_id": "bcdf5b45-eaa8-4f8f-99b0-75c25b8a1d33",
-                    "static_id": "62e197a4-f45e-4034-ac0a-3e625a6770d7"
-                }
-            ]
         },
         {
             "type": "weapon",

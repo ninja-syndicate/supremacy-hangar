@@ -154,9 +154,8 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
                     PopulateDisplay();
                     break;
                 case SiloState.StateName.LoadedWithCrate:
-                    interactionButton.gameObject.SetActive(true);
                     interactionButtonProgress.fillAmount = 1;
-                    interactionButtonText.text = openRequestText;
+                    SetupOpenButton();
                     break;
                 case SiloState.StateName.LoadingCrateContent:
                     interactionButton.gameObject.SetActive(true);
@@ -164,6 +163,21 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
                     interactionButtonText.text = openingText;
                     break;
             }
+        }
+
+        private void SetupOpenButton()
+        {
+            interactionButtonText.text = openRequestText;
+            
+            var crate = siloState.Contents as MysteryCrate;
+            if (crate == null)
+            {
+                Debug.LogError("could not set crate button state because we don't have a crate!");
+                interactionButton.gameObject.SetActive(false);
+                return;
+            }
+            
+            interactionButton.gameObject.SetActive(crate.Openable);
         }
 
         public void Update()
@@ -230,6 +244,7 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
             var diff = counterValue - now;
             if (diff <= TimeSpan.Zero && !crateOpenSet)
             {
+                SetupOpenButton();
                 siloState.CrateCanOpen();
                 crateOpenSet = true;
                 siloContentsName1.text = TimeSpan.Zero.ToString("hh':'mm':'ss");

@@ -56,6 +56,7 @@ GameObject:
   - component: {fileID: 9204725431603856}
   - component: {fileID: 2174717275478758057}
   - component: {fileID: 8531992754805495430}
+  - component: {fileID: 4342403341118387374}
   m_Layer: 0
   m_Name: LootBox_Pyro_External
   m_TagString: Untagged
@@ -118,7 +119,8 @@ AudioSource:
   m_GameObject: {fileID: 5735325635755820770}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 7084010885888102438, guid: 6030a6e528f25fb4c889c453e8368ada,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -205,6 +207,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &4342403341118387374
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5735325635755820770}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 21.1, y: 15.09, z: 21.91}
+  m_Center: {x: 0, y: 7.4, z: 0}
 --- !u!1 &7456238410436540780
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,7 +244,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7456238410436540780}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.49, z: 0}
+  m_LocalPosition: {x: 0, y: 5.28, z: -8.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -281,7 +296,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ad145f91b1a931645bf6fc73bc3c651f,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad145f91b1a931645bf6fc73bc3c651f,
         type: 3}
@@ -291,7 +306,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ad145f91b1a931645bf6fc73bc3c651f,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad145f91b1a931645bf6fc73bc3c651f,
         type: 3}
@@ -306,7 +321,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: ad145f91b1a931645bf6fc73bc3c651f,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ad145f91b1a931645bf6fc73bc3c651f,
         type: 3}

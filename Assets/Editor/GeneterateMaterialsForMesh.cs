@@ -208,7 +208,10 @@ namespace SupremacyHangar.Editor
                         if (tex.name.EndsWith("BaseColor"))
                             mat.SetTexture("_BaseMap", tex);
                         else if (tex.name.EndsWith("Emissive"))
+                        {
+                            mat.SetFloat("_Emissive_Intensity", 1);
                             mat.SetTexture("_EmissionMap", tex);
+                        }
                         else if (tex.name.EndsWith("Normal"))
                             mat.SetTexture("_BumpMap", tex);
                         else
@@ -216,14 +219,14 @@ namespace SupremacyHangar.Editor
                     }
 
                     //Save Material
-                    matFolderPath = useDefaultDir ? materialDir : String.Join('/', materialDir.Split('/').Skip(3)).Replace("\\", "/");// materialDir.Substring(materialDir.IndexOf('/', 3) + 1).Replace("\\", "/");
+                    matFolderPath = useDefaultDir ? materialDir : String.Join('/', materialDir.Split('/').Skip(3)).Replace("\\", "/");
                     var matPath = matFolderPath + "/" + matName + ".mat";
                     matarialPaths.Add(matPath);
 
                     if (AssetDatabase.LoadAssetAtPath(matPath, typeof(Material)) != null)
                     { 
                         string message = useDefaultDir ?
-                            String.Join('/', matPath.Split('/').Skip(4)) : //matPath.Substring(materialDir.IndexOf('/', 4)).Replace("\\", "/")
+                            String.Join('/', matPath.Split('/').Skip(4)) :
                             matPath.Substring(matPath.IndexOf('/'));
 
                         logWidget.LogWarning("Can't create material, it already exists: " + message);
@@ -248,7 +251,7 @@ namespace SupremacyHangar.Editor
 
                 var skinName = matFolderPath.Substring(matFolderPath.LastIndexOf('/') + 1);
                 if(skinName.LastIndexOf('_') > 0 ) skinName = skinName.Substring(0, skinName.LastIndexOf('_'));
-                var skinPath = matFolderPath + '/' + skinName + ".asset";
+                var skinPath = matFolderPath.Substring(0, matFolderPath.LastIndexOf('/')) + '/' + skinName + ".asset";
 
                 //Create Skin object
                 if (AssetDatabase.LoadAssetAtPath(skinPath, typeof(Skin)) != null)

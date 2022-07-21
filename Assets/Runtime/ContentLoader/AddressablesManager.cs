@@ -289,13 +289,14 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 siloDirection = spawnLocation;
 
             //Rotate items (primarily used for composables & in crate spawning)
-            Transform newRotation = spawnLocation;
+            Vector3 spawnPosition = spawnLocation.position;
+            Quaternion spawnRotation = Quaternion.LookRotation(spawnLocation.forward, spawnLocation.up);
 
-            if (skinToMeshMap.Count == 0 && insideCrate)
-                newRotation = siloDirection;
+            /*            if (skinToMeshMap.Count == 0 && insideCrate)
+                newRotation = siloDirection;*/
 
             //Load and spawn mech
-            var mechOperationHandler = TargetMech.InstantiateAsync(spawnLocation.position, newRotation.localRotation, spawnLocation);
+            var mechOperationHandler = TargetMech.InstantiateAsync(spawnPosition, spawnRotation, spawnLocation);
             StartCoroutine(loadingProgressContext.LoadingAssetProgress(mechOperationHandler, "Loading Mesh"));
             
             if(TargetSkin != null)
@@ -307,9 +308,6 @@ namespace SupremacyHangar.Runtime.ContentLoader
                         crateInstance = myMech.mech;
 
                     myMech.mech = mech.Result;
-
-                    if (siloDirection.localRotation.y > 0 && skinToMeshMap.Count > 1)
-                        mech.Result.transform.Rotate(Vector3.up, 180);
 
                     if (isWeaponOnly && !insideCrate)
                         mech.Result.transform.Rotate(Vector3.right, -90.0f);

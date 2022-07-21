@@ -3,13 +3,11 @@ using SupremacyData.Runtime;
 using SupremacyHangar.Runtime.Environment;
 using SupremacyHangar.Runtime.ScriptableObjects;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
 using UnityEditor.AddressableAssets;
 using UnityEngine;
-using static SupremacyHangar.Editor.ContentLoader.AssetMappingsEditor;
 
 namespace SupremacyHangar.Editor.ContentLoader
 {
@@ -22,7 +20,6 @@ namespace SupremacyHangar.Editor.ContentLoader
         {
             //Get Static Data
             var staticDataGuids = AssetDatabase.FindAssets("t:Data");
-            var assetMapGuids = AssetDatabase.FindAssets("t:AssetMappings");
 
             if (staticDataGuids.Length != 1)
             {
@@ -112,7 +109,7 @@ namespace SupremacyHangar.Editor.ContentLoader
                             var targetWeaponModel = dataKey as WeaponModel;
                             string modelBrandName = targetWeaponModel.Brand?.HumanName;
                             targetName = targetWeaponModel.Type.ToString();
-                            targetAssetGuid = AssetFinder("Assets/Content/Weapons", modelBrandName, targetName, targetName);
+                            targetAssetGuid = AssetFinder("Assets/Content/Weapons", "Prefab", modelBrandName, targetWeaponModel.Type.ToString(), targetWeaponModel.Type.ToString());
                             break;
                         case ListType.WeaponSkin:
                             if (!Directory.Exists("Assets/Content/Weapons"))
@@ -123,7 +120,7 @@ namespace SupremacyHangar.Editor.ContentLoader
                             }
                             var targetWeapon = dataKey as WeaponSkin; 
                             string skinBrandName = targetWeapon.WeaponModel.Brand?.HumanName;
-                            targetAssetGuid = AssetFinder("Assets/Content/Weapons", skinBrandName, targetWeapon.Type.ToString(), targetWeapon.Type.ToString());
+                            targetAssetGuid = AssetFinder("Assets/Content/Weapons", "Skin", skinBrandName, targetWeapon.Type.ToString(), targetName);
                             break;
                         case ListType.PowerCore:
                             targetAssetGuid = AssetDatabase.FindAssets($"{targetName} t:Prefab");
@@ -168,21 +165,21 @@ namespace SupremacyHangar.Editor.ContentLoader
             if (key.paginate) key.SetPage(firstNewItemIndex / key.pageSize);
         }
 
-        private string[] AssetFinder(string dirPath, string brandName, string folderName, string assetName)
+        private string[] AssetFinder(string dirPath, string assetType, string brandName, string folderName, string assetName)
         {
             if (brandName != null)
             {
-                string weaponModelFolder = SearchSubDirs(dirPath, brandName);
+                string weaponModelFolder = dirPath + '/'+ brandName;
 
-                if (weaponModelFolder != null)
+                if (Directory.Exists(weaponModelFolder))
                 {
                     string weaponfolderPath = SearchSubDirs(weaponModelFolder, folderName);
 
                     if (weaponfolderPath != null)
-                        return AssetDatabase.FindAssets($"{assetName} t:Prefab", new[] { $"{weaponfolderPath}" });
+                        return AssetDatabase.FindAssets($"{assetName} t:{assetType}", new[] { $"{weaponfolderPath}" });
                     else
                     {
-                        Debug.LogError($"Weapon type folder NOT found: {dirPath}/{brandName}/{assetName}. No Asset Set");
+                        Debug.LogError($"Weapon type folder NOT found: {dirPath}/{brandName}/{assetName}. No Asset Set {weaponModelFolder}");
                         return null;
                     }
                 }

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Content/Mechs/Annihilator.meta
 guid: 0ce73031fd71b784894f2bce0c636381
+========
+guid: 2b6256a2d0d704641b339b9847d16ba4
+>>>>>>>> origin/develop:Assets/Content/Player/Updated Footsteps.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
