@@ -871,6 +871,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Elevator Right
       objectReference: {fileID: 0}
+    - target: {fileID: 1841272802482853332, guid: 729215ee3505540e2bde466d223ab637,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.45
+      objectReference: {fileID: 0}
     - target: {fileID: 4074103181461067162, guid: 729215ee3505540e2bde466d223ab637,
         type: 3}
       propertyPath: stops.Array.data[0].x
@@ -1034,6 +1039,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Elevator Left
+      objectReference: {fileID: 0}
+    - target: {fileID: 1841272802482853332, guid: 729215ee3505540e2bde466d223ab637,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 4074103181461067162, guid: 729215ee3505540e2bde466d223ab637,
         type: 3}

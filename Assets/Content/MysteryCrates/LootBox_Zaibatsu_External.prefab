@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 6483035673739059314}
   - component: {fileID: 3742903107328478526}
   - component: {fileID: 8053155325569517349}
+  - component: {fileID: 6408551783472126068}
   m_Layer: 0
   m_Name: LootBox_Zaibatsu_External
   m_TagString: Untagged
@@ -105,7 +106,8 @@ AudioSource:
   m_GameObject: {fileID: 1529005206211038845}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 7084010885888102438, guid: 6030a6e528f25fb4c889c453e8368ada,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -192,6 +194,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &6408551783472126068
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529005206211038845}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 33.67, y: 29.9, z: 30.9}
+  m_Center: {x: 0, y: 14.9, z: 0.6}
 --- !u!1 &7204512912031322836
 GameObject:
   m_ObjectHideFlags: 0

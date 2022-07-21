@@ -886,6 +886,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Elevator Right
       objectReference: {fileID: 0}
+    - target: {fileID: 1841272802482853332, guid: 729215ee3505540e2bde466d223ab637,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.45
+      objectReference: {fileID: 0}
     - target: {fileID: 3832631649560022320, guid: 729215ee3505540e2bde466d223ab637,
         type: 3}
       propertyPath: m_Size.y
@@ -1059,6 +1064,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Elevator Left
+      objectReference: {fileID: 0}
+    - target: {fileID: 1841272802482853332, guid: 729215ee3505540e2bde466d223ab637,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 3832631649560022320, guid: 729215ee3505540e2bde466d223ab637,
         type: 3}

@@ -288,7 +288,6 @@ namespace SupremacyHangar.Runtime.Environment
 
             if (newlyLoadedObjects.Count > 1)
             {
-                Debug.Log("Door open as alls loaded");
                 Door2.OpenDoor();
             }
             operationsForNewDoor.Remove(doorHandler);
