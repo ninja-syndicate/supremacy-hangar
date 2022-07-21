@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 8457115178345337529}
   - component: {fileID: 1804765370246255774}
   - component: {fileID: 6603588002639542291}
+  - component: {fileID: 4267347251487001713}
   m_Layer: 0
   m_Name: Lootbox_Archon_External
   m_TagString: Untagged
@@ -193,6 +194,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &4267347251487001713
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4082348187495546370}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 19.1, y: 15, z: 21.7}
+  m_Center: {x: 0, y: 7.5, z: 0}
 --- !u!1 &4580236930395674824
 GameObject:
   m_ObjectHideFlags: 0
