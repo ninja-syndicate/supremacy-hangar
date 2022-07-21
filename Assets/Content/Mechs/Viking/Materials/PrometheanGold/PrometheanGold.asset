@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PrometheanGold
   m_EditorClassIdentifier: 
   mats:
-  - {fileID: 2100000, guid: 70631ed2359b1494e86802028f1dc78b, type: 2}
-  - {fileID: 2100000, guid: 58e6a9a65adbbf8488f73804f9dbed55, type: 2}
-  - {fileID: 2100000, guid: 46ec72706fd5a8e489e4c766f2148f54, type: 2}
-  - {fileID: 2100000, guid: e50cd14e8ccb6584aab4e616b1452ca6, type: 2}
+  - {fileID: 2100000, guid: de07fd60d4a397a47bb443c8ca3b914b, type: 2}
+  - {fileID: 2100000, guid: 649a7b8a3422ed2488264ae3aeecd68e, type: 2}
+  - {fileID: 2100000, guid: 074cf08f01688354c87d1b905a88ca7c, type: 2}
+  - {fileID: 2100000, guid: 52661200bc38e8c409ce8ab3c8906fa2, type: 2}

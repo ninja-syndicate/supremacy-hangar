@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SovereignHill
   m_EditorClassIdentifier: 
   mats:
-  - {fileID: 2100000, guid: 70631ed2359b1494e86802028f1dc78b, type: 2}
   - {fileID: 2100000, guid: 58e6a9a65adbbf8488f73804f9dbed55, type: 2}
+  - {fileID: 2100000, guid: 70631ed2359b1494e86802028f1dc78b, type: 2}
   - {fileID: 2100000, guid: 46ec72706fd5a8e489e4c766f2148f54, type: 2}
   - {fileID: 2100000, guid: e50cd14e8ccb6584aab4e616b1452ca6, type: 2}

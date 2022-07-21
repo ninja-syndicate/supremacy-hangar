@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: TellingTheBees
   m_EditorClassIdentifier: 
   mats:
-  - {fileID: 2100000, guid: 84e4c5d7ef69e4249ad3950dd647fa3f, type: 2}
-  - {fileID: 0}
-  - {fileID: 2100000, guid: a1fa1d6a1cefa4d40a4bce8a663fb0e0, type: 2}
   - {fileID: 2100000, guid: 11692a8cd91cc6d41922fdc2e63a7519, type: 2}
+  - {fileID: 2100000, guid: 84e4c5d7ef69e4249ad3950dd647fa3f, type: 2}
+  - {fileID: 2100000, guid: a1fa1d6a1cefa4d40a4bce8a663fb0e0, type: 2}

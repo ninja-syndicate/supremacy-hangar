@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MartianSoil
   m_EditorClassIdentifier: 
   mats:
-  - {fileID: 2100000, guid: 494054dd03e5395479f323b1fa810689, type: 2}
   - {fileID: 2100000, guid: e2ea74a3c1efc50469e3f8e37338f67f, type: 2}
+  - {fileID: 2100000, guid: 494054dd03e5395479f323b1fa810689, type: 2}
   - {fileID: 2100000, guid: 7fa56e105f98a034caefc378ff4bafc5, type: 2}
   - {fileID: 2100000, guid: bdc6dce6ccbc6a54db62c438a098f0ee, type: 2}

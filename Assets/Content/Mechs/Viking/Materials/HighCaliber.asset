@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: HighCaliber
   m_EditorClassIdentifier: 
   mats:
-  - {fileID: 2100000, guid: f60a87d46e4a90847b51305e6b376500, type: 2}
   - {fileID: 2100000, guid: 27046d2776956b143a83906bfd2d41bd, type: 2}
+  - {fileID: 2100000, guid: f60a87d46e4a90847b51305e6b376500, type: 2}
   - {fileID: 2100000, guid: 8491311d7a0aaf447bb0990deac43ad2, type: 2}
   - {fileID: 2100000, guid: 3af9a404e0b41d14798ff8a9cb86982e, type: 2}
