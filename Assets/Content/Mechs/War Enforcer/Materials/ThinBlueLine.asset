@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6691a633fee507c468fbb61f649f459a, type: 3}
-  m_Name: RexeonGuard
+  m_Name: ThinBlueLine
   m_EditorClassIdentifier: 
   mats:
   - {fileID: 2100000, guid: da572aa0305dbcc4fb75d18af07dec0f, type: 2}
