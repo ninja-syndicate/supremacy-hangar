@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Archon Miltech-GrenadeLauncher-GrenadeLauncher - ThinBlueLine
+  m_EditorClassIdentifier: 
+  m_GroupName: Archon Miltech-GrenadeLauncher-GrenadeLauncher - ThinBlueLine
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 0ae08f464a18c26439cfac6c5657f8d8
+  m_SerializeEntries:
+  - m_GUID: 56ea1f6009ef2954bad567d6a0fe3209
+    m_Address: GrenadeLauncher - ThinBlueLine
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 5c6416936890d45409068886ac7a0eca, type: 2}
+    - {fileID: 11400000, guid: 9e67829dfbb55e045ac3191cb27141b8, type: 2}

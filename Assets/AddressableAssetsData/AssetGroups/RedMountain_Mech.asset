@@ -17,8 +17,8 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 0fb85ad24b8a9274e9f90f9bd19defbd
   m_SerializeEntries:
-  - m_GUID: 0dfee75fecab7bd4c9096bd09d42a47e
-    m_Address: RedMountain_Rig_Mech
+  - m_GUID: 29aada39dadbd4d94b5aba820c172c96
+    m_Address: Assets/Content/Mechs/Mech_RedMountain/RedMountain.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

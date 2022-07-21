@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Pyrotronics-PlasmaRifle-PlasmaRifle - SharkSkin
+  m_EditorClassIdentifier: 
+  m_GroupName: Pyrotronics-PlasmaRifle-PlasmaRifle - SharkSkin
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 03535919deaadee4095eafef682acb5d
+  m_SerializeEntries:
+  - m_GUID: 072e360851c3da548a61e218f358546e
+    m_Address: PlasmaRifle - SharkSkin
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: f92d78bd8c8a04f4d9a1c6d57849f9c6, type: 2}
+    - {fileID: 11400000, guid: 03db18c78e057074f8705057d9c00452, type: 2}

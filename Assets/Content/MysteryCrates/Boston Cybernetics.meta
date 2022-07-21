@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Content/MysteryCrates/Boston Cybernetics.meta
 guid: 88b664cefb896412abf417c3cfb594d0
+========
+guid: 0d4e5b7b233a3934cb2a09b938c3d2bd
+>>>>>>>> develop:Assets/Content/Instructions.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

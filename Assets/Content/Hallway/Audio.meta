@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Content/Mechs/Aries.meta
+guid: ec38bd611ab2144b881ff43a04f1b201
+========
 guid: c01b9d5fc2f9445569297fdf7a3fedbc
+>>>>>>>> origin/develop:Assets/Content/Hallway/Audio.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

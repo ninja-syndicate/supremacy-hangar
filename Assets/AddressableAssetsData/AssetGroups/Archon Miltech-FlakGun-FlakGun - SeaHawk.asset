@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Archon Miltech-FlakGun-FlakGun - SeaHawk
+  m_EditorClassIdentifier: 
+  m_GroupName: Archon Miltech-FlakGun-FlakGun - SeaHawk
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 8ee9923e799272e43ba557a7773be157
+  m_SerializeEntries:
+  - m_GUID: 83dfacd7071f18448aff5b48ac4f082e
+    m_Address: FlakGun - SeaHawk
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 65ac050ab2a683c4da49026ef5d04e3e, type: 2}
+    - {fileID: 11400000, guid: 00c49a8d2eb3fe44ea7a40cdf6f21c6a, type: 2}

@@ -1,6 +1,4 @@
-using System.Buffers;
 using SupremacyHangar.Runtime.Silo;
-using SupremacyHangar.Runtime.ScriptableObjects;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
@@ -11,7 +9,6 @@ using SupremacyHangar.Runtime.Environment.Connections;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using SupremacyHangar.Runtime.ContentLoader.Types;
 using SupremacyHangar.Runtime.ContentLoader;
-using System.Collections;
 
 namespace SupremacyHangar.Runtime.Environment
 {
@@ -192,6 +189,11 @@ namespace SupremacyHangar.Runtime.Environment
             _container.InjectGameObject(result);
             GameObject.FindGameObjectWithTag("Loading").SetActive(false);
             result.SetActive(true);
+        }
+
+        public void UpdatePlayerInventory(int siloIndex, SiloItem newContent)
+        {
+            _playerInventory.Silos[siloIndex] = newContent;
         }
 
         private void DoorOpened()
@@ -375,6 +377,7 @@ namespace SupremacyHangar.Runtime.Environment
             {
                 _siloSignalHandler.CloseSilo();
                 _currentSilo.SiloSpawned = false;
+                _currentSilo = null;
             }
             else if (!waitOnWindow && loadedSilo)
                 UnloadAssetsAfterSiloClosed();
@@ -421,7 +424,6 @@ namespace SupremacyHangar.Runtime.Environment
 
         private void UnloadAssetsAfterSiloClosed()
         {
-            //_currentSilo = null;
             UnityEngine.AddressableAssets.Addressables.ReleaseInstance(loadedSilo);
         }
 

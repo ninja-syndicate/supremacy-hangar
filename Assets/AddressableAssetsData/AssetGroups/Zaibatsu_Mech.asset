@@ -17,8 +17,8 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: e54862291edfa5b429b93dbd1e945a77
   m_SerializeEntries:
-  - m_GUID: 06f1ce1dddd608a49aea4d983e6a8b0d
-    m_Address: Zaibatsu_Mech_v4
+  - m_GUID: 29ecc999451e44b74a9b38d71063e405
+    m_Address: Assets/Content/Mechs/Mech_Zaibatsu/Zaibatsu.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

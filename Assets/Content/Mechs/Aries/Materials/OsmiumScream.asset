@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691a633fee507c468fbb61f649f459a, type: 3}
+  m_Name: OsmiumScream
+  m_EditorClassIdentifier: 
+  mats:
+  - {fileID: 2100000, guid: bf7c36f403027244ab0a15418afcaee7, type: 2}
+  - {fileID: 2100000, guid: 42fa19810c4b1d442acc9633b2a7db11, type: 2}
+  - {fileID: 2100000, guid: ec41626dd3b72a641908280161d6cb87, type: 2}
+  - {fileID: 2100000, guid: a7a95b79f66002f4dae72fc09af34210, type: 2}
+  - {fileID: 2100000, guid: 2ea3998185e017a45a9c2a701d35ae72, type: 2}
+  - {fileID: 2100000, guid: c025df92d4584cb46a33f3647f123eb1, type: 2}
+  - {fileID: 2100000, guid: c92a7fb916b0fb444857c8a5bd3a9e87, type: 2}
+  - {fileID: 2100000, guid: f1d876bc08971264bbbda19d66535c00, type: 2}
+  - {fileID: 2100000, guid: f76a1ff3a2e3ad54fa524782acb59851, type: 2}
+  - {fileID: 2100000, guid: 683ae28dce8620f45b0e1176a6d93d67, type: 2}

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: PowerCore
+  m_EditorClassIdentifier: 
+  m_GroupName: PowerCore
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 5643f2437c9f1104faef8a827a7a522c
+  m_SerializeEntries:
+  - m_GUID: 595cbb408e5238746a89b7e81f10f96e
+    m_Address: PowerCore.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 450a4e2ed61af454f9dd0360aea42fd0, type: 2}
+    - {fileID: 11400000, guid: 4e05122efdb300142b6dec863574bc29, type: 2}

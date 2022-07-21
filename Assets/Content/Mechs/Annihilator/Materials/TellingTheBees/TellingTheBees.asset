@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691a633fee507c468fbb61f649f459a, type: 3}
+  m_Name: TellingTheBees
+  m_EditorClassIdentifier: 
+  mats:
+  - {fileID: 2100000, guid: f009296f3a8f3f541bdfa90e33e25976, type: 2}
+  - {fileID: 2100000, guid: 71ca0a88820a2e84090505557f61cb96, type: 2}
+  - {fileID: 2100000, guid: 9995113fadb9355449e511ef1edc7621, type: 2}
+  - {fileID: 2100000, guid: 664bc5dd2a2dee84493ffa7da4465d04, type: 2}
+  - {fileID: 2100000, guid: 1c31bfc004d4ec7408f39d24826dda50, type: 2}
+  - {fileID: 2100000, guid: c9601c69e2a7ef246b135c9f24c3a089, type: 2}
+  - {fileID: 2100000, guid: 7c46bee4f2c605448b5af1b9b39ab25e, type: 2}
+  - {fileID: 2100000, guid: ce771e0a87ff4674a9eed7d005b00b2e, type: 2}
+  - {fileID: 2100000, guid: d957b4891e0e91b449997addfeb8fe1b, type: 2}
+  - {fileID: 2100000, guid: 8f73fa41d05ffd04796303b00ca30b08, type: 2}
+  - {fileID: 2100000, guid: f1721bc81f980854ba3dfcf2e1ade474, type: 2}
+  - {fileID: 2100000, guid: be1c8a44c97604d439c3cac0910efea3, type: 2}

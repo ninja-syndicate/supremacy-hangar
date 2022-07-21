@@ -15,6 +15,7 @@ namespace SupremacyHangar.Editor.ContentLoader
         public BaseRecord data;
         public AssetReference mech;
         public AssetReferenceSkin skin;
+        public ListType type;
     }
 
     public class AssetLoaderWindow : EditorWindow
@@ -24,6 +25,7 @@ namespace SupremacyHangar.Editor.ContentLoader
         {
             allMaps = map;
         }
+
         public static AddressablesManager myAddressablesManager;
 
         public void MyAddressablesManager(ref AddressablesManager addressablesManager)
@@ -31,6 +33,9 @@ namespace SupremacyHangar.Editor.ContentLoader
             myAddressablesManager = addressablesManager;
         }
 
+        private Transform spawnPoint;
+        private bool inCrate = false;
+        private AssetMappingAssetGrabber assetPropertyMap = new();
         private int index = 0;
         private int spacerAmount = 20;
         Vector2 scrollPosition = Vector2.zero;
@@ -42,6 +47,7 @@ namespace SupremacyHangar.Editor.ContentLoader
         private string searchValue = "";
 
         private int crateCount = 0;
+        private int weaponCount = 0;
         private string prevSearch;
         List<int> searchResults = new();
         private int searchIndex = 0;
@@ -86,26 +92,21 @@ namespace SupremacyHangar.Editor.ContentLoader
                    typeof(AssetMappings),
                    false) as AssetMappings;
 
+            spawnPoint = EditorGUILayout.ObjectField(
+                   "In Crate Spawn Point",
+                   spawnPoint,
+                   typeof(Transform),
+                   true) as Transform;
+
+            inCrate = spawnPoint != null;
+
             if (GUILayout.Button("Refresh"))
             {
                 allMaps?.OnEnable();
                 mapOptions.Clear();
                 optionsSet = false;
-            }
-        }
-
-        private void RenderSelectedInformation(MapOption item)
-        {
-            switch(item.data)
-            {
-                case MechSkin skin:
-                    RenderSelectedSkinInformation(item);
-                    break;
-                case MysteryCrate crate:
-                    RenderSelectedCrateInformation(item);
-                    break;
-                default:
-                    break;
+                myAddressablesManager = GameObject.FindObjectOfType<AddressablesManager>();
+                spawnPoint = null;
             }
         }
 
@@ -140,7 +141,8 @@ namespace SupremacyHangar.Editor.ContentLoader
                     data = item.DataMechSkin,
                     mech = allMaps.MechChassisMappingByGuid[item.DataMechSkin.MechModel.Id].MechReference,
                     skin = item.SkinReference,
-                    name = item.DataMechSkin.MechModel.HumanName + " - " + item.DataMechSkin.HumanName
+                    name = item.DataMechSkin.MechModel.HumanName + " - " + item.DataMechSkin.HumanName,
+                    type = ListType.MechSkin
                 });
             }
 
@@ -151,9 +153,29 @@ namespace SupremacyHangar.Editor.ContentLoader
                 {
                     data = item.DataMysteryCrate,
                     mech = item.MysteryCrateReference,
-                    name = item.DataMysteryCrate.HumanName
+                    name = item.DataMysteryCrate.HumanName,
+                    type = ListType.MysteryCrate
                 });
                 crateCount++;
+            }
+
+            weaponCount = 0;
+            foreach (var item in allMaps.WeaponSkinMappingByGuid.Values)
+            {
+                if (!allMaps.WeaponModelMappingByGuid.ContainsKey(item.Data.WeaponModel.Id))
+                {
+                    Debug.Log($"Weapon not found in Asset Map {item.Data.WeaponModel.HumanName}");
+                    continue;
+                }
+                mapOptions.Add(new MapOption()
+                {
+                    data = item.Data,
+                    mech = allMaps.WeaponModelMappingByGuid[item.Data.WeaponModel.Id].Reference,
+                    skin = item.Reference,
+                    name = item.Data.WeaponModel.HumanName + " - " + item.Data.HumanName,
+                    type = ListType.WeaponSkin
+                });
+                weaponCount++;
             }
         }
 
@@ -169,7 +191,9 @@ namespace SupremacyHangar.Editor.ContentLoader
                 counter++;
                 if (searchValue != "" && !item.name.Contains(searchValue, StringComparison.InvariantCultureIgnoreCase)) 
                     continue;
-                                
+
+                if (spawnPoint && item.type == ListType.MysteryCrate) continue; 
+
                 if (GUILayout.Button(item.name))
                 {
                     index = counter - 1;
@@ -189,56 +213,76 @@ namespace SupremacyHangar.Editor.ContentLoader
             }
         }
 
-        private void RenderSelectedSkinInformation(MapOption item)
+        private void RenderSelectedInformation(MapOption item)
         {
             GUILayout.Space(spacerAmount);
-            int targetIndex = searchResults.Count > 0 ? searchResults[searchIndex] : index;
-            var selectedProperty = _serializedObject.FindProperty("mechSkins").GetArrayElementAtIndex(targetIndex);
-            var skinReference = selectedProperty.FindPropertyRelative("skinReference");
-            var dataReference = selectedProperty.FindPropertyRelative("dataMechSkin");
+            int targetIndex = 0;
+            
+            switch(item.type)
+            {
+                case ListType.MechSkin:
+                    targetIndex = searchResults.Count > 0 ? searchResults[searchIndex] : index;
+                    break;
+                case ListType.MysteryCrate:
+                    targetIndex = crateCount - (mapOptions.Count - weaponCount - index);
+                    break;
+                case ListType.WeaponSkin:
+                    targetIndex = weaponCount - (mapOptions.Count - index);
+                    break;
+                default:
+                    Debug.Log($"Unknown type {item.type}");
+                    return;
+            }
+            var selectedName = assetPropertyMap.TypeToNameMap[item.type][0].Replace(" ", String.Empty);
+            selectedName = char.ToLower(selectedName[0]) + selectedName.Substring(1);
+
+            var selectedProperty = _serializedObject.FindProperty(selectedName).GetArrayElementAtIndex(targetIndex);
+            var dataReference = selectedProperty.FindPropertyRelative(assetPropertyMap.TypeToNameMap[item.type][1]);
+            var skinReference = selectedProperty.FindPropertyRelative(assetPropertyMap.TypeToNameMap[item.type][2]);
 
             EditorGUILayout.PropertyField(skinReference);
             EditorGUILayout.PropertyField(dataReference);
 
             //update listed item value
-            var d = dataReference.objectReferenceValue as MechSkin;
-            if(!allMaps.MechChassisMappingByGuid.ContainsKey(d.MechModel.Id))
+            switch (item.type)
             {
-                Debug.LogError("Skin Data reference is not in Asset Mappings");
-                return;
+                case ListType.MechSkin:
+                    var mechSkin = dataReference.objectReferenceValue as MechSkin;
+                    if (!allMaps.MechChassisMappingByGuid.ContainsKey(mechSkin.MechModel.Id))
+                    {
+                        Debug.LogError("Mech Skin Data reference is not in Asset Mappings");
+                        return;
+                    }
+                    item.mech = allMaps.MechChassisMappingByGuid[mechSkin.MechModel.Id].MechReference;
+                    item.skin = allMaps.MechSkinMappingByGuid[mechSkin.Id].SkinReference;
+                    item.name = mechSkin.MechModel.HumanName + " - " + mechSkin.HumanName;
+                    break;
+                case ListType.MysteryCrate:
+                    var crate = dataReference.objectReferenceValue as MysteryCrate;
+                    if (!allMaps.MysteryCrateMappingByGuid.ContainsKey(crate.Id))
+                    {
+                        Debug.LogError("Mystery Crate Data reference is not in Asset Mappings");
+                        return;
+                    }
+                    item.mech = allMaps.MysteryCrateMappingByGuid[crate.Id].MysteryCrateReference;
+                    item.skin = null;
+                    item.name = crate.HumanName;
+                    break;
+                case ListType.WeaponSkin:
+                    var weaponSkin = dataReference.objectReferenceValue as WeaponSkin;
+                    if (!allMaps.WeaponSkinMappingByGuid.ContainsKey(weaponSkin.Id))
+                    {
+                        Debug.LogError("Weapon Skin Data reference is not in Asset Mappings");
+                        return;
+                    }
+                    item.mech = allMaps.WeaponModelMappingByGuid[weaponSkin.WeaponModel.Id].Reference;
+                    item.skin = allMaps.WeaponSkinMappingByGuid[weaponSkin.Id].Reference;
+                    item.name = weaponSkin.WeaponModel.HumanName + " - " + weaponSkin.HumanName;
+                    break;
+                default:
+                    break;
             }
-            item.mech = allMaps.MechChassisMappingByGuid[d.MechModel.Id].MechReference;
-            item.skin = allMaps.MechSkinMappingByGuid[d.Id].SkinReference;
-            item.name = d.MechModel.HumanName + " - " + d.HumanName;
-
-            EditorUtility.SetDirty(allMaps);
-
-            _serializedObject.ApplyModifiedProperties();
-        }
-
-        private void RenderSelectedCrateInformation(MapOption item)
-        {
-            GUILayout.Space(spacerAmount);
-            int crateIndex = crateCount - (mapOptions.Count - index);
-
-            var selectedProperty = _serializedObject.FindProperty("mysteryCrates").GetArrayElementAtIndex(crateIndex);
-            var assetReference = selectedProperty.FindPropertyRelative("mysteryCrateReference");
-            var dataReference = selectedProperty.FindPropertyRelative("dataMysteryCrate");
-
-            EditorGUILayout.PropertyField(assetReference);
-            EditorGUILayout.PropertyField(dataReference);
-
-            //update listed item value
-            var d = dataReference.objectReferenceValue as MysteryCrate;
-            if (!allMaps.MysteryCrateMappingByGuid.ContainsKey(d.Id))
-            {
-                Debug.LogError("Mystery Crate Data reference is not in Asset Mappings");
-                return;
-            }
-            item.mech = allMaps.MysteryCrateMappingByGuid[d.Id].MysteryCrateReference;
-            item.skin = null;
-            item.name = d.HumanName;
-
+            
             EditorUtility.SetDirty(allMaps);
 
             _serializedObject.ApplyModifiedProperties();
@@ -305,7 +349,11 @@ namespace SupremacyHangar.Editor.ContentLoader
 
             myAddressablesManager.TargetMech = searchResults.Count > 0 ? mapOptions[searchResults[searchIndex]].mech : mapOptions[index].mech;
             myAddressablesManager.TargetSkin = searchResults.Count > 0 ? mapOptions[searchResults[searchIndex]].skin : mapOptions[index].skin;
-            myAddressablesManager.QuickSpawn();
+
+            if(mapOptions[index].data is WeaponSkin)
+                myAddressablesManager.QuickSpawn(spawnPoint, true, inCrate);
+            else
+                myAddressablesManager.QuickSpawn(spawnPoint, false, inCrate);
         }
     }
 }

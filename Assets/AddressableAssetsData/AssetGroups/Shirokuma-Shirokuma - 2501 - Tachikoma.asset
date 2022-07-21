@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Shirokuma-Shirokuma - 2501 - Tachikoma
+  m_EditorClassIdentifier: 
+  m_GroupName: Shirokuma-Shirokuma - 2501 - Tachikoma
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 1f644f8c2aa0cf143af30d09ec6f2a5a
+  m_SerializeEntries:
+  - m_GUID: 86f11956c3ec61843bf0a01d76f079c0
+    m_Address: Shirokuma - 2501 - Tachikoma
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 5570c6a6533bf8e4bb36a4b968ddbaa7, type: 2}
+    - {fileID: 11400000, guid: dcace4d445c3e0345966d461b6925bdd, type: 2}

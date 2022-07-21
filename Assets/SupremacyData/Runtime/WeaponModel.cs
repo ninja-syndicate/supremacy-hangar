@@ -11,7 +11,7 @@ namespace SupremacyData.Runtime
             MissileLauncher,
             BFG,
             Flamethrower,
-            Flak,
+            FlakGun,
             Cannon,
             GrenadeLauncher,
             MachineGun,
@@ -21,7 +21,7 @@ namespace SupremacyData.Runtime
             PlasmaRifle,
         }        
         
-        private Brand Brand => brand;
+        public Brand Brand => brand;
         public ModelType Type => type;
 
         public WeaponSkin DefaultSkin => defaultSkin;
