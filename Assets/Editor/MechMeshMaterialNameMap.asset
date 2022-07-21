@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: MechMeshMaterialNameMap
   m_EditorClassIdentifier: 
   MaterialNameMap:
-  - Mesh: {fileID: 1055575722897578874, guid: be1f8bf55bb63424a864f296f20b400e, type: 3}
+  - Mesh: {fileID: 927531691239166249, guid: f811ee78040294b17b201fd916ca68c6, type: 3}
     MaterialNames:
     - Chest,Body
     - Leg
     - Eye,default
     - Arm,Hand
-  - Mesh: {fileID: 2079678189560677077, guid: 0dfee75fecab7bd4c9096bd09d42a47e, type: 3}
+  - Mesh: {fileID: 3453727266000388707, guid: 29aada39dadbd4d94b5aba820c172c96, type: 3}
     MaterialNames:
     - Chest
     - Upper_Arms
@@ -35,7 +35,7 @@ MonoBehaviour:
     - Screen
     - Back
     - Head
-  - Mesh: {fileID: 6181639234335415630, guid: 06f1ce1dddd608a49aea4d983e6a8b0d, type: 3}
+  - Mesh: {fileID: 1891223945660846108, guid: 29ecc999451e44b74a9b38d71063e405, type: 3}
     MaterialNames:
     - pmech2_low
     - Green_Light
@@ -81,3 +81,21 @@ MonoBehaviour:
     - MiddleRightLeg
     - Tanks
     - Torso
+  - Mesh: {fileID: 2865773762728565979, guid: b47831909c819eb4a939bb5163cb9e0d, type: 3}
+    MaterialNames:
+    - Chest
+    - Arms
+    - Details
+    - Foot
+    - Leg
+  - Mesh: {fileID: 6689757385592082946, guid: 8ebfffc025b4b9e44b2233a854d70c24, type: 3}
+    MaterialNames:
+    - UpperPrimary
+    - UpperSecondary
+    - UpperDetails
+    - LowerCore
+    - LowerDetails
+    - MidCore
+    - MidDetails
+    - LegLeft
+    - LegRight

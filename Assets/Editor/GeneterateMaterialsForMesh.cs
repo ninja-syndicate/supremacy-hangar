@@ -301,11 +301,11 @@ namespace SupremacyHangar.Editor
         {
             string skinAddress = skinAssetPath.Substring(skinAssetPath.LastIndexOf('/') + 1);
             string skinName = skinAddress.Substring(0, skinAddress.IndexOf('.'));
-            string groupName = meshName + '_' + skinName;
+            string groupName = meshName + " - " + skinName;
             var settings = AddressableAssetSettingsDefaultObject.Settings;
 
-            var schemaOneLocation = "Assets/AddressableAssetsData/AssetGroups/Schemas/ConnectivityGraphs_BundledAssetGroupSchema.asset";
-            var SchemTwoLocation = "Assets/AddressableAssetsData/AssetGroups/Schemas/ConnectivityGraphs_ContentUpdateGroupSchema.asset";
+            var schemaOneLocation = "Assets/AddressableAssetsData/AssetGroups/Schemas/Player_BundledAssetGroupSchema.asset";
+            var SchemTwoLocation = "Assets/AddressableAssetsData/AssetGroups/Schemas/Player_ContentUpdateGroupSchema.asset";
 
             List<AddressableAssetGroupSchema> schemas = new();
 
@@ -313,13 +313,13 @@ namespace SupremacyHangar.Editor
             schemas.Add(AssetDatabase.LoadAssetAtPath(SchemTwoLocation, typeof(AddressableAssetGroupSchema)) as AddressableAssetGroupSchema);
 
             var group = settings.CreateGroup(groupName, false, false, false, schemas);
-            var guids = AssetDatabase.FindAssets("t:ScriptableObject", new[] { skinAssetPath.Substring(0, skinAssetPath.LastIndexOf('/')+1) });
+            var guids = AssetDatabase.FindAssets($"{skinName} t:ScriptableObject", new[] { skinAssetPath.Substring(0, skinAssetPath.LastIndexOf('/')+1) });
 
             var entriesAdded = new List<AddressableAssetEntry>();
             for (int i = 0; i < guids.Length; i++)
             {
                 var entry = settings.CreateOrMoveEntry(guids[i], group, readOnly: false, postEvent: false);
-                entry.address = skinAssetPath.Substring(skinAssetPath.LastIndexOf('/') + 1);
+                entry.address = meshName.Substring(meshName.LastIndexOf('/')+1) + " - " + skinName;
 
                 entriesAdded.Add(entry);
             }

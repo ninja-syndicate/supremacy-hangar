@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691a633fee507c468fbb61f649f459a, type: 3}
+  m_Name: HeavyWhite
+  m_EditorClassIdentifier: 
+  mats:
+  - {fileID: 2100000, guid: a893a316463a9864c9a5b76646a688c5, type: 2}
+  - {fileID: 2100000, guid: 63b80815f5207834e845af4ab2be0d50, type: 2}
+  - {fileID: 2100000, guid: d48f7b3a64f821044b2ba09690e48ccf, type: 2}
+  - {fileID: 2100000, guid: 3b587645341169a48bed7bd63fc3eee9, type: 2}
+  - {fileID: 2100000, guid: 8c1346c6153d494458562a71cd3f06e6, type: 2}

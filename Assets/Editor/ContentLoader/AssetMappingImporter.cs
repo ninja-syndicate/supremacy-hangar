@@ -69,8 +69,7 @@ namespace SupremacyHangar.Editor.ContentLoader
                     //single object name only
                     if (type == ListType.WeaponSkin || type == ListType.MechSkin)
                     {
-                        targetTypeName = targetTypeName.Split('-')[1];
-                        targetTypeName = targetTypeName.Split(' ')[1];
+                        targetTypeName = targetTypeName.Split("- ")[1];
                         targetTypeName = @"" + targetTypeName;
                         targetName = targetName.Substring(targetName.LastIndexOf('-') + 2);
                     }
@@ -195,11 +194,11 @@ namespace SupremacyHangar.Editor.ContentLoader
 
             foreach (string subdirectory in subdirectoryEntries)
             {
-                var result = SearchSubDirs(subdirectory, targetFolder);
-                if (result != null) return result;
-
                 if (subdirectory.EndsWith(targetFolder, StringComparison.CurrentCultureIgnoreCase))
                     return subdirectory;
+
+                var result = SearchSubDirs(subdirectory, targetFolder);
+                if (result != null) return result;
             }
 
             return null;

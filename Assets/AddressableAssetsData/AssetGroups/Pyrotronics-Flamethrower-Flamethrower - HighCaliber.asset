@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Pyrotronics-Flamethrower-Flamethrower - HighCaliber
+  m_EditorClassIdentifier: 
+  m_GroupName: Pyrotronics-Flamethrower-Flamethrower - HighCaliber
+  m_Data:
+    m_SerializedData: []
+  m_GUID: fb51009f5a1055c42b016f1f3fb1339e
+  m_SerializeEntries:
+  - m_GUID: cf0695e363126a14288daa7c1a40871c
+    m_Address: Flamethrower - HighCaliber
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: e518a2b3e0e83cf4ca3e4d83912e0b94, type: 2}
+    - {fileID: 11400000, guid: 4d555d9261b0f2a4eb6c64f9fa15fa45, type: 2}

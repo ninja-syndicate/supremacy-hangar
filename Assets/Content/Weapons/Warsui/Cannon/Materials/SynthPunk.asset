@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SynthPunk
   m_EditorClassIdentifier: 
   mats:
-  - {fileID: 2100000, guid: a47487b9e35436349874ac91dc0b6768, type: 2}
+  - {fileID: 2100000, guid: 00a0eeb997b07474682683d5807dd929, type: 2}

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691a633fee507c468fbb61f649f459a, type: 3}
+  m_Name: SynthPunk
+  m_EditorClassIdentifier: 
+  mats:
+  - {fileID: 2100000, guid: 587a1a4504eb42f4094b75cadd8afe8a, type: 2}
+  - {fileID: 2100000, guid: a1be16a03d714f846955a33c1b20e403, type: 2}
+  - {fileID: 2100000, guid: dbb8149c232675a4e95c4114cc4a8cf3, type: 2}
+  - {fileID: 2100000, guid: f6512165b01510241805f3100ee2c21e, type: 2}
+  - {fileID: 2100000, guid: 69ec45f2c22e0594ebf5bd59b312ebe2, type: 2}
+  - {fileID: 2100000, guid: 6ce5cfe567eade54c876d65f91b73c15, type: 2}
+  - {fileID: 2100000, guid: 0296d594ee82ed1488670f3b71029557, type: 2}
+  - {fileID: 2100000, guid: c091d265314596a4e885036aa50af5fc, type: 2}
+  - {fileID: 2100000, guid: cbf83a5001b04034fb53b921da3e6118, type: 2}

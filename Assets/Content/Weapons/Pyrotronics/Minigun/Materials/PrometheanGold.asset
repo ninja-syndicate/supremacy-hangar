@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: PrometheanGold
   m_EditorClassIdentifier: 
   mats:
-  - {fileID: 2100000, guid: d3fcbca8648a338428b0710af34e9671, type: 2}
-  - {fileID: 2100000, guid: d3fcbca8648a338428b0710af34e9671, type: 2}
+  - {fileID: 2100000, guid: 9a6627147024dd14b896fef5670ffbaf, type: 2}
+  - {fileID: 2100000, guid: 9a6627147024dd14b896fef5670ffbaf, type: 2}
