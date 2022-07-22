@@ -2,7 +2,6 @@
 
 // Creating functions for the Unity
 mergeInto(LibraryManager.library, {
-
    // Method used to send a message to the page
    SiloReady: function () {
       try {
@@ -17,14 +16,6 @@ mergeInto(LibraryManager.library, {
         window.dispatchReactUnityEvent("RequestCrateContent", UTF8ToString(ownership_id));
       } catch (e) {
         console.warn("Unable to dispatch RequestCrateContent");
-      }
-   }
-   
-   GetCrateContent: function (ownership_id) {
-      try {
-        window.dispatchReactUnityEvent("GetCrateContent");
-      } catch (e) {
-        console.warn("Unable to dispatch GetCrateContent");
       }
    }
 });
