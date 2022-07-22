@@ -9,7 +9,7 @@ pipeline {
   environment {
     deployEnv = mapBranchToDeployEnvironment()
     unityPath = "C:\\Program Files\\Unity\\Hub\\Editor\\2021.3.5f1\\Editor\\Unity.exe"
-    ssh = "C:\Program Files\Git\usr\bin\ssh.exe"
+    ssh = "C:\\Program Files\\Git\\usr\\bin\\ssh.exe"
   }
   stages {
     stage('Init') {
