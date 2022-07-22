@@ -78,11 +78,11 @@ pipeline {
             """
         script {
           if (env.BRANCH_NAME == 'develop') {
-              bat "rclone sync \"${env.WORKSPACE}/Build-to-Deploy\" \"afiles:/var/www/html/supremacy-hangar/build/staging/\" --progress --verbose --multi-thread-streams 10"
+              bat "rclone sync \"${env.WORKSPACE}/Build-to-Deploy\" \"afiles:/var/www/html/supremacy-hangar/build-staging/build-v-${env.GIT_COMMIT.take(8)}/\" --progress --verbose --multi-thread-streams 10"
           } else if (env.BRANCH_NAME == 'main') {
-              bat "rclone sync \"${env.WORKSPACE}/Build-to-Deploy\" \"afiles:/var/www/html/supremacy-hangar/build/production/\" --progress --verbose --multi-thread-streams 10"
+              bat "rclone sync \"${env.WORKSPACE}/Build-to-Deploy\" \"afiles:/var/www/html/supremacy-hangar/build-production/build-v-${env.GIT_COMMIT.take(8)}/\" --progress --verbose --multi-thread-streams 10"
           } else {
-              bat "rclone sync \"${env.WORKSPACE}/Build-to-Deploy\" \"afiles:/var/www/html/supremacy-hangar/test/build/develop/\" --progress --verbose --multi-thread-streams 10"
+              bat "rclone sync \"${env.WORKSPACE}/Build-to-Deploy\" \"afiles:/var/www/html/supremacy-hangar/build-develop/build-v-${env.GIT_COMMIT.take(8)}/\" --progress --verbose --multi-thread-streams 10"
           }
         }
       }
@@ -129,5 +129,12 @@ pipeline {
           }
         }
     } 
+    stage('Change build dir link'){
+      steps {
+        script {
+          echo 'hello'
+        }
+      }
+    }
   }
 }
