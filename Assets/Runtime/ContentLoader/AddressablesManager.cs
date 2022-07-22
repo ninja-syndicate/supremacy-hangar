@@ -62,6 +62,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
         private AssetReference previousMech;
         private bool crateOpened = false;
         private GameObject crateInstance;
+        private bool quickLoad = false;
 
         [Inject]
         public void Construct(SignalBus bus, SiloSignalHandler siloHandler, CrateSignalHandler crateHandler)
@@ -259,11 +260,12 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 Debug.LogError("No prior spawn set");
                 return;
             }
+            quickLoad = true;
 
             if (newSpawn)
-                SpawnMech(newSpawn, inCrate, isWeapon, true);
+                SpawnMech(newSpawn, inCrate, isWeapon);
             else
-                SpawnMech(prevTransform, false, isWeapon, true);
+                SpawnMech(prevTransform, false, isWeapon);
         }
 #endif
 
@@ -274,7 +276,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
             skinsLoaded.Clear();
         }
 
-        public void SpawnMech(Transform spawnLocation, bool insideCrate = false, bool isWeaponOnly = false, bool quickLoad = false)
+        public void SpawnMech(Transform spawnLocation, bool insideCrate = false, bool isWeaponOnly = false)
         {
             if (TargetMech == null)
             {
@@ -289,7 +291,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
 #if UNITY_EDITOR
             //When new mech is spawned remove previous unless inside crate
             if (quickLoad)
-                UnloadMech(quickLoad, insideCrate);
+                UnloadMech(insideCrate);
 #endif
             previousMech = TargetMech;
 
@@ -410,6 +412,8 @@ namespace SupremacyHangar.Runtime.ContentLoader
 
         private bool ComposablesLoaded()
         {
+            if(quickLoad) return true;
+
             if(isComposable && skinToMeshMap.Count > 1)
                 return skinsLoaded.Count == skinToMeshMap.Count;
             else if(!isComposable)
@@ -419,7 +423,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
         }
 
 #if UNITY_EDITOR
-        public void UnloadMech(bool quickLoad = false, bool insideCrate = false)
+        public void UnloadMech(bool insideCrate = false)
         {
             if (myMech.skin != null)
             {
