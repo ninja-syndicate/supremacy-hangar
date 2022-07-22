@@ -111,7 +111,7 @@ pipeline {
           } else if (env.BRANCH_NAME == 'main') {
               bat "rclone sync \"${env.WORKSPACE}/ServerData/\" \"afiles:/var/www/html/supremacy-hangar/addressables/production/\" --progress --verbose --multi-thread-streams 10"
           } else {
-              bat "rclone sync \"${env.WORKSPACE}/ServerData/\" \"afiles:/var/www/html/supremacy-hangar/test/addressables/develop/\" --progress --verbose --multi-thread-streams 10"
+              //bat "rclone sync \"${env.WORKSPACE}/ServerData/\" \"afiles:/var/www/html/supremacy-hangar/test/addressables/develop/\" --progress --verbose --multi-thread-streams 10"
           }
         }
         }
