@@ -135,6 +135,7 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
 
         private void SiloStateChanged(SiloState.StateName newState)
         {
+            if (!interactionButton) return;
             //Update the action button
             switch (newState)
             {
