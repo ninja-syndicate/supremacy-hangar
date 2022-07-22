@@ -16,11 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: b657e3c31c9aae246a20d33ba13e332e
-  m_SerializeEntries:
-  - m_GUID: 33278098c7d457d439b868f9a64714fa
-    m_Address: GrenadeLauncher - UnbrokenKnot
-    m_ReadOnly: 0
-    m_SerializedLabels: []
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
   m_SchemaSet:

@@ -16,11 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 697bcfa984016bd44afdc7e107b1c121
-  m_SerializeEntries:
-  - m_GUID: 47dcbe255bf7c5c469705511ff4f687a
-    m_Address: GrenadeLauncher - Bullion
-    m_ReadOnly: 0
-    m_SerializedLabels: []
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
   m_SchemaSet:

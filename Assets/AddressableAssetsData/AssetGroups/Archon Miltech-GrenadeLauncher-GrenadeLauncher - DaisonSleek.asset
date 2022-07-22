@@ -16,11 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 0d0ff39bdeb61a24a8b9ffb9728bae4f
-  m_SerializeEntries:
-  - m_GUID: ae8e823202c8fe1459c9df83514265d1
-    m_Address: GrenadeLauncher - DaisonSleek
-    m_ReadOnly: 0
-    m_SerializedLabels: []
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
   m_SchemaSet:

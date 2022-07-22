@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ArchonGunmetal
   m_EditorClassIdentifier: 
   mats:
-  - {fileID: 2100000, guid: 089f5c1faf422934da523611164e45b9, type: 2}
+  - {fileID: 2100000, guid: 0a8206f76e040834a97356eda5573c32, type: 2}

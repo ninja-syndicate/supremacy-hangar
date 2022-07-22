@@ -16,11 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 3b9c05a00ba98b145aaa01396a424ad2
-  m_SerializeEntries:
-  - m_GUID: e8f03fbab00f76940acccbfa03a12a6e
-    m_Address: GrenadeLauncher - SeaHawk
-    m_ReadOnly: 0
-    m_SerializedLabels: []
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
   m_SchemaSet:

@@ -16,11 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 39305746189ca5b42a668edbc444cbcf
-  m_SerializeEntries:
-  - m_GUID: dd926c779629d694689e2b1a3c917605
-    m_Address: GrenadeLauncher - LessThanLethal
-    m_ReadOnly: 0
-    m_SerializedLabels: []
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
   m_SchemaSet:

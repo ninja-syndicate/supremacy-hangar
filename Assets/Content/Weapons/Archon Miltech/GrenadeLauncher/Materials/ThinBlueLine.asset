@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ThinBlueLine
   m_EditorClassIdentifier: 
   mats:
-  - {fileID: 2100000, guid: 10c0a4eb3af86dd47ae4d8c3e3f66456, type: 2}
+  - {fileID: 2100000, guid: c0788844e50df974493e264a0e529a67, type: 2}

@@ -16,11 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: cc723a25dfc37114b9411f5025511d79
-  m_SerializeEntries:
-  - m_GUID: c2f027ad208031e499bf4f76c6d3e04d
-    m_Address: GrenadeLauncher - Code of Chivalry
-    m_ReadOnly: 0
-    m_SerializedLabels: []
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
   m_SchemaSet:

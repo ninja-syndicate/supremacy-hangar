@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: UnbrokenKnot
   m_EditorClassIdentifier: 
   mats:
-  - {fileID: 2100000, guid: 2c12edb17285d00459000cd9425fbdab, type: 2}
+  - {fileID: 2100000, guid: 824ca7b9b51a6d540b4ad358ad18e117, type: 2}

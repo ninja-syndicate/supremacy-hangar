@@ -16,11 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: fc46c85d0102c194ba48e91ab59a7e73
-  m_SerializeEntries:
-  - m_GUID: 94da081322bcae249b8fdea25766c36e
-    m_Address: GrenadeLauncher - ArchonGunmetal
-    m_ReadOnly: 0
-    m_SerializedLabels: []
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
   m_SchemaSet:
