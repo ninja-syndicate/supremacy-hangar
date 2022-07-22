@@ -11,6 +11,13 @@ pipeline {
     unityPath = "C:\\Program Files\\Unity\\Hub\\Editor\\2021.3.5f1\\Editor\\Unity.exe"
   }
   stages {
+    stage('Init') {
+      steps {
+        script {
+          cancelPreviousBuilds()
+        }
+      }
+    }
     stage('Build') {
       steps {
         echo 'Sending notification to Slack.'
