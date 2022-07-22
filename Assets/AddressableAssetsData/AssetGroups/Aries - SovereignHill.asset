@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Aries - PilbaraDust
+  m_Name: Aries - SovereignHill
   m_EditorClassIdentifier: 
-  m_GroupName: Aries - PilbaraDust
+  m_GroupName: Aries - SovereignHill
   m_Data:
     m_SerializedData: []
-  m_GUID: 3ed82eec8cc036b4c980c0e57a6db18e
+  m_GUID: bba4a55e9abbff24a9775e9b051e41cb
   m_SerializeEntries:
-  - m_GUID: ec24116d73ac5490e83ef048b7765ca5
-    m_Address: Aries - PilbaraDust
+  - m_GUID: e67f0e98a5c29354aa01a1507151cd7f
+    m_Address: Aries - SovereignHill
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: fcbd550c5b2854331824d5497e2f0a07, type: 2}
-    - {fileID: 11400000, guid: 56f1e0542a9be4971afa8afdb190bd84, type: 2}
+    - {fileID: 11400000, guid: 788c6cae2c22af147a8e2560635888cf, type: 2}
+    - {fileID: 11400000, guid: c7a62928c4f7e224a9a2bc827626d1e8, type: 2}

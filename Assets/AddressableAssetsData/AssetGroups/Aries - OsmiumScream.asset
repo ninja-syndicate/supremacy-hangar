@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Aries - PilbaraDust
+  m_Name: Aries - OsmiumScream
   m_EditorClassIdentifier: 
-  m_GroupName: Aries - PilbaraDust
+  m_GroupName: Aries - OsmiumScream
   m_Data:
     m_SerializedData: []
-  m_GUID: 3ed82eec8cc036b4c980c0e57a6db18e
+  m_GUID: e48176aeebd35b74c8cb6122f225469a
   m_SerializeEntries:
-  - m_GUID: ec24116d73ac5490e83ef048b7765ca5
-    m_Address: Aries - PilbaraDust
+  - m_GUID: 11d26fe19190a34428da8d848ace6049
+    m_Address: Aries - OsmiumScream
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: fcbd550c5b2854331824d5497e2f0a07, type: 2}
-    - {fileID: 11400000, guid: 56f1e0542a9be4971afa8afdb190bd84, type: 2}
+    - {fileID: 11400000, guid: 9849042def465d442a0ee00aa1f2448a, type: 2}
+    - {fileID: 11400000, guid: 4970497937bca5244b0ea96b598e3d49, type: 2}
