@@ -134,11 +134,11 @@ pipeline {
       steps {
         script {
           if (env.BRANCH_NAME == 'develop'){
-            bat "\"${ssh}\" afiles.ninja 'ls -Tsfv /var/www/html/supremacy-hangar/build-staging/build-v-${env.GIT_COMMIT.take(8)} /var/www/html/supremacy-hangar/build/staging'"
+            bat "\"${ssh}\" afiles.ninja 'ln -Tsfv /var/www/html/supremacy-hangar/build-staging/build-v-${env.GIT_COMMIT.take(8)} /var/www/html/supremacy-hangar/build/staging'"
           } else if (env.BRANCH_NAME == 'main'){
-            bat "\"${ssh}\" afiles.ninja 'ls -Tsfv /var/www/html/supremacy-hangar/build-production/build-v-${env.GIT_COMMIT.take(8)} /var/www/html/supremacy-hangar/build/production'"
+            bat "\"${ssh}\" afiles.ninja 'ln -Tsfv /var/www/html/supremacy-hangar/build-production/build-v-${env.GIT_COMMIT.take(8)} /var/www/html/supremacy-hangar/build/production'"
           } else {
-            bat "\"${ssh}\" afiles.ninja 'ls -Tsfv /var/www/html/supremacy-hangar/build-develop/build-v-${env.GIT_COMMIT.take(8)} /var/www/html/supremacy-hangar/test/build/develop'"
+            bat "\"${ssh}\" afiles.ninja 'ln -Tsfv /var/www/html/supremacy-hangar/build-develop/build-v-${env.GIT_COMMIT.take(8)} /var/www/html/supremacy-hangar/test/build/develop'"
           }
         }
       }
