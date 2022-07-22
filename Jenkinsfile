@@ -9,6 +9,7 @@ pipeline {
   environment {
     deployEnv = mapBranchToDeployEnvironment()
     unityPath = "C:\\Program Files\\Unity\\Hub\\Editor\\2021.3.5f1\\Editor\\Unity.exe"
+    ssh = "C:\Program Files\Git\usr\bin\ssh.exe"
   }
   stages {
     stage('Init') {
@@ -132,7 +133,13 @@ pipeline {
     stage('Change build dir link'){
       steps {
         script {
-          echo 'hello'
+          if (env.BRANCH_NAME == 'develop'){
+            bat "\"${ssh}\" afiles.ninja 'ls -Tsfv /var/www/html/supremacy-hangar/build-staging/build-v-${env.GIT_COMMIT.take(8)} /var/www/html/supremacy-hangar/build/staging'"
+          } else if (env.BRANCH_NAME == 'main'){
+            bat "\"${ssh}\" afiles.ninja 'ls -Tsfv /var/www/html/supremacy-hangar/build-production/build-v-${env.GIT_COMMIT.take(8)} /var/www/html/supremacy-hangar/build/production'"
+          } else {
+            bat "\"${ssh}\" afiles.ninja 'ls -Tsfv /var/www/html/supremacy-hangar/build-develop/build-v-${env.GIT_COMMIT.take(8)} /var/www/html/supremacy-hangar/test/build/develop'"
+          }
         }
       }
     }
