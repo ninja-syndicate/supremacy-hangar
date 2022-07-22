@@ -51,6 +51,11 @@ namespace SupremacyHangar.Runtime.ContentLoader
         private bool isComposable = false;
         private bool isInsideCrate = false;
 
+        private Dictionary<AsyncOperationHandle, AssetReferenceSkin> skinToMeshMap = new();
+        private Dictionary<AssetReferenceSkin, Transform> reusedMeshNSkin = new();
+        private List<bool> skinsLoaded = new();
+        private Transform siloDirection;
+
         //These are used in editor only
         private Transform prevTransform;
         private bool sameMechChassis = false;
@@ -261,14 +266,14 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 SpawnMech(prevTransform, false, isWeapon, true);
         }
 #endif
-        private Dictionary<AsyncOperationHandle, AssetReferenceSkin> skinToMeshMap = new();
 
         public void ResetSkinMapping()
         {
-            skinToMeshMap.Clear();
+            skinToMeshMap.Clear(); 
+            reusedMeshNSkin.Clear(); 
+            skinsLoaded.Clear();
         }
 
-        private Transform siloDirection;
         public void SpawnMech(Transform spawnLocation, bool insideCrate = false, bool isWeaponOnly = false, bool quickLoad = false)
         {
             if (TargetMech == null)
@@ -301,27 +306,33 @@ namespace SupremacyHangar.Runtime.ContentLoader
             Vector3 spawnPosition = spawnLocation.position;
             Quaternion spawnRotation = Quaternion.LookRotation(spawnLocation.forward, spawnLocation.up);
 
-            //Load and spawn mech
-            var mechOperationHandler = TargetMech.InstantiateAsync(spawnPosition, spawnRotation, spawnLocation);
-            StartCoroutine(loadingProgressContext.LoadingAssetProgress(mechOperationHandler, "Loading Mesh"));
-            
-            skinToMeshMap.Add(mechOperationHandler, TargetSkin);
+            if (skinToMeshMap.ContainsValue(TargetSkin))
+                reusedMeshNSkin.Add(TargetSkin, spawnLocation);
+            else
+            {
 
-            mechOperationHandler.Completed += (mech) =>
-                {
-                    if (insideCrate && !crateInstance)
-                        crateInstance = myMech.mech;
+                //Load and spawn mech
+                var mechOperationHandler = TargetMech.InstantiateAsync(spawnPosition, spawnRotation, spawnLocation);
+                StartCoroutine(loadingProgressContext.LoadingAssetProgress(mechOperationHandler, "Loading Mesh"));
 
-                    myMech.mech = mech.Result;
+                skinToMeshMap.Add(mechOperationHandler, TargetSkin);
 
-                    if (isWeaponOnly && !insideCrate)
+                mechOperationHandler.Completed += (mech) =>
                     {
-                        mech.Result.transform.Rotate(Vector3.right, -90.0f);
-                        mech.Result.transform.Rotate(Vector3.forward, -90.0f);
-                    }
-                    
-                    SetLoadedSkin(mech.Result, FindMeshSkin(mech.Result), insideCrate);
-                };
+                        if (insideCrate && !crateInstance)
+                            crateInstance = myMech.mech;
+
+                        myMech.mech = mech.Result;
+
+                        if (isWeaponOnly && !insideCrate)
+                        {
+                            mech.Result.transform.Rotate(Vector3.right, -90.0f);
+                            mech.Result.transform.Rotate(Vector3.forward, -90.0f);
+                        }
+
+                        SetLoadedSkin(mech.Result, FindMeshSkin(mech.Result), insideCrate);
+                    };
+            }
         }
 
         private AssetReferenceSkin FindMeshSkin(GameObject currentMeshObj)
@@ -356,9 +367,20 @@ namespace SupremacyHangar.Runtime.ContentLoader
 
                     loadingProgressContext.ProgressSignalHandler.FinishedLoading(result);
 
+                    foreach (var spawn in reusedMeshNSkin)
+                    {
+                        if (spawn.Key == skinReference)
+                        {
+                            Quaternion spawnRotation = Quaternion.LookRotation(spawn.Value.forward, spawn.Value.up);
+                            Instantiate(result, spawn.Value.position, spawnRotation, spawn.Value);
+                        }
+                    }
+
+                    skinsLoaded.Add(true);
+
                     if (isInsideCrate)
                     {
-                        if (!WaitingOnComposable())
+                        if (ComposablesLoaded())
                         {
                             isInsideCrate = false;
                             _crateSignalHandler.OpenCrate();
@@ -371,8 +393,11 @@ namespace SupremacyHangar.Runtime.ContentLoader
 
                         if (isComposable)
                         {
-                            if (!WaitingOnComposable())
+                            if (ComposablesLoaded())
+                            {
+                                isComposable= false;
                                 _siloSignalHandler.SiloFilled();
+                            }
                         }
                         else
                         {
@@ -383,19 +408,14 @@ namespace SupremacyHangar.Runtime.ContentLoader
             );
         }
 
-        private bool WaitingOnComposable()
+        private bool ComposablesLoaded()
         {
-            float total = 0;
-            foreach (var loader in skinToMeshMap)
-            {
-                total += loader.Key.PercentComplete;
-            }
-            if (total >= skinToMeshMap.Count && skinToMeshMap.Count > 1)
-            {
-                isComposable = false;
-                return false;
-            }
-            return true;
+            if(isComposable && skinToMeshMap.Count > 1)
+                return skinsLoaded.Count == skinToMeshMap.Count;
+            else if(!isComposable)
+                return skinsLoaded.Count == skinToMeshMap.Count;
+
+           return false;
         }
 
 #if UNITY_EDITOR
