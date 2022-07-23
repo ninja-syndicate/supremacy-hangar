@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691a633fee507c468fbb61f649f459a, type: 3}
+  m_Name: X3Kuro
+  m_EditorClassIdentifier: 
+  mats:
+  - {fileID: 2100000, guid: e0ebb5590a8a79c4eb112a0d7e45067a, type: 2}
+  - {fileID: 2100000, guid: 750599237cfd8d040a9a8f8f7634855e, type: 2}
+  - {fileID: 2100000, guid: 7de0b790dbdd0b94aa8a64e7a90bc8f0, type: 2}
+  - {fileID: 2100000, guid: 0250fdc44c018924d9de070f22639c43, type: 2}
+  - {fileID: 2100000, guid: 054075ccebea27948a72b1ccff5bd7cd, type: 2}

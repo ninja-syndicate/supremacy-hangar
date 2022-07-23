@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Archon Miltech-BFG-BFG - UnbrokenKnot
+  m_EditorClassIdentifier: 
+  m_GroupName: Archon Miltech-BFG-BFG - UnbrokenKnot
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 954ca4a4f5b1b5e4faf36bdb0a78cbfb
+  m_SerializeEntries:
+  - m_GUID: 7700bd3f24f800f458c00248f7fba716
+    m_Address: BFG - UnbrokenKnot
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: aceb78043ac1bdc469cf1d0e55e0a1e7, type: 2}
+    - {fileID: 11400000, guid: dfd4f30dd7cb4ff41b7c4a5d8ed8af21, type: 2}

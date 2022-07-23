@@ -27,9 +27,8 @@ namespace SupremacyHangar.Runtime.Actors.Silo
             LoadingCrateContent,
             Unloading,
         }
-
         public int SiloNumber { get; private set; }
-        
+
         [SerializeField] private int siloOffset;
         
         private SiloItem contents;
@@ -39,14 +38,16 @@ namespace SupremacyHangar.Runtime.Actors.Silo
         public event Action<StateName> OnStateChanged;
 
         public Transform SpawnLocation { get; set; }
-        
+
+        private SignalBus _bus;
+
         public bool CanOpenCrate { get; private set; } = false;
+        private EnvironmentManager environmentManager;
 
         [Inject]
-        public void Construct(
-            EnvironmentManager environmentManager, AddressablesManager addressablesManager, 
-            SiloItem[] hallwayContents)
+        public void Inject(SiloItem[] hallwayContents, EnvironmentManager environmentManager, AddressablesManager addressablesManager)
         {
+            this.environmentManager = environmentManager;
             SiloNumber = environmentManager.SiloOffset + siloOffset;
             CurrentFaction = addressablesManager.CurrentFaction;
             contents = hallwayContents[siloOffset];
@@ -86,6 +87,19 @@ namespace SupremacyHangar.Runtime.Actors.Silo
         {
             state = nextState; 
             OnStateChanged?.Invoke(nextState);
+        }
+
+        public void ChangeSiloContentToCrate(SiloItem crateContent)
+        {
+            switch(crateContent)
+            {
+                case Mech:
+                case Weapon:
+                    contents = crateContent;
+                    environmentManager.UpdatePlayerInventory(siloOffset, crateContent);
+                    break;
+
+            }
         }
     }
 }

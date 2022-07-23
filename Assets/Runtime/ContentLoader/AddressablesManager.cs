@@ -1,10 +1,8 @@
 using SupremacyHangar.Runtime.ContentLoader.Types;
-using SupremacyHangar.Runtime.Environment;
-using SupremacyHangar.Runtime.ScriptableObjects;
 using SupremacyHangar.Runtime.Silo;
 using SupremacyHangar.Runtime.Types;
 using System;
-using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.AddressableAssets.ResourceLocators;
@@ -36,8 +34,6 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 return mappings.FactionMappingByGuid[_playerInventory.faction].DataFaction;
             }
         }
-        
-        private AssetReference previousMech;
 
         public LoadedAsset myMech { get; set; } = new LoadedAsset();
 
@@ -52,8 +48,15 @@ namespace SupremacyHangar.Runtime.ContentLoader
         private SiloSignalHandler _siloSignalHandler;
         private CrateSignalHandler _crateSignalHandler;
 
+        private bool isComposable = false;
+        private bool isInsideCrate = false;
+
+        //These are used in editor only
         private Transform prevTransform;
         private bool sameMechChassis = false;
+        private AssetReference previousMech;
+        private bool crateOpened = false;
+        private GameObject crateInstance;
 
         [Inject]
         public void Construct(SignalBus bus, SiloSignalHandler siloHandler, CrateSignalHandler crateHandler)
@@ -142,7 +145,7 @@ namespace SupremacyHangar.Runtime.ContentLoader
             }
             _contentSignalHandler.InventoryLoaded();
         }
-        
+
         public void MapSiloToAsset(SiloItem silo)
         {
             switch (silo)
@@ -157,11 +160,58 @@ namespace SupremacyHangar.Runtime.ContentLoader
                     {
                         Debug.LogError($"No Skin mapping found for {mech.Skin.StaticID}");
                     }
+
+                    if (mech.Accessories == null) break;
+                    foreach(var item in mech.Accessories)
+                    {
+                        switch(item)
+                        {
+                            case Weapon weapon:
+                                if (!mappings.WeaponModelMappingByGuid.TryGetValue(weapon.StaticID, out weapon.WeaponModelDetails))
+                                {
+                                    Debug.LogError($"No Weapon mapping found for {weapon.StaticID}");
+                                    break;
+                                }
+                                if (!mappings.WeaponSkinMappingByGuid.TryGetValue(weapon.Skin.StaticID, out weapon.WeaponSkinDetails))
+                                {
+                                    Debug.LogError($"No Weapon Skin mapping found for {weapon.Skin.StaticID}");
+                                    break;
+                                }
+                                break;
+                            case PowerCore powerCore:
+                                if (!mappings.PowerCoreMappingByGuid.TryGetValue(powerCore.StaticID, out powerCore.PowerCoreDetails))
+                                {
+                                    Debug.LogError($"No Power Core mapping found for {powerCore.StaticID}");
+                                }
+                                break;
+                            case Utility utility:
+                                //if (!mappings.UtilityMappingByGuid.TryGetValue(utility.StaticID, out utility.UtilityDetails))
+                                //{
+                                //    Debug.LogError($"No Utility mapping found for {utility.StaticID}");
+                                //}
+                                break;
+                            default:
+                                Debug.LogError($"Unknown accessory {item}");
+                                break;
+                        }
+                    }
                     break;
                 case MysteryCrate crate:
                     if (!mappings.MysteryCrateMappingByGuid.TryGetValue(crate.StaticID, out crate.MysteryCrateDetails))
                     {
                         Debug.LogError($"No Crate mapping found for {crate.StaticID}");
+                    }
+                    break;
+                case Weapon weapon:
+                    if (!mappings.WeaponModelMappingByGuid.TryGetValue(weapon.StaticID, out weapon.WeaponModelDetails))
+                    {
+                        Debug.LogError($"No Weapon mapping found for {weapon.StaticID}");
+                        break;
+                    }
+                    if (weapon?.Skin?.StaticID != null && !mappings.WeaponSkinMappingByGuid.TryGetValue(weapon.Skin.StaticID, out weapon.WeaponSkinDetails))
+                    {
+                        Debug.LogError($"No Weapon Skin mapping found for {weapon.Skin.StaticID}");
+                        break;
                     }
                     break;
                 default:
@@ -177,12 +227,12 @@ namespace SupremacyHangar.Runtime.ContentLoader
             return false;
         }
 
-        private void LoadSkinReference(Action<ScriptableObjects.Skin> callBack)
+        private void LoadSkinReference(AssetReferenceSkin skinReference, Action<ScriptableObjects.Skin> callBack)
         {
-            if (myMech.skin == null && TargetSkin != null)
+            if (skinReference != null)
             {
-                var skinOperationHandler = TargetSkin.LoadAssetAsync(); 
-                StartCoroutine(loadingProgressContext.LoadingAssetProgress(skinOperationHandler));
+                var skinOperationHandler = skinReference.LoadAssetAsync(); 
+                StartCoroutine(loadingProgressContext.LoadingAssetProgress(skinOperationHandler, "Loading Skin"));
                 skinOperationHandler.Completed += (skin) =>
                 {
                     myMech.skin = skin.Result;
@@ -191,74 +241,165 @@ namespace SupremacyHangar.Runtime.ContentLoader
             }
             else
             {
-                //Skin alreasy loaded
-                callBack(myMech.skin);
+                //Skin already loaded
+                callBack(null);
             }
         }
         
 #if UNITY_EDITOR
-        public void QuickSpawn()
+        public void QuickSpawn(Transform newSpawn = null, bool isWeapon = false, bool inCrate = false)
         {
-            if (!prevTransform)
+            if (!prevTransform && !newSpawn)
             {
                 Debug.LogError("No prior spawn set");
                 return;
             }
 
-            SpawnMech(prevTransform, false, true);
+            if (newSpawn)
+                SpawnMech(newSpawn, inCrate, isWeapon, true);
+            else
+                SpawnMech(prevTransform, false, isWeapon, true);
         }
 #endif
-        public void SpawnMech(Transform spawnLocation, bool insideCrate = false, bool quickLoad = false)
+        private Dictionary<AsyncOperationHandle, AssetReferenceSkin> skinToMeshMap = new();
+
+        public void ResetSkinMapping()
         {
-            prevTransform = spawnLocation;
+            skinToMeshMap.Clear();
+        }
 
-            //When new mech is spawned remove previous unless inside crate
-            if (quickLoad)
+        private Transform siloDirection;
+        public void SpawnMech(Transform spawnLocation, bool insideCrate = false, bool isWeaponOnly = false, bool quickLoad = false)
+        {
+            if (TargetMech == null)
             {
-                UnloadMech(quickLoad);
-            }
-
-            previousMech = TargetMech;
-            if (sameMechChassis)
-            {
-                SetLoadedSkin(myMech.mech);
+                Debug.LogError("Cannot load NULL Object");
                 return;
             }
 
-            var mechOperationHandler = TargetMech.InstantiateAsync(spawnLocation.position, spawnLocation.rotation, spawnLocation);
+            if (!insideCrate)
+                prevTransform = spawnLocation;
+
+            if (!siloDirection) skinToMeshMap.Clear();
+#if UNITY_EDITOR
+            //When new mech is spawned remove previous unless inside crate
+            if (quickLoad)
+                UnloadMech(quickLoad, insideCrate);
+#endif
+            previousMech = TargetMech;
+
+            if (sameMechChassis)
+            {
+                SetLoadedSkin(myMech.mech, TargetSkin, insideCrate);
+                return;
+            }
+                        
+            if (skinToMeshMap.Count == 0 && !insideCrate)
+                siloDirection = spawnLocation;
+
+            //Rotate items (primarily used for composables & in crate spawning)
+            Vector3 spawnPosition = spawnLocation.position;
+            Quaternion spawnRotation = Quaternion.LookRotation(spawnLocation.forward, spawnLocation.up);
+
+            //Load and spawn mech
+            var mechOperationHandler = TargetMech.InstantiateAsync(spawnPosition, spawnRotation, spawnLocation);
             StartCoroutine(loadingProgressContext.LoadingAssetProgress(mechOperationHandler, "Loading Mesh"));
+            
+            skinToMeshMap.Add(mechOperationHandler, TargetSkin);
+
             mechOperationHandler.Completed += (mech) =>
                 {
+                    if (insideCrate && !crateInstance)
+                        crateInstance = myMech.mech;
+
                     myMech.mech = mech.Result;
-                    loadingProgressContext.ProgressSignalHandler.FinishedLoading(mech.Result);
-                    SetLoadedSkin(insideCrate);
+
+                    if (isWeaponOnly && !insideCrate)
+                    {
+                        mech.Result.transform.Rotate(Vector3.right, -90.0f);
+                        mech.Result.transform.Rotate(Vector3.forward, -90.0f);
+                    }
+                    
+                    SetLoadedSkin(mech.Result, FindMeshSkin(mech.Result), insideCrate);
                 };
         }
 
-        private void SetLoadedSkin(bool insideCrate = false)
+        private AssetReferenceSkin FindMeshSkin(GameObject currentMeshObj)
         {
-            LoadSkinReference(
+            foreach(var item in skinToMeshMap)
+            {
+                var t = item.Key.Result as GameObject;
+                if (t == currentMeshObj)
+                    return item.Value;
+            }
+            return null;
+        }
+
+        private void SetLoadedSkin(GameObject result, AssetReferenceSkin skinReference, bool insideCrate = false)
+        {
+            LoadSkinReference(skinReference,
                 (skin) =>
                 {
-                    MeshRenderer mechMesh = myMech.mech.GetComponentInChildren<MeshRenderer>();
-                    var mechRepostion = myMech.mech.GetComponentInChildren<SiloPlatformRepositioner>();
+                    Renderer mechMesh = result.GetComponentInChildren<Renderer>();
+                    var platformRepositioner = result.GetComponentInChildren<SiloPlatformRepositioner>();
+
+                    if (!isComposable)
+                        isComposable = result.GetComponent<ComposableSockets>();
+
+                    if (!isInsideCrate)
+                        isInsideCrate = insideCrate;
+
                     if (skin != null)
                         mechMesh.sharedMaterials = skin.mats;
 
-                    Container.InjectGameObject(myMech.mech);
+                    Container.InjectGameObject(result);
 
-                    if (insideCrate)
-                        _crateSignalHandler.OpenCrate();
+                    loadingProgressContext.ProgressSignalHandler.FinishedLoading(result);
+
+                    if (isInsideCrate)
+                    {
+                        if (!WaitingOnComposable())
+                        {
+                            isInsideCrate = false;
+                            _crateSignalHandler.OpenCrate();
+                        }
+                    }
                     else
                     {
-                        mechRepostion.RepositionObject();
-                        _siloSignalHandler.SiloFilled();
+                        if (platformRepositioner && skinToMeshMap.Count <= 1)
+                            platformRepositioner.RepositionObject();
+
+                        if (isComposable)
+                        {
+                            if (!WaitingOnComposable())
+                                _siloSignalHandler.SiloFilled();
+                        }
+                        else
+                        {
+                            _siloSignalHandler.SiloFilled();
+                        }
                     }
                 }
             );
         }
 
-        public void UnloadMech(bool quickLoad = false)
+        private bool WaitingOnComposable()
+        {
+            float total = 0;
+            foreach (var loader in skinToMeshMap)
+            {
+                total += loader.Key.PercentComplete;
+            }
+            if (total >= skinToMeshMap.Count && skinToMeshMap.Count > 1)
+            {
+                isComposable = false;
+                return false;
+            }
+            return true;
+        }
+
+#if UNITY_EDITOR
+        public void UnloadMech(bool quickLoad = false, bool insideCrate = false)
         {
             if (myMech.skin != null)
             {
@@ -266,24 +407,29 @@ namespace SupremacyHangar.Runtime.ContentLoader
                 myMech.skin = null;
             }
 
-            if (previousMech != null)
+            if (previousMech != null && (!insideCrate || crateOpened))
             {
                 if (!quickLoad || previousMech != TargetMech)
-                    previousMech.ReleaseAsset();
-#if UNITY_EDITOR
+                {
+                    if(!insideCrate && crateOpened)
+                        Addressables.ReleaseInstance(crateInstance);
+                    
+                    Addressables.ReleaseInstance(myMech.mech);
+                    skinToMeshMap.Clear();
+                }
+
                 if (previousMech != TargetMech &&
                     myMech.mech != null)
                 {
                     sameMechChassis = false;
-                    Destroy(myMech.mech);
-                    myMech.mech = null;
                 }
 
                 if (previousMech == TargetMech && myMech.mech)
                     sameMechChassis = true;
-#endif
-            }
 
+            }
+            crateOpened = insideCrate;
         }
+#endif
     }
 }

@@ -29,9 +29,6 @@ public class BridgeScript : MonoInstaller
     [TextArea(3, 50)]
     [SerializeField] public string jsonCrateText;
 
-    private SignalBus _bus;
-    bool _subscribed = false;
-
     public override void InstallBindings()
     {
         //Might have to bind again after data is read

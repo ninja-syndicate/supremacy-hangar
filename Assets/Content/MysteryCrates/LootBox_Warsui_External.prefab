@@ -68,7 +68,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8835413119421537486}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.204, z: 0}
+  m_LocalPosition: {x: 0, y: 4.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 613343385560867283}
   - component: {fileID: 6531778399297521913}
   - component: {fileID: 3164264614870325068}
+  - component: {fileID: 4670371520149182459}
   m_Layer: 0
   m_Name: LootBox_Warsui_External
   m_TagString: Untagged
@@ -149,7 +150,8 @@ AudioSource:
   m_GameObject: {fileID: 8989543418875280425}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 7084010885888102438, guid: 6030a6e528f25fb4c889c453e8368ada,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -236,6 +238,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &4670371520149182459
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8989543418875280425}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16.9, y: 15.09, z: 15.49}
+  m_Center: {x: 0, y: 7.4, z: 0.3}
 --- !u!1001 &4161322003763123882
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691a633fee507c468fbb61f649f459a, type: 3}
+  m_Name: DaisonSleek
+  m_EditorClassIdentifier: 
+  mats:
+  - {fileID: 2100000, guid: c1a804adc4460c24c833e50e90f172fb, type: 2}
+  - {fileID: 2100000, guid: 2b61d982ca397634e8e8f009ec7a32d9, type: 2}
+  - {fileID: 2100000, guid: 99f5de9e7d0c9474280ef2f5c6a31919, type: 2}
+  - {fileID: 2100000, guid: 3fb1438384f49c246859f076df8a3777, type: 2}
+  - {fileID: 2100000, guid: 6e7b0be55e7c5eb42abadaf1a0766a78, type: 2}
+  - {fileID: 2100000, guid: 7163392ceb3979a45baf95fc1da72cf5, type: 2}
+  - {fileID: 2100000, guid: fedcd172f28aa94448d47edcfbd1d16a, type: 2}
+  - {fileID: 2100000, guid: fedcd172f28aa94448d47edcfbd1d16a, type: 2}

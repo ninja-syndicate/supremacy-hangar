@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691a633fee507c468fbb61f649f459a, type: 3}
+  m_Name: ShadowStealAway
+  m_EditorClassIdentifier: 
+  mats:
+  - {fileID: 2100000, guid: c52904157f6c2bf4d941366d995d1bac, type: 2}
+  - {fileID: 2100000, guid: 051f121ff19d5ce4ba3bad5a792231c4, type: 2}
+  - {fileID: 2100000, guid: 73896686a384ff2418fec1660d698168, type: 2}
+  - {fileID: 2100000, guid: de62017b100eea340b895f83b6f02db6, type: 2}
+  - {fileID: 2100000, guid: 05a52b8362d35e54ab9d2d57da2f6972, type: 2}

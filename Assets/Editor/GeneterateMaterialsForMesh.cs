@@ -22,11 +22,14 @@ namespace SupremacyHangar.Editor
 
         List<string> materialNames = new();
 
-        private LogWidget logWidget = new();
-        private Vector2 scrollPosition;
+        protected LogWidget logWidget = new();
+        protected Vector2 scrollPosition;
 
-        private string meshName = "";
-        private string activePath = "";
+        protected string meshName = "";
+        protected string activePath = "";
+
+        protected MeshMaterialNames materialNameMap;
+        protected GameObject SelectedMesh;
 
         [MenuItem("Assets/Supremacy/GenerateMaterialsForMesh", true)]
         public static bool SpawnValidate()
@@ -60,12 +63,10 @@ namespace SupremacyHangar.Editor
             EditorGUILayout.EndScrollView();
         }
         
-        private MeshMaterialNames materialNameMap;
-        private GameObject SelectedMesh;
         void OnEnable()
         {
             shader = Shader.Find("Supremacy/MechShader");
-            materialNameMap = AssetDatabase.LoadAssetAtPath("Assets/Editor/MeshMaterialNameMap.asset", typeof(MeshMaterialNames)) as MeshMaterialNames;
+            materialNameMap = AssetDatabase.LoadAssetAtPath("Assets/Editor/MechMeshMaterialNameMap.asset", typeof(MeshMaterialNames)) as MeshMaterialNames;
             SelectedMesh = Selection.activeObject as GameObject;
             activePath = AssetDatabase.GetAssetPath(Selection.activeObject);
             meshName = activePath.Substring(activePath.LastIndexOf('/') + 1);
@@ -75,12 +76,20 @@ namespace SupremacyHangar.Editor
         private void RenderImportDirectoryFields()
         {
             string label = String.IsNullOrWhiteSpace(importDirectory) ? "Select Material Directory" : $"{importDirectory}";
-            if (GUILayout.Button(label)) SelectMatieralDirectory();
+            if (GUILayout.Button(label))
+            {
+                logWidget.Reset();
+                SelectMatieralDirectory();
+            }
 
-            if (GUILayout.Button("Use Local Materials")) SelectMatieralDirectory(true);
+            if (GUILayout.Button("Use Local Materials"))
+            {
+                logWidget.Reset();
+                SelectMatieralDirectory(true);
+            }
         }
 
-        private void RenderSelectionFields()
+        protected void RenderSelectionFields()
         {
             shader = EditorGUILayout.ObjectField(
                    "Select Shader",
@@ -108,14 +117,13 @@ namespace SupremacyHangar.Editor
             return directory;
         }
 
-        private void SelectMatieralDirectory(bool useDefaultDir = false)
+        public void SelectMatieralDirectory(bool useDefaultDir = false)
         {
             if(!materialNameMap)
             {
                 logWidget.LogError("Need to specify Material Name Map!!");
                 return;
             }
-            logWidget.Reset();
 
             AssetDatabase.StartAssetEditing();
             materialNames = (from item in materialNameMap.MaterialNameMap
@@ -196,11 +204,19 @@ namespace SupremacyHangar.Editor
                     {
                         var assetTexPath = String.Join('/', texName.FullName.Split('\\').Skip(3));
                         var tex = AssetDatabase.LoadAssetAtPath(assetTexPath, typeof(Texture2D)) as Texture2D;
-
+                        if (tex == null)
+                        {
+                            Debug.LogError($"Could not load texture: {assetTexPath}");
+                            continue;
+                        }
+                        
                         if (tex.name.EndsWith("BaseColor"))
                             mat.SetTexture("_BaseMap", tex);
                         else if (tex.name.EndsWith("Emissive"))
+                        {
+                            mat.SetFloat("_Emissive_Intensity", 1);
                             mat.SetTexture("_EmissionMap", tex);
+                        }
                         else if (tex.name.EndsWith("Normal"))
                             mat.SetTexture("_BumpMap", tex);
                         else
@@ -208,14 +224,14 @@ namespace SupremacyHangar.Editor
                     }
 
                     //Save Material
-                    matFolderPath = useDefaultDir ? materialDir : String.Join('/', materialDir.Split('/').Skip(3)).Replace("\\", "/");// materialDir.Substring(materialDir.IndexOf('/', 3) + 1).Replace("\\", "/");
+                    matFolderPath = useDefaultDir ? materialDir : String.Join('/', materialDir.Split('/').Skip(3)).Replace("\\", "/");
                     var matPath = matFolderPath + "/" + matName + ".mat";
                     matarialPaths.Add(matPath);
 
                     if (AssetDatabase.LoadAssetAtPath(matPath, typeof(Material)) != null)
                     { 
                         string message = useDefaultDir ?
-                            String.Join('/', matPath.Split('/').Skip(4)) : //matPath.Substring(materialDir.IndexOf('/', 4)).Replace("\\", "/")
+                            String.Join('/', matPath.Split('/').Skip(4)) :
                             matPath.Substring(matPath.IndexOf('/'));
 
                         logWidget.LogWarning("Can't create material, it already exists: " + message);
@@ -240,7 +256,7 @@ namespace SupremacyHangar.Editor
 
                 var skinName = matFolderPath.Substring(matFolderPath.LastIndexOf('/') + 1);
                 if(skinName.LastIndexOf('_') > 0 ) skinName = skinName.Substring(0, skinName.LastIndexOf('_'));
-                var skinPath = matFolderPath + '/' + skinName + ".asset";
+                var skinPath = matFolderPath.Substring(0, matFolderPath.LastIndexOf('/')) + '/' + skinName + ".asset";
 
                 //Create Skin object
                 if (AssetDatabase.LoadAssetAtPath(skinPath, typeof(Skin)) != null)
@@ -290,11 +306,11 @@ namespace SupremacyHangar.Editor
         {
             string skinAddress = skinAssetPath.Substring(skinAssetPath.LastIndexOf('/') + 1);
             string skinName = skinAddress.Substring(0, skinAddress.IndexOf('.'));
-            string groupName = meshName + '_' + skinName;
+            string groupName = meshName + " - " + skinName;
             var settings = AddressableAssetSettingsDefaultObject.Settings;
 
-            var schemaOneLocation = "Assets/AddressableAssetsData/AssetGroups/Schemas/ConnectivityGraphs_BundledAssetGroupSchema.asset";
-            var SchemTwoLocation = "Assets/AddressableAssetsData/AssetGroups/Schemas/ConnectivityGraphs_ContentUpdateGroupSchema.asset";
+            var schemaOneLocation = "Assets/AddressableAssetsData/AssetGroups/Schemas/Player_BundledAssetGroupSchema.asset";
+            var SchemTwoLocation = "Assets/AddressableAssetsData/AssetGroups/Schemas/Player_ContentUpdateGroupSchema.asset";
 
             List<AddressableAssetGroupSchema> schemas = new();
 
@@ -302,13 +318,13 @@ namespace SupremacyHangar.Editor
             schemas.Add(AssetDatabase.LoadAssetAtPath(SchemTwoLocation, typeof(AddressableAssetGroupSchema)) as AddressableAssetGroupSchema);
 
             var group = settings.CreateGroup(groupName, false, false, false, schemas);
-            var guids = AssetDatabase.FindAssets("t:ScriptableObject", new[] { skinAssetPath.Substring(0, skinAssetPath.LastIndexOf('/')+1) });
+            var guids = AssetDatabase.FindAssets($"{skinName} t:ScriptableObject", new[] { skinAssetPath.Substring(0, skinAssetPath.LastIndexOf('/')+1) });
 
             var entriesAdded = new List<AddressableAssetEntry>();
             for (int i = 0; i < guids.Length; i++)
             {
                 var entry = settings.CreateOrMoveEntry(guids[i], group, readOnly: false, postEvent: false);
-                entry.address = skinAssetPath.Substring(skinAssetPath.LastIndexOf('/') + 1);
+                entry.address = meshName.Substring(meshName.LastIndexOf('/')+1) + " - " + skinName;
 
                 entriesAdded.Add(entry);
             }

@@ -108,7 +108,6 @@ namespace SupremacyHangar.Runtime
 		public bool cursorInputForLook = true;
 
 		[SerializeField] private bool paused = false;
-		private FPSPlayerUIController fpsPlayerUIController;
 
 		//Footstep Stuff
 		[SerializeField] private AudioSource myAudioSource;
@@ -118,8 +117,6 @@ namespace SupremacyHangar.Runtime
 		private bool RightFoot;
 		private float FootstepTimer;
 		private bool Stepped;
-		private bool isPaused = false;
-
 		public void Awake()
 		{
 			// get a reference to our main camera
@@ -129,6 +126,8 @@ namespace SupremacyHangar.Runtime
 			}
 			if (!ValidateAndSetupComponentReferences()) return;
 			interactionPromptControllerSet = interactionPromptController != null;
+
+			AudioListener.pause = false;
 		}
 
 		[Inject]
@@ -143,16 +142,11 @@ namespace SupremacyHangar.Runtime
 		{
 			_controller = GetComponent<CharacterController>();
 			_playerInput = GetComponent<PlayerInput>();
-			if(!TryGetComponent(out fpsPlayerUIController))
-            {
-				Debug.LogError("Cannot find or set Menu Controller", this);
-				enabled = false;
-            }
 
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
-#if !UNITY_IOS && !UNITY_ANDROID			
+#if UNITY_EDITOR || (!UNITY_IOS && !UNITY_ANDROID)
 			SetCursorState(cursorLocked);
 #endif
 			RightFoot = false;
@@ -168,6 +162,7 @@ namespace SupremacyHangar.Runtime
 				bus.Subscribe<PauseGameSignal>(Paused);
 			}
 
+
 			if (!BindToInputs()) return;
 		}
 		
@@ -177,7 +172,6 @@ namespace SupremacyHangar.Runtime
 			bus.TryUnsubscribe<PauseGameSignal>(Paused);
 
 			UnbindInputs();
-			//SubscribeToSignal();
 		}
 
 		public void DecrementInteractionPromptRequests()
@@ -194,11 +188,13 @@ namespace SupremacyHangar.Runtime
 		private void Resumed(ResumeGameSignal obj)
 		{
 			paused = false;
+			AudioListener.pause = false;
 		}
 		
 		private void Paused(PauseGameSignal obj)
 		{
 			paused = true;
+			AudioListener.pause = true;
 		}
 
 		private bool ValidateAndSetupComponentReferences()
@@ -367,7 +363,7 @@ namespace SupremacyHangar.Runtime
 						myAudioSource.clip = LeftFootClip;
 						RightFoot = true;
 					}
-					myAudioSource.pitch = UnityEngine.Random.Range(0.95f, 1.05f);
+					myAudioSource.pitch = UnityEngine.Random.Range(0.9f, 1.1f);
 					myAudioSource.Play();
 					Stepped = true;
 				}
@@ -500,8 +496,8 @@ namespace SupremacyHangar.Runtime
 			Gizmos.DrawSphere(new Vector3(transform.position.x, transform.position.y - GroundedOffset, transform.position.z), GroundedRadius);
 		}
 
-#if !UNITY_IOS && !UNITY_ANDROID
-
+#if !UNITY_IOS || !UNITY_ANDROID
+		
 		private void OnApplicationFocus(bool hasFocus)
 		{
 				SetCursorState(cursorLocked);

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691a633fee507c468fbb61f649f459a, type: 3}
+  m_Name: SeaHawk
+  m_EditorClassIdentifier: 
+  mats:
+  - {fileID: 2100000, guid: 98b1822e070a9224ea6b0bcca1496d30, type: 2}
+  - {fileID: 2100000, guid: b4bc86080d335b14ea212051b011e460, type: 2}
+  - {fileID: 2100000, guid: 61d71f28774acef48b37fba64d3228aa, type: 2}
+  - {fileID: 2100000, guid: 49ed4085255e48b479a95fbb200c4f81, type: 2}
+  - {fileID: 2100000, guid: d07e6f188d3a3a64695bee3ebc91426e, type: 2}
+  - {fileID: 2100000, guid: 6917ced2cc8f8ef49a10a4c64403ef50, type: 2}
+  - {fileID: 2100000, guid: f98ae967784ee1b479d7303659152a99, type: 2}
+  - {fileID: 2100000, guid: f98ae967784ee1b479d7303659152a99, type: 2}

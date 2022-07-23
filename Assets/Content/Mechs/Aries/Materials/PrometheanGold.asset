@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691a633fee507c468fbb61f649f459a, type: 3}
+  m_Name: PrometheanGold
+  m_EditorClassIdentifier: 
+  mats:
+  - {fileID: 2100000, guid: 6261a394027616b449ee0537579e571a, type: 2}
+  - {fileID: 2100000, guid: 2e73a09c8dc61a345b67303313f01a3a, type: 2}
+  - {fileID: 2100000, guid: 8e05af4359ebb94448ce577c1c2ca1d8, type: 2}
+  - {fileID: 2100000, guid: b23e63efdfae061418e159ee6be96894, type: 2}
+  - {fileID: 2100000, guid: 38e0daa731464c04db8f4e2f74cdbf32, type: 2}
+  - {fileID: 2100000, guid: 6261a394027616b449ee0537579e571a, type: 2}
+  - {fileID: 2100000, guid: 74ecf06254fdf18468d3edc5867eb342, type: 2}
+  - {fileID: 2100000, guid: 075354a0b73be8d4585ee8090e6351fc, type: 2}
+  - {fileID: 2100000, guid: f1ea757123b68cb44ba8f5c3a27e22ca, type: 2}
+  - {fileID: 2100000, guid: a61588b32d8736d41a485d4a62ca81b6, type: 2}

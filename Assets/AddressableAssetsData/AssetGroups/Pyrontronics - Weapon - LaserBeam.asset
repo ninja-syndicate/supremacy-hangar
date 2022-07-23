@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Pyrontronics - Weapon - LaserBeam
+  m_EditorClassIdentifier: 
+  m_GroupName: Pyrontronics - Weapon - LaserBeam
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 8ce7d1235b48cc74d98d6bf53625ac1a
+  m_SerializeEntries:
+  - m_GUID: 84d35d42104708b4db9972189420feb7
+    m_Address: Pyrotronics/LaserBeam.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 3685b2a80eeaf334bb20d6656a5f0345, type: 2}
+    - {fileID: 11400000, guid: a513da78e4c3aa04e9d10b3a77d10b61, type: 2}

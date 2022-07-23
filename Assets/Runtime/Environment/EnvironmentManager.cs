@@ -1,6 +1,4 @@
-using System.Buffers;
 using SupremacyHangar.Runtime.Silo;
-using SupremacyHangar.Runtime.ScriptableObjects;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
@@ -11,7 +9,6 @@ using SupremacyHangar.Runtime.Environment.Connections;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using SupremacyHangar.Runtime.ContentLoader.Types;
 using SupremacyHangar.Runtime.ContentLoader;
-using System.Collections;
 
 namespace SupremacyHangar.Runtime.Environment
 {
@@ -194,6 +191,11 @@ namespace SupremacyHangar.Runtime.Environment
             result.SetActive(true);
         }
 
+        public void UpdatePlayerInventory(int siloIndex, SiloItem newContent)
+        {
+            _playerInventory.Silos[siloIndex] = newContent;
+        }
+
         private void DoorOpened()
         {
             foreach (var obj in objectsToUnload)
@@ -286,7 +288,6 @@ namespace SupremacyHangar.Runtime.Environment
 
             if (newlyLoadedObjects.Count > 1)
             {
-                Debug.Log("Door open as alls loaded");
                 Door2.OpenDoor();
             }
             operationsForNewDoor.Remove(doorHandler);
@@ -370,13 +371,13 @@ namespace SupremacyHangar.Runtime.Environment
             return 0;
         }
 
-        private bool waitingOnWindow = false;
         public void UnloadSilo(bool waitOnWindow = true)
         {
             if (_currentSilo && waitOnWindow)
             {
                 _siloSignalHandler.CloseSilo();
                 _currentSilo.SiloSpawned = false;
+                _currentSilo = null;
             }
             else if (!waitOnWindow && loadedSilo)
                 UnloadAssetsAfterSiloClosed();
@@ -423,7 +424,6 @@ namespace SupremacyHangar.Runtime.Environment
 
         private void UnloadAssetsAfterSiloClosed()
         {
-            //_currentSilo = null;
             UnityEngine.AddressableAssets.Addressables.ReleaseInstance(loadedSilo);
         }
 

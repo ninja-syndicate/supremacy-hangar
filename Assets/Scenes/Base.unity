@@ -414,51 +414,6 @@ LightingSettings:
   m_PVRFilteringAtrousPositionSigmaIndirect: 2
   m_PVRFilteringAtrousPositionSigmaAO: 1
   m_PVRTiledBaking: 0
---- !u!1 &767933352
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 767933353}
-  - component: {fileID: 767933354}
-  m_Layer: 0
-  m_Name: EditorOnly
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &767933353
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 767933352}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -371.94608, y: -166.13826, z: 280.96387}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &767933354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 767933352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99543ed4669431f4aa8958b477accf23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  allAssets: {fileID: 11400000, guid: 803e5cb4a07a7474ca807f6f5941b7be, type: 2}
 --- !u!1 &850931430
 GameObject:
   m_ObjectHideFlags: 0
@@ -1210,6 +1165,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2033829490}
   - component: {fileID: 2033829489}
+  - component: {fileID: 2033829492}
+  - component: {fileID: 2033829491}
   m_Layer: 0
   m_Name: SceneContext
   m_TagString: Untagged
@@ -1230,7 +1187,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scriptableObjectInstallers: []
-  _monoInstallers: []
+  _monoInstallers:
+  - {fileID: 2033829491}
+  - {fileID: 2033829492}
   _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
@@ -1263,3 +1222,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2033829491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033829488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55f1bb33140648a5b6ad382f4487a472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2033829492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033829488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5003270fbf4748658db4e1cee10dbdf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerObject:
+    m_AssetGUID: 5331a0cd36225ab48b8f27bc1060fa10
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0

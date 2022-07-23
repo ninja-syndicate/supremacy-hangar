@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Warsui-FlakGun-FlakGun - VerdantWarsui
+  m_EditorClassIdentifier: 
+  m_GroupName: Warsui-FlakGun-FlakGun - VerdantWarsui
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 9a5aa16aab3edc84289710a1a0416939
+  m_SerializeEntries:
+  - m_GUID: 6ab00e31cc3a59f42a6b66dd4bdf4996
+    m_Address: FlakGun - VerdantWarsui
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 895a9ef6e34cf3b4cad486e1d7c12af0, type: 2}
+    - {fileID: 11400000, guid: 2ea77a9f452485d43962b11428a80ad0, type: 2}

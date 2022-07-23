@@ -211,6 +211,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 845845103644947023, guid: 9a955d9e8bbecf4449c699e011487558,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 853135399436803474, guid: 9a955d9e8bbecf4449c699e011487558,
         type: 3}
       propertyPath: m_RenderingLayerMask
@@ -280,6 +285,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LightLayerMask
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3297157151804011581, guid: 9a955d9e8bbecf4449c699e011487558,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3323383671634874490, guid: 9a955d9e8bbecf4449c699e011487558,
         type: 3}
@@ -351,6 +361,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 00ea5be54346efa4aacfa2e6eed5f664, type: 2}
+    - target: {fileID: 4431626368861411368, guid: 9a955d9e8bbecf4449c699e011487558,
+        type: 3}
+      propertyPath: startFactionColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4431626368861411368, guid: 9a955d9e8bbecf4449c699e011487558,
+        type: 3}
+      propertyPath: startFactionColor.g
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4468233009988550666, guid: 9a955d9e8bbecf4449c699e011487558,
         type: 3}
       propertyPath: m_RenderingLayerMask
@@ -590,6 +610,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RenderingLayerMask
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8740057205784901398, guid: 9a955d9e8bbecf4449c699e011487558,
+        type: 3}
+      propertyPath: startFactionColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8740057205784901398, guid: 9a955d9e8bbecf4449c699e011487558,
+        type: 3}
+      propertyPath: startFactionColor.g
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a955d9e8bbecf4449c699e011487558, type: 3}
@@ -989,11 +1019,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Zai_Decals
-      objectReference: {fileID: 0}
-    - target: {fileID: 2194691305433740981, guid: d8e6b5f482e3f2048a331478773ea432,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -77
       objectReference: {fileID: 0}
     - target: {fileID: 4304466905404873272, guid: d8e6b5f482e3f2048a331478773ea432,
         type: 3}

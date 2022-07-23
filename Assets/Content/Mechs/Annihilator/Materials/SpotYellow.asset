@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691a633fee507c468fbb61f649f459a, type: 3}
+  m_Name: SpotYellow
+  m_EditorClassIdentifier: 
+  mats:
+  - {fileID: 2100000, guid: d9aa68ad525fc634d875707edf611665, type: 2}
+  - {fileID: 2100000, guid: 213720d4183709741bea6178d64dd63d, type: 2}
+  - {fileID: 2100000, guid: 0242538b94171254fbd7c53722f27850, type: 2}
+  - {fileID: 2100000, guid: 47460f41e4ceb834ea381cd56f8f8be0, type: 2}
+  - {fileID: 2100000, guid: b2bfe808fd5e0894a920591b5e42b4ee, type: 2}
+  - {fileID: 2100000, guid: 313b14ea85e1a4142850d72a48ab5551, type: 2}
+  - {fileID: 2100000, guid: f84bb1061b1c9864fade0749f071f002, type: 2}
+  - {fileID: 2100000, guid: f84bb1061b1c9864fade0749f071f002, type: 2}
