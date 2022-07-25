@@ -30,6 +30,7 @@ namespace SupremacyHangar.Editor.Actors.SiloHallway
         private SerializedProperty siloContentsTypeProperty;
         private SerializedProperty siloContentsName1Property;
         private SerializedProperty siloContentsName2Property;
+        private SerializedProperty siloContentsName3Property;
         private SerializedProperty interactionButtonProperty;
         private SerializedProperty interactionButtonProgressProperty;
         private SerializedProperty interactionButtonTextProperty;
@@ -64,6 +65,7 @@ namespace SupremacyHangar.Editor.Actors.SiloHallway
             siloContentsTypeProperty = serializedObject.FindProperty("siloContentsType");
             siloContentsName1Property = serializedObject.FindProperty("siloContentsName1");
             siloContentsName2Property = serializedObject.FindProperty("siloContentsName2");
+            siloContentsName3Property = serializedObject.FindProperty("siloContentsName3");
             interactionButtonProperty = serializedObject.FindProperty("interactionButton");
             interactionButtonProgressProperty = serializedObject.FindProperty("interactionButtonProgress");
             interactionButtonTextProperty = serializedObject.FindProperty("interactionButtonText");
@@ -171,6 +173,7 @@ namespace SupremacyHangar.Editor.Actors.SiloHallway
             EditorGUILayout.PropertyField(siloContentsTypeProperty);
             EditorGUILayout.PropertyField(siloContentsName1Property);
             EditorGUILayout.PropertyField(siloContentsName2Property);
+            EditorGUILayout.PropertyField(siloContentsName3Property);
             EditorGUILayout.PropertyField(interactionButtonProperty);
             EditorGUILayout.PropertyField(interactionButtonProgressProperty);
             EditorGUILayout.PropertyField(interactionButtonTextProperty);

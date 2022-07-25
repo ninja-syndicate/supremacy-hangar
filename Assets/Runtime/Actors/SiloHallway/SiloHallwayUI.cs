@@ -27,6 +27,7 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
         [SerializeField] private TMP_Text siloContentsType;
         [SerializeField] private TMP_Text siloContentsName1;
         [SerializeField] private TMP_Text siloContentsName2;
+        [SerializeField] private TMP_Text siloContentsName3;
         [FormerlySerializedAs("loadButton"), SerializeField] private Button interactionButton;
         [SerializeField] private Image interactionButtonProgress;
         [SerializeField] private TMP_Text interactionButtonText;
@@ -85,6 +86,7 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
                 case MysteryCrate box:
                     UpdateTypeString(box);
                     UpdateName2(siloState.CurrentFaction, box);
+                    siloContentsName3.text = "Building";
                     enableCounter = true;
                     counterValue = box.CanOpenOn;
                     break;
@@ -248,6 +250,8 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
                 siloState.CrateCanOpen();
                 crateOpenSet = true;
                 siloContentsName1.text = TimeSpan.Zero.ToString("hh':'mm':'ss");
+                siloContentsName3.text = "Built";
+                Debug.Log("built crate", this);
                 return;
             }
             siloContentsName1.text = diff.ToString(diff.Days > 0 ? "d':'hh':'mm':'ss" : "hh':'mm':'ss");
@@ -300,6 +304,12 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
         //    }
         //    siloContentsName1.text = utility.UtilityModelDetails.Data.HumanName;
         //}
+
+
+        private void UpdateName3(Mech mech)
+        {
+            //siloContentsName3.text = mech.MechChassisDetails.DataMechModel.DisplayName;
+        }
 
         private void UpdateName1(Weapon weapon)
         {
