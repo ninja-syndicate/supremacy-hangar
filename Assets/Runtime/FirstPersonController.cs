@@ -25,10 +25,13 @@ namespace SupremacyHangar.Runtime
 		[Tooltip("Acceleration and deceleration")]
 		public float SpeedChangeRate = 10.0f;
 
+		private PlayerPrefStateInstaller playerPrefState;
 		public float UpdateRotationSpeed
         {
-			get { return RotationSpeed; }
-			set { RotationSpeed = value; }
+			get { return playerPrefState.GetFloat("LookSensitivity", 1); }
+			set { RotationSpeed = value; 
+				playerPrefState?.UpdateFloatPlayerPref("LookSensitivity", value);
+			}
         }
 
 		[Space(10)]
@@ -133,8 +136,10 @@ namespace SupremacyHangar.Runtime
 		}
 
 		[Inject]
-		public void Inject(SignalBus aBus)
+		public void Inject(SignalBus aBus, PlayerPrefStateInstaller playerPrefState)
 		{
+			this.playerPrefState = playerPrefState;
+			RotationSpeed = UpdateRotationSpeed;
 			bus = aBus;
 			bus.Subscribe<ResumeGameSignal>(Resumed);
 			bus.Subscribe<PauseGameSignal>(Paused);

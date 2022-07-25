@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Zenject;
 
 namespace SupremacyHangar.Runtime.Actors.Player
 {
@@ -19,26 +20,17 @@ namespace SupremacyHangar.Runtime.Actors.Player
     public class SetVolume : MonoBehaviour, IUpdateSelectedHandler
     {
         [SerializeField] private AudioMixer mixer;
-        [SerializeField] private VolumeTypes volumeTypes;
+        [SerializeField] private VolumeTypes volumeType;
         [SerializeField] private Slider slider;
         [SerializeField] private TextMeshProUGUI textSliderValue;
-
+        
+        [Inject]
+        private PlayerPrefStateInstaller playerPrefState;
+        private string groupName = "";
         void Start()
         {
-            switch (volumeTypes)
-            {
-                case VolumeTypes.Music:
-                    slider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f);
-                    break;
-                case VolumeTypes.Master:
-                    slider.value = PlayerPrefs.GetFloat("MasterVolume", 0.75f);
-                    break;
-                case VolumeTypes.Effects:
-                    slider.value = PlayerPrefs.GetFloat("EffectsVolume", 0.75f);
-                    break;
-                default:
-                    break;
-            }
+            groupName = volumeType.ToString() + "Volume";
+            playerPrefState.GetFloat(groupName, 0.75f);
 
             slider.onValueChanged.AddListener(delegate {
                 SetTextValue();
@@ -47,30 +39,30 @@ namespace SupremacyHangar.Runtime.Actors.Player
 
         private void SetTextValue()
         {
+            playerPrefState.UpdateFloatPlayerPref(groupName, slider.value);
             var sliderValue = slider.value * 100;
             textSliderValue.text = "(" + sliderValue.ToString("F0") + ")";
         }
 
-        public void SetLevel(string volumeName, string group)
+        public void SetLevel(string volumeName)
         {
             float sliderValue = slider.value;
             mixer.SetFloat(volumeName, Mathf.Log10(sliderValue) * 20);
-            PlayerPrefs.SetFloat(group, sliderValue);
-            PlayerPrefs.Save();
+            playerPrefState.UpdateFloatPlayerPref(groupName, sliderValue);
         }
 
         public void OnUpdateSelected(BaseEventData eventData)
         {
-            switch (volumeTypes)
+            switch (volumeType)
             {
                 case VolumeTypes.Music:
-                    SetLevel("MusicVol", "MusicVolume");
+                    SetLevel("MusicVol");
                     break;
                 case VolumeTypes.Master:
-                    SetLevel("MasterVol", "MasterVolume");
+                    SetLevel("MasterVol");
                     break;
                 case VolumeTypes.Effects:
-                    SetLevel("EffectsVol", "EffectsVolume");
+                    SetLevel("EffectsVol");
                     break;
                 default:
                     break;
