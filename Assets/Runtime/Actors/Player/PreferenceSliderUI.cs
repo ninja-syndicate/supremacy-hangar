@@ -71,7 +71,7 @@ namespace SupremacyHangar.Runtime.Actors.Player
 
         public void SetLevel(float value)
         {
-            slider.value = value;
+//            slider.value = value;
             switch(preferenceType)
             {
                 case PreferenceTypes.LookSensitivity:
@@ -89,7 +89,7 @@ namespace SupremacyHangar.Runtime.Actors.Player
                 default:
                     break;
             }
-            SetTextValue();
+//            SetTextValue();
         }
     }
 }

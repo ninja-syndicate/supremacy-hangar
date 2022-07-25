@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2e208bf98e26a84fa5159a190fadfeb, type: 3}
-  m_Name: SupremacyMixerHandler
+  m_Name: SupremacyMixerInstaller
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: 6030a6e528f25fb4c889c453e8368ada, type: 2}

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c5d90480cbb2db4cad017357733efdc, type: 3}
-  m_Name: PlayerPrefStateInstaller
+  m_Name: UserPreferenceInstaller
   m_EditorClassIdentifier: 
   mouseSensitivityDefault: 1
   masterVolumeDefault: 0.75

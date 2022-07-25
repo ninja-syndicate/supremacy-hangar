@@ -12,7 +12,6 @@ namespace SupremacyHangar.Runtime.Actors.Player
         [SerializeField] private float masterVolumeDefault = 0.75f;
         [SerializeField] private float effectsVolumeDefault = 0.75f;
         [SerializeField] private float musicVolumeDefault = 0.75f;
-        [SerializeField] private SupremacyMixer masterMixer;
         
         private const string LookSensitivityKey = "LookSensitivity";
         private const string MasterVolumeKey = "MasterVolume";
@@ -26,7 +25,7 @@ namespace SupremacyHangar.Runtime.Actors.Player
 
         public event Action<float> OnMouseSensitivityChange;
         public event Action<float> OnMasterVolumeChange;
-        public event Action<float> OneffectsVolumeChange;
+        public event Action<float> OnEffectsVolumeChange;
         public event Action<float> OnMusicVolumeChange;
 
         private float mouseSensitivity, masterVolume, effectsVolume, musicVolume;
@@ -38,7 +37,7 @@ namespace SupremacyHangar.Runtime.Actors.Player
             effectsVolume = PlayerPrefs.GetFloat(EffectsVolumeKey, effectsVolumeDefault);
             musicVolume = PlayerPrefs.GetFloat(MusicVolumeKey, musicVolumeDefault);
         }
-
+        
         public override void InstallBindings()
         {
             Container.Bind<UserPreferencesService>().FromInstance(this).AsSingle();
@@ -59,7 +58,6 @@ namespace SupremacyHangar.Runtime.Actors.Player
         {
             if (Mathf.Approximately(value, masterVolume)) return;
             masterVolume = value;
-            masterMixer.SetMasterMixer(value);
             PlayerPrefs.SetFloat(MasterVolumeKey, value);
             PlayerPrefs.Save();
             OnMasterVolumeChange?.Invoke(value);
@@ -71,10 +69,9 @@ namespace SupremacyHangar.Runtime.Actors.Player
         {
             if (Mathf.Approximately(value, effectsVolume)) return;
             effectsVolume = value;
-            masterMixer.SetEffectsMixer(value);
             PlayerPrefs.SetFloat(EffectsVolumeKey, value);
             PlayerPrefs.Save();
-            OneffectsVolumeChange?.Invoke(value);
+            OnEffectsVolumeChange?.Invoke(value);
         }
         
         public void ResetEffectsVolume() => SetEffectsVolume(effectsVolumeDefault);
@@ -83,7 +80,6 @@ namespace SupremacyHangar.Runtime.Actors.Player
         {
             if (Mathf.Approximately(value, musicVolume)) return;
             musicVolume = value;
-            masterMixer.SetMusicMixer(value);
             PlayerPrefs.SetFloat(MusicVolumeKey, value);
             PlayerPrefs.Save();
             OnMusicVolumeChange?.Invoke(value);
