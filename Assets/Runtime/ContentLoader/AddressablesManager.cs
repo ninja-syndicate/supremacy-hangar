@@ -414,12 +414,13 @@ namespace SupremacyHangar.Runtime.ContentLoader
         {
             if(quickLoad) return true;
 
-            if(isComposable && skinToMeshMap.Count > 1)
-                return skinsLoaded.Count == skinToMeshMap.Count;
-            else if(!isComposable)
-                return skinsLoaded.Count == skinToMeshMap.Count;
-
-           return false;
+            
+            return isComposable switch
+            {
+                true when skinToMeshMap.Count > 1 => skinsLoaded.Count == skinToMeshMap.Count,
+                false => skinsLoaded.Count == skinToMeshMap.Count,
+                _ => false
+            };
         }
 
 #if UNITY_EDITOR

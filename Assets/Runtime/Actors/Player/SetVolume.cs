@@ -19,27 +19,29 @@ namespace SupremacyHangar.Runtime.Actors.Player
     [RequireComponent(typeof(Slider))]
     public class SetVolume : MonoBehaviour, IUpdateSelectedHandler
     {
-        [SerializeField] private AudioMixer mixer;
         [SerializeField] private VolumeTypes volumeType;
         [SerializeField] private Slider slider;
         [SerializeField] private TextMeshProUGUI textSliderValue;
         
-        [Inject]
-        private PlayerPrefStateInstaller playerPrefState;
+        private UserPreferencesService userPreferences;
         private string groupName = "";
+
+        [Inject]
+        public void InjectDependencies(UserPreferencesService userPreferences)
+        {
+            this.userPreferences = userPreferences;
+        }
+        
         void Start()
         {
             groupName = volumeType.ToString() + "Volume";
-            playerPrefState.GetFloat(groupName, 0.75f);
 
-            slider.onValueChanged.AddListener(delegate {
-                SetTextValue();
-            });
+
+            slider.onValueChanged.AddListener(SetTextValue);
         }
 
         private void SetTextValue()
         {
-            playerPrefState.UpdateFloatPlayerPref(groupName, slider.value);
             var sliderValue = slider.value * 100;
             textSliderValue.text = "(" + sliderValue.ToString("F0") + ")";
         }

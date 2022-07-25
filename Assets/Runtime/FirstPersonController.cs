@@ -25,14 +25,7 @@ namespace SupremacyHangar.Runtime
 		[Tooltip("Acceleration and deceleration")]
 		public float SpeedChangeRate = 10.0f;
 
-		private PlayerPrefStateInstaller playerPrefState;
-		public float UpdateRotationSpeed
-        {
-			get { return playerPrefState.GetFloat("LookSensitivity", 1); }
-			set { RotationSpeed = value; 
-				playerPrefState?.UpdateFloatPlayerPref("LookSensitivity", value);
-			}
-        }
+		private UserPreferencesService userPreferences;
 
 		[Space(10)]
 		[Tooltip("The height the player can jump")]
@@ -136,10 +129,9 @@ namespace SupremacyHangar.Runtime
 		}
 
 		[Inject]
-		public void Inject(SignalBus aBus, PlayerPrefStateInstaller playerPrefState)
+		public void Inject(SignalBus aBus, UserPreferencesService userPreferences)
 		{
-			this.playerPrefState = playerPrefState;
-			RotationSpeed = UpdateRotationSpeed;
+			this.userPreferences = userPreferences;
 			bus = aBus;
 			bus.Subscribe<ResumeGameSignal>(Resumed);
 			bus.Subscribe<PauseGameSignal>(Paused);
@@ -336,8 +328,8 @@ namespace SupremacyHangar.Runtime
 				//Don't multiply mouse input by Time.deltaTime
 				float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
 				
-				_cinemachineTargetPitch += look.y * RotationSpeed * deltaTimeMultiplier;
-				_rotationVelocity = look.x * RotationSpeed * deltaTimeMultiplier;
+				_cinemachineTargetPitch += look.y * RotationSpeed * userPreferences.MouseSensitivity * deltaTimeMultiplier;
+				_rotationVelocity = look.x * RotationSpeed * userPreferences.MouseSensitivity * deltaTimeMultiplier;
 
 				// clamp our pitch rotation
 				_cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
