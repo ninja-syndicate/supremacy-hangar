@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Boston Cybernetics - Mystery Crates
+  m_EditorClassIdentifier: 
+  m_GroupName: Boston Cybernetics - Mystery Crates
+  m_Data:
+    m_SerializedData: []
+  m_GUID: c312bfd2b5a79b041bdae899b8567e88
+  m_SerializeEntries:
+  - m_GUID: 332fa22ebccb8564c8be3c0bfc8a4810
+    m_Address: LootBox_Boston_External.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f23e285582382894fb3e7e4a4d8ccccf
+    m_Address: Lootbox_Archon_External.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: a61f54718fbdad44995ac80a31d9c35b, type: 2}
+    - {fileID: 11400000, guid: bf8f6eeb678d5de47a17373d40339915, type: 2}

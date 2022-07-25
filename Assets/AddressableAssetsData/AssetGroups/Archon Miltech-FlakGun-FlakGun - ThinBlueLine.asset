@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Archon Miltech-FlakGun-FlakGun - ThinBlueLine
+  m_EditorClassIdentifier: 
+  m_GroupName: Archon Miltech-FlakGun-FlakGun - ThinBlueLine
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 51eb34b28d1d51d4bb85ebfde4923fca
+  m_SerializeEntries:
+  - m_GUID: c92c34f8f2c4d794b8b5ff6aeb6fde7a
+    m_Address: FlakGun - ThinBlueLine
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: dde3963eea346b343b00db8d97b732a8, type: 2}
+    - {fileID: 11400000, guid: 729d433d3af329e4ab8a43ac677f2316, type: 2}

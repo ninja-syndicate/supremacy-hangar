@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Archon Miltech-Minigun-Minigun - ReadyToQuench
+  m_EditorClassIdentifier: 
+  m_GroupName: Archon Miltech-Minigun-Minigun - ReadyToQuench
+  m_Data:
+    m_SerializedData: []
+  m_GUID: ada7f5d615f813b48b73b6db1e327f94
+  m_SerializeEntries:
+  - m_GUID: b09d719dc1b5a1e4ca6d8f7ab85d09b5
+    m_Address: Minigun - ReadyToQuench
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 501c80d72ea85dd48b2064f5e81b2e24, type: 2}
+    - {fileID: 11400000, guid: 2d82149911252254c8b354519e034079, type: 2}

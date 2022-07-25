@@ -83,7 +83,7 @@ namespace SupremacyData.Editor.Importers
                     type =  Runtime.WeaponModel.ModelType.Flamethrower;
                     return true;
                 case "flak":
-                    type =  Runtime.WeaponModel.ModelType.Flak;
+                    type =  Runtime.WeaponModel.ModelType.FlakGun;
                     return true;
                 case "cannon":
                     type =  Runtime.WeaponModel.ModelType.Cannon;

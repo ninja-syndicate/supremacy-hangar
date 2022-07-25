@@ -1,13 +1,8 @@
 using SupremacyData.Runtime;
 using SupremacyHangar.Runtime.ContentLoader;
-using SupremacyHangar.Runtime.ContentLoader.Types;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-using UnityEngine;
-using UnityEngine.AddressableAssets;
 
 namespace SupremacyHangar.Runtime.Types
 {
@@ -43,15 +38,24 @@ namespace SupremacyHangar.Runtime.Types
     public class Weapon : SiloItem
     {
         public Skin Skin;
+        public WeaponModelMapping WeaponModelDetails;
+        public WeaponSkinMapping WeaponSkinDetails;
     }    
 
     [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public class PowerCore : SiloItem
     {
+        public PowerCoreMapping PowerCoreDetails;
     }        
     
     [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public class Skin : SiloItem
     {        
+    }
+
+    [JsonObject(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
+    public class Utility : SiloItem
+    {
+        //public UtilityMapping UtilityDetails;
     }
 }

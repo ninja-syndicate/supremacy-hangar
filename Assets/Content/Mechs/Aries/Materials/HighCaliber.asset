@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691a633fee507c468fbb61f649f459a, type: 3}
+  m_Name: HighCaliber
+  m_EditorClassIdentifier: 
+  mats:
+  - {fileID: 2100000, guid: edcac16ad876c6544a14d94f35996ab6, type: 2}
+  - {fileID: 2100000, guid: f84d97b7ee5e15042bd0e2ebdcf2eb85, type: 2}
+  - {fileID: 2100000, guid: be8026500332260479441a85bb65fef6, type: 2}
+  - {fileID: 2100000, guid: 1c1120390f97dd142a9b55a25e7feeb8, type: 2}
+  - {fileID: 2100000, guid: 3879fdcce0c81224dbeb960007e5f6d6, type: 2}
+  - {fileID: 2100000, guid: 78e0e9e595f115e4ab5592dcebae9fb7, type: 2}
+  - {fileID: 2100000, guid: 423e3deaa4bc4e948831addd7f84590a, type: 2}
+  - {fileID: 2100000, guid: 77d5c410d5d10bf4384b3ffa247a5e57, type: 2}
+  - {fileID: 2100000, guid: d453807f0c6bde045971c4b2d83dbed6, type: 2}
+  - {fileID: 2100000, guid: 940d1b746a9946942b9ad5d9037bdcda, type: 2}

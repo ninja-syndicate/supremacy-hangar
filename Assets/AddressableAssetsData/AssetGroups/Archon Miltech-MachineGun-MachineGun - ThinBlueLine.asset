@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Archon Miltech-MachineGun-MachineGun - ThinBlueLine
+  m_EditorClassIdentifier: 
+  m_GroupName: Archon Miltech-MachineGun-MachineGun - ThinBlueLine
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 49bd8fe64e28ce54590948c64f45c70d
+  m_SerializeEntries:
+  - m_GUID: 79b3c2748003414468f0463b1ba8cf75
+    m_Address: MachineGun - ThinBlueLine
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 73e4d772cb65f9749afbd8bac432b962, type: 2}
+    - {fileID: 11400000, guid: d089e39ab6876374982e5eb4cc4a4432, type: 2}

@@ -543,6 +543,16 @@ PrefabInstance:
       propertyPath: m_LightLayerMask
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1658130312228482719, guid: b018ad848f4114e62bd27cd1b7cbe2b0,
+        type: 3}
+      propertyPath: startFactionColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1658130312228482719, guid: b018ad848f4114e62bd27cd1b7cbe2b0,
+        type: 3}
+      propertyPath: startFactionColor.g
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1820494245823837929, guid: b018ad848f4114e62bd27cd1b7cbe2b0,
         type: 3}
       propertyPath: m_LocalRotation.y
@@ -743,6 +753,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 00ea5be54346efa4aacfa2e6eed5f664, type: 2}
+    - target: {fileID: 5025295243827462258, guid: b018ad848f4114e62bd27cd1b7cbe2b0,
+        type: 3}
+      propertyPath: startFactionColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5025295243827462258, guid: b018ad848f4114e62bd27cd1b7cbe2b0,
+        type: 3}
+      propertyPath: startFactionColor.g
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5158012464370579817, guid: b018ad848f4114e62bd27cd1b7cbe2b0,
         type: 3}
       propertyPath: m_RenderingLayerMask
@@ -772,6 +792,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RenderingLayerMask
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5291956073280191986, guid: b018ad848f4114e62bd27cd1b7cbe2b0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5403208254222494523, guid: b018ad848f4114e62bd27cd1b7cbe2b0,
         type: 3}
@@ -952,6 +977,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_UseColorTemperature
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7978769862079455558, guid: b018ad848f4114e62bd27cd1b7cbe2b0,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8249710818770591116, guid: b018ad848f4114e62bd27cd1b7cbe2b0,
         type: 3}

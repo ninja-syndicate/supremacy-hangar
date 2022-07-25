@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Pyrotronics - Utility - Shield Generator
+  m_EditorClassIdentifier: 
+  m_GroupName: Pyrotronics - Utility - Shield Generator
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 02222a001edfcd8438456a977330186a
+  m_SerializeEntries:
+  - m_GUID: 3802f6b18927b864d87031e040f701d9
+    m_Address: Pyrotronics/ShieldGenerator.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: f58cafa6a0bd0134082ffb9e8fc001c7, type: 2}
+    - {fileID: 11400000, guid: ce877724f4e68c54181628e6374db5ab, type: 2}

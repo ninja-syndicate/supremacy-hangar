@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Archon Miltech-Cannon-Cannon - CodeofChivalry
+  m_EditorClassIdentifier: 
+  m_GroupName: Archon Miltech-Cannon-Cannon - CodeofChivalry
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 42fdd188aa6d08a4e851ccfca2463103
+  m_SerializeEntries:
+  - m_GUID: f1cf2aa7cae8fa04aa5cb2bb24866b0a
+    m_Address: Cannon - CodeofChivalry
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: a947702403f596e4fa02beadef13ed5e, type: 2}
+    - {fileID: 11400000, guid: f26a2090a12d08c44a90952b521ca247, type: 2}

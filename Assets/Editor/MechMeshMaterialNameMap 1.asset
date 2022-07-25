@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ef88128b2778a4b8dc7c8405edbc44, type: 3}
+  m_Name: MechMeshMaterialNameMap 1
+  m_EditorClassIdentifier: 
+  MaterialNameMap:
+  - Mesh: {fileID: 1577564704396694850, guid: bf4c340c6029af34e92acbd4f4bfcaf1, type: 3}
+    MaterialNames:
+    - Head
+    - LeftArm
+    - LeftLeg
+    - RightLegUpper
+    - RightLegFoot
+    - Chest
+    - LeftLegUpper
+    - Torso
+    - RightArm
+    - Connectors
+  - Mesh: {fileID: 1858076446634623171, guid: 7a99f688e3fb8354ea2661c348113d6f, type: 3}
+    MaterialNames:
+    - Legs
+    - Head
+    - Chest
+  - Mesh: {fileID: 8369447950273266316, guid: 85dfe6b0b304173439a086e7c18b650a, type: 3}
+    MaterialNames:
+    - Head
+    - Legs
+    - Torso
+    - Weapon
+  - Mesh: {fileID: 1126519101183325613, guid: f283334e4df8196419301819615897a4, type: 3}
+    MaterialNames:
+    - BackLeftLeg
+    - BackRightLeg
+    - Base
+    - FrontLeftLeg
+    - FrontRightLeg
+    - Head
+    - RightTurret
+    - LeftTurret
+    - MiddleLeftLeg
+    - MiddleRightLeg
+    - Tanks
+    - Torso
+  - Mesh: {fileID: 2865773762728565979, guid: b47831909c819eb4a939bb5163cb9e0d, type: 3}
+    MaterialNames:
+    - Chest
+    - Arms
+    - Details
+    - Foot
+    - Leg
+  - Mesh: {fileID: 6689757385592082946, guid: 8ebfffc025b4b9e44b2233a854d70c24, type: 3}
+    MaterialNames:
+    - UpperPrimary
+    - UpperSecondary
+    - UpperDetails
+    - LowerCore
+    - LowerDetails
+    - MidCore
+    - MidDetails
+    - LegFrontLeft
+    - LegFrontRight

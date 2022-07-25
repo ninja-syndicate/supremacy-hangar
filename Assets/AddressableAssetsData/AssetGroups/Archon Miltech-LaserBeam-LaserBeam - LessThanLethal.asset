@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Archon Miltech-LaserBeam-LaserBeam - LessThanLethal
+  m_EditorClassIdentifier: 
+  m_GroupName: Archon Miltech-LaserBeam-LaserBeam - LessThanLethal
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 8708554877ad18b4aac85174c419caf4
+  m_SerializeEntries:
+  - m_GUID: 6ce665a726b60784fba0c05971673a24
+    m_Address: LaserBeam - LessThanLethal
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: c0b8707c1fc87204d9a11a2b892d75f0, type: 2}
+    - {fileID: 11400000, guid: 1aa2e50b36aeb8c4798a94f64d6d57f3, type: 2}

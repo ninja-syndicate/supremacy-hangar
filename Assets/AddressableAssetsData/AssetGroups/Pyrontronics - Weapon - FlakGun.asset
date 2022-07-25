@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Pyrontronics - Weapon - FlakGun
+  m_EditorClassIdentifier: 
+  m_GroupName: Pyrontronics - Weapon - FlakGun
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 8e8008fa7d35b7f41a5ec823e3a4317d
+  m_SerializeEntries:
+  - m_GUID: ffd618df015190a45bba63fe80964c50
+    m_Address: Pyrotronics/FlakGun.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: ae56e2b0a446f444582027ea3e2fff2d, type: 2}
+    - {fileID: 11400000, guid: 4e4d567daa08d3140b55c1478520d785, type: 2}

@@ -6,6 +6,9 @@ ModelImporter:
   - first:
       74: 7118053101115055034
     second: Opening
+  - first:
+      74: 1398251240794809138
+    second: Opening_v4
   externalObjects: {}
   materials:
     materialImportMode: 2

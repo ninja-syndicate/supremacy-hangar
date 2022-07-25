@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691a633fee507c468fbb61f649f459a, type: 3}
+  m_Name: MineGod
+  m_EditorClassIdentifier: 
+  mats:
+  - {fileID: 2100000, guid: 6eac1b6276889f94ab43d333eb2cb3df, type: 2}
+  - {fileID: 2100000, guid: 858a54e2246311f4b82bfecfd814a896, type: 2}
+  - {fileID: 2100000, guid: 0fdd91237f24fd945ad149863524fe60, type: 2}
+  - {fileID: 2100000, guid: fa7a6b12915ab254a8b7a7c8959798b8, type: 2}
+  - {fileID: 2100000, guid: d794c76e9937955409cbae0cfba4e007, type: 2}
+  - {fileID: 2100000, guid: 9511e4fde2fc2734681a5ea7bc0f54ed, type: 2}
+  - {fileID: 2100000, guid: 2d2261e1825fadb40b4ab238d923af48, type: 2}
+  - {fileID: 2100000, guid: 0ac59262f44951c41890e19b06ba3d1c, type: 2}
+  - {fileID: 2100000, guid: 520d048895a363946a88bff9f88ef9ef, type: 2}

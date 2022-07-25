@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Pyrotronics-Cannon-Cannon - PrometheanGold
+  m_EditorClassIdentifier: 
+  m_GroupName: Pyrotronics-Cannon-Cannon - PrometheanGold
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 4537c0afce67e0c4597bd19331e85593
+  m_SerializeEntries:
+  - m_GUID: 67219ef5146d6f64a809cc053c5675b8
+    m_Address: Cannon - PrometheanGold
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 565f539c595f0d349a171b0cd6da800e, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 2017b314ece5e7f42b32cb6f6f9ab4d3, type: 2}
+    - {fileID: 11400000, guid: c72cda83500a9bd49badf360052e12f5, type: 2}

@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Content/Shaders/hex_snakes.hlsl.bak.meta
+guid: 1ab977590a4cf4cd796523236b7f6543
+========
 guid: 05aa59fe5b84540e8b5523b7934e9fe1
 folderAsset: yes
+>>>>>>>> origin/develop:Assets/Content/Silo/Audio.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

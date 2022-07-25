@@ -17,8 +17,8 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 2900763ef73708a40b84381df329c4dc
   m_SerializeEntries:
-  - m_GUID: be1f8bf55bb63424a864f296f20b400e
-    m_Address: Boston_Mech_SingleMesh
+  - m_GUID: f811ee78040294b17b201fd916ca68c6
+    m_Address: Assets/Content/Mechs/Mech_Boston/Boston_Mech.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6691a633fee507c468fbb61f649f459a, type: 3}
+  m_Name: Two Five Zero One
+  m_EditorClassIdentifier: 
+  mats:
+  - {fileID: 2100000, guid: 6f7d3964acb0ca847815a6291f838d2d, type: 2}
+  - {fileID: 2100000, guid: 67aaceb858e153846915195faefaeacb, type: 2}
+  - {fileID: 2100000, guid: 2530d828b2661cc4ab792df0291873d3, type: 2}
+  - {fileID: 2100000, guid: ff1a58c183c8ca04ea9c89d6b15fa018, type: 2}
+  - {fileID: 2100000, guid: db1c3cf02c9feef429bec5388872854b, type: 2}
+  - {fileID: 2100000, guid: 5fd2921f757d35f40a5bca1576267220, type: 2}
+  - {fileID: 2100000, guid: 40ee8727604a32146b53aadfa03094e2, type: 2}
+  - {fileID: 2100000, guid: 31be76adea2ced146917fd7b6b267df0, type: 2}
+  - {fileID: 2100000, guid: 1b9b324d158dcb0458c878f430d1b7c0, type: 2}

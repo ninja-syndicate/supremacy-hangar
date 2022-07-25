@@ -22,9 +22,24 @@ PrefabInstance:
       propertyPath: m_LightLayerMask
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1633432483636228656, guid: b90b9b7825ebb344a89a6d6f28cad701,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1743947278455532014, guid: b90b9b7825ebb344a89a6d6f28cad701,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2457674409254406825, guid: b90b9b7825ebb344a89a6d6f28cad701,
         type: 3}
       propertyPath: m_LightLayerMask
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308140563711965490, guid: b90b9b7825ebb344a89a6d6f28cad701,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4144555250112564829, guid: b90b9b7825ebb344a89a6d6f28cad701,
@@ -33,6 +48,11 @@ PrefabInstance:
       value: 6300
       objectReference: {fileID: 0}
     - target: {fileID: 4144555250112564829, guid: b90b9b7825ebb344a89a6d6f28cad701,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5284359671265741799, guid: b90b9b7825ebb344a89a6d6f28cad701,
         type: 3}
       propertyPath: m_RenderingLayerMask
       value: 8
@@ -145,6 +165,11 @@ PrefabInstance:
     - target: {fileID: 7266524471223573597, guid: b90b9b7825ebb344a89a6d6f28cad701,
         type: 3}
       propertyPath: m_LightLayerMask
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343663293147786749, guid: b90b9b7825ebb344a89a6d6f28cad701,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8904554670348636613, guid: b90b9b7825ebb344a89a6d6f28cad701,
