@@ -106,9 +106,13 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
             }
         }
 
-        public void OnEnable()
+        public void OnAwake()
         {
             ValidateInteractionButton();
+        }
+
+        public void OnEnable()
+        {
             if (bus == null || subscribed) return;
             bus.Subscribe<AssetLoadingProgressSignal>(ProgressUpdated);
             subscribed = true;
@@ -136,9 +140,7 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
         }
 
         private void SiloStateChanged(SiloState.StateName newState)
-        {         
-            if(ValidateInteractionButton()) return;
-
+        {
             //Update the action button
             switch (newState)
             {
