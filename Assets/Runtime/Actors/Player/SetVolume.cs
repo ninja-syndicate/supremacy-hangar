@@ -39,6 +39,10 @@ namespace SupremacyHangar.Runtime.Actors.Player
                 default:
                     break;
             }
+
+            slider.onValueChanged.AddListener(delegate {
+                SetTextValue();
+            });
         }
 
         private void SetTextValue()
@@ -50,7 +54,6 @@ namespace SupremacyHangar.Runtime.Actors.Player
         public void SetLevel(string volumeName, string group)
         {
             float sliderValue = slider.value;
-            SetTextValue();
             mixer.SetFloat(volumeName, Mathf.Log10(sliderValue) * 20);
             PlayerPrefs.SetFloat(group, sliderValue);
             PlayerPrefs.Save();

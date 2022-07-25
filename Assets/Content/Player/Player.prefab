@@ -1380,7 +1380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: 6030a6e528f25fb4c889c453e8368ada, type: 2}
-  volumeTypes: 1
+  volumeTypes: 2
   slider: {fileID: 7477993431731113667}
   textSliderValue: {fileID: 7293421960193844513}
 --- !u!1 &2529855418179373436
@@ -3617,7 +3617,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: [{fileID: 4202415858163844564}, {fileID: 3035775801944715152}]
+  m_Children:
+  - {fileID: 4202415858163844564}
+  - {fileID: 3035775801944715152}
   m_Father: {fileID: 5955572307729721532}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4118,7 +4120,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 4485854370576264475}
-        m_TargetAssemblyTypeName: SupremacyHangar.Runtime.FirstPersonController, SupremacyHangar.Runtime
+        m_TargetAssemblyTypeName: SupremacyHangar.Runtime.FirstPersonController,
+          SupremacyHangar.Runtime
         m_MethodName: set_UpdateRotationSpeed
         m_Mode: 0
         m_Arguments:
