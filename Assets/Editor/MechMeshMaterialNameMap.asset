@@ -55,12 +55,12 @@ MonoBehaviour:
     - Torso
     - RightArm
     - Connectors
+    - Hoses
   - Mesh: {fileID: 1858076446634623171, guid: 7a99f688e3fb8354ea2661c348113d6f, type: 3}
     MaterialNames:
-    - Head
-    - null
-    - Chest
     - Legs
+    - Head
+    - Chest
   - Mesh: {fileID: 8369447950273266316, guid: 85dfe6b0b304173439a086e7c18b650a, type: 3}
     MaterialNames:
     - Head
@@ -97,5 +97,5 @@ MonoBehaviour:
     - LowerDetails
     - MidCore
     - MidDetails
-    - LegLeft
-    - LegRight
+    - LegFrontLeft
+    - LegFrontRight

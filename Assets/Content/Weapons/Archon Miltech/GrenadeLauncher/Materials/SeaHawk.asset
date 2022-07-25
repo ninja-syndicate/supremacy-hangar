@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: SeaHawk
   m_EditorClassIdentifier: 
   mats:
-  - {fileID: 2100000, guid: 637c66f4d4ea5cd49b0b670cd053d134, type: 2}
+  - {fileID: 2100000, guid: bb44f29dba6a5e54581efd1b33c8636e, type: 2}

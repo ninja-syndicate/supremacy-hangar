@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: DaisonSleek
   m_EditorClassIdentifier: 
   mats:
-  - {fileID: 2100000, guid: c2693efc661f6484788cd9dee2ee0e9b, type: 2}
+  - {fileID: 2100000, guid: 491203818cd97d94cb747db971bbdfef, type: 2}
