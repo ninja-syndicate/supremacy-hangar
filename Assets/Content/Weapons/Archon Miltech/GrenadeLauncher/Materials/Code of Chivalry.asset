@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Code of Chivalry
   m_EditorClassIdentifier: 
   mats:
-  - {fileID: 2100000, guid: 766253edf4ae8ef448e0e2dc39c3a64a, type: 2}
+  - {fileID: 2100000, guid: b147c8eb85804c04ba7ca643acf0a110, type: 2}

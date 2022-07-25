@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c5d90480cbb2db4cad017357733efdc, type: 3}
+  m_Name: UserPreferenceInstaller
+  m_EditorClassIdentifier: 
+  mouseSensitivityDefault: 1
+  masterVolumeDefault: 0.75
+  effectsVolumeDefault: 0.75
+  musicVolumeDefault: 0.75
+  masterMixer: {fileID: 11400000, guid: 1430ef74e99657144a6a75599f390e26, type: 2}

@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ReadyToQuench
   m_EditorClassIdentifier: 
   mats:
-  - {fileID: 2100000, guid: 5c8cae9131375ff4cbc8f32df505314b, type: 2}
+  - {fileID: 2100000, guid: effe3033b5de1964698960246490246c, type: 2}

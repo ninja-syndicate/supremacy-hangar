@@ -96,7 +96,7 @@ namespace SupremacyHangar.Runtime.Actors.Silo
                 case Mech:
                 case Weapon:
                     contents = crateContent;
-                    environmentManager.UpdatePlayerInventory(siloOffset, crateContent);
+                    environmentManager.UpdatePlayerInventory(SiloNumber, crateContent);
                     break;
 
             }

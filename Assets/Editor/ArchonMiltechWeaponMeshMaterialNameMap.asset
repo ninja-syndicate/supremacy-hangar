@@ -25,7 +25,7 @@ MonoBehaviour:
     - AM_Shotgun
   - Mesh: {fileID: 8347601449702216776, guid: 65e6558ff3ac14542a1d5c4a3d5c9338, type: 3}
     MaterialNames:
-    - AM_GranadeLauncher
+    - GrenadeLauncher
   - Mesh: {fileID: 8347601449702216776, guid: f1be6fbfb8534144988f44719ace20df, type: 3}
     MaterialNames:
     - AM_Laser
