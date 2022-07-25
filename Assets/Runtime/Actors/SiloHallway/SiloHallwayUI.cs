@@ -108,6 +108,7 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
 
         public void OnEnable()
         {
+            ValidateInteractionButton();
             if (bus == null || subscribed) return;
             bus.Subscribe<AssetLoadingProgressSignal>(ProgressUpdated);
             subscribed = true;
@@ -115,6 +116,7 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
 
         public void OnDisable()
         {
+            if (siloState != null) siloState.OnStateChanged -= SiloStateChanged;
             if (bus == null) return;
             bus.TryUnsubscribe<AssetLoadingProgressSignal>(ProgressUpdated);
         }
@@ -134,8 +136,9 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
         }
 
         private void SiloStateChanged(SiloState.StateName newState)
-        {
-            if (!interactionButton) return;
+        {         
+            if(ValidateInteractionButton()) return;
+
             //Update the action button
             switch (newState)
             {
@@ -164,6 +167,20 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
                     interactionButtonText.text = openingText;
                     break;
             }
+        }
+
+        private bool ValidateInteractionButton()
+        {
+            if (interactionButton != null) return true;
+            
+            Debug.LogError($"Interaction button NOT set {this.name}.", this);
+            enabled = false;
+
+            if (interactionButton != null && interactionButtonProgress != null) return true;
+
+            Debug.LogError($"Interaction button progress NOT set {this.name}.", this);
+            enabled = false;
+            return false;
         }
 
         private void SetupOpenButton()
