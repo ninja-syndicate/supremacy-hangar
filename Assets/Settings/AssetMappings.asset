@@ -1849,10 +1849,10 @@ MonoBehaviour:
   - containsError: 0
     data: {fileID: 804412582113391668, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
     reference:
-      m_AssetGUID: 350bc6144ef06a746b1f1329de284f6d
+      m_AssetGUID: 9ae8534f75e0c834fad26ef93fd2bd4a
       m_SubObjectName: 
       m_SubObjectType: 
-      m_EditorAssetChanged: 1
+      m_EditorAssetChanged: 0
   - containsError: 0
     data: {fileID: 5065763395433890026, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
     reference:
@@ -1884,10 +1884,10 @@ MonoBehaviour:
   - containsError: 0
     data: {fileID: 975694709911912681, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
     reference:
-      m_AssetGUID: 66f091c8137e97d48848907a871e2051
+      m_AssetGUID: ffa93a6294922b948b20c318e3fc98a3
       m_SubObjectName: 
       m_SubObjectType: 
-      m_EditorAssetChanged: 1
+      m_EditorAssetChanged: 0
   - containsError: 0
     data: {fileID: 5458548568719826459, guid: 8be4ef3bc8d5a4e9e9dc0aa252d59a4b, type: 2}
     reference:

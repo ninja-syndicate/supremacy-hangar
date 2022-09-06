@@ -25,15 +25,13 @@ namespace SupremacyHangar.Runtime
 		[Tooltip("Acceleration and deceleration")]
 		public float SpeedChangeRate = 10.0f;
 
-		public float UpdateRotationSpeed
-        {
-			get { return RotationSpeed; }
-			set { RotationSpeed = value; }
-        }
+		private UserPreferencesService userPreferences;
 
 		[Space(10)]
 		[Tooltip("The height the player can jump")]
 		public float JumpHeight = 1.2f;
+		[Tooltip("The height the player can jump while sprinting")]
+		public float SprintJumpHeight = 1.5f;
 		[Tooltip("The character uses its own gravity value. The engine default is -9.81f")]
 		public float Gravity = -15.0f;
 
@@ -131,8 +129,9 @@ namespace SupremacyHangar.Runtime
 		}
 
 		[Inject]
-		public void Inject(SignalBus aBus)
+		public void Inject(SignalBus aBus, UserPreferencesService userPreferences)
 		{
+			this.userPreferences = userPreferences;
 			bus = aBus;
 			bus.Subscribe<ResumeGameSignal>(Resumed);
 			bus.Subscribe<PauseGameSignal>(Paused);
@@ -329,8 +328,8 @@ namespace SupremacyHangar.Runtime
 				//Don't multiply mouse input by Time.deltaTime
 				float deltaTimeMultiplier = IsCurrentDeviceMouse ? 1.0f : Time.deltaTime;
 				
-				_cinemachineTargetPitch += look.y * RotationSpeed * deltaTimeMultiplier;
-				_rotationVelocity = look.x * RotationSpeed * deltaTimeMultiplier;
+				_cinemachineTargetPitch += look.y * RotationSpeed * userPreferences.MouseSensitivity * deltaTimeMultiplier;
+				_rotationVelocity = look.x * RotationSpeed * userPreferences.MouseSensitivity * deltaTimeMultiplier;
 
 				// clamp our pitch rotation
 				_cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, BottomClamp, TopClamp);
@@ -446,7 +445,10 @@ namespace SupremacyHangar.Runtime
 				if (jump && _jumpTimeoutDelta <= 0.0f)
 				{
 					// the square root of H * -2 * G = how much velocity needed to reach desired height
-					_verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
+					if(sprint)
+						_verticalVelocity = Mathf.Sqrt(SprintJumpHeight * -2f * Gravity);
+					else
+						_verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
 				}
 				
 				// jump timeout

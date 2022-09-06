@@ -1379,8 +1379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ac3f9ee8eaab944c8cb33b9607d2ab3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mixer: {fileID: 24100000, guid: 6030a6e528f25fb4c889c453e8368ada, type: 2}
-  volumeTypes: 1
+  preferenceType: 2
   slider: {fileID: 7477993431731113667}
   textSliderValue: {fileID: 7293421960193844513}
 --- !u!1 &2529855418179373436
@@ -3447,6 +3446,7 @@ MonoBehaviour:
   RotationSpeed: 1
   SpeedChangeRate: 50
   JumpHeight: 0.5
+  SprintJumpHeight: 1.5
   Gravity: -15
   JumpTimeout: 0.1
   FallTimeout: 0.15
@@ -3617,7 +3617,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: [{fileID: 4202415858163844564}, {fileID: 3035775801944715152}]
+  m_Children:
+  - {fileID: 4202415858163844564}
+  - {fileID: 3035775801944715152}
   m_Father: {fileID: 5955572307729721532}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4024,6 +4026,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2479740920755452568}
   - component: {fileID: 8583767581441973817}
+  - component: {fileID: 1018689474740527303}
   m_Layer: 5
   m_Name: Sensitivity Control
   m_TagString: Untagged
@@ -4104,31 +4107,22 @@ MonoBehaviour:
   m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5559177617585130688}
-        m_TargetAssemblyTypeName: SliderValueToText, SupremacyHangar.Runtime
-        m_MethodName: ShowSliderValue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4485854370576264475}
-        m_TargetAssemblyTypeName: SupremacyHangar.Runtime.FirstPersonController, SupremacyHangar.Runtime
-        m_MethodName: set_UpdateRotationSpeed
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+--- !u!114 &1018689474740527303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6728607153278198225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ac3f9ee8eaab944c8cb33b9607d2ab3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preferenceType: 0
+  slider: {fileID: 8583767581441973817}
+  textSliderValue: {fileID: 5008615263489658438}
 --- !u!1 &6764979349556853993
 GameObject:
   m_ObjectHideFlags: 0
@@ -4273,7 +4267,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6764979349556853993}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3246b90adf4d11a4c84e0aab445a24a6, type: 3}
   m_Name: 

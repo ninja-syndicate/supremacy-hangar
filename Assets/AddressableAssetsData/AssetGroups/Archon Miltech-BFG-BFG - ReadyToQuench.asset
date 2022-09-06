@@ -17,10 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 6ce81cc125aa9974a902f587c1560d9e
   m_SerializeEntries:
-  - m_GUID: 66f091c8137e97d48848907a871e2051
-    m_Address: BFG - ReadyToQuench
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: ffa93a6294922b948b20c318e3fc98a3
     m_Address: BFG - ReadyToQuench
     m_ReadOnly: 0

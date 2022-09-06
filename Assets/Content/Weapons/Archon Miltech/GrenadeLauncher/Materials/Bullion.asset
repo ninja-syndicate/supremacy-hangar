@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Bullion
   m_EditorClassIdentifier: 
   mats:
-  - {fileID: 2100000, guid: 015c75a7615b14f40ac5f1d8a02fc207, type: 2}
+  - {fileID: 2100000, guid: 85747842a35b55f46b0a65b4bc1d6250, type: 2}

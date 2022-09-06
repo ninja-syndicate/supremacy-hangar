@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: LessThanLethal
   m_EditorClassIdentifier: 
   mats:
-  - {fileID: 2100000, guid: 727182afbec913e4b99e10e9f03cfebd, type: 2}
+  - {fileID: 2100000, guid: ce277bd92076ed6499259bf955824f15, type: 2}

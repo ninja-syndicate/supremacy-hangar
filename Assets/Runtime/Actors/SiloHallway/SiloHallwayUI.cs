@@ -106,6 +106,11 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
             }
         }
 
+        public void OnAwake()
+        {
+            ValidateInteractionButton();
+        }
+
         public void OnEnable()
         {
             if (bus == null || subscribed) return;
@@ -115,6 +120,7 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
 
         public void OnDisable()
         {
+            if (siloState != null) siloState.OnStateChanged -= SiloStateChanged;
             if (bus == null) return;
             bus.TryUnsubscribe<AssetLoadingProgressSignal>(ProgressUpdated);
         }
@@ -163,6 +169,20 @@ namespace SupremacyHangar.Runtime.Actors.SiloHallway
                     interactionButtonText.text = openingText;
                     break;
             }
+        }
+
+        private bool ValidateInteractionButton()
+        {
+            if (interactionButton != null) return true;
+            
+            Debug.LogError($"Interaction button NOT set {this.name}.", this);
+            enabled = false;
+
+            if (interactionButton != null && interactionButtonProgress != null) return true;
+
+            Debug.LogError($"Interaction button progress NOT set {this.name}.", this);
+            enabled = false;
+            return false;
         }
 
         private void SetupOpenButton()
